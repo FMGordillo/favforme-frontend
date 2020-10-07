@@ -1,0 +1,1215 @@
+/*
+Author       : Themes_master.
+Template Name: Smartly - App Landing Page
+Version      : 1.0
+*/
+/*=============================================================
+    CSS INDEX
+    =============================
+    01. GENERAL STYLE (body, link color, section-title, preloader btn, overlay, section-padding etc)
+    02. BOOTSTRAP NAVIGATION OVERRIDES
+    03. START HOME DESIGN
+    04. START FEATURES DESIGN
+    05. START WHY US DESIGN
+    06. START APP DESCRIBE DESIGN
+    07. START APP DESCRIBE WITH VIDEO DESIGN
+    08. START TESTIMONIAL DESIGN
+    09. START APP SCREENSHOT DESIGN
+    10. START APP PRICING DESIGN
+    11. START APP DOWNLOAD DESIGN
+    12. START CONTACT FORM DESIGN
+    13. START MAP DESIGN
+    14. START NEWSLETTER & SOCIAL PROFILE DESIGN
+    15. START FOOTER DESIGN
+  =============================================================*/
+/*
+* ----------------------------------------------------------------------------------------
+* 01.GENERAL STYLE
+* ----------------------------------------------------------------------------------------
+*/
+body {
+    background-color: #fff;
+    color: #222;
+    font-family: 'Alegreya Sans', sans-serif;
+
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+}
+html,
+body { height: 100% }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+    font-family: 'Alegreya Sans', sans-serif;
+
+    font-weight: 700;
+}
+a {
+    font-family: 'Alegreya Sans', sans-serif;
+    text-decoration: none;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	font-size: 0px;
+}
+fieldset {
+    border: 0 none;
+    margin: 0 auto;
+    padding: 0;
+}
+/*START PRELOADER DESIGN*/
+.preloader {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+}
+.status,
+.status-mes {
+    background-image: url(../img/status.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+.status-mes {
+    background: none;
+    left: 0;
+    margin: 0;
+    text-align: center;
+    top: 65%;
+}
+.status-mes h4 {
+    color: #333;
+    margin-top: 30px;
+}
+.no-padding { padding: 0 }
+/*END PRELOADER DESIGN*/
+/*START SCROLL TO TOP*/
+.topcontrol {
+    background: #3f50b5 none repeat scroll 0 0;
+    border-radius: 50px;
+    bottom: 5px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    height: 40px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    padding: 5px 12px;
+    position: fixed;
+    right: 5px;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    width: 40px;
+}
+.topcontrol:hover {
+    background: #222;
+    color: #fff;
+}
+/*END SCROLL TO TOP*/
+.section-padding { padding: 60px 0 }
+/*START SECTION TITLE DESIGN*/
+.section-title { margin-bottom: 30px }
+.section-title  h2 {
+font-size: 26px;
+margin: 0;
+position: relative;
+text-transform: uppercase;
+}
+.section-title h2 span { color: #3f50b5 }
+.section-title-white {
+    color: #fff !important;
+    position: relative;
+}
+.section-title div {
+    background: #3f50b5  none repeat scroll 0 0;
+    display: block;
+    height: 3px;
+    position: relative;
+    margin: 15px auto;
+    width: 80px;
+}
+.section-title p {
+margin: auto;
+padding: 0 20px;
+position: relative;
+width: 70%;
+}
+@media only screen and (max-width:768px) { 
+.section-title p {
+width: 100%;
+}
+}
+/*END SECTION TITLE DESIGN*/
+/*
+* ----------------------------------------------------------------------------------------
+* 01.END GENERAL STYLE
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 02. START BOOTSTRAP NAVIGATION OVERRIDES
+* ----------------------------------------------------------------------------------------
+*/
+.navbar-default {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: #fff;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #3f50b5  !important;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: #3f50b5  !important;
+    background-color: transparent;
+}
+.navbar-brand { padding: 0px }
+.navbar-brand img { width: 150px }
+@media only screen and (max-width:480px) { 
+.navbar-brand img {margin-left: 10px;}
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #fff;
+}
+.menu-top {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.menu-top li a {
+color: #fff !important;
+font-family: 'Alegreya Sans', sans-serif;
+
+font-size: 15px;
+font-weight: 400;
+text-transform: capitalize;
+}
+.menu-top li a:hover { color: #3f50b5 !important }
+@media only screen and (max-width:768px) { 
+    .navbar-default .navbar-nav > li > a {
+        margin-top: 10px;
+        padding: 8px;
+    }
+}
+@media only screen and (max-width:480px) { 
+    .menu-top {
+        background-color: #fff;
+    }
+    .navbar-default .navbar-nav > li > a { color: #313131  !important }
+}
+.navbar-default.menu-shrink {
+    background-color: #fff;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    width: 100%;
+}
+@media only screen and (max-width:480px) { 
+    .menu-top {
+        color: #fff !important;
+        margin-left: 0px;
+    }
+}
+.navbar-default.menu-shrink li a { color: #313131!important}
+.navbar-default.menu-shrink li a:hover { color: #3f50b5  !important }
+.navbar-default .navbar-toggle { background: #fff none repeat scroll 0 0 }
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus { background-color: #fff }
+.navbar-default .navbar-toggle .icon-bar { background-color: #3f50b5}
+/*
+* ----------------------------------------------------------------------------------------
+* 02.END BOOTSTRAP NAVIGATION OVERRIDES
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 03.START HOME DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.home_parallax { position: relative;height:646px; }
+@media only screen and (max-width:768px) { 
+.home_parallax {height: 1150px;}
+}
+
+@media only screen and (max-width:480px) { 
+.home_parallax {height: 1333px;}
+}
+@media only screen and (max-width:414px) { 
+.home_parallax {height: 1357px;}
+}
+@media only screen and (max-width:375px) { 
+.home_parallax {height: 1350px;}
+}
+
+@media only screen and (max-width:360px) { 
+.home_parallax {height: 1222px;}
+}
+@media only screen and (max-width:320px) { 
+.home_parallax {height: 1222px;}
+}
+.home_parallax:before {
+    background: rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.hero-text h1 {
+color: #fff;
+font-size: 65px;
+line-height: 54px;
+margin: 0;
+padding-top: 250px;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+@media only screen and (max-width:480px) { 
+    .hero-text h1 {
+        font-size: 40px;
+        line-height: 56px;
+    }
+	.hero-text h2 {
+	font-size: 22px;	
+		}
+}
+@media only screen and (max-width:360px) { 
+    .hero-text h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+		.hero-text h2 {
+	font-size: 18px;	
+		}
+}
+.hero-text h2 {
+	color: #fff;
+	margin: 0 auto;
+	padding-bottom: 35px;
+	padding-top: 15px;
+	font-size: 32px;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);	
+}
+/*
+.mbleft15 {
+margin-left:20px;
+}
+*/
+.btn-home-bg-one {
+    background: #3f50b5;
+    border: 2px solid #3f50b5;
+    border-radius: 0;
+    color: #fff;
+    margin-right: 10px;
+    padding: 10px 30px;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    font-family: 'Alegreya Sans', sans-serif;
+    text-transform: uppercase;
+}
+@media only screen and (max-width:768px) { 
+.btn-home-bg-one{  margin: 20px 20px 0 0; }
+}
+.btn-home-bg-one:hover,
+.btn-home-bg-one:focus {
+    background: #fff;
+    border: 2px solid #fff;
+    color: #333;
+}
+.btn-home-bg-two {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 2px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    padding: 10px 30px;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    font-family: 'Alegreya Sans', sans-serif;
+    text-transform: uppercase;
+}
+@media only screen and (max-width:768px) { 
+.btn-home-bg-two{  margin: 20px 20px 0 0; }
+}
+.btn-home-bg-two:hover,
+.btn-home-bg-two:focus {
+    background: #fff;
+    border: 2px solid #fff;
+    color: #333;
+}
+.hand_app_img{
+  padding-top: 150px;
+}
+.hand_app_img img{width: 406px;}
+@media only screen and (max-width:768px) { 
+.hand_app_img{padding-top: 58px; }
+}
+@media only screen and (max-width:480px) { 
+.hand_app_img{
+display: inline-block;
+padding-top: 112px;
+}
+.hand_app_img img {width: 100%;}
+}
+@media only screen and (max-width:414px) { 
+.hand_app_img{padding-top: 138px; }
+}
+@media only screen and (max-width:375px) { 
+.hand_app_img{padding-top: 128px; }
+}
+@media only screen and (max-width:360px) { 
+.hand_app_img{padding-top: 116px; }
+}
+@media only screen and (max-width:320px) { 
+.hand_app_img{padding-top: 171px; }
+}
+
+/*START SLIDESHOW VIDEO*/
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div {height: 700px;
+overflow: hidden;
+position: relative;}
+@media only screen and (max-width:768px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div {height: 1150px;}
+}
+
+@media only screen and (max-width:480px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div {height: 1333px;}
+}
+@media only screen and (max-width:414px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div{height: 1357px;}
+}
+@media only screen and (max-width:375px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div {height: 1350px;}
+}
+
+@media only screen and (max-width:360px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div{height: 1222px;}
+}
+@media only screen and (max-width:320px) { 
+.welcome-area,
+.welcome-slider-area,
+.welcome-slider-area div {height: 1222px;}
+}
+.welcome-slider-area div.single-slide-item-tablecell,
+.welcome-slider-area div.single-slide-item-tablecell div { height: auto }
+.single-slide-item-table {
+    display: table;
+    width: 100%;
+}
+.single-slide-item-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.single-slide-item {
+    position: relative;
+    z-index: 1;
+}
+.single-slide-item:after {
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+}
+.slide-1 {
+    background: url(../img/bg/slide1.jpg) scroll 0 0;
+    background-size: cover;
+}
+.slide-2 {
+    background: url(../img/bg/slide2.jpg) scroll 0 0;
+    background-size: cover;
+}
+.slide-3 {
+    background: url(../img/bg/slide3.jpg) scroll 0 0;
+    background-size: cover;
+}
+.carousel-fade .carousel-inner .item {
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.single-slide-item h2 {
+color: #fff;
+font-size: 50px;
+line-height: 66px;
+text-transform: capitalize;
+}
+@media only screen and (max-width:480px) { 
+    .single-slide-item h2 {
+        font-size: 40px;
+        line-height: 56px;
+    }
+}
+@media only screen and (max-width:360px) { 
+    .single-slide-item h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+.single-slide-item p {
+color: #fff;
+margin: 0 auto;
+padding-bottom: 35px;
+padding-top: 15px;
+}
+@media only screen and (max-width:768px) { 
+    .single-slide-item p { width: 100% }
+}
+.carousel-indicators-slider { bottom: 30px !important }
+/*START SLIDESHOW VIDEO*/
+
+
+/*START HTML5 VIDEO*/
+.html-video {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.video-caption {
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 15;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+.video-caption h2 {
+  margin: auto;
+  width: 70%;
+}
+video { min-width: 100% }
+@media only screen and (max-width:768px) { 
+video { min-width: 100%;height:100% }
+}
+/*END HTML5 VIDEO*/
+/*
+* ----------------------------------------------------------------------------------------
+* 03.END HOME DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 04.START FEATURES DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.app-feature{background:#f7f7f7;}
+.feature-icon-box {
+background: #fff none repeat scroll 0 0;
+margin-bottom: 30px;
+padding: 50px 40px;
+transition: all 0.2s ease 0s;
+}
+.feature-icon-box:hover { background: #6c76b6 }
+.icon-box-icon {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+    display: inline-block;
+    font-size: 25px;
+    height: 65px;
+    line-height: 65px;
+    vertical-align: middle; 
+		margin-bottom: 30px;
+    text-align: center;
+    width: 65px;
+    -webkit-transition: .5s;
+            transition: .5s;
+    position: relative;
+}
+.feature-icon-box:hover .icon-box-icon {
+    background: #fff;
+    color: #3f50b5;
+    border-color: #fff;
+}
+.icon-box-info h4 {
+    margin: 0 0 20px;
+    color: #333;
+    text-transform: uppercase;
+	transition: all 0.2s ease 0s;
+}
+.feature-icon-box:hover .icon-box-info h4{color:#fff;}
+@media only screen and (max-width:768px) { 
+    .icon-box-info h4 { font-size: 14px }
+}
+@media only screen and (max-width:480px) { 
+    .icon-box-info h4 { font-size: 18px }
+}
+.icon-box-info p { color: #333;transition: all 0.2s ease 0s; }
+.feature-icon-box:hover .icon-box-info p{color:#fff;}
+/*
+* ----------------------------------------------------------------------------------------
+* 04.END FEATURES DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 05.START WHY US DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+@media only screen and (max-width:768px) { 
+    .mt60 { margin-top: 60px }
+}
+.why-choose-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+@media only screen and (max-width:360px) { 
+    .why-choose-title { font-size: 18px }
+}
+.single_why {
+    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    overflow: hidden;
+    padding: 20px;
+    -webkit-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+}
+.why-box-icon {
+background: #3f50b5 none repeat scroll 0 0;
+border: 2px solid #3f50b5;
+border-radius: 50%;
+color: #fff;
+display: inline-block;
+float: left;
+font-size: 40px;
+height: 120px;
+line-height: 115px;
+margin-right: 20px;
+position: relative;
+text-align: center;
+transition: all 0.2s ease 0s;
+width: 120px;
+}
+.single_why:hover .why-box-icon{
+background: #fff none repeat scroll 0 0;
+border: 2px solid #3f50b5;
+color:#3f50b5;
+}
+.single_why h4 {
+    color: #333;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+	overflow: hidden;
+    -webkit-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+}
+.single_why p {
+color: #333;
+overflow: hidden;
+transition: all 0.4s ease 0s;
+}
+.why_us_img {
+    margin: auto auto 0px;
+    max-width: 400px;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 05.END WHY US DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 06.START APP DESCRIBE DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.description_text {
+margin-top: 100px;
+}
+@media only screen and (max-width:480px) { 
+.description_text{ margin-top:0px;}
+}
+.description_text h3 {
+font-size: 40px;
+line-height: 48px;
+margin: 0 0 20px;
+text-transform: capitalize;
+}
+@media only screen and (max-width:480px) { 
+    .description_text h3 {
+        font-size: 26px;
+        line-height: 40px;
+    }
+}
+.description_text p { text-align: justify }
+.description_text_mbnone { margin-bottom: 0px!important }
+/*
+* ----------------------------------------------------------------------------------------
+* 06.END APP DESCRIBE DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 07.START APP DESCRIBE WITH VIDEO DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.app-describe-with-video { background: #f7f7f7 }
+.description_video iframe {
+    border: medium none;
+    height: 450px;
+    width: 100%;
+}
+.description_video_text {margin-top:60px;}
+.description_video_text h3 {
+font-size: 40px;
+line-height: 48px;
+margin: 0 0 20px;
+text-transform: capitalize;
+}
+@media only screen and (max-width:480px) { 
+    .description_video_text h3 {
+        font-size: 26px;
+        line-height: 40px;
+    }
+}
+@media only screen and (max-width:320px) { 
+    .description_video_text h3 {
+        font-size: 24px;
+        line-height: 40px;
+    }
+}
+.description_video_text p { text-align: justify }
+.description_video_text_mbnone { margin-bottom: 0px!important }
+/*
+* ----------------------------------------------------------------------------------------
+* 07.END APP DESCRIBE WITH VIDEO DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 08.START TESTIMONIAL DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.app-testimonial {padding-top:60px}
+
+.single_testimonial {
+background: #fff none repeat scroll 0 0;
+box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.12);
+margin-bottom: 50px;
+padding: 40px;
+}
+@media only screen and (max-width:360px) { 
+    .single_testimonial { padding: 20px }
+}
+.single_testimonial img {
+border: 4px solid #3f50b5;
+border-radius: 50px;
+height: 100px;
+margin-bottom: 20px;
+width: 100px;
+}
+.single_testimonial h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.single_testimonial p {color: #333; }
+.single_testimonial i { color: #ffc107 }
+/*
+* ----------------------------------------------------------------------------------------
+* 08.END TESTIMONIAL DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+
+/*
+* ----------------------------------------------------------------------------------------
+* 09.START APP SCREENSHOT DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.sin-screenshot { z-index: 9 }
+.sin-screenshot a {
+    display: block;
+    position: relative;
+}
+.sin-screenshot a:before {
+    background: #3f50b5 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.sin-screenshot a:hover:before {
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.screenshot-carousel { z-index: 9 }
+.screenshot-carousel img { width: 100% }
+/*
+* ----------------------------------------------------------------------------------------
+* 09.END APP SCREENSHOT DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 10.START APP PRICING DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.pricing-table {
+    background-color: #fff;
+	border: 1px solid #e8e8e9;
+    box-shadow: 1px 1px 1px 0 #f4f4f4;
+    position: relative;
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+}
+.pricing-table:hover { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1) }
+@media only screen and (max-width:480px) { 
+    .pricing-table { margin-bottom: 40px }
+}
+.pricing-table h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+	padding-bottom: 0px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.price {
+    background: #3f50b5 none repeat scroll 0 0;
+    border-radius: 500px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    height: 124px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    width: 124px;
+}
+.price span {
+    display: block;
+    font-size: 32px;
+    margin-top: 39px;
+}
+.pricing-list {
+    
+    list-style: outside none none;
+    margin-bottom: 0;
+    text-align: left;
+}
+.pricing-list li {
+    border-bottom: 0px dashed #eaeaea;
+    font-size: 15px;
+    padding-bottom: 4px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+    -webkit-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+}
+.pricing-list li:hover { background: rgba(0,0,0,0.020) }
+.pricing-btn { padding: 30px 0 }
+/*START PRICING BTN STYLE*/
+.btn-pricing-bg {
+background: #3f50b5 none repeat scroll 0 0;
+border: 2px solid #3f50b5;
+border-radius: 2px;
+box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.1);
+color: #fff;
+font-family: 'Alegreya Sans', sans-serif;
+
+font-size: 12px;
+padding: 10px 30px;
+text-transform: uppercase;
+transition: all 0.2s ease 0s;
+}
+.btn-pricing-bg:hover,
+.btn-pricing-bg:focus {
+    background: #040e18;
+    color: #fff;
+    border: 2px solid #040e18;
+}
+/*END PRICING BTN STYLE*/
+/*
+* ----------------------------------------------------------------------------------------
+* 10.END APP PRICING DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 11.START APP DOWNLOAD DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.app-download { position: relative }
+.app-download:before {
+background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+content: "";
+height: 100%;
+left: 0;
+opacity: 0.8;
+position: absolute;
+top: 0;
+width: 100%;
+}
+.download_overlay {
+    background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0;
+    padding: 40px;
+    overflow: hidden;
+}
+.download_app h3 {
+    color: #fff;
+    margin: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+.download_app a {
+    background: #3f50b5 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 5px;
+    padding: 16px 25px;
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+}
+.download_app a:hover,
+.download_app a:focus {
+    background: #fff;
+    color: #333;
+}
+.download_app a i { margin-right: 10px }
+/*
+* ----------------------------------------------------------------------------------------
+* 11.END APP DOWNLOAD DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 12.START CONTACT FORM DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.contact-us { background: #f7f7f7 }
+/*START CONTACT ADDRESS*/
+.contact-info {
+    background: #fff none repeat scroll 0 0;
+    padding: 25px 25px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+		height: 430px;
+}
+@media only screen and (max-width:1280px) { 
+.contact-info {padding: 15px 25px;:}
+}
+.contact-info:hover { box-shadow: none }
+.contact-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.contact-info ul li {
+    margin-bottom: 30px;
+    -webkit-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+}
+.contact-info ul li.contact-info-mbnone { margin-bottom: 0px }
+.contact-info ul li h4 {
+    font-size: 16px;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.contact-info ul li p {
+	font-size: 16px;
+}
+/*END CONTACT ADDRESS*/
+/*START CONTACT FORM*/
+.contact {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    -webkit-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+			height: 430px;
+}
+.contact:hover { box-shadow: none }
+.form-control {
+    background: #f5f5f5 none repeat scroll 0 0;
+    border: 1px solid #f5f5f5;
+    border-radius: 0;
+    box-shadow: none;
+    color: #333;
+    font-family: 'Alegreya Sans', sans-serif;
+    height: 45px;
+    padding-left: 10px;
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+}
+.form-control:hover,
+.form-control:focus {
+    border: 1px solid #3f50b5;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0 none;
+}
+.actions { margin-top: 30px }
+.btn-contact-bg {
+    background: #3f50b5 none repeat scroll 0 0;
+    border-radius: 0;
+    box-shadow: 0 11px 10px 0 rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+.btn-contact-bg:hover,
+.btn-contact-bg:focus {
+    background: #333;
+    border: 1px solid #333;
+    color: #fff;
+}
+.success {
+    background: #fff none repeat scroll 0 0;
+    color: #3f50b5;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+}
+/*END CONTACT FORM*/
+/*
+* ----------------------------------------------------------------------------------------
+* 12.END CONTACT FORM DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 13.START MAP DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+#map { height: 400px }
+/*
+* ----------------------------------------------------------------------------------------
+* 13.END MAP DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 14.START NEWSLETTER & SOCIAL PROFILE DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.newsletter {
+    background: #040e18;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.newsletter_title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+@media only screen and (max-width:480px) { 
+.newsletter_title {font-size: 18px;}
+}
+/*START NEWSLETTER FORM*/
+.subscribe_input i {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+.subscribe_input input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    float: left;
+    width: 400px;
+}
+@media only screen and (max-width:768px) { 
+    .subscribe_input input {
+        float: left;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width:480px) { 
+    .subscribe_input input {
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+.subscribe_input button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    color: #fff;
+    font-family: 'Alegreya Sans', sans-serif;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+    margin-left: 20px;
+}
+.subscribe_input button:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #222;
+}
+/*END NEWSLETTER FORM*/
+/*START SOCIAL PROFILE*/
+.footer_social { padding-top: 60px }
+.footer_social h4 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+}
+.footer_social span {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    height: 2px;
+    margin: 20px auto 25px;
+    width: 75px;
+}
+.social_icon ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.social_icon ul li { display: inline }
+.social_icon ul li a i {
+    border-radius: 0px;
+    color: #fff;
+    font-size: 20px;
+    height: 45px;
+    margin: 2px;
+    padding: 13px;
+    -webkit-transition: all 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
+    width: 45px;
+}
+.social_icon ul li a i:hover {
+    background: #fff;
+    color: #333;
+}
+.facebook { background: #345289 }
+.twitter { background: #006E99 }
+.dribbble { background: #FF4C83 }
+.instagram { background: #8B5C42 }
+.google { background: #D14031 }
+.youtube { background: #CF1711 }
+/*END SOCIAL PROFILE*/
+/*
+* ----------------------------------------------------------------------------------------
+* 14.END NEWSLETTER & SOCIAL PROFILE DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+/*
+* ----------------------------------------------------------------------------------------
+* 15.START FOOTER DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+.footer {
+    padding: 30px 0;
+    background-color: #09121B;
+}
+.footer_copyright {
+    color: #fff;
+font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    text-transform: capitalize;
+}
+/*
+* ----------------------------------------------------------------------------------------
+* 15.END FOOTER DESIGN
+* ----------------------------------------------------------------------------------------
+*/
+
+.blockqesffm{display:inline-block; margin-bottom:35px; font-size:20px;}
+.blockstept{display:inline-block; margin-bottom:35px; font-size:25px; padding:20px; text-align:center; }
+
+.blockstept h4{ font-size:23px; font-weight:normal;}
+.col-md-3 .blockstept{display:inline-block; margin-bottom:0px; font-size:25px; padding:20px; text-align:center; }
+
