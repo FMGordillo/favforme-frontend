@@ -108,10 +108,9 @@ nav ul li.active {
 }
 
 #accion-destacada {
-  color: red;
-  border: 20px solid;
-  grid-area: content;
-  border-image: url(accion_destacada.svg);
+  padding: 0 200px;
+  border: 5px solid var(--main-color);
+  border-radius: 200px 25px 200px 200px;
 }
 
 #call-actions {
@@ -132,6 +131,9 @@ nav ul li.active {
   text-align: center;
 }
 
+#mobile {
+  background-color: #274DFB;
+}
 #mobile .highlight {
   color: #FFD500;
 }
