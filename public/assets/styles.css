@@ -1,8 +1,27 @@
+/*
+ * Setting up
+ */
+
 :root {
-  padding: 0 180px;
   font-size: 18px;
   font-family: "Gidole", sans-serif;
-  --main-color: #5573F5;
+  --main-color: #5573f5;
+  --secondary-color: #f38d9f;
+}
+body {
+  margin: 0;
+}
+
+header {
+  margin: 0;
+  background-image: url(plato_de_comida.png);
+}
+header section {
+  padding: 0 180px;
+}
+
+main, footer {
+  padding: 0 180px;
 }
 
 h1,
@@ -11,20 +30,77 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Dosis", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
 }
 
 section h1 {
+  font-size: 2em;
   color: var(--main-color);
 }
 
 button {
   border: none;
   color: white;
-  border-radius: 1.5em;
+  cursor: pointer;
+  font-size: 1.25em;
   padding: 1em 1.25em;
+  border-radius: 1.5em;
+  font-family: "Abel", sans-serif;
   background-color: var(--main-color);
+}
+
+/*
+ * Navbar
+ */
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav ul {
+  flex: 1;
+  display: flex;
+  list-style: none;
+  margin-left: 380px;
+  margin-right: 380px;
+}
+nav ul li {
+  flex: 1;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+}
+nav ul img {
+  flex: 1;
+  flex-basis: 150px;
+  
+}
+nav ul li.active {
+  color: var(--secondary-color);
+}
+
+/*
+ * Sections
+ */
+
+#landing h1 {
+  color: white;
+  margin: 0;
+  font-size: 3.5em;
+  font-weight: 700;
+}
+#landing h2 {
+  color: white;
+  font-family: "Abel", sans-serif;
+  margin-top: 0;
+}
+#landing button {
+  background-color: var(--secondary-color);
 }
 
 #acciones h1 {
