@@ -117,7 +117,21 @@ nav ul li.active {
 #call-actions {
   display: flex;
 }
+#call-actions section {
+  display: grid;
+  text-align: center;
+}
+#call-actions section button {
+  justify-self: center;
+}
 
+#marcas {
+  text-align: center;
+}
 #marcas h1 {
   text-align: center;
+}
+
+#mobile .highlight {
+  color: #FFD500;
 }
