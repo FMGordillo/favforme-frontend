@@ -1,5 +1,8 @@
 :root {
+  padding: 0 180px;
+  font-size: 18px;
   font-family: "Gidole", sans-serif;
+  --main-color: #5573F5;
 }
 
 h1,
@@ -10,4 +13,35 @@ h5,
 h6 {
   font-family: "Dosis", sans-serif;
   text-transform: uppercase;
+}
+
+section h1 {
+  color: var(--main-color);
+}
+
+button {
+  border: none;
+  color: white;
+  border-radius: 1.5em;
+  padding: 1em 1.25em;
+  background-color: var(--main-color);
+}
+
+#acciones h1 {
+  text-align: center;
+}
+
+#accion-destacada {
+  color: red;
+  border: 20px solid;
+  grid-area: content;
+  border-image: url(accion_destacada.svg);
+}
+
+#call-actions {
+  display: flex;
+}
+
+#marcas h1 {
+  text-align: center;
 }
