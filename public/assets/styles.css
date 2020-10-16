@@ -21,8 +21,7 @@ header section {
   padding: 0 180px;
 }
 
-main,
-footer {
+main{
   padding: 0 180px;
 }
 
@@ -113,17 +112,21 @@ nav ul li.active {
 }
 
 #accion-destacada {
-  padding: 0 200px;
+  padding: 50px 200px;
   border: 5px solid var(--main-color);
   border-radius: 200px 25px 200px 200px;
 }
 
 #call-actions {
   display: flex;
+  margin-top: 100px;
 }
 #call-actions section {
   display: grid;
   text-align: center;
+}
+#call-actions section img {
+  justify-self: center;
 }
 #call-actions section button {
   justify-self: center;
@@ -139,6 +142,24 @@ nav ul li.active {
 #mobile {
   background-color: #274dfb;
 }
+#mobile h1 {
+  margin-top: 0;
+}
 #mobile .highlight {
   color: #ffd500;
+}
+
+#footer-map {
+  background-color: #27358C;
+}
+#footer-map ul {
+  list-style: none;
+  margin: 0;
+}
+
+#copyright {
+  background-color: #1B233C;
+}
+#copyright p {
+  margin: 0;
 }
