@@ -15,12 +15,14 @@ body {
 header {
   margin: 0;
   background-image: url(plato_de_comida.png);
+  border-radius: 0 0 100% 100%/0 0 25% 25%;
 }
 header section {
   padding: 0 180px;
 }
 
-main, footer {
+main,
+footer {
   padding: 0 180px;
 }
 
@@ -69,16 +71,19 @@ nav ul li {
   flex: 1;
   color: white;
   font-size: 15px;
-  cursor: pointer;
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
   font-family: "Dosis", sans-serif;
 }
+nav ul li a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
 nav ul img {
   flex: 1;
   flex-basis: 150px;
-  
 }
 nav ul li.active {
   color: var(--secondary-color);
@@ -132,8 +137,8 @@ nav ul li.active {
 }
 
 #mobile {
-  background-color: #274DFB;
+  background-color: #274dfb;
 }
 #mobile .highlight {
-  color: #FFD500;
+  color: #ffd500;
 }
