@@ -16,6 +16,10 @@ p {
   line-height: 1.75em;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   margin: 0;
   background-image: url(plato_de_comida.png);
@@ -85,7 +89,6 @@ nav ul li {
 nav ul li a {
   color: white;
   cursor: pointer;
-  text-decoration: none;
 }
 nav ul img {
   flex: 1;
@@ -184,7 +187,6 @@ nav ul li.active {
   margin: 1em 0;
 }
 #accion-destacada .content .social-networks a {
-  text-decoration: none;
   margin-right: 1em;
 }
 
@@ -221,31 +223,63 @@ nav ul li.active {
   margin-top: 6em;
   text-align: center;
 }
+#marcas .content {
+  display: flex;
+  justify-content: space-evenly;
+}
 #marcas h1 {
   text-align: center;
 }
 
 #mobile {
+  color: white;
+  text-align: center;
+  padding-bottom: 2em;
   background-color: #274dfb;
 }
 #mobile h1 {
+  color: white;
   margin-top: 0;
+  font-weight: bold;
 }
 #mobile .highlight {
   color: #ffd500;
 }
+#mobile a {
+  font-weight: bold;
+  color: #ffd500;
+  font-size: 1.25em;
+}
 
 #footer-map {
+  display: grid;
+  height: 250px;
+  padding: 100px 200px;
   background-color: #27358c;
+  grid-template-columns: 1fr 1fr;
+}
+#footer-map img {
+  justify-self: center;
 }
 #footer-map ul {
-  list-style: none;
   margin: 0;
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  flex-flow: column wrap;
+}
+#footer-map ul li a {
+  color: white;
+  line-height: 4em;
+  text-transform: uppercase;
 }
 
 #copyright {
   background-color: #1b233c;
 }
 #copyright p {
+  color: #707070;
   margin: 0;
+  padding: 1em;
+  text-align: center;
 }
