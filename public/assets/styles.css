@@ -55,6 +55,9 @@ button {
   font-family: "Abel", sans-serif;
   background-color: var(--main-color);
 }
+button.main-btn {
+  background-color: var(--secondary-color);
+}
 
 /*
  * Navbar
@@ -136,9 +139,6 @@ nav ul li.active {
   font-family: "Abel", sans-serif;
   margin-top: 0;
 }
-#landing button {
-  background-color: var(--secondary-color);
-}
 
 #acciones {
   margin-top: 6em;
@@ -190,7 +190,7 @@ nav ul li.active {
 
 #call-actions {
   display: flex;
-  margin-top: 100px;
+  margin-top: 10em;
 }
 #call-actions section {
   display: grid;
@@ -203,7 +203,22 @@ nav ul li.active {
   justify-self: center;
 }
 
+#join-us {
+  margin-top: 6em;
+  text-align: center;
+}
+#join-us h2 {
+  margin-bottom: 0.5em;
+}
+#join-us h1 {
+  margin-top: 0;
+}
+#join-us img {
+  border-radius: 25px 200px 200px 200px;
+}
+
 #marcas {
+  margin-top: 6em;
   text-align: center;
 }
 #marcas h1 {
