@@ -7,6 +7,7 @@
   font-family: "Gidole", sans-serif;
   --main-color: #5573f5;
   --secondary-color: #f38d9f;
+  --important-color: #a31d44;
 }
 body {
   margin: 0;
@@ -24,7 +25,7 @@ header section {
   margin: 0 180px;
 }
 
-main{
+main {
   margin: 0 180px;
 }
 
@@ -146,9 +147,45 @@ nav ul li.active {
   text-align: center;
 }
 #accion-destacada {
+  display: grid;
   padding: 50px 200px;
+  grid-template-columns: 1fr 1fr;
   border: 5px solid var(--main-color);
   border-radius: 200px 25px 200px 200px;
+}
+#accion-destacada .thumbnail {
+  width: 100%;
+  border-radius: 200px 25px 200px 200px;
+}
+#accion-destacada .content h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--important-color);
+}
+#accion-destacada .content h3 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: var(--important-color);
+}
+#accion-destacada .progress-bar {
+  height: 10px;
+  position: relative;
+  border-radius: 1em;
+  border: 2px solid var(--important-color);
+}
+#accion-destacada .progress-bar span {
+  height: 100%;
+  display: block;
+  border-bottom-right-radius: 1em;
+  background-color: var(--important-color);
+}
+#accion-destacada button {
+  margin: 1em 0;
+}
+#accion-destacada .content .social-networks a {
+  text-decoration: none;
+  margin-right: 1em;
 }
 
 #call-actions {
@@ -184,7 +221,7 @@ nav ul li.active {
 }
 
 #footer-map {
-  background-color: #27358C;
+  background-color: #27358c;
 }
 #footer-map ul {
   list-style: none;
@@ -192,7 +229,7 @@ nav ul li.active {
 }
 
 #copyright {
-  background-color: #1B233C;
+  background-color: #1b233c;
 }
 #copyright p {
   margin: 0;
