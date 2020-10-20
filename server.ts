@@ -1,15 +1,21 @@
 import path from "path";
-import express from "express";
+import express, { Response } from "express";
 
 const app = express();
 
-app.use(express.static("public"))
+app.use(express.static("public"));
 
-app.get("/", function onResponse(req, res) {
+app.get("/", function onResponse(_, res: Response) {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
-app.get("/register.html", function onResponse(req, res) {
-  res.sendFile(path.join(__dirname, "..", "public", "register.html"));
+app.get("/privacypolicy.html", function onResponse(_, res: Response) {
+  res.sendFile(path.join(__dirname, "..", "public", "privacypolicy.html"));
+});
+app.get("/terms.html", function onResponse(_, res: Response) {
+  res.sendFile(path.join(__dirname, "..", "public", "terms.html"));
+});
+app.get("/register", function onResponse(_, res: Response) {
+  res.redirect("https://forms.gle/Jr4FfwZFSTcrHDwaA");
 });
 
-module.exports = app
+module.exports = app;
