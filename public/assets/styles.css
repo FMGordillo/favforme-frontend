@@ -1,5 +1,10 @@
 /*
  * Setting up
+    xs, extra-small: 0px
+    sm, small: 600px
+    md, medium: 960px
+    lg, large: 1280px
+    xl, extra-large: 1920px
  */
 
 :root {
@@ -23,6 +28,7 @@ a {
 header {
   margin: 0;
   background-image: url(plato_de_comida.png);
+  background-position: center;
   border-radius: 0 0 100% 100%/0 0 25% 25%;
 }
 header section {
@@ -69,13 +75,13 @@ button.main-btn {
 nav {
   display: flex;
   justify-content: center;
+  margin-left: 17em;
+  margin-right: 17em;
 }
 nav ul {
   flex: 1;
   display: flex;
   list-style: none;
-  margin-left: 380px;
-  margin-right: 380px;
 }
 nav ul li {
   flex: 1;
@@ -92,10 +98,17 @@ nav ul li a {
 }
 nav ul img {
   flex: 1;
-  flex-basis: 150px;
+  max-width: 150px;
 }
 nav ul li.active {
   color: var(--secondary-color);
+}
+
+@media (max-width: 1280px) {
+  nav {
+    margin-left: 7em;
+    margin-right: 7em;
+  }
 }
 
 /*
@@ -116,6 +129,17 @@ nav ul li.active {
   grid-column-start: 2;
   justify-self: center;
 }
+@media (max-width: 1280px) {
+  #intro-1 {
+    grid-template-columns: 1fr;
+  }
+  #intro-1 .hand {
+    display: none;
+  }
+  #intro-1 #ods {
+    grid-column-start: 1;
+  }
+}
 
 #intro-2 {
   display: grid;
@@ -129,6 +153,24 @@ nav ul li.active {
 }
 #intro-2 img {
   text-align: left;
+  align-self: center;
+}
+@media (max-width: 1280px) {
+  #intro-2 {
+    padding: 0 3em;
+  }
+  #intro-2 img {
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  #intro-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #intro-2 img {
+    grid-row: 1;
+  }
 }
 
 #landing h1 {
@@ -187,7 +229,20 @@ nav ul li.active {
   margin: 1em 0;
 }
 #accion-destacada .content .social-networks a {
-  margin-right: 1em;
+  margin: 0 1em;
+}
+@media (max-width: 1280px) {
+  #acciones {
+    margin: 0 -60px;
+  }
+  #accion-destacada {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 960px) {
+  #accion-destacada {
+    padding: 50px;
+  }
 }
 
 #call-actions {
@@ -203,6 +258,11 @@ nav ul li.active {
 }
 #call-actions section button {
   justify-self: center;
+}
+@media (max-width: 1280px) {
+  #call-actions {
+    flex-wrap: wrap;
+  }
 }
 
 #join-us {
@@ -225,6 +285,7 @@ nav ul li.active {
 }
 #marcas .content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 #marcas h1 {
@@ -250,6 +311,9 @@ nav ul li.active {
   color: #ffd500;
   font-size: 1.25em;
 }
+#mobile a img {
+  max-width: 100%;
+}
 
 #footer-map {
   display: grid;
@@ -259,6 +323,7 @@ nav ul li.active {
   grid-template-columns: 1fr 1fr;
 }
 #footer-map img {
+  max-width: 100%;
   justify-self: center;
 }
 #footer-map ul {

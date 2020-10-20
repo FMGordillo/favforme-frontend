@@ -11,6 +11,9 @@ app.get("/", function onResponse(_, res: Response) {
 app.get("/privacypolicy.html", function onResponse(_, res: Response) {
   res.sendFile(path.join(__dirname, "..", "public", "privacypolicy.html"));
 });
+app.get("/terms.html", function onResponse(_, res: Response) {
+  res.sendFile(path.join(__dirname, "..", "public", "terms.html"));
+});
 app.get("/register", function onResponse(_, res: Response) {
   res.redirect("https://forms.gle/Jr4FfwZFSTcrHDwaA");
 });
