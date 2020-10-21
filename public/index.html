@@ -16,11 +16,7 @@
   </head>
   <body>
     <div class="nav-container">
-      <button
-        id="nav-toggle"
-        aria-expanded="false"
-        aria-controls="nav-toggle"
-      >
+      <button id="nav-toggle" aria-expanded="false" aria-controls="nav-toggle">
         <span class="screen-reader-text">Menu</span>
         <svg
           class="icon icon-menu-toggle"
@@ -55,7 +51,9 @@
       <section id="landing">
         <h1>Estás en<br />FavForMe</h1>
         <h2>No dejamos a nadie atrás</h2>
-        <button class="main-btn">Sumate ahora</button>
+        <a href="mailto:support@favforme.com"
+          ><button class="main-btn">Sumate ahora</button></a
+        >
       </section>
     </header>
     <main>
@@ -100,7 +98,9 @@
             <div class="progress-bar">
               <span style="width: 38%"></span>
             </div>
-            <button>Favorecer esta acción</button>
+            <a href="mailto:support@favforme.com"
+              ><button>Favorecer esta acción</button></a
+            >
             <div class="social-networks">
               <a href="#">
                 <img
@@ -139,7 +139,9 @@
             que más te identifiquen. Tu aporte lo realizás de forma simple y
             clara, la oportunidad es ahora.
           </p>
-          <button>Ver acciones</button>
+          <a href="mailto:support@favforme.com"
+            ><button>Ver acciones</button></a
+          >
         </section>
         <section>
           <img src="assets/image-2.png" alt="imagen" />
@@ -149,7 +151,7 @@
             nosotros. Te vamos a enviar informes del impacto generado. Ayudá con
             total tranquilidad.
           </p>
-          <button>Favorecer</button>
+          <a href="mailto:support@favforme.com"><button>Favorecer</button></a>
         </section>
         <section>
           <img src="assets/image-3.png" alt="imagen" />
@@ -159,7 +161,7 @@
             atender cualquier inquietud que tengas acerca de nuestro desarrollo,
             contactanos.
           </p>
-          <button>Contactar</button>
+          <a href="mailto:support@favforme.com"><button>Contactar</button></a>
         </section>
       </section>
       <section id="join-us">
@@ -249,20 +251,20 @@
     </footer>
     <script>
       let navbarOpen = false;
-      const navbarContainer = document.querySelector('.nav-container')
-      const navbarToggle = document.querySelector('.nav-container button svg')
-      const navbarImg = document.querySelector('.nav-container nav ul img')
+      const navbarContainer = document.querySelector(".nav-container");
+      const navbarToggle = document.querySelector(".nav-container button svg");
+      const navbarImg = document.querySelector(".nav-container nav ul img");
       const navbarLIs = document.querySelectorAll(".nav-container nav ul li");
       const navbarBtn = document.querySelector("#nav-toggle");
       // Don't like it but well...
-      const navbarMobile = document.querySelector(".nav-container nav ul")
-      const navbarMobileTwo = document.querySelector(".nav-container nav")
+      const navbarMobile = document.querySelector(".nav-container nav ul");
+      const navbarMobileTwo = document.querySelector(".nav-container nav");
 
       navbarBtn.addEventListener("click", toggleNavbar);
       window.onscroll = handleScroll;
       window.onresize = function handleOnResize() {
         navbarOpen = false;
-      }
+      };
 
       function toggleNavbar() {
         navbarOpen = !navbarOpen;
@@ -271,20 +273,29 @@
         navbarMobile.classList = navbarOpen ? "active" : "";
         navbarMobileTwo.classList = navbarOpen ? "active" : "";
         navbarToggle.classList = `icon ${navbarOpen ? "black" : ""}`;
-        navbarContainer.classList = `nav-container ${navbarOpen ? "white" : ""}`
-        navbarLIs.forEach(li => li.firstChild.classList = navbarOpen ? "scrolled" : "")
+        navbarContainer.classList = `nav-container ${
+          navbarOpen ? "white" : ""
+        }`;
+        navbarLIs.forEach(
+          (li) => (li.firstChild.classList = navbarOpen ? "scrolled" : "")
+        );
       }
       function handleScroll() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        if (
+          document.body.scrollTop > 400 ||
+          document.documentElement.scrollTop > 400
+        ) {
           navbarToggle.classList = "icon black";
-          navbarContainer.classList = 'nav-container white'
-          navbarImg.setAttribute('src', 'assets/favforme_logo.png')
-          navbarLIs.forEach(li => li.firstChild.classList = "scrolled")
+          navbarContainer.classList = "nav-container white";
+          navbarImg.setAttribute("src", "assets/favforme_logo.png");
+          navbarLIs.forEach((li) => (li.firstChild.classList = "scrolled"));
         } else {
           navbarToggle.classList = !navbarOpen && "icon";
-          navbarContainer.classList = !navbarOpen && "nav-container" || navbarContainer.classList;
-          navbarImg.setAttribute('src', 'assets/favforme_logo_white.png')
-          !navbarOpen && navbarLIs.forEach(li => li.firstChild.classList = "")
+          navbarContainer.classList =
+            (!navbarOpen && "nav-container") || navbarContainer.classList;
+          navbarImg.setAttribute("src", "assets/favforme_logo_white.png");
+          !navbarOpen &&
+            navbarLIs.forEach((li) => (li.firstChild.classList = ""));
         }
       }
     </script>
