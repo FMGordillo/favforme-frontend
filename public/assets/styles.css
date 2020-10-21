@@ -236,6 +236,11 @@ nav ul li.active {
     grid-column-start: 1;
   }
 }
+@media (max-width: 960px) {
+  #intro-1 .content {
+    margin: 0 1em;
+  }
+}
 
 #intro-2 {
   display: grid;
@@ -261,8 +266,14 @@ nav ul li.active {
 }
 @media (max-width: 960px) {
   #intro-2 {
+    margin: 6em -180px 0 -180px;
+  }
+}
+@media (max-width: 600px) {
+  #intro-2 {
+    margin: 6em -180px 0 -180px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
   }
   #intro-2 img {
     grid-row: 1;
@@ -279,6 +290,11 @@ nav ul li.active {
   color: white;
   font-family: "Abel", sans-serif;
   margin-top: 0;
+}
+@media (max-width: 960px) {
+  #landing {
+    margin: 0 1em;
+  }
 }
 
 #acciones {
@@ -340,10 +356,15 @@ nav ul li.active {
     padding: 50px;
   }
 }
+@media (max-width: 600px) {
+  #acciones {
+    margin: 0 -140px;
+  }
+}
 
 #call-actions {
   display: flex;
-  margin-top: 10em;
+  padding-top: 10em;
 }
 #call-actions section {
   display: grid;
@@ -360,9 +381,14 @@ nav ul li.active {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 600px) {
+  #call-actions {
+    margin: 0 -140px;
+  }
+}
 
 #join-us {
-  margin-top: 6em;
+  padding-top: 6em;
   text-align: center;
 }
 #join-us h2 {
@@ -378,6 +404,11 @@ nav ul li.active {
 @media (max-width: 960px) {
   #join-us {
     padding: 0 -150px;
+  }
+}
+@media (max-width: 600px) {
+  #join-us {
+    margin: 0 -140px;
   }
 }
 
@@ -426,6 +457,7 @@ nav ul li.active {
 }
 #footer-map img {
   max-width: 100%;
+  align-self: center;
   justify-self: center;
 }
 #footer-map ul {
@@ -436,9 +468,30 @@ nav ul li.active {
   flex-flow: column wrap;
 }
 #footer-map ul li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: white;
   line-height: 4em;
   text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  #footer-map {
+    padding: 50px 50px;
+    grid-template-columns: auto 70%;
+  }
+  #footer-map ul li a {
+    padding: 0 1em;
+  }
+}
+@media (max-width: 600px) {
+  #footer-map {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  #footer-map ul li a {
+    overflow: none;
+  }
 }
 
 #copyright {
