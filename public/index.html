@@ -16,17 +16,42 @@
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#">FavForMe</a></li>
-          <li><a href="#acciones">Acciones</a></li>
-          <li><a href="#">Empresas</a></li>
-          <img src="assets/favforme_logo_white.png" alt="Logo" />
-          <li><a href="#">App mobile</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
+      <div class="nav-container">
+        <button
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-toggle"
+        >
+          <span class="screen-reader-text">Menu</span>
+          <svg
+            class="icon icon-menu-toggle"
+            aria-hidden="true"
+            version="1.1"
+            xmlns="https://www.w3.org/2000/svg"
+            xmlns:xlink="https://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 100 100"
+          >
+            <g class="svg-menu-toggle">
+              <path class="line line-1" d="M5 13h90v14H5z" />
+              <path class="line line-2" d="M5 43h90v14H5z" />
+              <path class="line line-3" d="M5 73h90v14H5z" />
+            </g>
+          </svg>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#">FavForMe</a></li>
+            <li><a href="#acciones">Acciones</a></li>
+            <li><a href="#">Empresas</a></li>
+            <img src="assets/favforme_logo_white.png" alt="Logo" />
+            <li><a href="#">App mobile</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
       <section id="landing">
         <h1>Estás en<br />FavForMe</h1>
         <h2>No dejamos a nadie atrás</h2>
@@ -222,5 +247,17 @@
         <p>Favforme 2020 - All rights reserved</p>
       </section>
     </footer>
+    <script>
+      let navbarOpen = false;
+
+      const navbar = document.querySelector("#nav-toggle");
+      navbar.addEventListener("click", toggleNavbar);
+
+      function toggleNavbar() {
+        navbarOpen = !navbarOpen;
+        navbar.classList = navbarOpen ? "opened" : "";
+        navbar.setAttribute("aria-expanded", navbarOpen);
+      }
+    </script>
   </body>
 </html>
