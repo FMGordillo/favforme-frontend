@@ -260,6 +260,9 @@
 
       navbarBtn.addEventListener("click", toggleNavbar);
       window.onscroll = handleScroll;
+      window.onresize = function handleOnResize() {
+        navbarOpen = false;
+      }
 
       function toggleNavbar() {
         navbarOpen = !navbarOpen;
@@ -281,7 +284,7 @@
           navbarToggle.classList = !navbarOpen && "icon";
           navbarContainer.classList = !navbarOpen && "nav-container" || navbarContainer.classList;
           navbarImg.setAttribute('src', 'assets/favforme_logo_white.png')
-          navbarLIs.forEach(li => li.firstChild.classList = !navbarOpen && "" || "scrolled")
+          !navbarOpen && navbarLIs.forEach(li => li.firstChild.classList = "")
         }
       }
     </script>
