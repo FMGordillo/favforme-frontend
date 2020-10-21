@@ -27,6 +27,7 @@ a {
 
 header {
   margin: 0;
+  padding-top: 150px; /* For navbar */
   background-image: url(plato_de_comida.png);
   background-position: center;
   border-radius: 0 0 100% 100%/0 0 25% 25%;
@@ -72,11 +73,42 @@ button.main-btn {
 /*
  * Navbar
  */
+#nav-toggle {
+  padding: 1em;
+  display: none;
+  background: none;
+  border-radius: 0;
+  font-size: 0.875em;
+  text-transform: uppercase;
+}
+#nav-toggle:focus {
+  outline: thin dotted;
+  outline-offset: -2px;
+}
+#nav-toggle svg {
+  width: 35px;
+  height: 35px;
+  transition: all 0.25s ease-in-out;
+}
+.nav-container {
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  position: fixed;
+  transition: all 300ms;
+}
+.nav-container.white {
+  background-color: white;
+}
+.scrolled {
+  color: black;
+}
 nav {
   display: flex;
   justify-content: center;
-  margin-left: 17em;
-  margin-right: 17em;
+  max-width: 1720px;
+  margin: 0 17em;
+  transition: all 300ms ease-in;
 }
 nav ul {
   flex: 1;
@@ -103,12 +135,76 @@ nav ul img {
 nav ul li.active {
   color: var(--secondary-color);
 }
-
-@media (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   nav {
     margin-left: 7em;
     margin-right: 7em;
   }
+}
+@media (max-width: 600px) {
+  #nav-toggle {
+    display: inline-block;
+  }
+  nav {
+    margin: 0;
+    display: none;
+  }
+  nav.active {
+    display: block;
+  }
+  nav ul.active {
+    display: grid;
+    gap: 1em;
+  }
+  nav ul img {
+    display: none;
+  }
+}
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  position: relative; /* Align more nicely with capital letters */
+  top: -0.0625em;
+}
+.icon.black {
+  fill: black;
+}
+.icon-menu-toggle {
+  width: 2em;
+  height: 2em;
+  top: 0;
+}
+.svg-menu-toggle .line {
+  opacity: 1;
+  transform: rotate(0) translateY(0) translateX(0);
+  transform-origin: 1em 1em;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+.svg-menu-toggle .line-1 {
+  transform-origin: 1em 2.5em;
+}
+.svg-menu-toggle .line-3 {
+  transform-origin: 1em 4em;
+}
+#nav-toggle.opened .svg-menu-toggle .line-1 {
+  transform: rotate(45deg) translateY(0) translateX(0);
+}
+#nav-toggle.opened .svg-menu-toggle .line-2 {
+  opacity: 0;
+}
+#nav-toggle.opened .svg-menu-toggle .line-3 {
+  transform: rotate(-45deg) translateY(0em) translateX(0em);
+}
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
 /*
@@ -140,6 +236,11 @@ nav ul li.active {
     grid-column-start: 1;
   }
 }
+@media (max-width: 960px) {
+  #intro-1 .content {
+    margin: 0 1em;
+  }
+}
 
 #intro-2 {
   display: grid;
@@ -165,8 +266,14 @@ nav ul li.active {
 }
 @media (max-width: 960px) {
   #intro-2 {
+    margin: 6em -180px 0 -180px;
+  }
+}
+@media (max-width: 600px) {
+  #intro-2 {
+    margin: 6em -180px 0 -180px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
   }
   #intro-2 img {
     grid-row: 1;
@@ -183,6 +290,11 @@ nav ul li.active {
   color: white;
   font-family: "Abel", sans-serif;
   margin-top: 0;
+}
+@media (max-width: 960px) {
+  #landing {
+    margin: 0 1em;
+  }
 }
 
 #acciones {
@@ -244,10 +356,15 @@ nav ul li.active {
     padding: 50px;
   }
 }
+@media (max-width: 600px) {
+  #acciones {
+    margin: 0 -140px;
+  }
+}
 
 #call-actions {
   display: flex;
-  margin-top: 10em;
+  padding-top: 10em;
 }
 #call-actions section {
   display: grid;
@@ -264,9 +381,14 @@ nav ul li.active {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 600px) {
+  #call-actions {
+    margin: 0 -140px;
+  }
+}
 
 #join-us {
-  margin-top: 6em;
+  padding-top: 6em;
   text-align: center;
 }
 #join-us h2 {
@@ -276,7 +398,18 @@ nav ul li.active {
   margin-top: 0;
 }
 #join-us img {
+  width: 100%;
   border-radius: 25px 200px 200px 200px;
+}
+@media (max-width: 960px) {
+  #join-us {
+    padding: 0 -150px;
+  }
+}
+@media (max-width: 600px) {
+  #join-us {
+    margin: 0 -140px;
+  }
 }
 
 #marcas {
@@ -324,6 +457,7 @@ nav ul li.active {
 }
 #footer-map img {
   max-width: 100%;
+  align-self: center;
   justify-self: center;
 }
 #footer-map ul {
@@ -334,9 +468,30 @@ nav ul li.active {
   flex-flow: column wrap;
 }
 #footer-map ul li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: white;
   line-height: 4em;
   text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  #footer-map {
+    padding: 50px 50px;
+    grid-template-columns: auto 70%;
+  }
+  #footer-map ul li a {
+    padding: 0 1em;
+  }
+}
+@media (max-width: 600px) {
+  #footer-map {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  #footer-map ul li a {
+    overflow: none;
+  }
 }
 
 #copyright {
