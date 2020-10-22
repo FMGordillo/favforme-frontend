@@ -1,0 +1,19 @@
+version: v1.0
+name: Landing
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Builds correctly
+    task:
+      jobs:
+        - name: Build
+          commands:
+            - checkout
+            - sem-version node 12
+            - cache restore
+            - npm install
+            - cache store
+            - npm run build --if-present
