@@ -398,12 +398,14 @@ nav ul li.active {
   margin-top: 0;
 }
 #join-us img {
-  width: 100%;
   border-radius: 25px 200px 200px 200px;
 }
 @media (max-width: 960px) {
   #join-us {
     padding: 0 -150px;
+  }
+  #join-us img {
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
