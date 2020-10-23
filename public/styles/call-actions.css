@@ -1,0 +1,24 @@
+#call-actions {
+  display: flex;
+  padding-top: 10em;
+}
+#call-actions section {
+  display: grid;
+  text-align: center;
+}
+#call-actions section img {
+  justify-self: center;
+}
+#call-actions section button {
+  justify-self: center;
+}
+@media (max-width: 1280px) {
+  #call-actions {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  #call-actions {
+    margin: 0 -140px;
+  }
+}

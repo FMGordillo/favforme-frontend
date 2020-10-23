@@ -1,0 +1,12 @@
+#marcas {
+  margin-top: 6em;
+  text-align: center;
+}
+#marcas .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#marcas h1 {
+  text-align: center;
+}
