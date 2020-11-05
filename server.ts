@@ -19,7 +19,7 @@ app.use(function logStuff(req: Request, res: Response, next: NextFunction) {
 
 const renderProps = (title: string) => ({
   title,
-  gmCode: process.env.IS_PROD ? "G-G2F19FBMTQ" : "G-N1SWDDR210",
+  gmCode: process.env.GA_CODE,
 });
 
 /**
