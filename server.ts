@@ -17,22 +17,31 @@ app.use(function logStuff(req: Request, res: Response, next: NextFunction) {
   next();
 });
 
-const renderProps = (title: string) => ({
-  title,
-  gmCode: process.env.GA_CODE,
-});
+interface RenderWithProps {
+  title?: string;
+}
+
+const renderWithProps = (
+  res: Response,
+  pageName: string,
+  props?: RenderWithProps
+) =>
+  res.render(pageName, {
+    title: props?.title,
+    gmCode: process.env.GA_CODE,
+  });
 
 /**
  * TODO: Create this with files
  * Routes
  */
 app.get("/", function handleResponse(_, res: Response) {
-  res.render("index", renderProps("index"));
+  renderWithProps(res, "index");
 });
 app.get("/acciones", function handleResponse(_, res: Response) {
   res.redirect("/");
   // TODO: Enable the screen, when mockups are applied
-  // res.render("actions");
+  // renderWithProps(res, "actions", { title: "Acciones" });
 });
 app.get("/acciones/:actionId", function handleResponse(
   req: Request,
@@ -42,7 +51,7 @@ app.get("/acciones/:actionId", function handleResponse(
   const { actionId } = req.query;
   if (!actionId) next();
   // TODO: Enable the screen, when mockups are applied
-  // res.render(`actions/${actionId}`);
+  // renderWithProps(res, "actions/action", { title: actionId });
 });
 app.get("/privacypolicy.html", function handleResponse(_, res: Response) {
   res.sendFile(path.join(__dirname, "..", "public", "privacypolicy.html"));
