@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fundación FavForMe</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles/main.css" />
+    <%- include('header') -%>
     <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/intro-1.css" />
     <link rel="stylesheet" href="styles/intro-2.css" />
     <link rel="stylesheet" href="styles/acciones.css" />
@@ -22,21 +11,6 @@
     <link rel="stylesheet" href="styles/join-us.css" />
     <link rel="stylesheet" href="styles/marcas.css" />
     <link rel="stylesheet" href="styles/mobile.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=<%= gmCode %>"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "<%= gmCode %>");
-    </script>
   </head>
   <body>
     <div class="nav-container">

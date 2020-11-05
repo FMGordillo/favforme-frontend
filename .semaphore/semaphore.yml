@@ -16,10 +16,10 @@ blocks:
             - npm install
             - cache store
             - npm run build --if-present
-  - name: 'Block #2'
+  - name: Code formatting
     task:
       jobs:
-        - name: Check format
+        - name: Check
           commands:
             - checkout
             - sem-version node 12
