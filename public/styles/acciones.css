@@ -60,6 +60,6 @@
 }
 @media (max-width: 600px) {
   #acciones {
-    margin: 0 -140px;
+    margin: 0;
   }
 }

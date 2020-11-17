@@ -43,6 +43,11 @@ header section {
 main {
   margin: 0 180px;
 }
+@media (max-width: 600px) {
+  main {
+    margin: 0 40px;
+  }
+}
 
 h1,
 h2,
