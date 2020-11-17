@@ -5,6 +5,7 @@
 #call-actions section {
   display: grid;
   text-align: center;
+  padding: 0 2em;
 }
 #call-actions section img {
   max-width: 100%;
@@ -17,10 +18,16 @@
   #call-actions {
     flex-wrap: wrap;
   }
+  #call-action section {
+    padding: 0;
+  }
 }
 @media (max-width: 600px) {
   #call-actions {
     padding-top: 3em;
     margin: 0;
+  }
+  #call-actions section {
+    padding-bottom: 2em;
   }
 }
