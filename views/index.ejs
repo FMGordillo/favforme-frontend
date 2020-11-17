@@ -36,12 +36,12 @@
       <nav>
         <ul>
           <li><a href="#">FavForMe</a></li>
-          <li><a href="#acciones">Acciones</a></li>
-          <li><a href="#">Empresas</a></li>
+          <!-- <li><a href="#acciones">Acciones</a></li> -->
+          <li><a href="#join-us">Empresas</a></li>
           <img loading="lazy" src="assets/favforme_logo_white.png" alt="Logo" />
-          <li><a href="#">App mobile</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
+          <!-- <li><a href="#mobile">App mobile</a></li> -->
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="mailto:hello@favforme.com">Contacto</a></li>
         </ul>
       </nav>
     </div>
@@ -253,11 +253,11 @@
       <section id="footer-map">
         <img loading="lazy" src="assets/favforme_logo_white.png" alt="Logo" />
         <ul>
-          <li><a href="#intro-1">Home</a></li>
+          <li><a href="#landing">Home</a></li>
           <li><a href="#intro-1">FavForMe</a></li>
-          <li><a href="#acciones">Acciones</a></li>
+          <!-- <li><a href="#acciones">Acciones</a></li> -->
           <li><a href="#join-us">Empresas</a></li>
-          <li><a href="#mobile">App</a></li>
+          <!-- <li><a href="#mobile">App</a></li> -->
           <li>
             <a target="_blank" rel="noopener noreferrer" href="/terms.html"
               >Términos y Condiciones</a
@@ -280,8 +280,11 @@
       const navbarMobile = document.querySelector(".nav-container nav ul");
       const navbarMobileTwo = document.querySelector(".nav-container nav");
 
+      var locked = false;
+      var lastCall = false;
+
       navbarBtn.addEventListener("click", toggleNavbar);
-      window.onscroll = handleScroll;
+      window.addEventListener("scroll", handleScroll, { passive: true });
       window.onresize = function handleOnResize() {
         navbarOpen = false;
       };
@@ -301,6 +304,13 @@
         );
       }
       function handleScroll() {
+        if (locked) return;
+        lastCall = setTimeout(() => {
+          handleScroll();
+          // you do this because you want to handle the last
+          // scroll event, even if it occurred while another
+          // event was being processed.
+        }, 200);
         if (
           document.body.scrollTop > 400 ||
           document.documentElement.scrollTop > 400
@@ -308,7 +318,11 @@
           navbarToggle.classList = "icon black";
           navbarContainer.classList = "nav-container white";
           navbarImg.setAttribute("src", "assets/favforme_logo.png");
-          navbarLIs.forEach((li) => (li.firstChild.classList = "scrolled"));
+          console.log("START");
+          navbarLIs.forEach((li) => {
+            console.log(li.firstChild);
+            return (li.firstChild.classList = "scrolled");
+          });
         } else {
           navbarToggle.classList = !navbarOpen && "icon";
           navbarContainer.classList =
@@ -317,6 +331,7 @@
           !navbarOpen &&
             navbarLIs.forEach((li) => (li.firstChild.classList = ""));
         }
+        locked = false;
       }
     </script>
   </body>

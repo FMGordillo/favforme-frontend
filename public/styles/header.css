@@ -25,7 +25,7 @@
 .nav-container.white {
   background-color: white;
 }
-.scrolled {
+nav ul li .scrolled {
   color: black;
 }
 nav {
@@ -57,8 +57,9 @@ nav ul img {
   flex: 1;
   max-width: 150px;
 }
-nav ul li.active {
+nav ul li a:hover {
   color: var(--secondary-color);
+  text-decoration: underline;
 }
 @media only screen and (max-width: 1280px) {
   nav {

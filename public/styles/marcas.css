@@ -1,6 +1,7 @@
 #marcas {
   margin-top: 6em;
   text-align: center;
+  padding-bottom: 2em;
 }
 @media (max-width: 600px) {
   #marcas {
