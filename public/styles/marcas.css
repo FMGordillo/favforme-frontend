@@ -9,6 +9,10 @@
   }
 }
 
+#marcas .content a img {
+  max-width: 100%;
+}
+
 #marcas .content {
   display: flex;
   flex-wrap: wrap;

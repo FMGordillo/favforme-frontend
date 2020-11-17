@@ -4,6 +4,7 @@
   padding: 100px 200px;
   background-color: #27358c;
   grid-template-columns: 1fr 1fr;
+  min-width: 360px;
 }
 #footer-map img {
   max-width: 100%;
@@ -45,6 +46,7 @@
 }
 
 #copyright {
+  min-width: 460px;
   background-color: #1b233c;
 }
 #copyright p {

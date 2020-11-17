@@ -8,6 +8,9 @@
  */
 
 :root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
   font-size: 18px;
   font-family: "Barlow", sans-serif;
   --main-color: #5573f5;
@@ -16,6 +19,8 @@
 }
 body {
   margin: 0;
+  padding: 0;
+  width: 100vw;
 }
 p {
   line-height: 1.75em;
@@ -26,6 +31,7 @@ a {
 }
 
 header {
+  min-width: 460px;
   margin: 0;
   padding-top: 150px; /* For navbar */
   background-image: url(../assets/plato_de_comida.png);
