@@ -1,0 +1,151 @@
+#nav-toggle {
+  padding: 1em;
+  display: none;
+  background: none;
+  border-radius: 0;
+  font-size: 0.875em;
+  text-transform: uppercase;
+}
+#nav-toggle:focus {
+  outline: thin dotted;
+  outline-offset: -2px;
+}
+#nav-toggle svg {
+  width: 35px;
+  height: 35px;
+  transition: all 0.25s ease-in-out;
+}
+.nav-container {
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  position: fixed;
+  transition: all 300ms;
+}
+.nav-container.white {
+  background-color: white;
+}
+nav ul li .scrolled {
+  color: black;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  max-width: 1720px;
+  margin: 0 17em;
+  transition: all 300ms ease-in;
+}
+nav ul {
+  flex: 1;
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  flex: 1;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+}
+nav ul li a {
+  color: white;
+  cursor: pointer;
+}
+nav ul img {
+  flex: 1;
+  max-width: 150px;
+}
+nav ul li a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+@media only screen and (max-width: 1280px) {
+  nav {
+    margin-left: 7em;
+    margin-right: 7em;
+  }
+}
+@media (max-width: 600px) {
+  #nav-toggle {
+    display: inline-block;
+  }
+  nav {
+    margin: 0;
+    display: none;
+  }
+  nav.active {
+    display: block;
+  }
+  nav ul.active {
+    display: grid;
+    gap: 1em;
+  }
+  nav ul img {
+    display: none;
+  }
+}
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  position: relative; /* Align more nicely with capital letters */
+  top: -0.0625em;
+}
+.icon.black {
+  fill: black;
+}
+.icon-menu-toggle {
+  width: 2em;
+  height: 2em;
+  top: 0;
+}
+.svg-menu-toggle .line {
+  opacity: 1;
+  transform: rotate(0) translateY(0) translateX(0);
+  transform-origin: 1em 1em;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+.svg-menu-toggle .line-1 {
+  transform-origin: 1em 2.5em;
+}
+.svg-menu-toggle .line-3 {
+  transform-origin: 1em 4em;
+}
+#nav-toggle.opened .svg-menu-toggle .line-1 {
+  transform: rotate(45deg) translateY(0) translateX(0);
+}
+#nav-toggle.opened .svg-menu-toggle .line-2 {
+  opacity: 0;
+}
+#nav-toggle.opened .svg-menu-toggle .line-3 {
+  transform: rotate(-45deg) translateY(0em) translateX(0em);
+}
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+#landing h1 {
+  color: white;
+  margin: 0;
+  font-size: 3.5em;
+  font-weight: 700;
+}
+#landing h2 {
+  color: white;
+  font-family: "Abel", sans-serif;
+  margin-top: 0;
+}
+@media (max-width: 960px) {
+  #landing {
+    margin: 0 1em;
+  }
+}
