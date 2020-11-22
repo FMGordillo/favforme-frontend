@@ -1,15 +1,24 @@
 import styled from "styled-components";
 
+/**
+ * h1
+ */
 export const Title = styled.h1`
   font-size: 2em;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
+/**
+ * p
+ */
 export const Text = styled.p`
   line-height: 1.75em;
 `;
 
+/**
+ * button
+ */
 export const Button = styled.button`
   border: none;
   color: #fff;

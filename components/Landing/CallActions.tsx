@@ -9,7 +9,7 @@ const Container = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
-const Section = styled.div`
+const Section = styled.section`
   text-align: center;
   justify-self: center;
 `;
