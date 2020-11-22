@@ -1,9 +1,8 @@
 .env
 .envrc
 
-# asdf
-.tool-versions
+# Next
+.next
 
 # Node
-lib
 node_modules
