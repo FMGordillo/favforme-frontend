@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Button, Text, Title } from "./styles";
 
@@ -14,7 +15,7 @@ const Section = styled.section`
   justify-self: center;
 `;
 
-const CallActions = () => {
+const CallActions: FunctionComponent = () => {
   return (
     <Container>
       <Section>

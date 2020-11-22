@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Text, Title } from "./styles";
 
@@ -29,7 +30,7 @@ const ODSLogo = styled.div`
   justify-self: center;
 `;
 
-const Header = () => (
+const Header: FunctionComponent = () => (
   <Container>
     <LeftHandImage
       width={350}
