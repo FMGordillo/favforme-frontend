@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { Title, Text } from "./styles";
 
-const Container = styled.div`
+const Container = styled.section`
   display: grid;
   margin: 0 12em;
   column-gap: 3em;

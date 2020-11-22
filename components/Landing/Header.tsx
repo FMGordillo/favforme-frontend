@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Text, Title } from "./styles";
 
-const Container = styled.div`
+const Container = styled.section`
   display: grid;
   grid-template-areas:
     "left-image text right-image"
