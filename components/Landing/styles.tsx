@@ -1,12 +1,11 @@
-import styled from "styled-components";
-
+import styled from "lib/styled";
 /**
  * h1
  */
 export const Title = styled.h1`
   font-size: 2em;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.color.primary};
 `;
 
 /**
@@ -32,5 +31,5 @@ export const Button = styled.button<ButtonI>`
   padding: 1em 1.25em;
   border-radius: 3em;
   font-family: abel, sans-serif;
-  background-color: ${({ theme, color }) => theme.colors[color || "primary"]};
+  background-color: ${({ theme, color }) => theme.color[color || "primary"]};
 `;

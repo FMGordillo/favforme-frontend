@@ -1,8 +1,7 @@
+import styled from "lib/styled";
 import Image from "next/image";
 import { FunctionComponent } from "react";
-import styled from "styled-components";
 import { Button, Title } from "./styles";
-
 const Container = styled.section`
   display: flex;
   flex-direction: column;

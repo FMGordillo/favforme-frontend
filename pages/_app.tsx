@@ -1,6 +1,7 @@
+import * as gtag from "lib/gtag";
+import { theme } from "lib/styled";
 import Router from "next/router";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import * as gtag from "../lib/gtag";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -15,13 +16,6 @@ const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
   }
 `;
-
-const theme = {
-  colors: {
-    primary: "#5573f5",
-    secondary: "#f38d9f",
-  },
-};
 
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
