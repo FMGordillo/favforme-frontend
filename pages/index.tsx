@@ -1,5 +1,5 @@
 import { LayoutComponent as Container } from "components";
-import { Business, CallActions, Header, IntroTwo } from "components/Landing";
+import { Business, CallActions, IntroOne, IntroTwo } from "components/Landing";
 import styled from "lib/styled";
 import Link from "next/link";
 const Divider = styled.div`
@@ -8,7 +8,7 @@ const Divider = styled.div`
 
 const IndexPage = () => (
   <Container>
-    <Header />
+    <IntroOne />
     <Divider />
     <IntroTwo />
     <Divider />

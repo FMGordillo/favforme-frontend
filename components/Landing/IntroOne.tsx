@@ -49,7 +49,7 @@ const ODSLogo = styled.div`
   justify-self: center;
 `;
 
-const Header: FunctionComponent = () => (
+const IntroOne: FunctionComponent = () => (
   <Container>
     <LeftHandImage
       className="hand"
@@ -85,4 +85,4 @@ const Header: FunctionComponent = () => (
   </Container>
 );
 
-export { Header };
+export { IntroOne };
