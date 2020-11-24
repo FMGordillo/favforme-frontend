@@ -4,14 +4,19 @@ import { FunctionComponent } from "react";
 import { Button, Text, Title } from "./styles";
 const Container = styled.section`
   display: grid;
-  grid-gap: 3em;
-  margin: 0 6em;
+  grid-gap: ${({ theme }) => theme.spacing(1)}em;
+  margin: 0 ${({ theme }) => theme.spacing(1)}em;
   grid-template-columns: 1fr 1fr 1fr;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Section = styled.section`
   text-align: center;
-  justify-self: center;
+  display: grid;
+  justify-items: center;
 `;
 
 const CallActions: FunctionComponent = () => {
