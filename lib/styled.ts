@@ -23,7 +23,7 @@ export const theme = {
     primary: "#5573f5",
     secondary: "#f38d9f",
   },
-  spacing: (digit: Spacing) => `${digit * 4}px`,
+  spacing: (digit: Spacing) => `${digit * 4}`,
   breakpoints: {
     // "Mobile first"
     down: (key: Breakpoint) =>
