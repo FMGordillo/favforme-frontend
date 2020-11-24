@@ -1,12 +1,24 @@
-import styled from "lib/styled";
 import Image from "next/image";
 import { FunctionComponent } from "react";
+import styled from "styled-components";
 import { Text, Title } from "./styles";
+
 const Container = styled.section`
   display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas:
     "left-image text right-image"
-    ". ods .";
+    "ods ods ods";
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-areas:
+      "text text text"
+      "ods ods ods";
+    & > :first-child {
+      display: none !important;
+    }
+    & > :nth-child(3) {
+      display: none !important;
+    }
 `;
 
 const LeftHandImage = styled(Image)`
@@ -20,8 +32,16 @@ const TextContainer = styled.div`
   grid-area: text;
   align-self: center;
   text-align: center;
-  max-width: 100%;
-  margin: 0 6em;
+  margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  & > p {
+    text-align: justify;
+  }
+  ${({ theme }) => theme.breakpoints.down("lg")} {
+    margin: 0;
+  }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  }
 `;
 
 const ODSLogo = styled.div`
@@ -32,8 +52,10 @@ const ODSLogo = styled.div`
 const Header: FunctionComponent = () => (
   <Container>
     <LeftHandImage
+      className="hand"
       width={350}
       height={330}
+      layout="fixed"
       src="/images/mano-1.png"
       alt="Mano izquierda"
     />
@@ -50,8 +72,10 @@ const Header: FunctionComponent = () => (
       </Text>
     </TextContainer>
     <RightHandImage
-      width={350}
+      className="hand"
+      width={340}
       height={330}
+      layout="fixed"
       src="/images/mano-2.png"
       alt="Mano derecha"
     />
