@@ -12,6 +12,7 @@ const MapSection = styled.section`
     flex: 1;
   }
   & > :first-child {
+    flex: 2;
     text-align: center;
   }
   ${({ theme }) => theme.breakpoints.down("md")} {
