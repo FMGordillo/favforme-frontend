@@ -1,59 +1,33 @@
-import styled from "lib/styled";
-import Image from "next/image";
 import { FunctionComponent } from "react";
+import styled from "styled-components";
 
-const Nav = styled.nav`
-  background: green;
+const HeaderContainer = styled.header`
+  max-height: 731px;
 `;
-const Ul = styled.ul`
-  display: flex;
-  justify-content: center;
-  list-style: none;
+const PlatoDeComidaImg = styled.img`
+  height: 731px !important;
+  border-radius: 0 0 100% 100%/0 0 25% 25%;
 `;
-
-const NavBar: FunctionComponent = ({ children }) => (
-  <Nav>
-    <Ul>{children}</Ul>
-  </Nav>
-);
-
-const Item = styled.li`
-  flex: 1;
-  text-align: center;
-  & > a > div {
-    max-width: 150px;
-  }
+const TextContainer = styled.div``;
+const Title = styled.h1`
+  font-size: 3.5em;
 `;
-const Link = styled.a`
-  color: white;
-  text-decoration: none;
-  &:hover {
-    color: ${({ theme }) => theme.color.secondary};
-    text-decoration: underline;
-  }
+const Subtitle = styled.h2`
+  font-family: abel, sans-serif;
 `;
 
-const NavItem: FunctionComponent<{ href?: string }> = ({
-  children,
-  href = "#",
-}) => (
-  <Item>
-    <Link href={href}>{children}</Link>
-  </Item>
-);
-
-const Header: FunctionComponent = () => (
-  <div>
-    <NavBar>
-      <NavItem>FavForMe</NavItem>
-      <NavItem>Empresas</NavItem>
-      <NavItem>
-        <Image src="/images/favforme_logo_white.png" width={245} height={192} />
-      </NavItem>
-      <NavItem>Marcas</NavItem>
-      <NavItem>Contacto</NavItem>
-    </NavBar>
-  </div>
-);
+const Header: FunctionComponent = () => {
+  return (
+    <>
+      <HeaderContainer>
+        <PlatoDeComidaImg src="/images/plato_de_comida.png" />
+        <TextContainer>
+          <Title>Estás en FavForMe</Title>
+          <Subtitle>No dejamos a nadie atrás</Subtitle>
+        </TextContainer>
+      </HeaderContainer>
+    </>
+  );
+};
 
 export { Header };
