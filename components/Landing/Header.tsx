@@ -5,7 +5,6 @@ const HeaderContainer = styled.header`
   max-height: 731px;
 `;
 const PlatoDeComidaImg = styled.img`
-  height: 731px !important;
   border-radius: 0 0 100% 100%/0 0 25% 25%;
 `;
 const TextContainer = styled.div``;
@@ -20,7 +19,7 @@ const Header: FunctionComponent = () => {
   return (
     <>
       <HeaderContainer>
-        <PlatoDeComidaImg src="/images/plato_de_comida.png" />
+        {/* <PlatoDeComidaImg src="/images/plato_de_comida.png" /> */}
         <TextContainer>
           <Title>Estás en FavForMe</Title>
           <Subtitle>No dejamos a nadie atrás</Subtitle>

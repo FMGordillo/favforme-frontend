@@ -6,6 +6,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: ${({ theme }) => theme.spacing(1)}em;
 `;
 
 const MarginlessTitle = styled(Title)`

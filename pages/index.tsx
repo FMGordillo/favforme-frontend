@@ -2,18 +2,19 @@ import { LayoutComponent as Container } from "components";
 import {
   Business,
   CallActions,
+  Footer,
   Header,
   IntroOne,
   IntroTwo,
   NavBar,
 } from "components/Landing";
-import Link from "next/link";
+import { FunctionComponent } from "react";
 import styled from "styled-components";
 const Divider = styled.div`
   margin-bottom: 6em;
 `;
 
-const IndexPage = () => (
+const IndexPage: FunctionComponent = () => (
   <Container>
     <NavBar />
     <Header />
@@ -25,7 +26,8 @@ const IndexPage = () => (
     <CallActions />
     <Divider />
     <Business />
-    <Link href="/acciones">Acciones</Link>
+    <Divider />
+    <Footer />
   </Container>
 );
 
