@@ -52,7 +52,6 @@ const ODSLogo = styled.div`
 const IntroOne: FunctionComponent = () => (
   <Container>
     <LeftHandImage
-      className="hand"
       width={350}
       height={330}
       layout="fixed"
@@ -72,7 +71,6 @@ const IntroOne: FunctionComponent = () => (
       </Text>
     </TextContainer>
     <RightHandImage
-      className="hand"
       width={340}
       height={330}
       layout="fixed"

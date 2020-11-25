@@ -5,15 +5,17 @@ import {
   Header,
   IntroOne,
   IntroTwo,
+  NavBar,
 } from "components/Landing";
-import styled from "lib/styled";
 import Link from "next/link";
+import styled from "styled-components";
 const Divider = styled.div`
   margin-bottom: 6em;
 `;
 
 const IndexPage = () => (
   <Container>
+    <NavBar />
     <Header />
     <Divider />
     <IntroOne />

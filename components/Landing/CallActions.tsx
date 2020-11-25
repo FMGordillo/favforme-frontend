@@ -1,15 +1,16 @@
-import styled from "lib/styled";
 import Image from "next/image";
 import { FunctionComponent } from "react";
+import styled from "styled-components";
 import { Button, Text, Title } from "./styles";
 const Container = styled.section`
   display: grid;
   grid-gap: ${({ theme }) => theme.spacing(1)}em;
-  margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  margin: 0 ${({ theme }) => theme.spacing(2)}em;
   grid-template-columns: 1fr 1fr 1fr;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
+    margin: 0 ${({ theme }) => theme.spacing(1)}em;
   }
 `;
 
