@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Button, Text, Title } from "./styles";
+
 const Container = styled.section`
   display: grid;
   grid-gap: ${({ theme }) => theme.spacing(1)}em;
@@ -10,7 +11,13 @@ const Container = styled.section`
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
-    margin: 0 ${({ theme }) => theme.spacing(1)}em;
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
+  }
+`;
+
+const StyledText = styled(Text)`
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    text-align: justify;
   }
 `;
 
@@ -31,11 +38,11 @@ const CallActions: FunctionComponent = () => {
           height={250}
         />
         <Title>DONDE PODÉS AYUDAR</Title>
-        <Text>
+        <StyledText>
           Te mostramos todos los proyectos activos y vos elegis las acciones que
           más te identifiquen. Tu aporte lo realizás de forma simple y clara, la
           oportunidad es ahora.
-        </Text>
+        </StyledText>
         <Button>Ver acciones</Button>
       </Section>
       <Section>
@@ -46,11 +53,11 @@ const CallActions: FunctionComponent = () => {
           height={250}
         />
         <Title>INVERTÍ EN CONFIANZA</Title>
-        <Text>
+        <StyledText>
           Los recursos R.S.E. que destines serán tan transparentes como
           nosotros. Te enviaremos informes del impacto generado. Ayudá con total
           tranquilidad.
-        </Text>
+        </StyledText>
         <Button>Favorecer</Button>
       </Section>
       <Section>
@@ -61,11 +68,11 @@ const CallActions: FunctionComponent = () => {
           height={250}
         />
         <Title>SOMOS AMIGABLES</Title>
-        <Text>
+        <StyledText>
           Contamos con un equipo dedicado para acompañarte en el proceso y
           atender cualquier inquietud que tengas acerca de nuestro desarrollo,
           contactanos.
-        </Text>
+        </StyledText>
         <Button>Contactar</Button>
       </Section>
     </Container>

@@ -29,7 +29,7 @@ const Container = styled.section`
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0 ${({ theme }) => theme.spacing(1)}em;
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   }
 `;
 

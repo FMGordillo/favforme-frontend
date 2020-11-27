@@ -1,3 +1,4 @@
+export * from "./Brands";
 export * from "./Business";
 export * from "./CallActions";
 export * from "./Footer";

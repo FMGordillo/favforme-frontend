@@ -36,17 +36,18 @@ const TextContainer = styled.div`
   & > p {
     text-align: justify;
   }
-  ${({ theme }) => theme.breakpoints.down("lg")} {
-    margin: 0;
-  }
   ${({ theme }) => theme.breakpoints.down("md")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   }
 `;
 
 const ODSLogo = styled.div`
   grid-area: ods;
   justify-self: center;
+  margin: 0 ${({ theme }) => theme.spacing(0.25)}em;
 `;
 
 const IntroOne: FunctionComponent = () => (
