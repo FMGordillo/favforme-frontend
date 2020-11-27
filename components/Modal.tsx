@@ -17,7 +17,7 @@ interface ModalProps {
 type FadeType = "in" | "out";
 
 const ModalContainer = styled.div<{ open?: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

@@ -32,21 +32,28 @@ const MapLi = styled.li`
 `;
 const Link = styled.a`
   color: white;
+  cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: all ease-in-out 300ms;
   &:hover {
-    text-decoration: underline;
+    border-color: white;
   }
 `;
 
-const MapItem: FunctionComponent<{ href?: string }> = ({
+const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
   children,
-  href = "#",
-}) => (
-  <MapLi>
-    <Link href={href}>{children}</Link>
-  </MapLi>
-);
+  onClick,
+  href,
+}) => {
+  const props = Object.assign({}, href && { href }, onClick && { onClick });
+  return (
+    <MapLi {...props.onClick}>
+      <Link {...props}>{children}</Link>
+    </MapLi>
+  );
+};
 
 const Copyright = styled.section`
   background-color: #1b233c;
@@ -58,16 +65,20 @@ const Copyright = styled.section`
   }
 `;
 
-const Footer: FunctionComponent = () => (
+interface FooterProps {
+  toggleModal: () => void;
+}
+
+const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
   <>
     <MapSection>
       <div>
         <Image src="/images/favforme_logo_white.png" width={245} height={192} />
       </div>
       <MapUl>
-        <MapItem>Home</MapItem>
-        <MapItem>FavForMe</MapItem>
-        <MapItem>Empresas</MapItem>
+        <MapItem href="#">Home</MapItem>
+        <MapItem href="#partners">Partners</MapItem>
+        <MapItem onClick={toggleModal}>Contacto</MapItem>
         <MapItem>Términos y Condiciones</MapItem>
       </MapUl>
     </MapSection>

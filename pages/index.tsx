@@ -41,8 +41,23 @@ const IndexPage: FunctionComponent = () => {
             +5491123993440
           </a>
         </p>
-        <p>Llamar: +5491123993440</p>
-        <p>Correo: hello@favforme.com</p>
+        <p>
+          Llamar:{" "}
+          <a target="_blank" href="tel:+5491123993440">
+            +5491123993440
+          </a>
+        </p>
+        <p>
+          Correo:{" "}
+          <a
+            target="_blank"
+            href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
+              "Contacto"
+            )}`}
+          >
+            hello@favforme.com
+          </a>
+        </p>
       </Modal>
       <NavBar toggleModal={() => setOpen(!open)} />
       <Header />
@@ -57,7 +72,7 @@ const IndexPage: FunctionComponent = () => {
       <Divider />
       <Brands />
       <Divider />
-      <Footer />
+      <Footer toggleModal={() => setOpen(!open)} />
     </Container>
   );
 };

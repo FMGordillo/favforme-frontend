@@ -40,7 +40,7 @@ const Ul = styled.ul<{ open?: boolean }>`
   justify-content: center;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     transform: translateY(-100%);
-    background: black;
+    background: ${({ theme }) => theme.color.primary.dark};
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
@@ -83,11 +83,12 @@ const Item = styled.li<{ image?: boolean }>`
 const Link = styled.a`
   color: white;
   text-decoration: none;
-  transition: all 300ms;
   cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 300ms;
   &:hover {
     color: ${({ theme }) => theme.color.secondary.main};
-    text-decoration: underline;
+    border-color: ${({ theme }) => theme.color.secondary.main};
   }
 `;
 
