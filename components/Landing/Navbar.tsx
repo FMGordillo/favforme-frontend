@@ -17,14 +17,54 @@ const Nav = styled.nav<ScrolledI>`
   transition: all 300ms;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
+    /* TODO */
   }
 `;
-const Ul = styled.ul`
+const MobileNavigator = styled.div<{ open?: boolean }>`
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  height: ${({ theme }) => theme.spacing(1)}em;
+  width: 100vw;
+  padding: 1em;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: block;
+  }
+`;
+
+const Ul = styled.ul<{ open?: boolean }>`
   display: flex;
   list-style: none;
-  justify-content: center; background
+  padding: 0;
+  justify-content: center;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    transform: translateY(-100%);
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0;
+    transition: transform 250ms ease-in;
     & > :nth-child(3) {
       display: none;
+    }
+
+    ${({ open }) => open && "transform: translateY(0%);"}
+
+    position: fixed;
+    width: 100vw;
+
+    & > :nth-child(3) {
+      display: none;
+    }
+
+    & > * {
+      margin: 1em;
+    }
+
+    & > :last-child {
+      margin-bottom: 2em;
     }
   }
 `;
@@ -62,8 +102,13 @@ const NavItem: FunctionComponent<{ href?: string; image?: boolean }> = ({
 const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
   isScrolled = 350,
 }) => {
+  const [open, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isGoingDown, setIsGoingDown] = useState(true);
+
+  const handleMobileOpen = () => {
+    setOpen(!open);
+  };
 
   // const handleScroll = () => {
   //   const position = window.pageYOffset;
@@ -89,7 +134,16 @@ const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
 
   return (
     <Nav isScrolled={scrollPosition > isScrolled} scrollingDown={isGoingDown}>
-      <Ul>
+      <MobileNavigator open={open}>
+        <Image
+          onClick={handleMobileOpen}
+          layout="fixed"
+          width={60}
+          height={60}
+          src="/images/hamburger.png"
+        />
+      </MobileNavigator>
+      <Ul open={open}>
         <NavItem>FavForMe</NavItem>
         <NavItem href="#partners">Partners</NavItem>
         <NavItem image>
@@ -99,7 +153,7 @@ const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
             height={192}
           />
         </NavItem>
-        <NavItem href="#marcas">Marcas</NavItem>
+        <NavItem href="#brands">Marcas</NavItem>
         <NavItem>Contacto</NavItem>
       </Ul>
     </Nav>
