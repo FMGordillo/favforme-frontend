@@ -1,4 +1,4 @@
-import { LayoutComponent as Container } from "components";
+import { LayoutComponent as Container, Modal } from "components";
 import {
   Brands,
   Business,
@@ -9,30 +9,57 @@ import {
   IntroTwo,
   NavBar,
 } from "components/Landing";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import styled from "styled-components";
 
 const Divider = styled.div`
   margin-bottom: 6em;
 `;
 
-const IndexPage: FunctionComponent = () => (
-  <Container>
-    <NavBar />
-    <Header />
-    <Divider />
-    <IntroOne />
-    <Divider />
-    <IntroTwo />
-    <Divider />
-    <CallActions />
-    <Divider />
-    <Business />
-    <Divider />
-    <Brands />
-    <Divider />
-    <Footer />
-  </Container>
-);
+const IndexPage: FunctionComponent = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Container>
+      {/* TODO: No la pense bien, y no deberia poner props aca */}
+      <Modal
+        title="Contacto"
+        onClose={() => {
+          console.log("To be implemented");
+          setOpen(false);
+        }}
+        open={open}
+      >
+        <p>
+          WhatsApp:{" "}
+          <a
+            target="_blank"
+            href={`https://wa.me/5491123993440?text=${encodeURIComponent(
+              "Vengo del Landing!"
+            )}`}
+          >
+            +5491123993440
+          </a>
+        </p>
+        <p>Llamar: +5491123993440</p>
+        <p>Correo: hello@favforme.com</p>
+      </Modal>
+      <NavBar toggleModal={() => setOpen(!open)} />
+      <Header />
+      <Divider />
+      <IntroOne />
+      <Divider />
+      <IntroTwo />
+      <Divider />
+      <CallActions />
+      <Divider />
+      <Business />
+      <Divider />
+      <Brands />
+      <Divider />
+      <Footer />
+    </Container>
+  );
+};
 
 export default IndexPage;

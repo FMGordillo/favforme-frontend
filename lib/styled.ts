@@ -20,8 +20,13 @@ const calculateBreakpoint = (key: Breakpoint) => {
 
 export const theme = {
   color: {
-    primary: "#5573f5",
-    secondary: "#f38d9f",
+    primary: {
+      main: "#5573f5",
+      dark: "#1b233c",
+    },
+    secondary: {
+      main: "#f38d9f",
+    },
   },
   spacing: (digit: Spacing) => `${digit * 4}`,
   breakpoints: {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { FunctionComponent, useState } from "react";
+import React, { cloneElement, FunctionComponent, useState } from "react";
 import styled from "styled-components";
 
 interface ScrolledI {
@@ -84,23 +84,38 @@ const Link = styled.a`
   color: white;
   text-decoration: none;
   transition: all 300ms;
+  cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.color.secondary.main};
     text-decoration: underline;
   }
 `;
 
-const NavItem: FunctionComponent<{ href?: string; image?: boolean }> = ({
-  children,
-  href = "#",
-}) => (
-  <Item image>
-    <Link href={href}>{children}</Link>
-  </Item>
-);
+interface NavItemProps {
+  href?: string;
+  image?: boolean;
+  onClick?: () => void;
+}
 
-const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
+const NavItem: FunctionComponent<NavItemProps> = ({
+  children,
+  onClick,
+  href,
+}) => {
+  const props = Object.assign({}, href && { href }, onClick && { onClick });
+  return (
+    <Item image>{cloneElement(<Link />, { onClick, ...props, children })}</Item>
+  );
+};
+
+interface NavBarProps {
+  isScrolled?: boolean;
+  toggleModal?: () => void;
+}
+
+const NavBar: FunctionComponent<NavBarProps> = ({
   isScrolled = 350,
+  toggleModal,
 }) => {
   const [open, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -154,7 +169,7 @@ const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
           />
         </NavItem>
         <NavItem href="#brands">Marcas</NavItem>
-        <NavItem>Contacto</NavItem>
+        <NavItem onClick={toggleModal}>Contacto</NavItem>
       </Ul>
     </Nav>
   );
