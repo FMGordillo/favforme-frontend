@@ -1,33 +1,28 @@
 import Image from "next/image";
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import styled from "styled-components";
 
 interface ScrolledI {
   isScrolled?: boolean;
+  scrollingDown?: boolean;
 }
 
 const Nav = styled.nav<ScrolledI>`
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: 0;
   right: 0;
   z-index: 9;
   max-height: 250px; /* From the Logo */
   border-radius: 0 0 100% 100%/0 0 25% 25%;
-  background: ${({ isScrolled }) => (isScrolled ? "black" : "transparent")};
-  transition: background 300ms;
+  transition: all 300ms;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
   }
 `;
 const Ul = styled.ul`
   display: flex;
-  justify-content: center;
   list-style: none;
-  padding: 0;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    flex-direction: column;
-    align-items: center;
+  justify-content: center; background
     & > :nth-child(3) {
       display: none;
     }
@@ -48,6 +43,7 @@ const Item = styled.li<{ image?: boolean }>`
 const Link = styled.a`
   color: white;
   text-decoration: none;
+  transition: all 300ms;
   &:hover {
     color: ${({ theme }) => theme.color.secondary};
     text-decoration: underline;
@@ -67,27 +63,35 @@ const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
   isScrolled = 350,
 }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
+  const [isGoingDown, setIsGoingDown] = useState(true);
 
-  useEffect(() => {
-    if (window) {
-      window.addEventListener("scroll", handleScroll, { passive: true });
-    }
-    return () => {
-      if (window) {
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   if (position > scrollPosition) {
+  //     // Going down!
+  //     setIsGoingDown(true);
+  //   } else {
+  //     setIsGoingDown(false);
+  //   }
+  //   setScrollPosition(position);
+  // };
+
+  // useEffect(() => {
+  //   if (window) {
+  //     window.addEventListener("scroll", handleScroll, { passive: true });
+  //   }
+  //   return () => {
+  //     if (window) {
+  //       window.removeEventListener("scroll", handleScroll);
+  //     }
+  //   };
+  // }, []);
 
   return (
-    <Nav isScrolled={scrollPosition > isScrolled}>
+    <Nav isScrolled={scrollPosition > isScrolled} scrollingDown={isGoingDown}>
       <Ul>
         <NavItem>FavForMe</NavItem>
-        <NavItem>Empresas</NavItem>
+        <NavItem href="#partners">Partners</NavItem>
         <NavItem image>
           <Image
             src="/images/favforme_logo_white.png"
@@ -95,7 +99,7 @@ const NavBar: FunctionComponent<{ isScrolled?: boolean }> = ({
             height={192}
           />
         </NavItem>
-        <NavItem>Marcas</NavItem>
+        <NavItem href="#marcas">Marcas</NavItem>
         <NavItem>Contacto</NavItem>
       </Ul>
     </Nav>
