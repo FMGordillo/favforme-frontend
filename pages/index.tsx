@@ -1,5 +1,6 @@
 import { LayoutComponent as Container } from "components";
 import {
+  Brands,
   Business,
   CallActions,
   Footer,
@@ -10,6 +11,7 @@ import {
 } from "components/Landing";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
+
 const Divider = styled.div`
   margin-bottom: 6em;
 `;
@@ -26,6 +28,8 @@ const IndexPage: FunctionComponent = () => (
     <CallActions />
     <Divider />
     <Business />
+    <Divider />
+    <Brands />
     <Divider />
     <Footer />
   </Container>
