@@ -33,7 +33,8 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const { isProduction } = this.props;
+    //const { isProduction } = this.props;
+    const isProduction = process.env.NODE_ENV === "production";
 
     return (
       <Html>
