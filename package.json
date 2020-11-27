@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "format": "prettier --write **/*.ts public/**/*.html public/**/*.css",
     "check-format": "prettier --check **/*.ts public/**/*.html public/**/*.css"
   },
