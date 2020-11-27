@@ -55,6 +55,7 @@ const IntroOne: FunctionComponent = () => (
     <LeftHandImage
       width={350}
       height={330}
+      // @ts-ignore
       layout="fixed"
       src="/images/mano-1.png"
       alt="Mano izquierda"
@@ -74,6 +75,7 @@ const IntroOne: FunctionComponent = () => (
     <RightHandImage
       width={340}
       height={330}
+      // @ts-ignore
       layout="fixed"
       src="/images/mano-2.png"
       alt="Mano derecha"
