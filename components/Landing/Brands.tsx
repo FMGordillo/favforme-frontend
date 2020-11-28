@@ -28,10 +28,26 @@ const Brands: FunctionComponent = () => (
   <Container id="brands">
     <StyledTitle>Marcas que nos apoyan</StyledTitle>
     <ImagesContainer>
-      <Image src="/images/marcas_01.png" width={186} height={186} />
-      <Image src="/images/marcas_02_cut.png" width={126} height={186} />
-      <Image src="/images/marcas_03.png" width={186} height={186} />
-      <Image src="/images/marcas_04_cut_new.png" width={176} height={146} />
+      <a
+        target="_blank"
+        href="https://trilogylab.com/"
+        rel="noreferrer noopener"
+      >
+        <Image src="/images/marcas_01.png" width={186} height={186} />
+      </a>
+      <a target="_blank" href="https://fi.co/" rel="noreferrer noopener">
+        <Image src="/images/marcas_02_cut.png" width={126} height={186} />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.blahbox.net/"
+        rel="noreferrer noopener"
+      >
+        <Image src="/images/marcas_03.png" width={186} height={186} />
+      </a>
+      <a target="_blank" href="https://gorather.com/" rel="noreferrer noopener">
+        <Image src="/images/marcas_04_cut_new.png" width={176} height={146} />
+      </a>
     </ImagesContainer>
   </Container>
 );

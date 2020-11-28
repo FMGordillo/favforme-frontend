@@ -79,7 +79,8 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
         <MapItem href="#">Home</MapItem>
         <MapItem href="#partners">Partners</MapItem>
         <MapItem onClick={toggleModal}>Contacto</MapItem>
-        <MapItem>Términos y Condiciones</MapItem>
+        <MapItem href="/privacy">Política de Privacidad</MapItem>
+        <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem>
       </MapUl>
     </MapSection>
     <Copyright>
