@@ -36,4 +36,9 @@ export const Button = styled.button<ButtonI>`
   font-family: abel, sans-serif;
   background-color: ${({ theme, color, variant }) =>
     theme.color[color || "primary"][variant || "main"]};
+
+  & > a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;

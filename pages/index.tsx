@@ -9,27 +9,21 @@ import {
   IntroTwo,
   NavBar,
 } from "components/Landing";
-import { FunctionComponent, useState } from "react";
+import { NextPage } from "next";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Divider = styled.div`
   margin-bottom: 6em;
 `;
 
-const IndexPage: FunctionComponent = () => {
+const IndexPage: NextPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <Container>
       {/* TODO: No la pense bien, y no deberia poner props aca */}
-      <Modal
-        title="Contacto"
-        onClose={() => {
-          console.log("To be implemented");
-          setOpen(false);
-        }}
-        open={open}
-      >
+      <Modal title="Contacto" onClose={() => setOpen(false)} open={open}>
         <p>
           WhatsApp:{" "}
           <a
@@ -66,7 +60,7 @@ const IndexPage: FunctionComponent = () => {
       <Divider />
       <IntroTwo />
       <Divider />
-      <CallActions />
+      <CallActions toggleModal={() => setOpen(!open)} />
       <Divider />
       <Business />
       <Divider />

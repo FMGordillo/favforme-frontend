@@ -43,7 +43,13 @@ const Business: FunctionComponent = () => {
         Hacé tu aporte, dando futuro
         <br />a quienes más lo necesitan
       </StyledText>
-      <Button color="secondary">Sumame como partner</Button>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        href="https://drive.google.com/drive/folders/19uDWgV5pV9ktBCOavcf-dwg5m8qXLYHM?usp=sharing"
+      >
+        <Button color="secondary">Ver más información</Button>
+      </a>
     </Container>
   );
 };

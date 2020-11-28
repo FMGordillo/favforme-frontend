@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Button, Text, Title } from "./styles";
@@ -30,7 +31,11 @@ const Section = styled.section`
   justify-items: center;
 `;
 
-const CallActions: FunctionComponent = () => {
+interface CallActionsProps {
+  toggleModal?: () => void;
+}
+
+const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
   return (
     <Container>
       <Section>
@@ -46,7 +51,9 @@ const CallActions: FunctionComponent = () => {
           más te identifiquen. Tu aporte lo realizás de forma simple y clara, la
           oportunidad es ahora.
         </StyledText>
-        <Button>Ver acciones</Button>
+        <Link href="/acciones">
+          <Button>Ver acciones</Button>
+        </Link>
       </Section>
       <Section>
         <Image
@@ -76,7 +83,7 @@ const CallActions: FunctionComponent = () => {
           atender cualquier inquietud que tengas acerca de nuestro desarrollo,
           contactanos.
         </StyledText>
-        <Button>Contactar</Button>
+        <Button onClick={toggleModal}>Contactar</Button>
       </Section>
     </Container>
   );
