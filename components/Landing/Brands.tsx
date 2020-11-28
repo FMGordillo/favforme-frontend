@@ -3,14 +3,18 @@ import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Title } from "./styles";
 
-const Container = styled.section``;
+const Container = styled.section`
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
+  }
+`;
 
 const ImagesContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  max-height: 200px;
   & > * {
+    margin: ${({ theme }) => theme.spacing(0.1)}em !important;
+    max-width: 100%;
     align-self: center;
     text-align: center;
   }

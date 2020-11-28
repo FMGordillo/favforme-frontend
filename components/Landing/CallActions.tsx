@@ -11,6 +11,9 @@ const Container = styled.section`
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
+    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
     margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   }
 `;
