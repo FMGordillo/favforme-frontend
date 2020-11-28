@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Landing page for FavForMe",
   "main": "index.js",
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "scripts": {
     "dev": "next",
     "build": "next build",
