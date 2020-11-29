@@ -1,16 +1,13 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Button, Text, Title } from "./styles";
+import { Button, Container, Text, Title } from "./styles";
 
-const Container = styled.section`
+const StyledContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: ${({ theme }) => theme.spacing(1)}em;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
-  }
 `;
 
 const MarginlessTitle = styled(Title)`
@@ -30,7 +27,7 @@ const StyledText = styled(Text)`
 
 const Business: FunctionComponent = () => {
   return (
-    <Container id="partners">
+    <StyledContainer id="partners">
       <Subtitle>La oportunidad es ahora</Subtitle>
       <MarginlessTitle>Formá parte del cambio</MarginlessTitle>
       <Image
@@ -50,7 +47,7 @@ const Business: FunctionComponent = () => {
       >
         <Button color="secondary">Ver más información</Button>
       </a>
-    </Container>
+    </StyledContainer>
   );
 };
 

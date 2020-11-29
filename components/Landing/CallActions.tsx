@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Button, Text, Title } from "./styles";
+import { Button, Container, Text, Title } from "./styles";
 
-const Container = styled.section`
+const StyledContainer = styled(Container)`
   display: grid;
   grid-gap: ${({ theme }) => theme.spacing(1)}em;
   margin: 0 ${({ theme }) => theme.spacing(2)}em;
@@ -13,9 +13,6 @@ const Container = styled.section`
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
     margin: 0 ${({ theme }) => theme.spacing(2)}em;
-  }
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   }
 `;
 
@@ -37,7 +34,7 @@ interface CallActionsProps {
 
 const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
   return (
-    <Container>
+    <StyledContainer>
       <Section>
         <Image
           src="/images/image-1.png"
@@ -85,7 +82,7 @@ const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
         </StyledText>
         <Button onClick={toggleModal}>Contactar</Button>
       </Section>
-    </Container>
+    </StyledContainer>
   );
 };
 

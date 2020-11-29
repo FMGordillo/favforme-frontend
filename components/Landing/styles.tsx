@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 /**
  * h1
  */
@@ -40,5 +41,14 @@ export const Button = styled.button<ButtonI>`
   & > a {
     color: inherit;
     text-decoration: none;
+  }
+`;
+
+/**
+ * section
+ */
+export const Container = styled.section`
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em !important;
   }
 `;

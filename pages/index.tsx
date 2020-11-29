@@ -1,5 +1,6 @@
 import { LayoutComponent as Container, Modal } from "components";
 import {
+  Actions,
   Brands,
   Business,
   CallActions,
@@ -59,6 +60,8 @@ const IndexPage: NextPage = () => {
       <IntroOne />
       <Divider />
       <IntroTwo />
+      <Divider />
+      <Actions />
       <Divider />
       <CallActions toggleModal={() => setOpen(!open)} />
       <Divider />

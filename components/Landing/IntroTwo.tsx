@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Text, Title } from "./styles";
+import { Container, Text, Title } from "./styles";
 
-const Container = styled.section`
+const StyledContainer = styled(Container)`
   display: grid;
   margin: 0 ${({ theme }) => theme.spacing(2)}em;
   column-gap: 3em;
@@ -27,10 +27,6 @@ const Container = styled.section`
       text-align: justify;
     }
   }
-
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
-  }
 `;
 
 const LeftSide = styled.div`
@@ -44,7 +40,7 @@ const RightSide = styled.div`
 
 const IntroTwo: FunctionComponent = () => {
   return (
-    <Container>
+    <StyledContainer>
       <LeftSide>
         <Title>JUNTOS SIEMPRE ES MEJOR</Title>
         <Text>
@@ -62,7 +58,7 @@ const IntroTwo: FunctionComponent = () => {
           height={260}
         />
       </RightSide>
-    </Container>
+    </StyledContainer>
   );
 };
 
