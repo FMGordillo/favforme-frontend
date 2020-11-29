@@ -27,7 +27,8 @@
 }
 @media (max-width: 600px) {
   #intro-2 {
-    margin: 6em -180px 0 -180px;
+    margin: 0;
+    margin-top: 6em;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
