@@ -1,7 +1,9 @@
+import { ApolloProvider } from "@apollo/client";
 import * as gtag from "lib/gtag";
 import { theme } from "lib/styled";
 import Router from "next/router";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { useApollo } from "../lib/apolloClient";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,12 +22,15 @@ const GlobalStyle = createGlobalStyle`
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
 export default function App({ Component, pageProps }) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
   return (
     <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <ApolloProvider client={apolloClient}>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ApolloProvider>
     </>
   );
 }
