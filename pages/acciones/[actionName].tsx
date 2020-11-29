@@ -1,6 +1,7 @@
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 
-const AccionPage = () => {
+const AccionPage: NextPage = () => {
   const router = useRouter();
   const { actionName } = router.query;
   return (

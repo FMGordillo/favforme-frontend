@@ -1,6 +1,6 @@
-import { FunctionComponent } from "react";
+import { NextPage } from "next";
 
-const PrivacyPage: FunctionComponent = () => (
+const PrivacyPage: NextPage = () => (
   <>
     <div>
       <p>
