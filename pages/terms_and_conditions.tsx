@@ -1,44 +1,48 @@
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  </head>
-  <body class="c29">
+import { NextPage } from "next";
+
+const PrivacyPolicyPage: NextPage = () => (
+  <>
     <div>
-      <p class="c8 c18"><span class="c15"></span></p>
+      <p>
+        <span></span>
+      </p>
     </div>
-    <p class="c12 c17"><span class="c16 c23">Terms of Use</span></p>
-    <p class="c13" id="h.gjdgxs">
-      <span class="c14">Effective: January 01, 2017</span>
+    <p>
+      <span>Terms of Use</span>
     </p>
-    <p class="c8 c13"><span class="c19 c21"></span></p>
-    <p class="c6">
-      <span class="c10">The </span
-      ><span class="c5"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903677288000&amp;usg=AFQjCNGj1-3edb7CNB471L0CjfbLXi2OaA"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c10"
-        >&nbsp;Site is owned and operated by FavForMe, LLC a Missouri limited
+    <p>
+      <span>Effective: January 01, 2017</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>The </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        &nbsp;Site is owned and operated by FavForMe, LLC a Missouri limited
         liability company (&ldquo;Company&rdquo;). &nbsp;These Terms of Use
         (&ldquo;Terms of Use&rdquo; or &ldquo;Agreement&rdquo;) are intended to
-        make you aware of the terms and conditions of your use of the </span
-      ><span class="c5"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903677289000&amp;usg=AFQjCNEJ2W7Jef_D7PNnm2CNHmR1e_B6ow"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c0"
-        >&nbsp;Site, any Content (as defined herein), or other products or
+        make you aware of the terms and conditions of your use of the{" "}
+      </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        &nbsp;Site, any Content (as defined herein), or other products or
         services that are offered or provided by Company (collectively, the
-        &ldquo;Site&rdquo;). &nbsp;</span
-      >
+        &ldquo;Site&rdquo;). &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >The disclaimers, terms and conditions on these pages are of general
+    <p>
+      <span>
+        The disclaimers, terms and conditions on these pages are of general
         application and may be supplemented by additional policies, procedures,
         disclaimers, guidelines, rules, terms or conditions of specific
         application disclosed by Company, including through a registration
@@ -46,24 +50,23 @@
         Terms of Use and any additional policies, procedures, disclaimers,
         guidelines, rules, terms or conditions of specific application, the
         additional policies, procedures, disclaimers, guidelines, rules, terms
-        or conditions of specific application shall control. &nbsp;</span
-      >
-    </p>
-    <p class="c6">
-      <span class="c0"
-        >Company reserves the right, at its discretion, to change, modify, add
-        or remove portions of these Terms of Use at any time effective by
-        posting such changes to this page. You understand that you have the
-        affirmative obligation to check these Terms of Use periodically for
-        changes, and you hereby agree to periodically review these Terms of Use
-        for such changes. The continued use of the Site following the posting of
-        changes to these Terms of Use will constitute your acceptance of those
-        changes.
+        or conditions of specific application shall control. &nbsp;
       </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >BY USING OR OTHERWISE ACCESSING THE SITE, CREATING, REGISTERING OR
+    <p>
+      <span>
+        Company reserves the right, at its discretion, to change, modify, add or
+        remove portions of these Terms of Use at any time effective by posting
+        such changes to this page. You understand that you have the affirmative
+        obligation to check these Terms of Use periodically for changes, and you
+        hereby agree to periodically review these Terms of Use for such changes.
+        The continued use of the Site following the posting of changes to these
+        Terms of Use will constitute your acceptance of those changes.
+      </span>
+    </p>
+    <p>
+      <span>
+        BY USING OR OTHERWISE ACCESSING THE SITE, CREATING, REGISTERING OR
         ACCESSING AN ACCOUNT, POSTING OR DOWNLOADING CONTENT OR ANY OTHER
         INFORMATION TO OR FROM THE SITE OR MANIFESTING YOUR ASSENT TO THESE
         TERMS OF USE IN ANY OTHER MANNER, YOU HEREBY UNEQUIVOCALLY AND EXPRESSLY
@@ -71,35 +74,37 @@
         NOT UNEQUIVOCALLY AGREE TO THESE TERMS OF USE, YOU MAY NOT USE OR
         OTHERWISE ACCESS THE SITE, CREATE, REGISTER OR ACCESS AN ACCOUNT, OR
         POST OR DOWNLOAD CONTENT OR ANY OTHER INFORMATION TO OR FROM THE SITE.
-        &nbsp;</span
-      >
+        &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c10 c16">General Terms of Use and Restrictions on Use</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span>General Terms of Use and Restrictions on Use</span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c6">
-      <span class="c10"
-        >Company hereby grants you a limited, nonexclusive, nonassignable,
+    <p>
+      <span>
+        Company hereby grants you a limited, nonexclusive, nonassignable,
         nontransferable license to access and use the Site and its materials
         solely for your own personal, non-commercial purposes, subject to your
-        agreement to, compliance with and satisfaction of these Terms of
-        Use</span
-      ><span class="c10 c16">. &nbsp;</span
-      ><span class="c10"
-        >All rights not otherwise expressly granted by these Terms of Use are
+        agreement to, compliance with and satisfaction of these Terms of Use
+      </span>
+      <span>. &nbsp;</span>
+      <span>
+        All rights not otherwise expressly granted by these Terms of Use are
         reserved by Company. If you do not comply with the Terms of Use at any
         time, Company reserves the right to limit your access to the Sire or
         restrict your ability to post or download. You agree not to reproduce,
         duplicate, copy, distribute, transmit, sell, trade, distribute, alter,
         modify, transform, publish, store, display, copy, edit, adapt, resell or
         exploit for any purpose any portion of or any information from the Site
-        without previous written authorization of FavForMe LLC. &nbsp;</span
-      ><span class="c10 c24"
-        >You may not obscure or remove any proprietary rights notices contained
-        in or on the Content.</span
-      ><span class="c0"
-        >&nbsp; Company may discontinue or alter any aspect of the Site, remove
+        without previous written authorization of FavForMe LLC. &nbsp;
+      </span>
+      <span>
+        You may not obscure or remove any proprietary rights notices contained
+        in or on the Content.
+      </span>
+      <span>
+        &nbsp; Company may discontinue or alter any aspect of the Site, remove
         Content from the Site, restrict the time the Site is available or
         restrict the amount of use permitted at Company&rsquo;s sole discretion
         and without prior notice or liability. You agree that Company may, under
@@ -111,12 +116,12 @@
         issues or problems; (d) extended periods of inactivity; and/or (e)
         engagement by you in fraudulent or illegal activities. You further agree
         that such measures shall be taken in Company&rsquo;s sole discretion and
-        without liability to you or any third party. &nbsp;</span
-      >
+        without liability to you or any third party. &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >Unless otherwise specifically noted in these Terms of Use or on the
+    <p>
+      <span>
+        Unless otherwise specifically noted in these Terms of Use or on the
         Site, images, trademarks, service marks, logos and icons displayed on
         the Site are the property of Company and/or its licensors and may not be
         used without Company&rsquo;s prior written consent. &nbsp;Any
@@ -127,65 +132,74 @@
         modify, reproduce, republish, transmit, sell, offer for sale,
         disseminate or redistribute the intellectual property found in the Site
         or any part thereof or grant any other person or entity the right or
-        access to do so. &nbsp;</span
-      >
+        access to do so. &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >For purposes of these Terms of Use, references to &ldquo;post&rdquo; or
+    <p>
+      <span>
+        For purposes of these Terms of Use, references to &ldquo;post&rdquo; or
         &ldquo;posting&rdquo; shall refer to any manner of posting,
         transmitting, uploading, providing, making available or otherwise
         transferring material or information.
       </span>
     </p>
-    <p class="c6">
-      <span class="c10 c16">Notices</span><span class="c0">&nbsp; </span>
+    <p>
+      <span>Notices</span>
+      <span>&nbsp; </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >All copyrighted material, trademark, service mark, legal, proprietary
-        or other notice on the Site or in Content on the Site must not be
-        removed from the Site and the Content you may access.</span
-      >
+    <p>
+      <span>
+        All copyrighted material, trademark, service mark, legal, proprietary or
+        other notice on the Site or in Content on the Site must not be removed
+        from the Site and the Content you may access.
+      </span>
     </p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6"><span class="c4">User Accounts</span></p>
-    <p class="c6">
-      <span class="c0"
-        >For certain aspects of the Site, you may be asked to register an
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>User Accounts</span>
+    </p>
+    <p>
+      <span>
+        For certain aspects of the Site, you may be asked to register an
         account. &nbsp;In the event you agree to register an account, you will
         select and/or receive a username and password upon providing
         registration information and successfully completing the registration
-        process. &nbsp;</span
-      >
+        process. &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >This account is personal to you, and you will not share it or allow any
+    <p>
+      <span>
+        This account is personal to you, and you will not share it or allow any
         other person to utilize your account. &nbsp;You are responsible for
         maintaining the confidentiality of your username and password and are
         fully responsible for all activities that occur under your username and
         password. &nbsp;You agree to immediately notify Company in the event (a)
         your registration information changes, or (b) you learn of or have
         reason to suspect any unauthorized use of your account or any other
-        breach of security. &nbsp;</span
-      >
+        breach of security. &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >You also agree that you will provide truthful and accurate information
+    <p>
+      <span>
+        You also agree that you will provide truthful and accurate information
         during the registration process. &nbsp;Company may refuse to grant a
         particular username to you for any reason, including, without
         limitation, in the event Company determines that such username
         impersonates someone else, is protected by trademark or other
-        proprietary right law or is vulgar or otherwise offensive. &nbsp;</span
-      >
+        proprietary right law or is vulgar or otherwise offensive. &nbsp;
+      </span>
     </p>
-    <p class="c6 c17"><span class="c4">Content</span></p>
-    <p class="c6">
-      <span class="c0"
-        >You acknowledge that the Site may contain or provide access to
+    <p>
+      <span>Content</span>
+    </p>
+    <p>
+      <span>
+        You acknowledge that the Site may contain or provide access to
         information, software, images, photos, video, text, graphics, drawings,
         illustrations, music, sounds, image files, recordings, computer
         programs, logos, brands or other material provided by Company or third
@@ -202,12 +216,12 @@
         nonexclusive, worldwide, perpetual, royalty-free license to use,
         reproduce, modify, edit, adapt, publish, translate, display, distribute,
         sell, sublicense and create derivative works and compilations
-        incorporating such User Content.</span
-      >
+        incorporating such User Content.
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >Company does not generally monitor or otherwise remove User Content
+    <p>
+      <span>
+        Company does not generally monitor or otherwise remove User Content
         after it is posted on the Site except as required or permitted by law or
         otherwise in the sole discretion of Company, and reserves the right to
         ban a User or remove any and all material that it feels is actually or
@@ -218,16 +232,18 @@
         encourage, verify or agree with any message posted by its users or
         otherwise embodied in the Content. &nbsp;Company is not and will not be
         liable for any Content or User Content that may be offensive, indecent,
-        vulgar, defamatory or otherwise objectionable.</span
-      >
+        vulgar, defamatory or otherwise objectionable.
+      </span>
     </p>
-    <p class="c12">
-      <span class="c4">User Content Accuracy, Currency, and Completeness</span>
+    <p>
+      <span>User Content Accuracy, Currency, and Completeness</span>
     </p>
-    <p class="c3"><span class="c19 c10 c31"></span></p>
-    <p class="c6">
-      <span class="c0"
-        >All User Content originates from the applicable users and is beyond the
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        All User Content originates from the applicable users and is beyond the
         control of Company. &nbsp;Company neither initiates the provision of
         such User Content nor monitors the specific content or accuracy of the
         User Content being provided. Without limiting the generality of any
@@ -245,11 +261,15 @@
         pursuant to the indemnification provisions of these Terms of Use.
       </span>
     </p>
-    <p class="c12 c17"><span class="c10 c16 c19">LINKS </span></p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >As a service to our users, the Site or third parties may provide links
+    <p>
+      <span>LINKS </span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        As a service to our users, the Site or third parties may provide links
         to other websites or resources on the Internet or information about
         other resources that may be of interest. Because Company has no control
         over such websites or resources, you acknowledge and agree that Company
@@ -269,46 +289,49 @@
         these third party websites and resources.
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c10"
-        >Users who employ hyperlinks between their webpage and </span
-      ><span class="c5"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903677305000&amp;usg=AFQjCNFirKjKfIFG565dBbm-2Ask3hUkyQ"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c10">&nbsp;or any of the </span
-      ><span class="c5"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903677306000&amp;usg=AFQjCNFMTKsVcnWumQT23seQDRRFAe05dQ"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c10"
-        >&nbsp;web pages must abide by the following terms: (a) the User&rsquo;s
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>Users who employ hyperlinks between their webpage and </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>&nbsp;or any of the </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        &nbsp;web pages must abide by the following terms: (a) the User&rsquo;s
         web page should contain in an easily visible and accessible place a note
         establishing that there is no relationship between the User and the Site
-        owners; (b) hyperlinks should only be linked to the </span
-      ><span class="c5"
-        ><a class="c20" href="">www.FavForMe.com&rsquo;s</a></span
-      ><span class="c10"
-        >&nbsp;home page; (c) User shall not create a browser or border
+        owners; (b) hyperlinks should only be linked to the{" "}
+      </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        &nbsp;home page; (c) User shall not create a browser or border
         environment on the Site; (d) use of such hyperlinks must not lead to a
         false, wrong, or inexact belief regarding the authorship or ownership of
         Site materials accessible through such link; (e) use of such hyperlink
         must not lead an Internet user to the false belief of a linking,
         sponsorship, approval, authorization, or supervisory relationship
-        between the User&rsquo;s web page and </span
-      ><span class="c5"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903677308000&amp;usg=AFQjCNEbU3ZQ1PZ_MzPBTUPUa3kMOp5cnQ"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c0"
-        >; (f) User&rsquo;s web page shall not have any brand, commercial name,
+        between the User&rsquo;s web page and{" "}
+      </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        ; (f) User&rsquo;s web page shall not have any brand, commercial name,
         place sign, logo, slogan or any other distinctive signs belonging to
         FavForMe except (i) where its use is restricted to the sign which serves
         as the hyperlink, and (ii) when its use has the exclusive result of
@@ -316,42 +339,48 @@
         hyperlink.
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c6">
-      <span class="c10 c16">Company&rsquo;s Privacy Policy</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span></span>
     </p>
-    <p class="c6">
-      <span class="c10"
-        >Company collects, stores and uses data collected from you in accordance
-        with Company&rsquo;s Privacy Policy, located at </span
-      ><span class="c10 c27"
-        ><a
-          class="c20"
-          href="https://www.google.com/url?q=http://www.favforme.com/privacy&amp;sa=D&amp;ust=1494903677310000&amp;usg=AFQjCNH5sQPjABKD_Yz42XDYxMvhtvVP3g"
-          >www.favforme.com/privacy</a
-        ></span
-      ><span class="c10">&nbsp;</span
-      ><span class="c0"
-        >&nbsp; The terms and conditions of the Privacy Policy are hereby
-        expressly incorporated into these Terms of Use.</span
-      >
+    <p>
+      <span>Company&rsquo;s Privacy Policy</span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c12">
-      <span class="c0"
-        >Company may disclose information to trusted affiliates, independent
+    <p>
+      <span>
+        Company collects, stores and uses data collected from you in accordance
+        with Company&rsquo;s Privacy Policy, located at{" "}
+      </span>
+      <span>
+        <a target="_blank" href="https://favforme.com/privacy">
+          www.favforme.com/privacy
+        </a>
+      </span>
+      <span>&nbsp;</span>
+      <span>
+        &nbsp; The terms and conditions of the Privacy Policy are hereby
+        expressly incorporated into these Terms of Use.
+      </span>
+    </p>
+    <p>
+      <span>
+        Company may disclose information to trusted affiliates, independent
         contractors and partners who will use the information for certain
         business purposes deemed to be aligned with our goals and business
         objectives. &nbsp;In addition, the Company may transfer information
         collected from users in connection with a sale or restructuring of
-        Company. &nbsp;</span
-      >
+        Company. &nbsp;
+      </span>
     </p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6 c17"><span class="c4">User Representations</span></p>
-    <p class="c6">
-      <span class="c0"
-        >You hereby represent and warrant to Company that (i) you are over the
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>User Representations</span>
+    </p>
+    <p>
+      <span>
+        You hereby represent and warrant to Company that (i) you are over the
         age of majority in your jurisdiction or otherwise have the power and
         authority to enter into and perform your obligations under this
         Agreement; (ii) all information provided by you to Company is truthful,
@@ -372,13 +401,15 @@
         and such User Content does not contain any personally identifiable
         information about third parties in violation of such parties&rsquo;
         rights; and (d) the use of any User Content will not result in harm or
-        personal injury to any third party.</span
-      >
+        personal injury to any third party.
+      </span>
     </p>
-    <p class="c6 c17"><span class="c4">Prohibited Uses</span></p>
-    <p class="c6">
-      <span class="c0"
-        >You agree not to: (a) use of the Site to post material or information
+    <p>
+      <span>Prohibited Uses</span>
+    </p>
+    <p>
+      <span>
+        You agree not to: (a) use of the Site to post material or information
         that, is or to a reasonable person may be unlawful, harmful, tortious,
         abusive, obscene, pornographic, defamatory, libelous, harassing,
         invasive of another&rsquo;s privacy, offensive, vulgar, threatening,
@@ -403,22 +434,25 @@
         Site to engage in any activity that, as determined by Company, may
         intentionally or unintentionally violate these Terms of Use, violate any
         applicable laws or regulations or conflict with the spirit or intent of
-        these Terms of Use.</span
-      >
+        these Terms of Use.
+      </span>
     </p>
-    <p class="c6">
-      <span class="c10 c16"
-        >PLEASE NOTE THE FOLLOWING IMPORTANT DISCLAIMERS OF WARRANTIES:</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span>
+        PLEASE NOTE THE FOLLOWING IMPORTANT DISCLAIMERS OF WARRANTIES:
+      </span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c12">
-      <span class="c10 c16">EXCLUSION OF WARRANTIES / DISCLAIMER</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span>EXCLUSION OF WARRANTIES / DISCLAIMER</span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >TO THE MAXIMUM EXTENT ALLOWED BY LAW, THE SITE OR THE SERVICE, AND ANY
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        TO THE MAXIMUM EXTENT ALLOWED BY LAW, THE SITE OR THE SERVICE, AND ANY
         COMPANY CONTENT ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS
         AVAILABLE,&rdquo; AND AT YOUR SOLE RISK. &nbsp;ALTHOUGH COMPANY USES
         REASONABLE EFFORTS TO ENSURE THAT THE INFORMATION CONTAINED ON THE SITE
@@ -434,25 +468,33 @@
         OBLIGATIONS INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
         FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT AND ANY WARRANTY THAT THE
         SITE, THE SERVICE OR COMPANY CONTENT WILL BE ERROR-FREE OR THAT SUCH
-        ERRORS WILL BE CORRECTED. &nbsp;</span
-      >
+        ERRORS WILL BE CORRECTED. &nbsp;
+      </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >ANY COMPANY CONTENT OR OTHER MATERIAL DOWNLOADED OR OTHERWISE OBTAINED
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        ANY COMPANY CONTENT OR OTHER MATERIAL DOWNLOADED OR OTHERWISE OBTAINED
         THROUGH THE USE OF THE SITE OR THE SERVICE IS DONE AT YOUR SOLE RISK,
         AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER
         SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH
         COMPANY CONTENT OR MATERIAL. &nbsp;
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12"><span class="c4">LIMITATION OF LIABILITY </span></p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >YOU EXPRESSLY UNDERSTAND AND AGREE THAT COMPANY SHALL NOT BE LIABLE FOR
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>LIMITATION OF LIABILITY </span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        YOU EXPRESSLY UNDERSTAND AND AGREE THAT COMPANY SHALL NOT BE LIABLE FOR
         ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY
         DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS,
         GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF COMPANY HAS BEEN
@@ -470,34 +512,40 @@
         OR THE SERVICE.
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES OR
         THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL
         DAMAGES. &nbsp;ACCORDINGLY, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY
-        TO YOU.</span
-      >
+        TO YOU.
+      </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c6">
-      <span class="c10 c16">Release / Indemnification</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span></span>
     </p>
-    <p class="c12">
-      <span class="c0"
-        >You agree to release Company, its members, managers, officers,
-        employees and agents, from any and all liability and obligations
-        whatsoever in connection with or arising from your use of the Site and
-        the Service. &nbsp;If at any time you are not happy with the Site or the
-        Service or object to any material within the Site or the Service, your
-        sole remedy is to cease using them.</span
-      >
+    <p>
+      <span>Release / Indemnification</span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6">
-      <span class="c0"
-        >You agree to defend, indemnify and hold harmless Company, its officers,
+    <p>
+      <span>
+        You agree to release Company, its members, managers, officers, employees
+        and agents, from any and all liability and obligations whatsoever in
+        connection with or arising from your use of the Site and the Service.
+        &nbsp;If at any time you are not happy with the Site or the Service or
+        object to any material within the Site or the Service, your sole remedy
+        is to cease using them.
+      </span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        You agree to defend, indemnify and hold harmless Company, its officers,
         members, directors, employees and agents from and against any and all
         claims, liabilities, damages, losses or expenses, including
         attorneys&rsquo; fees and costs and expenses, arising out of or in any
@@ -507,23 +555,23 @@
         covenants or obligations under this Agreement, (d) infringement or
         misappropriation of any intellectual property or other rights of Company
         or third parties by you, or (e) any negligence or willful misconduct by
-        you.</span
-      >
+        you.
+      </span>
     </p>
-    <p class="c6">
-      <span class="c10 c16">Governing Law and Other Miscellaneous Terms</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span>Governing Law and Other Miscellaneous Terms</span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >The validity and effect of these Terms of Use shall be governed by and
+    <p>
+      <span>
+        The validity and effect of these Terms of Use shall be governed by and
         construed and enforced in accordance with the laws of Missouri, without
-        regard to its conflicts or choice of laws principles. &nbsp;</span
-      >
+        regard to its conflicts or choice of laws principles. &nbsp;
+      </span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >The parties agree that breach of the provisions of this Agreement would
+    <p>
+      <span>
+        The parties agree that breach of the provisions of this Agreement would
         cause irreparable harm and significant injury to Company which would be
         both difficult to ascertain and which would not be compensable by
         damages alone. &nbsp;As such, the parties agree that Company has the
@@ -533,173 +581,209 @@
         have. &nbsp;The prevailing party will be entitled to reasonable fees of
         attorneys, accountants and other professionals, and costs and expenses
         in addition to any other relief to which such prevailing party may be
-        entitled in any action at law or in equity. &nbsp;</span
-      >
+        entitled in any action at law or in equity. &nbsp;
+      </span>
     </p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6 c8"><span class="c0"></span></p>
-    <p class="c6">
-      <span class="c10 c16">Copyright and Copyright Notices</span
-      ><span class="c0">&nbsp;</span>
+    <p>
+      <span></span>
     </p>
-    <p class="c6">
-      <span class="c0"
-        >Company respects the intellectual property of others, and we ask our
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>Copyright and Copyright Notices</span>
+      <span>&nbsp;</span>
+    </p>
+    <p>
+      <span>
+        Company respects the intellectual property of others, and we ask our
         users to do the same. &nbsp;If you believe that your work has been
         copied in a way that constitutes copyright infringement, please provide
         Company&rsquo;s Copyright Agent the following information:
       </span>
     </p>
-    <ul class="c11 lst-kix_list_35-0 start">
-      <li class="c7">
-        <span class="c0"
-          >an electronic or physical signature of the owner or person authorized
+    <ul>
+      <li>
+        <span>
+          an electronic or physical signature of the owner or person authorized
           to act on behalf of the owner of the copyright interest;
         </span>
       </li>
-      <li class="c9">
-        <span class="c0"
-          >a description of the copyrighted work that you claim has been
+      <li>
+        <span>
+          a description of the copyrighted work that you claim has been
           infringed;
         </span>
       </li>
-      <li class="c9">
-        <span class="c0"
-          >a description of where the material that you claim is infringing is
+      <li>
+        <span>
+          a description of where the material that you claim is infringing is
           located on the Site sufficient to
         </span>
       </li>
     </ul>
-    <p class="c12 c25">
-      <span class="c0"
-        >allow us to locate the allegedly infringing material;
-      </span>
+    <p>
+      <span>allow us to locate the allegedly infringing material;</span>
     </p>
-    <ul class="c11 lst-kix_list_35-0">
-      <li class="c9">
-        <span class="c0"
-          >your address, telephone number, and email address;
+    <ul>
+      <li>
+        <span>your address, telephone number, and email address;</span>
+      </li>
+      <li>
+        <span>
+          a statement by you that you have a good faith belief that the disputed
+          use is not authorized by the copyright owner, its agent, or the law;
+          and
         </span>
       </li>
-      <li class="c7">
-        <span class="c0"
-          >a statement by you that you have a good faith belief that the
-          disputed use is not authorized by the copyright owner, its agent, or
-          the law; and</span
-        >
-      </li>
-      <li class="c7">
-        <span class="c0"
-          >a statement by you, made under penalty of perjury, that the above
+      <li>
+        <span>
+          a statement by you, made under penalty of perjury, that the above
           information in your notice is accurate and that you are the copyright
           owner or authorized to act on the copyright owner&rsquo;s behalf.
         </span>
       </li>
     </ul>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >Please contact Company&rsquo;s Copyright Agent for Notice of Claims of
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        Please contact Company&rsquo;s Copyright Agent for Notice of Claims of
         copyright infringement at: hello@favforme.com. &nbsp;Copyright owners
         and agents acknowledge that failure to comply with all of the
         requirements of the foregoing may result in an invalidity of the DMCA
-        notice.</span
-      >
+        notice.
+      </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c10 c16">Counter-Notice</span
-      ><span class="c0"
-        >. &nbsp;If you believe that the Content that was removed (or to which
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>Counter-Notice</span>
+      <span>
+        . &nbsp;If you believe that the Content that was removed (or to which
         access was disabled) is not infringing, or that you have authorization
         from the copyright owner, the copyright owner&rsquo;s agent, or pursuant
         to the law, to post and use the Content, you may send a counter-notice
         containing the following information to the Copyright Agent:
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <ul class="c11 lst-kix_list_36-0 start">
-      <li class="c7">
-        <span class="c0">your physical or electronic signature; </span>
+    <p>
+      <span></span>
+    </p>
+    <ul>
+      <li>
+        <span>your physical or electronic signature; </span>
       </li>
-      <li class="c7">
-        <span class="c0"
-          >identification of the Content that has been removed or to which
-          access has been disabled and the location at which the Content
-          appeared before it was removed or disabled;
+      <li>
+        <span>
+          identification of the Content that has been removed or to which access
+          has been disabled and the location at which the Content appeared
+          before it was removed or disabled;
         </span>
       </li>
-      <li class="c7">
-        <span class="c0"
-          >a statement that you have a good faith belief that the Content was
+      <li>
+        <span>
+          a statement that you have a good faith belief that the Content was
           removed or disabled as a result of mistake or a misidentification of
           the User Content; and
         </span>
       </li>
-      <li class="c7">
-        <span class="c10"
-          >your name, address, telephone number, and e-mail address, a statement
+      <li>
+        <span>
+          your name, address, telephone number, and e-mail address, a statement
           that you consent to the jurisdiction of the federal court in
           Harrisonville, Missouri and a statement that you will accept service
           of process from the person who provided notification of the alleged
-          infringement.</span
-        >
+          infringement.
+        </span>
       </li>
     </ul>
-    <p class="c3"><span class="c4"></span></p>
-    <p class="c12">
-      <span class="c10"
-        >If a counter-notice is received by the Copyright Agent, </span
-      ><span class="c10 c24">Company</span
-      ><span class="c10"
-        >&nbsp;may send a copy of the counter-notice to the original complaining
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>If a counter-notice is received by the Copyright Agent, </span>
+      <span>Company</span>
+      <span>
+        &nbsp;may send a copy of the counter-notice to the original complaining
         party informing that person that it may replace the removed Content or
         cease disabling it in 10 business days. &nbsp;Unless the copyright owner
         files an action seeking a court order against the person providing such
         Content, the removed Content may be replaced, or access to it restored,
         in 10 to 14 business days or more after receipt of the counter-notice,
-        at </span
-      ><span class="c10 c24">Company</span
-      ><span class="c0">&rsquo;s sole discretion.</span>
+        at{" "}
+      </span>
+      <span>Company</span>
+      <span>&rsquo;s sole discretion.</span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12 c17">
-      <span class="c19 c10 c16">CHANGES TO OUR POLICIES &nbsp;</span>
+    <p>
+      <span></span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c10"
-        >Our Terms of Use Policy is intended to provide you with the safest and
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>CHANGES TO OUR POLICIES &nbsp;</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        Our Terms of Use Policy is intended to provide you with the safest and
         most secure experience possible. &nbsp;Since offerings and technologies
         change, we reserve the right to change, modify, add or remove portions
         of our Policy at any time without prior notice. &nbsp;If you have any
         questions, or would like further clarification, please e-mail us at
-        hello@favforme.com. &nbsp;Any</span
-      ><span class="c10 c31 c32"
-        >&nbsp;changes in Company&rsquo;s policies will be communicated on this
+        hello@favforme.com. &nbsp;Any
+      </span>
+      <span>
+        &nbsp;changes in Company&rsquo;s policies will be communicated on this
         page.
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c12">
-      <span class="c0"
-        >This Site is operated by Company. &nbsp;All inquiries may be directed
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        This Site is operated by Company. &nbsp;All inquiries may be directed
         to:
       </span>
     </p>
-    <p class="c3"><span class="c0"></span></p>
-    <p class="c1"><span class="c0">FavForMe LLC</span></p>
-    <p class="c1 c8"><span class="c0"></span></p>
-    <p class="c1">
-      <span class="c30">763 Schluersburg Roa</span><span class="c30">d</span>
+    <p>
+      <span></span>
     </p>
-    <p class="c1"><span class="c2">Augusta, MO 63332</span></p>
-    <p class="c1"><span class="c2">636-266-6114</span></p>
-    <p class="c1"><span class="c14">Support@favforme.com</span></p>
-    <p class="c8 c28"><span class="c15"></span></p>
+    <p>
+      <span>FavForMe LLC</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>763 Schluersburg Roa</span>
+      <span>d</span>
+    </p>
+    <p>
+      <span>Augusta, MO 63332</span>
+    </p>
+    <p>
+      <span>636-266-6114</span>
+    </p>
+    <p>
+      <span>Support@favforme.com</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
     <div>
-      <p class="c8 c26"><span class="c22"></span></p>
+      <p>
+        <span></span>
+      </p>
     </div>
-  </body>
-</html>
+  </>
+);
+
+export default PrivacyPolicyPage;

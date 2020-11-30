@@ -1,52 +1,64 @@
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  </head>
-  <body class="c5">
+import { NextPage } from "next";
+
+const PrivacyPage: NextPage = () => (
+  <>
     <div>
-      <p class="c14 c17"><span class="c13"></span></p>
+      <p>
+        <span></span>
+      </p>
     </div>
-    <p class="c3 c6"><span class="c9 c20">PRIVACY POLICY</span></p>
-    <p class="c3 c6" id="h.gjdgxs">
-      <span class="c12 c21">Effective: January 01, 2017</span>
+    <p>
+      <span>PRIVACY POLICY</span>
     </p>
-    <p class="c3 c14"><span class="c1"></span></p>
-    <p class="c4">
-      <span class="c12"
-        >This Privacy Policy governs the manner in which FavForMe LLC, a
-        Missouri limited liability company (&ldquo;</span
-      ><span class="c11">COMPANY</span
-      ><span class="c12"
-        >&rdquo;) collects, uses, maintains and discloses information collected
-        from users (&ldquo;</span
-      ><span class="c11">you</span><span class="c12">,&rdquo; &ldquo;</span
-      ><span class="c11">your</span><span class="c12">&rdquo; or &ldquo;</span
-      ><span class="c11">User</span><span class="c12">&rdquo;) of its </span
-      ><span class="c12 c19"
-        ><a
-          class="c8"
-          href="https://www.google.com/url?q=http://www.favforme.com&amp;sa=D&amp;ust=1494903785726000&amp;usg=AFQjCNEaeS01SLQ2mP_g55rTawRV5eXPwQ"
-          >www.FavForMe.com</a
-        ></span
-      ><span class="c12"
-        >&nbsp;web site and any derivative or affiliated web sites on which this
-        Privacy Policy is posted (collectively, the &ldquo;</span
-      ><span class="c11">Site</span
-      ><span class="c1"
-        >&rdquo;). &nbsp;COMPANY reserves the right, at its discretion, to
+    <p>
+      <span>Effective: January 01, 2017</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>
+        This Privacy Policy governs the manner in which FavForMe LLC, a Missouri
+        limited liability company (&ldquo;
+      </span>
+      <span>COMPANY</span>
+      <span>
+        &rdquo;) collects, uses, maintains and discloses information collected
+        from users (&ldquo;
+      </span>
+      <span>you</span>
+      <span>,&rdquo; &ldquo;</span>
+      <span>your</span>
+      <span>&rdquo; or &ldquo;</span>
+      <span>User</span>
+      <span>&rdquo;) of its </span>
+      <span>
+        <a target="_blank" href="https://favforme.com">
+          www.FavForMe.com
+        </a>
+      </span>
+      <span>
+        &nbsp;web site and any derivative or affiliated web sites on which this
+        Privacy Policy is posted (collectively, the &ldquo;
+      </span>
+      <span>Site</span>
+      <span>
+        &rdquo;). &nbsp;COMPANY reserves the right, at its discretion, to
         change, modify, add or remove portions of this Privacy Policy at any
         time by posting such changes to this page. &nbsp;You understand that you
         have the affirmative obligation to check this Privacy Policy
         periodically for changes, and you hereby agree to periodically review
         this Privacy Policy for such changes. &nbsp;The continued use of the
         Site following the posting of changes to this Privacy Policy constitutes
-        an acceptance of those changes. &nbsp;</span
-      >
+        an acceptance of those changes. &nbsp;
+      </span>
     </p>
-    <p class="c4 c6"><span class="c0">Privacy</span></p>
-    <p class="c4">
-      <span class="c12"
-        >COMPANY is committed to safeguarding the information you entrust to
+    <p>
+      <span>Privacy</span>
+    </p>
+    <p>
+      <span>
+        COMPANY is committed to safeguarding the information you entrust to
         COMPANY and believes that every User should know how it utilizes the
         information collected from Users. &nbsp;Please note that the Site may
         contain links to other web sites, and the Site allows Users to download
@@ -56,12 +68,12 @@
         you access and utilize such Content and web sites entirely at your own
         risk. &nbsp;COMPANY recommends that you review the privacy and other
         practices governing any other web sites that you choose to visit and any
-        Content you wish to download or otherwise access.</span
-      >
+        Content you wish to download or otherwise access.
+      </span>
     </p>
-    <p class="c4">
-      <span class="c1"
-        >COMPANY is based, and this web site is hosted, in the United States of
+    <p>
+      <span>
+        COMPANY is based, and this web site is hosted, in the United States of
         America. &nbsp;If you are from the European Union, Canada or other
         regions of the world with laws governing data collection and use that
         may differ from U.S. law and you are registering an account on the Site,
@@ -71,15 +83,15 @@
         to or utilized by COMPANY or its affiliates in the United States.
         &nbsp;Any such personally identifiable information provided may be
         processed and stored in the United States by COMPANY or a service
-        provider acting on its behalf. &nbsp;</span
-      >
+        provider acting on its behalf. &nbsp;
+      </span>
     </p>
-    <p class="c4 c6">
-      <span class="c0">The Information COMPANY Collects</span>
+    <p>
+      <span>The Information COMPANY Collects</span>
     </p>
-    <p class="c4">
-      <span class="c12"
-        >Users browsing the Site without registering an account or affirmatively
+    <p>
+      <span>
+        Users browsing the Site without registering an account or affirmatively
         providing personally identifiable information to COMPANY do so
         anonymously; however, certain non-personally identifying information is
         collected, as provided below. &nbsp;Users may provide and COMPANY may
@@ -87,47 +99,52 @@
         ways. &nbsp;Personally identifiable information may include, without
         limitation, (i)&nbsp;contact data (such as a User&rsquo;s name, mailing
         and e-mail addresses); (ii)&nbsp;demographic data (such as a
-        User&rsquo;s zip code or age)</span
-      ><span class="c9"
-        >; and (iii) other information requested during the account registration
+        User&rsquo;s zip code or age)
+      </span>
+      <span>
+        ; and (iii) other information requested during the account registration
         process (such as profession); and (v) specific favors requested by the
-        User</span
-      ><span class="c1"
-        >. &nbsp;COMPANY does not collect social security numbers. &nbsp;If you
+        User
+      </span>
+      <span>
+        . &nbsp;COMPANY does not collect social security numbers. &nbsp;If you
         communicate with COMPANY by e-mail or otherwise, post User Content to
         the Site, post messages to any forums, complete online forms, surveys or
         entries, provide information outside of the account registration
         process, or otherwise interact with or uses the features on the Site,
-        any information you provide may be collected by COMPANY. &nbsp;</span
-      >
+        any information you provide may be collected by COMPANY. &nbsp;
+      </span>
     </p>
-    <p class="c4">
-      <span class="c12"
-        >COMPANY may also collect information about how Users use the Site, for
+    <p>
+      <span>
+        COMPANY may also collect information about how Users use the Site, for
         example, by tracking the number of unique views received by the pages of
         the Site, or the domains and Internet Protocol (&ldquo;IP&rdquo;)
         addresses from which Users originate. &nbsp;While not all of the
         information that COMPANY collects from Users is personally identifiable,
         it may be associated with personally identifiable information that Users
         provide COMPANY through the Site or otherwise. &nbsp;Additionally,
-        certain </span
-      ><span class="c9"
-        >information regarding your computer systems, network locations, IP
+        certain{" "}
+      </span>
+      <span>
+        information regarding your computer systems, network locations, IP
         address and software may be communicated to COMPANY in certain
         circumstances by the digital rights management systems associated with
         certain Content that you download or access via the Site in order to
-        prevent unauthorized use or distribution of the associated
-        Content.</span
-      ><span class="c1"
-        >&nbsp; Non-personally identifiable information collected by COMPANY
+        prevent unauthorized use or distribution of the associated Content.
+      </span>
+      <span>
+        &nbsp; Non-personally identifiable information collected by COMPANY
         (such as patterns of utilization) is exclusively owned by COMPANY and
-        may be used as it sees fit in accordance with applicable law.</span
-      >
+        may be used as it sees fit in accordance with applicable law.
+      </span>
     </p>
-    <p class="c10"><span class="c16 c9">Cookies</span></p>
-    <p class="c10">
-      <span class="c1"
-        >Like most web sites, the Site uses cookies and web log files to track
+    <p>
+      <span>Cookies</span>
+    </p>
+    <p>
+      <span>
+        Like most web sites, the Site uses cookies and web log files to track
         site usage. &nbsp;A cookie is a tiny data file that resides on your
         computer that allows COMPANY to recognize you as a User when you return
         to the Site using the same computer and web browser. &nbsp;Like the
@@ -146,15 +163,18 @@
         &nbsp;Session cookies expire after a short time or when you close your
         web browser. &nbsp;You can choose to disable cookies on your browser or
         allow your browser to notify you when a cookie is being sent, however
-        this may prevent you from utilizing certain features of the Site.
-        &nbsp;</span
-      >
+        this may prevent you from utilizing certain features of the Site. &nbsp;
+      </span>
     </p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c10"><span class="c16 c9">IP Addresses </span></p>
-    <p class="c10">
-      <span class="c1"
-        >Due to the communications standards on the Internet, we automatically
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>IP Addresses </span>
+    </p>
+    <p>
+      <span>
+        Due to the communications standards on the Internet, we automatically
         receive the uniform resource locator (URL) of the web site from which
         you came and the web site to which you proceed once you leave the Site.
         &nbsp;We also receive the IP address of your computer (or the proxy
@@ -166,11 +186,15 @@
         shared with third parties in accordance with this Privacy Policy.
       </span>
     </p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c10"><span class="c9 c16">Web Beacons and Ad Networks</span></p>
-    <p class="c4">
-      <span class="c9"
-        >We may allow other companies, called ad networks, to serve
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>Web Beacons and Ad Networks</span>
+    </p>
+    <p>
+      <span>
+        We may allow other companies, called ad networks, to serve
         advertisements to Users via the Site. &nbsp;Ad networks include third
         party ad servers, ad agencies, ad technology vendors and research firms.
         &nbsp;COMPANY may &ldquo;target&rdquo; some ads to Users that fit a
@@ -189,13 +213,15 @@
         &nbsp;Because your web browser must request these advertisements and web
         beacons from the ad network&rsquo;s servers, these companies can view,
         edit or set their own cookies, just as if you had requested a web page
-        from their site.</span
-      >
+        from their site.
+      </span>
     </p>
-    <p class="c4"><span class="c0">How COMPANY Uses Information</span></p>
-    <p class="c4">
-      <span class="c1"
-        >COMPANY may use personally identifiable information collected through
+    <p>
+      <span>How COMPANY Uses Information</span>
+    </p>
+    <p>
+      <span>
+        COMPANY may use personally identifiable information collected through
         the Site for the specific purposes for which the information was
         collected, to contact Users regarding Content, products and services
         offered by COMPANY, and otherwise to enhance Users&rsquo; experience
@@ -206,13 +232,12 @@
         &nbsp;Information collected from you may also be used to ensure
         compliance with certain terms and conditions and agreements entered
         between you and COMPANY as well as to prevent unauthorized use or
-        disclosure of Content downloaded or otherwise accessed via the
-        Site.</span
-      >
+        disclosure of Content downloaded or otherwise accessed via the Site.
+      </span>
     </p>
-    <p class="c4">
-      <span class="c9"
-        >COMPANY will communicate with you through email and notices posted on
+    <p>
+      <span>
+        COMPANY will communicate with you through email and notices posted on
         this Site. &nbsp;These may include a series of welcome emails which help
         inform new Users about various features of the Site, emails and
         confirmations regarding actions taken by you on the Site or Orders
@@ -220,9 +245,10 @@
         functioning of the Site or your account. COMPANY may use your personal
         information to send you promotional information relating to the Content,
         products and services offered by third parties that COMPANY feels may be
-        of interest to you. &nbsp;</span
-      ><span class="c1"
-        >The personal information you provide will allow us to alert you to new
+        of interest to you. &nbsp;
+      </span>
+      <span>
+        The personal information you provide will allow us to alert you to new
         developments, new products, features and enhancements; special offers;
         upgrade opportunities; and surveys, contests and events of interest. We
         strive to limit use of the information you provide to those offers that
@@ -231,13 +257,15 @@
         information has been shared, please contact that partner directly. We
         may send COMPANY emails that may contain information regarding
         third-party products or services; however, this doesn&rsquo;t mean that
-        we&rsquo;ve traded your personal information to any party.</span
-      >
+        we&rsquo;ve traded your personal information to any party.
+      </span>
     </p>
-    <p class="c4 c6"><span class="c0">Disclosure of Information</span></p>
-    <p class="c4">
-      <span class="c1"
-        >COMPANY may disclose personally identifiable information collected from
+    <p>
+      <span>Disclosure of Information</span>
+    </p>
+    <p>
+      <span>
+        COMPANY may disclose personally identifiable information collected from
         Users to its parent, subsidiary and other related companies, trusted
         affiliates, independent contractors and business partners who will use
         the information for the purposes outlined above, as necessary to provide
@@ -261,43 +289,43 @@
         partners. &nbsp;Finally, COMPANY may disclose or transfer personally
         identifiable information collected from Users in connection with or in
         contemplation of a sale of its assets or business or a merger,
-        consolidation or other reorganization of its business. &nbsp;</span
-      >
+        consolidation or other reorganization of its business. &nbsp;
+      </span>
     </p>
-    <p class="c4">
-      <span class="c12"
-        >COMPANY may communicate or provide Users personal information to other
+    <p>
+      <span>
+        COMPANY may communicate or provide Users personal information to other
         selected persons (a) if the User consents to give
       </span>
     </p>
-    <p class="c4 c6">
-      <span class="c0"
-        >Personal Information Provided as Part of User Content</span
-      >
+    <p>
+      <span>Personal Information Provided as Part of User Content</span>
     </p>
-    <p class="c4">
-      <span class="c12"
-        >If a User includes such User&rsquo;s personally identifiable
-        information as part of the User Content that such User posts to the
-        Site, such information may be made available to any parties using the
-        Site and/or such User Content. &nbsp;COMPANY does not edit or otherwise
-        remove such information from User Content before it is posted on the
-        Site. &nbsp;If a User does not wish to have such User&rsquo;s personally
-        identifiable information made available in this manner, such User must
-        remove any such information from the User Content before posting.
-        &nbsp;User contact information (which may include, without limitation, a
+    <p>
+      <span>
+        If a User includes such User&rsquo;s personally identifiable information
+        as part of the User Content that such User posts to the Site, such
+        information may be made available to any parties using the Site and/or
+        such User Content. &nbsp;COMPANY does not edit or otherwise remove such
+        information from User Content before it is posted on the Site. &nbsp;If
+        a User does not wish to have such User&rsquo;s personally identifiable
+        information made available in this manner, such User must remove any
+        such information from the User Content before posting. &nbsp;User
+        contact information (which may include, without limitation, a
         User&rsquo;s username and email address) may be included with any User
         Content that a User posts via the Site. &nbsp;COMPANY is not liable for
         any damages caused or incurred due to personally identifiable
-        information made available in the foregoing manners.</span
-      >
+        information made available in the foregoing manners.
+      </span>
     </p>
-    <p class="c4"><span class="c0">Security of Information</span></p>
-    <p class="c4">
-      <span class="c1"
-        >Information about Users that is maintained on COMPANY&rsquo;s systems
-        is protected using industry standard security measures. &nbsp;In order
-        to secure your personal information, access to your data is
+    <p>
+      <span>Security of Information</span>
+    </p>
+    <p>
+      <span>
+        Information about Users that is maintained on COMPANY&rsquo;s systems is
+        protected using industry standard security measures. &nbsp;In order to
+        secure your personal information, access to your data is
         password-protected, and sensitive data is protected by SSL encryption
         when it is exchanged between your web browser and the Site.
         &nbsp;However, no security measures are perfect or impenetrable, and
@@ -308,53 +336,60 @@
         third parties.
       </span>
     </p>
-    <p class="c4 c6"><span class="c0">Children&#39;s privacy</span></p>
-    <p class="c4 c6">
-      <span class="c1"
-        >Although our website is a general audience site, we restrict the use of
+    <p>
+      <span>Children&#39;s privacy</span>
+    </p>
+    <p>
+      <span>
+        Although our website is a general audience site, we restrict the use of
         our service to individuals age 18 and above. We do not knowingly collect
-        personal information from children under the age of 13.</span
-      >
+        personal information from children under the age of 13.
+      </span>
     </p>
-    <p class="c4 c6">
-      <span class="c0">Updating Personal Information; Opt-Out</span>
+    <p>
+      <span>Updating Personal Information; Opt-Out</span>
     </p>
-    <p class="c4">
-      <span class="c12"
-        >If your personally identifiable information changes, COMPANY will
+    <p>
+      <span>
+        If your personally identifiable information changes, COMPANY will
         endeavor to provide a way to correct, update and/or remove your
         previously provided personal data. &nbsp;This can be done by emailing a
-        request to COMPANY at </span
-      ><span class="c21 c12">hello@favforme.com</span
-      ><span class="c1"
-        >. &nbsp;When you sign up for our updates or receive e-mail messages
-        from COMPANY.com, you will always be given the chance to opt-out of
-        special offers and site updates. You may change your preferences at any
-        time and will only be contacted in manners consistent with your stated
+        request to COMPANY at{" "}
+      </span>
+      <a target="_blank" href="mailto:hello@favforme.com">
+        hello@favforme.com
+      </a>
+      <span>
+        . &nbsp;When you sign up for our updates or receive e-mail messages from
+        COMPANY.com, you will always be given the chance to opt-out of special
+        offers and site updates. You may change your preferences at any time and
+        will only be contacted in manners consistent with your stated
         preferences. All retained personally identifiable information will
         continue to be subject to the terms of the Privacy Policy to which you
-        have previously agreed. &nbsp;</span
-      >
+        have previously agreed. &nbsp;
+      </span>
     </p>
-    <p class="c4 c6"><span class="c0">Your California Privacy Rights</span></p>
-    <p class="c4 c6">
-      <span class="c0"
-        >California Civil Code Section 1798.83 permits users that are residents
+    <p>
+      <span>Your California Privacy Rights</span>
+    </p>
+    <p>
+      <span>
+        California Civil Code Section 1798.83 permits users that are residents
         of California to request certain information regarding COMPANY&rsquo;s
         disclosures of personally identifiable information to third parties for
         such third parties&rsquo; direct marketing purposes. &nbsp;If you are a
         California resident and would like to make such a request, please email
-        COMPANY at hello@favforme.com.</span
-      >
-    </p>
-    <p class="c4 c6">
-      <span class="c0"
-        >Correcting, Updating, Accessing or Removing Personal Information
+        COMPANY at hello@favforme.com.
       </span>
     </p>
-    <p class="c4 c6">
-      <span class="c12"
-        >To the extent applicable, if a User&rsquo;s personally identifiable
+    <p>
+      <span>
+        Correcting, Updating, Accessing or Removing Personal Information
+      </span>
+    </p>
+    <p>
+      <span>
+        To the extent applicable, if a User&rsquo;s personally identifiable
         information changes (such as a User&rsquo;s zip code), or if a User no
         longer desires to receive non-account specific information from COMPANY,
         COMPANY will endeavor to provide a way to correct, update and/or remove
@@ -371,43 +406,62 @@
         COMPANY&rsquo;s data backup systems or cached or archived pages.
         &nbsp;All retained personally identifiable information will continue to
         be subject to the terms of the Privacy Policy to which the User has
-        previously agreed.</span
-      ><span class="c0">&nbsp;</span>
+        previously agreed.
+      </span>
+      <span>&nbsp;</span>
     </p>
-    <p class="c4 c6"><span class="c0">Governing Law</span></p>
-    <p class="c10">
-      <span class="c1"
-        >This policy and use of COMPANY shall be governed by and construed in
+    <p>
+      <span>Governing Law</span>
+    </p>
+    <p>
+      <span>
+        This policy and use of COMPANY shall be governed by and construed in
         accordance with the laws of the State of Missouri. If any provision of
         this agreement shall be unlawful, void, or for any reason unenforceable,
         then that provision shall be deemed severable from the other provisions
-        and shall not affect the validity of the other provisions.</span
-      >
+        and shall not affect the validity of the other provisions.
+      </span>
     </p>
-    <p class="c2 c6"><span class="c0"></span></p>
-    <p class="c4 c6"><span class="c0">Contacting COMPANY</span></p>
-    <p class="c4">
-      <span class="c1"
-        >If you have any questions or comments about this Privacy Policy, you
-        may contact COMPANY via any of the following methods:</span
-      >
+    <p>
+      <span></span>
     </p>
-    <p class="c10"><span class="c1">FavForMe LLC</span></p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c10">
-      <span class="c12">763 Schluersburg Roa</span><span class="c12">d</span>
+    <p>
+      <span>Contacting COMPANY</span>
     </p>
-    <p class="c10"><span class="c1">Augusta, MO 63332</span></p>
-    <p class="c10"><span class="c1">636-266-6114</span></p>
-    <p class="c10"><span class="c0">Support@favforme.com</span></p>
-    <p class="c4 c14"><span class="c1"></span></p>
-    <p class="c14 c15"><span class="c13"></span></p>
-    <div>
-      <p class="c3">
-        <span class="c13"
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-        >
-      </p>
-    </div>
-  </body>
-</html>
+    <p>
+      <span>
+        If you have any questions or comments about this Privacy Policy, you may
+        contact COMPANY via any of the following methods:
+      </span>
+    </p>
+    <p>
+      <span>FavForMe LLC</span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span>763 Schluersburg Roa</span>
+      <span>d</span>
+    </p>
+    <p>
+      <span>Augusta, MO 63332</span>
+    </p>
+    <p>
+      <span>636-266-6114</span>
+    </p>
+    <p>
+      <a target="_blank" href="mailto:support@favforme.com">
+        support@favforme.com
+      </a>
+    </p>
+    <p>
+      <span></span>
+    </p>
+    <p>
+      <span></span>
+    </p>
+  </>
+);
+
+export default PrivacyPage;
