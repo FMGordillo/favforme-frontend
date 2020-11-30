@@ -35,7 +35,7 @@ const LeftSide = styled.div`
 `;
 
 const RightSide = styled.div`
-  justify-self: left;
+  justify-self: center;
 `;
 
 const IntroTwo: FunctionComponent = () => {

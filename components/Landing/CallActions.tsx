@@ -65,7 +65,7 @@ const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
           nosotros. Te enviaremos informes del impacto generado. Ayudá con total
           tranquilidad.
         </StyledText>
-        <Button>Favorecer</Button>
+        <Button>Ver informes</Button>
       </Section>
       <Section>
         <Image
