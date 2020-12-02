@@ -114,6 +114,18 @@ interface FooterProps {
 
 const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
   <FooterContainer>
+    <MapSection>
+      <div>
+        <Image src="/images/favforme_logo_white.png" width={245} height={192} />
+      </div>
+      <MapUl>
+        <MapItem href="#">Home</MapItem>
+        <MapItem href="#partners">Partners</MapItem>
+        <MapItem onClick={toggleModal}>Contacto</MapItem>
+        <MapItem href="/privacy">Política de Privacidad</MapItem>
+        <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem>
+      </MapUl>
+    </MapSection>
     <SocialNetworks>
       <a
         target="_blank"
@@ -137,18 +149,6 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
         <FontAwesomeIcon icon={faTwitter} />
       </a>
     </SocialNetworks>
-    <MapSection>
-      <div>
-        <Image src="/images/favforme_logo_white.png" width={245} height={192} />
-      </div>
-      <MapUl>
-        <MapItem href="#">Home</MapItem>
-        <MapItem href="#partners">Partners</MapItem>
-        <MapItem onClick={toggleModal}>Contacto</MapItem>
-        <MapItem href="/privacy">Política de Privacidad</MapItem>
-        <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem>
-      </MapUl>
-    </MapSection>
     <Copyright>
       <p>FavForMe 2020 - All rights reserved</p>
     </Copyright>

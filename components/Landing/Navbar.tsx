@@ -160,8 +160,8 @@ const NavBar: FunctionComponent<NavBarProps> = ({
         />
       </MobileNavigator>
       <Ul open={open}>
-        <NavItem>FavForMe</NavItem>
-        <NavItem href="#partners">Partners</NavItem>
+        <NavItem href="#actions">Acciones</NavItem>
+        <NavItem href="#call_to_actions">Features</NavItem>
         <NavItem image>
           <Image
             src="/images/favforme_logo_white.png"
@@ -169,7 +169,7 @@ const NavBar: FunctionComponent<NavBarProps> = ({
             height={192}
           />
         </NavItem>
-        <NavItem href="#brands">Marcas</NavItem>
+        <NavItem href="#brands">Alianzas</NavItem>
         <NavItem onClick={toggleModal}>Contacto</NavItem>
       </Ul>
     </Nav>

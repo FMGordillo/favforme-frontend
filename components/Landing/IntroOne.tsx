@@ -9,7 +9,9 @@ const Container = styled.section`
   grid-template-areas:
     "left-image text right-image"
     "ods ods ods";
-  ${({ theme }) => theme.breakpoints.down("md")} {
+    
+    /* TODO: Queda asi porque se ve horrible en un tamaño intermedio. La contra del static */
+    @media(max-width: 1070px) {
     grid-template-areas:
       "text text text"
       "ods ods ods";
@@ -36,7 +38,10 @@ const TextContainer = styled.div`
   & > p {
     text-align: justify;
   }
-  /* TODO: Margenes en pantallas grandes, debe haber un margen*/
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
+    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  }
   ${({ theme }) => theme.breakpoints.down("md")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
   }

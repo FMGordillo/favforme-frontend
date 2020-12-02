@@ -29,11 +29,19 @@ const ModalContainer = styled.div<{ open?: boolean }>`
 `;
 
 const DialogContainer = styled.div`
-  z-index: 1050;
-  width: 100%;
-  background: white;
-  padding: ${({ theme }) => theme.spacing(1)}em;
-  margin: ${({ theme }) => theme.spacing(6)}em;
+  ${({ theme }) => `
+    z-index: 1050;
+    width: 100%;
+    background: white;
+    padding: ${theme.spacing(1)}em;
+    margin: ${theme.spacing(6)}em ${theme.spacing(4)}em;
+    ${theme.breakpoints.down("md")} {
+      margin: ${theme.spacing(4)}em ${theme.spacing(2)}em;
+    }
+    ${theme.breakpoints.down("sm")} {
+      margin: ${theme.spacing(2)}em ${theme.spacing(1)}em;
+    }
+`}
 `;
 const DialogTitle = styled.h1``;
 

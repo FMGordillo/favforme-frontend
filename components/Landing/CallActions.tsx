@@ -34,7 +34,7 @@ interface CallActionsProps {
 
 const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
   return (
-    <StyledContainer>
+    <StyledContainer id="call_to_actions">
       <Section>
         <Image
           src="/images/image-1.png"
