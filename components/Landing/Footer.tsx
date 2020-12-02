@@ -1,11 +1,54 @@
+import {
+  faInstagram,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 
-const MapSection = styled.section`
-  display: flex;
+const FooterContainer = styled.section`
   background-color: #27358c;
-  padding: ${({ theme }) => theme.spacing(2)}em;
+`;
+
+const SocialNetworks = styled.div`
+  display: grid;
+  max-width: 400px;
+  padding: 1em;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  & > * {
+    max-width: 2em;
+    color: white;
+    :hover {
+      cursor: pointer;
+    }
+    :nth-child(1) {
+      :hover {
+        color: #0a66c2;
+      }
+    }
+    :nth-child(2) {
+      :hover {
+        color: #d92d83;
+      }
+    }
+    :nth-child(3) {
+      :hover {
+        color: #1da1f2;
+      }
+    }
+  }
+`;
+
+const MapSection = styled.div`
+  display: flex;
+  padding: ${({ theme }) => theme.spacing(1)}em
+    ${({ theme }) => theme.spacing(2)}em;
   justify-content: space-around;
   align-items: center;
   & > * {
@@ -70,7 +113,30 @@ interface FooterProps {
 }
 
 const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
-  <>
+  <FooterContainer>
+    <SocialNetworks>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/company/64580065"
+        rel="noreferrer noopener"
+      >
+        <FontAwesomeIcon icon={faLinkedinIn} />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.instagram.com/favforme"
+        rel="noreferrer noopener"
+      >
+        <FontAwesomeIcon icon={faInstagram} />
+      </a>
+      <a
+        target="_blank"
+        href="https://www.instagram.com/favforme"
+        rel="noreferrer noopener"
+      >
+        <FontAwesomeIcon icon={faTwitter} />
+      </a>
+    </SocialNetworks>
     <MapSection>
       <div>
         <Image src="/images/favforme_logo_white.png" width={245} height={192} />
@@ -86,7 +152,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
     <Copyright>
       <p>FavForMe 2020 - All rights reserved</p>
     </Copyright>
-  </>
+  </FooterContainer>
 );
 
 export { Footer };

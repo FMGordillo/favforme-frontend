@@ -7,7 +7,7 @@ type MoneyObjective = {
 /**
  * TODO: Actualizar Favor (o Action) para tener estos valores
  */
-export interface Favor {
+export interface Action {
   id: string | number;
   title: string;
   description: string;
@@ -22,7 +22,7 @@ export interface Favor {
   contact: string[];
 }
 
-export const favors: { favors: Favor[] } = {
+export const favors: { favors: Action[] } = {
   favors: [
     {
       id: 1,

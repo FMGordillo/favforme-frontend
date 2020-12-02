@@ -36,6 +36,7 @@ const TextContainer = styled.div`
   & > p {
     text-align: justify;
   }
+  /* TODO: Margenes en pantallas grandes, debe haber un margen*/
   ${({ theme }) => theme.breakpoints.down("md")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
   }

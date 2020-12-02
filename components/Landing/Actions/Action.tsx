@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Favor } from "../../../lib/data";
+import { Action as ActionI } from "../../../lib/data";
 import { Container } from "../styles";
 
 interface ActionProps {
-  data?: Favor;
+  data?: ActionI;
 }
 
 const StyledContainer = styled(Container)``;
