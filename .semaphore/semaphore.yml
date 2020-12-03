@@ -31,3 +31,11 @@ blocks:
             - checkout
             - cache restore
             - npm run lint --if-present
+  - name: Testing
+    task:
+      jobs:
+        - name: Test + Coverage
+          commands:
+            - checkout
+            - cache restore
+            - npm run coverage --if-present
