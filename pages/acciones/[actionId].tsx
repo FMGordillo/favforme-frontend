@@ -3,11 +3,15 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { favors as data } from "../../lib/data";
+import { Action, favors as data } from "../../lib/data";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
-) => {
+): Promise<{
+  props: {
+    action: Action;
+  };
+}> => {
   const { actionId } = context.query;
   const action = data.favors.find((favor) => favor.id == actionId);
   return {

@@ -39,13 +39,14 @@ const IndexPage: NextPage = () => {
         </p>
         <p>
           Llamar:{" "}
-          <a target="_blank" href="tel:+5491123993440">
+          <a rel="noreferrer" target="_blank" href="tel:+5491123993440">
             +5491123993440
           </a>
         </p>
         <p>
           Correo:{" "}
           <a
+            rel="noreferrer"
             target="_blank"
             href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
               "Contacto"
