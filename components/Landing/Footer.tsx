@@ -1,4 +1,5 @@
 import {
+  faFacebook,
   faInstagram,
   faLinkedinIn,
   faTwitter,
@@ -20,7 +21,7 @@ const SocialNetworks = styled.div`
   text-align: center;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   & > * {
     max-width: 2em;
     color: white;
@@ -38,6 +39,11 @@ const SocialNetworks = styled.div`
       }
     }
     :nth-child(3) {
+      :hover {
+        color: #1877f2;
+      }
+    }
+    :nth-child(4) {
       :hover {
         color: #1da1f2;
       }
@@ -143,7 +149,14 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
       </a>
       <a
         target="_blank"
-        href="https://www.instagram.com/favforme"
+        href="https://www.facebook.com/FavForMe/"
+        rel="noreferrer noopener"
+      >
+        <FontAwesomeIcon icon={faFacebook} />
+      </a>
+      <a
+        target="_blank"
+        href="https://twitter.com/FavForMe1"
         rel="noreferrer noopener"
       >
         <FontAwesomeIcon icon={faTwitter} />
