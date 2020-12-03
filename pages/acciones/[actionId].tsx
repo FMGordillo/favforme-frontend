@@ -1,9 +1,9 @@
-import { Action, favors as data } from "@/lib/data";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Action, favors as data } from "../../lib/data";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext

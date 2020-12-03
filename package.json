@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "next",
     "test": "jest",
+    "coverage": "jest --coverage",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint pages/**/*.tsx components/**/*.tsx",

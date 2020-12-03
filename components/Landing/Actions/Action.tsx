@@ -1,7 +1,7 @@
-import { Action as ActionI } from "@/lib/data";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
+import { Action as ActionI } from "../../../lib/data";
 import { Container } from "../styles";
 
 interface ActionProps {
