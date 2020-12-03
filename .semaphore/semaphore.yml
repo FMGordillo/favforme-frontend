@@ -13,8 +13,10 @@ blocks:
             - checkout
             - sem-version node 12
             - cache restore
+            - cache restore nextjs_build
             - npm install
             - cache store
+            - cache store nextjs_build .next/cache
             - npm run build --if-present
   - name: Format + Linter
     task:
@@ -27,4 +29,7 @@ blocks:
             - npm run check-format --if-present
         - name: Linter
           commands:
+            - checkout
+            - sem-version node 12
+            - cache restore
             - npm run lint --if-present
