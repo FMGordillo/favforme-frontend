@@ -115,12 +115,12 @@ interface NavBarProps {
 }
 
 const NavBar: FunctionComponent<NavBarProps> = ({
-  isScrolled = 350,
+  //isScrolled = 350,
   toggleModal,
 }) => {
   const [open, setOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isGoingDown, setIsGoingDown] = useState(true);
+  //const [scrollPosition, setScrollPosition] = useState(0);
+  //const [isGoingDown, setIsGoingDown] = useState(true);
 
   const handleMobileOpen = () => {
     setOpen(!open);
@@ -149,7 +149,7 @@ const NavBar: FunctionComponent<NavBarProps> = ({
   // }, []);
 
   return (
-    <Nav isScrolled={scrollPosition > isScrolled} scrollingDown={isGoingDown}>
+    <Nav>
       <MobileNavigator open={open}>
         <Image
           onClick={handleMobileOpen}

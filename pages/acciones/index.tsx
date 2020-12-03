@@ -17,7 +17,7 @@ const AccionesPage: NextPage = () => {
       <h1>Acciones</h1>
       {loading && <span>Loading</span>}
       {data?.favors.length > 0 &&
-        data.favors.map((favor) => <p>{favor.title}</p>)}
+        data.favors.map((favor, i) => <p key={i}>{favor.title}</p>)}
     </div>
   );
 };

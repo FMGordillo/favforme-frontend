@@ -23,10 +23,10 @@ const Container = styled.section`
     }
 `;
 
-const LeftHandImage = styled(Image)`
+const LeftHandImage = styled.div`
   grid-area: left-image;
 `;
-const RightHandImage = styled(Image)`
+const RightHandImage = styled.div`
   grid-area: right-image;
 `;
 
@@ -58,14 +58,15 @@ const ODSLogo = styled.div`
 
 const IntroOne: FunctionComponent = () => (
   <Container>
-    <LeftHandImage
-      width={350}
-      height={330}
-      // @ts-ignore
-      layout="fixed"
-      src="/images/mano-1.png"
-      alt="Mano izquierda"
-    />
+    <LeftHandImage>
+      <Image
+        width={350}
+        height={330}
+        layout="fixed"
+        src="/images/mano-1.png"
+        alt="Mano izquierda"
+      />
+    </LeftHandImage>
     <TextContainer>
       <Title>
         CREAMOS ACCIONES DE IMPACTO POSITIVO Y TRANSPARENTE CON TU EMPRESA
@@ -78,14 +79,15 @@ const IntroOne: FunctionComponent = () => (
         SOSTENIBLES 2015-2030 propuestos por la ONU
       </Text>
     </TextContainer>
-    <RightHandImage
-      width={340}
-      height={330}
-      // @ts-ignore
-      layout="fixed"
-      src="/images/mano-2.png"
-      alt="Mano derecha"
-    />
+    <RightHandImage>
+      <Image
+        width={340}
+        layout="fixed"
+        height={330}
+        src="/images/mano-2.png"
+        alt="Mano derecha"
+      />
+    </RightHandImage>
     <ODSLogo>
       <Image width={360} height={40} src="/images/ods.png" alt="ODS Logo" />
     </ODSLogo>
