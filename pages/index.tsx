@@ -1,4 +1,4 @@
-import { LayoutComponent as Container, Modal } from "components";
+import { LayoutComponent as Container, Modal } from "@/components/index";
 import {
   Actions,
   Brands,
@@ -9,7 +9,7 @@ import {
   IntroOne,
   IntroTwo,
   NavBar,
-} from "components/Landing";
+} from "@/components/Landing";
 import { NextPage } from "next";
 import { useState } from "react";
 import styled from "styled-components";
