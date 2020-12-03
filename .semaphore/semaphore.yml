@@ -11,7 +11,7 @@ blocks:
         - name: Build
           commands:
             - checkout
-            - sem-version node 12
+            - sem-version node 14
             - cache restore
             - cache restore nextjs_build
             - npm install
@@ -24,12 +24,10 @@ blocks:
         - name: Format
           commands:
             - checkout
-            - sem-version node 12
             - cache restore
             - npm run check-format --if-present
         - name: Linter
           commands:
             - checkout
-            - sem-version node 12
             - cache restore
             - npm run lint --if-present
