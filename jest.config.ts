@@ -16,7 +16,7 @@ export default async (): Promise<Config.InitialOptions> => {
     },
     transformIgnorePatterns: ["/node_modules/"],
     globals: {
-      window: {},
+      globalThis: {},
     },
   };
 };
