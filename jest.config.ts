@@ -15,5 +15,8 @@ export default async (): Promise<Config.InitialOptions> => {
       "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
     },
     transformIgnorePatterns: ["/node_modules/"],
+    globals: {
+      window: {},
+    },
   };
 };
