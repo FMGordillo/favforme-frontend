@@ -1,6 +1,6 @@
-import { favors as data } from "@/lib/data";
 import { FunctionComponent, useEffect, useState } from "react";
 import styled from "styled-components";
+import { favors as data } from "../../../lib/data";
 import { Container, Title } from "../styles";
 import { Action } from "./Action";
 import { Carousel } from "./Carousel";

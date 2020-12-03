@@ -1,4 +1,7 @@
-import { LayoutComponent as Container, Modal } from "@/components/index";
+import { NextPage } from "next";
+import { useState } from "react";
+import styled from "styled-components";
+import { LayoutComponent as Container, Modal } from "../components";
 import {
   Actions,
   Brands,
@@ -9,10 +12,7 @@ import {
   IntroOne,
   IntroTwo,
   NavBar,
-} from "@/components/Landing";
-import { NextPage } from "next";
-import { useState } from "react";
-import styled from "styled-components";
+} from "../components/Landing";
 
 const Divider = styled.div`
   margin-bottom: 6em;
