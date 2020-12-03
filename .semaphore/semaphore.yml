@@ -16,12 +16,15 @@ blocks:
             - npm install
             - cache store
             - npm run build --if-present
-  - name: Code formatting
+  - name: Format + Linter
     task:
       jobs:
-        - name: Check
+        - name: Format
           commands:
             - checkout
             - sem-version node 12
             - cache restore
             - npm run check-format --if-present
+        - name: Linter
+          commands:
+            - npm run lint --if-present
