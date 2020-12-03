@@ -29,6 +29,7 @@ const IndexPage: NextPage = () => {
           WhatsApp:{" "}
           <a
             target="_blank"
+            rel="noreferrer"
             href={`https://wa.me/5491123993440?text=${encodeURIComponent(
               "Vengo del Landing!"
             )}`}
