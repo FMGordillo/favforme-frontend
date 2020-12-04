@@ -24,11 +24,16 @@ const SocialNetworks = styled.div`
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   & > * {
-    max-width: 2em;
     color: white;
     transition: all 300ms;
+
     :hover {
       cursor: pointer;
+    }
+
+    & > * {
+      width: 2em !important;
+      height: 2em !important;
     }
     :nth-child(1) {
       :hover {

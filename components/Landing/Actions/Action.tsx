@@ -35,6 +35,7 @@ const StyledTitle = styled(Title)`
     border-color: ${({ theme }) => theme.color.secondary.dark};
   }
 `;
+const TitleContainer = styled.div``;
 const AmountCollected = styled.h2`
   font-size: 2.25em;
   margin-bottom: 0;
@@ -52,7 +53,8 @@ const SocialNetworks = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grip-gap: 1em;
   & > svg {
-    width: 32px;
+    width: 32px !important;
+    height: 32px !important;
   }
 `;
 const ProgressBar = styled.div<{ width?: string }>`
@@ -105,9 +107,11 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
         </div>
       </Link>
       <MainContent>
-        <Link href={`/acciones/${data.id}`}>
-          <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
-        </Link>
+        <TitleContainer>
+          <Link href={`/acciones/${data.id}`}>
+            <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
+          </Link>
+        </TitleContainer>
         <Percentage>
           {((currentAmount * 100) / finalAmount).toFixed()}%
         </Percentage>

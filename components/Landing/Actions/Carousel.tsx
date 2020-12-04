@@ -26,7 +26,8 @@ const Section = styled.div<{ active?: boolean }>`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  width: 50px;
+  width: 2.5em !important;
+  height: 2.5em !important;
   :hover {
     cursor: pointer;
   }
