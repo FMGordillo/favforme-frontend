@@ -30,7 +30,7 @@ const Actions: FunctionComponent = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       if (!data?.favors.length) return;
       if (current === data.favors.length - 1) {
         setCurrent(0);
@@ -38,12 +38,14 @@ const Actions: FunctionComponent = () => {
         setCurrent(current + 1);
       }
     }, 5000);
+    return () => {
+      clearInterval(timer);
+    };
   }, [current]);
 
   return (
     <StyledContainer id="actions">
       <Title>Acciones Activas</Title>
-      {/* @ts-ignore */}
       <Carousel current={current}>
         {data?.favors.length > 0 &&
           data.favors.map((favor, i) => <Action key={i} data={favor} />)}
