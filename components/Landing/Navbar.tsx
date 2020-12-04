@@ -81,14 +81,15 @@ const Item = styled.li<{ image?: boolean }>`
   }
 `;
 const Link = styled.a`
+  font-weight: 500;
   color: white;
   text-decoration: none;
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: all 300ms;
   &:hover {
+    font-weight: 700;
     color: ${({ theme }) => theme.color.secondary.main};
-    border-color: ${({ theme }) => theme.color.secondary.main};
   }
 `;
 

@@ -6,13 +6,10 @@ const HeaderContainer = styled.header`
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  border-radius: 0 0 100% 100%/0 0 25% 25%;
   height: 400px;
   width: 100vw;
   overflow: hidden;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    border-radius: 0 0 50% 50%/0 0 25% 25%;
-  }
+
   /* Workaround? */
   display: table-cell;
   vertical-align: bottom;

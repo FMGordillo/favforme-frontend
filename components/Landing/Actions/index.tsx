@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { favors as data } from "../../../lib/data";
 import { Container, Title } from "../styles";
@@ -29,19 +29,32 @@ const Actions: FunctionComponent = () => {
   // const { data } = useQuery<GetActionsData>(GET_ACTIONS);
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!data?.favors.length) return;
-      if (current === data.favors.length - 1) {
+  const changeCurrent = useCallback(
+    (newVal: number) => {
+      if (
+        newVal !== data.favors.length - 1 &&
+        current === data.favors.length - 1
+      ) {
         setCurrent(0);
       } else {
-        setCurrent(current + 1);
+        setCurrent(newVal);
       }
+    },
+    [current]
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      changeCurrent(current + 1);
     }, 5000);
     return () => {
       clearInterval(timer);
     };
-  }, [current]);
+  }, [current, changeCurrent]);
+
+  const handleClickNavigation = (to: "back" | "forward") => {
+    changeCurrent(to === "back" ? current - 1 : current + 1);
+  };
 
   return (
     <StyledContainer id="actions">

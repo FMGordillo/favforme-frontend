@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import NextLink from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 
@@ -97,11 +98,22 @@ const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
   href,
 }) => {
   const props = Object.assign({}, href && { href }, onClick && { onClick });
-  return (
-    <MapLi {...props.onClick}>
-      <Link {...props}>{children}</Link>
-    </MapLi>
-  );
+
+  if (href) {
+    return (
+      <MapLi {...props.onClick}>
+        <NextLink href={href}>
+          <Link {...props}>{children}</Link>
+        </NextLink>
+      </MapLi>
+    );
+  } else {
+    return (
+      <MapLi {...props.onClick}>
+        <Link {...props}>{children}</Link>
+      </MapLi>
+    );
+  }
 };
 
 const Copyright = styled.section`
@@ -126,7 +138,7 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
       </div>
       <MapUl>
         <MapItem href="#">Home</MapItem>
-        <MapItem href="#partners">Partners</MapItem>
+        <MapItem href="#brands">Alianzas</MapItem>
         <MapItem onClick={toggleModal}>Contacto</MapItem>
         <MapItem href="/privacy">Política de Privacidad</MapItem>
         <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem>

@@ -3,7 +3,7 @@ import baseStyled, { ThemedStyledInterface } from "styled-components";
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
 
-const calculateBreakpoint = (key: Breakpoint) => {
+export const calculateBreakpoint = (key: Breakpoint) => {
   switch (key) {
     case "xs":
       return "0px";

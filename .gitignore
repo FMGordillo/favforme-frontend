@@ -1,5 +1,6 @@
 .env
 .envrc
+.eslintcache
 
 # Next
 .next
