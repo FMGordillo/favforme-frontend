@@ -1,6 +1,7 @@
 import { ApolloProvider } from "@apollo/client";
 import * as gtag from "lib/gtag";
 import { theme } from "lib/styled";
+import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
-export default function App({ Component, pageProps }): JSX.Element {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = useApollo(pageProps.initialApolloState);
   return (
     <>
