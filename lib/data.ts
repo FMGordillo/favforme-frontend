@@ -76,3 +76,14 @@ export const favors: { favors: Action[] } = {
     },
   ],
 };
+
+export const parseToCurrency = (value: number): string => {
+  const formatCurrency = Intl.NumberFormat("es-ES", {
+    style: "currency",
+    currency: "ARS",
+  }).resolvedOptions();
+  return value.toLocaleString("es-ES", {
+    ...formatCurrency,
+    style: "decimal",
+  });
+};

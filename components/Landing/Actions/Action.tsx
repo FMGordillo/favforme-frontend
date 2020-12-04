@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Action as ActionI } from "../../../lib/data";
+import { Action as ActionI, parseToCurrency } from "../../../lib/data";
 import { Button, Container, Title } from "../../styles";
 
 interface ActionProps {
@@ -92,23 +92,18 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
   const currentAmount = data.objective.current.amount;
   const finalAmount = data.objective.final.amount;
 
-  const formatCurrency = Intl.NumberFormat("es-ES", {
-    style: "currency",
-    currency: "ARS",
-  }).resolvedOptions();
-
   return (
     <StyledContainer>
-      <div>
-        <Link href={`/acciones/${data.id}`}>
+      <Link href={`/acciones/${data.id}`}>
+        <div>
           <Image
             src={data.imageSrc}
             layout="responsive"
             width={800}
             height={500}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <MainContent>
         <Link href={`/acciones/${data.id}`}>
           <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
@@ -117,19 +112,11 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           {((currentAmount * 100) / finalAmount).toFixed()}%
         </Percentage>
         <AmountCollected>
-          $
-          {currentAmount.toLocaleString("es-ES", {
-            ...formatCurrency,
-            style: "decimal",
-          })}
+          ${parseToCurrency(currentAmount)}
           .-
         </AmountCollected>
         <AmountSubtitle>
-          aportando voluntariamente de $
-          {finalAmount.toLocaleString("es-ES", {
-            ...formatCurrency,
-            style: "decimal",
-          })}
+          aportando voluntariamente de ${parseToCurrency(finalAmount)}
         </AmountSubtitle>
         <ProgressBar width="100%">
           <progress
