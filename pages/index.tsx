@@ -2,12 +2,12 @@ import { LayoutComponent as Layout, Modal } from "components";
 import { NextPage } from "next";
 import { useState } from "react";
 import styled from "styled-components";
+import { Header } from "../components";
 import {
   Actions,
   Brands,
   CallActions,
   Footer,
-  Header,
   IntroOne,
   IntroTwo,
 } from "../components/Landing";

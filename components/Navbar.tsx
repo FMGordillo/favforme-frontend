@@ -163,7 +163,7 @@ const NavBar: FunctionComponent<NavBarProps> = ({
       <Ul open={open}>
         <NavItem href="#actions">Acciones</NavItem>
         <NavItem href="#call_to_actions">Features</NavItem>
-        <NavItem image>
+        <NavItem image href="/">
           <Image
             src="/images/favforme_logo_white.png"
             width={245}
