@@ -1,4 +1,7 @@
 import { LayoutComponent as Layout, Modal } from "components";
+import { NextPage } from "next";
+import { useState } from "react";
+import styled from "styled-components";
 import {
   Actions,
   Brands,
@@ -7,11 +10,7 @@ import {
   Header,
   IntroOne,
   IntroTwo,
-  NavBar,
-} from "components/Landing";
-import { NextPage } from "next";
-import { useState } from "react";
-import styled from "styled-components";
+} from "../components/Landing";
 
 const Divider = styled.div`
   margin-bottom: 6em;
@@ -55,8 +54,11 @@ const IndexPage: NextPage = () => {
           </a>
         </p>
       </Modal>
-      <NavBar toggleModal={() => setOpen(!open)} />
-      <Header />
+      <Header
+        isIndex
+        toggleModal={() => setOpen(!open)}
+        subtitle="No dejamos a nadie atrás"
+      />
       <Divider />
       <IntroOne />
       <Divider />

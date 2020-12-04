@@ -1,12 +1,13 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
+import { NavBar } from "../components/Landing";
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   display: fixed;
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  height: 400px;
+  height: ${({ isIndex }) => (isIndex ? "400px" : "250px")};
   width: 100vw;
   overflow: hidden;
 
@@ -33,17 +34,34 @@ const Subtitle = styled.h2`
   font-weight: 400;
 `;
 
-const Header: FunctionComponent = () => {
+interface HeaderProps {
+  isIndex?: boolean;
+  title?: ReactNode | string;
+  subtitle?: ReactNode | string;
+  toggleModal?: () => void;
+}
+
+const Header: FunctionComponent<HeaderProps> = ({
+  toggleModal,
+  isIndex,
+  title,
+  subtitle,
+}) => {
   return (
     <>
-      <HeaderContainer>
+      <NavBar toggleModal={toggleModal} />
+      <HeaderContainer isIndex={isIndex}>
         <TextContainer>
           <Title>
-            Estás en
-            <br />
-            FavForMe
+            {title || (
+              <span>
+                Estás en
+                <br />
+                FavForMe
+              </span>
+            )}
           </Title>
-          <Subtitle>No dejamos a nadie atrás</Subtitle>
+          {subtitle && <Subtitle>{subtitle}</Subtitle>}
         </TextContainer>
       </HeaderContainer>
     </>
