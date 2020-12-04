@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { favors as data } from "../../../lib/data";
-import { Container, Title } from "../styles";
+import { Container, Title } from "../../styles";
 import { Action } from "./Action";
 import { Carousel } from "./Carousel";
 
@@ -29,6 +29,7 @@ const Actions: FunctionComponent = () => {
   // const { data } = useQuery<GetActionsData>(GET_ACTIONS);
   const [current, setCurrent] = useState(0);
 
+  // TODO: Mejorar estos IFs
   const changeCurrent = useCallback(
     (newVal: number) => {
       if (
@@ -36,6 +37,8 @@ const Actions: FunctionComponent = () => {
         current === data.favors.length - 1
       ) {
         setCurrent(0);
+      } else if (newVal < 0) {
+        setCurrent(Math.abs(newVal));
       } else {
         setCurrent(newVal);
       }
@@ -59,7 +62,11 @@ const Actions: FunctionComponent = () => {
   return (
     <StyledContainer id="actions">
       <Title>Acciones Activas</Title>
-      <Carousel current={current}>
+      <Carousel
+        current={current}
+        handleBack={() => handleClickNavigation("back")}
+        handleForward={() => handleClickNavigation("forward")}
+      >
         {data?.favors.length > 0 &&
           data.favors.map((favor, i) => <Action key={i} data={favor} />)}
       </Carousel>

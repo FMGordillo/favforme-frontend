@@ -4,6 +4,7 @@ type MoneyObjective = {
   currencyType: string;
 };
 
+type SocialNetwork = "facebook" | "instagram" | "twitter" | "linkedin";
 /**
  * TODO: Actualizar Favor (o Action) para tener estos valores
  */
@@ -14,10 +15,12 @@ export interface Action {
   history?: string; // TODO: Esto no va aca
   owner: string;
   homepage?: string;
+  imageSrc?: string;
   objective?: {
     current: MoneyObjective;
     final: MoneyObjective;
   };
+  socialNetworks: [Partial<Record<SocialNetwork, string>>];
   peopleBeneficted?: number;
   contact: string[];
 }
@@ -42,8 +45,10 @@ export const favors: { favors: Action[] } = {
           amount: 80000,
         },
       },
+      imageSrc: "/images/accion_placeholder_1.jpg",
       peopleBeneficted: 150,
       contact: ["1137577188", "merenderootromundo@gmail.com"],
+      socialNetworks: [{ twitter: "https://twitter.com" }],
     },
     {
       id: 2,
@@ -64,8 +69,10 @@ export const favors: { favors: Action[] } = {
           amount: 210000,
         },
       },
+      imageSrc: "/images/accion_placeholder_2.jpg",
       peopleBeneficted: 50,
       contact: ["2323643915", "info@delanada.org"],
+      socialNetworks: [{ twitter: "https://twitter.com" }],
     },
   ],
 };

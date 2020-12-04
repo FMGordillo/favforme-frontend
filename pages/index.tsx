@@ -1,4 +1,4 @@
-import { LayoutComponent as Container, Modal } from "components";
+import { LayoutComponent as Layout, Modal } from "components";
 import {
   Actions,
   Brands,
@@ -21,7 +21,7 @@ const IndexPage: NextPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Container>
+    <Layout>
       {/* TODO: No la pense bien, y no deberia poner props aca */}
       <Modal title="Contacto" onClose={() => setOpen(false)} open={open}>
         <p>
@@ -71,7 +71,7 @@ const IndexPage: NextPage = () => {
       <Brands />
       <Divider />
       <Footer toggleModal={() => setOpen(!open)} />
-    </Container>
+    </Layout>
   );
 };
 

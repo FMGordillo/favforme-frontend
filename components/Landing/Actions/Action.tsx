@@ -4,17 +4,13 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowAltCircleLeft,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { calculateBreakpoint } from "lib/styled";
+import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Action as ActionI } from "../../../lib/data";
-import { Button, Container, Title } from "../styles";
+import { Button, Container, Title } from "../../styles";
 
 interface ActionProps {
   data?: ActionI;
@@ -22,11 +18,35 @@ interface ActionProps {
 
 const StyledContainer = styled(Container)`
   display: grid;
+  grid-template-columns: 50% 50%;
   align-items: center;
-  grid-template-columns: 50px 1fr 50px;
-  min-width: ${calculateBreakpoint("md")};
+  grid-gap: 1em;
 `;
 const MainContent = styled.div``;
+const StyledTitle = styled(Title)`
+  font-size: 2.25em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0.25em;
+  color: ${({ theme }) => theme.color.secondary.dark};
+  border-bottom: 1px solid transparent;
+  transition: all 300ms;
+  :hover {
+    border-color: ${({ theme }) => theme.color.secondary.dark};
+  }
+`;
+const AmountCollected = styled.h2`
+  font-size: 2.25em;
+  margin-bottom: 0;
+`;
+const AmountSubtitle = styled.p`
+  color: ${({ theme }) => theme.color.gray};
+  margin-top: 0;
+`;
+const Percentage = styled.span`
+  font-size: 1.25em;
+  font-weight: bold;
+`;
 const SocialNetworks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -37,61 +57,87 @@ const SocialNetworks = styled.div`
 `;
 const ProgressBar = styled.div<{ width?: string }>`
   progress[value] {
+    background-color: transparent;
     width: ${(props) => props.width};
     appearance: none;
-    background-color: red;
     height: 12px;
+    border: 2px solid ${({ theme }) => theme.color.secondary.dark};
     border-radius: 20px;
 
     ::-webkit-progress-bar {
-      background-color: red;
+      background-color: transparent;
       width: ${(props) => props.width};
       appearance: none;
-      background-color: red;
       height: 12px;
+      border: 2px solid ${({ theme }) => theme.color.secondary.dark};
       border-radius: 20px;
     }
 
     ::-webkit-progress-value {
-      background-color: blue;
+      background-color: ${({ theme }) => theme.color.secondary.main};
       border-radius: 20px;
     }
 
     ::-moz-progress-bar {
-      background-color: blue;
+      background-color: ${({ theme }) => theme.color.secondary.main};
       border-radius: 20px;
     }
   }
 `;
-const StyledTitle = styled(Title)`
-  cursor: pointer;
-  color: ${({ theme }) => theme.color.secondary.main};
+const StyledButton = styled(Button)`
+  margin: 1em 0;
 `;
 
 const Action: FunctionComponent<ActionProps> = ({ data }) => {
   const currentAmount = data.objective.current.amount;
   const finalAmount = data.objective.final.amount;
 
+  const formatCurrency = Intl.NumberFormat("es-ES", {
+    style: "currency",
+    currency: "ARS",
+  }).resolvedOptions();
+
   return (
     <StyledContainer>
-      <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+      <div>
+        <Link href={`/acciones/${data.id}`}>
+          <Image
+            src={data.imageSrc}
+            layout="responsive"
+            width={800}
+            height={500}
+          />
+        </Link>
+      </div>
       <MainContent>
         <Link href={`/acciones/${data.id}`}>
           <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
         </Link>
-        <span>
-          Porcentaje completo: {((currentAmount * 100) / finalAmount).toFixed()}
-          %
-        </span>
-        <p>${currentAmount}</p>
+        <Percentage>
+          {((currentAmount * 100) / finalAmount).toFixed()}%
+        </Percentage>
+        <AmountCollected>
+          $
+          {currentAmount.toLocaleString("es-ES", {
+            ...formatCurrency,
+            style: "decimal",
+          })}
+          .-
+        </AmountCollected>
+        <AmountSubtitle>
+          aportando voluntariamente de $
+          {finalAmount.toLocaleString("es-ES", {
+            ...formatCurrency,
+            style: "decimal",
+          })}
+        </AmountSubtitle>
         <ProgressBar width="100%">
           <progress
             max="100"
-            value={((currentAmount + 5000 * 100) / finalAmount).toFixed()}
+            value={((currentAmount * 100) / finalAmount).toFixed()}
           ></progress>
         </ProgressBar>
-        <p>aportando voluntariamente de ${finalAmount}</p>
-        <Button>Favorecer esta acción</Button>
+        <StyledButton>Favorecer esta acción</StyledButton>
         <SocialNetworks>
           <FontAwesomeIcon icon={faFacebook} />
           <FontAwesomeIcon icon={faInstagram} />
@@ -99,7 +145,6 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           <FontAwesomeIcon icon={faTwitter} />
         </SocialNetworks>
       </MainContent>
-      <FontAwesomeIcon icon={faArrowAltCircleRight} />
     </StyledContainer>
   );
 };

@@ -48,7 +48,10 @@ export const Button = styled.button<ButtonI>`
  * section
  */
 export const Container = styled.section`
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0 ${({ theme }) => theme.spacing(0.5)}em !important;
+  ${({ theme }) => `
+  margin: 0 ${theme.spacing(1)}em;
+  ${theme.breakpoints.down("sm")} {
+    margin: 0 ${theme.spacing(0.5)}em !important;
   }
+`}
 `;

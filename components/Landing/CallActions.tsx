@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Button, Container, Text, Title } from "./styles";
+import { Button, Container, Text, Title } from "../styles";
 
 const StyledContainer = styled(Container)`
   display: grid;

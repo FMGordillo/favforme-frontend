@@ -3,7 +3,7 @@ import baseStyled, { ThemedStyledInterface } from "styled-components";
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
 
-export const calculateBreakpoint = (key: Breakpoint) => {
+export const calculateBreakpoint = (key: Breakpoint): string => {
   switch (key) {
     case "xs":
       return "0px";
@@ -26,15 +26,18 @@ export const theme = {
     },
     secondary: {
       main: "#f38d9f",
+      dark: "#a21d44",
     },
+    gray: "#B2B2B2",
   },
-  spacing: (digit: Spacing) => `${digit * 4}`,
+  spacing: (digit: Spacing): string => `${digit * 4}`,
   breakpoints: {
     // "Mobile first"
-    down: (key: Breakpoint) =>
+    down: (key: Breakpoint): string =>
       `@media (max-width: ${calculateBreakpoint(key)})`,
     // Not being used rn
-    up: (key: Breakpoint) => `@media (min-width: ${calculateBreakpoint(key)})`,
+    up: (key: Breakpoint): string =>
+      `@media (min-width: ${calculateBreakpoint(key)})`,
   },
 };
 

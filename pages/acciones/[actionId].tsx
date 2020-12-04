@@ -1,3 +1,4 @@
+import { Container, LayoutComponent as Layout } from "components";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -25,14 +26,14 @@ const AccionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action }) => {
   return (
-    <div>
-      <section>
+    <Layout>
+      <Container>
         <h1>{action.title}</h1>
         <p>{action.description}</p>
-      </section>
-      <h2>Historia sobre {action.owner}</h2>
-      <p>{action.history}</p>
-    </div>
+        <h2>Historia sobre {action.owner}</h2>
+        <p>{action.history}</p>
+      </Container>
+    </Layout>
   );
 };
 

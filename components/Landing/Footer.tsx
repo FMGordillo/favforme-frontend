@@ -26,6 +26,7 @@ const SocialNetworks = styled.div`
   & > * {
     max-width: 2em;
     color: white;
+    transition: all 300ms;
     :hover {
       cursor: pointer;
     }
