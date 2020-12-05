@@ -10,19 +10,20 @@ import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Action as ActionI, parseToCurrency } from "../../../lib/data";
-import { Button, Container, Title } from "../../styles";
+import { Button, Title } from "../../styles";
 
 interface ActionProps {
   data?: ActionI;
 }
 
-const StyledContainer = styled(Container)`
+const MainContent = styled.div``;
+const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
   grid-gap: 1em;
 `;
-const MainContent = styled.div``;
+const TitleContainer = styled.div``;
 const StyledTitle = styled(Title)`
   font-size: 2.25em;
   font-weight: bold;
@@ -35,7 +36,6 @@ const StyledTitle = styled(Title)`
     border-color: ${({ theme }) => theme.color.secondary.dark};
   }
 `;
-const TitleContainer = styled.div``;
 const AmountCollected = styled.h2`
   font-size: 2.25em;
   margin-bottom: 0;
