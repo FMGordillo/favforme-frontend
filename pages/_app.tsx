@@ -1,6 +1,8 @@
 import { ApolloProvider } from "@apollo/client";
 import * as gtag from "lib/gtag";
+import seoConfig from "lib/seo.config";
 import { theme } from "lib/styled";
+import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
@@ -36,6 +38,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             stopDelayMs={200}
             height={3}
           />
+          <DefaultSeo {...seoConfig} />
           <Component {...pageProps} />
         </ThemeProvider>
       </ApolloProvider>
