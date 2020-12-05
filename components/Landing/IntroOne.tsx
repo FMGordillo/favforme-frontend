@@ -104,6 +104,11 @@ const IntroOne: FunctionComponent = () => (
         <Image
           width={150}
           height={150}
+          src="/images/ods-images/sdg-en-17.png"
+        />
+        <Image
+          width={150}
+          height={150}
           src="/images/ods-images/sdg-en-01.png"
         />
         <Image
@@ -121,7 +126,7 @@ const IntroOne: FunctionComponent = () => (
           height={150}
           src="/images/ods-images/sdg-en-04.png"
         />
-        <Image
+        {/* <Image
           width={150}
           height={150}
           src="/images/ods-images/sdg-en-05.png"
@@ -180,12 +185,7 @@ const IntroOne: FunctionComponent = () => (
           width={150}
           height={150}
           src="/images/ods-images/sdg-en-16.png"
-        />
-        <Image
-          width={150}
-          height={150}
-          src="/images/ods-images/sdg-en-17.png"
-        />
+        /> */}
       </div>
     </ODSContainer>
   </Main>
