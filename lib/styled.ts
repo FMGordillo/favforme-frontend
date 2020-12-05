@@ -22,7 +22,7 @@ export const theme = {
   color: {
     primary: {
       main: "#5573f5",
-      dark: "#1b233c",
+      dark: "#27358d",
     },
     secondary: {
       main: "#f38d9f",

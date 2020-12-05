@@ -44,6 +44,10 @@ export const getServerSideProps = async (
   };
 };
 
+const Divider = styled.div`
+  margin-bottom: 6em;
+`;
+
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action }) => {
@@ -79,6 +83,7 @@ const ActionPage: NextPage<
             <p>{action.history}</p>
           </Organization>
         </ActionContent>
+        <Divider />
       </Main>
     </Layout>
   );
