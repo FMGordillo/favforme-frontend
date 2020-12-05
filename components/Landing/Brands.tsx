@@ -12,6 +12,7 @@ const Container = styled.section`
 const ImagesContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   & > * {
     margin: ${({ theme }) => theme.spacing(0.1)}em !important;
     max-width: 100%;
@@ -26,28 +27,40 @@ const StyledTitle = styled(Title)`
 
 const Brands: FunctionComponent = () => (
   <Container id="brands">
-    <StyledTitle>Marcas que nos apoyan</StyledTitle>
+    <StyledTitle>alianzas que nos apoyan</StyledTitle>
     <ImagesContainer>
       <a
         target="_blank"
         href="https://trilogylab.com/"
         rel="noreferrer noopener"
       >
-        <Image src="/images/marcas_01.png" width={186} height={186} />
+        <Image src="/images/alianzas_01.png" width={102} height={102} />
       </a>
       <a target="_blank" href="https://fi.co/" rel="noreferrer noopener">
-        <Image src="/images/marcas_02_cut.png" width={126} height={186} />
+        <Image src="/images/alianzas_02.png" width={269} height={102} />
       </a>
       <a
         target="_blank"
         href="https://www.blahbox.net/"
         rel="noreferrer noopener"
       >
-        <Image src="/images/marcas_03.png" width={186} height={186} />
+        <Image src="/images/alianzas_03.png" width={102} height={102} />
       </a>
       <a target="_blank" href="https://gorather.com/" rel="noreferrer noopener">
-        <Image src="/images/marcas_04_cut_new.png" width={176} height={146} />
+        <Image src="/images/alianzas_04.png" width={270} height={102} />
       </a>
+    </ImagesContainer>
+    <ImagesContainer>
+      <a
+        target="_blank"
+        href="http://www.delanada.org/"
+        rel="noreferrer noopener"
+      >
+        <Image src="/images/alianzas_05.png" width={102} height={102} />
+      </a>
+      {/* <a target="_blank" href="https://fi.co/" rel="noreferrer noopener"> */}
+      <Image src="/images/alianzas_06.png" width={102} height={102} />
+      {/* </a> */}
     </ImagesContainer>
   </Container>
 );
