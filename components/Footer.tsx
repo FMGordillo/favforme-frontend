@@ -133,10 +133,10 @@ const Copyright = styled.section`
 `;
 
 interface FooterProps {
-  toggleModal: () => void;
+  toggleModal?: () => void;
 }
 
-const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
+const Footer: FunctionComponent<FooterProps> = () => (
   <FooterContainer>
     <MapSection>
       <div>
@@ -144,10 +144,12 @@ const Footer: FunctionComponent<FooterProps> = ({ toggleModal }) => (
       </div>
       <MapUl>
         <MapItem href="#">Home</MapItem>
+        <MapItem href="#call_to_actions">FavForMe</MapItem>
+        <MapItem href="#actions">Acciones</MapItem>
         <MapItem href="#brands">Alianzas</MapItem>
-        <MapItem onClick={toggleModal}>Contacto</MapItem>
-        <MapItem href="/privacy">Política de Privacidad</MapItem>
-        <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem>
+        {/* <MapItem onClick={toggleModal}>Contacto</MapItem> */}
+        {/* <MapItem href="/privacy">Política de Privacidad</MapItem> */}
+        {/* <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem> */}
       </MapUl>
     </MapSection>
     <SocialNetworks>

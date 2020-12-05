@@ -1,8 +1,10 @@
 import { FunctionComponent } from "react";
+import { Footer } from "../components";
 import { HeadComponent, HeadProps } from "./Head";
 
 interface LayoutProps {
   headProps?: HeadProps;
+  toggleModal?: () => void;
 }
 
 const LayoutComponent: FunctionComponent<LayoutProps> = ({
@@ -12,6 +14,7 @@ const LayoutComponent: FunctionComponent<LayoutProps> = ({
   <>
     <HeadComponent {...headProps} />
     {children}
+    <Footer />
   </>
 );
 

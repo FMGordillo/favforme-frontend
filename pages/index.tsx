@@ -8,7 +8,6 @@ import {
   Actions,
   Brands,
   CallActions,
-  Footer,
   IntroOne,
   IntroTwo,
 } from "../components/Landing";
@@ -92,7 +91,6 @@ const IndexPage: NextPage = () => {
       <Divider /> */}
       <Brands />
       <Divider />
-      <Footer toggleModal={() => setOpen(!open)} />
     </Layout>
   );
 };
