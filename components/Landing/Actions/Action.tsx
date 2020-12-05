@@ -16,35 +16,39 @@ interface ActionProps {
   data?: ActionI;
 }
 
-const MainContent = styled.div``;
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
-  grid-gap: 1em;
+  grid-gap: 2em;
+  background: ${({ theme }) => theme.color.gray.light};
 `;
+const MainContent = styled.div``;
 const TitleContainer = styled.div``;
 const StyledTitle = styled(Title)`
   font-size: 2.25em;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 0.25em;
-  color: ${({ theme }) => theme.color.secondary.dark};
-  border-bottom: 1px solid transparent;
+  color: ${({ theme }) => theme.color.primary.main};
   transition: all 300ms;
   :hover {
-    border-color: ${({ theme }) => theme.color.secondary.dark};
+    text-decoration: underline;
   }
 `;
 const AmountCollected = styled.h2`
+  font-weight: normal;
+  color: ${({ theme }) => theme.color.gray.main};
   font-size: 2.25em;
-  margin-bottom: 0;
+  margin: 0;
 `;
 const AmountSubtitle = styled.p`
-  color: ${({ theme }) => theme.color.gray};
+  color: ${({ theme }) => theme.color.gray.main};
   margin-top: 0;
 `;
-const Percentage = styled.span`
+const Percentage = styled.p`
+  color: green;
+  margin: 0;
   font-size: 1.25em;
   font-weight: bold;
 `;
@@ -63,26 +67,22 @@ const ProgressBar = styled.div<{ width?: string }>`
     width: ${(props) => props.width};
     appearance: none;
     height: 12px;
-    border: 2px solid ${({ theme }) => theme.color.secondary.dark};
-    border-radius: 20px;
+    border: 2px solid ${({ theme }) => theme.color.gray.dark};
 
     ::-webkit-progress-bar {
       background-color: transparent;
       width: ${(props) => props.width};
       appearance: none;
       height: 12px;
-      border: 2px solid ${({ theme }) => theme.color.secondary.dark};
-      border-radius: 20px;
+      border: 2px solid ${({ theme }) => theme.color.gray.dark};
     }
 
     ::-webkit-progress-value {
-      background-color: ${({ theme }) => theme.color.secondary.main};
-      border-radius: 20px;
+      background-color: ${({ theme }) => theme.color.gray.main};
     }
 
     ::-moz-progress-bar {
-      background-color: ${({ theme }) => theme.color.secondary.main};
-      border-radius: 20px;
+      background-color: ${({ theme }) => theme.color.gray.main};
     }
   }
 `;
@@ -101,8 +101,8 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           <Image
             src={data.imageSrc}
             layout="responsive"
-            width={800}
-            height={500}
+            width={1400}
+            height={1100}
           />
         </div>
       </Link>
@@ -112,9 +112,6 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
             <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
           </Link>
         </TitleContainer>
-        <Percentage>
-          {((currentAmount * 100) / finalAmount).toFixed()}%
-        </Percentage>
         <AmountCollected>
           ${parseToCurrency(currentAmount)}
           .-
@@ -122,12 +119,16 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
         <AmountSubtitle>
           aportando voluntariamente de ${parseToCurrency(finalAmount)}
         </AmountSubtitle>
-        <ProgressBar width="100%">
+        {/* TODO: FIX THIS */}
+        <ProgressBar width="420px">
           <progress
             max="100"
             value={((currentAmount * 100) / finalAmount).toFixed()}
           ></progress>
         </ProgressBar>
+        <Percentage>
+          {((currentAmount * 100) / finalAmount).toFixed()}%
+        </Percentage>
         <StyledButton>Favorecer esta acción</StyledButton>
         <SocialNetworks>
           <FontAwesomeIcon icon={faFacebook} />

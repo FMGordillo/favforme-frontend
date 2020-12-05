@@ -1,7 +1,3 @@
-import {
-  faArrowAltCircleLeft,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { calculateBreakpoint } from "lib/styled";
 import React, { Children, FunctionComponent, useEffect, useState } from "react";
@@ -17,7 +13,7 @@ const StyledContainer = styled(Container)`
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 `;
 
 const Section = styled.div<{ active?: boolean }>`
@@ -48,14 +44,14 @@ const Carousel: FunctionComponent<CarouselProps> = ({
 
   return (
     <StyledContainer>
-      <Icon icon={faArrowAltCircleLeft} onClick={handleBack} />
+      {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
       {childrenMap.length &&
         childrenMap.map((child, i) => (
           <Section key={i} active={i === iCurrent}>
             {child}
           </Section>
         ))}
-      <Icon icon={faArrowAltCircleRight} onClick={handleForward} />
+      {/* <Icon icon={faArrowAltCircleRight} onClick={handleForward} /> */}
     </StyledContainer>
   );
 };

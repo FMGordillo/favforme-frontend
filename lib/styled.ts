@@ -28,7 +28,7 @@ export const theme = {
       main: "#f38d9f",
       dark: "#a21d44",
     },
-    gray: "#B2B2B2",
+    gray: { light: "#f6f6f6", main: "#B2B2B2", dark: "#9b9b9b" },
   },
   spacing: (digit: Spacing): string => `${digit * 4}`,
   breakpoints: {
