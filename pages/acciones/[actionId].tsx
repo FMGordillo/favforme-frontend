@@ -1,4 +1,5 @@
 import { Container, LayoutComponent as Layout } from "components";
+import { toPascalCase } from "lib";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -49,7 +50,11 @@ const ActionPage: NextPage<
   const router = useRouter();
 
   return (
-    <Layout>
+    <Layout
+      headProps={{
+        title: `${toPascalCase(action.title)}`,
+      }}
+    >
       <Header title="Nuestras acciones" />
       <Main>
         {/* <Breadcrumb>
