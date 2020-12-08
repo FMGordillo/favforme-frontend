@@ -38,7 +38,7 @@ const RightSide = styled.div`
   justify-self: center;
 `;
 
-const IntroTwo: FunctionComponent = () => {
+const IntroTwoSection: FunctionComponent = () => {
   return (
     <StyledContainer>
       <LeftSide>
@@ -62,4 +62,4 @@ const IntroTwo: FunctionComponent = () => {
   );
 };
 
-export { IntroTwo };
+export { IntroTwoSection as IntroTwo };

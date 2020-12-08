@@ -25,7 +25,7 @@ const StyledContainer = styled(Container)`
 //   favors: [Favor];
 // }
 
-const Actions: FunctionComponent = () => {
+const ActionsSection: FunctionComponent = () => {
   // const { data } = useQuery<GetActionsData>(GET_ACTIONS);
   const [current, setCurrent] = useState(0);
 
@@ -74,4 +74,4 @@ const Actions: FunctionComponent = () => {
   );
 };
 
-export { Actions };
+export { ActionsSection as Actions };

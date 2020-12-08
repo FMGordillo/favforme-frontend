@@ -25,7 +25,7 @@ const StyledText = styled(Text)`
   text-align: center;
 `;
 
-const Business: FunctionComponent = () => {
+const PartnerSection: FunctionComponent = () => {
   return (
     <StyledContainer id="partners">
       <Subtitle>La oportunidad es ahora</Subtitle>
@@ -51,4 +51,4 @@ const Business: FunctionComponent = () => {
   );
 };
 
-export { Business };
+export { PartnerSection as Business };

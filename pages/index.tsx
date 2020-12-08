@@ -8,6 +8,7 @@ import {
   Actions,
   Brands,
   CallActions,
+  ContactSection,
   IntroOne,
   IntroTwo,
 } from "../components/Landing";
@@ -90,6 +91,8 @@ const IndexPage: NextPage = () => {
       {/* <Business />
       <Divider /> */}
       <Brands />
+      <Divider />
+      <ContactSection />
       <Divider />
     </Layout>
   );

@@ -64,7 +64,7 @@ const ODSContainer = styled(Container)`
   text-align: center;
 `;
 
-const IntroOne: FunctionComponent = () => (
+const IntroOneSection: FunctionComponent = () => (
   <Main>
     <LeftHandImage>
       <Image
@@ -82,8 +82,8 @@ const IntroOne: FunctionComponent = () => (
       <Text>
         FavForMe es la plataforma tecnológica perfecta, para generar
         Responsabilidad Social Empresarial con tu organización. Aportá a
-        diferentes ACCIONES de forma simple, clara y segura, logranndo entre
-        todos alcanzar metas increíbles. Sé parte de OBJETIVOS DE DESARROLLO
+        diferentes ACCIONES de forma simple, clara y segura, logrando entre
+        todos alcanzar metas increíbles. Sé parte de los OBJETIVOS DE DESARROLLO
         SOSTENIBLES 2015-2030 propuestos por la ONU
       </Text>
     </TextContainer>
@@ -191,4 +191,4 @@ const IntroOne: FunctionComponent = () => (
   </Main>
 );
 
-export { IntroOne };
+export { IntroOneSection as IntroOne };

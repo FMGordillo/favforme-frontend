@@ -25,7 +25,7 @@ const StyledTitle = styled(Title)`
   text-align: center;
 `;
 
-const Brands: FunctionComponent = () => (
+const AlliancesSection: FunctionComponent = () => (
   <Container id="brands">
     <StyledTitle>alianzas que nos apoyan</StyledTitle>
     <ImagesContainer>
@@ -65,4 +65,4 @@ const Brands: FunctionComponent = () => (
   </Container>
 );
 
-export { Brands };
+export { AlliancesSection as Brands };
