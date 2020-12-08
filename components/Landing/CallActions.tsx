@@ -65,7 +65,15 @@ const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
           nosotros. Te enviaremos informes del impacto generado. Ayudá con total
           tranquilidad.
         </StyledText>
-        <Button>Ver informes</Button>
+        <Button>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://drive.google.com/file/d/1x2eH3g7qWA9jGfFUYZSkTm1lL_U1RlIT/view?usp=sharing"
+          >
+            Ver informes
+          </a>
+        </Button>
       </Section>
       <Section>
         <Image

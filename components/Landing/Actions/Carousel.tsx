@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { calculateBreakpoint } from "lib/styled";
 import React, { Children, FunctionComponent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Container } from "../../styles";
+
 interface CarouselProps {
   current?: number;
   handleBack: () => void;
@@ -25,19 +25,19 @@ const Section = styled.div<{ active?: boolean }>`
   }
 `;
 
-const Icon = styled(FontAwesomeIcon)`
-  width: 2.5em !important;
-  height: 2.5em !important;
-  :hover {
-    cursor: pointer;
-  }
-`;
+// const Icon = styled(FontAwesomeIcon)`
+//   width: 2.5em !important;
+//   height: 2.5em !important;
+//   :hover {
+//     cursor: pointer;
+//   }
+// `;
 
 const Carousel: FunctionComponent<CarouselProps> = ({
   current = 0,
   children,
-  handleBack,
-  handleForward,
+  // handleBack,
+  // handleForward,
 }) => {
   const childrenMap = Children.map(children, (child) => child);
   const [iCurrent, setICurrent] = useState<number>(current);
