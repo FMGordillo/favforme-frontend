@@ -13,12 +13,16 @@ const StyledContainer = styled(Container)`
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 1fr;
+  /*box-shadow: 1em 1em ${({ theme }) => theme.color.gray.main};*/
+  box-shadow: 1em 1em #dcdcdc;
 `;
 
 const Section = styled.div<{ active?: boolean }>`
   display: ${({ active }) => (active ? "block" : "none")};
   min-width: ${calculateBreakpoint("md")};
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    min-width: auto;
+  }
 `;
 
 const Icon = styled(FontAwesomeIcon)`

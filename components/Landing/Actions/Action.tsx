@@ -22,6 +22,9 @@ const StyledContainer = styled.div`
   align-items: center;
   grid-gap: 2em;
   background: ${({ theme }) => theme.color.gray.light};
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
 `;
 const MainContent = styled.div``;
 const TitleContainer = styled.div``;
@@ -61,17 +64,17 @@ const SocialNetworks = styled.div`
     height: 32px !important;
   }
 `;
-const ProgressBar = styled.div<{ width?: string }>`
+const ProgressBar = styled.div`
   progress[value] {
     background-color: transparent;
-    width: ${(props) => props.width};
+    width: 420px;
     appearance: none;
     height: 12px;
     border: 2px solid ${({ theme }) => theme.color.gray.dark};
 
     ::-webkit-progress-bar {
       background-color: transparent;
-      width: ${(props) => props.width};
+      width: 420px;
       appearance: none;
       height: 12px;
       border: 2px solid ${({ theme }) => theme.color.gray.dark};
@@ -84,6 +87,13 @@ const ProgressBar = styled.div<{ width?: string }>`
     ::-moz-progress-bar {
       background-color: ${({ theme }) => theme.color.gray.main};
     }
+
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      width: 180px;
+      ::-webkit-progress-bar {
+        width: 180px;
+      }
+    }}
   }
 `;
 const StyledButton = styled(Button)`
@@ -120,7 +130,7 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           aportando voluntariamente de ${parseToCurrency(finalAmount)}
         </AmountSubtitle>
         {/* TODO: FIX THIS */}
-        <ProgressBar width="420px">
+        <ProgressBar>
           <progress
             max="100"
             value={((currentAmount * 100) / finalAmount).toFixed()}

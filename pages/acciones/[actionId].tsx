@@ -23,7 +23,11 @@ const Main = styled(Container)`
 `;
 const ActionContent = styled(Container)`
   display: grid;
+  grid-gap: 2em;
   grid-template-columns: 3fr 1fr;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
 `;
 const Description = styled.div``;
 const Organization = styled.div``;
