@@ -1,16 +1,8 @@
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Container, LayoutComponent as Layout } from "components";
 import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
-  SocialNetworks,
 } from "components/Landing/Actions/styles";
 import { toPascalCase } from "lib";
 import {
@@ -21,6 +13,7 @@ import {
 import Image from "next/image";
 import styled from "styled-components";
 import { Divider, Header, Title } from "../../components";
+import { SocialNetworks } from "../../components/Landing/Actions/SocialNetworks";
 import { Action, favors as data, parseToCurrency } from "../../lib/data";
 
 interface GetServerSidePropsReturn {
@@ -119,20 +112,7 @@ const ActionPage: NextPage<
                 {((currentAmount * 100) / finalAmount).toFixed()}% COMPLETADO
               </Percentage>
               <Button>Favorecer esta acción</Button>
-              <SocialNetworks justify="center">
-                <a href="">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href="">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a href="">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a href="">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </SocialNetworks>
+              <SocialNetworks data={action.socialNetworks} justify="center" />
             </Summary>
             <h2>Datos de la ONG</h2>
             <Image

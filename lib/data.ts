@@ -4,7 +4,10 @@ type MoneyObjective = {
   currencyType: string;
 };
 
-type SocialNetwork = "facebook" | "instagram" | "twitter" | "linkedin";
+/**
+ * All the supported social networks
+ */
+export type SocialNetwork = "facebook" | "instagram" | "twitter" | "linkedin";
 
 /**
  * TODO: Actualizar Favor (o Action) para tener estos valores
@@ -22,7 +25,7 @@ export interface Action {
     current: MoneyObjective;
     final: MoneyObjective;
   };
-  socialNetworks: [Partial<Record<SocialNetwork, string>>];
+  socialNetworks: Partial<Record<SocialNetwork, string>>;
   peopleBeneficted?: number;
   contact: string[];
 }
@@ -51,12 +54,10 @@ export const favors: { favors: Action[] } = {
       imageSrc: "/images/accion_placeholder_1.jpg",
       peopleBeneficted: 150,
       contact: ["1137577188", "merenderootromundo@gmail.com"],
-      socialNetworks: [
-        {
-          instagram: "https://www.instagram.com/otromundodelviso/",
-          facebook: "https://www.facebook.com/otromundodelviso",
-        },
-      ],
+      socialNetworks: {
+        instagram: "https://www.instagram.com/otromundodelviso/",
+        facebook: "https://www.facebook.com/otromundodelviso",
+      },
     },
     {
       id: 2,
@@ -81,12 +82,10 @@ export const favors: { favors: Action[] } = {
       imageSrc: "/images/accion_placeholder_2.jpg",
       peopleBeneficted: 50,
       contact: ["2323643915", "info@delanada.org"],
-      socialNetworks: [
-        {
-          instagram: "https://www.instagram.com/de_la_nada_asoc/",
-          facebook: "https://www.facebook.com/DeLaNadaAsociacionCivil",
-        },
-      ],
+      socialNetworks: {
+        instagram: "https://www.instagram.com/de_la_nada_asoc/",
+        facebook: "https://www.facebook.com/DeLaNadaAsociacionCivil",
+      },
     },
   ],
 };
