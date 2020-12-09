@@ -32,15 +32,21 @@ export const Button = styled.button<ButtonI>`
   color: #fff;
   cursor: pointer;
   font-size: 1.25em;
-  padding: 1em 1.25em;
+  padding: 0.5em 1.25em;
   border-radius: 3em;
   font-family: abel, sans-serif;
+  transition: background-color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
     theme.color[color || "primary"][variant || "main"]};
 
   & > a {
     color: inherit;
     text-decoration: none;
+  }
+
+  :hover {
+    background-color: ${({ theme, color }) =>
+      theme.color[color || "primary"]["light"]};
   }
 `;
 

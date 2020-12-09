@@ -21,10 +21,12 @@ export const calculateBreakpoint = (key: Breakpoint): string => {
 export const theme = {
   color: {
     primary: {
+      light: "#9BAAF6", // TODO: Confirmar con Agus
       main: "#5573f5",
       dark: "#27358d",
     },
     secondary: {
+      light: "#FFBCC4",
       main: "#f38d9f",
       dark: "#a21d44",
     },

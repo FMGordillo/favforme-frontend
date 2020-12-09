@@ -5,7 +5,6 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Header, Title } from "../../components";
 import { Action, favors as data } from "../../lib/data";
@@ -31,10 +30,10 @@ const ActionContent = styled(Container)`
 `;
 const Description = styled.div``;
 const Organization = styled.div``;
-const Subtitle = styled.h2`
-  text-transform: initial;
-  font-family: barlow, sans-serif;
-`;
+// const Subtitle = styled.h2`
+//   text-transform: initial;
+//   font-family: barlow, sans-serif;
+// `;
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -55,7 +54,7 @@ const Divider = styled.div`
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <Layout
