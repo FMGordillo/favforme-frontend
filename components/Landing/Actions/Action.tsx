@@ -82,10 +82,18 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
         </Percentage>
         <StyledButton>Favorecer esta acción</StyledButton>
         <SocialNetworks>
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faLinkedin} />
-          <FontAwesomeIcon icon={faTwitter} />
+          <a href="">
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
         </SocialNetworks>
       </MainContent>
     </StyledContainer>

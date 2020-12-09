@@ -119,11 +119,19 @@ const ActionPage: NextPage<
                 {((currentAmount * 100) / finalAmount).toFixed()}% COMPLETADO
               </Percentage>
               <Button>Favorecer esta acción</Button>
-              <SocialNetworks>
-                <FontAwesomeIcon icon={faFacebook} />
-                <FontAwesomeIcon icon={faInstagram} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faTwitter} />
+              <SocialNetworks justify="center">
+                <a href="">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
               </SocialNetworks>
             </Summary>
             <h2>Datos de la ONG</h2>

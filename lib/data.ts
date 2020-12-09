@@ -51,7 +51,12 @@ export const favors: { favors: Action[] } = {
       imageSrc: "/images/accion_placeholder_1.jpg",
       peopleBeneficted: 150,
       contact: ["1137577188", "merenderootromundo@gmail.com"],
-      socialNetworks: [{ twitter: "https://twitter.com" }],
+      socialNetworks: [
+        {
+          instagram: "https://www.instagram.com/otromundodelviso/",
+          facebook: "https://www.facebook.com/otromundodelviso",
+        },
+      ],
     },
     {
       id: 2,
@@ -76,7 +81,12 @@ export const favors: { favors: Action[] } = {
       imageSrc: "/images/accion_placeholder_2.jpg",
       peopleBeneficted: 50,
       contact: ["2323643915", "info@delanada.org"],
-      socialNetworks: [{ twitter: "https://twitter.com" }],
+      socialNetworks: [
+        {
+          instagram: "https://www.instagram.com/de_la_nada_asoc/",
+          facebook: "https://www.facebook.com/DeLaNadaAsociacionCivil",
+        },
+      ],
     },
   ],
 };
