@@ -11,8 +11,8 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint pages/**/*.tsx components/**/*.tsx",
-    "format": "prettier --write **/*.ts public/**/*.html public/**/*.css",
-    "check-format": "prettier --check **/*.ts public/**/*.html public/**/*.css"
+    "format": "prettier --write **/*.ts public/**/*.html",
+    "check-format": "prettier --check **/*.ts public/**/*.html"
   },
   "keywords": [],
   "author": "Facundo Martin Gordillo",
