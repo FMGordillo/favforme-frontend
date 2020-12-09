@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
-import { Header } from "../components";
+import { Divider, Header } from "../components";
 import {
   Actions,
   Brands,
@@ -12,10 +12,6 @@ import {
   IntroOne,
   IntroTwo,
 } from "../components/Landing";
-
-const Divider = styled.div`
-  margin-bottom: 6em;
-`;
 
 const ModalContent = styled.div`
   display: grid;

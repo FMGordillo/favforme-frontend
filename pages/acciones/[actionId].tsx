@@ -20,7 +20,7 @@ import {
 } from "next";
 import Image from "next/image";
 import styled from "styled-components";
-import { Header, Title } from "../../components";
+import { Divider, Header, Title } from "../../components";
 import { Action, favors as data, parseToCurrency } from "../../lib/data";
 
 interface GetServerSidePropsReturn {
@@ -64,10 +64,6 @@ export const getServerSideProps = async (
     }, // will be passed to the page component as props
   };
 };
-
-const Divider = styled.div`
-  margin-bottom: 6em;
-`;
 
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>

@@ -55,9 +55,18 @@ export const Button = styled.button<ButtonI>`
  */
 export const Container = styled.section`
   ${({ theme }) => `
-  margin: 0 ${theme.spacing(1)}em;
+  margin: ${theme.spacing(1)}em;
   ${theme.breakpoints.down("sm")} {
     margin: 0 ${theme.spacing(0.5)}em !important;
   }
 `}
+`;
+
+/**
+ * hr
+ */
+export const Divider = styled.hr`
+  border: none;
+  padding-top: 4em;
+  padding-bottom: 2em;
 `;
