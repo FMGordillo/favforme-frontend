@@ -1,8 +1,19 @@
 import styled from "styled-components";
 import { Title } from "../../styles";
 
+/**
+ * @deprecated Improve this or use another thing
+ */
 export const MainContent = styled.div``;
+
+/**
+ * @deprecated Improve this or use another thing
+ */
 export const TitleContainer = styled.div``;
+
+/**
+ * @description Styled from Title (h1)
+ */
 export const StyledTitle = styled(Title)`
   font-size: 2.25em;
   font-weight: bold;
@@ -14,22 +25,29 @@ export const StyledTitle = styled(Title)`
     text-decoration: underline;
   }
 `;
+
+/**
+ * @description Styled from h2
+ */
 export const AmountCollected = styled.h2`
   font-weight: normal;
-  color: ${({ theme }) => theme.color.gray.main};
+  color: ${({ theme }) => theme.color.gray.dark};
   font-size: 2.25em;
   margin: 0;
 `;
+
 export const AmountSubtitle = styled.p`
-  color: ${({ theme }) => theme.color.gray.main};
+  color: ${({ theme }) => theme.color.gray.dark};
   margin-top: 0;
 `;
+
 export const Percentage = styled.p`
   color: green;
   margin: 0;
   font-size: 1.25em;
   font-weight: bold;
 `;
+
 export const SocialNetworks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -39,6 +57,10 @@ export const SocialNetworks = styled.div`
     height: 32px !important;
   }
 `;
+
+/**
+ * @description Progress bar container (needs a \<progress\>)
+ */
 export const ProgressBar = styled.div`
   progress[value] {
     background-color: transparent;

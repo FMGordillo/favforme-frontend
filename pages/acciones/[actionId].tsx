@@ -1,13 +1,27 @@
-import { Container, LayoutComponent as Layout } from "components";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Container, LayoutComponent as Layout } from "components";
+import {
+  AmountCollected,
+  AmountSubtitle,
+  Percentage,
+  SocialNetworks,
+} from "components/Landing/Actions/styles";
 import { toPascalCase } from "lib";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import Image from "next/image";
 import styled from "styled-components";
 import { Header, Title } from "../../components";
-import { Action, favors as data } from "../../lib/data";
+import { Action, favors as data, parseToCurrency } from "../../lib/data";
 
 interface GetServerSidePropsReturn {
   props: {
@@ -28,12 +42,16 @@ const ActionContent = styled(Container)`
     grid-template-columns: 1fr;
   }
 `;
-const Description = styled.div``;
-const Organization = styled.div``;
-// const Subtitle = styled.h2`
-//   text-transform: initial;
-//   font-family: barlow, sans-serif;
-// `;
+const Summary = styled.div`
+  display: grid;
+  grid-gap: 1em;
+`;
+const LeftColumn = styled.div`
+  div:first-child {
+    text-align: center;
+  }
+`;
+const RightColumn = styled.div``;
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -54,6 +72,8 @@ const Divider = styled.div`
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action }) => {
+  const currentAmount = action.objective.current.amount;
+  const finalAmount = action.objective.final.amount;
   // const router = useRouter();
 
   return (
@@ -72,20 +92,61 @@ const ActionPage: NextPage<
           ))}
         </Breadcrumb> */}
         <Title>{action.title}</Title>
-        {/* <Subtitle>{action.description}</Subtitle> */}
         <ActionContent>
-          <Description>
+          <LeftColumn>
+            <div>
+              <Image
+                src={action.imageSrc || "/"}
+                alt="Resumen"
+                width={510}
+                height={350}
+              />
+            </div>
             <p>{action.description}</p>
             <p>
               {action.peopleBeneficted &&
                 `Gente beneficiada: ${action.peopleBeneficted} personas`}
             </p>
-          </Description>
-          <Organization>
+          </LeftColumn>
+          <RightColumn>
+            <Summary>
+              <AmountCollected>
+                ${parseToCurrency(currentAmount)}
+                .-
+              </AmountCollected>
+              <AmountSubtitle>
+                recaudado para esta acción
+                <br />
+                de ${parseToCurrency(finalAmount)}.-
+              </AmountSubtitle>
+              <Percentage>
+                {((currentAmount * 100) / finalAmount).toFixed()}% COMPLETADO
+              </Percentage>
+              <Button>Favorecer esta acción</Button>
+              <SocialNetworks>
+                <FontAwesomeIcon icon={faFacebook} />
+                <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faTwitter} />
+              </SocialNetworks>
+            </Summary>
             <h2>Datos de la ONG</h2>
+            <Image
+              src={action.logo || "/"}
+              alt="Logo"
+              width={150}
+              height={150}
+            />
             <p>{action.history}</p>
-          </Organization>
+          </RightColumn>
         </ActionContent>
+        <Title>¿Tenés una ONG?</Title>
+        <p>
+          Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
+          <br />
+          Hagamos juntos un lugar mejor para vivir.
+        </p>
+        <Button color="secondary">Sumar mi ONG</Button>
         <Divider />
       </Main>
     </Layout>

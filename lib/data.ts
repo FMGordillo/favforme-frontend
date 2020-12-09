@@ -5,6 +5,7 @@ type MoneyObjective = {
 };
 
 type SocialNetwork = "facebook" | "instagram" | "twitter" | "linkedin";
+
 /**
  * TODO: Actualizar Favor (o Action) para tener estos valores
  */
@@ -16,6 +17,7 @@ export interface Action {
   owner: string;
   homepage?: string;
   imageSrc?: string;
+  logo?: string;
   objective?: {
     current: MoneyObjective;
     final: MoneyObjective;
@@ -45,6 +47,7 @@ export const favors: { favors: Action[] } = {
           amount: 80000,
         },
       },
+      logo: "/images/alianzas_06.png",
       imageSrc: "/images/accion_placeholder_1.jpg",
       peopleBeneficted: 150,
       contact: ["1137577188", "merenderootromundo@gmail.com"],
@@ -69,6 +72,7 @@ export const favors: { favors: Action[] } = {
           amount: 210000,
         },
       },
+      logo: "/images/alianzas_05.png",
       imageSrc: "/images/accion_placeholder_2.jpg",
       peopleBeneficted: 50,
       contact: ["2323643915", "info@delanada.org"],
