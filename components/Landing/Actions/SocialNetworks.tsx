@@ -1,3 +1,4 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebook,
   faInstagram,
@@ -15,9 +16,13 @@ interface SocialNetworksProps {
   justify?: Direction;
 }
 
-export const Container = styled.div<{ justify?: Direction }>`
+export const Container = styled.div<{
+  justify?: Direction;
+  itemsLenght?: number;
+}>`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: ${({ itemsLenght }) =>
+    new Array(itemsLenght).fill("64px").join(" ")};
   justify-items: ${({ justify }) => (justify ? justify : "inherit")};
   grip-gap: 1em;
   & > a > svg {
@@ -31,22 +36,22 @@ export const Container = styled.div<{ justify?: Direction }>`
     :hover {
       cursor: pointer;
     }
-    :nth-child(1) {
+    .facebook {
       :hover {
         color: #0a66c2;
       }
     }
-    :nth-child(2) {
+    .instagram {
       :hover {
         color: #d92d83;
       }
     }
-    :nth-child(3) {
+    .linkedin {
       :hover {
         color: #1877f2;
       }
     }
-    :nth-child(4) {
+    .twitter {
       :hover {
         color: #1da1f2;
       }
@@ -54,31 +59,42 @@ export const Container = styled.div<{ justify?: Direction }>`
   }
 `;
 
+interface FAIconProps {
+  className: string;
+  icon: IconProp;
+}
+
+const FAIcon: FunctionComponent<FAIconProps> = ({ className, icon }) => (
+  <FontAwesomeIcon className={className} icon={icon} />
+);
+
 const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   data,
   justify,
 }) => {
+  const arrayData = Object.entries(data);
+
   const selectIcon = (socialName: SocialNetwork) => {
     switch (socialName) {
       case "facebook":
-        return faFacebook;
+        return <FAIcon className="facebook" icon={faFacebook} />;
       case "twitter":
-        return faTwitter;
+        return <FAIcon className="twitter" icon={faTwitter} />;
       case "linkedin":
-        return faLinkedin;
+        return <FAIcon className="linkedin" icon={faLinkedin} />;
       case "instagram":
-        return faInstagram;
+        return <FAIcon className="instagram" icon={faInstagram} />;
       default:
         return null;
     }
   };
 
   return (
-    <Container justify={justify}>
+    <Container justify={justify} itemsLenght={arrayData.length}>
       {data &&
-        Object.entries(data).map(([name, link]: [SocialNetwork, string], k) => (
-          <a key={k} href={link || "#"}>
-            <FontAwesomeIcon icon={selectIcon(name)} />
+        arrayData.map(([name, link]: [SocialNetwork, string], k) => (
+          <a key={k} href={link || "#"} target="_blank" rel="noreferrer">
+            {selectIcon(name)}
           </a>
         ))}
     </Container>
