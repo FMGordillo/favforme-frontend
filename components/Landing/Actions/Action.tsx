@@ -1,23 +1,16 @@
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Action as ActionI, parseToCurrency } from "../../../lib/data";
 import { Button } from "../../styles";
+import { SocialNetworks } from "./SocialNetworks";
 import {
   AmountCollected,
   AmountSubtitle,
   MainContent,
   Percentage,
   ProgressBar,
-  SocialNetworks,
   StyledTitle,
   TitleContainer,
 } from "./styles";
@@ -81,20 +74,7 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           {((currentAmount * 100) / finalAmount).toFixed()}%
         </Percentage>
         <StyledButton>Favorecer esta acción</StyledButton>
-        <SocialNetworks>
-          <a href="">
-            <FontAwesomeIcon icon={faFacebook} />
-          </a>
-          <a href="">
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="">
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a href="">
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
-        </SocialNetworks>
+        <SocialNetworks data={data.socialNetworks} />
       </MainContent>
     </StyledContainer>
   );

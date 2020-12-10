@@ -53,47 +53,6 @@ export const Percentage = styled.p`
   font-weight: bold;
 `;
 
-type Direction = "left" | "center" | "right";
-
-export const SocialNetworks = styled.div<{ justify?: Direction }>`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: ${({ justify }) => (justify ? justify : "inherit")};
-  grip-gap: 1em;
-  & > a > svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  & > * {
-    color: ${({ theme }) => theme.color.gray.main};
-    transition: all 300ms;
-
-    :hover {
-      cursor: pointer;
-    }
-    :nth-child(1) {
-      :hover {
-        color: #0a66c2;
-      }
-    }
-    :nth-child(2) {
-      :hover {
-        color: #d92d83;
-      }
-    }
-    :nth-child(3) {
-      :hover {
-        color: #1877f2;
-      }
-    }
-    :nth-child(4) {
-      :hover {
-        color: #1da1f2;
-      }
-    }
-  }
-`;
-
 /**
  * @description Progress bar container (needs a \<progress\>)
  */
