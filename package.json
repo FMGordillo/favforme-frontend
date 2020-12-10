@@ -1,12 +1,9 @@
 {
-  "name": "favforme-landing",
-  "version": "1.0.0",
-  "description": "Landing page for FavForMe",
-  "main": "index.js",
-  "cacheDirectories": [
-    ".next/cache"
-  ],
   "scripts": {
+    "xdn": "xdn",
+    "xdn:start": "xdn run",
+    "xdn:build": "xdn build",
+    "xdn:deploy": "xdn deploy",
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
@@ -14,6 +11,13 @@
     "format": "prettier --write **/*.ts public/**/*.html",
     "check-format": "prettier --check **/*.ts public/**/*.html"
   },
+  "name": "favforme-landing",
+  "version": "1.0.0",
+  "description": "Landing page for FavForMe",
+  "main": "index.js",
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "keywords": [],
   "author": "Facundo Martin Gordillo",
   "license": "ISC",
@@ -37,6 +41,12 @@
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
+    "@xdn/cli": "^2.30.3",
+    "@xdn/core": "^2.30.3",
+    "@xdn/devtools": "^2.30.3",
+    "@xdn/next": "^2.30.3",
+    "@xdn/prefetch": "^2.30.3",
+    "@xdn/react": "^2.30.3",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",

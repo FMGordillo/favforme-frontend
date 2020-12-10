@@ -6,4 +6,5 @@
 .next
 
 # Node
+.xdn
 node_modules
