@@ -19,7 +19,7 @@ const PrivacyPolicyPage: NextPage = () => (
     <p>
       <span>The </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
@@ -30,7 +30,7 @@ const PrivacyPolicyPage: NextPage = () => (
         make you aware of the terms and conditions of your use of the{" "}
       </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
@@ -295,13 +295,13 @@ const PrivacyPolicyPage: NextPage = () => (
     <p>
       <span>Users who employ hyperlinks between their webpage and </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
       <span>&nbsp;or any of the </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
@@ -312,7 +312,7 @@ const PrivacyPolicyPage: NextPage = () => (
         owners; (b) hyperlinks should only be linked to the{" "}
       </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
@@ -326,7 +326,7 @@ const PrivacyPolicyPage: NextPage = () => (
         between the User&rsquo;s web page and{" "}
       </span>
       <span>
-        <a target="_blank" href="https://favforme.com">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com">
           www.FavForMe.com
         </a>
       </span>
@@ -352,7 +352,7 @@ const PrivacyPolicyPage: NextPage = () => (
         with Company&rsquo;s Privacy Policy, located at{" "}
       </span>
       <span>
-        <a target="_blank" href="https://favforme.com/privacy">
+        <a target="_blank" rel="noreferrer" href="https://favforme.com/privacy">
           www.favforme.com/privacy
         </a>
       </span>
