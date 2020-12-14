@@ -18,15 +18,15 @@ blocks:
             - cache store
             - cache store nextjs_build .next/cache
             - npm run build --if-present
-  - name: Format + Linter
+  - name: Linter + TS
     task:
       jobs:
-        - name: Format
+        - name: Check Typescript
           commands:
             - checkout
             - cache restore
-            - npm run check-format --if-present
-        - name: Linter
+            - npm run check-type --if-present
+        - name: Check ESLint
           commands:
             - checkout
             - cache restore
