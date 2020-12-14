@@ -18,7 +18,7 @@ import { Action, favors as data, parseToCurrency } from "../../lib/data";
 
 interface GetServerSidePropsReturn {
   props: {
-    action: Action;
+    action?: Action;
   };
 }
 
@@ -34,6 +34,10 @@ const ActionContent = styled(Container)`
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
   }
+`;
+const JoinUsContainer = styled.div`
+  text-align: center;
+  color: ${({ theme }) => theme.color.secondary.main};
 `;
 const Summary = styled.div`
   display: grid;
@@ -61,14 +65,14 @@ export const getServerSideProps = async (
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action }) => {
-  const currentAmount = action.objective.current.amount;
-  const finalAmount = action.objective.final.amount;
+  const currentAmount = action?.objective?.current.amount;
+  const finalAmount = action?.objective?.final.amount;
   // const router = useRouter();
 
   return (
     <Layout
       headProps={{
-        title: `${toPascalCase(action.title)}`,
+        title: `${toPascalCase(action?.title)}`,
       }}
     >
       <Header title="Nuestras acciones" />
@@ -80,20 +84,20 @@ const ActionPage: NextPage<
             </Link>
           ))}
         </Breadcrumb> */}
-        <Title>{action.title}</Title>
+        <Title>{action?.title}</Title>
         <ActionContent>
           <LeftColumn>
             <div>
               <Image
-                src={action.imageSrc || "/"}
+                src={action?.imageSrc || "/"}
                 alt="Resumen"
                 width={510}
                 height={350}
               />
             </div>
-            <p>{action.description}</p>
+            <p>{action?.description}</p>
             <p>
-              {action.peopleBeneficted &&
+              {action?.peopleBeneficted &&
                 `Gente beneficiada: ${action.peopleBeneficted} personas`}
             </p>
           </LeftColumn>
@@ -109,28 +113,36 @@ const ActionPage: NextPage<
                 de ${parseToCurrency(finalAmount)}.-
               </AmountSubtitle>
               <Percentage>
-                {((currentAmount * 100) / finalAmount).toFixed()}% COMPLETADO
+                {(
+                  ((currentAmount || 0) * 100) /
+                  (finalAmount || currentAmount || 0)
+                ).toFixed()}
+                % COMPLETADO
               </Percentage>
               <Button>Favorecer esta acción</Button>
-              <SocialNetworks data={action.socialNetworks} justify="center" />
+              <SocialNetworks data={action?.socialNetworks} justify="center" />
             </Summary>
             <h2>Datos de la ONG</h2>
             <Image
-              src={action.logo || "/"}
+              src={action?.logo || "/"}
               alt="Logo"
               width={150}
               height={150}
             />
-            <p>{action.history}</p>
+            <p>{action?.history}</p>
           </RightColumn>
         </ActionContent>
-        <Title>¿Tenés una ONG?</Title>
-        <p>
-          Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
-          <br />
-          Hagamos juntos un lugar mejor para vivir.
-        </p>
-        <Button color="secondary">Sumar mi ONG</Button>
+        <JoinUsContainer>
+          <Title color="secondary" weight="bold">
+            ¿Tenés una ONG?
+          </Title>
+          <p>
+            Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
+            <br />
+            Hagamos juntos un lugar mejor para vivir.
+          </p>
+          <Button color="secondary">Sumar mi ONG</Button>
+        </JoinUsContainer>
         <Divider />
       </Main>
     </Layout>

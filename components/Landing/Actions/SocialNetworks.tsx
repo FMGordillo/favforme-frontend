@@ -75,7 +75,8 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   data,
   justify,
 }) => {
-  const arrayData = Object.entries(data);
+  // FIXME: Type this
+  const arrayData = data ? Object.entries(data) : [];
 
   const selectIcon = (socialName: SocialNetwork) => {
     switch (socialName) {
@@ -94,7 +95,10 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
 
   return (
     <Container justify={justify} itemsLenght={arrayData.length}>
-      {data &&
+      {arrayData?.length &&
+        // TODO: Fix this
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         arrayData.map(([name, link]: [SocialNetwork, string], k) => (
           <a key={k} href={link || "#"} target="_blank" rel="noreferrer">
             {selectIcon(name)}

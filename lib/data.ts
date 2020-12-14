@@ -90,7 +90,10 @@ export const favors: { favors: Action[] } = {
   ],
 };
 
-export const parseToCurrency = (value: number): string => {
+/**
+ * @param value Default to 0
+ */
+export const parseToCurrency = (value = 0): string => {
   const formatCurrency = Intl.NumberFormat("es-ES", {
     style: "currency",
     currency: "ARS",

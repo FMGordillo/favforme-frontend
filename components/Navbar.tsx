@@ -104,7 +104,11 @@ const NavItem: FunctionComponent<NavItemProps> = ({
   onClick,
   href,
 }) => {
-  const props = Object.assign({}, href && { href }, onClick && { onClick });
+  const props = Object.assign(
+    {},
+    href ? { href } : {},
+    onClick ? { onClick } : {}
+  );
   return (
     <Item image>{cloneElement(<Link />, { onClick, ...props, children })}</Item>
   );

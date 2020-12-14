@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 export const GA_TRACKING_ID = "UA-XXXXXXXXX-X"; // This is your GA Tracking ID
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-export const pageview = (url) => {
+export const pageview = (url: string): void => {
   // @ts-ignore
   window?.gtag &&
     // @ts-ignore
@@ -11,7 +13,17 @@ export const pageview = (url) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }) => {
+export const event = ({
+  action,
+  category,
+  label,
+  value,
+}: {
+  action: string;
+  category: string;
+  label: string;
+  value: string;
+}): void => {
   // @ts-ignore
   window?.gtag &&
     // @ts-ignore

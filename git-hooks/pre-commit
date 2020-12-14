@@ -1,0 +1,39 @@
+#!/bin/sh
+
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NC="\033[0m"
+
+linter_exit_code=1
+tsc_exit_code=1
+staged_js_files=$(git diff --cached --diff-filter=d --name-only | grep .ts$)
+
+./node_modules/.bin/eslint $staged_js_files --quiet --fix
+linter_exit_code=$?
+
+./node_modules/.bin/tsc || exit 0
+tsc_exit_code=$?
+
+git add -f $staged_js_files
+
+if [ $linter_exit_code -ne 0 ]
+  then
+    echo "${RED} ❌ ESLint${NC}"
+  else
+    echo "${GREEN} ✔ ESLint${NC}"
+fi
+
+if [ $tsc_exit_code -ne 0 ]
+  then
+    echo "${RED} ❌ Typescript${NC}"
+  else
+    echo "${GREEN} ✔ Typescript${NC}"
+fi
+
+if [ $linter_exit_code != 0 && $tsc_exit_code != 0 ]
+  then
+    exit 1
+  else
+  echo "... Why?"
+    exit 0
+fi

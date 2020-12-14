@@ -24,6 +24,7 @@ const StyledContainer = styled.div`
   grid-template-columns: 50% 50%;
   align-items: center;
   grid-gap: 2em;
+  box-shadow: 1em 1em #dcdcdc;
   background: ${({ theme }) => theme.color.gray.light};
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
@@ -35,15 +36,15 @@ const StyledButton = styled(Button)`
 `;
 
 const Action: FunctionComponent<ActionProps> = ({ data }) => {
-  const currentAmount = data.objective.current.amount;
-  const finalAmount = data.objective.final.amount;
+  const currentAmount = data?.objective?.current.amount;
+  const finalAmount = data?.objective?.final.amount;
 
   return (
     <StyledContainer>
-      <Link href={`/acciones/${data.id}`}>
+      <Link href={`/acciones/${data?.id}`}>
         <div>
           <Image
-            src={data.imageSrc}
+            src={data?.imageSrc || ""}
             layout="responsive"
             width={1400}
             height={1100}
@@ -52,8 +53,8 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
       </Link>
       <MainContent>
         <TitleContainer>
-          <Link href={`/acciones/${data.id}`}>
-            <StyledTitle>{data.title.toUpperCase()}</StyledTitle>
+          <Link href={`/acciones/${data?.id}`}>
+            <StyledTitle>{data?.title.toUpperCase()}</StyledTitle>
           </Link>
         </TitleContainer>
         <AmountCollected>
@@ -67,14 +68,21 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
         <ProgressBar>
           <progress
             max="100"
-            value={((currentAmount * 100) / finalAmount).toFixed()}
+            value={(
+              ((currentAmount || 0) * 100) /
+              (finalAmount || currentAmount || 0)
+            ).toFixed()}
           ></progress>
         </ProgressBar>
         <Percentage>
-          {((currentAmount * 100) / finalAmount).toFixed()}%
+          {(
+            ((currentAmount || 0) * 100) /
+            (finalAmount || currentAmount || 0)
+          ).toFixed()}
+          %
         </Percentage>
         <StyledButton>Favorecer esta acción</StyledButton>
-        <SocialNetworks data={data.socialNetworks} />
+        <SocialNetworks data={data?.socialNetworks} />
       </MainContent>
     </StyledContainer>
   );

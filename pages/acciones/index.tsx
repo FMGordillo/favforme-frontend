@@ -3,7 +3,6 @@ import { Action } from "components/Landing/Actions/Action";
 import { NextPage } from "next";
 import styled from "styled-components";
 import {
-  Button,
   Container,
   Header,
   LayoutComponent as Layout,
@@ -43,27 +42,22 @@ const ActionsPage: NextPage = () => {
       <Header />
       <Container>
         <StyledTitle>Acciones Activas</StyledTitle>
-        {data?.favors.length > 0 &&
-          data?.favors.map((favor, i) => (
-            <ActionContainer key={i}>
-              <Action data={favor} />
-              <hr />
-            </ActionContainer>
-          ))}
         <JoinUsContainer>
+          <Title color="primary" weight="bold">
+            ODS activos hoy
+          </Title>
           <p>
             Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
             <br />
             Hagamos juntos un lugar mejor para vivir.
           </p>
-          <a
-            href="https://forms.gle/tfVmgg7pYP3StgJc8"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button color="secondary">Sumar mi ONG</Button>
-          </a>
         </JoinUsContainer>
+        {data?.favors.length > 0 &&
+          data?.favors.map((favor, i) => (
+            <ActionContainer key={i}>
+              <Action data={favor} />
+            </ActionContainer>
+          ))}
       </Container>
     </Layout>
   );

@@ -62,7 +62,7 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
   children,
 }) => {
   const mounted = useRef();
-  const background = useRef();
+  const background = useRef<HTMLDivElement>(null);
   const [fadeType, setFadeType] = useState<FadeType>("in");
 
   const handleEscKeyDown = (e: KeyboardEvent) => {
@@ -78,9 +78,11 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
 
   useEffect(() => {
     if (!mounted.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       window.addEventListener("keydown", handleEscKeyDown, false);
       setTimeout(() => setFadeType("in"), 0);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       mounted.current = true;
     } else {
@@ -88,6 +90,7 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
     }
 
     return () => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       window.removeEventListener("keydown", handleEscKeyDown);
     };
@@ -99,7 +102,7 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
         <DialogTitle>{title}</DialogTitle>
         {children}
       </DialogContainer>
-      <Background ref={background} onClick={handleClick} />
+      {background && <Background ref={background} onClick={handleClick} />}
     </ModalContainer>
   );
 };
