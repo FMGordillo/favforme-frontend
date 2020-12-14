@@ -31,11 +31,14 @@ export const Container = styled.div<{
   }
   & > * {
     color: ${({ theme }) => theme.color.gray.main};
-    transition: all 300ms;
 
-    :hover {
-      cursor: pointer;
+    & > * {
+      transition: all 300ms;
+      :hover {
+        cursor: pointer;
+      }
     }
+
     .facebook {
       :hover {
         color: #0a66c2;
