@@ -1,12 +1,21 @@
 import styled from "styled-components";
 
+// TODO: Use this from styled.ts
+type Color = "primary" | "secondary";
+type Variant = "light" | "main" | "dark";
+
 /**
  * h1
  */
-export const Title = styled.h1`
+export const Title = styled.h1<{
+  color?: Color;
+  variant?: Variant;
+  weight?: string;
+}>`
   font-size: 2em;
-  font-weight: 400;
-  color: ${({ theme }) => theme.color.primary.main};
+  font-weight: ${({ weight }) => weight || "400"};
+  color: ${({ theme, color, variant }) =>
+    theme.color[color || "primary"][variant || "main"]};
 `;
 
 /**
@@ -16,9 +25,6 @@ export const Text = styled.p`
   line-height: 1.75em;
 `;
 
-// TODO: Use this from styled.ts
-type Color = "primary" | "secondary";
-type Variant = "light" | "main" | "dark";
 interface ButtonI {
   color?: Color;
   variant?: Variant;
