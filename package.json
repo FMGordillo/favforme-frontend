@@ -7,7 +7,6 @@
     ".next/cache"
   ],
   "scripts": {
-    "postinstall": "git config core.hooksPath ./git-hooks",
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
