@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-export const GA_TRACKING_ID = "UA-XXXXXXXXX-X"; // This is your GA Tracking ID
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_CODE; // This is your GA Tracking ID
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string): void => {
