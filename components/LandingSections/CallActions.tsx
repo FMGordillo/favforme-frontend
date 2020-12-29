@@ -28,11 +28,13 @@ const Section = styled.section`
   justify-items: center;
 `;
 
-interface CallActionsProps {
+interface CallToActionSectionProps {
   toggleModal?: () => void;
 }
 
-const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
+const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({
+  toggleModal,
+}) => {
   return (
     <StyledContainer id="call_to_actions">
       <Section>
@@ -94,4 +96,4 @@ const CallActions: FunctionComponent<CallActionsProps> = ({ toggleModal }) => {
   );
 };
 
-export { CallActions };
+export { CallToActionSection };

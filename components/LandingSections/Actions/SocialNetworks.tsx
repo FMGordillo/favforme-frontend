@@ -6,13 +6,13 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SocialNetwork } from "lib/data";
 import { Direction } from "lib/styled";
+import { SocialNetwork, SocialNetworkName } from "lib/types";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 interface SocialNetworksProps {
-  data?: Partial<Record<SocialNetwork, string>>;
+  data?: SocialNetwork[];
   justify?: Direction;
 }
 
@@ -75,18 +75,15 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   data,
   justify,
 }) => {
-  // FIXME: Type this
-  const arrayData = data ? Object.entries(data) : [];
-
-  const selectIcon = (socialName: SocialNetwork) => {
+  const selectIcon = (socialName: SocialNetworkName) => {
     switch (socialName) {
-      case "facebook":
+      case "FACEBOOK":
         return <FAIcon className="facebook" icon={faFacebook} />;
-      case "twitter":
+      case "TWITTER":
         return <FAIcon className="twitter" icon={faTwitter} />;
-      case "linkedin":
+      case "LINKEDIN":
         return <FAIcon className="linkedin" icon={faLinkedin} />;
-      case "instagram":
+      case "INSTAGRAM":
         return <FAIcon className="instagram" icon={faInstagram} />;
       default:
         return null;
@@ -94,14 +91,13 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   };
 
   return (
-    <Container justify={justify} itemsLenght={arrayData.length}>
-      {arrayData?.length &&
+    <Container justify={justify} itemsLenght={data?.length}>
+      {data?.length &&
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        arrayData.map(([name, link]: [SocialNetwork, string], k) => (
-          <a key={k} href={link || "#"} target="_blank" rel="noreferrer">
-            {selectIcon(name)}
+        data.map(({ id, link, type }) => (
+          <a key={id} href={link || "#"} target="_blank" rel="noreferrer">
+            {selectIcon(type)}
           </a>
         ))}
     </Container>

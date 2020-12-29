@@ -1,8 +1,8 @@
+import { Action } from "lib/types";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { favors as data } from "../../../lib/data";
 import { Container, Title } from "../../styles";
-import { Action } from "./Action";
+import { ActionComponent } from "./Action";
 import { Carousel } from "./Carousel";
 
 const StyledContainer = styled(Container)`
@@ -12,30 +12,17 @@ const StyledContainer = styled(Container)`
   margin: 0 ${({ theme }) => theme.spacing(2)}em;
 `;
 
-// const GET_ACTIONS = gql`
-//   {
-//     favors {
-//       id
-//       title
-//     }
-//   }
-// `;
+interface ActionsProps {
+  actions?: Action[];
+}
 
-// interface GetActionsData {
-//   favors: [Favor];
-// }
-
-const ActionsSection: FunctionComponent = () => {
-  // const { data } = useQuery<GetActionsData>(GET_ACTIONS);
+const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
   const [current, setCurrent] = useState(0);
 
   // TODO: Mejorar estos IFs
   const changeCurrent = useCallback(
     (newVal: number) => {
-      if (
-        newVal !== data.favors.length - 1 &&
-        current === data.favors.length - 1
-      ) {
+      if (newVal !== actions.length - 1 && current === actions.length - 1) {
         setCurrent(0);
       } else if (newVal < 0) {
         setCurrent(Math.abs(newVal));
@@ -43,7 +30,7 @@ const ActionsSection: FunctionComponent = () => {
         setCurrent(newVal);
       }
     },
-    [current]
+    [actions?.length, current]
   );
 
   useEffect(() => {
@@ -67,11 +54,12 @@ const ActionsSection: FunctionComponent = () => {
         handleBack={() => handleClickNavigation("back")}
         handleForward={() => handleClickNavigation("forward")}
       >
-        {data?.favors.length > 0 &&
-          data.favors.map((favor, i) => <Action key={i} data={favor} />)}
+        {actions &&
+          actions.length > 0 &&
+          actions.map((action, i) => <ActionComponent key={i} data={action} />)}
       </Carousel>
     </StyledContainer>
   );
 };
 
-export { ActionsSection as Actions };
+export { ActionsComponent };

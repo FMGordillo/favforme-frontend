@@ -2,18 +2,18 @@ import { Button, Container, LayoutComponent as Layout } from "components";
 import {
   AmountCollected,
   AmountSubtitle,
-  Percentage,
-} from "components/Landing/Actions/styles";
+  Percentage
+} from "components/LandingSections/Actions/styles";
 import { toPascalCase } from "lib";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
-  NextPage,
+  NextPage
 } from "next";
 import Image from "next/image";
 import styled from "styled-components";
 import { Divider, Header, Title } from "../../components";
-import { SocialNetworks } from "../../components/Landing/Actions/SocialNetworks";
+import { SocialNetworks } from "../../components/LandingSections/Actions/SocialNetworks";
 import { Action, favors as data, parseToCurrency } from "../../lib/data";
 
 interface GetServerSidePropsReturn {

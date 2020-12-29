@@ -1,8 +1,9 @@
+import { Action } from "lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Action as ActionI, parseToCurrency } from "../../../lib/data";
+import { parseToCurrency } from "../../../lib/data";
 import { Button } from "../../styles";
 import { SocialNetworks } from "./SocialNetworks";
 import {
@@ -16,7 +17,7 @@ import {
 } from "./styles";
 
 interface ActionProps {
-  data?: ActionI;
+  data?: Action;
 }
 
 const StyledContainer = styled.div`
@@ -35,16 +36,16 @@ const StyledButton = styled(Button)`
   margin: 1em 0;
 `;
 
-const Action: FunctionComponent<ActionProps> = ({ data }) => {
-  const currentAmount = data?.objective?.current.amount;
-  const finalAmount = data?.objective?.final.amount;
+const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
+  const currentAmount = data?.current;
+  const finalAmount = data?.objective;
 
   return (
     <StyledContainer>
       <Link href={`/acciones/${data?.id}`}>
         <div>
           <Image
-            src={data?.imageSrc || ""}
+            src="/images/accion_placeholder_1.jpg"
             layout="responsive"
             width={1400}
             height={1100}
@@ -82,10 +83,10 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           %
         </Percentage>
         <StyledButton>Favorecer esta acción</StyledButton>
-        <SocialNetworks data={data?.socialNetworks} />
+        <SocialNetworks data={data?.organization?.socialNetworks} />
       </MainContent>
     </StyledContainer>
   );
 };
 
-export { Action };
+export { ActionComponent };

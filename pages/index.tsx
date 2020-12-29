@@ -1,17 +1,20 @@
+import { useQuery } from "@apollo/client";
 import { LayoutComponent as Layout, Modal } from "components";
+import { GET_ACTIONS } from "lib/queries";
+import { GetActionsData } from "lib/types";
 import { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
 import { Divider, Header } from "../components";
 import {
-  Actions,
-  Brands,
-  CallActions,
+  ActionsComponent,
+  AlliancesSection,
+  CallToActionSection,
   ContactSection,
   IntroOne,
   IntroTwo,
-} from "../components/Landing";
+} from "../components/LandingSections";
 
 const ModalContent = styled.div`
   display: grid;
@@ -21,6 +24,7 @@ const ModalContent = styled.div`
 `;
 
 const IndexPage: NextPage = () => {
+  const { data, loading } = useQuery<GetActionsData>(GET_ACTIONS);
   const [open, setOpen] = useState(false);
 
   return (
@@ -80,13 +84,11 @@ const IndexPage: NextPage = () => {
       <Divider />
       <IntroTwo />
       <Divider />
-      <Actions />
+      <ActionsComponent actions={data?.actions} />
       <Divider />
-      <CallActions toggleModal={() => setOpen(!open)} />
+      <CallToActionSection toggleModal={() => setOpen(!open)} />
       <Divider />
-      {/* <Business />
-      <Divider /> */}
-      <Brands />
+      <AlliancesSection />
       <Divider />
       <ContactSection />
       <Divider />

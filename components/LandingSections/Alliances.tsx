@@ -65,4 +65,4 @@ const AlliancesSection: FunctionComponent = () => (
   </Container>
 );
 
-export { AlliancesSection as Brands };
+export { AlliancesSection };
