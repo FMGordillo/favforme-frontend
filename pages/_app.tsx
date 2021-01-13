@@ -1,4 +1,4 @@
-import { ApolloProvider } from "@apollo/client";
+import request from "graphql-request";
 import * as gtag from "lib/gtag";
 import seoConfig from "lib/seo.config";
 import { theme } from "lib/styled";
@@ -7,7 +7,7 @@ import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { useApollo } from "../lib/apolloClient";
+import { SWRConfig } from "swr";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,10 +26,15 @@ const GlobalStyle = createGlobalStyle`
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  const apolloClient = useApollo(pageProps.initialApolloState);
   return (
     <>
-      <ApolloProvider client={apolloClient}>
+      <SWRConfig
+        value={{
+          refreshInterval: 10000,
+          fetcher: (query, params) =>
+            request(process.env.NEXT_PUBLIC_BACKEND_URL || "", query, params),
+        }}
+      >
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <NextNprogress
@@ -41,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           <DefaultSeo {...seoConfig} />
           <Component {...pageProps} />
         </ThemeProvider>
-      </ApolloProvider>
+      </SWRConfig>
     </>
   );
 }

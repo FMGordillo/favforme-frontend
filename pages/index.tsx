@@ -1,11 +1,10 @@
-import { useQuery } from "@apollo/client";
 import { LayoutComponent as Layout, Modal } from "components";
 import { GET_ACTIONS } from "lib/queries";
-import { GetActionsData } from "lib/types";
 import { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
+import useSWR from "swr";
 import { Divider, Header } from "../components";
 import {
   ActionsComponent,
@@ -24,7 +23,7 @@ const ModalContent = styled.div`
 `;
 
 const IndexPage: NextPage = () => {
-  const { data, loading } = useQuery<GetActionsData>(GET_ACTIONS);
+  const { data } = useSWR(GET_ACTIONS);
   const [open, setOpen] = useState(false);
 
   return (
