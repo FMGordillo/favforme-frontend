@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
-import { Footer } from "../components";
-import { HeadComponent, HeadProps } from "./Head";
+import { HeadComponent, HeadProps } from "../Head";
+import { Footer } from "./Footer";
 
 interface LayoutProps {
   footer?: boolean;

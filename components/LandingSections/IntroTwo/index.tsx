@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { Container, Text, Title } from "../styles";
+import { Container, Text, Title } from "../../styles";
 
 const StyledContainer = styled(Container)`
   display: grid;

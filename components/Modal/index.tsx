@@ -4,9 +4,13 @@ import {
   MouseEvent,
   useEffect,
   useRef,
-  useState,
 } from "react";
-import styled from "styled-components";
+import {
+  Background,
+  DialogContainer,
+  DialogTitle,
+  ModalContainer,
+} from "./styles";
 
 interface ModalProps {
   open: boolean;
@@ -14,47 +18,11 @@ interface ModalProps {
   onClose: () => void;
 }
 
-type FadeType = "in" | "out";
+// type FadeType = "in" | "out";
 
-const ModalContainer = styled.div<{ open?: boolean }>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  display: ${({ open }) => (open ? "flex" : "none")};
-`;
-
-const DialogContainer = styled.div`
-  ${({ theme }) => `
-    z-index: 1050;
-    width: 100%;
-    background: white;
-    padding: ${theme.spacing(1)}em;
-    margin: ${theme.spacing(6)}em ${theme.spacing(4)}em;
-    ${theme.breakpoints.down("md")} {
-      margin: ${theme.spacing(4)}em ${theme.spacing(2)}em;
-    }
-    ${theme.breakpoints.down("sm")} {
-      margin: ${theme.spacing(2)}em ${theme.spacing(1)}em;
-    }
-`}
-`;
-const DialogTitle = styled.h1``;
-
-const Background = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1040;
-`;
-
+/**
+ * TODO: "fadeType"?
+ */
 const ModalComponent: FunctionComponent<ModalProps> = ({
   open,
   onClose,
@@ -63,16 +31,16 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
 }) => {
   const mounted = useRef();
   const background = useRef<HTMLDivElement>(null);
-  const [fadeType, setFadeType] = useState<FadeType>("in");
+  // const [fadeType, setFadeType] = useState<FadeType>("in");
 
   const handleEscKeyDown = (e: KeyboardEvent) => {
     if (e.key !== "Escape") return;
-    setFadeType("out");
+    // setFadeType("out");
   };
 
   const handleClick = (e: MouseEvent<HTMLDivElement | MouseEvent>) => {
     e.preventDefault();
-    setFadeType("out");
+    // setFadeType("out");
     onClose();
   };
 
@@ -81,12 +49,12 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       window.addEventListener("keydown", handleEscKeyDown, false);
-      setTimeout(() => setFadeType("in"), 0);
+      //   setTimeout(() => setFadeType("in"), 0);
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       mounted.current = true;
     } else {
-      setFadeType("out");
+      //   setFadeType("out");
     }
 
     return () => {

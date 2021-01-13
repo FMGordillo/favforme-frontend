@@ -19,9 +19,11 @@ interface ActionsProps {
 const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
   const [current, setCurrent] = useState(0);
 
-  // TODO: Mejorar estos IFs
+  // TODO: Improve this
   const changeCurrent = useCallback(
     (newVal: number) => {
+      if (!actions) return;
+
       if (newVal !== actions.length - 1 && current === actions.length - 1) {
         setCurrent(0);
       } else if (newVal < 0) {
@@ -30,8 +32,12 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
         setCurrent(newVal);
       }
     },
-    [actions?.length, current]
+    [actions, current]
   );
+
+  const handleClickNavigation = (to: "back" | "forward") => {
+    changeCurrent(to === "back" ? current - 1 : current + 1);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,10 +47,6 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
       clearInterval(timer);
     };
   }, [current, changeCurrent]);
-
-  const handleClickNavigation = (to: "back" | "forward") => {
-    changeCurrent(to === "back" ? current - 1 : current + 1);
-  };
 
   return (
     <StyledContainer id="actions">

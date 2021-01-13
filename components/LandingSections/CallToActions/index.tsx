@@ -1,32 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import styled from "styled-components";
-import { Button, Container, Text, Title } from "../styles";
-
-const StyledContainer = styled(Container)`
-  display: grid;
-  grid-gap: ${({ theme }) => theme.spacing(1)}em;
-  margin: 0 ${({ theme }) => theme.spacing(2)}em;
-  grid-template-columns: 1fr 1fr 1fr;
-
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    grid-template-columns: 1fr;
-    margin: 0 ${({ theme }) => theme.spacing(2)}em;
-  }
-`;
-
-const StyledText = styled(Text)`
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    text-align: justify;
-  }
-`;
-
-const Section = styled.section`
-  text-align: center;
-  display: grid;
-  justify-items: center;
-`;
+import { Button, Title } from "../../styles";
+import { Section, StyledContainer, StyledText } from "./styles";
 
 interface CallToActionSectionProps {
   toggleModal?: () => void;
