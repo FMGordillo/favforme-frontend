@@ -1,3 +1,6 @@
+import { Container } from "components";
+import styled from "styled-components";
+
 export const StyledContainer = styled(Container)`
   display: grid;
   margin: 0 ${({ theme }) => theme.spacing(2)}em;
