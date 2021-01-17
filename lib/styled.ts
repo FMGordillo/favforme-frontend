@@ -1,4 +1,4 @@
-import baseStyled, { ThemedStyledInterface } from "styled-components";
+import { DefaultTheme } from "styled-components";
 
 export type Direction = "left" | "center" | "right";
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -19,19 +19,17 @@ export const calculateBreakpoint = (key: Breakpoint): string => {
   }
 };
 
-export const theme = {
-  color: {
-    primary: {
-      light: "#9BAAF6", // TODO: Confirmar con Agus
-      main: "#5573f5",
-      dark: "#27358d",
-    },
+export const theme: DefaultTheme = {
+  palette: {
+    primary: { main: "#5573f5", light: "#9BAAF6", dark: "#27358d" },
     secondary: {
       light: "#FFBCC4",
       main: "#f38d9f",
       dark: "#a21d44",
     },
-    gray: { light: "#f6f6f6", main: "#B2B2B2", dark: "#9b9b9b" },
+    common: {
+      gray: { light: "#f6f6f6", main: "#B2B2B2", dark: "#9b9b9b" },
+    },
   },
   spacing: (digit: Spacing): string => `${digit * 4}`,
   breakpoints: {
@@ -43,6 +41,3 @@ export const theme = {
       `@media (min-width: ${calculateBreakpoint(key)})`,
   },
 };
-
-export type Theme = typeof theme;
-export default baseStyled as ThemedStyledInterface<Theme>;

@@ -15,7 +15,7 @@ export const Title = styled.h1<{
   font-size: 2em;
   font-weight: ${({ weight }) => weight || "400"};
   color: ${({ theme, color, variant }) =>
-    theme.color[color || "primary"][variant || "main"]};
+    theme.palette[color || "primary"][variant || "main"]};
 `;
 
 /**
@@ -43,7 +43,7 @@ export const Button = styled.button<ButtonI>`
   font-family: abel, sans-serif;
   transition: background-color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
-    theme.color[color || "primary"][variant || "main"]};
+    theme.palette[color || "primary"][variant || "main"]};
 
   & > a {
     color: inherit;
@@ -52,7 +52,7 @@ export const Button = styled.button<ButtonI>`
 
   :hover {
     background-color: ${({ theme, color }) =>
-      theme.color[color || "primary"]["light"]};
+      theme.palette[color || "primary"]["light"]};
   }
 `;
 

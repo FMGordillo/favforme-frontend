@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <NextNprogress
-            color={theme.color.secondary.main}
+            color={theme.palette.secondary.main}
             startPosition={0.3}
             stopDelayMs={200}
             height={3}

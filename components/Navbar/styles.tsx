@@ -47,7 +47,7 @@ export const Ul = styled.ul<MobileNavigatorProps>`
   justify-content: center;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     transform: translateY(-100%);
-    background: ${({ theme }) => theme.color.primary.dark};
+    background: ${({ theme }) => theme.palette.primary.dark};
     flex-direction: column;
     align-items: center;
     padding-top: 80px;
@@ -96,6 +96,6 @@ export const Link = styled.a`
   transition: all 300ms;
   &:hover {
     font-weight: 700;
-    color: ${({ theme }) => theme.color.secondary.main};
+    color: ${({ theme }) => theme.palette.secondary.main};
   }
 `;

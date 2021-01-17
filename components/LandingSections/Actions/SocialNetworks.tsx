@@ -30,7 +30,7 @@ export const Container = styled.div<{
     height: 32px !important;
   }
   & > * {
-    color: ${({ theme }) => theme.color.gray.main};
+    color: ${({ theme }) => theme.palette.common?.gray?.main};
 
     & > * {
       transition: all 300ms;

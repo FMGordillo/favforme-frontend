@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
   align-items: center;
   grid-gap: 2em;
   box-shadow: 1em 1em #dcdcdc;
-  background: ${({ theme }) => theme.color.gray.light};
+  background: ${({ theme }) => theme.palette.common?.gray?.light};
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
   }

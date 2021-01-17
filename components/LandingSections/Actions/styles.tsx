@@ -24,7 +24,7 @@ export const StyledTitle = styled(Title)`
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 0.25em;
-  color: ${({ theme }) => theme.color.primary.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   transition: all 300ms;
   :hover {
     text-decoration: underline;
@@ -36,13 +36,13 @@ export const StyledTitle = styled(Title)`
  */
 export const AmountCollected = styled.h2`
   font-weight: normal;
-  color: ${({ theme }) => theme.color.gray.dark};
+  color: ${({ theme }) => theme.palette.common?.gray?.dark};
   font-size: 2.25em;
   margin: 0;
 `;
 
 export const AmountSubtitle = styled.p`
-  color: ${({ theme }) => theme.color.gray.dark};
+  color: ${({ theme }) => theme.palette.common?.gray?.dark};
   margin-top: 0;
 `;
 
@@ -62,22 +62,22 @@ export const ProgressBar = styled.div`
     width: 350px;
     appearance: none;
     height: 12px;
-    border: 2px solid ${({ theme }) => theme.color.gray.dark};
+    border: 2px solid ${({ theme }) => theme.palette.common?.gray?.dark};
 
     ::-webkit-progress-bar {
       background-color: transparent;
       width: 350px;
       appearance: none;
       height: 12px;
-      border: 2px solid ${({ theme }) => theme.color.gray.dark};
+      border: 2px solid ${({ theme }) => theme.palette.common?.gray?.dark};
     }
 
     ::-webkit-progress-value {
-      background-color: ${({ theme }) => theme.color.gray.main};
+      background-color: ${({ theme }) => theme.palette.common?.gray?.main};
     }
 
     ::-moz-progress-bar {
-      background-color: ${({ theme }) => theme.color.gray.main};
+      background-color: ${({ theme }) => theme.palette.common?.gray?.main};
     }
 
     ${({ theme }) => theme.breakpoints.down("md")} {

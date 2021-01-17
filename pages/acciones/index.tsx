@@ -20,7 +20,7 @@ const ActionContainer = styled.div`
 `;
 const JoinUsContainer = styled.div`
   text-align: center;
-  color: ${({ theme }) => theme.color.secondary.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
 const ActionsPage: NextPage = () => {

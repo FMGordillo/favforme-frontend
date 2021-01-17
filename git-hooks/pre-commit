@@ -1,20 +1,24 @@
 #!/bin/sh
 
 RED="\033[1;31m"
+BROWN="\033[1;33m"
 GREEN="\033[1;32m"
 NC="\033[0m"
 
 linter_exit_code=1
 tsc_exit_code=1
-staged_js_files=$(git diff --cached --diff-filter=d --name-only | grep .ts$)
+staged_ts_files=$(git diff --cached --diff-filter=d --name-only | grep -E "(.ts$|.tsx$)")
 
-./node_modules/.bin/eslint $staged_js_files --quiet --fix
+if [ -n $staged_ts_files ]
+  then
+    echo "${BROWN} 🥺 No .ts | .tsx files, skipping checks${NC}"
+    exit 0
+fi
+
+echo "👀 Checking ESLint..."
+
+./node_modules/.bin/eslint $staged_ts_files --quiet --fix
 linter_exit_code=$?
-
-./node_modules/.bin/tsc || exit 0
-tsc_exit_code=$?
-
-git add -f $staged_js_files
 
 if [ $linter_exit_code -ne 0 ]
   then
@@ -23,6 +27,11 @@ if [ $linter_exit_code -ne 0 ]
     echo "${GREEN} ✔ ESLint${NC}"
 fi
 
+echo "👀 Checking Typescript..."
+
+./node_modules/.bin/tsc || exit 0
+tsc_exit_code=$?
+
 if [ $tsc_exit_code -ne 0 ]
   then
     echo "${RED} ❌ Typescript${NC}"
@@ -30,10 +39,11 @@ if [ $tsc_exit_code -ne 0 ]
     echo "${GREEN} ✔ Typescript${NC}"
 fi
 
-if [ $linter_exit_code -ne 0 && $tsc_exit_code -ne 0 ]
+if [ $linter_exit_code == 0 && $tsc_exit_code == 0 ]
   then
-    exit 1
-  else
-  echo "... Why?"
+    echo "${GREEN} ✔ Files added to staging!${NC}"
+    git add -f $staged_ts_files
     exit 0
+  else
+    exit 1
 fi

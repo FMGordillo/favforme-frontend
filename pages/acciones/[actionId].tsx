@@ -41,7 +41,7 @@ const ActionContent = styled(Container)`
 `;
 const JoinUsContainer = styled.div`
   text-align: center;
-  color: ${({ theme }) => theme.color.secondary.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
 `;
 const Summary = styled.div`
   display: grid;

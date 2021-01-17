@@ -13,7 +13,7 @@ const StyledContainer = styled(Container)`
   display: grid;
   align-items: center;
   justify-items: center;
-  /*box-shadow: 1em 1em ${({ theme }) => theme.color.gray.main};*/
+  /*box-shadow: 1em 1em ${({ theme }) => theme.palette.common?.gray?.main};*/
   box-shadow: 1em 1em #dcdcdc;
 `;
 

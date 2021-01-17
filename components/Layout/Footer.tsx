@@ -11,7 +11,7 @@ import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.section`
-  background-color: ${({ theme }) => theme.color.primary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
 `;
 
 const SocialNetworks = styled.div`
@@ -123,7 +123,7 @@ const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
 };
 
 const Copyright = styled.section`
-  background-color: ${({ theme }) => theme.color.primary.dark};
+  background-color: ${({ theme }) => theme.palette.primary.dark};
   p {
     text-transform: uppercase;
     padding: 2em;
