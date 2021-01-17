@@ -93,7 +93,7 @@ const ActionPage: NextPage<
           <LeftColumn>
             <div>
               <Image
-                src={action?.organization?.logo || "/"}
+                src={"/images/accion_placeholder_1.jpg" || "/"}
                 alt="Resumen"
                 width={510}
                 height={350}

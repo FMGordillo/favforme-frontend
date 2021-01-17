@@ -7,7 +7,7 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  height: ${({ isIndex }) => (isIndex ? "400px" : "250px")};
+  height: ${({ isIndex }) => (isIndex ? "400px" : "300px")};
   width: 100vw;
   overflow: hidden;
 
