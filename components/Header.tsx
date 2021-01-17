@@ -17,12 +17,11 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   padding-bottom: 2em;
 `;
 const TextContainer = styled.div`
-  color: white;
-  margin: 0 ${({ theme }) => theme.spacing(2)}em;
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    margin: 0;
-    padding-left: 2em;
-  }
+    color: white;
+    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      margin: 0;
+      padding-left: 2em;
 `;
 const Title = styled.h1`
   margin: 0;

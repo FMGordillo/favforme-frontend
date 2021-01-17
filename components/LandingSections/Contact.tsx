@@ -30,7 +30,7 @@ const HighlightedText = styled.p`
   font-family: dosis;
   font-size: 2em;
   font-weight: 400;
-  color: ${({ theme }) => theme.color.primary.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   a {
     color: inherit;
     text-decoration: none;
