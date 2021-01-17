@@ -1,26 +1,30 @@
-import { Button, Container, LayoutComponent as Layout } from "components";
+import {
+  Button,
+  Container,
+  Divider,
+  Header,
+  LayoutComponent as Layout,
+  Title,
+} from "components";
+import { SocialNetworks } from "components/LandingSections";
 import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
-} from "components/Landing/Actions/styles";
+} from "components/LandingSections/Actions/styles";
 import { toPascalCase } from "lib";
+import { parseToCurrency } from "lib/data";
+import { GET_ACTION } from "lib/queries";
+import { Action } from "lib/types";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
 import Image from "next/image";
+import React from "react";
 import styled from "styled-components";
-import { Divider, Header, Title } from "../../components";
-import { SocialNetworks } from "../../components/Landing/Actions/SocialNetworks";
-import { Action, favors as data, parseToCurrency } from "../../lib/data";
-
-interface GetServerSidePropsReturn {
-  props: {
-    action?: Action;
-  };
-}
+import useSWR from "swr";
 
 const Main = styled(Container)`
   display: flex;
@@ -50,24 +54,31 @@ const LeftColumn = styled.div`
 `;
 const RightColumn = styled.div``;
 
+interface GetServerSidePropsReturn {
+  props: {
+    query: any;
+  };
+}
+
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> => {
   const { actionId } = context.query;
-  const action = data.favors.find((favor) => favor.id == actionId);
   return {
     props: {
-      action,
+      query: { id: Number(actionId) },
     }, // will be passed to the page component as props
   };
 };
 
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ action }) => {
-  const currentAmount = action?.objective?.current.amount;
-  const finalAmount = action?.objective?.final.amount;
-  // const router = useRouter();
+> = ({ query }) => {
+  const { data } = useSWR<{ action: Action }>(() =>
+    1 ? [GET_ACTION, query] : null
+  );
+
+  const { action } = data || {};
 
   return (
     <Layout
@@ -77,19 +88,12 @@ const ActionPage: NextPage<
     >
       <Header title="Nuestras acciones" />
       <Main>
-        {/* <Breadcrumb>
-          {router.asPath.split("/").map((link, k) => (
-            <Link key={k} href={k === 0 ? "/" : link}>
-              {k === 0 ? "FavForMe" : link}
-            </Link>
-          ))}
-        </Breadcrumb> */}
         <Title>{action?.title}</Title>
         <ActionContent>
           <LeftColumn>
             <div>
               <Image
-                src={action?.imageSrc || "/"}
+                src={"/images/accion_placeholder_1.jpg" || "/"}
                 alt="Resumen"
                 width={510}
                 height={350}
@@ -104,32 +108,35 @@ const ActionPage: NextPage<
           <RightColumn>
             <Summary>
               <AmountCollected>
-                ${parseToCurrency(currentAmount)}
+                ${parseToCurrency(action?.current)}
                 .-
               </AmountCollected>
               <AmountSubtitle>
                 recaudado para esta acción
                 <br />
-                de ${parseToCurrency(finalAmount)}.-
+                de ${parseToCurrency(action?.objective)}.-
               </AmountSubtitle>
               <Percentage>
                 {(
-                  ((currentAmount || 0) * 100) /
-                  (finalAmount || currentAmount || 0)
+                  ((action?.current || 0) * 100) /
+                  (action?.objective || action?.current || 0)
                 ).toFixed()}
                 % COMPLETADO
               </Percentage>
               <Button>Favorecer esta acción</Button>
-              <SocialNetworks data={action?.socialNetworks} justify="center" />
+              <SocialNetworks
+                data={action?.organization?.socialNetworks}
+                justify="center"
+              />
             </Summary>
             <h2>Datos de la ONG</h2>
             <Image
-              src={action?.logo || "/"}
+              src={action?.organization?.logo || "/"}
               alt="Logo"
               width={150}
               height={150}
             />
-            <p>{action?.history}</p>
+            <p>{action?.organization?.history}</p>
           </RightColumn>
         </ActionContent>
         <JoinUsContainer>

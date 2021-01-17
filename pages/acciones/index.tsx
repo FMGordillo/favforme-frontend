@@ -1,6 +1,8 @@
-// import { gql, useQuery } from "@apollo/client";
-import { Action } from "components/Landing/Actions/Action";
+import { ActionComponent } from "components/LandingSections/Actions";
+import { GET_ACTIONS } from "lib/queries";
+import { GetActionsData } from "lib/types";
 import { NextPage } from "next";
+import useSWR from "swr";
 import styled from "styled-components";
 import {
   Container,
@@ -8,7 +10,6 @@ import {
   LayoutComponent as Layout,
   Title,
 } from "../../components";
-import { favors as data } from "../../lib/data";
 
 const StyledTitle = styled(Title)`
   text-align: center;
@@ -22,17 +23,9 @@ const JoinUsContainer = styled.div`
   color: ${({ theme }) => theme.color.secondary.main};
 `;
 
-// const GET_ACTIONS = gql`
-//   {
-//     favors {
-//       id
-//       title
-//     }
-//   }
-// `;
-
 const ActionsPage: NextPage = () => {
-  // const { data, loading } = useQuery(GET_ACTIONS);
+  const { data } = useSWR<GetActionsData>(GET_ACTIONS);
+
   return (
     <Layout
       headProps={{
@@ -52,10 +45,11 @@ const ActionsPage: NextPage = () => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {data?.favors.length > 0 &&
-          data?.favors.map((favor, i) => (
+        {data?.actions &&
+          data.actions.length > 0 &&
+          data.actions.map((action, i) => (
             <ActionContainer key={i}>
-              <Action data={favor} />
+              <ActionComponent data={action} />
             </ActionContainer>
           ))}
       </Container>

@@ -25,7 +25,8 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 
 /**
- * TODO: WIP - Soportar URLs correctamente por aca (seguramente)
+ * TODO: Support URL's
+ * REVIEW: How do we use it?
  */
 const Breadcrumb: FunctionComponent = ({ children }) => {
   const childrenMap = Children.map(children, (child) => child);
