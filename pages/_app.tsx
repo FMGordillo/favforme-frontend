@@ -8,6 +8,7 @@ import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
+import { Auth0Provider } from "use-auth0-hooks";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -44,7 +45,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             height={3}
           />
           <DefaultSeo {...seoConfig} />
-          <Component {...pageProps} />
+          <Auth0Provider
+            domain="favforme-next.us.auth0.com"
+            redirectUri="http://localhost:3000/"
+            clientId="uEoLmRbNK4kNU3FJim7V0QWuAqqiZxnl"
+          >
+            <Component {...pageProps} />
+          </Auth0Provider>
         </ThemeProvider>
       </SWRConfig>
     </>
