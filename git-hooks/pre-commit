@@ -8,16 +8,16 @@ linter_exit_code=1
 tsc_exit_code=1
 staged_ts_files=$(git diff --cached --diff-filter=d --name-only | grep -E "(.ts$|.tsx$)")
 
+if [ -n $staged_ts_files ]
+  then
+    echo "⁇ No .ts | .tsx files, skipping checks"
+    exit 0
+fi
+
+echo "👀 Checking ESLint..."
+
 ./node_modules/.bin/eslint $staged_ts_files --quiet --fix
 linter_exit_code=$?
-
-./node_modules/.bin/tsc || exit 0
-tsc_exit_code=$?
-
-git add -f $staged_ts_files
-
-if [ -n $staged_ts_files ]; then exit 0
-fi
 
 if [ $linter_exit_code -ne 0 ]
   then
@@ -25,6 +25,11 @@ if [ $linter_exit_code -ne 0 ]
   else
     echo "${GREEN} ✔ ESLint${NC}"
 fi
+
+echo "👀 Checking Typescript..."
+
+./node_modules/.bin/tsc || exit 0
+tsc_exit_code=$?
 
 if [ $tsc_exit_code -ne 0 ]
   then
@@ -35,6 +40,8 @@ fi
 
 if [ $linter_exit_code == 0 && $tsc_exit_code == 0 ]
   then
+    echo "${GREEN} ✔ Files added to staging!${NC}"
+    git add -f $staged_ts_files
     exit 0
   else
     exit 1
