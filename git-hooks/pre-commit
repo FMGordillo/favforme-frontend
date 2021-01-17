@@ -6,15 +6,18 @@ NC="\033[0m"
 
 linter_exit_code=1
 tsc_exit_code=1
-staged_js_files=$(git diff --cached --diff-filter=d --name-only | grep .ts*$)
+staged_ts_files=$(git diff --cached --diff-filter=d --name-only | grep -E "(.ts$|.tsx$)")
 
-./node_modules/.bin/eslint $staged_js_files --quiet --fix
+./node_modules/.bin/eslint $staged_ts_files --quiet --fix
 linter_exit_code=$?
 
 ./node_modules/.bin/tsc || exit 0
 tsc_exit_code=$?
 
-git add -f $staged_js_files
+git add -f $staged_ts_files
+
+if [ -n $staged_ts_files ]; then exit 0
+fi
 
 if [ $linter_exit_code -ne 0 ]
   then
@@ -30,13 +33,9 @@ if [ $tsc_exit_code -ne 0 ]
     echo "${GREEN} ✔ Typescript${NC}"
 fi
 
-echo "STATUS CODES ${tsc_exit_code} ${linter_exit_code}"
-
-if [ $linter_exit_code -ne 0 || $tsc_exit_code -ne 0 ]
+if [ $linter_exit_code == 0 && $tsc_exit_code == 0 ]
   then
-    echo "EXIT 1"
-    exit 1
-  else
-    echo "EXIT 0"
     exit 0
+  else
+    exit 1
 fi
