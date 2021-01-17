@@ -2,6 +2,7 @@ import { ActionComponent } from "components/LandingSections/Actions";
 import { GET_ACTIONS } from "lib/queries";
 import { GetActionsData } from "lib/types";
 import { NextPage } from "next";
+import useSWR from "swr";
 import styled from "styled-components";
 import {
   Container,
@@ -23,7 +24,7 @@ const JoinUsContainer = styled.div`
 `;
 
 const ActionsPage: NextPage = () => {
-  const { data, loading } = useQuery<GetActionsData>(GET_ACTIONS);
+  const { data } = useSWR<{ actions: GetActionsData }>(GET_ACTIONS);
 
   return (
     <Layout
