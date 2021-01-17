@@ -6,7 +6,7 @@ NC="\033[0m"
 
 linter_exit_code=1
 tsc_exit_code=1
-staged_js_files=$(git diff --cached --diff-filter=d --name-only | grep .ts$)
+staged_js_files=$(git diff --cached --diff-filter=d --name-only | grep .ts*$)
 
 ./node_modules/.bin/eslint $staged_js_files --quiet --fix
 linter_exit_code=$?
