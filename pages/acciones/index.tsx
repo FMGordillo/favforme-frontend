@@ -1,4 +1,3 @@
-import { useQuery } from "@apollo/client";
 import { ActionComponent } from "components/LandingSections/Actions";
 import { GET_ACTIONS } from "lib/queries";
 import { GetActionsData } from "lib/types";
