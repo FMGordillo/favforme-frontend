@@ -1,11 +1,4 @@
-import {
-  Button,
-  Container,
-  Divider,
-  Header,
-  LayoutComponent as Layout,
-  Title,
-} from "components";
+import { Button, Container, Divider, Header, Layout, Title } from "components";
 import { SocialNetworks } from "components/LandingSections";
 import {
   AmountCollected,
@@ -22,6 +15,7 @@ import {
   NextPage,
 } from "next";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -66,7 +60,7 @@ export const getServerSideProps = async (
   const { actionId } = context.query;
   return {
     props: {
-      query: { id: Number(actionId) },
+      query: { id: actionId },
     }, // will be passed to the page component as props
   };
 };
@@ -74,8 +68,9 @@ export const getServerSideProps = async (
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
+  const router = useRouter();
   const { data } = useSWR<{ action: Action }>(() =>
-    1 ? [GET_ACTION, query] : null
+    query ? [GET_ACTION, query] : null
   );
 
   const { action } = data || {};
@@ -123,7 +118,9 @@ const ActionPage: NextPage<
                 ).toFixed()}
                 % COMPLETADO
               </Percentage>
-              <Button>Favorecer esta acción</Button>
+              <Button onClick={() => router.push("/donacion/redireccionando")}>
+                Favorecer esta acción
+              </Button>
               <SocialNetworks
                 data={action?.organization?.socialNetworks}
                 justify="center"

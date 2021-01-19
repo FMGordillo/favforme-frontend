@@ -1,4 +1,4 @@
-import { LayoutComponent as Layout, Modal } from "components";
+import { Layout, Modal } from "components";
 import { GET_ACTIONS } from "lib/queries";
 import { NextPage } from "next";
 import Image from "next/image";

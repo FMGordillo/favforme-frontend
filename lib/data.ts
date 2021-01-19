@@ -11,7 +11,7 @@ const createAction1 = `
           create: {
             name: "Centro Comunitario Otro Mundo"
             history: "El centro nacio en Diciembre del 2016, arrancando como merendero dentro de la sociedad de fomento Este del Pilar. Luego de realizar varias ferias para recaudar fondos, pudimos construir el espacio propio para comenzar a funcionar como Centro Comunitario. Actualmente participan mas de 80 niños, niñas y adolescentes y 20 mamas, a las meriendas, a las actividades deportivas como es el futbol, al apoyo escolar, a los talles de costura y de encuadernacion. Tambien contamos con huerta, realizamos salidas recreativas y talleres sobre salud y educacion sexual."
-            logo: "/images/alianzas_05.png"
+            logo: "/images/alianzas_06.png"
             contact: {
               create: [
                 { type: PHONE, content: "1137577188" }

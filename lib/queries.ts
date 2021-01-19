@@ -16,7 +16,7 @@ export const GET_ACTIONS = `
 `;
 
 export const GET_ACTION = `
-  query getAction($id: Int) {
+  query getAction($id: String) {
     action(where: { id: $id }) {
       id
       title
