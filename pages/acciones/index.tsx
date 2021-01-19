@@ -19,7 +19,7 @@ const JoinUsContainer = styled.div`
 `;
 
 const ActionsPage: NextPage = () => {
-  const { data } = useSWR<GetActionsData>(GET_ACTIONS);
+  const { data } = useSWR<GetActionsData>(GET_ACTIONS({ take: 5 }));
 
   return (
     <Layout

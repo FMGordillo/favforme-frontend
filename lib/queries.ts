@@ -1,6 +1,28 @@
-export const GET_ACTIONS = `
+// TODO: Not working, yet
+interface Params {
+  // where?: any;
+  take?: number;
+  skip?: number;
+  // orderBy?: any;
+}
+
+const createQuery = (query: TemplateStringsArray, params?: Params) => {
+  const part1 = query[0];
+  const part2 = query[1];
+  const parsedParams = Object.entries(params || {}).map(
+    ([paramKey, paramValue]) => `${paramKey}: ${paramValue}`
+  );
+
+  if (parsedParams) {
+    return `${part1}(${parsedParams.join()})${part2}`;
+  } else {
+    return `${part1}${part2}`;
+  }
+};
+
+export const GET_ACTIONS = (params?: Params): string => createQuery`
   {
-    actions {
+    actions${params} {
       id
       title
       current
