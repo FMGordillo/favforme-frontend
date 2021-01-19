@@ -11,7 +11,6 @@ staged_ts_files=$(git diff --cached --diff-filter=d --name-only | grep -E "(.ts$
 
 if [ -n $staged_ts_files ]; then
   echo "${BROWN} 🥺 No .ts | .tsx files, skipping checks${NC}"
-  echo "${BROWN} 🥺 ABORT ${NC}"
   exit 0
 fi
 
