@@ -13,7 +13,7 @@ const createQuery = (query: TemplateStringsArray, params?: Params) => {
     ([paramKey, paramValue]) => `${paramKey}: ${paramValue}`
   );
 
-  if (parsedParams) {
+  if (parsedParams.length > 0) {
     return `${part1}(${parsedParams.join()})${part2}`;
   } else {
     return `${part1}${part2}`;
