@@ -76,7 +76,7 @@ const IndexPage: NextPage = () => {
       <Header
         isIndex
         toggleModal={() => setOpen(!open)}
-        subtitle="No dejamos a nadie atrás"
+        subtitle="No dejemos a nadie atrás"
       />
       <Divider />
       <IntroOne />
