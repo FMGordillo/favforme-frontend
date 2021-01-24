@@ -1,3 +1,7 @@
+import { useRouter } from "next/router";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Menu } from "components/Menu";
 import Image from "next/image";
 import React, { cloneElement, FunctionComponent, useState } from "react";
 import { Item, Link, MobileNavigator, Nav, Ul } from "./styles";
@@ -29,6 +33,8 @@ interface NavBarProps {
 }
 
 const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
+  const router = useRouter();
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleMobileOpen = () => {
@@ -46,6 +52,22 @@ const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
           src="/images/hamburger.png"
         />
       </MobileNavigator>
+      <Menu
+        toggleContainer={
+          <FontAwesomeIcon
+            size="2x"
+            onClick={() => {
+              setUserDropdownOpen((prev) => !prev);
+            }}
+            style={{ float: "right" }}
+            icon={faUser}
+          />
+        }
+        open={userDropdownOpen}
+      >
+        <button onClick={() => router.push("/perfil")}>Perfil</button>
+        <button onClick={() => console.log("TODO")}>Cerrar sesion</button>
+      </Menu>
       <Ul open={open}>
         <NavItem href="#actions">Acciones</NavItem>
         <NavItem href="#call_to_actions">Features</NavItem>
