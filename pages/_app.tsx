@@ -46,9 +46,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           />
           <DefaultSeo {...seoConfig} />
           <Auth0Provider
-            domain="favforme-next.us.auth0.com"
-            redirectUri="http://localhost:3000/"
-            clientId="uEoLmRbNK4kNU3FJim7V0QWuAqqiZxnl"
+            clientId={process.env.NEXT_PUBLIC_CLIENT_ID || ""}
+            domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ""}
+            redirectUri={process.env.NEXT_PUBLIC_AUTH0_REDIRECT || ""}
           >
             <Component {...pageProps} />
           </Auth0Provider>
