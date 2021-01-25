@@ -8,7 +8,7 @@ import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
-import { Auth0Provider } from "use-auth0-hooks";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,6 +25,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
+
+const onRedirectCallback = (appState: { returnTo?: any }) => {
+  // Use Next.js's Router.replace method to replace the url
+  Router.replace(appState?.returnTo || "/");
+};
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -46,9 +51,10 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           />
           <DefaultSeo {...seoConfig} />
           <Auth0Provider
+            onRedirectCallback={onRedirectCallback}
             clientId={process.env.NEXT_PUBLIC_CLIENT_ID || ""}
             domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ""}
-            redirectUri={process.env.NEXT_PUBLIC_AUTH0_REDIRECT || ""}
+            redirectUri={process.env.NEXT_PUBLIC_AUTH0_REDIRECT}
           >
             <Component {...pageProps} />
           </Auth0Provider>
