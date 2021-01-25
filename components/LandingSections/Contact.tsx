@@ -45,7 +45,7 @@ const ContactSection: FunctionComponent = () => (
     <StyledTitle>Contacto</StyledTitle>
     <Main>
       <div className="first-element">
-        <Image src="/images/contact.png" width={400} height={300} />
+        <Image src="/images/contact.svg" width={500} height={400} />
       </div>
       <div className="second-element">
         <p>
