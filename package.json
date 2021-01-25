@@ -19,6 +19,7 @@
   "author": "Facundo Martin Gordillo",
   "license": "ISC",
   "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -31,8 +32,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
-    "swr": "^0.4.0",
-    "use-auth0-hooks": "^0.7.0"
+    "swr": "^0.4.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.9",

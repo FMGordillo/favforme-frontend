@@ -1,1 +1,2 @@
-export * from "./useAuth";
+// TODO: Hacer algo
+export const empty = {};

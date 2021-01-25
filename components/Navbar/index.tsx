@@ -5,6 +5,7 @@ import { Menu } from "components/Menu";
 import Image from "next/image";
 import React, { cloneElement, FunctionComponent, useState } from "react";
 import { Item, Link, MobileNavigator, Nav, Ul } from "./styles";
+import { useAuth0 } from "@auth0/auth0-react";
 
 interface NavItemProps {
   href?: string;
@@ -34,8 +35,9 @@ interface NavBarProps {
 
 const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
   const router = useRouter();
-  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const { logout } = useAuth0();
   const [open, setOpen] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const handleMobileOpen = () => {
     setOpen(!open);
@@ -66,7 +68,7 @@ const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
         open={userDropdownOpen}
       >
         <button onClick={() => router.push("/perfil")}>Perfil</button>
-        <button onClick={() => console.log("TODO")}>Cerrar sesion</button>
+        <button onClick={() => logout()}>Cerrar sesion</button>
       </Menu>
       <Ul open={open}>
         <NavItem href="#actions">Acciones</NavItem>
