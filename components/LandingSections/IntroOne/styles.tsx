@@ -58,6 +58,25 @@ export const ODSLogo = styled.div`
 `;
 
 export const ODSContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: ods-container;
-  text-align: center;
+  transition: width 500ms ease-in;
+
+  & > * {
+    margin: 0 0.5em;
+  }
+
+  .img.smallest {
+    width: 75px;
+  }
+
+  .img.smaller {
+    width: 100px;
+  }
+
+  .img.small {
+    width: 125px;
+  }
 `;
