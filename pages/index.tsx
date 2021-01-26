@@ -65,10 +65,10 @@ const IndexPage: NextPage = () => {
           </div>
           <div>
             <Image
-              src="/images/contact.png"
+              src="/images/contact.svg"
               layout="intrinsic"
-              width={400}
-              height={300}
+              width={500}
+              height={400}
             />
           </div>
         </ModalContent>
@@ -80,9 +80,6 @@ const IndexPage: NextPage = () => {
       />
       <Divider />
       <IntroOne />
-      <Divider />
-      <IntroTwo />
-      <Divider />
       <ActionsComponent actions={data?.actions} />
       <Divider />
       <CallToActionSection toggleModal={() => setOpen(!open)} />
