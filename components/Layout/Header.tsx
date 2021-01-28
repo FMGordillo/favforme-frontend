@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
-import { NavBar } from "../components";
+import { NavBar } from "components";
 
 const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   display: fixed;
@@ -33,7 +33,7 @@ const Subtitle = styled.h2`
   font-weight: 400;
 `;
 
-interface HeaderProps {
+export interface HeaderProps {
   isIndex?: boolean;
   title?: ReactNode | string;
   subtitle?: ReactNode | string;

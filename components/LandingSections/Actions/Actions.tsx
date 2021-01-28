@@ -1,3 +1,5 @@
+import { Button } from "components";
+import { useRouter } from "next/router";
 import { Action } from "lib/types";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
@@ -17,6 +19,7 @@ interface ActionsProps {
 }
 
 const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
+  const router = useRouter();
   const [current, setCurrent] = useState(0);
 
   // TODO: Improve this
@@ -60,6 +63,7 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
           actions.length > 0 &&
           actions.map((action, i) => <ActionComponent key={i} data={action} />)}
       </Carousel>
+      <Button onClick={() => router.push("/acciones")}>Ver todas</Button>
     </StyledContainer>
   );
 };

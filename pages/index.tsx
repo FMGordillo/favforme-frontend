@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
-import { Divider, Header } from "../components";
+import { Divider } from "../components";
 import {
   ActionsComponent,
   AlliancesSection,
@@ -27,7 +27,14 @@ const IndexPage: NextPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Layout>
+    <Layout
+      header
+      headerProps={{
+        isIndex: true,
+        toggleModal: () => setOpen(!open),
+        subtitle: "No dejemos a nadie atrás",
+      }}
+    >
       {/* TODO: No la pense bien, y no deberia poner props aca */}
       <Modal title="Contacto" onClose={() => setOpen(false)} open={open}>
         <ModalContent>
@@ -73,11 +80,6 @@ const IndexPage: NextPage = () => {
           </div>
         </ModalContent>
       </Modal>
-      <Header
-        isIndex
-        toggleModal={() => setOpen(!open)}
-        subtitle="No dejemos a nadie atrás"
-      />
       <Divider />
       <IntroOne />
       <ActionsComponent actions={data?.actions} />

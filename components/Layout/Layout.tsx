@@ -1,11 +1,14 @@
 import { FunctionComponent } from "react";
 import { HeadComponent, HeadProps } from "../Head";
+import { Header, HeaderProps } from "components";
 import { Footer } from "./Footer";
 import styled from "styled-components";
 
 interface LayoutProps {
   footer?: boolean;
+  header?: boolean;
   headProps?: HeadProps;
+  headerProps?: HeaderProps;
   toggleModal?: () => void;
 }
 
@@ -18,11 +21,14 @@ const Container = styled.div`
 
 const Layout: FunctionComponent<LayoutProps> = ({
   footer = true,
+  header,
   headProps,
+  headerProps,
   children,
 }) => (
   <Container>
     <HeadComponent {...headProps} />
+    {header && <Header {...headerProps} />}
     {children}
     {footer && <Footer />}
   </Container>
