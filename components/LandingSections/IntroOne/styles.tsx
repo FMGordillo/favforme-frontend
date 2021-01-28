@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { Container } from "../../styles";
+import { Container, Text } from "../../styles";
+
+export const StyledText = styled(Text)`
+  color: #47b7e3;
+  font-weight: 700;
+  text-align: center !important;
+`;
 
 export const Main = styled.section`
   display: grid;
@@ -62,21 +68,24 @@ export const ODSContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   grid-area: ods-container;
-  transition: width 500ms ease-in;
 
   & > * {
     margin: 0 0.5em;
+    transition: all 500ms ease-in;
   }
 
   .img.smallest {
     width: 75px;
+    opacity: 0.15;
   }
 
   .img.smaller {
     width: 100px;
+    opacity: 0.5;
   }
 
   .img.small {
     width: 125px;
+    opacity: 0.85;
   }
 `;

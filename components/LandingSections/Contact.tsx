@@ -4,7 +4,11 @@ import styled from "styled-components";
 import { Container, Title } from "../styles";
 
 const StyledTitle = styled(Title)`
-  text-align: center;
+  text-align: left;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    text-align: center;
+  }
 `;
 
 const Main = styled.div`
@@ -25,11 +29,16 @@ const Main = styled.div`
   }
 `;
 
+const Text = styled.p`
+  line-height: 1.75em;
+`;
+
 const HighlightedText = styled.p`
   margin-top: 0;
   font-family: dosis;
   font-size: 2em;
   font-weight: 400;
+  line-height: 1.5em;
   color: ${({ theme }) => theme.palette.primary.main};
   a {
     color: inherit;
@@ -37,6 +46,9 @@ const HighlightedText = styled.p`
     &:hover {
       text-decoration: underline;
     }
+  }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    text-align: center;
   }
 `;
 
@@ -47,12 +59,12 @@ const ContactSection: FunctionComponent = () => (
         <Image src="/images/contact.svg" width={500} height={400} />
       </div>
       <div className="second-element">
-        <StyledTitle>Contacto</StyledTitle>
-        <p>
+        <StyledTitle>Estamos con vos</StyledTitle>
+        <Text>
           Contamos con un equipo amigable para acompañarte en el proceso y
           atender cualquier inquietud que tengas acerca de nuestro desarrollo,
           contactanos.
-        </p>
+        </Text>
         <HighlightedText>
           <a target="_blank" rel="noreferrer" href="mailto:hello@favforme.com">
             hello@favforme.com

@@ -33,10 +33,9 @@ export const theme: DefaultTheme = {
   },
   spacing: (digit: Spacing): string => `${digit * 4}`,
   breakpoints: {
-    // "Mobile first"
     down: (key: Breakpoint): string =>
       `@media (max-width: ${calculateBreakpoint(key)})`,
-    // Not being used rn
+    // @deprecated
     up: (key: Breakpoint): string =>
       `@media (min-width: ${calculateBreakpoint(key)})`,
   },
