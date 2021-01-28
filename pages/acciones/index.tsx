@@ -4,7 +4,7 @@ import { GetActionsData } from "lib/types";
 import { NextPage } from "next";
 import useSWR from "swr";
 import styled from "styled-components";
-import { Container, Header, Layout, Title } from "../../components";
+import { Container, Layout, Title } from "components";
 
 const StyledTitle = styled(Title)`
   text-align: center;
@@ -23,11 +23,11 @@ const ActionsPage: NextPage = () => {
 
   return (
     <Layout
+      header
       headProps={{
         title: `Acciones`,
       }}
     >
-      <Header />
       <Container>
         <StyledTitle>Acciones Activas</StyledTitle>
         <JoinUsContainer>

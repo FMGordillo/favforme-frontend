@@ -1,4 +1,4 @@
-import { Button, Container, Divider, Header, Layout, Title } from "components";
+import { Button, Container, Divider, Layout, Title } from "components";
 import { SocialNetworks } from "components/LandingSections";
 import {
   AmountCollected,
@@ -77,11 +77,14 @@ const ActionPage: NextPage<
 
   return (
     <Layout
+      header
+      headerProps={{
+        title: "Nuestras acciones",
+      }}
       headProps={{
         title: `${toPascalCase(action?.title)}`,
       }}
     >
-      <Header title="Nuestras acciones" />
       <Main>
         <Title>{action?.title}</Title>
         <ActionContent>
