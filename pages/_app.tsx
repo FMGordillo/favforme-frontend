@@ -1,14 +1,14 @@
 import request from "graphql-request";
 import * as gtag from "lib/gtag";
 import seoConfig from "lib/seo.config";
-import { theme } from "lib/styled";
+import { theme } from "utils/styled";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
-import { Auth0Provider } from "@auth0/auth0-react";
+import initAuth from "../utils/initAuth";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,10 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
-const onRedirectCallback = (appState: { returnTo?: any }) => {
-  // Use Next.js's Router.replace method to replace the url
-  Router.replace(appState?.returnTo || "/");
-};
+initAuth();
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -50,14 +47,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             height={3}
           />
           <DefaultSeo {...seoConfig} />
-          <Auth0Provider
-            onRedirectCallback={onRedirectCallback}
-            clientId={process.env.NEXT_PUBLIC_CLIENT_ID || ""}
-            domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ""}
-            redirectUri={process.env.NEXT_PUBLIC_AUTH0_REDIRECT}
-          >
-            <Component {...pageProps} />
-          </Auth0Provider>
+          <Component {...pageProps} />
         </ThemeProvider>
       </SWRConfig>
     </>

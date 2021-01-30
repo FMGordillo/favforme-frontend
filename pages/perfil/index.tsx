@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { NextPage } from "next";
 import { Layout } from "components";
 import styled from "styled-components";
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const ProfileContainer = styled.div`
   display: grid;
@@ -22,21 +20,11 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfilePage: NextPage = () => {
-  const { user } = useAuth0();
   return (
     <Layout>
-      <ProfileContainer>
-        <div className="img">
-          <Image width={150} height={150} layout="fixed" src={user?.picture} />
-        </div>
-        <div className="data">
-          <p>Email: {user?.email}</p>
-          <p>Nombre: {user?.given_name}</p>
-          <p>Apellido: {user?.family_name}</p>
-        </div>
-      </ProfileContainer>
+      <ProfileContainer></ProfileContainer>
     </Layout>
   );
 };
 
-export default withAuthenticationRequired(ProfilePage);
+export default ProfilePage;
