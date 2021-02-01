@@ -1,10 +1,8 @@
-import { ActionComponent } from "components/LandingSections/Actions";
-import { GET_ACTIONS } from "lib/queries";
-import { GetActionsData } from "lib/types";
-import { NextPage } from "next";
-import useSWR from "swr";
-import styled from "styled-components";
 import { Container, Layout, Title } from "components";
+import { ActionComponent } from "components/LandingSections/Actions";
+import { useActions } from "lib/hooks";
+import { NextPage } from "next";
+import styled from "styled-components";
 
 const StyledTitle = styled(Title)`
   text-align: center;
@@ -19,15 +17,10 @@ const JoinUsContainer = styled.div`
 `;
 
 const ActionsPage: NextPage = () => {
-  const { data } = useSWR<GetActionsData>(GET_ACTIONS({ take: 5 }));
+  const { data } = useActions({ take: 5 });
 
   return (
-    <Layout
-      header
-      headProps={{
-        title: `Acciones`,
-      }}
-    >
+    <Layout header title="Acciones">
       <Container>
         <StyledTitle>Acciones Activas</StyledTitle>
         <JoinUsContainer>

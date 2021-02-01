@@ -9,7 +9,7 @@ const LoaderComponent = styled.div`
   align-items: center;
 `;
 
-export const Loading: FunctionComponent = () => {
+export const FullPageLoading: FunctionComponent = () => {
   return (
     <LoaderComponent>
       {/* TODO: Meter un <Spinner /> */}

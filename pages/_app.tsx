@@ -1,13 +1,14 @@
 import request from "graphql-request";
+import { ModalProvider } from "lib/context";
 import * as gtag from "lib/gtag";
 import seoConfig from "lib/seo.config";
-import { theme } from "utils/styled";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
+import { theme } from "utils/styled";
 import initAuth from "../utils/initAuth";
 
 const GlobalStyle = createGlobalStyle`
@@ -47,7 +48,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             height={3}
           />
           <DefaultSeo {...seoConfig} />
-          <Component {...pageProps} />
+          <ModalProvider>
+            <Component {...pageProps} />
+          </ModalProvider>
         </ThemeProvider>
       </SWRConfig>
     </>
