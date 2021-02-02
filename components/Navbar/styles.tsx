@@ -12,6 +12,7 @@ interface MobileNavigatorProps {
 
 interface ItemProps {
   image?: boolean;
+  current?: boolean;
 }
 
 export const Nav = styled.nav<NavProps>`
@@ -82,9 +83,12 @@ export const Item = styled.li<ItemProps>`
   font-size: 15px;
   font-weight: 500;
   text-align: center;
-  ${({ image }) => image && "max-width: 200px;"}
-  & > a > div {
+  ${({ image }) => image && "max-width: 200px;"} & > a > div {
     max-width: 150px;
+  }
+  a {
+    color: ${({ current, theme }) =>
+      current ? theme.palette.secondary.main : "white"};
   }
 `;
 export const Link = styled.a`
@@ -94,7 +98,10 @@ export const Link = styled.a`
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: all 300ms;
-  &:hover {
+  a {
+    text-decoration: none;
+  }
+  a:hover {
     font-weight: 700;
     color: ${({ theme }) => theme.palette.secondary.main};
   }
