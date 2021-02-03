@@ -67,7 +67,7 @@ const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
   const router = useRouter();
-  const { data } = useAction({ query });
+  const { data, amounts } = useAction({ query });
   const { action } = data || {};
 
   return (
@@ -101,21 +101,15 @@ const ActionPage: NextPage<
           <RightColumn>
             <Summary>
               <AmountCollected>
-                ${parseToCurrency(action?.current)}
+                ${amounts.currentAmount}
                 .-
               </AmountCollected>
               <AmountSubtitle>
                 recaudado para esta acción
                 <br />
-                de ${parseToCurrency(action?.objective)}.-
+                de ${amounts.finalAmount}.-
               </AmountSubtitle>
-              <Percentage>
-                {(
-                  ((action?.current || 0) * 100) /
-                  (action?.objective || action?.current || 0)
-                ).toFixed()}
-                % COMPLETADO
-              </Percentage>
+              <Percentage>{amounts.completition}% COMPLETADO</Percentage>
               <Button onClick={() => router.push("/donacion/redireccionando")}>
                 Favorecer esta acción
               </Button>

@@ -1,5 +1,6 @@
 import { Action } from "lib/types";
 import useSWR from "swr";
+import { useCalculations, UseCalculationsReturn } from "./useCalculations";
 
 const GET_ACTION = `
   query getAction($id: String) {
@@ -26,9 +27,10 @@ interface ActionSWRData {
 }
 
 interface UseActionReturn {
-  data: ActionSWRData | undefined;
   error: any;
   isValidating: boolean;
+  amounts: UseCalculationsReturn;
+  data: ActionSWRData | undefined;
 }
 
 interface UseActionProps {
@@ -39,12 +41,13 @@ interface UseActionProps {
  * FIXME: Es necesario todo esto?
  */
 export const useAction = ({ query }: UseActionProps): UseActionReturn => {
-  console.log("QUERY", query);
   const { data, error, isValidating } = useSWR<ActionSWRData>(() =>
     query ? [GET_ACTION, query] : null
   );
+  const amounts = useCalculations(data?.action);
 
   return {
+    amounts,
     data,
     error,
     isValidating,

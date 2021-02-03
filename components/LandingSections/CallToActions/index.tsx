@@ -8,9 +8,7 @@ interface CallToActionSectionProps {
   toggleModal?: () => void;
 }
 
-const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({
-  toggleModal,
-}) => {
+const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({}) => {
   return (
     <>
       <StyledTitle>ENTORNO FAVORABLE</StyledTitle>

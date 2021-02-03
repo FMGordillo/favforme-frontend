@@ -1,4 +1,4 @@
-import { Button, Layout } from "components";
+import { Layout } from "components";
 import { ModalContext } from "lib/context";
 import { useActions } from "lib/hooks";
 import { NextPage } from "next";
@@ -22,7 +22,6 @@ const IndexPage: NextPage = () => {
       headerProps={{
         isIndex: true,
         title: "Estás en FavForMe",
-        toggleModal: () => modalData.handleModal(<p>HABER</p>),
         subtitle: "No dejemos a nadie atrás",
       }}
     >
@@ -30,9 +29,7 @@ const IndexPage: NextPage = () => {
       <IntroOne />
       <ActionsComponent actions={data?.actions} />
       <Divider />
-      <CallToActionSection
-        toggleModal={() => modalData.handleModal(<p>TEST</p>)}
-      />
+      <CallToActionSection />
       <Divider />
       <AlliancesSection />
       <Divider />
