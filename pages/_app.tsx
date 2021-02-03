@@ -1,6 +1,6 @@
-import request from "graphql-request";
 import { ModalProvider } from "lib/context";
 import * as gtag from "lib/gtag";
+import { fetcher } from "lib/queries";
 import seoConfig from "lib/seo.config";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
@@ -35,8 +35,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       <SWRConfig
         value={{
           refreshInterval: 10000,
-          fetcher: (query, params) =>
-            request(process.env.NEXT_PUBLIC_BACKEND_URL || "", query, params),
+          fetcher,
         }}
       >
         <GlobalStyle />

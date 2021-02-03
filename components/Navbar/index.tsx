@@ -1,24 +1,30 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ContactModal } from "components/Modal/components";
 import { Menu } from "components/Menu";
+import { ModalContext } from "lib/context";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useContext, useState } from "react";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul } from "./styles";
 
 interface NavBarProps {
   isScrolled?: boolean;
-  toggleModal?: () => void;
 }
 
-const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
+const NavBar: FunctionComponent<NavBarProps> = () => {
   const router = useRouter();
+  const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const handleMobileOpen = () => {
     setOpen(!open);
+  };
+
+  const handleContactClick = () => {
+    handleModal(ContactModal);
   };
 
   return (
@@ -61,7 +67,7 @@ const NavBar: FunctionComponent<NavBarProps> = ({ toggleModal }) => {
         </NavItem>
         <NavItem href="/nosotros">Nosotros</NavItem>
         <NavItem href="/#brands">App mobile?</NavItem>
-        <NavItem onClick={toggleModal}>Contacto</NavItem>
+        <NavItem onClick={handleContactClick}>Contacto</NavItem>
       </Ul>
     </Nav>
   );

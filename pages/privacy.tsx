@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 
+// TODO: mejorar esta pagina
 const PrivacyPage: NextPage = () => (
   <>
     <div>

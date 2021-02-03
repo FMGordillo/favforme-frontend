@@ -1,3 +1,5 @@
+import request from "graphql-request";
+
 export interface Params {
   // where?: any;
   take?: number;
@@ -20,4 +22,8 @@ export const createQuery = (
   } else {
     return `${part1}${part2}`;
   }
+};
+
+export const fetcher = (query: string, params: any): Promise<any> => {
+  return request(process.env.NEXT_PUBLIC_BACKEND_URL || "", query, params);
 };

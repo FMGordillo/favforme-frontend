@@ -39,6 +39,7 @@ interface UseActionProps {
  * FIXME: Es necesario todo esto?
  */
 export const useAction = ({ query }: UseActionProps): UseActionReturn => {
+  console.log("QUERY", query);
   const { data, error, isValidating } = useSWR<ActionSWRData>(() =>
     query ? [GET_ACTION, query] : null
   );
