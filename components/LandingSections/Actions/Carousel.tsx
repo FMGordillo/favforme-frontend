@@ -1,4 +1,4 @@
-import { calculateBreakpoint } from "lib/styled";
+import { calculateBreakpoint } from "utils/styled";
 import React, { Children, FunctionComponent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Container } from "../../styles";

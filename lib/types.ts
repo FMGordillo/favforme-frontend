@@ -40,6 +40,10 @@ export interface Action {
   status: Status;
 }
 
+export interface User {
+  id: string;
+  email: string;
+}
 /**
  * TODO: Move this to Apollo requests
  */

@@ -1,6 +1,7 @@
 import { Action } from "lib/types";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { parseToCurrency } from "../../../lib/data";
@@ -37,6 +38,7 @@ const StyledButton = styled(Button)`
 `;
 
 const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
+  const router = useRouter();
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
 
@@ -82,7 +84,9 @@ const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
           ).toFixed()}
           %
         </Percentage>
-        <StyledButton>Favorecer esta acción</StyledButton>
+        <StyledButton onClick={() => router.push("/donacion/redireccionando")}>
+          Favorecer esta acción
+        </StyledButton>
         <SocialNetworks data={data?.organization?.socialNetworks} />
       </MainContent>
     </StyledContainer>

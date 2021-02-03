@@ -1,12 +1,16 @@
-// TODO: Not working, yet
-interface Params {
+import request from "graphql-request";
+
+export interface Params {
   // where?: any;
   take?: number;
   skip?: number;
   // orderBy?: any;
 }
 
-const createQuery = (query: TemplateStringsArray, params?: Params) => {
+export const createQuery = (
+  query: TemplateStringsArray,
+  params?: Params
+): string => {
   const part1 = query[0];
   const part2 = query[1];
   const parsedParams = Object.entries(params || {}).map(
@@ -20,39 +24,6 @@ const createQuery = (query: TemplateStringsArray, params?: Params) => {
   }
 };
 
-export const GET_ACTIONS = (params?: Params): string => createQuery`
-  {
-    actions${params} {
-      id
-      title
-      current
-      objective
-      organization {
-        socialNetworks {
-          type
-          link
-        }
-      }
-    }
-  }
-`;
-
-export const GET_ACTION = `
-  query getAction($id: String) {
-    action(where: { id: $id }) {
-      id
-      title
-      current
-      objective
-      description
-      organization {
-        logo
-        history
-        socialNetworks {
-          type
-          link
-        }
-      }
-    }
-  }
-`;
+export const fetcher = (query: string, params: any): Promise<any> => {
+  return request(process.env.NEXT_PUBLIC_BACKEND_URL || "", query, params);
+};

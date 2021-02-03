@@ -5,6 +5,7 @@ import { Footer } from "./Footer";
 import styled from "styled-components";
 
 interface LayoutProps {
+  title?: string;
   footer?: boolean;
   header?: boolean;
   headProps?: HeadProps;
@@ -20,6 +21,7 @@ const Container = styled.div`
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
+  title = "Home",
   footer = true,
   header,
   headProps,
@@ -27,8 +29,8 @@ const Layout: FunctionComponent<LayoutProps> = ({
   children,
 }) => (
   <Container>
-    <HeadComponent {...headProps} />
-    {header && <Header {...headerProps} />}
+    <HeadComponent title={title} {...headProps} />
+    {header && <Header title={title} {...headerProps} />}
     {children}
     {footer && <Footer />}
   </Container>

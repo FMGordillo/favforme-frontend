@@ -6,7 +6,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Direction } from "lib/styled";
+import { Direction } from "utils/styled";
 import { SocialNetwork, SocialNetworkName } from "lib/types";
 import { FunctionComponent } from "react";
 import styled from "styled-components";

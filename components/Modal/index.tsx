@@ -5,16 +5,10 @@ import {
   useEffect,
   useRef,
 } from "react";
-import {
-  Background,
-  DialogContainer,
-  DialogTitle,
-  ModalContainer,
-} from "./styles";
+import { Background, ModalContainer } from "./styles";
 
 interface ModalProps {
   open: boolean;
-  title?: string;
   onClose: () => void;
 }
 
@@ -26,7 +20,6 @@ interface ModalProps {
 const ModalComponent: FunctionComponent<ModalProps> = ({
   open,
   onClose,
-  title,
   children,
 }) => {
   const mounted = useRef();
@@ -66,10 +59,7 @@ const ModalComponent: FunctionComponent<ModalProps> = ({
 
   return (
     <ModalContainer open={open}>
-      <DialogContainer>
-        <DialogTitle>{title}</DialogTitle>
-        {children}
-      </DialogContainer>
+      {children}
       {background && <Background ref={background} onClick={handleClick} />}
     </ModalContainer>
   );

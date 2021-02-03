@@ -7,8 +7,7 @@ import {
 } from "components/LandingSections/Actions/styles";
 import { toPascalCase } from "lib";
 import { parseToCurrency } from "lib/data";
-import { GET_ACTION } from "lib/queries";
-import { Action } from "lib/types";
+import { useAction } from "lib/hooks";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -18,7 +17,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import useSWR from "swr";
 
 const Main = styled(Container)`
   display: flex;
@@ -69,10 +67,7 @@ const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
   const router = useRouter();
-  const { data } = useSWR<{ action: Action }>(() =>
-    query ? [GET_ACTION, query] : null
-  );
-
+  const { data, amounts } = useAction({ query });
   const { action } = data || {};
 
   return (
@@ -106,21 +101,15 @@ const ActionPage: NextPage<
           <RightColumn>
             <Summary>
               <AmountCollected>
-                ${parseToCurrency(action?.current)}
+                ${amounts.currentAmount}
                 .-
               </AmountCollected>
               <AmountSubtitle>
                 recaudado para esta acción
                 <br />
-                de ${parseToCurrency(action?.objective)}.-
+                de ${amounts.finalAmount}.-
               </AmountSubtitle>
-              <Percentage>
-                {(
-                  ((action?.current || 0) * 100) /
-                  (action?.objective || action?.current || 0)
-                ).toFixed()}
-                % COMPLETADO
-              </Percentage>
+              <Percentage>{amounts.completition}% COMPLETADO</Percentage>
               <Button onClick={() => router.push("/donacion/redireccionando")}>
                 Favorecer esta acción
               </Button>

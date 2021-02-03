@@ -37,18 +37,16 @@ export interface HeaderProps {
   isIndex?: boolean;
   title?: ReactNode | string;
   subtitle?: ReactNode | string;
-  toggleModal?: () => void;
 }
 
 const Header: FunctionComponent<HeaderProps> = ({
-  toggleModal,
   isIndex,
   title,
   subtitle,
 }) => {
   return (
     <>
-      <NavBar toggleModal={toggleModal} />
+      <NavBar />
       <HeaderContainer isIndex={isIndex}>
         <TextContainer>
           <Title>
