@@ -84,7 +84,16 @@ const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
           ).toFixed()}
           %
         </Percentage>
-        <StyledButton onClick={() => router.push("/donacion/redireccionando")}>
+        <StyledButton
+          onClick={() =>
+            router.push({
+              pathname: "/donacion",
+              query: {
+                action: data?.id,
+              },
+            })
+          }
+        >
           Favorecer esta acción
         </StyledButton>
         <SocialNetworks data={data?.organization?.socialNetworks} />
