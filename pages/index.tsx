@@ -13,7 +13,6 @@ import {
 } from "../components/LandingSections";
 
 const IndexPage: NextPage = () => {
-  const modalData = useContext(ModalContext);
   const { data } = useActions();
 
   return (

@@ -95,8 +95,8 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
       {data?.length &&
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        data.map(({ id, link, type }) => (
-          <a key={id} href={link || "#"} target="_blank" rel="noreferrer">
+        data.map(({ link, type }, i) => (
+          <a key={i} href={link || "#"} target="_blank" rel="noreferrer">
             {selectIcon(type)}
           </a>
         ))}
