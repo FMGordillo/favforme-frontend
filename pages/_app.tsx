@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ModalProvider } from "lib/context";
 import * as gtag from "lib/gtag";
 import { fetcher } from "lib/queries";
@@ -28,6 +29,8 @@ const GlobalStyle = createGlobalStyle`
 Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
 initAuth();
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (

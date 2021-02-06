@@ -25,5 +25,9 @@ export const createQuery = (
 };
 
 export const fetcher = (query: string, params: any): Promise<any> => {
-  return request(process.env.NEXT_PUBLIC_BACKEND_URL || "", query, params);
+  return request(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
+    query,
+    params
+  );
 };

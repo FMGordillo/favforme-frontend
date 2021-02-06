@@ -1,8 +1,6 @@
 import { Layout } from "components";
-import { ModalContext } from "lib/context";
 import { useActions } from "lib/hooks";
 import { NextPage } from "next";
-import { useContext } from "react";
 import { Divider } from "../components";
 import {
   ActionsComponent,

@@ -9,12 +9,11 @@ interface CarouselProps {
   handleForward: () => void;
 }
 
-const StyledContainer = styled(Container)`
+const StyledContainer = styled(Container)<{ hasData?: boolean }>`
   display: grid;
   align-items: center;
   justify-items: center;
-  /*box-shadow: 1em 1em ${({ theme }) => theme.palette.common?.gray?.main};*/
-  box-shadow: 1em 1em #dcdcdc;
+  ${({ hasData }) => hasData && `box-shadow: 1em 1em #dcdcdc;`}
 `;
 
 const Section = styled.div<{ active?: boolean }>`
@@ -40,6 +39,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   // handleForward,
 }) => {
   const childrenMap = Children.map(children, (child) => child);
+  const hasData = childrenMap?.length && childrenMap.length > 0;
   const [iCurrent, setICurrent] = useState<number>(current);
 
   useEffect(() => {
@@ -47,14 +47,17 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   }, [current]);
 
   return (
-    <StyledContainer>
+    <StyledContainer hasData={hasData}>
       {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
-      {childrenMap?.length &&
+      {hasData ? (
         childrenMap.map((child, i) => (
           <Section key={i} active={i === iCurrent}>
             {child}
           </Section>
-        ))}
+        ))
+      ) : (
+        <span>Por favor, intentá en otro momento</span>
+      )}
       {/* <Icon icon={faArrowAltCircleRight} onClick={handleForward} /> */}
     </StyledContainer>
   );

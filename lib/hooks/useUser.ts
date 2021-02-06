@@ -24,8 +24,9 @@ interface AuthUser {
 interface UseUserReturn {
   error: any;
   isValidating: boolean;
+  user: any; // TODO: Mejorar esto
   firebaseData: AuthUser;
-  user: User | undefined;
+  dbUser: User | undefined;
   firebaseUser: FirebaseUser | null;
 }
 
@@ -34,6 +35,8 @@ const GET_USER = gql`
     user(where: { email: $email }) {
       id
       email
+      name
+      surname
     }
   }
 `;
@@ -57,7 +60,8 @@ export const useUser = (): UseUserReturn => {
     error,
     isValidating,
     firebaseData,
-    user: data?.user,
+    user: { ...firebaseData.firebaseUser, ...data?.user },
+    dbUser: data?.user,
     firebaseUser: firebaseData?.firebaseUser,
   };
 };

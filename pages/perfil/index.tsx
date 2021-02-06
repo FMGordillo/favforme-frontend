@@ -24,6 +24,7 @@ const ProfileContainer = styled.div`
 
 const ProfilePage: NextPage = () => {
   const { user, firebaseUser } = useUser();
+
   return (
     <Layout header title="Tu Perfil">
       <Container>

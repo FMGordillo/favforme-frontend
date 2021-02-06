@@ -33,13 +33,15 @@ const ActionsPage: NextPage = () => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {data?.actions &&
-          data.actions.length > 0 &&
+        {data?.actions && data.actions.length > 0 ? (
           data.actions.map((action, i) => (
             <ActionContainer key={i}>
               <ActionComponent data={action} />
             </ActionContainer>
-          ))}
+          ))
+        ) : (
+          <p style={{ textAlign: "center" }}>Por favor, intentá más tarde</p>
+        )}
       </Container>
     </Layout>
   );
