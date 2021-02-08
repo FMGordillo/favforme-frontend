@@ -6,7 +6,6 @@ import {
   Percentage,
 } from "components/LandingSections/Actions/styles";
 import { toPascalCase } from "lib";
-import { parseToCurrency } from "lib/data";
 import { useAction } from "lib/hooks";
 import {
   GetServerSidePropsContext,
@@ -110,7 +109,16 @@ const ActionPage: NextPage<
                 de ${amounts.finalAmount}.-
               </AmountSubtitle>
               <Percentage>{amounts.completition}% COMPLETADO</Percentage>
-              <Button onClick={() => router.push("/donacion/redireccionando")}>
+              <Button
+                onClick={() =>
+                  router.push({
+                    pathname: "/donacion",
+                    query: {
+                      action: query?.id,
+                    },
+                  })
+                }
+              >
                 Favorecer esta acción
               </Button>
               <SocialNetworks
