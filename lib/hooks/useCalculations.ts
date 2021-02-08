@@ -16,9 +16,12 @@ export const useCalculations = (
   return {
     currentAmount: parseToCurrency(currentAmount),
     finalAmount: parseToCurrency(finalAmount),
-    completition: (
-      ((currentAmount || 0) * 100) /
-      (finalAmount || currentAmount || 0)
-    ).toFixed(),
+    completition:
+      currentAmount && finalAmount
+        ? (
+            ((currentAmount || 0) * 100) /
+            (finalAmount || currentAmount || 0)
+          ).toFixed()
+        : "0",
   };
 };

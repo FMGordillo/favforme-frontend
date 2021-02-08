@@ -1,4 +1,4 @@
-import { render } from "../../../testUtils";
+import { render } from "../../../utils/testUtils";
 import ActionsPage from "../../../pages/acciones";
 
 describe("Actions page", () => {

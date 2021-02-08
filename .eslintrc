@@ -45,7 +45,8 @@
     "react/react-in-jsx-scope": "off",
     // @see https://www.npmjs.com/package/eslint-plugin-react-hooks#custom-configuration
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn"
   },
   "globals": { "React": "writable" }
 }
