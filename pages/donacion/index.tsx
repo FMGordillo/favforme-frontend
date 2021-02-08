@@ -11,17 +11,17 @@ import { MouseEvent, useState } from "react";
 
 interface GetServerSidePropsReturn {
   props: {
-    query: any;
+    query: { id?: string };
   };
 }
 
-export function getServerSideProps(
+export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> {
   const { action } = context.query;
   return {
     props: {
-      query: { id: action },
+      query: { id: typeof action === "string" ? action : undefined },
     },
   };
 }
