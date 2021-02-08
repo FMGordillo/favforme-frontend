@@ -39,7 +39,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   // handleForward,
 }) => {
   const childrenMap = Children.map(children, (child) => child);
-  const hasData = childrenMap?.length && childrenMap.length > 0;
+  const hasData = childrenMap?.length && childrenMap.length > 0 ? true : false;
   const [iCurrent, setICurrent] = useState<number>(current);
 
   useEffect(() => {
