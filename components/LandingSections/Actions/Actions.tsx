@@ -1,8 +1,8 @@
-import { Button } from "components";
 import { useRouter } from "next/router";
-import { Action } from "lib/types";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+import { Button } from "../../../components";
+import { Action } from "../../../lib/types";
 import { Container, Title } from "../../styles";
 import { ActionComponent } from "./Action";
 import { Carousel } from "./Carousel";

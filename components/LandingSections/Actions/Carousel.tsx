@@ -1,6 +1,6 @@
-import { calculateBreakpoint } from "utils/styled";
 import React, { Children, FunctionComponent, useEffect, useState } from "react";
 import styled from "styled-components";
+import { calculateBreakpoint } from "../../../utils/styled";
 import { Container } from "../../styles";
 
 interface CarouselProps {
