@@ -50,6 +50,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({
     <StyledContainer hasData={hasData}>
       {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
       {hasData ? (
+        !!childrenMap &&
         childrenMap.map((child, i) => (
           <Section key={i} active={i === iCurrent}>
             {child}
