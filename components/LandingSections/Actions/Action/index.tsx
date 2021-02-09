@@ -1,12 +1,12 @@
-import { Action } from "lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { parseToCurrency } from "../../../lib/data";
-import { Button } from "../../styles";
-import { SocialNetworks } from "./SocialNetworks";
+import { parseToCurrency } from "../../../../lib/data";
+import { Action } from "../../../../lib/types";
+import { SocialNetworks } from "../SocialNetworks";
+import { Button } from "../../../styles";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -15,7 +15,7 @@ import {
   ProgressBar,
   StyledTitle,
   TitleContainer,
-} from "./styles";
+} from "../styles";
 
 interface ActionProps {
   data?: Action;

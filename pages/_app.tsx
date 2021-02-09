@@ -1,16 +1,16 @@
 import axios from "axios";
-import { ModalProvider } from "lib/context";
-import * as gtag from "lib/gtag";
-import { fetcher } from "lib/queries";
-import seoConfig from "lib/seo.config";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Router from "next/router";
 import NextNprogress from "nextjs-progressbar";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
-import { theme } from "utils/styled";
+import { ModalProvider } from "../lib/context";
+import * as gtag from "../lib/gtag";
+import { fetcher } from "../lib/queries";
+import seoConfig from "../lib/seo.config";
 import initAuth from "../utils/initAuth";
+import { theme } from "../utils/styled";
 
 const GlobalStyle = createGlobalStyle`
   body {

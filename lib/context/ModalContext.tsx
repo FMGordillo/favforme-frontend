@@ -1,5 +1,5 @@
-import { Modal } from "components";
 import { createContext, FunctionComponent, ReactNode, useState } from "react";
+import { Modal } from "../../components";
 
 interface UseModalReturn {
   modal: boolean;

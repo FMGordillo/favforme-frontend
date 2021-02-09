@@ -1,11 +1,11 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ContactModal } from "components/Modal/components";
-import { Menu } from "components/Menu";
-import { ModalContext } from "lib/context";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, useContext, useState } from "react";
+import { Menu } from "../../components/Menu";
+import { ContactModal } from "../../components/Modal/components";
+import { ModalContext } from "../../lib/context";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul } from "./styles";
 

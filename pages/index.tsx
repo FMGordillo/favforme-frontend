@@ -1,7 +1,5 @@
-import { Layout } from "components";
-import { useActions } from "lib/hooks";
 import { NextPage } from "next";
-import { Divider } from "../components";
+import { Divider, Layout } from "../components";
 import {
   ActionsComponent,
   AlliancesSection,
@@ -9,6 +7,7 @@ import {
   ContactSection,
   IntroOne,
 } from "../components/LandingSections";
+import { useActions } from "../lib/hooks";
 
 const IndexPage: NextPage = () => {
   const { data } = useActions();

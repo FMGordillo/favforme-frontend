@@ -1,6 +1,6 @@
-import { Layout, FirebaseAuth, FullPageLoading } from "components";
-import { withAuthUser, AuthAction } from "next-firebase-auth";
 import { NextPage } from "next";
+import { AuthAction, withAuthUser } from "next-firebase-auth";
+import { FirebaseAuth, FullPageLoading, Layout } from "../components";
 
 const LoginPage: NextPage = () => {
   return (

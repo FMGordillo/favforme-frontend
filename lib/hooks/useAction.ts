@@ -1,5 +1,5 @@
-import { Action } from "lib/types";
 import useSWR from "swr";
+import { Action } from "../../lib/types";
 import { useCalculations, UseCalculationsReturn } from "./useCalculations";
 
 const GET_ACTION = `

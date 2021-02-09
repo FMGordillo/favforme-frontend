@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import Image from "next/image";
-import { Container, Layout } from "components";
-import styled from "styled-components";
-import { useUser } from "lib/hooks";
 import { AuthAction, withAuthUser } from "next-firebase-auth";
+import Image from "next/image";
+import styled from "styled-components";
+import { Container, Layout } from "../../components";
+import { useUser } from "../../lib/hooks";
 
 const ProfileContainer = styled.div`
   display: grid;

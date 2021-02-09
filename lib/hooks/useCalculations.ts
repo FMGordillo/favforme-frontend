@@ -1,5 +1,5 @@
-import { parseToCurrency } from "lib/data";
-import { Action } from "lib/types";
+import { parseToCurrency } from "../../lib/data";
+import { Action } from "../../lib/types";
 
 export interface UseCalculationsReturn {
   finalAmount: string;
@@ -16,9 +16,12 @@ export const useCalculations = (
   return {
     currentAmount: parseToCurrency(currentAmount),
     finalAmount: parseToCurrency(finalAmount),
-    completition: (
-      ((currentAmount || 0) * 100) /
-      (finalAmount || currentAmount || 0)
-    ).toFixed(),
+    completition:
+      currentAmount && finalAmount
+        ? (
+            ((currentAmount || 0) * 100) /
+            (finalAmount || currentAmount || 0)
+          ).toFixed()
+        : "0",
   };
 };
