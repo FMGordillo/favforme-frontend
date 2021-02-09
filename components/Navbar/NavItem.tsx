@@ -20,7 +20,7 @@ export const NavItem: FunctionComponent<NavItemProps> = ({
     href ? { href } : {},
     onClick ? { onClick } : {}
   );
-  const isCurrent = router.route === href;
+  const isCurrent = router?.route === href;
   return (
     // TODO: Hacer que este "current" sea una clase, para el testing e2e
     <Item current={isCurrent} image>

@@ -13,7 +13,7 @@ const HeadComponent: FunctionComponent<HeadProps> = ({ title = "Home" }) => {
     <>
       <NextSeo
         title={title}
-        openGraph={{ url: `https://favforme.com${router.asPath}` }}
+        openGraph={{ url: `https://favforme.com${router?.asPath}` }}
       />
       <Head>
         <title>{title && `${title} - `}Fundación FavForMe</title>

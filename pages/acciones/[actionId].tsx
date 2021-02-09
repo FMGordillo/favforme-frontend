@@ -1,12 +1,3 @@
-import { Button, Container, Divider, Layout, Title } from "components";
-import { SocialNetworks } from "components/LandingSections";
-import {
-  AmountCollected,
-  AmountSubtitle,
-  Percentage,
-} from "components/LandingSections/Actions/styles";
-import { toPascalCase } from "lib";
-import { useAction } from "lib/hooks";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -16,6 +7,15 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
+import { Button, Container, Divider, Layout, Title } from "../../components";
+import { SocialNetworks } from "../../components/LandingSections";
+import {
+  AmountCollected,
+  AmountSubtitle,
+  Percentage,
+} from "../../components/LandingSections/Actions/styles";
+import { toPascalCase } from "../../lib";
+import { useAction } from "../../lib/hooks";
 
 const Main = styled(Container)`
   display: flex;

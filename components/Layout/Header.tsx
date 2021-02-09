@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
-import { NavBar } from "components";
+import { NavBar } from "../../components";
 
 const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   display: fixed;

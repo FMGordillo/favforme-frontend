@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { HeadComponent, HeadProps } from "../Head";
-import { Header, HeaderProps } from "components";
+import { Header, HeaderProps } from "../../components";
 import { Footer } from "./Footer";
 import styled from "styled-components";
 
