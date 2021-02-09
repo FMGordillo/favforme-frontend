@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { NextPage } from "next";
-import { Layout } from "components";
+import { Layout } from "../../components";
 import { useEffect, useState } from "react";
 
 const DonationRedirectionPage: NextPage = () => {

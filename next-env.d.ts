@@ -3,8 +3,6 @@ import "styled-components";
 /// <reference types="next" />
 /// <reference types="next/types/global" />
 
-declare module "next-firebase-auth";
-
 interface IPalette {
   main?: string;
   light?: string;

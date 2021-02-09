@@ -4,7 +4,7 @@ import {
   NextPage,
 } from "next";
 import { useRouter } from "next/router";
-import { Layout, FullPageLoading } from "components";
+import { Layout, FullPageLoading } from "../../components";
 import { useEffect, useState } from "react";
 
 interface GetServerSidePropsReturn {

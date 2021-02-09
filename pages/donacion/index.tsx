@@ -1,6 +1,4 @@
 import axios from "axios";
-import { Layout } from "components";
-import { useAction, useUser } from "lib/hooks";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
@@ -8,6 +6,8 @@ import {
 } from "next";
 import { withAuthUser } from "next-firebase-auth";
 import { MouseEvent, useState } from "react";
+import { Layout } from "../../components";
+import { useAction, useUser } from "../../lib/hooks";
 
 interface GetServerSidePropsReturn {
   props: {

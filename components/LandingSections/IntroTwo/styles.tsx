@@ -1,4 +1,4 @@
-import { Container } from "components";
+import { Container } from "../../../components";
 import styled from "styled-components";
 
 export const StyledContainer = styled(Container)`
