@@ -16,10 +16,10 @@ interface GetServerSidePropsReturn {
 export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> {
-  const { action } = context.query;
+  const { donationId } = context.query;
   return {
     props: {
-      query: { id: typeof action === "string" ? action : undefined },
+      query: { id: typeof donationId === "string" ? donationId : undefined },
     },
   };
 }

@@ -3,6 +3,7 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Layout, FullPageLoading } from "components";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FullPageLoading, Layout } from "../../components";

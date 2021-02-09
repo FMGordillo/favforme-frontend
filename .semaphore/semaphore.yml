@@ -11,7 +11,7 @@ blocks:
         - name: Build
           commands:
             - checkout
-            - sem-version node 14
+            - sem-version node 14.15.4
             - cache restore
             - cache restore nextjs_build
             - npm install
@@ -31,3 +31,11 @@ blocks:
             - checkout
             - cache restore
             - npm run lint --if-present
+  - name: Test
+    task:
+      jobs:
+        - name: Testing :v
+          commands:
+            - checkout
+            - cache restore
+            - npm run test --if-present
