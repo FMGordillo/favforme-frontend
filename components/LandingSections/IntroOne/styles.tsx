@@ -74,14 +74,24 @@ export const ODSContainer = styled(Container)`
     transition: all 500ms ease-in;
   }
 
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin: 4em 2em;
+  }
+
   .img.smallest {
     width: 75px;
     opacity: 0.15;
+    ${({ theme }) => theme.breakpoints.down("md")} {
+      display: none;
+    }
   }
 
   .img.smaller {
     width: 100px;
     opacity: 0.5;
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      display: none;
+    }
   }
 
   .img.small {

@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { withAuthUser } from "next-firebase-auth";
 import { Divider, Layout } from "../components";
 import {
   ActionsComponent,
@@ -35,4 +36,4 @@ const IndexPage: NextPage = () => {
   );
 };
 
-export default IndexPage;
+export default withAuthUser()(IndexPage);

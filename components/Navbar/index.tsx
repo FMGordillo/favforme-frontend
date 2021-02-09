@@ -6,6 +6,7 @@ import React, { FunctionComponent, useContext, useState } from "react";
 import { Menu } from "../../components/Menu";
 import { ContactModal } from "../../components/Modal/components";
 import { ModalContext } from "../../lib/context";
+import { useUser } from "../../lib/hooks";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul } from "./styles";
 
@@ -15,6 +16,7 @@ interface NavBarProps {
 
 const NavBar: FunctionComponent<NavBarProps> = () => {
   const router = useRouter();
+  const { user, firebaseData } = useUser();
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
@@ -51,8 +53,16 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         }
         open={userDropdownOpen}
       >
-        <button onClick={() => router.push("/perfil")}>Perfil</button>
-        <button onClick={() => console.log("OOPS")}>Cerrar sesion</button>
+        {firebaseData.id && (
+          <button onClick={() => router.push("/perfil")}>Perfil</button>
+        )}
+        <button
+          onClick={() =>
+            firebaseData.id ? firebaseData.signOut() : router.push("/login")
+          }
+        >
+          {firebaseData.id ? "Cerrar sesion" : "Iniciar sesión"}
+        </button>
       </Menu>
       <Ul open={open}>
         <NavItem href="/">FavForMe</NavItem>
