@@ -1,6 +1,6 @@
 import { gql } from "graphql-request";
 import { useAuthUser } from "next-firebase-auth";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import { User } from "../../lib/types";
 
 interface FirebaseUser {
@@ -28,6 +28,7 @@ interface UseUserReturn {
   firebaseData: AuthUser;
   dbUser: User | undefined;
   firebaseUser: FirebaseUser | null;
+  updateUser: (data: { name: string; surname: string; email: string }) => void;
 }
 
 const GET_USER = gql`
@@ -37,6 +38,17 @@ const GET_USER = gql`
       email
       name
       surname
+    }
+  }
+`;
+
+const UPDATE_USER = gql`
+  mutation updateUser($email: String, $name: String, $surname: String) {
+    updateUser(
+      where: { email: $email }
+      data: { name: $name, email: $email, surname: $surname }
+    ) {
+      id
     }
   }
 `;
@@ -56,8 +68,21 @@ export const useUser = (): UseUserReturn => {
     firebaseData ? [GET_USER, firebaseData] : null
   );
 
+  const updateUser = async (data: {
+    name: string;
+    surname: string;
+    email: string;
+  }) => {
+    try {
+      mutate(UPDATE_USER, data, false);
+    } catch (error) {
+      console.log("updateUser FAIL", error);
+    }
+  };
+
   return {
     error,
+    updateUser,
     isValidating,
     firebaseData,
     user: { ...firebaseData.firebaseUser, ...data?.user },

@@ -26,7 +26,9 @@ const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({}) =>
             recursos necesarios y lograr sus objetivos gracias a la ayuda de tu
             Empresa.
           </StyledText>
-          <Button>Acerca de FavForMe</Button>
+          <Link href="/nosotros">
+            <Button>Acerca de FavForMe</Button>
+          </Link>
         </Section>
         <Section>
           <Image

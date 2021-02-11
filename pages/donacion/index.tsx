@@ -5,7 +5,7 @@ import {
   NextPage,
 } from "next";
 import { withAuthUser } from "next-firebase-auth";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { Layout } from "../../components";
 import { useAction, useUser } from "../../lib/hooks";
 
@@ -31,17 +31,22 @@ const DonationPage: NextPage<
 > = ({ query }) => {
   const { user } = useUser();
   const { data } = useAction({ query });
-  const [email, setEmail] = useState(user?.email);
+  const [email, setEmail] = useState<string | undefined>(user?.email);
   const [amount, setAmount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [donationUrl, setDonationUrl] = useState("");
 
   const { action } = data ?? {};
 
+  useEffect(() => {
+    setEmail(user?.email);
+  }, [user?.email]);
+
   const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
+      console.log(email);
       if (!query.id || !amount || typeof amount !== "number" || !email)
         throw new Error("The required fields are missing");
 
