@@ -23,11 +23,11 @@ export interface Organization {
   logo?: string;
   history?: string;
   homepage?: string;
-  actions: Action[];
+  actions: ActionI[];
   socialNetworks: SocialNetwork[];
 }
 
-export interface Action {
+export interface ActionI {
   id: number;
   title: string;
   description: string;
@@ -48,5 +48,5 @@ export interface User {
  * TODO: Move this to Apollo requests
  */
 export interface GetActionsData {
-  actions: Action[];
+  actions: ActionI[];
 }

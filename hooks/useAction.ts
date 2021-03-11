@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { Action } from "../lib/types";
+import { ActionI } from "../lib/types";
 import { useCalculations, UseCalculationsReturn } from "./useCalculations";
 
 const GET_ACTION = `
@@ -23,7 +23,7 @@ const GET_ACTION = `
 `;
 
 interface ActionSWRData {
-  action: Action;
+  action: ActionI;
 }
 
 interface UseActionReturn {

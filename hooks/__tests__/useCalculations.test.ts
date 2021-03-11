@@ -1,9 +1,9 @@
 import { useCalculations } from "..";
-import { Action } from "../../lib/types";
+import { ActionI } from "../../lib/types";
 
 describe("useCalculations hook", () => {
   it("returns correctly", () => {
-    const data: Action = {
+    const data: ActionI = {
       id: 1,
       description: "Test",
       organizationId: 1,

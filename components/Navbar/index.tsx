@@ -1,12 +1,12 @@
+import { Menu } from "@/components";
+import { ContactModal } from "@/components/Modal/components";
+import { useUser } from "@/hooks";
+import { ModalContext } from "@/lib/context";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, useContext, useState } from "react";
-import { Menu } from "../../components/Menu";
-import { ContactModal } from "../../components/Modal/components";
-import { ModalContext } from "../../lib/context";
-import { useUser } from "../../hooks";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul } from "./styles";
 

@@ -1,5 +1,5 @@
 import { parseToCurrency } from "../lib/data";
-import { Action } from "../lib/types";
+import { ActionI } from "../lib/types";
 
 export interface UseCalculationsReturn {
   finalAmount: string;
@@ -8,7 +8,7 @@ export interface UseCalculationsReturn {
 }
 
 export const useCalculations = (
-  data: Action | undefined
+  data: ActionI | undefined
 ): UseCalculationsReturn => {
   const currentAmount = data?.current;
   const finalAmount = data?.objective;

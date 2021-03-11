@@ -1,9 +1,9 @@
 import { render } from "../../../utils/testUtils";
-import { ActionComponent } from "../index";
+import { Action } from "../index";
 
 describe("Action component", () => {
   it("renders", () => {
-    const { asFragment } = render(<ActionComponent />);
+    const { asFragment } = render(<Action />);
     expect(asFragment).toMatchSnapshot();
   });
 });

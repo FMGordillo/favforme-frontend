@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Image from "next/image";
+import { Container, Layout, Title } from "@/components";
 import { NextPage } from "next";
-import { Title, Layout, Container } from "../components";
+import Image from "next/image";
+import styled from "styled-components";
 
 const FirstSection = styled.section`
   text-align: center;

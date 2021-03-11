@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { parseToCurrency } from "../../lib/data";
-import { Action } from "../../lib/types";
+import { ActionI } from "../../lib/types";
 import { SocialNetworks } from "../LandingSections/Actions/SocialNetworks";
 import { Button } from "../styles";
 import {
@@ -18,7 +18,7 @@ import {
 } from "../LandingSections/Actions/styles";
 
 interface ActionProps {
-  data?: Action;
+  data?: ActionI;
 }
 
 const StyledContainer = styled.div`
@@ -37,7 +37,7 @@ const StyledButton = styled(Button)`
   margin: 1em 0;
 `;
 
-const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
+const Action: FunctionComponent<ActionProps> = ({ data }) => {
   const router = useRouter();
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
@@ -101,4 +101,4 @@ const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
   );
 };
 
-export { ActionComponent };
+export { Action };

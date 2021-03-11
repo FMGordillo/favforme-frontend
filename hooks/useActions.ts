@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { createQuery, Params } from "../lib/queries";
-import { Action } from "../lib/types";
+import { ActionI } from "../lib/types";
 
 const GET_ACTIONS = (params?: Params): string => createQuery`
   {
@@ -20,7 +20,7 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
 `;
 
 interface ActionsSWRData {
-  actions: Action[];
+  actions: ActionI[];
 }
 
 interface UseActionsReturn {

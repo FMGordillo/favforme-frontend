@@ -1,10 +1,9 @@
+import { Action, Button } from "@/components";
+import { ActionI } from "@/lib/types";
 import { useRouter } from "next/router";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { Button } from "../../../components";
-import { Action } from "../../../lib/types";
 import { Container, Title } from "../../styles";
-import { ActionComponent } from "../../Action";
 import { Carousel } from "./Carousel";
 
 const StyledContainer = styled(Container)`
@@ -15,7 +14,7 @@ const StyledContainer = styled(Container)`
 `;
 
 interface ActionsProps {
-  actions?: Action[];
+  actions?: ActionI[];
 }
 
 const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
@@ -61,7 +60,7 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
       >
         {actions &&
           actions.length > 0 &&
-          actions.map((action, i) => <ActionComponent key={i} data={action} />)}
+          actions.map((action, i) => <Action key={i} data={action} />)}
       </Carousel>
       <Button onClick={() => router.push("/acciones")}>Ver todas</Button>
     </StyledContainer>

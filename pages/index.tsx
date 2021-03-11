@@ -1,14 +1,14 @@
-import { NextPage } from "next";
-import { withAuthUser } from "next-firebase-auth";
-import { Divider, Layout } from "../components";
+import { Divider, Layout } from "@/components";
 import {
   ActionsComponent,
   AlliancesSection,
   CallToActionSection,
   ContactSection,
   IntroOne,
-} from "../components/LandingSections";
-import { useActions } from "../hooks";
+} from "@/components/LandingSections";
+import { useActions } from "@/hooks";
+import { NextPage } from "next";
+import { withAuthUser } from "next-firebase-auth";
 
 const IndexPage: NextPage = () => {
   const { data } = useActions();
