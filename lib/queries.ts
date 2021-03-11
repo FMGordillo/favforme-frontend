@@ -24,7 +24,10 @@ export const createQuery = (
   }
 };
 
-export const fetcher = (query: string, params: any): Promise<any> => {
+export const fetcher = (
+  query: string,
+  params: any
+): Promise<Record<string, any>> => {
   return request(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
     query,

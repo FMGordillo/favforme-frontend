@@ -1,5 +1,5 @@
-import { useCalculations } from "../";
-import { Action } from "../../types";
+import { useCalculations } from "..";
+import { Action } from "../../lib/types";
 
 describe("useCalculations hook", () => {
   it("returns correctly", () => {

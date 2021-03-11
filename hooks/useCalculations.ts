@@ -1,5 +1,5 @@
-import { parseToCurrency } from "../../lib/data";
-import { Action } from "../../lib/types";
+import { parseToCurrency } from "../lib/data";
+import { Action } from "../lib/types";
 
 export interface UseCalculationsReturn {
   finalAmount: string;

@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import { createQuery, Params } from "../../lib/queries";
-import { Action } from "../../lib/types";
+import { createQuery, Params } from "../lib/queries";
+import { Action } from "../lib/types";
 
 const GET_ACTIONS = (params?: Params): string => createQuery`
   {

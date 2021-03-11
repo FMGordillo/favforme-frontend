@@ -7,7 +7,7 @@ import {
 import { withAuthUser } from "next-firebase-auth";
 import { MouseEvent, useEffect, useState } from "react";
 import { Layout } from "../../components";
-import { useAction, useUser } from "../../lib/hooks";
+import { useAction, useUser } from "../../hooks";
 
 interface GetServerSidePropsReturn {
   props: {

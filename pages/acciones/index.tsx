@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import styled from "styled-components";
 import { Container, Layout, Title } from "../../components";
 import { ActionComponent } from "../../components/LandingSections/Actions";
-import { useActions } from "../../lib/hooks";
+import { useActions } from "../../hooks";
 
 const StyledTitle = styled(Title)`
   text-align: center;

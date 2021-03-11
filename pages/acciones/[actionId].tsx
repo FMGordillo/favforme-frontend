@@ -5,45 +5,23 @@ import {
 } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
-import styled from "styled-components";
-import { Button, Container, Divider, Layout, Title } from "../../components";
+import { Button, Divider, Layout, Title } from "../../components";
 import { SocialNetworks } from "../../components/LandingSections";
 import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
 } from "../../components/LandingSections/Actions/styles";
+import {
+  ActionContent,
+  JoinUsContainer,
+  LeftColumn,
+  Main,
+  RightColumn,
+  Summary,
+} from "../../components/Pages/actionId";
 import { toPascalCase } from "../../lib";
-import { useAction } from "../../lib/hooks";
-
-const Main = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const ActionContent = styled(Container)`
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: 3fr 1fr;
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    grid-template-columns: 1fr;
-  }
-`;
-const JoinUsContainer = styled.div`
-  text-align: center;
-  color: ${({ theme }) => theme.palette.secondary.main};
-`;
-const Summary = styled.div`
-  display: grid;
-  grid-gap: 1em;
-`;
-const LeftColumn = styled.div`
-  div:first-child {
-    text-align: center;
-  }
-`;
-const RightColumn = styled.div``;
+import { useAction } from "../../hooks";
 
 interface GetServerSidePropsReturn {
   props: {

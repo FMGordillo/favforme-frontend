@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { parseToCurrency } from "../../../../lib/data";
-import { Action } from "../../../../lib/types";
-import { SocialNetworks } from "../SocialNetworks";
-import { Button } from "../../../styles";
+import { parseToCurrency } from "../../lib/data";
+import { Action } from "../../lib/types";
+import { SocialNetworks } from "../LandingSections/Actions/SocialNetworks";
+import { Button } from "../styles";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -15,7 +15,7 @@ import {
   ProgressBar,
   StyledTitle,
   TitleContainer,
-} from "../styles";
+} from "../LandingSections/Actions/styles";
 
 interface ActionProps {
   data?: Action;
@@ -67,7 +67,6 @@ const ActionComponent: FunctionComponent<ActionProps> = ({ data }) => {
         <AmountSubtitle>
           aportando voluntariamente de ${parseToCurrency(finalAmount)}
         </AmountSubtitle>
-        {/* TODO: FIX THIS */}
         <ProgressBar>
           <progress
             max="100"

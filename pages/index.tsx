@@ -8,7 +8,7 @@ import {
   ContactSection,
   IntroOne,
 } from "../components/LandingSections";
-import { useActions } from "../lib/hooks";
+import { useActions } from "../hooks";
 
 const IndexPage: NextPage = () => {
   const { data } = useActions();

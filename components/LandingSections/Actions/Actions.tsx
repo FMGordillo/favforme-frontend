@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Button } from "../../../components";
 import { Action } from "../../../lib/types";
 import { Container, Title } from "../../styles";
-import { ActionComponent } from "./Action";
+import { ActionComponent } from "../../Action";
 import { Carousel } from "./Carousel";
 
 const StyledContainer = styled(Container)`

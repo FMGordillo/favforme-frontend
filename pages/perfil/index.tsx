@@ -3,7 +3,7 @@ import { AuthAction, withAuthUser } from "next-firebase-auth";
 import Image from "next/image";
 import { MouseEvent, useEffect, useState } from "react";
 import { Button, Container, Layout } from "../../components";
-import { useUser } from "../../lib/hooks";
+import { useUser } from "../../hooks";
 
 const ProfilePage: NextPage = () => {
   const [name, setName] = useState<string | undefined>(undefined);

@@ -6,7 +6,7 @@ import React, { FunctionComponent, useContext, useState } from "react";
 import { Menu } from "../../components/Menu";
 import { ContactModal } from "../../components/Modal/components";
 import { ModalContext } from "../../lib/context";
-import { useUser } from "../../lib/hooks";
+import { useUser } from "../../hooks";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul } from "./styles";
 

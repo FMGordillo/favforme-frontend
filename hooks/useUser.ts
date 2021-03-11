@@ -1,7 +1,7 @@
 import { gql } from "graphql-request";
 import { useAuthUser } from "next-firebase-auth";
 import useSWR, { mutate } from "swr";
-import { User } from "../../lib/types";
+import { User } from "../lib/types";
 
 interface FirebaseUser {
   email: string | null;

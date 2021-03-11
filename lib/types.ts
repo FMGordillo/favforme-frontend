@@ -47,7 +47,6 @@ export interface User {
 /**
  * TODO: Move this to Apollo requests
  */
-
 export interface GetActionsData {
   actions: Action[];
 }
