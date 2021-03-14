@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Text } from "../../styles";
+import { Container, Text } from "@/components/styles";
 
 export const StyledText = styled(Text)`
   color: #47b7e3;

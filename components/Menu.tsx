@@ -12,11 +12,6 @@ const StyledContainer = styled.div`
 `;
 
 // TODO: Mover /styles
-const Toggle = styled.div`
-  cursor: pointer;
-`;
-
-// TODO: Mover /styles
 // TODO: Mejorar esto, por el amor a jebus.
 const StyledMenu = styled.ul<{ open?: boolean }>`
   display: ${({ open }) => (open ? "block" : "none")};

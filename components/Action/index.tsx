@@ -1,12 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FunctionComponent } from "react";
-import styled from "styled-components";
-import { parseToCurrency } from "../../lib/data";
-import { ActionI } from "../../lib/types";
-import { SocialNetworks } from "../LandingSections/Actions/SocialNetworks";
-import { Button } from "../styles";
+import { SocialNetworks } from "@/components";
+import { Button } from "@/components/Button"; // FIXME: BuG!
+import { parseToCurrency } from "@/lib/data";
+import { ActionI } from "@/lib/types";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -15,7 +10,12 @@ import {
   ProgressBar,
   StyledTitle,
   TitleContainer,
-} from "../LandingSections/Actions/styles";
+} from "@/components/Action/styles";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FunctionComponent } from "react";
+import styled from "styled-components";
 
 interface ActionProps {
   data?: ActionI;

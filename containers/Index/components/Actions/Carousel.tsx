@@ -1,7 +1,7 @@
-import React, { Children, FunctionComponent, useEffect, useState } from "react";
+import { Container } from "@/components/styles";
+import { calculateBreakpoint } from "@/utils/styled";
+import { Children, FunctionComponent, useEffect, useState } from "react";
 import styled from "styled-components";
-import { calculateBreakpoint } from "../../../utils/styled";
-import { Container } from "../../styles";
 
 interface CarouselProps {
   current?: number;

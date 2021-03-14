@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Text, Title } from "../../styles";
+import { Container, Text, Title } from "@/components/styles";
 
 export const StyledContainer = styled(Container)`
   display: grid;

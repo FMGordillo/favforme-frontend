@@ -3,7 +3,7 @@ import { ActionI } from "@/lib/types";
 import { useRouter } from "next/router";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { Container, Title } from "../../styles";
+import { Container, Title } from "@/components/styles";
 import { Carousel } from "./Carousel";
 
 const StyledContainer = styled(Container)`

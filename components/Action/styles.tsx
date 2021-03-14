@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Title } from "../../styles";
+import { Title } from "../styles";
 
 /**
  * @deprecated Improve this or use another thing

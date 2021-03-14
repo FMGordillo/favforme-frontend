@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Title } from "../../styles";
+import { Title } from "@/components/styles";
 
 export const Container = styled.section`
   ${({ theme }) => theme.breakpoints.down("md")} {

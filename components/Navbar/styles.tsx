@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import NextLink from "next/link";
-
 interface NavProps {
   isScrolled?: boolean;
   scrollingDown?: boolean;

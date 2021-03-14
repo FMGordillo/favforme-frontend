@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import { Button, Title } from "../../styles";
+import { Button } from "@/components";
+import { Title } from "@/components/styles";
 import { Section, StyledContainer, StyledTitle, StyledText } from "./styles";
 
 interface CallToActionSectionProps {

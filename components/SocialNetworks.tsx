@@ -1,3 +1,5 @@
+import { SocialNetwork, SocialNetworkName } from "@/lib/types";
+import { Direction } from "@/utils/styled";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebook,
@@ -6,8 +8,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Direction } from "../../../utils/styled";
-import { SocialNetwork, SocialNetworkName } from "../../../lib/types";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 
@@ -16,7 +16,7 @@ interface SocialNetworksProps {
   justify?: Direction;
 }
 
-export const Container = styled.div<{
+export const SocialContainer = styled.div<{
   justify?: Direction;
   itemsLenght?: number;
 }>`
@@ -91,7 +91,7 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   };
 
   return (
-    <Container justify={justify} itemsLenght={data?.length}>
+    <SocialContainer justify={justify} itemsLenght={data?.length}>
       {data?.length &&
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -100,7 +100,7 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
             {selectIcon(type)}
           </a>
         ))}
-    </Container>
+    </SocialContainer>
   );
 };
 

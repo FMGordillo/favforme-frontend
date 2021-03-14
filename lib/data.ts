@@ -1,4 +1,4 @@
-const createAction1 = `
+/* const createAction1 = `
   mutation createAction {
     createAction(
       data: {
@@ -37,9 +37,9 @@ const createAction1 = `
       id
     }
   }
-`;
+`; */
 
-const createAction2 = `
+/*const createAction2 = `
   mutation createAction {
     createAction(
       data: {
@@ -79,7 +79,7 @@ const createAction2 = `
       id
     }
   }
-`;
+`; */
 
 /**
  * @param value Default to 0

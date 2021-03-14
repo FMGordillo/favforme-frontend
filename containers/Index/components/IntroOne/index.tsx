@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Text, Title } from "../../styles";
+import { Text, Title } from "@/components/styles";
 import {
   LeftHandImage,
   Main,

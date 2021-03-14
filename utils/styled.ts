@@ -1,6 +1,9 @@
 import { DefaultTheme } from "styled-components";
 
 export type Direction = "left" | "center" | "right";
+// TODO: Use this from styled.ts
+export type Color = "primary" | "secondary";
+export type Variant = "light" | "main" | "dark";
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
 

@@ -1,45 +1,23 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
-import styled from "styled-components";
-import { Button, Container, Text, Title } from "../styles";
-
-const StyledContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: ${({ theme }) => theme.spacing(1)}em;
-`;
-
-const MarginlessTitle = styled(Title)`
-  text-align: center;
-  margin-top: 0;
-`;
-
-const Subtitle = styled.h2`
-  text-align: center;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-`;
-
-const StyledText = styled(Text)`
-  text-align: center;
-`;
+import { Button } from "@/components";
+import { Container, Text, Title, Subtitle } from "./styles";
 
 const PartnerSection: FunctionComponent = () => {
   return (
-    <StyledContainer id="partners">
+    <Container id="partners">
       <Subtitle>La oportunidad es ahora</Subtitle>
-      <MarginlessTitle>Formá parte del cambio</MarginlessTitle>
+      <Title>Formá parte del cambio</Title>
       <Image
         src="/images/oficina.png"
         alt="Personas en oficina"
         width={500}
         height={250}
       />
-      <StyledText>
+      <Text>
         Hacé tu aporte, dando futuro
         <br />a quienes más lo necesitan
-      </StyledText>
+      </Text>
       <a
         rel="noreferrer noopener"
         target="_blank"
@@ -47,7 +25,7 @@ const PartnerSection: FunctionComponent = () => {
       >
         <Button color="secondary">Ver más información</Button>
       </a>
-    </StyledContainer>
+    </Container>
   );
 };
 

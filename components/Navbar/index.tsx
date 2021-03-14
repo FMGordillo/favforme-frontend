@@ -16,7 +16,7 @@ interface NavBarProps {
 
 const NavBar: FunctionComponent<NavBarProps> = () => {
   const router = useRouter();
-  const { user, firebaseData } = useUser();
+  const { firebaseData } = useUser();
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
