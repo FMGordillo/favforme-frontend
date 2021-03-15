@@ -26,6 +26,9 @@ const TextContainer = styled.div`
 const Title = styled.h1`
   margin: 0;
   font-size: 3.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 75vw;
 `;
 const Subtitle = styled.h2`
   font-family: abel, sans-serif;

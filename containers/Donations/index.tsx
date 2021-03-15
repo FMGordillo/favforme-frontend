@@ -1,5 +1,6 @@
 import { ActionI } from "@/lib/types";
-import { Layout } from "@/components";
+import { Container, Layout } from "@/components";
+import { MainContainer, ActionContainer, DonateButton } from "./styles";
 import axios from "axios";
 import { FunctionComponent, MouseEvent, useEffect, useState } from "react";
 
@@ -60,39 +61,50 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   };
 
   return (
-    <Layout header title="Donacion">
-      <section>
-        <label htmlFor="amount">Monto a donar (en pesos)</label>
-        <input
-          id="amount"
-          type="number"
-          name="amount"
-          disabled={loading}
-          placeholder="100"
-          onChange={(e) => setAmount(Number(e.target.value))}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="text"
-          name="email"
-          disabled={loading}
-          defaultValue={user?.email}
-          placeholder="juanperez@gmail.com"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button disabled={loading} onClick={handleSubmit}>
-          Donar
-        </button>
-      </section>
-      <section>
-        <h1>Link para donar</h1>
-        {donationUrl && (
-          <a rel="noreferrer noopener" href={donationUrl}>
-            Done aqui
-          </a>
-        )}
-      </section>
+    <Layout header title={`Donacion - ${action?.title}`}>
+      <Container>
+        <ActionContainer></ActionContainer>
+        <MainContainer>
+          <h1>Formulario</h1>
+          <label htmlFor="amount">Monto a donar (en pesos)</label>
+          <input
+            id="amount"
+            type="number"
+            name="amount"
+            disabled={loading}
+            placeholder="100"
+            onChange={(e) => setAmount(Number(e.target.value))}
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="text"
+            name="email"
+            disabled={loading}
+            defaultValue={user?.email}
+            placeholder="juanperez@gmail.com"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <DonateButton disabled={loading} onClick={handleSubmit}>
+            Generar link a MercadoPago
+          </DonateButton>
+        </MainContainer>
+        <section>
+          <h1>Link para donar</h1>
+          {donationUrl && !loading && (
+            <a
+              style={{ textDecoration: "none" }}
+              rel="noreferrer noopener"
+              href={donationUrl}
+            >
+              Done aqui{" "}
+              <span role="img" aria-label="blue heart">
+                💙
+              </span>
+            </a>
+          )}
+        </section>
+      </Container>
     </Layout>
   );
 };
