@@ -30,4 +30,9 @@ export const Button = styled.button<ButtonI>`
     background-color: ${({ theme, color }) =>
       theme.palette[color || "primary"]["light"]};
   }
+
+  :disabled {
+    background-color: ${({ theme, color }) =>
+      theme.palette[color || "primary"]["light"]};
+  }
 `;
