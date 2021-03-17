@@ -4,6 +4,8 @@ import {
   AmountSubtitle,
   Percentage,
 } from "@/components/Action/styles";
+import { DonatorsTable } from "@/components/DonatorsTable";
+import { useDonations } from "@/hooks";
 import { toPascalCase } from "@/lib";
 import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
@@ -13,7 +15,7 @@ import {
   ActionContent,
   JoinUsContainer,
   LeftColumn,
-  Main,
+  Container,
   RightColumn,
   Summary,
 } from "./styles";
@@ -31,6 +33,14 @@ export const ActionPage: NextPage<ActionProps> = ({
   amounts,
   action,
 }) => {
+  const { data: donations } = useDonations({
+    take: 10,
+    where: `{ AND:{ actionId: {equals: "${action?.id}"} ${
+      process.env.NODE_ENV === "production"
+        ? "paymentStatus:{equals: SUCCESS}"
+        : ""
+    }} }`,
+  });
   const router = useRouter();
 
   return (
@@ -43,7 +53,8 @@ export const ActionPage: NextPage<ActionProps> = ({
         title: `${toPascalCase(action?.title)}`,
       }}
     >
-      <Main>
+      <Container>
+        <DonatorsTable data={donations} />
         <Title>{action?.title}</Title>
         <ActionContent>
           <LeftColumn>
@@ -112,7 +123,7 @@ export const ActionPage: NextPage<ActionProps> = ({
           <Button color="secondary">Sumar mi ONG</Button>
         </JoinUsContainer>
         <Divider />
-      </Main>
+      </Container>
     </Layout>
   );
 };

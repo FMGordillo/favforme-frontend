@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint pages/**/*.tsx components/**/*.tsx",

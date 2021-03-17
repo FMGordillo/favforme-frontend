@@ -1,7 +1,7 @@
 import request from "graphql-request";
 
 export interface Params {
-  // where?: any;
+  where?: string; // TODO: Evitar que toma un String :c
   take?: number;
   skip?: number;
   // orderBy?: any;

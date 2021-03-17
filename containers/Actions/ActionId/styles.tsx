@@ -1,12 +1,12 @@
-import { Container } from "@/components";
+import { Container as BaseContainer } from "@/components";
 import styled from "styled-components";
 
-export const Main = styled(Container)`
+export const Container = styled(BaseContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export const ActionContent = styled(Container)`
+export const ActionContent = styled(BaseContainer)`
   display: grid;
   grid-gap: 2em;
   grid-template-columns: 3fr 1fr;
