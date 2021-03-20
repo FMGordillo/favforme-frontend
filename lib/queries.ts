@@ -4,6 +4,7 @@ export interface Params {
   where?: string; // TODO: Evitar que toma un String :c
   take?: number;
   skip?: number;
+  cursor?: string; // TODO: Evitar que toma un String :c
   // orderBy?: any;
 }
 

@@ -5,7 +5,6 @@ import {
   Percentage,
 } from "@/components/Action/styles";
 import { DonatorsTable } from "@/components/DonatorsTable";
-import { useDonations } from "@/hooks";
 import { toPascalCase } from "@/lib";
 import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
@@ -13,9 +12,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   ActionContent,
+  Container,
   JoinUsContainer,
   LeftColumn,
-  Container,
   RightColumn,
   Summary,
 } from "./styles";
@@ -33,14 +32,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   amounts,
   action,
 }) => {
-  const { data: donations } = useDonations({
-    take: 10,
-    where: `{ AND:{ actionId: {equals: "${action?.id}"} ${
-      process.env.NODE_ENV === "production"
-        ? "paymentStatus:{equals: SUCCESS}"
-        : ""
-    }} }`,
-  });
   const router = useRouter();
 
   return (
@@ -54,7 +45,7 @@ export const ActionPage: NextPage<ActionProps> = ({
       }}
     >
       <Container>
-        <DonatorsTable data={donations} />
+        <DonatorsTable actionId={action?.id} />
         <Title>{action?.title}</Title>
         <ActionContent>
           <LeftColumn>

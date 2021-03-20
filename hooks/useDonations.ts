@@ -26,15 +26,20 @@ interface UseDonationsReturn {
   data: UseDonationsData;
   error: any;
   isValidating: boolean;
+  refetch: (
+    data?: DonationsSWRData | Promise<DonationsSWRData> | undefined,
+    shouldRevalidate?: boolean | undefined
+  ) => Promise<UseDonationsData>;
 }
 
 export const useDonations = (params?: Params): UseDonationsReturn => {
-  const { data, error, isValidating } = useSWR<DonationsSWRData>(
+  const { data, error, isValidating, mutate } = useSWR<DonationsSWRData>(
     GET_DONATORS(params)
   );
 
   return {
     data,
+    refetch: mutate,
     error,
     isValidating,
   };
