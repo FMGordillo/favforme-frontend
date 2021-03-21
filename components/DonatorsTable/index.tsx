@@ -1,8 +1,9 @@
 import { Button } from "@/components";
-import { useDonations } from "@/hooks";
+import { usePaginatedDonations } from "@/hooks";
 import { parseToCurrency } from "@/lib/data";
 import { format } from "date-fns";
-import { FunctionComponent, useState } from "react";
+import { useRouter } from "next/router";
+import { FunctionComponent } from "react";
 import { Table, TableColumn, TableRow, TBody, THead } from "./styles";
 
 interface DonatorsTableProps {
@@ -12,23 +13,17 @@ interface DonatorsTableProps {
 export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
   actionId,
 }) => {
-  const [lastDonation, setLastDonation] = useState<string | undefined>(
-    undefined
-  );
-  const { data } = useDonations(
+  const router = useRouter();
+  const { data } = usePaginatedDonations(
     Object.assign(
       {},
       {
-        take: 5,
-        skip: lastDonation ? 1 : 0,
+        take: 6,
         where: `{ AND:{ actionId: {equals: "${actionId}"} ${
           process.env.NODE_ENV === "production"
             ? "paymentStatus:{equals: SUCCESS}"
             : ""
         }} }`,
-      },
-      lastDonation && {
-        cursor: `{ id: "${lastDonation}" }`,
       }
     )
   );
@@ -38,9 +33,10 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
       <Table>
         <THead>
           <TableRow>
-            <th>Fecha</th>
-            <th>Nombre</th>
-            <th>Monto</th>
+            <TableColumn>Fecha</TableColumn>
+            <TableColumn>Empresa / particular</TableColumn>
+            <TableColumn>Contribuidor</TableColumn>
+            <TableColumn>Monto</TableColumn>
           </TableRow>
         </THead>
         <TBody>
@@ -48,6 +44,11 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
             <TableRow key={donation.id}>
               <TableColumn>
                 {format(new Date(donation.createdAt), "yyyy/MM/dd")}
+              </TableColumn>
+              <TableColumn>
+                {donation.user.userType === "USER"
+                  ? "Donante particular"
+                  : donation.user.name}
               </TableColumn>
               <TableColumn>
                 {donation.user.name
@@ -61,7 +62,7 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
       </Table>
       <Button
         onClick={() => {
-          setLastDonation(data?.donations.pop()?.id);
+          router.push("/donaciones");
         }}
       >
         Cargar mas

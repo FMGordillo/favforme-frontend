@@ -60,6 +60,7 @@ export interface User {
   name: string;
   surname: string;
   email: string;
+  userType: "USER" | "BUSINESS";
 }
 /**
  * TODO: Move this to Apollo requests

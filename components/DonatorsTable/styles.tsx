@@ -1,10 +1,27 @@
 import styled from "styled-components";
 
-export const Table = styled.table``;
+export const Table = styled.table`
+  width: 100%;
 
-export const THead = styled.thead``;
+  text-align: center;
+  border-collapse: collapse;
+`;
 
-export const TBody = styled.tbody``;
+export const THead = styled.thead`
+  color: white;
+  background-color: ${({ theme }) => theme.palette.primary.main};
+`;
+
+export const TBody = styled.tbody`
+  border-left: 4px solid;
+  border-right: 4px solid;
+  border-image: linear-gradient(
+      to bottom,
+      ${({ theme }) => theme.palette.primary.main},
+      white
+    )
+    1 100%;
+`;
 
 export const TableColumn = styled.td``;
 

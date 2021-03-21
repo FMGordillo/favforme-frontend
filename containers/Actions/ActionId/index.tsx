@@ -1,22 +1,17 @@
-import { Button, Divider, Layout, SocialNetworks, Title } from "@/components";
-import {
-  AmountCollected,
-  AmountSubtitle,
-  Percentage,
-} from "@/components/Action/styles";
+import { Button, Divider, Layout, Title } from "@/components";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import { toPascalCase } from "@/lib";
 import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { ActionCard } from "./components";
 import {
   ActionContent,
+  ActionTitle,
   Container,
   JoinUsContainer,
   LeftColumn,
   RightColumn,
-  Summary,
 } from "./styles";
 
 interface ActionProps {
@@ -32,8 +27,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   amounts,
   action,
 }) => {
-  const router = useRouter();
-
   return (
     <Layout
       header
@@ -45,9 +38,10 @@ export const ActionPage: NextPage<ActionProps> = ({
       }}
     >
       <Container>
+        <Title>Donaciones recibidas</Title>
         <DonatorsTable actionId={action?.id} />
-        <Title>{action?.title}</Title>
         <ActionContent>
+          <ActionTitle>{action?.title}</ActionTitle>
           <LeftColumn>
             <div>
               <Image
@@ -64,34 +58,7 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
-            <Summary>
-              <AmountCollected>
-                ${amounts.currentAmount}
-                .-
-              </AmountCollected>
-              <AmountSubtitle>
-                recaudado para esta acción
-                <br />
-                de ${amounts.finalAmount}.-
-              </AmountSubtitle>
-              <Percentage>{amounts.completition}% COMPLETADO</Percentage>
-              <Button
-                onClick={() =>
-                  router.push({
-                    pathname: "/donacion",
-                    query: {
-                      action: query?.id,
-                    },
-                  })
-                }
-              >
-                Favorecer esta acción
-              </Button>
-              <SocialNetworks
-                data={action?.organization?.socialNetworks}
-                justify="center"
-              />
-            </Summary>
+            <ActionCard action={action} queryId={query?.id} amounts={amounts} />
             <h2>Datos de la ONG</h2>
             <Image
               src={action?.organization?.logo || "/"}
