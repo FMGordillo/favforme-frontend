@@ -25,7 +25,8 @@ export const Text = styled.p`
 /**
  * section
  */
-export const Container = styled.section`
+export const Container = styled.section<{ center?: boolean }>`
+  ${({ center }) => (center ? "text-align: center;" : "")}
   ${({ theme }) => `
   margin: ${theme.spacing(1)}em;
   ${theme.breakpoints.down("sm")} {
