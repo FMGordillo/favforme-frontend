@@ -24,6 +24,7 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
             ? "paymentStatus:{equals: SUCCESS}"
             : ""
         }} }`,
+        orderBy: `{ createdAt: desc }`,
       }
     )
   );

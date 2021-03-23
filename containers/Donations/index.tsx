@@ -67,8 +67,18 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     const errors: Partial<Record<keyof FormValues, any>> = {};
     const regexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+.[^@ \t\r\n]+");
     if (values.amount > 200000) {
-      errors.amount =
-        "Para montos mayores a $200.000 por favor comunicarse con soporte@favforme.com";
+      errors.amount = (
+        <span>
+          Para montos mayores a <b>$200.000</b> por favor comunicarse con{" "}
+          <a
+            href="mailto:soporte@favforme.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            soporte@favforme.com
+          </a>
+        </span>
+      );
     }
     if (!regexEmail.test(values.email)) {
       errors.email = "Ingrese un email valido";
@@ -99,10 +109,11 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         <ActionContainer>
           <p>
             {formik.values.email && formik.values.amount > 0
-              ? `${formik.values.email} donará $
-              ${formik.values.amount.toLocaleString("es-ES", {
-                currency: "ARS",
-              })}`
+              ? `${
+                  formik.values.email
+                } donará $${formik.values.amount.toLocaleString("es-ES", {
+                  currency: "ARS",
+                })}`
               : ""}
           </p>
         </ActionContainer>
@@ -141,8 +152,11 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
             )}
             <DonateButton
               type="submit"
-              disabled={loading}
-              onClick={() => formik.handleSubmit()}
+              disabled={
+                loading ||
+                Object.values(formik.errors).find((er) => er !== "") !==
+                  undefined
+              }
             >
               {loading ? "Generando..." : "Generar link a MercadoPago"}
             </DonateButton>
