@@ -30,7 +30,7 @@ export const SocialContainer = styled.div<{
     height: 32px !important;
   }
   & > * {
-    color: ${({ theme }) => theme.palette.common?.gray?.main};
+    color: ${({ theme }) => theme.palette.gray.main};
 
     & > * {
       transition: all 300ms;

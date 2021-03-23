@@ -4,11 +4,13 @@ import { ActionI } from "../../lib/types";
 describe("useCalculations hook", () => {
   it("returns correctly", () => {
     const data: ActionI = {
-      id: 1,
+      id: "1",
+      deleted: false,
+      status: "INPROGRESS",
       description: "Test",
       organizationId: 1,
       organization: {
-        id: 1,
+        id: "1",
         name: "Org test",
         actions: [],
         socialNetworks: [],

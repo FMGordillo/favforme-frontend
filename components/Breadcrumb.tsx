@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Container = styled.nav``;
 const ItemContainer = styled.ol`
-  color: ${({ theme }) => theme.palette.common?.gray?.main};
+  color: ${({ theme }) => theme.palette.gray.main};
   display: flex;
   flex-wrap: wrap;
   margin: 0;

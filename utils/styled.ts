@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 export type Direction = "left" | "center" | "right";
 // TODO: Use this from styled.ts
-export type Color = "primary" | "secondary";
+export type Color = "primary" | "secondary" | "gray" | "white" | "black";
 export type Variant = "light" | "main" | "dark";
 type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
@@ -30,8 +30,16 @@ export const theme: DefaultTheme = {
       main: "#f38d9f",
       dark: "#a21d44",
     },
-    common: {
-      gray: { light: "#f6f6f6", main: "#B2B2B2", dark: "#9b9b9b" },
+    gray: { light: "#f6f6f6", main: "#B2B2B2", dark: "#9b9b9b" },
+    black: {
+      light: "#000",
+      main: "#000",
+      dark: "#000",
+    },
+    white: {
+      light: "#FFF",
+      main: "#FFF",
+      dark: "#FFF",
     },
   },
   spacing: (digit: Spacing): string => `${digit * 4}`,

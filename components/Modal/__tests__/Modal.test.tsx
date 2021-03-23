@@ -11,16 +11,16 @@ describe("Modal component", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it("closes when onClose is executed", () => {
-    const { container } = render(
-      <Modal open={true} onClose={onClose}>
-        <p>Content</p>
-      </Modal>
-    );
+  // it("closes when onClose is executed", () => {
+  //   const { container } = render(
+  //     <Modal open={true} onClose={onClose}>
+  //       <p>Content</p>
+  //     </Modal>
+  //   );
 
-    // console.log(container.firstChild);
-    // expect(container.firstChild).toBeVisible();
-    // onClose();
-    // expect(container.firstChild).not.toBeVisible();
-  });
+  // console.log(container.firstChild);
+  // expect(container.firstChild).toBeVisible();
+  // onClose();
+  // expect(container.firstChild).not.toBeVisible();
+  // });
 });

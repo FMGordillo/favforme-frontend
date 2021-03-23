@@ -8,7 +8,7 @@ import {
 } from "./styles";
 import axios from "axios";
 import { FunctionComponent, useEffect, useState } from "react";
-import { FormikProvider, useFormik } from "formik";
+import { useFormik } from "formik";
 
 interface DonationProps {
   user: any;

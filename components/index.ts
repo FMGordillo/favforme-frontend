@@ -1,4 +1,4 @@
-export * from "./Action";
+export * from "./ActionCard";
 export * from "./Button";
 export * from "./FirebaseAuth";
 export * from "./Head";

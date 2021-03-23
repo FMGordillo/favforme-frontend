@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 interface ButtonI {
   color?: Color;
+  hoverColor?: Color;
   variant?: Variant;
+  hoverVariant?: Variant;
 }
 
 /**
@@ -20,19 +22,18 @@ export const Button = styled.button<ButtonI>`
   transition: background-color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
     theme.palette[color || "primary"][variant || "main"]};
-
   & > a {
     color: inherit;
     text-decoration: none;
   }
 
   :hover {
-    background-color: ${({ theme, color }) =>
-      theme.palette[color || "primary"]["light"]};
+    background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
+      theme.palette[hoverColor || color || "primary"][hoverVariant || "light"]};
   }
 
   :disabled {
-    background-color: ${({ theme, color }) =>
-      theme.palette[color || "primary"]["light"]};
+    background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
+      theme.palette[hoverColor || color || "primary"][hoverVariant || "light"]};
   }
 `;

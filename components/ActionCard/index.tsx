@@ -1,49 +1,34 @@
 import { SocialNetworks } from "@/components";
-import { Button } from "@/components/Button"; // FIXME: BuG!
 import { parseToCurrency } from "@/lib/data";
 import { ActionI } from "@/lib/types";
 import {
   AmountCollected,
   AmountSubtitle,
+  Button,
+  ButtonContainer,
+  Container,
   MainContent,
   Percentage,
   ProgressBar,
-  StyledTitle,
+  Title,
   TitleContainer,
-} from "@/components/Action/styles";
+} from "@/components/ActionCard/styles";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
-import styled from "styled-components";
 
 interface ActionProps {
   data?: ActionI;
 }
 
-const StyledContainer = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  grid-gap: 2em;
-  box-shadow: 1em 1em #dcdcdc;
-  background: ${({ theme }) => theme.palette.common?.gray?.light};
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  margin: 1em 0;
-`;
-
-const Action: FunctionComponent<ActionProps> = ({ data }) => {
+const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
   const router = useRouter();
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
 
   return (
-    <StyledContainer>
+    <Container>
       <Link href={`/acciones/${data?.id}`}>
         <div>
           <Image
@@ -57,7 +42,7 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
       <MainContent>
         <TitleContainer>
           <Link href={`/acciones/${data?.id}`}>
-            <StyledTitle>{data?.title.toUpperCase()}</StyledTitle>
+            <Title>{data?.title.toUpperCase()}</Title>
           </Link>
         </TitleContainer>
         <AmountCollected>
@@ -83,22 +68,31 @@ const Action: FunctionComponent<ActionProps> = ({ data }) => {
           ).toFixed()}
           %
         </Percentage>
-        <StyledButton
-          onClick={() =>
-            router.push({
-              pathname: "/donacion",
-              query: {
-                action: data?.id,
-              },
-            })
-          }
-        >
-          Favorecer esta acción
-        </StyledButton>
+        <ButtonContainer>
+          <Button
+            onClick={() =>
+              router.push({
+                pathname: "/donacion",
+                query: {
+                  action: data?.id,
+                },
+              })
+            }
+          >
+            DONAR
+          </Button>
+          <Button
+            color="gray"
+            hoverVariant="dark"
+            onClick={() => router.push(`/acciones/${data?.id}`)}
+          >
+            DETALLES
+          </Button>
+        </ButtonContainer>
         <SocialNetworks data={data?.organization?.socialNetworks} />
       </MainContent>
-    </StyledContainer>
+    </Container>
   );
 };
 
-export { Action };
+export { ActionCard as Action };

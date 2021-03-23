@@ -6,7 +6,7 @@ import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
-} from "@/components/Action/styles"; // TODO: Mejorar esto
+} from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { useRouter } from "next/router";
 
 interface ActionCardProps {

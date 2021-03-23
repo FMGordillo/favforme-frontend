@@ -14,11 +14,9 @@ type BreakpointFn = (key: Breakpoint) => string;
 declare module "styled-components" {
   export interface DefaultTheme {
     palette: {
-      common?: {
-        gray?: IPalette;
-        black?: string;
-        white?: string;
-      };
+      gray: IPalette;
+      black: IPalette;
+      white: IPalette;
       primary: IPalette;
       secondary: IPalette;
     };
