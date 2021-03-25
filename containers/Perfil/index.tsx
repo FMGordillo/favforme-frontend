@@ -1,19 +1,33 @@
+import { FormikProvider, useFormik } from "formik";
 import { Button, Container, Layout } from "@/components";
 import { useUser } from "@/hooks";
 import { NextPage } from "next";
 import Image from "next/image";
-import { MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, useEffect } from "react";
 
 export const ProfilePage: NextPage = () => {
-  const [name, setName] = useState<string | undefined>(undefined);
-  const [email, setEmail] = useState<string | undefined>(undefined);
-  const [surname, setSurname] = useState<string | undefined>(undefined);
   const { user, firebaseUser, updateUser } = useUser();
 
+  const handleSubmit = () => {
+    console.log("WIP");
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      surname: "",
+    },
+    onSubmit: handleSubmit,
+  });
+
   useEffect(() => {
-    setName(user?.name);
-    setEmail(user?.email);
-    setSurname(user?.surname);
+    formik.setValues({
+      email: user?.email,
+      name: user?.name,
+      surname: user?.surname,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.name, user?.email, user?.surname]);
 
   const handleUpdate = async (e: MouseEvent<HTMLButtonElement>) => {
@@ -48,8 +62,8 @@ export const ProfilePage: NextPage = () => {
               type="email"
               name="email"
               placeholder="pepe@mail.com"
-              onChange={(e) => setEmail(e.target.value)}
-              defaultValue={email}
+              value={formik.values.email}
+              onChange={formik.handleChange}
             />
             <label htmlFor="name">Nombre</label>
             <input
@@ -57,8 +71,8 @@ export const ProfilePage: NextPage = () => {
               type="text"
               name="name"
               placeholder="Juan Martin"
-              onChange={(e) => setName(e.target.value)}
-              defaultValue={name}
+              value={formik.values.name}
+              onChange={formik.handleChange}
             />
             <label htmlFor="surname">Apellido(s)</label>
             <input
@@ -66,8 +80,8 @@ export const ProfilePage: NextPage = () => {
               type="text"
               name="surname"
               placeholder="Gorrieta Canas"
-              onChange={(e) => setSurname(e.target.value)}
-              defaultValue={surname}
+              value={formik.values.surname}
+              onChange={formik.handleChange}
             />
           </div>
           <Button disabled onClick={handleUpdate}>
