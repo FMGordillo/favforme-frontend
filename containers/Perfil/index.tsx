@@ -3,10 +3,10 @@ import { Button, Container, Layout } from "@/components";
 import { useUser } from "@/hooks";
 import { NextPage } from "next";
 import Image from "next/image";
-import { MouseEvent, useEffect } from "react";
+import { useEffect } from "react";
 
 export const ProfilePage: NextPage = () => {
-  const { user, firebaseUser, updateUser } = useUser();
+  const { user, firebaseUser } = useUser();
 
   const handleSubmit = () => {
     console.log("WIP");
@@ -29,17 +29,6 @@ export const ProfilePage: NextPage = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.name, user?.email, user?.surname]);
-
-  const handleUpdate = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (name && email && surname) {
-      updateUser({
-        name,
-        email,
-        surname,
-      });
-    }
-  };
 
   return (
     <Layout header title="Tu Perfil">
@@ -84,7 +73,7 @@ export const ProfilePage: NextPage = () => {
               onChange={formik.handleChange}
             />
           </div>
-          <Button disabled onClick={handleUpdate}>
+          <Button disabled onClick={() => console.log("CLICKED")}>
             Guardar cambios
           </Button>
         </section>
