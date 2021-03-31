@@ -1,5 +1,5 @@
 export * from "./Actions";
-export * from "./Donations";
+export * from "./Donate";
 export * from "./Index";
 export * from "./Nosotros";
 export * from "./Perfil";

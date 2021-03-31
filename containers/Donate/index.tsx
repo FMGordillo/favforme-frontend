@@ -80,7 +80,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         </span>
       );
     }
-    if (!regexEmail.test(values.email)) {
+    if (values.email && !regexEmail.test(values.email)) {
       errors.email = "Ingrese un email valido";
     }
     return errors;
@@ -122,6 +122,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
             <h1>Formulario</h1>
             <label htmlFor="amount">Monto a donar (en pesos)</label>
             <input
+              required
               id="amount"
               type="number"
               name="amount"
@@ -137,6 +138,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
             )}
             <label htmlFor="email">Email</label>
             <input
+              required
               id="email"
               type="text"
               name="email"
