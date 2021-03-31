@@ -12,6 +12,7 @@ import { useFormik } from "formik";
 
 interface DonationProps {
   user: any;
+  loading: boolean;
   query: {
     id?: string;
   };
@@ -24,15 +25,16 @@ interface FormValues {
 }
 
 export const DonationContainer: FunctionComponent<DonationProps> = ({
-  action,
-  query,
   user,
+  query,
+  action,
+  loading,
 }) => {
-  const [loading, setLoading] = useState(false);
   const [donationUrl, setDonationUrl] = useState("");
+  const [submitLoading, setSubmitLoading] = useState(false);
 
   const handleSubmit = async ({ amount, email }: FormValues) => {
-    setLoading(true);
+    setSubmitLoading(true);
     try {
       if (!query.id || !amount || typeof amount !== "number" || !email)
         throw new Error("The required fields are missing");
@@ -59,7 +61,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
       console.info("TODO: HANDLE THIS");
       console.error(error);
     } finally {
-      setLoading(false);
+      setSubmitLoading(false);
     }
   };
 
@@ -126,7 +128,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
               id="amount"
               type="number"
               name="amount"
-              disabled={loading}
+              disabled={submitLoading}
               placeholder="100"
               value={formik.values.amount}
               onChange={formik.handleChange}
@@ -142,7 +144,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
               id="email"
               type="text"
               name="email"
-              disabled={loading}
+              disabled={submitLoading}
               value={formik.values.email}
               onChange={formik.handleChange}
               placeholder="juanperez@gmail.com"
@@ -155,18 +157,19 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
             <DonateButton
               type="submit"
               disabled={
+                submitLoading ||
                 loading ||
                 Object.values(formik.errors).find((er) => er !== "") !==
                   undefined
               }
             >
-              {loading ? "Generando..." : "Generar link a MercadoPago"}
+              {submitLoading ? "Generando..." : "Generar link a MercadoPago"}
             </DonateButton>
           </MainContainer>
         </section>
         <section>
           <h1>Link para donar</h1>
-          {donationUrl && !loading && (
+          {donationUrl && !submitLoading && (
             <a
               style={{ textDecoration: "none" }}
               rel="noreferrer noopener"
