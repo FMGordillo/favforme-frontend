@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 interface CarouselProps {
   current?: number;
+  loading: boolean;
   handleBack: () => void;
   handleForward: () => void;
 }
@@ -33,6 +34,7 @@ const Section = styled.div<{ active?: boolean }>`
 // `;
 
 const Carousel: FunctionComponent<CarouselProps> = ({
+  loading,
   current = 0,
   children,
   // handleBack,
@@ -56,6 +58,8 @@ const Carousel: FunctionComponent<CarouselProps> = ({
             {child}
           </Section>
         ))
+      ) : loading ? (
+        <span>Cargando... </span>
       ) : (
         <span>Por favor, intentá en otro momento</span>
       )}

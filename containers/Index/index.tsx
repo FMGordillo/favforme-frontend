@@ -10,7 +10,7 @@ import {
 } from "./components";
 
 export const IndexPage: NextPage = () => {
-  const { data } = useActions();
+  const { data, isValidating } = useActions();
 
   return (
     <Layout
@@ -23,7 +23,7 @@ export const IndexPage: NextPage = () => {
     >
       <Divider />
       <IntroOne />
-      <Actions actions={data?.actions} />
+      <Actions actions={data?.actions} loading={isValidating} />
       <Divider />
       <CallToActionSection />
       <Divider />
