@@ -1,6 +1,7 @@
 import { Container } from "@/components/styles";
 import { calculateBreakpoint } from "@/utils/styled";
 import { Children, FunctionComponent, useEffect, useState } from "react";
+import Loading from "react-loading-skeleton";
 import styled from "styled-components";
 
 interface CarouselProps {
@@ -49,17 +50,19 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   }, [current]);
 
   return (
-    <StyledContainer hasData={hasData}>
+    <StyledContainer hasData={hasData && false}>
       {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
-      {hasData ? (
+      {false ? (
         !!childrenMap &&
-        childrenMap.map((child, i) => (
+        childrenMap?.map((child, i) => (
           <Section key={i} active={i === iCurrent}>
             {child}
           </Section>
         ))
-      ) : loading ? (
-        <span>Cargando... </span>
+      ) : true ? (
+        <p>
+          <Loading width={200} />
+        </p>
       ) : (
         <span>Por favor, intentá en otro momento</span>
       )}
