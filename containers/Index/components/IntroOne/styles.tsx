@@ -5,6 +5,9 @@ export const StyledText = styled(Text)`
   color: #47b7e3;
   font-weight: 700;
   text-align: center !important;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    padding: 2em 0 2.5em;
+  }
 `;
 
 export const Main = styled.section`
@@ -14,9 +17,10 @@ export const Main = styled.section`
     "left-image text right-image"
     "ods ods ods"
     "ods-container ods-container ods-container";
-    
-    /* TODO: Queda asi porque se ve horrible en un tamaño intermedio. La contra del static */
-    @media(max-width: 1070px) {
+
+  /* TODO: Queda asi porque se ve horrible en un tamaño intermedio. La contra del static */
+
+  @media (max-width: 1070px) {
     grid-template-areas:
       "text text text"
       "ods ods ods"
@@ -27,6 +31,7 @@ export const Main = styled.section`
     & > :nth-child(3) {
       display: none !important;
     }
+  }
 `;
 
 export const LeftHandImage = styled.div`
@@ -40,13 +45,13 @@ export const TextContainer = styled.div`
   grid-area: text;
   align-self: center;
   text-align: center;
-  margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   & > p {
     text-align: justify;
   }
 
-  ${({ theme }) => theme.breakpoints.up("lg")} {
-    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  ${({ theme }) => theme.breakpoints.up("xl")} {
+    margin: 0 ${({ theme }) => theme.spacing(1)}em;
   }
   ${({ theme }) => theme.breakpoints.down("md")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
