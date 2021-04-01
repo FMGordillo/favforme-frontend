@@ -16,6 +16,7 @@ import {
 
 interface ActionProps {
   amounts: any;
+  loading: boolean;
   action: ActionI | undefined;
   query: {
     id: string;
@@ -24,8 +25,9 @@ interface ActionProps {
 
 export const ActionPage: NextPage<ActionProps> = ({
   query,
-  amounts,
   action,
+  amounts,
+  loading,
 }) => {
   return (
     <Layout
