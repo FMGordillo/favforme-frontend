@@ -10,7 +10,9 @@ const StyledContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  margin: 0;
+  padding: 0 ${({ theme }) => theme.spacing(2)}em !important;
+  background: ${({ theme }) => theme.palette.primary.main};
 `;
 
 interface ActionsProps {
@@ -56,7 +58,9 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
 
   return (
     <StyledContainer id="actions">
-      <Title>Acciones Activas</Title>
+      <Title color="white" style={{ marginTop: "2em", marginBottom: 0 }}>
+        Acciones destacadas
+      </Title>
       <Carousel
         loading={loading}
         current={current}
@@ -65,10 +69,16 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
       >
         {actions &&
           actions.length > 0 &&
-          !loading &&
           actions.map((action, i) => <Action key={i} data={action} />)}
       </Carousel>
-      <Button onClick={() => router.push("/acciones")}>Ver todas</Button>
+      <Button
+        color="white"
+        textColor="primary"
+        onClick={() => router.push("/acciones")}
+        style={{ marginBottom: "2em" }}
+      >
+        Ver todas las acciones
+      </Button>
     </StyledContainer>
   );
 };
