@@ -9,6 +9,8 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
       title
       current
       objective
+      closedAt
+      createdAt
       organization {
         socialNetworks {
           type

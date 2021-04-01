@@ -20,7 +20,7 @@ export const ActionsPage: NextPage = () => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {true ? (
+        {isValidating ? (
           <>
             <ActionContainer>
               <LoadingAction />

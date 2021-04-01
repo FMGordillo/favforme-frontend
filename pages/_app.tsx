@@ -37,7 +37,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <SWRConfig
         value={{
-          refreshInterval: 10000,
+          errorRetryCount: 3,
+          dedupingInterval: 15000,
+          focusThrottleInterval: 15000,
           fetcher,
         }}
       >

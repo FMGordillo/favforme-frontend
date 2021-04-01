@@ -30,6 +30,7 @@ export interface Organization {
 export interface ActionI {
   id: string;
   title: string;
+  mainImage?: string;
   description: string;
   peopleBeneficted?: number;
   current: number; // $$$
@@ -38,6 +39,8 @@ export interface ActionI {
   organizationId: number;
   deleted: boolean;
   status: Status;
+  closedAt?: string; // Date-ish format
+  createdAt: string; // Date-ish format
 }
 
 export interface DonationI {
