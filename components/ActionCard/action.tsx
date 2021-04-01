@@ -15,7 +15,7 @@ import {
 } from "@/components/ActionCard/styles";
 import { parseToCurrency } from "@/lib/data";
 import { ActionI } from "@/lib/types";
-import { formatDistance } from "date-fns";
+import { formatDistance, differenceInDays } from "date-fns";
 import esES from "date-fns/locale/es";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,7 +31,13 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
 
-  const calculateDueDate = (createdAt?: string, endDate?: string) => {
+  /**
+   * TODO: Unificar de alguna forma ambas funciones
+   */
+  const calculateDueDate = (
+    createdAt?: string,
+    endDate?: string
+  ): string | undefined => {
     try {
       if (createdAt && endDate) {
         return formatDistance(new Date(endDate), new Date(createdAt), {
@@ -45,11 +51,44 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
     }
   };
 
+  /**
+   * TODO: Unificar de alguna forma ambas funciones
+   */
+  const calculateDueImportance = (
+    createdAt?: string,
+    endDate?: string
+  ): number | undefined => {
+    try {
+      if (createdAt && endDate) {
+        return differenceInDays(new Date(endDate), new Date(createdAt));
+      } else {
+        throw "No endDate was provided, cannot calculate";
+      }
+    } catch (error) {
+      console.error("calculateDueImportance", error);
+    }
+  };
+
+  const daysUntilFinished = calculateDueImportance(
+    data?.createdAt,
+    data?.closedAt
+  );
+
   return (
     <Container>
       {/* <Link href={`/acciones/${data?.id}`}> */}
       <ImageContainer>
-        <DueDate>{calculateDueDate(data?.createdAt, data?.closedAt)}</DueDate>
+        <DueDate
+          urgency={
+            daysUntilFinished > 14
+              ? "urgent"
+              : daysUntilFinished > 21
+              ? "medium"
+              : "meh"
+          }
+        >
+          {calculateDueDate(data?.createdAt, data?.closedAt)}
+        </DueDate>
         <Image
           width={1400}
           height={1100}

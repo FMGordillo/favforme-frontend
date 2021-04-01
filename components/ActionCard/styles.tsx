@@ -122,7 +122,7 @@ export const ImageContainer = styled.div`
   flex-direction: column;
 `;
 
-export const DueDate = styled.p<{ urgency?: "meh" | "high" }>`
+export const DueDate = styled.p<{ urgency?: "meh" | "medium" | "high" }>`
   padding: 0.5em 1.25em;
   border-radius: 3em;
   background-color: white;
