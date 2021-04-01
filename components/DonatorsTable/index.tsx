@@ -37,31 +37,41 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
             <TableColumn>Fecha</TableColumn>
             <TableColumn>Empresa / particular</TableColumn>
             <TableColumn>Contribuidor</TableColumn>
-            <TableColumn>Monto</TableColumn>
+            <TableColumn>Total (pesos argentinos)</TableColumn>
           </TableRow>
         </THead>
         <TBody>
-          {data?.donations.map((donation) => (
-            <TableRow key={donation.id}>
-              <TableColumn>
-                {format(new Date(donation.createdAt), "yyyy/MM/dd")}
-              </TableColumn>
-              <TableColumn>
-                {donation.user.userType === "USER"
-                  ? "Donante particular"
-                  : donation.user.name}
-              </TableColumn>
-              <TableColumn>
-                {donation.user.name
-                  ? `${donation.user.name} ${donation.user.surname}`
-                  : "Anonimo/a"}
-              </TableColumn>
-              <TableColumn>${parseToCurrency(donation.amount)}</TableColumn>
+          {data && data?.donations.length > 0 ? (
+            data.donations.map((donation) => (
+              <TableRow key={donation.id}>
+                <TableColumn>
+                  {format(new Date(donation.createdAt), "yyyy/MM/dd")}
+                </TableColumn>
+                <TableColumn>
+                  {donation.user.userType === "USER"
+                    ? "Donante particular"
+                    : donation.user.name}
+                </TableColumn>
+                <TableColumn>
+                  {donation.user.name
+                    ? `${donation.user.name} ${donation.user.surname}`
+                    : "Anonimo/a"}
+                </TableColumn>
+                <TableColumn>${parseToCurrency(donation.amount)}</TableColumn>
+              </TableRow>
+            ))
+          ) : (
+            <TableRow>
+              <TableColumn>Cargando</TableColumn>
+              <TableColumn>Cargando</TableColumn>
+              <TableColumn>Cargando</TableColumn>
+              <TableColumn>Cargando</TableColumn>
             </TableRow>
-          ))}
+          )}
         </TBody>
       </Table>
       <Button
+        style={{ display: "none" }}
         onClick={() => {
           router.push("/donaciones");
         }}

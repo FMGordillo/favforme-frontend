@@ -1,3 +1,5 @@
+import { ActionPage as ActionContainer } from "@/containers";
+import { LoadingAction } from "@/components";
 import { Container } from "@/components/styles";
 import { calculateBreakpoint } from "@/utils/styled";
 import { Children, FunctionComponent, useEffect, useState } from "react";
@@ -5,6 +7,7 @@ import styled from "styled-components";
 
 interface CarouselProps {
   current?: number;
+  loading: boolean;
   handleBack: () => void;
   handleForward: () => void;
 }
@@ -33,6 +36,7 @@ const Section = styled.div<{ active?: boolean }>`
 // `;
 
 const Carousel: FunctionComponent<CarouselProps> = ({
+  loading,
   current = 0,
   children,
   // handleBack,
@@ -47,15 +51,19 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   }, [current]);
 
   return (
-    <StyledContainer hasData={hasData}>
+    <StyledContainer hasData={hasData || loading}>
       {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
       {hasData ? (
         !!childrenMap &&
-        childrenMap.map((child, i) => (
+        childrenMap?.map((child, i) => (
           <Section key={i} active={i === iCurrent}>
             {child}
           </Section>
         ))
+      ) : loading ? (
+        <div style={{ minWidth: 960 }}>
+          <LoadingAction />
+        </div>
       ) : (
         <span>Por favor, intentá en otro momento</span>
       )}
