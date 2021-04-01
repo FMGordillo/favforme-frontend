@@ -1,10 +1,10 @@
-import { Action, Container, Layout, Title } from "@/components";
+import { Action, LoadingAction, Container, Layout, Title } from "@/components";
 import { useActions } from "@/hooks";
 import { ActionContainer, JoinUsContainer, StyledTitle } from "./styles";
 import { NextPage } from "next";
 
 export const ActionsPage: NextPage = () => {
-  const { data } = useActions({ take: 5 });
+  const { data, isValidating } = useActions({ take: 5 });
 
   return (
     <Layout header title="Acciones">
@@ -20,8 +20,17 @@ export const ActionsPage: NextPage = () => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {data?.actions && data.actions.length > 0 ? (
-          data.actions.map((action, i) => (
+        {isValidating ? (
+          <>
+            <ActionContainer>
+              <LoadingAction />
+            </ActionContainer>
+            <ActionContainer>
+              <LoadingAction />
+            </ActionContainer>
+          </>
+        ) : data?.actions && (data?.actions.length || 0) > 0 ? (
+          data?.actions.map((action, i) => (
             <ActionContainer key={i}>
               <Action data={action} />
             </ActionContainer>

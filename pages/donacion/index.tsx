@@ -28,11 +28,18 @@ const DonationPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
   const { user } = useUser();
-  const { data } = useAction({ query });
+  const { data, isValidating } = useAction({ query });
 
   const { action } = data ?? {};
 
-  return <DonationContainer action={action} query={query} user={user} />;
+  return (
+    <DonationContainer
+      user={user}
+      query={query}
+      action={action}
+      loading={isValidating}
+    />
+  );
 };
 
 export default withAuthUser()(DonationPage);

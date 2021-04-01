@@ -26,10 +26,17 @@ export const getServerSideProps = async (
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
-  const { data, amounts } = useAction({ query });
+  const { data, amounts, isValidating } = useAction({ query });
   const { action } = data || {};
 
-  return <ActionContainer amounts={amounts} action={action} query={query} />;
+  return (
+    <ActionContainer
+      query={query}
+      action={action}
+      amounts={amounts}
+      loading={isValidating}
+    />
+  );
 };
 
 export default ActionPage;
