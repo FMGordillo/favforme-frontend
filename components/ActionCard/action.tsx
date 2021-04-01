@@ -80,9 +80,9 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
       <ImageContainer>
         <DueDate
           urgency={
-            daysUntilFinished > 14
-              ? "urgent"
-              : daysUntilFinished > 21
+            daysUntilFinished && daysUntilFinished > 14
+              ? "high"
+              : daysUntilFinished && daysUntilFinished > 21
               ? "medium"
               : "meh"
           }
