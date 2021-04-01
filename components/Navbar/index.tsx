@@ -66,7 +66,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
       </Menu>
       <Ul open={open}>
         <NavItem href="/">FavForMe</NavItem>
-        <NavItem href="/#actions">Acciones</NavItem>
+        <NavItem href="/acciones">Acciones</NavItem>
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem image href="/">
           <Image

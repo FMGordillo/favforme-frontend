@@ -14,10 +14,14 @@ const StyledContainer = styled(Container)`
 `;
 
 interface ActionsProps {
+  loading: boolean;
   actions?: ActionI[];
 }
 
-const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
+const ActionsComponent: FunctionComponent<ActionsProps> = ({
+  actions,
+  loading,
+}) => {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
 
@@ -54,12 +58,14 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({ actions }) => {
     <StyledContainer id="actions">
       <Title>Acciones Activas</Title>
       <Carousel
+        loading={loading}
         current={current}
         handleBack={() => handleClickNavigation("back")}
         handleForward={() => handleClickNavigation("forward")}
       >
         {actions &&
           actions.length > 0 &&
+          !loading &&
           actions.map((action, i) => <Action key={i} data={action} />)}
       </Carousel>
       <Button onClick={() => router.push("/acciones")}>Ver todas</Button>

@@ -22,6 +22,8 @@ export const SocialContainer = styled.div<{
 }>`
   display: grid;
   grid-template-columns: ${({ itemsLenght }) =>
+    itemsLenght &&
+    itemsLenght > 0 &&
     new Array(itemsLenght).fill("64px").join(" ")};
   justify-items: ${({ justify }) => (justify ? justify : "inherit")};
   grip-gap: 1em;
@@ -93,6 +95,7 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   return (
     <SocialContainer justify={justify} itemsLenght={data?.length}>
       {data?.length &&
+        data.length > 0 &&
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         data.map(({ link, type }, i) => (

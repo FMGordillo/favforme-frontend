@@ -8,7 +8,7 @@ interface IPalette {
   light?: string;
   dark?: string;
 }
-
+type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
 type BreakpointFn = (key: Breakpoint) => string;
 
 declare module "styled-components" {
