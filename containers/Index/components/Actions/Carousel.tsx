@@ -1,4 +1,3 @@
-import { ActionPage as ActionContainer } from "@/containers";
 import { LoadingAction } from "@/components";
 import { Container } from "@/components/styles";
 import { calculateBreakpoint } from "@/utils/styled";

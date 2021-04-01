@@ -1,7 +1,6 @@
 import {
   AmountCollected,
   AmountSubtitle,
-  Button,
   ButtonContainer,
   Container,
   MainContent,

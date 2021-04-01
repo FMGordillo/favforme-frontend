@@ -27,7 +27,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   query,
   action,
   amounts,
-  loading,
 }) => {
   return (
     <Layout
