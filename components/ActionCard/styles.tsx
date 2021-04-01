@@ -116,3 +116,26 @@ export const ProgressBar = styled.div`
     }
   }
 `;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const DueDate = styled.p<{
+  urgency?: "meh" | "medium" | "high" | undefined;
+}>`
+  padding: 0.5em 1.25em;
+  border-radius: 3em;
+  background-color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  z-index: 2;
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 0.5em;
+
+  color: ${({ theme, urgency = "meh" }) =>
+    urgency === "high" ? "red" : theme.palette.gray.dark};
+`;
