@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
     const isProduction = process.env.NODE_ENV === "production";
 
     return (
-      <Html>
+      <Html lang="es">
         <Head>
           <link
             rel="apple-touch-icon"

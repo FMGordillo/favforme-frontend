@@ -34,7 +34,11 @@ const PrivacyPage: NextPage = () => (
       <span>User</span>
       <span>&rdquo;) of its </span>
       <span>
-        <a target="_blank" rel="noreferrer" href="https://favforme.com">
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://favforme.com"
+        >
           www.FavForMe.com
         </a>
       </span>
@@ -357,7 +361,11 @@ const PrivacyPage: NextPage = () => (
         previously provided personal data. &nbsp;This can be done by emailing a
         request to COMPANY at{" "}
       </span>
-      <a target="_blank" rel="noreferrer" href="mailto:hello@favforme.com">
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href="mailto:hello@favforme.com"
+      >
         hello@favforme.com
       </a>
       <span>
@@ -452,7 +460,11 @@ const PrivacyPage: NextPage = () => (
       <span>636-266-6114</span>
     </p>
     <p>
-      <a target="_blank" rel="noreferrer" href="mailto:support@favforme.com">
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href="mailto:support@favforme.com"
+      >
         support@favforme.com
       </a>
     </p>
