@@ -11,17 +11,31 @@ blocks:
         - name: Build
           commands:
             - checkout
-            - sem-version node 12
+            - sem-version node 14.15.4
             - cache restore
+            - cache restore nextjs_build
             - npm install
             - cache store
+            - cache store nextjs_build .next/cache
             - npm run build --if-present
-  - name: Code formatting
+  - name: Linter + TS
     task:
       jobs:
-        - name: Check
+        - name: Check Typescript
           commands:
             - checkout
-            - sem-version node 12
             - cache restore
-            - npm run check-format --if-present
+            - npm run check-type --if-present
+        - name: Check ESLint
+          commands:
+            - checkout
+            - cache restore
+            - npm run lint --if-present
+  - name: Test
+    task:
+      jobs:
+        - name: Testing :v
+          commands:
+            - checkout
+            - cache restore
+            - npm run test --if-present

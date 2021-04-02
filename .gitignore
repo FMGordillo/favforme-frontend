@@ -1,9 +1,13 @@
 .env
 .envrc
+.eslintcache
 
-# asdf
-.tool-versions
+# Next
+.next
 
 # Node
-lib
 node_modules
+
+.vscode
+
+coverage
