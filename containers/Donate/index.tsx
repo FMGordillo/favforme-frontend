@@ -1,14 +1,11 @@
-import { ActionI } from "@/lib/types";
 import { Container, Layout } from "@/components";
-import {
-  ErrorText,
-  MainContainer,
-  ActionContainer,
-  DonateButton,
-} from "./styles";
+import { event } from "@/lib/gtag";
+import { ActionI } from "@/lib/types";
 import axios from "axios";
-import { FunctionComponent, useEffect, useState } from "react";
 import { useFormik } from "formik";
+import { FunctionComponent, useEffect, useState } from "react";
+import { DonationForm } from "./Form";
+import { ActionContainer } from "./styles";
 
 interface DonationProps {
   user: any;
@@ -19,7 +16,7 @@ interface DonationProps {
   action: ActionI | undefined;
 }
 
-interface FormValues {
+export interface FormValues {
   email: string;
   amount: number;
 }
@@ -33,7 +30,20 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   const [donationUrl, setDonationUrl] = useState("");
   const [submitLoading, setSubmitLoading] = useState(false);
 
+  const trackDonationLead = (
+    action: "new_draft_donation" | "donation",
+    amount: number
+  ) => {
+    event({
+      action,
+      category: "donation",
+      label: `environment:${process.env.NODE_ENV}`,
+      value: amount,
+    });
+  };
+
   const handleSubmit = async ({ amount, email }: FormValues) => {
+    trackDonationLead("new_draft_donation", amount);
     setSubmitLoading(true);
     try {
       if (!query.id || !amount || typeof amount !== "number" || !email)
@@ -120,52 +130,14 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
           </p>
         </ActionContainer>
         <section>
-          <MainContainer onSubmit={formik.handleSubmit}>
-            <h1>Formulario</h1>
-            <label htmlFor="amount">Monto a donar (en pesos)</label>
-            <input
-              required
-              id="amount"
-              type="number"
-              name="amount"
-              disabled={submitLoading}
-              placeholder="100"
-              value={formik.values.amount}
-              onChange={formik.handleChange}
-            />
-            {formik.errors.amount && (
-              <ErrorText aria-labelledby="amount">
-                {formik.errors.amount}
-              </ErrorText>
-            )}
-            <label htmlFor="email">Email</label>
-            <input
-              required
-              id="email"
-              type="text"
-              name="email"
-              disabled={submitLoading}
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              placeholder="juanperez@gmail.com"
-            />
-            {formik.errors.email && (
-              <ErrorText aria-labelledby="email">
-                {formik.errors.email}
-              </ErrorText>
-            )}
-            <DonateButton
-              type="submit"
-              disabled={
-                submitLoading ||
-                loading ||
-                Object.values(formik.errors).find((er) => er !== "") !==
-                  undefined
-              }
-            >
-              {submitLoading ? "Generando..." : "Generar link a MercadoPago"}
-            </DonateButton>
-          </MainContainer>
+          <DonationForm
+            loading={loading}
+            errors={formik.errors}
+            values={formik.values}
+            submitLoading={submitLoading}
+            handleSubmit={formik.handleSubmit}
+            handleChange={formik.handleChange}
+          />
         </section>
         <section>
           <h1>Link para donar</h1>
@@ -174,6 +146,9 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
               style={{ textDecoration: "none" }}
               rel="noreferrer noopener"
               href={donationUrl}
+              onClick={() => {
+                trackDonationLead("donation", formik.values.amount);
+              }}
             >
               Done aqui{" "}
               <span role="img" aria-label="blue heart">
