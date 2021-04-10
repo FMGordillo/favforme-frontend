@@ -75,7 +75,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
           <a
             href="mailto:soporte@favforme.com"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             soporte@favforme.com
           </a>
