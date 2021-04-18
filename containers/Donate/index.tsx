@@ -37,7 +37,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     event({
       action,
       category: "donation",
-      label: `environment:${process.env.NODE_ENV}`,
+      label: `environment:${process.env.NEXT_PUBLIC_ENVIRONMENT}`,
       value: amount,
     });
   };

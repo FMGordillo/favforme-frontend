@@ -35,7 +35,7 @@ const DonationPage: NextPage<
   const { data, isValidating } = useAction({ query });
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
       console.log("TRACKED");
       event({
         action: "unable_donation",
@@ -48,7 +48,7 @@ const DonationPage: NextPage<
 
   const { action } = data ?? {};
 
-  return true ? (
+  return process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? (
     <Layout header title="Donacion - No disponible">
       <Container center>
         <Title>Trabajo en proceso</Title>
