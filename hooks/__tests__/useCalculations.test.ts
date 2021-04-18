@@ -15,6 +15,7 @@ describe("useCalculations hook", () => {
         actions: [],
         socialNetworks: [],
       },
+      createdAt: new Date().toString(),
       title: "Action test",
       current: 10,
       objective: 1000,
