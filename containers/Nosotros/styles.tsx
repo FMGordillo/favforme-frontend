@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const FirstSection = styled.section`
+export const Section = styled.section`
   text-align: center;
 `;
 
-export const Section = styled.section`
+export const TwoColumnSection = styled.section`
   display: flex;
 
   .content {

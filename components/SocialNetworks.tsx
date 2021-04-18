@@ -99,7 +99,12 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         data.map(({ link, type }, i) => (
-          <a key={i} href={link || "#"} target="_blank" rel="noreferrer">
+          <a
+            key={i}
+            href={link || "#"}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             {selectIcon(type)}
           </a>
         ))}

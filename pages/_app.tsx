@@ -1,8 +1,9 @@
 import axios from "axios";
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
-import Router from "next/router";
+import { useRouter } from "next/router";
 import NextNprogress from "nextjs-progressbar";
+import { useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
 import { ModalProvider } from "../lib/context";
@@ -26,13 +27,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
-
 initAuth();
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <SWRConfig

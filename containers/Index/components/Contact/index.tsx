@@ -17,11 +17,15 @@ const ContactSection: FunctionComponent = () => (
           contactanos.
         </Text>
         <HighlightedText>
-          <a target="_blank" rel="noreferrer" href="mailto:hello@favforme.com">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="mailto:hello@favforme.com"
+          >
             hello@favforme.com
           </a>
           <br />
-          <a href="tel:+541145678901" rel="noreferrer" target="_blank">
+          <a href="tel:+541145678901" rel="noreferrer noopener" target="_blank">
             +54 11 4567 8901
           </a>
         </HighlightedText>

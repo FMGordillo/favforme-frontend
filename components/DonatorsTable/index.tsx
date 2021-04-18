@@ -20,7 +20,7 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
       {
         take: 6,
         where: `{ AND:{ actionId: {equals: "${actionId}"} ${
-          process.env.NODE_ENV === "production"
+          process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
             ? "paymentStatus:{equals: SUCCESS}"
             : ""
         }} }`,
