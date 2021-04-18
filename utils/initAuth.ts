@@ -20,7 +20,7 @@ const initAuth = (): void => {
           ? JSON.parse(process.env.FIREBASE_PRIVATE_KEY)?.privateKey
           : undefined,
       },
-      databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+      // databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
     },
     firebaseClientInitConfig: {
       apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
