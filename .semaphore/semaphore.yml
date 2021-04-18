@@ -18,6 +18,8 @@ blocks:
             - cache store
             - cache store nextjs_build .next/cache
             - npm run build --if-present
+      secrets:
+        - name: Frontend secrets
   - name: Linter + TS
     task:
       jobs:
@@ -34,7 +36,7 @@ blocks:
   - name: Test
     task:
       jobs:
-        - name: Testing :v
+        - name: 'Testing :v'
           commands:
             - checkout
             - cache restore
