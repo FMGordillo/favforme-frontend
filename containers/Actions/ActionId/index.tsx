@@ -28,6 +28,9 @@ export const ActionPage: NextPage<ActionProps> = ({
   action,
   amounts,
 }) => {
+  //const isAvailable = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";
+  const isAvailable = false;
+
   return (
     <Layout
       header
@@ -59,7 +62,12 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
-            <ActionCard action={action} queryId={query?.id} amounts={amounts} />
+            <ActionCard
+              action={action}
+              queryId={query?.id}
+              amounts={amounts}
+              canDonate={isAvailable}
+            />
             <h2>Datos de la ONG</h2>
             <Image
               src={action?.organization?.logo || "/"}

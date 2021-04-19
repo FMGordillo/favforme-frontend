@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div<{ open?: boolean }>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+export const ModalContainer = styled.div`
   align-items: center;
   justify-content: center;
-  z-index: 2000;
-  display: ${({ open }) => (open ? "flex" : "none")};
+  display: flex;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  padding: 1em;
 `;
 
 export const DialogContainer = styled.div`
