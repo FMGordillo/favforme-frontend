@@ -1,6 +1,6 @@
 import { ActionI } from "@/lib/types";
-import { FunctionComponent, useContext, useState } from "react";
-import { Button, Modal, SocialNetworks } from "@/components";
+import { FunctionComponent, useContext } from "react";
+import { Button, SocialNetworks } from "@/components";
 import { Summary } from "./styles";
 import {
   AmountCollected,
@@ -23,7 +23,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
   action,
   canDonate,
 }) => {
-  const [text, setText] = useState("");
+  //  const [text, setText] = useState("");
   const { handleModal } = useContext(ModalContext);
   const router = useRouter();
   return (
