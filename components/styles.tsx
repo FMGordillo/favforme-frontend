@@ -6,10 +6,11 @@ import styled from "styled-components";
  */
 export const Title = styled.h1<{
   color?: Color;
-  variant?: Variant;
   weight?: string;
+  variant?: Variant;
+  fontSize?: string;
 }>`
-  font-size: 2em;
+  font-size: ${({ fontSize }) => fontSize || "2em"};
   font-weight: ${({ weight }) => weight || "400"};
   color: ${({ theme, color, variant }) =>
     theme.palette[color || "primary"][variant || "main"]};
