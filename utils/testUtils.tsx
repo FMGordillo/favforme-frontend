@@ -3,7 +3,7 @@ import { ReactChild } from "react";
 import { ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
 import { fetcher } from "../lib/queries";
-import { theme } from "./styled";
+import { lightTheme } from "./styled";
 
 const Providers = ({ children }: { children: ReactChild }) => {
   // FIXME: Testing next-firebase-auth fail!
@@ -15,11 +15,12 @@ const Providers = ({ children }: { children: ReactChild }) => {
         fetcher,
       }}
     >
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
     </SWRConfig>
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const customRender = (ui: JSX.Element, options = {}) =>
   // @ts-ignore
   render(ui, { wrapper: Providers, ...options });
