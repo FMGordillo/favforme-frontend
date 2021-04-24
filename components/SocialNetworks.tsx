@@ -32,8 +32,7 @@ export const SocialContainer = styled.div<{
     height: 32px !important;
   }
   & > * {
-    color: ${({ theme }) => theme.palette.gray.main};
-
+    color: #515151;
     & > * {
       transition: all 300ms;
       :hover {

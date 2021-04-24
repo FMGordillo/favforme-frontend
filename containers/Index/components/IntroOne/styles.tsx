@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { Container, Text } from "@/components/styles";
+import { Container } from "@/components/styles";
 
-export const StyledText = styled(Text)`
-  color: #47b7e3;
+export const HighlightText = styled.mark`
+  font-size: 1.25em;
+  background-color: ${({ theme }) => theme.palette.secondary.light};
   font-weight: 700;
   text-align: center !important;
   ${({ theme }) => theme.breakpoints.down("sm")} {
@@ -64,8 +65,7 @@ export const TextContainer = styled.div`
 export const ODSLogo = styled.div`
   grid-area: ods;
   justify-self: center;
-  margin: 0 ${({ theme }) => theme.spacing(0.25)}em;
-  margin-bottom: 1.25em;
+  margin: ${({ theme }) => theme.spacing(0.5)}em 0;
 `;
 
 export const ODSContainer = styled(Container)`

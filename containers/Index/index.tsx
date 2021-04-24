@@ -23,6 +23,7 @@ export const IndexPage: NextPage = () => {
     >
       <Divider />
       <IntroOne />
+      <Divider />
       <Actions actions={data?.actions} loading={isValidating} />
       <Divider />
       <CallToActionSection />

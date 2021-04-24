@@ -8,11 +8,13 @@ interface IPalette {
   light?: string;
   dark?: string;
 }
+type Mode = "light" | "dark";
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
 type BreakpointFn = (key: Breakpoint) => string;
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    mode: Mode;
     palette: {
       gray: IPalette;
       black: IPalette;
