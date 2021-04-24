@@ -15,9 +15,8 @@ export const Section = styled.section<{ mainScreen?: boolean }>`
 
 export const HighlightSection = styled(Section)`
   background-color: #f2f2f2;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-  margin: 0 -4em !important;
+  padding: 0.5em ${({ theme }) => theme.spacing(2)}em 1em;
+  margin: 0 -${({ theme }) => theme.spacing(2)}em !important;
 `;
 
 export const ThreeColumns = styled.div`
@@ -33,10 +32,12 @@ export const Subtitle = styled(Title)`
 `;
 
 export const TwoColumnSection = styled.section`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
 
   .content {
-    flex: 2;
+    text-align: right;
   }
 
   .img {

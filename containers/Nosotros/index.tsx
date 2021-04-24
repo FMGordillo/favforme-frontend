@@ -13,7 +13,7 @@ import {
 export const AboutUsPage: NextPage = () => {
   return (
     <Layout header title="Somos FavForMe">
-      <Container>
+      <Container spacing={2}>
         <Section mainScreen>
           <p>
             La Fundación FavForMe impulsa el desarrollo de acciones de impacto

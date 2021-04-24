@@ -25,15 +25,17 @@ export const Text = styled.p`
 
 /**
  * section
+ * @param {number} spacing The lateral space
  */
-export const Container = styled.section<{ center?: boolean }>`
+export const Container = styled.section<{ center?: boolean; spacing?: number }>`
   ${({ center }) => (center ? "text-align: center;" : "")}
-  ${({ theme }) => `
-  margin: ${theme.spacing(1)}em;
-  ${theme.breakpoints.down("sm")} {
-    margin: 0 ${theme.spacing(0.5)}em !important;
-  }
-`}
+  margin: ${({ theme }) => theme.spacing(1)}em 0;
+  ${({ theme, spacing }) => `
+    margin: 0 ${theme.spacing(spacing || 1)}em;
+    ${theme.breakpoints.down("sm")} {
+      margin: 0 ${theme.spacing(0.5)}em !important;
+    }
+  `}
 `;
 
 /**

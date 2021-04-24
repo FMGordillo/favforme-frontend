@@ -1,8 +1,9 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import { HeadComponent, HeadProps } from "../Head";
 import { Header, HeaderProps } from "../../components";
 import { Footer } from "./Footer";
-import styled from "styled-components";
+import styled, { ThemeContext } from "styled-components";
+import useDarkMode from "use-dark-mode";
 
 interface LayoutProps {
   title?: string;
@@ -13,11 +14,8 @@ interface LayoutProps {
   toggleModal?: () => void;
 }
 
-// TODO: Arreglar esto
-const Container = styled.div`
-  /* display: grid; */
-  /* min-height: 100vh; */
-  /* grid-template-rows: 1fr auto; */
+const Container = styled.main`
+  background-color: ${({ theme }) => theme.palette.white.main};
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
@@ -27,13 +25,19 @@ const Layout: FunctionComponent<LayoutProps> = ({
   headProps,
   headerProps,
   children,
-}) => (
-  <Container>
-    <HeadComponent title={title} {...headProps} />
-    {header && <Header title={title} {...headerProps} />}
-    {children}
-    {footer && <Footer />}
-  </Container>
-);
+}) => {
+  const myTheme = useContext(ThemeContext);
+  const darkMode = useDarkMode();
+  console.log(myTheme);
+  return (
+    <Container>
+      <button onClick={() => darkMode.toggle()}>Change mode</button>
+      <HeadComponent title={title} {...headProps} />
+      {header && <Header title={title} {...headerProps} />}
+      {children}
+      {footer && <Footer />}
+    </Container>
+  );
+};
 
 export { Layout };
