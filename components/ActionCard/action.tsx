@@ -83,7 +83,6 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
 
   return (
     <Container>
-      {/* <Link href={`/acciones/${data?.id}`}> */}
       <ImageContainer>
         <DueDate urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
