@@ -13,11 +13,8 @@ interface LayoutProps {
   toggleModal?: () => void;
 }
 
-// TODO: Arreglar esto
-const Container = styled.div`
-  /* display: grid; */
-  /* min-height: 100vh; */
-  /* grid-template-rows: 1fr auto; */
+const Container = styled.main`
+  background-color: ${({ theme }) => theme.palette.white.main};
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
@@ -27,13 +24,15 @@ const Layout: FunctionComponent<LayoutProps> = ({
   headProps,
   headerProps,
   children,
-}) => (
-  <Container>
-    <HeadComponent title={title} {...headProps} />
-    {header && <Header title={title} {...headerProps} />}
-    {children}
-    {footer && <Footer />}
-  </Container>
-);
+}) => {
+  return (
+    <Container>
+      <HeadComponent title={title} {...headProps} />
+      {header && <Header title={title} {...headerProps} />}
+      {children}
+      {footer && <Footer />}
+    </Container>
+  );
+};
 
 export { Layout };

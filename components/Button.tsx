@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface ButtonI {
   color?: Color;
-  textColor?: Color;
+  textColor?: Color | string;
   hoverColor?: Color;
   variant?: Variant;
   hoverVariant?: Variant;
@@ -15,7 +15,9 @@ interface ButtonI {
 export const Button = styled.button<ButtonI>`
   border: none;
   color: ${({ theme, textColor }) =>
-    theme.palette[textColor || "white"]["main"] ?? "#fff"};
+    typeof textColor !== "string"
+      ? theme.palette[textColor || "white"]["main"] ?? "#fff"
+      : textColor};
   cursor: pointer;
   font-size: 1.25em;
   padding: 0.5em 1.25em;

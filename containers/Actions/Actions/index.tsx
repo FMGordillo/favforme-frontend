@@ -28,6 +28,9 @@ export const ActionsPage: NextPage = () => {
             <ActionContainer>
               <LoadingAction />
             </ActionContainer>
+            <ActionContainer>
+              <LoadingAction />
+            </ActionContainer>
           </>
         ) : data?.actions && (data?.actions.length || 0) > 0 ? (
           data?.actions.map((action, i) => (

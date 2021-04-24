@@ -142,6 +142,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
           </Button>
           <Button
             color="gray"
+            textColor="black"
             hoverVariant="dark"
             onClick={() => router.push(`/acciones/${data?.id}`)}
           >

@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { DialogContainer, DialogTitle } from "../styles";
 import { FunctionComponent, useState } from "react";
 import styled from "styled-components";
-import { Formik, useFormik } from "formik";
 
 const ModalContent = styled.div`
   display: grid;
@@ -12,7 +10,7 @@ const ModalContent = styled.div`
 `;
 
 export const DonationUnavailableModal: FunctionComponent = () => {
-  const [change, handleChange] = useState("");
+  const [, handleChange] = useState("");
   return (
     <DialogContainer>
       <DialogTitle>
