@@ -7,7 +7,6 @@ import {
   Percentage,
   ProgressBar,
   Title,
-  TitleContainer,
 } from "./styles";
 import Loadable from "react-loading-skeleton";
 import { SocialNetworks } from "@/components";
@@ -18,11 +17,11 @@ const LoadingActionCard: FunctionComponent = () => {
     <Container>
       <Loadable height={200} />
       <MainContent>
-        <TitleContainer>
+        <div>
           <Title>
             <Loadable />
           </Title>
-        </TitleContainer>
+        </div>
         <AmountCollected>
           <Loadable />
         </AmountCollected>
