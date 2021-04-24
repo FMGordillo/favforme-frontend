@@ -1,9 +1,8 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent } from "react";
 import { HeadComponent, HeadProps } from "../Head";
 import { Header, HeaderProps } from "../../components";
 import { Footer } from "./Footer";
-import styled, { ThemeContext } from "styled-components";
-import useDarkMode from "use-dark-mode";
+import styled from "styled-components";
 
 interface LayoutProps {
   title?: string;
@@ -26,12 +25,8 @@ const Layout: FunctionComponent<LayoutProps> = ({
   headerProps,
   children,
 }) => {
-  const myTheme = useContext(ThemeContext);
-  const darkMode = useDarkMode();
-  console.log(myTheme);
   return (
     <Container>
-      <button onClick={() => darkMode.toggle()}>Change mode</button>
       <HeadComponent title={title} {...headProps} />
       {header && <Header title={title} {...headerProps} />}
       {children}

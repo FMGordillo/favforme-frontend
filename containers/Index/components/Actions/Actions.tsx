@@ -15,6 +15,13 @@ const StyledContainer = styled(Container)`
   background: ${({ theme }) => theme.palette.primary.main};
 `;
 
+const StyledTitle = styled(Title)`
+  color: white;
+  padding: 0 0.25em;
+  margin: 2em 0 1em;
+  background-color: ${({ theme }) => theme.palette.primary.dark};
+`;
+
 interface ActionsProps {
   loading: boolean;
   actions?: ActionI[];
@@ -58,9 +65,7 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
 
   return (
     <StyledContainer id="actions">
-      <Title color="white" style={{ marginTop: "2em", marginBottom: 0 }}>
-        Acciones destacadas
-      </Title>
+      <StyledTitle>Acciones destacadas</StyledTitle>
       <Carousel
         loading={loading}
         current={current}
@@ -73,9 +78,9 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
       </Carousel>
       <Button
         color="white"
-        textColor="primary"
+        textColor="#2142d2"
         onClick={() => router.push("/acciones")}
-        style={{ marginBottom: "2em" }}
+        style={{ marginTop: "2em", marginBottom: "2em" }}
       >
         Ver todas las acciones
       </Button>

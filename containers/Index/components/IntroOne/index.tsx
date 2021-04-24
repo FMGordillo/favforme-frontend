@@ -7,7 +7,7 @@ import {
   ODSContainer,
   ODSLogo,
   RightHandImage,
-  StyledText,
+  HighlightText,
   TextContainer,
 } from "./styles";
 
@@ -71,15 +71,15 @@ const IntroOneSection: FunctionComponent = () => {
           REALIZÁ ACCIONES DE IMPACTO POSITIVO Y TRANSPARENTE CON TU EMPRESA
         </Title>
         <Text>
-          FavForMe es la plataforma tecnológica perfecta, para generar
+          FavForMe es la plataforma tecnológica perfecta para generar
           Responsabilidad Social Empresarial con tu organización. Aportá a
           diferentes ACCIONES de forma simple, clara y segura, logrando entre
           todos alcanzar metas increíbles.
         </Text>
-        <StyledText>
+        <HighlightText>
           Sé parte de los OBJETIVOS DE DESARROLLO SOSTENIBLES 2015-2030
           propuestos por la ONU
-        </StyledText>
+        </HighlightText>
       </TextContainer>
       <RightHandImage>
         <Image
