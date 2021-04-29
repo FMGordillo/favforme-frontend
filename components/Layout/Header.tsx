@@ -1,4 +1,5 @@
-import { NavBar } from "@/components";
+import { Button, NavBar } from "@/components";
+import { useRouter } from "next/router";
 import { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
 
@@ -7,7 +8,7 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  height: ${({ isIndex }) => (isIndex ? "400px" : "300px")};
+  height: ${({ isIndex }) => (isIndex ? "600px" : "300px")};
   width: 100vw;
   overflow: hidden;
 
@@ -23,7 +24,7 @@ const TextContainer = styled.div`
       margin: 0;
       padding-left: 2em;
 `;
-const Title = styled.h1`
+const Title = styled.h1<{ receivedText?: boolean }>`
   margin: 0;
   font-size: 3.5em;
   text-overflow: ellipsis;
@@ -47,21 +48,29 @@ const Header: FunctionComponent<HeaderProps> = ({
   title,
   subtitle,
 }) => {
+  const router = useRouter();
   return (
     <>
       <NavBar />
       <HeaderContainer isIndex={isIndex}>
         <TextContainer>
-          <Title>
+          <Title receivedText={typeof title !== "undefined"}>
             {title || (
               <span>
-                Estás en
+                Has muchas personas
                 <br />
-                FavForMe
+                necesitando de tu
+                <br />
+                buena acción
               </span>
             )}
           </Title>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
+          {isIndex && (
+            <Button color="secondary" onClick={() => router.push("/acciones")}>
+              Doná hoy
+            </Button>
+          )}
         </TextContainer>
       </HeaderContainer>
     </>
