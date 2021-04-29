@@ -124,12 +124,21 @@ const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
 
 const Copyright = styled.section`
   background-color: ${({ theme }) => theme.palette.primary.dark};
+  text-align: center;
   p {
-    text-transform: uppercase;
-    padding: 2em;
     margin: 0;
-    text-align: center;
+    padding: 2em 0;
     color: white;
+    text-transform: uppercase;
+  }
+  .credits {
+    text-transform: none;
+    padding: 0 0 2em;
+    color: ${({ theme }) => theme.palette.primary.main};
+  }
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.palette.primary.light};
   }
 `;
 
@@ -184,7 +193,17 @@ const Footer: FunctionComponent<FooterProps> = () => (
       </a>
     </SocialNetworks>
     <Copyright>
-      <p>FavForMe 2020 - All rights reserved</p>
+      <p>FavForMe {new Date().getFullYear()} - All rights reserved</p>
+      <p className="credits">
+        Illustrations by{" "}
+        <a
+          href="https://storyset.com/people"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Freepik Storyset
+        </a>
+      </p>
     </Copyright>
   </FooterContainer>
 );

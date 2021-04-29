@@ -18,7 +18,7 @@ const Container = styled.main`
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
-  title = "Home",
+  title,
   footer = true,
   header,
   headProps,
