@@ -11,7 +11,6 @@ import {
   Percentage,
   ProgressBar,
   Title,
-  TitleContainer,
 } from "@/components/ActionCard/styles";
 import { parseToCurrency } from "@/lib/data";
 import { ActionI } from "@/lib/types";
@@ -74,19 +73,18 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
     data?.closedAt
   );
 
+  const urgency = daysUntilFinished
+    ? daysUntilFinished < 21 && daysUntilFinished > 14
+      ? "medium"
+      : daysUntilFinished <= 14
+      ? "high"
+      : "meh"
+    : "meh";
+
   return (
     <Container>
-      {/* <Link href={`/acciones/${data?.id}`}> */}
       <ImageContainer>
-        <DueDate
-          urgency={
-            daysUntilFinished && daysUntilFinished > 14
-              ? "high"
-              : daysUntilFinished && daysUntilFinished > 21
-              ? "medium"
-              : "meh"
-          }
-        >
+        <DueDate urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
         </DueDate>
         <Image
@@ -99,11 +97,21 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
       </ImageContainer>
       {/* </Link> */}
       <MainContent>
-        <TitleContainer>
+        <div>
           <Link href={`/acciones/${data?.id}`}>
-            <Title>{data?.title.toUpperCase()}</Title>
+            <Title
+              color={
+                urgency === "high"
+                  ? "red"
+                  : urgency === "medium"
+                  ? "yellow"
+                  : "inherit"
+              }
+            >
+              {data?.title.toUpperCase()}
+            </Title>
           </Link>
-        </TitleContainer>
+        </div>
         <AmountCollected>
           ${parseToCurrency(currentAmount)}
           .-
