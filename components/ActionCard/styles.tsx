@@ -33,11 +33,6 @@ export const MainContent = styled.div`
 `;
 
 /**
- * @deprecated Improve this or use another thing
- */
-export const TitleContainer = styled.div``;
-
-/**
  * @description Styled from Title (h1)
  */
 export const Title = styled(BaseTitle)`
