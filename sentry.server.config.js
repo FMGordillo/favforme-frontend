@@ -13,24 +13,4 @@ Sentry.init({
   // Note: if you want to override the automatic release value, do not set a
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
   // that it will also get attached to your source maps
-  beforeSend(event) {
-    if (event.exception) {
-      Sentry.showReportDialog({
-        eventId: event.event_id,
-        title: "Encontramos un problema",
-        subtitle: "Nuestro equipo ya está al tanto",
-        subtitle2: "Si nos querés ayudar a entender más, contamos qué pasó",
-        labelName: "Nombre",
-        labelComments: "¿Qué pasó?",
-        labelClose: "Cerrar",
-        labelSubmit: "Enviar",
-        errorGeneric:
-          "Hubo un error al enviar este formulario. Por favor intente de nuevo",
-        errorFormEntry:
-          "Algunos campos no están correctos. Por favor, corregilos e intentá de nuevo",
-        successMessage: "Tu feedback fue recibido. ¡Muchas gracias!",
-      });
-    }
-    return event;
-  },
 });
