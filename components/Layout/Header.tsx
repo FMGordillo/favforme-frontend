@@ -1,10 +1,10 @@
 import { Button, NavBar } from "@/components";
+import { useMobileSize } from "@/hooks/useMobileSize";
 import { useRouter } from "next/router";
 import { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header<{ isIndex?: boolean }>`
-  display: fixed;
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
@@ -16,20 +16,24 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   display: table-cell;
   vertical-align: bottom;
   padding-bottom: 2em;
+
+  ${({ theme }) => theme.breakpoints.down("md")}
 `;
 const TextContainer = styled.div`
     color: white;
-    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+    padding: 0 0 0 ${({ theme }) => theme.spacing(2)}em;
     ${({ theme }) => theme.breakpoints.down("sm")} {
-      margin: 0;
+      padding: 0;
       padding-left: 2em;
 `;
-const Title = styled.h1<{ receivedText?: boolean }>`
+const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   margin: 0;
   font-size: 3.5em;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 75vw;
+  width: ${({ isIndex }) => (isIndex ? "75vw" : "inherit")};
+
+  text-align: ${({ isIndex }) => (isIndex ? "left" : "center")};
 `;
 const Subtitle = styled.h2`
   font-family: abel, sans-serif;
@@ -49,26 +53,35 @@ const Header: FunctionComponent<HeaderProps> = ({
   subtitle,
 }) => {
   const router = useRouter();
+  const { isMobileSize } = useMobileSize();
+  console.log(isMobileSize);
   return (
     <>
       <NavBar />
       <HeaderContainer isIndex={isIndex}>
         <TextContainer>
-          <Title receivedText={typeof title !== "undefined"}>
-            {title || (
-              <span>
-                Has muchas personas
-                <br />
-                necesitando de tu
-                <br />
-                buena acción
-              </span>
-            )}
+          <Title receivedText={typeof title !== "undefined"} isIndex={isIndex}>
+            {title ||
+              (!isMobileSize ? (
+                <span>
+                  Hay muchas personas
+                  <br />
+                  necesitando de tu
+                  <br />
+                  buena acción
+                </span>
+              ) : (
+                <span>FavForMe</span>
+              ))}
           </Title>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
           {isIndex && (
-            <Button color="secondary" onClick={() => router.push("/acciones")}>
-              Doná hoy
+            <Button
+              style={{ width: "200px", margin: "1.5em 0" }}
+              color="secondary"
+              onClick={() => router.push("/acciones")}
+            >
+              DON&Aacute; HOY
             </Button>
           )}
         </TextContainer>

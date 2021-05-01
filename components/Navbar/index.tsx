@@ -40,30 +40,6 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
           src="/images/hamburger.png"
         />
       </MobileNavigator>
-      <Menu
-        toggleContainer={
-          <FontAwesomeIcon
-            size="2x"
-            onClick={() => {
-              setUserDropdownOpen((prev) => !prev);
-            }}
-            style={{ float: "right" }}
-            icon={faUser}
-          />
-        }
-        open={userDropdownOpen}
-      >
-        {firebaseData.id && (
-          <button onClick={() => router.push("/perfil")}>Perfil</button>
-        )}
-        <button
-          onClick={() =>
-            firebaseData.id ? firebaseData.signOut() : router.push("/login")
-          }
-        >
-          {firebaseData.id ? "Cerrar sesion" : "Iniciar sesión"}
-        </button>
-      </Menu>
       <Ul open={open}>
         <NavItem href="/">FavForMe</NavItem>
         <NavItem href="/acciones">Acciones</NavItem>
