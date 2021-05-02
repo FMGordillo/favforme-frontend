@@ -11,7 +11,8 @@ import {
   Percentage,
   ProgressBar,
   Title,
-} from "@/components/ActionCard/styles";
+  ODS,
+} from "./styles";
 import { parseToCurrency } from "@/lib/data";
 import { ActionI } from "@/lib/types";
 import { formatDistance, differenceInDays } from "date-fns";
@@ -20,6 +21,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
+import { getODSImage } from "@/lib/ods_image";
 
 interface ActionProps {
   data?: ActionI;
@@ -94,6 +96,13 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
           alt="Imagen representativa de la acción"
           src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
         />
+        <ODS>
+          <Image src="/images/ODS_logo_full.png" width={90} height={75} />
+          {data?.ods.map((odsImg) => {
+            const src = getODSImage(odsImg);
+            return <Image key={src} src={src} width={90} height={85} />;
+          })}
+        </ODS>
       </ImageContainer>
       {/* </Link> */}
       <MainContent>
