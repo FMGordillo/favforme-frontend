@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NavItem } from "./NavItem";
 interface NavProps {
   isScrolled?: boolean;
   scrollingDown?: boolean;
