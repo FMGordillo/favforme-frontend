@@ -124,7 +124,7 @@ export const SpanLink = styled.span`
 `;
 
 export const User = styled.div`
-  position: fixed;
+  position: absolute;
   background: white;
   margin: ${({ theme }) => theme.spacing(18)}px 0;
   padding: ${({ theme }) => theme.spacing(3)}px;
