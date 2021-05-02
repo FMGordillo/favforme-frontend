@@ -115,3 +115,26 @@ export const SpanLink = styled.span`
     color: ${({ theme }) => theme.palette.secondary.main};
   }
 `;
+
+export const User = styled.div`
+  position: fixed;
+  background: white;
+  margin: ${({ theme }) => theme.spacing(18)}px 0;
+  padding: ${({ theme }) => theme.spacing(3)}px;
+  padding-right: ${({ theme }) => theme.spacing(6)}px;
+  top: 0;
+  right: 0;
+  border-radius: 20px 0 0 20px;
+  p {
+    color: ${({ theme }) => theme.palette.primary.main};
+    font-weight: bolder;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    color: red;
+  }
+  :hover {
+    cursor: pointer;
+  }
+`;

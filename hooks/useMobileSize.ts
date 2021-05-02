@@ -1,3 +1,4 @@
+import { Breakpoint } from "@/next-env";
 import { calculateBreakpoint } from "@/utils/styled";
 import { useEffect, useState } from "react";
 
@@ -5,8 +6,10 @@ interface UseMobileSizeReturn {
   isMobileSize: boolean;
 }
 
-export const useMobileSize = (): UseMobileSizeReturn => {
-  const mobileSize = Number(calculateBreakpoint("md").replace("px", ""));
+export const useMobileSize = (breakpoint?: Breakpoint): UseMobileSizeReturn => {
+  const mobileSize = Number(
+    calculateBreakpoint(breakpoint || "md").replace("px", "")
+  );
   const [isMobileSize, setIsMobileSize] = useState<boolean>(
     typeof window !== "undefined" && window.innerWidth <= mobileSize
   );
