@@ -53,7 +53,7 @@ const Header: FunctionComponent<HeaderProps> = ({
   subtitle,
 }) => {
   const router = useRouter();
-  const { isMobileSize } = useMobileSize();
+  const { isMobileSize } = useMobileSize("md");
   console.log(isMobileSize);
   return (
     <>
