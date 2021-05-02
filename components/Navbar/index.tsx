@@ -1,9 +1,6 @@
-import { Menu } from "@/components";
 import { ContactModal } from "@/components/Modal/components";
 import { useUser } from "@/hooks";
 import { ModalContext } from "@/lib/context";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, useContext, useState } from "react";
@@ -20,7 +17,10 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
   console.log(firebaseData);
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
-  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+
+  const userButtonTxt = !firebaseData.email
+    ? "Ingresar"
+    : firebaseData.firebaseUser?.displayName?.split(" ")[0];
 
   const handleMobileOpen = () => {
     setOpen(!open);
@@ -42,7 +42,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         />
       </MobileNavigator>
       <Ul open={open}>
-        <NavItem href="/about">FavForMe</NavItem>
+        <NavItem href="/">FavForMe</NavItem>
         <NavItem href="/acciones">Acciones</NavItem>
         <NavItem image href="/">
           <Image
@@ -53,13 +53,12 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         </NavItem>
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem onClick={handleContactClick}>Contacto</NavItem>
+        <NavItem isProfileButton onClick={() => router.push("/perfil")}>
+          {userButtonTxt}
+        </NavItem>
         <User onClick={() => router.push("/perfil")}>
           <Image src="/images/icon_user.svg" width={75} height={75} />
-          <p>
-            {!firebaseData.email
-              ? "Ingresar"
-              : firebaseData.firebaseUser?.displayName?.split(" ")[0]}
-          </p>
+          <p>{userButtonTxt}</p>
         </User>
       </Ul>
     </Nav>

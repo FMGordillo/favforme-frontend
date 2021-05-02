@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavItem } from "./NavItem";
 interface NavProps {
   isScrolled?: boolean;
   scrollingDown?: boolean;
@@ -12,6 +13,7 @@ interface MobileNavigatorProps {
 interface ItemProps {
   image?: boolean;
   current?: boolean;
+  isProfileButton?: boolean;
 }
 
 export const Nav = styled.nav<NavProps>`
@@ -24,7 +26,7 @@ export const Nav = styled.nav<NavProps>`
   transition: all 300ms;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    /* TODO: Finish this */
+    color: red;
   }
 `;
 export const MobileNavigator = styled.div<MobileNavigatorProps>`
@@ -89,6 +91,12 @@ export const Item = styled.li<ItemProps>`
     color: ${({ current, theme }) =>
       current ? theme.palette.secondary.main : "white"};
   }
+
+  display: ${({ isProfileButton }) => (isProfileButton ? "none" : "block")};
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: block;
+  }
 `;
 export const Link = styled.a`
   font-weight: 500;
@@ -132,7 +140,7 @@ export const User = styled.div`
     text-transform: uppercase;
   }
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    color: red;
+    display: none;
   }
   :hover {
     cursor: pointer;
