@@ -17,8 +17,7 @@ export const IndexPage: NextPage = () => {
       header
       headerProps={{
         isIndex: true,
-        title: "Estás en FavForMe",
-        subtitle: "No dejemos a nadie atrás",
+        //title: "Estás en FavForMe",
       }}
     >
       <Divider />
