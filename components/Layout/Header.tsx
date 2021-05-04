@@ -8,7 +8,7 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  height: ${({ isIndex }) => (isIndex ? "600px" : "300px")};
+  height: ${({ isIndex }) => (isIndex ? "600px" : "400px")};
   width: 100vw;
   overflow: hidden;
 
@@ -17,14 +17,20 @@ const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   vertical-align: bottom;
   padding-bottom: 2em;
 
-  ${({ theme }) => theme.breakpoints.down("md")}
+  transition: height 300ms;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    height: ${({ isIndex }) => (isIndex ? "400px" : "300px")};
+  }
 `;
-const TextContainer = styled.div`
-    color: white;
-    padding: 0 0 0 ${({ theme }) => theme.spacing(2)}em;
-    ${({ theme }) => theme.breakpoints.down("sm")} {
-      padding: 0;
-      padding-left: 2em;
+const TextContainer = styled.div<{ isIndex?: boolean }>`
+  color: white;
+  padding: ${({ theme, isIndex }) =>
+    !isIndex ? "0" : `0 0 0 ${theme.spacing(2)}em`};
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    padding: 0;
+    padding-left: 2em;
+  }
 `;
 const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   margin: 0;
@@ -32,7 +38,6 @@ const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   text-overflow: ellipsis;
   overflow: hidden;
   width: ${({ isIndex }) => (isIndex ? "75vw" : "inherit")};
-
   text-align: ${({ isIndex }) => (isIndex ? "left" : "center")};
 `;
 const Subtitle = styled.h2`
@@ -59,7 +64,7 @@ const Header: FunctionComponent<HeaderProps> = ({
     <>
       <NavBar />
       <HeaderContainer isIndex={isIndex}>
-        <TextContainer>
+        <TextContainer isIndex={isIndex}>
           <Title receivedText={typeof title !== "undefined"} isIndex={isIndex}>
             {title ||
               (!isMobileSize ? (
@@ -78,6 +83,7 @@ const Header: FunctionComponent<HeaderProps> = ({
           {isIndex && (
             <Button
               style={{ width: "200px", margin: "1.5em 0" }}
+              textColor="#111"
               color="secondary"
               onClick={() => router.push("/acciones")}
             >

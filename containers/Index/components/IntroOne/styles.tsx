@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Container } from "@/components/styles";
 
-export const HighlightText = styled.mark`
+export const HighlightText = styled.p`
+  color: #027aa8;
   font-size: 1.25em;
-  background-color: ${({ theme }) => theme.palette.secondary.light};
   font-weight: 700;
   text-align: center !important;
+  padding: 0 2em;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 2em 0 2.5em;
   }
@@ -47,9 +48,6 @@ export const TextContainer = styled.div`
   align-self: center;
   text-align: center;
   margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
-  & > p {
-    text-align: justify;
-  }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
@@ -63,6 +61,9 @@ export const TextContainer = styled.div`
 `;
 
 export const ODSLogo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-area: ods;
   justify-self: center;
   margin: ${({ theme }) => theme.spacing(0.5)}em 0;
