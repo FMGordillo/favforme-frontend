@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Text, Title } from "@/components/styles";
+import { Container, Text, Title } from "@/components";
 import {
   LeftHandImage,
   Main,
@@ -9,6 +9,7 @@ import {
   RightHandImage,
   HighlightText,
   TextContainer,
+  ODSButton,
 } from "./styles";
 
 const sdg = [
@@ -68,18 +69,13 @@ const IntroOneSection: FunctionComponent = () => {
       </LeftHandImage>
       <TextContainer>
         <Title>
-          REALIZÁ ACCIONES DE IMPACTO POSITIVO Y TRANSPARENTE CON TU EMPRESA
+          SOMOS LA PRIMERA PLATAFORMA DE CROWDFUNDING SOCIAL DE LATINOAMÉRICA
         </Title>
         <Text>
-          FavForMe es la plataforma tecnológica perfecta para generar
-          Responsabilidad Social Empresarial con tu organización. Aportá a
-          diferentes ACCIONES de forma simple, clara y segura, logrando entre
-          todos alcanzar metas increíbles.
+          En FavForMe creamos un espacio que ayuda a las ONGs a conseguir los
+          recursos necesarios para realizar acciones de impacto social a través
+          de crowdfunding
         </Text>
-        <HighlightText>
-          Sé parte de los OBJETIVOS DE DESARROLLO SOSTENIBLES 2015-2030
-          propuestos por la ONU
-        </HighlightText>
       </TextContainer>
       <RightHandImage>
         <Image
@@ -92,6 +88,13 @@ const IntroOneSection: FunctionComponent = () => {
       </RightHandImage>
       <ODSLogo>
         <Image width={360} height={40} src="/images/ods.png" alt="ODS Logo" />
+        <Container>
+          <HighlightText>
+            El equipo de FavForMe se especializó en los Objetivos de Desarrollo
+            Sustentables (ODS) definidos por la Organización de las Naciones
+            Unidas y ha desarrollado mejores prácticas para lograr alcanzarlos
+          </HighlightText>
+        </Container>
       </ODSLogo>
       <ODSContainer>
         <div className="img smallest">
@@ -151,6 +154,15 @@ const IntroOneSection: FunctionComponent = () => {
           />
         </div>
       </ODSContainer>
+      <ODSButton color="#027aa8" hoverColor="#003f57">
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+        >
+          APRENDER SOBRE ODS
+        </a>
+      </ODSButton>
     </Main>
   );
 };

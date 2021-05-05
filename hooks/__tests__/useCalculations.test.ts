@@ -19,6 +19,7 @@ describe("useCalculations hook", () => {
       title: "Action test",
       current: 10,
       objective: 1000,
+      ods: [],
     };
 
     const useCalculationsHook = useCalculations(data);
