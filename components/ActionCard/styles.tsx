@@ -33,11 +33,6 @@ export const MainContent = styled.div`
 `;
 
 /**
- * @deprecated Improve this or use another thing
- */
-export const TitleContainer = styled.div``;
-
-/**
  * @description Styled from Title (h1)
  */
 export const Title = styled(BaseTitle)`
@@ -118,13 +113,13 @@ export const ProgressBar = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
 `;
 
 export const DueDate = styled.p<{
   urgency?: "meh" | "medium" | "high" | undefined;
 }>`
+  display: grid;
   padding: 0.5em 1.25em;
   border-radius: 3em;
   background-color: white;
@@ -133,9 +128,18 @@ export const DueDate = styled.p<{
 
   z-index: 2;
   position: absolute;
-  align-self: flex-end;
+  justify-self: end;
   margin-right: 0.5em;
 
   color: ${({ theme, urgency = "meh" }) =>
     urgency === "high" ? "red" : theme.palette.gray.dark};
+`;
+
+export const ODS = styled.div`
+  position: absolute;
+  align-self: end;
+  height: 85px; /* Igual a la imagen */
+  z-index: 2;
+  align-self: flex-end;
+  background: white;
 `;
