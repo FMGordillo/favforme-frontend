@@ -1,7 +1,9 @@
 import { Color, Variant } from "@/utils/styled";
 import styled from "styled-components";
 
-const isOfTypeColor = (keyInput?: string): keyInput is Color | undefined =>
+const isOfTypeColor = (
+  keyInput?: Color | string
+): keyInput is Color | undefined =>
   ["primary", "secondary", "gray", "white", "black"].includes(keyInput || "");
 
 interface ButtonI {
@@ -28,7 +30,7 @@ export const Button = styled.button<ButtonI>`
   font-family: abel, sans-serif;
   transition: background-color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
-    isOfTypeColor(color)
+    typeof color === "undefined" || isOfTypeColor(color)
       ? theme.palette[color || "primary"][variant || "main"]
       : color};
   & > a {
@@ -38,7 +40,10 @@ export const Button = styled.button<ButtonI>`
 
   :hover {
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
-      isOfTypeColor(color) || isOfTypeColor(hoverColor) || !color || !hoverColor
+      typeof color === "undefined" ||
+      isOfTypeColor(color) ||
+      typeof hoverColor === "undefined" ||
+      isOfTypeColor(hoverColor)
         ? theme.palette[
             hoverColor && isOfTypeColor(hoverColor)
               ? hoverColor
@@ -51,7 +56,7 @@ export const Button = styled.button<ButtonI>`
 
   :disabled {
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
-      isOfTypeColor(color) || isOfTypeColor(hoverColor)
+      typeof hoverColor === "undefined" || isOfTypeColor(hoverColor)
         ? theme.palette[
             hoverColor && isOfTypeColor(hoverColor)
               ? hoverColor
