@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "@/components/styles";
+import { Button, Container } from "@/components";
 
 export const HighlightText = styled.p`
   color: #027aa8;
@@ -18,7 +18,8 @@ export const Main = styled.section`
   grid-template-areas:
     "left-image text right-image"
     "ods ods ods"
-    "ods-container ods-container ods-container";
+    "ods-container ods-container ods-container"
+    ". button .";
 
   /* TODO: Queda asi porque se ve horrible en un tamaño intermedio. La contra del static */
 
@@ -104,4 +105,11 @@ export const ODSContainer = styled(Container)`
     width: 125px;
     opacity: 0.85;
   }
+`;
+
+export const ODSButton = styled(Button)`
+  justify-self: center;
+  width: 300px;
+  margin-top: 2em;
+  grid-area: button;
 `;

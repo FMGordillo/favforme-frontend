@@ -1,10 +1,13 @@
 import { Color, Variant } from "@/utils/styled";
 import styled from "styled-components";
 
+const isOfTypeColor = (keyInput?: string): keyInput is Color | undefined =>
+  ["primary", "secondary", "gray", "white", "black"].includes(keyInput || "");
+
 interface ButtonI {
-  color?: Color;
+  color?: Color | string;
   textColor?: Color | string;
-  hoverColor?: Color;
+  hoverColor?: Color | string;
   variant?: Variant;
   hoverVariant?: Variant;
 }
@@ -25,7 +28,9 @@ export const Button = styled.button<ButtonI>`
   font-family: abel, sans-serif;
   transition: background-color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
-    theme.palette[color || "primary"][variant || "main"]};
+    isOfTypeColor(color)
+      ? theme.palette[color || "primary"][variant || "main"]
+      : color};
   & > a {
     color: inherit;
     text-decoration: none;
@@ -33,11 +38,27 @@ export const Button = styled.button<ButtonI>`
 
   :hover {
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
-      theme.palette[hoverColor || color || "primary"][hoverVariant || "light"]};
+      isOfTypeColor(color) || isOfTypeColor(hoverColor) || !color || !hoverColor
+        ? theme.palette[
+            hoverColor && isOfTypeColor(hoverColor)
+              ? hoverColor
+              : color && isOfTypeColor(color)
+              ? color
+              : "primary"
+          ][hoverVariant || "light"]
+        : hoverColor};
   }
 
   :disabled {
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
-      theme.palette[hoverColor || color || "primary"][hoverVariant || "light"]};
+      isOfTypeColor(color) || isOfTypeColor(hoverColor)
+        ? theme.palette[
+            hoverColor && isOfTypeColor(hoverColor)
+              ? hoverColor
+              : color && isOfTypeColor(color)
+              ? color
+              : "primary"
+          ][hoverVariant || "light"]
+        : hoverColor};
   }
 `;

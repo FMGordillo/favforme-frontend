@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Container, Text, Title } from "@/components/styles";
+import { Container, Text, Title } from "@/components";
 import {
   LeftHandImage,
   Main,
@@ -9,6 +9,7 @@ import {
   RightHandImage,
   HighlightText,
   TextContainer,
+  ODSButton,
 } from "./styles";
 
 const sdg = [
@@ -153,6 +154,15 @@ const IntroOneSection: FunctionComponent = () => {
           />
         </div>
       </ODSContainer>
+      <ODSButton color="#027aa8" hoverColor="#003f57">
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+        >
+          APRENDER SOBRE ODS
+        </a>
+      </ODSButton>
     </Main>
   );
 };
