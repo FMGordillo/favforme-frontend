@@ -7,6 +7,7 @@ const GET_ACTION = `
     action(where: { id: $id }) {
       id
       title
+      ods
       current
       objective
       description
