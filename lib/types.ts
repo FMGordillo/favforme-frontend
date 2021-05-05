@@ -1,6 +1,26 @@
 /**
- * TODO: This should be aligned with the schema.prisma (maybe monolithic app?)
+ * Sacado del backend
+ * @TODO Unificar backend y frontend types
  */
+export enum ODS {
+  NO_POVERTY,
+  ZERO_HUNGER,
+  GOOD_HEALTH,
+  QUALITY_EDUCATION,
+  GENDER_EQUITY,
+  CLEAN_WATER,
+  CLEAN_ENERGY,
+  DECENT_WORK,
+  INDUSTRY_INNOVATION_INFRASTRUCTURE,
+  REDUCE_INEQUITIES,
+  SUSTAINABLE_CITIES,
+  RESPONSIBLE_CONSUMPTION_PRODUCTION,
+  CLIMATE_ACTION,
+  LIFE_BELOW_WATER,
+  LIFE_ON_LAND,
+  PEACE_JUSTICE_INSTITUTIONS,
+  PARTNERSHIP_FOR_GOALS,
+}
 
 export type SocialNetworkName =
   | "FACEBOOK"
@@ -36,6 +56,7 @@ export interface ActionI {
   current: number; // $$$
   objective: number; // $$$
   organization: Organization;
+  ods: ODS[];
   organizationId: number;
   deleted: boolean;
   status: Status;

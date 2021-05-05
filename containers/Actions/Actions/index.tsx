@@ -11,10 +11,10 @@ export const ActionsPage: NextPage = () => {
       <Container>
         <StyledTitle>Acciones Activas</StyledTitle>
         <JoinUsContainer>
-          <Title color="primary" weight="bold">
+          <Title color="#9f1b32" weight="bold">
             ODS activos hoy
           </Title>
-          <p>
+          <p style={{ color: "#9f1b32" }}>
             Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
             <br />
             Hagamos juntos un lugar mejor para vivir.

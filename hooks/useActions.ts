@@ -7,6 +7,7 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
     actions${params} {
       id
       title
+      ods
       current
       objective
       closedAt
