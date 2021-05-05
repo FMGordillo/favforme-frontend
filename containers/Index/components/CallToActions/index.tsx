@@ -1,9 +1,7 @@
+import { Title } from "@/components";
 import Image from "next/image";
-import Link from "next/link";
 import { FunctionComponent } from "react";
-import { Button } from "@/components";
-import { Title } from "@/components/styles";
-import { Section, StyledContainer, StyledTitle, StyledText } from "./styles";
+import { Section, StyledContainer, StyledText, StyledTitle } from "./styles";
 
 interface CallToActionSectionProps {
   toggleModal?: () => void;
