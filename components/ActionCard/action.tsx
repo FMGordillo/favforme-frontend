@@ -24,10 +24,11 @@ import { FunctionComponent } from "react";
 import { getODSImage } from "@/lib/ods_image";
 
 interface ActionProps {
+  carousel?: boolean;
   data?: ActionI;
 }
 
-const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
+const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
@@ -84,7 +85,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
     : "meh";
 
   return (
-    <Container>
+    <Container carousel={carousel}>
       <ImageContainer>
         <DueDate urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
