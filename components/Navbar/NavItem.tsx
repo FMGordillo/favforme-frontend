@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import { cloneElement, FunctionComponent } from "react";
-import { Item, SpanLink, Link } from "./styles";
+import { Item, Link } from "./styles";
 
 interface NavItemProps {
   href?: string;
@@ -30,7 +30,7 @@ export const NavItem: FunctionComponent<NavItemProps> = ({
         cloneElement(<Link />, { onClick, ...props, children })
       ) : (
         <NextLink href={href || "/"}>
-          <SpanLink>{children}</SpanLink>
+          <Link>{children}</Link>
         </NextLink>
       )}
     </Item>
