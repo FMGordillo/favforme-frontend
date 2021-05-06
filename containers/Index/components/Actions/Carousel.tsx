@@ -15,7 +15,7 @@ const StyledContainer = styled(Container)<{ hasData?: boolean }>`
   display: grid;
   align-items: center;
   justify-items: center;
-  ${({ hasData }) => hasData && `box-shadow: 1em 1em #dcdcdc;`}
+  ${({ hasData }) => hasData && `box-shadow: 1em 1em #4963d3;`}
 `;
 
 const Section = styled.div<{ active?: boolean }>`

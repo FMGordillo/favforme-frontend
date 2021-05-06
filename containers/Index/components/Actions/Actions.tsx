@@ -74,7 +74,7 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
       >
         {actions &&
           actions.length > 0 &&
-          actions.map((action, i) => <Action key={i} data={action} />)}
+          actions.map((action, i) => <Action carousel key={i} data={action} />)}
       </Carousel>
       <Button
         color="white"

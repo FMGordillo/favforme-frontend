@@ -154,14 +154,14 @@ const IntroOneSection: FunctionComponent = () => {
           />
         </div>
       </ODSContainer>
-      <ODSButton color="#027aa8" hoverColor="#003f57">
-        <a
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
-        >
-          APRENDER SOBRE ODS
-        </a>
+      <ODSButton
+        color="#027aa8"
+        hoverColor="#003f57"
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+      >
+        APRENDER SOBRE ODS
       </ODSButton>
     </Main>
   );

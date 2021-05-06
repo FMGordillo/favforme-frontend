@@ -36,7 +36,7 @@ export const Container = styled.section<{ center?: boolean; spacing?: number }>`
   ${({ theme, spacing }) => `
     margin: 0 ${theme.spacing(spacing || 1)}em;
     ${theme.breakpoints.down("sm")} {
-      margin: 0 ${theme.spacing(0.5)}em !important;
+      margin: 0 ${theme.spacing(0.5)}em;
     }
   `}
 `;

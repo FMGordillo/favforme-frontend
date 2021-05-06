@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Container } from "@/components";
+import { ButtonLink, Container } from "@/components";
 
 export const HighlightText = styled.p`
   color: #027aa8;
@@ -27,7 +27,8 @@ export const Main = styled.section`
     grid-template-areas:
       "text text text"
       "ods ods ods"
-      "ods-container ods-container ods-container";
+      "ods-container ods-container ods-container"
+      ". button .";
     & > :first-child {
       display: none !important;
     }
@@ -107,7 +108,7 @@ export const ODSContainer = styled(Container)`
   }
 `;
 
-export const ODSButton = styled(Button)`
+export const ODSButton = styled(ButtonLink)`
   justify-self: center;
   width: 300px;
   margin-top: 2em;
