@@ -27,7 +27,8 @@ export const Main = styled.section`
     grid-template-areas:
       "text text text"
       "ods ods ods"
-      "ods-container ods-container ods-container";
+      "ods-container ods-container ods-container"
+      ". button .";
     & > :first-child {
       display: none !important;
     }
