@@ -110,19 +110,6 @@ export const Link = styled.a`
   }
 `;
 
-export const SpanLink = styled.span`
-  font-weight: 500;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  transition: all 300ms;
-  &:hover {
-    font-weight: 700;
-    color: ${({ theme }) => theme.palette.secondary.main};
-  }
-`;
-
 export const User = styled.div`
   position: absolute;
   background: white;

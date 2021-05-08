@@ -4,8 +4,11 @@
       data: {
         title: "Ollas Populares"
         description: "Actualemente y desde hace 8 meses, realizamos ollas populares de Lunes a Lunes para mas de 30 familias del barrio."
-        objective: 80000
-        current: 0
+        objective: "80000"
+        current: "0"
+        ods: {
+          set: [ZERO_HUNGER]
+        }
         peopleBeneficted: 150
         organization: {
           create: {
@@ -45,9 +48,10 @@
       data: {
         title: "AMPLIANDO HORIZONTES"
         description: "Es un programa por medio del cual acompañamos a personas que quieren salir adelante a partir del propio trabajo.   Brindamos un apoyo integral para que puedan emprender. No solo se los capacita en Gestión de Emprendimientos, se les enseña a  cómo llevar adelante un negocio, sino también se le da la oportunidad de acceder a  microcréditos para comprar insumos, herramientas o equipamiento para llevar adelante el negocio. Se los acompaña de manera cotidiana y continua en todo el proceso de emprender."
-        objective: 210000
-        current: 0
+        objective: "210000"
+        current: "0"
         peopleBeneficted: 50
+        ods: { set: [QUALITY_EDUCATION, DECENT_WORK]}
         organization: {
           create: {
             homepage: "www.delanada.org"
