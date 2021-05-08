@@ -5,5 +5,5 @@ export const getODSImage = (ods: ODS | undefined): string => {
   const odsNumberOriginal = Number(ODS[ods]);
   const odsNumber =
     odsNumberOriginal < 10 ? `0${odsNumberOriginal}` : odsNumberOriginal;
-  return `/images/ods-images/sdg-en-${odsNumber}.png`;
+  return `/images/ods-images/ods-es-${odsNumber}.png`;
 };

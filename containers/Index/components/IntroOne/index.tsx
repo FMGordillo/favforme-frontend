@@ -46,6 +46,9 @@ const IntroOneSection: FunctionComponent = () => {
     return sdg[newPosition];
   };
 
+  const generateImageUrl = (index: string) =>
+    `/images/ods-images/ods-es-${index}.png`;
+
   useEffect(() => {
     const timer = setInterval(() => {
       setICurrent((prev) => (prev >= sdgLength - 1 ? 0 : prev + 1));
@@ -98,60 +101,29 @@ const IntroOneSection: FunctionComponent = () => {
       </ODSLogo>
       <ODSContainer>
         <div className="img smallest">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-3)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-3))} />
         </div>
         <div className="img smaller">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-2)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-2))} />
         </div>
         <div className="img small">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-1)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-1))} />
         </div>
         <div>
           <Image
             width={150}
             height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${sdg[iCurrent]}.png`}
+            src={generateImageUrl(sdg[iCurrent])}
           />
         </div>
         <div className="img small">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(1)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(1))} />
         </div>
         <div className="img smaller">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(2)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(2))} />
         </div>
         <div className="img smallest">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(3)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(3))} />
         </div>
       </ODSContainer>
       <ODSButton
