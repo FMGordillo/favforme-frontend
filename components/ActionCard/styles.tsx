@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Button as BaseButton } from "@/components/Button"; // FIXME: BuG!
 import { Title as BaseTitle } from "../styles";
 
-export const Container = styled.div`
+export const Container = styled.div<{ carousel?: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 2em;
-  box-shadow: 1em 1em #dcdcdc;
+  box-shadow: 1em 1em ${({ carousel }) => (carousel ? "#4963d3" : "#dcdcdc")};
   background: ${({ theme }) => theme.palette.gray.light};
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
