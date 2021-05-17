@@ -2,6 +2,7 @@ import { useActions } from "@/hooks";
 import { NextPage } from "next";
 import { Divider, Layout } from "@/components";
 import {
+  RSE,
   ActionsComponent as Actions,
   AlliancesSection,
   ContactSection,
@@ -26,6 +27,8 @@ export const IndexPage: NextPage = () => {
       <Actions actions={data?.actions} loading={isValidating} />
       <Divider />
       <CallToActionSection />
+      <Divider />
+      <RSE />
       <Divider />
       <AlliancesSection />
       <Divider />
