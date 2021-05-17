@@ -37,8 +37,6 @@ export const useActions = (params?: Params): UseActionsReturn => {
     GET_ACTIONS(params)
   );
 
-  const a = 0;
-
   return {
     data,
     error,
