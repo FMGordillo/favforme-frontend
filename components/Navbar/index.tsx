@@ -42,7 +42,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         />
       </MobileNavigator>
       <Ul open={open}>
-        <NavItem href="/">FavForMe</NavItem>
+        <NavItem href="/nosotros">FavForMe</NavItem>
         <NavItem href="/acciones">Acciones</NavItem>
         <NavItem image href="/">
           <Image

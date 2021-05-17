@@ -1,6 +1,11 @@
-import { Container, Layout, Title } from "@/components";
+import { Container as BaseContainer, Layout, Title } from "@/components";
+import styled from "styled-components";
 import { NextPage } from "next";
 import Image from "next/image";
+
+const Container = styled(BaseContainer)`
+  padding: 1em 0;
+`;
 
 const Custom404Page: NextPage = () => {
   return (

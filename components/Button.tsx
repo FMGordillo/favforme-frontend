@@ -55,6 +55,7 @@ export const Button = styled.button<ButtonI>`
   }
 
   :disabled {
+    cursor: not-allowed;
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
       typeof hoverColor === "undefined" || isOfTypeColor(hoverColor)
         ? theme.palette[
