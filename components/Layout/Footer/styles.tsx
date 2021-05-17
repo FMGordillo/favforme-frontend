@@ -110,7 +110,3 @@ export const Copyright = styled.section`
     color: ${({ theme }) => theme.palette.primary.light};
   }
 `;
-
-interface FooterProps {
-  toggleModal?: () => void;
-}
