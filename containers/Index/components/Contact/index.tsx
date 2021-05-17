@@ -10,11 +10,11 @@ const ContactSection: FunctionComponent = () => (
         <Image src="/images/contact.svg" width={500} height={400} />
       </div>
       <div className="second-element">
-        <Title>Estamos con vos</Title>
+        <Title>Apoyá esta gran iniciativa</Title>
         <Text>
-          Contamos con un equipo amigable para acompañarte en el proceso y
-          atender cualquier inquietud que tengas acerca de nuestro desarrollo,
-          contactanos.
+          Si formás parte de una ONG o una empresa, sumate a esta plataforma;
+          contactate directamente para recibir con más detalle todo lo que podés
+          hacer junto a FavForMe.
         </Text>
         <HighlightedText>
           <a
@@ -25,8 +25,8 @@ const ContactSection: FunctionComponent = () => (
             hello@favforme.com
           </a>
           <br />
-          <a href="tel:+541145678901" rel="noreferrer noopener" target="_blank">
-            +54 11 4567 8901
+          <a href="tel:+541150592054" rel="noreferrer noopener" target="_blank">
+            +54 11 5059 2054
           </a>
         </HighlightedText>
       </div>
