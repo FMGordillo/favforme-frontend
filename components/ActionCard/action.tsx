@@ -87,7 +87,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   return (
     <Container carousel={carousel}>
       <ImageContainer>
-        <DueDate urgency={urgency}>
+        <DueDate show={!!data?.closedAt} urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
         </DueDate>
         <Image

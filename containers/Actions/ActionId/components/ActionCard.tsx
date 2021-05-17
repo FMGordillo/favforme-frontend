@@ -10,9 +10,10 @@ import {
 import { useRouter } from "next/router";
 import { ModalContext } from "@/lib/context";
 import { DonationUnavailableModal } from "@/components/Modal/components";
+import { UseCalculationsReturn } from "@/hooks";
 
 interface ActionCardProps {
-  amounts: any; // TODO: Mejorar esto
+  amounts: UseCalculationsReturn;
   queryId: string;
   canDonate?: boolean;
   action: ActionI | undefined;
@@ -23,7 +24,6 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
   action,
   canDonate,
 }) => {
-  //  const [text, setText] = useState("");
   const { handleModal } = useContext(ModalContext);
   const router = useRouter();
   return (

@@ -49,7 +49,7 @@ export const ActionPage: NextPage<ActionProps> = ({
           <LeftColumn>
             <div>
               <Image
-                src={"/images/accion_placeholder_1.jpg" || "/"}
+                src={action?.mainImage || "/images/accion_placeholder_1.jpg"}
                 alt="Resumen"
                 width={510}
                 height={350}
