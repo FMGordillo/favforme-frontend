@@ -8,95 +8,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import NextLink from "next/link";
 import { FunctionComponent } from "react";
-import styled from "styled-components";
+import {
+  MapUl,
+  MapLi,
+  MapSection,
+  Link,
+  Copyright,
+  FooterContainer,
+  SocialNetworks,
+} from "./styles";
 
-const FooterContainer = styled.section`
-  background-color: ${({ theme }) => theme.palette.primary.main};
-`;
-
-const SocialNetworks = styled.div`
-  display: grid;
-  max-width: 400px;
-  padding: 1em;
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  & > * {
-    color: white;
-    transition: all 300ms;
-
-    :hover {
-      cursor: pointer;
-    }
-
-    & > * {
-      width: 2em !important;
-      height: 2em !important;
-    }
-    :nth-child(1) {
-      :hover {
-        color: #0a66c2;
-      }
-    }
-    :nth-child(2) {
-      :hover {
-        color: #d92d83;
-      }
-    }
-    :nth-child(3) {
-      :hover {
-        color: #1877f2;
-      }
-    }
-    :nth-child(4) {
-      :hover {
-        color: #1da1f2;
-      }
-    }
-  }
-`;
-
-const MapSection = styled.div`
-  display: flex;
-  padding: ${({ theme }) => theme.spacing(1)}em
-    ${({ theme }) => theme.spacing(2)}em;
-  justify-content: space-around;
-  align-items: center;
-  & > * {
-    flex: 1;
-  }
-  & > :first-child {
-    flex: 2;
-    text-align: center;
-  }
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    flex-direction: column;
-    padding: ${({ theme }) => theme.spacing(1)}em;
-  }
-`;
-const MapUl = styled.ul`
-  display: flex;
-  flex-direction: column;
-  flex-flow: colum wrap;
-  overflow: hidden;
-  list-style: none;
-`;
-const MapLi = styled.li`
-  line-height: 2.5;
-`;
-const Link = styled.a`
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-bottom: 1px solid transparent;
-  transition: all ease-in-out 300ms;
-  &:hover {
-    border-color: white;
-  }
-`;
+interface FooterProps {
+  toggleModal?: () => void;
+}
 
 const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
   children,
@@ -121,30 +45,6 @@ const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
     );
   }
 };
-
-const Copyright = styled.section`
-  background-color: ${({ theme }) => theme.palette.primary.dark};
-  text-align: center;
-  p {
-    margin: 0;
-    padding: 2em 0;
-    color: white;
-    text-transform: uppercase;
-  }
-  .credits {
-    text-transform: none;
-    padding: 0 0 2em;
-    color: ${({ theme }) => theme.palette.primary.main};
-  }
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.palette.primary.light};
-  }
-`;
-
-interface FooterProps {
-  toggleModal?: () => void;
-}
 
 const Footer: FunctionComponent<FooterProps> = () => (
   <FooterContainer>
