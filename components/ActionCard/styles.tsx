@@ -117,9 +117,10 @@ export const ImageContainer = styled.div`
 `;
 
 export const DueDate = styled.p<{
+  show?: boolean;
   urgency?: "meh" | "medium" | "high" | undefined;
 }>`
-  display: grid;
+  display: ${({ show }) => (show ? "grid" : "none")};
   padding: 0.5em 1.25em;
   border-radius: 3em;
   background-color: white;
