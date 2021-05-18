@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import { createPortal } from "react-dom";
-import { Background, BlackBackground, ModalContainer } from "./styles";
+import { Background, ModalContainer } from "./styles";
 
 const ModalComponent: FunctionComponent = () => {
   const { handleModal, modalContent, modal } = useContext(ModalContext);
@@ -15,7 +15,7 @@ const ModalComponent: FunctionComponent = () => {
 
   const handleClick = (e: MouseEvent<HTMLDivElement | MouseEvent>) => {
     e.preventDefault();
-    console.log(e.target, e.target.id);
+    // @ts-ignore
     if (e.target.id === "background") {
       handleModal();
     }
