@@ -1,3 +1,4 @@
+import { Button } from "@/components";
 import { DialogContainer, DialogTitle } from "../styles";
 import { FunctionComponent, useState } from "react";
 import styled from "styled-components";
@@ -14,7 +15,12 @@ const ModalContent = styled.div`
  * TODO: Export it?
  */
 export const DonationUnavailableModal: FunctionComponent = () => {
-  const [, handleChange] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = () => {
+    console.log(email);
+  };
+
   return (
     <DialogContainer>
       <DialogTitle>
@@ -29,7 +35,10 @@ export const DonationUnavailableModal: FunctionComponent = () => {
       </DialogTitle>
       <ModalContent>
         <p>Please donate</p>
-        {/* <input onChange={(e) => handleChange(e.target.value)} /> */}
+        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+        <Button onClick={handleSubmit} type="submit">
+          Suscribirme a novedades
+        </Button>
       </ModalContent>
     </DialogContainer>
   );
