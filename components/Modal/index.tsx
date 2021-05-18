@@ -15,9 +15,11 @@ const ModalComponent: FunctionComponent = () => {
 
   const handleClick = (e: MouseEvent<HTMLDivElement | MouseEvent>) => {
     e.preventDefault();
-    console.log("HANDLE CLICK");
+    // @ts-ignore
+    if (e.target.id === "background") {
+      handleModal();
+    }
     // setFadeType("out");
-    handleModal();
   };
 
   useEffect(() => {
@@ -26,10 +28,8 @@ const ModalComponent: FunctionComponent = () => {
 
   if (modal) {
     return createPortal(
-      <Background onClick={handleClick}>
-        <ModalContainer onClick={() => console.log("CLICK")}>
-          {modalContent}
-        </ModalContainer>
+      <Background id="background" onClick={handleClick}>
+        <ModalContainer id="modal">{modalContent}</ModalContainer>
       </Background>,
       //@ts-ignore
       ref.current
