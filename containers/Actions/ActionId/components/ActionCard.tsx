@@ -26,6 +26,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
 }) => {
   const { handleModal } = useContext(ModalContext);
   const router = useRouter();
+
   return (
     <>
       <Summary>

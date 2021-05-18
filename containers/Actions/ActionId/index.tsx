@@ -2,6 +2,7 @@ import { Button, Divider, Layout, Title } from "@/components";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import { toPascalCase } from "@/lib";
 import { ActionI } from "@/lib/types";
+import { isNotProd } from "@/utils";
 import { NextPage } from "next";
 import Image from "next/image";
 import { ActionCard } from "./components";
@@ -28,9 +29,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   action,
   amounts,
 }) => {
-  //const isAvailable = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";
-  const isAvailable = false;
-
   return (
     <Layout
       header
@@ -66,7 +64,7 @@ export const ActionPage: NextPage<ActionProps> = ({
               action={action}
               queryId={query?.id}
               amounts={amounts}
-              canDonate={isAvailable}
+              canDonate={isNotProd}
             />
             <h2>Datos de la ONG</h2>
             <Image

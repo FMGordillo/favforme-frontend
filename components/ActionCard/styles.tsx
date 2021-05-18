@@ -114,6 +114,9 @@ export const ProgressBar = styled.div`
 
 export const ImageContainer = styled.div`
   display: grid;
+  img {
+    object-fit: cover;
+  }
 `;
 
 export const DueDate = styled.p<{

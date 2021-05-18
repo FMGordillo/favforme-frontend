@@ -9,6 +9,10 @@ const ModalContent = styled.div`
   justify-items: center;
 `;
 
+/**
+ * TODO: Finish this
+ * TODO: Export it?
+ */
 export const DonationUnavailableModal: FunctionComponent = () => {
   const [, handleChange] = useState("");
   return (
@@ -25,7 +29,7 @@ export const DonationUnavailableModal: FunctionComponent = () => {
       </DialogTitle>
       <ModalContent>
         <p>Please donate</p>
-        <input onChange={(e) => handleChange(e.target.value)} />
+        {/* <input onChange={(e) => handleChange(e.target.value)} /> */}
       </ModalContent>
     </DialogContainer>
   );
