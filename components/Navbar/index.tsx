@@ -46,7 +46,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         <NavItem href="/acciones">Acciones</NavItem>
         <NavItem image href="/">
           <Image
-            src="/images/favforme_logo_white.png"
+            src="/images/favforme_logo_white.webp"
             width={245}
             height={192}
           />
