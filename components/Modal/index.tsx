@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import { createPortal } from "react-dom";
-import { Background, ModalContainer } from "./styles";
+import { Background, BlackBackground, ModalContainer } from "./styles";
 
 const ModalComponent: FunctionComponent = () => {
   const { handleModal, modalContent, modal } = useContext(ModalContext);
@@ -15,9 +15,11 @@ const ModalComponent: FunctionComponent = () => {
 
   const handleClick = (e: MouseEvent<HTMLDivElement | MouseEvent>) => {
     e.preventDefault();
-    console.log("HANDLE CLICK");
+    console.log(e.target, e.target.id);
+    if (e.target.id === "background") {
+      handleModal();
+    }
     // setFadeType("out");
-    handleModal();
   };
 
   useEffect(() => {
@@ -26,10 +28,8 @@ const ModalComponent: FunctionComponent = () => {
 
   if (modal) {
     return createPortal(
-      <Background onClick={handleClick}>
-        <ModalContainer onClick={() => console.log("CLICK")}>
-          {modalContent}
-        </ModalContainer>
+      <Background id="background" onClick={handleClick}>
+        <ModalContainer id="modal">{modalContent}</ModalContainer>
       </Background>,
       //@ts-ignore
       ref.current
