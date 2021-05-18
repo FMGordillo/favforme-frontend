@@ -12,6 +12,7 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
       objective
       closedAt
       createdAt
+      mainImage
       organization {
         socialNetworks {
           type
