@@ -1,2 +1,1 @@
-// export const isNotProd = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";
-export const isNotProd = false;
+export const isNotProd = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";
