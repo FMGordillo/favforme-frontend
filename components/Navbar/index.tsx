@@ -14,7 +14,6 @@ interface NavBarProps {
 const NavBar: FunctionComponent<NavBarProps> = () => {
   const router = useRouter();
   const { firebaseData } = useUser();
-  console.log(firebaseData);
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
 
@@ -46,7 +45,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         <NavItem href="/acciones">Acciones</NavItem>
         <NavItem image href="/">
           <Image
-            src="/images/favforme_logo_white.png"
+            src="/images/favforme_logo_white.webp"
             width={245}
             height={192}
           />

@@ -52,7 +52,7 @@ const IntroTwoSection: FunctionComponent = () => {
       </LeftSide>
       <RightSide>
         <Image
-          src="/images/image-4.png"
+          src="/images/image-4.webp"
           alt="Gente ayudando"
           width={370}
           height={260}
