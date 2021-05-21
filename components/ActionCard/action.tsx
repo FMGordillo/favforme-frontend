@@ -1,4 +1,15 @@
 import { SocialNetworks } from "@/components";
+import { ModalContext } from "@/lib/context";
+import { parseToCurrency } from "@/lib/data";
+import { getODSImage } from "@/lib/ods_image";
+import { ActionI } from "@/lib/types";
+import { isNotProd } from "@/utils";
+import { differenceInDays, formatDistance } from "date-fns";
+import esES from "date-fns/locale/es";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FunctionComponent, useContext } from "react";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -8,20 +19,12 @@ import {
   DueDate,
   ImageContainer,
   MainContent,
+  ODS,
   Percentage,
   ProgressBar,
   Title,
-  ODS,
 } from "./styles";
-import { parseToCurrency } from "@/lib/data";
-import { ActionI } from "@/lib/types";
-import { formatDistance, differenceInDays } from "date-fns";
-import esES from "date-fns/locale/es";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FunctionComponent } from "react";
-import { getODSImage } from "@/lib/ods_image";
+import { DonationUnavailableModal } from "@/components/Modal/components";
 
 interface ActionProps {
   carousel?: boolean;
@@ -30,6 +33,7 @@ interface ActionProps {
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
+  const { handleModal } = useContext(ModalContext);
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
 
@@ -46,7 +50,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           locale: esES,
         });
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueDate", error);
@@ -64,7 +68,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       if (createdAt && endDate) {
         return differenceInDays(new Date(endDate), new Date(createdAt));
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueImportance", error);
@@ -87,13 +91,13 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   return (
     <Container carousel={carousel}>
       <ImageContainer>
-        <DueDate urgency={urgency}>
+        <DueDate show={!!data?.closedAt} urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
         </DueDate>
         <Image
           width={1400}
           height={1100}
-          layout="responsive"
+          layout="intrinsic"
           alt="Imagen representativa de la acción"
           src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
         />
@@ -148,12 +152,14 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <ButtonContainer>
           <Button
             onClick={() =>
-              router.push({
-                pathname: "/donacion",
-                query: {
-                  action: data?.id,
-                },
-              })
+              isNotProd
+                ? router.push({
+                    pathname: "/donacion",
+                    query: {
+                      action: data?.id,
+                    },
+                  })
+                : handleModal(<DonationUnavailableModal />)
             }
           >
             DONAR

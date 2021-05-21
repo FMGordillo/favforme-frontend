@@ -11,6 +11,7 @@ const GET_ACTION = `
       current
       objective
       description
+      mainImage
       organization {
         logo
         history
