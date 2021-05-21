@@ -8,6 +8,17 @@ import { FormikValues, useFormik } from "formik";
 const ModalContent = styled.div`
   text-align: center;
 `;
+const Fieldset = styled.fieldset`
+  border: none;
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    label {
+      text-align: right;
+    }
+  }
+`;
 const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr;
@@ -18,6 +29,7 @@ const Form = styled.form`
 
 const schema = yup.object({
   email: yup.string().email().required(),
+  firstName: yup.string().optional(),
 });
 
 export const DonationUnavailableModal: FunctionComponent = () => {
@@ -25,10 +37,17 @@ export const DonationUnavailableModal: FunctionComponent = () => {
     console.log(e);
   };
 
-  const { handleBlur, handleChange, handleSubmit, isValid } = useFormik({
+  const {
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    isValid,
+    submitForm,
+  } = useFormik({
     validationSchema: schema,
     initialValues: {
       email: "",
+      firstName: "",
     },
     onSubmit,
   });
@@ -49,15 +68,28 @@ export const DonationUnavailableModal: FunctionComponent = () => {
         <p>Seguimos armando esta iniciativa, ¡no nos falta mucho!</p>
         <p>¿Querés que te avisemos cuando activemos las donaciones?</p>
         <Form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <FormInput
-            type="email"
-            name="email"
-            onBlur={handleBlur}
-            onChange={handleChange}
-            placeholder="tu-email@correo.com"
-          />
-          <Button disabled={!isValid} type="submit">
+          <Fieldset>
+            <div>
+              <label htmlFor="email">Email</label>
+              <FormInput
+                type="email"
+                name="email"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                placeholder="tu-email@correo.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="firstName">Tu nombre (opcional)</label>
+              <FormInput
+                name="firstName"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                placeholder="Lorenzo"
+              />
+            </div>
+          </Fieldset>
+          <Button disabled={!isValid} type="submit" onClick={submitForm}>
             Suscribirme a novedades
           </Button>
         </Form>

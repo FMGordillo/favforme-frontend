@@ -50,7 +50,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           locale: esES,
         });
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueDate", error);
@@ -68,7 +68,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       if (createdAt && endDate) {
         return differenceInDays(new Date(endDate), new Date(createdAt));
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueImportance", error);
