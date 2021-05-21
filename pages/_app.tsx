@@ -6,7 +6,7 @@ import NextNprogress from "nextjs-progressbar";
 import { useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
-import { ModalProvider } from "../lib/context";
+import { ModalProvider, NotificationProvider } from "../lib/context";
 import * as gtag from "../lib/gtag";
 import { fetcher } from "../lib/queries";
 import seoConfig from "../lib/seo.config";
@@ -68,7 +68,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           />
           <DefaultSeo {...seoConfig} />
           <ModalProvider>
-            <Component {...pageProps} />
+            <NotificationProvider>
+              <Component {...pageProps} />
+            </NotificationProvider>
           </ModalProvider>
         </ThemeProvider>
       </SWRConfig>
