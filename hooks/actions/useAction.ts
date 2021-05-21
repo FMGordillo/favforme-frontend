@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import { ActionI } from "../lib/types";
-import { useCalculations, UseCalculationsReturn } from "./useCalculations";
+import { ActionI } from "../../lib/types";
+import { useCalculations, UseCalculationsReturn } from "../useCalculations";
 
 const GET_ACTION = `
   query getAction($id: String) {
