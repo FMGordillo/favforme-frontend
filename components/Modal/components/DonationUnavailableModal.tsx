@@ -1,9 +1,10 @@
 import { Button, FormInput } from "@/components";
-import { DialogContainer, DialogTitle } from "../styles";
+import { FormikValues, useFormik } from "formik";
+import axios from "axios";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import * as yup from "yup";
-import { FormikValues, useFormik } from "formik";
+import { DialogContainer, DialogTitle } from "../styles";
 
 const ModalContent = styled.div`
   text-align: center;
@@ -33,8 +34,17 @@ const schema = yup.object({
 });
 
 export const DonationUnavailableModal: FunctionComponent = () => {
-  const onSubmit = (e: FormikValues) => {
+  const onSubmit = async (e: FormikValues) => {
     console.log(e);
+    const { status } = await axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/marketing/donation-user`,
+      e
+    );
+    if (status === 201) {
+      console.log("DONE");
+    } else {
+      console.log("OPA", status);
+    }
   };
 
   const {
