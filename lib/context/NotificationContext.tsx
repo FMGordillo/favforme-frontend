@@ -1,6 +1,7 @@
+import { Notification as NotificationComponent } from "@/components/Notification";
 import { createContext, FunctionComponent, useCallback, useState } from "react";
 
-type Status = "success" | "error" | "info";
+export type Status = "success" | "error" | "info";
 type Notification = { message: string; status: Status } | null;
 type AddError = (message: string, status: Status) => void;
 
@@ -30,6 +31,7 @@ export const NotificationProvider: FunctionComponent = ({ children }) => {
 
   return (
     <NotificationContext.Provider value={contextValue}>
+      <NotificationComponent />
       {children}
     </NotificationContext.Provider>
   );
