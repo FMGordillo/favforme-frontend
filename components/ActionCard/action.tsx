@@ -102,7 +102,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
         />
         <ODS>
-          <Image src="/images/ODS_logo_full.png" width={90} height={75} />
+          <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
           {data?.ods.map((odsImg) => {
             const src = getODSImage(odsImg);
             return <Image key={src} src={src} width={90} height={85} />;
