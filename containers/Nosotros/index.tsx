@@ -27,15 +27,18 @@ export const AboutUsPage: NextPage = () => {
             <p>
               Insertarnos como equipo de fundraising para ONGs, asegurando a los
               donantes que los recursos invertidos llegan a su destino. Nuestra
-              visión es revolucionar la forma de ayudar en la sociedad, queremos
-              que las personas también sean recompensadas por participar.
+              visión es revolucionar la forma de ayudar en la sociedad,{" "}
+              <b>
+                queremos que las personas también sean recompensadas por
+                participar.
+              </b>
             </p>
           </div>
           <div className="img">
             <Image
-              src="/asdasdas"
-              width={100}
-              height={100}
+              src="/images/mision_ffm.webp"
+              width={450}
+              height={350}
               alt="Personas con lapices"
             />
           </div>

@@ -8,7 +8,9 @@ export const Section = styled.section<{ mainScreen?: boolean }>`
     mainScreen &&
     `
     p {
-      font-size: 1.25em;
+      padding: 0 4em;
+      line-height: 2em;
+      font-size: 1.5em;
     }
   `}
 `;
@@ -38,6 +40,14 @@ export const TwoColumnSection = styled.section`
 
   .content {
     text-align: right;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  p {
+    line-height: 1.5em;
+    font-size: 1.25em;
   }
 
   .img {
