@@ -8,6 +8,8 @@ import {
   Section,
   Subtitle,
   TwoColumnSection,
+  Team,
+  Member,
 } from "./styles";
 
 export const AboutUsPage: NextPage = () => {
@@ -86,7 +88,74 @@ export const AboutUsPage: NextPage = () => {
         </HighlightSection>
         <Section>
           <Title>El equipo</Title>
-          TODO: TERMINAR ESTO
+          <Team>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/images/founders/matias_gonzalez.jpeg"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+          </Team>
         </Section>
         <Section>
           <AlliancesSection />
