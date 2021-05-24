@@ -15,10 +15,12 @@ export const IndexPage: NextPage = () => {
 
   return (
     <Layout
+      headProps={{
+        title: "Inicio",
+      }}
       header
       headerProps={{
         isIndex: true,
-        //title: "Estás en FavForMe",
       }}
     >
       <Divider />
