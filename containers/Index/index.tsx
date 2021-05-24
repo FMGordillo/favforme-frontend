@@ -1,4 +1,4 @@
-import { useActions, useNotifications } from "@/hooks";
+import { useActions } from "@/hooks";
 import { NextPage } from "next";
 import { Divider, Layout } from "@/components";
 import {
