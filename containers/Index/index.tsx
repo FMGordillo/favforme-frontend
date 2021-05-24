@@ -12,7 +12,6 @@ import {
 
 export const IndexPage: NextPage = () => {
   const { data, isValidating } = useActions();
-  const { createNotification } = useNotifications();
 
   return (
     <Layout
