@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import { Button, Title } from "@/components";
+import { ButtonLink, Title } from "@/components";
 import { ImageContainer, Container } from "./styles";
 
 const RSE: FunctionComponent = () => {
@@ -21,7 +21,15 @@ const RSE: FunctionComponent = () => {
           interés de crear o participar de este tipo de programas ofreciendo
           productos, servicios, horas de apoyo y hasta fondos
         </p>
-        <Button disabled>Sumá tu empresa</Button>
+        <ButtonLink
+          target="_blank"
+          rel="noreferrer noopener"
+          href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
+            "Quiero sumar mi empresa"
+          )}`}
+        >
+          Sumá tu empresa
+        </ButtonLink>
       </div>
     </Container>
   );

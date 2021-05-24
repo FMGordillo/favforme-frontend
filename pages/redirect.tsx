@@ -15,7 +15,7 @@ const Layout = styled.div`
 const RedirectPage: NextPage = () => {
   return (
     <Layout>
-      <Image width={245} height={192} src="/images/favforme_logo.png" />
+      <Image width={245} height={192} src="/images/favforme_logo.webp" />
       <p>Redireccionando...</p>
     </Layout>
   );

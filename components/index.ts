@@ -9,3 +9,4 @@ export * from "./Modal";
 export * from "./Navbar";
 export * from "./SocialNetworks";
 export * from "./styles";
+export * from "./Form";
