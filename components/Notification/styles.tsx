@@ -5,14 +5,17 @@ export const Container = styled.div<{
   show: boolean;
   status: Status | undefined;
 }>`
-  display: ${({ show }) => (show ? "grid" : "none")};
+  display: grid;
   z-index: 1050;
   position: fixed;
+  left: 0;
   bottom: 0;
   right: 0;
   padding: 1em;
-  margin: 1em;
+  margin: 1em auto;
   min-width: 150px;
+  max-width: 250px;
+  box-shadow: 1px 1px 1px ${({ theme }) => theme.palette.gray.main};
   background-color: ${({ status }) => {
     switch (status) {
       case "success":
@@ -25,8 +28,22 @@ export const Container = styled.div<{
         return "#cce5ff";
     }
   }};
+  transition: all 300ms;
+
+  &.hide {
+    transform: translateY(150%);
+  }
+  &.show {
+    transform: translateY(0);
+  }
 `;
 
-export const Message = styled.span`
-  text-align: right;
+export const Message = styled.div`
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  & > :last-child:hover {
+    cursor: pointer;
+  }
 `;

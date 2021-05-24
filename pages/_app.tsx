@@ -67,11 +67,11 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             height={3}
           />
           <DefaultSeo {...seoConfig} />
-          <ModalProvider>
-            <NotificationProvider>
+          <NotificationProvider>
+            <ModalProvider>
               <Component {...pageProps} />
-            </NotificationProvider>
-          </ModalProvider>
+            </ModalProvider>
+          </NotificationProvider>
         </ThemeProvider>
       </SWRConfig>
     </>

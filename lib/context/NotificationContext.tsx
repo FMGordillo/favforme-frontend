@@ -1,14 +1,20 @@
 import { Notification as NotificationComponent } from "@/components/Notification";
-import { createContext, FunctionComponent, useCallback, useState } from "react";
+import {
+  createContext,
+  FunctionComponent,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 
 export type Status = "success" | "error" | "info";
 type Notification = { message: string; status: Status } | null;
-type AddError = (message: string, status: Status) => void;
+type AddMessage = (message: string, status: Status, timeout?: number) => void;
 
 export interface NotificationsContextValue {
   notification: Notification;
-  addError: AddError;
-  removeError: () => void;
+  createNotification: AddMessage;
+  removeNotification: () => void;
 }
 
 export const NotificationContext = createContext<NotificationsContextValue>(
@@ -16,17 +22,35 @@ export const NotificationContext = createContext<NotificationsContextValue>(
 );
 
 export const NotificationProvider: FunctionComponent = ({ children }) => {
+  const [timeoutFade, setTimeoutFade] = useState(3000);
   const [notification, setNotification] = useState<Notification>(null);
 
-  const removeError = () => setNotification(null);
+  const removeMessage = () => setNotification(null);
 
-  const addError = (message: string, status: Status) =>
+  const addMessage = (message: string, status: Status, timeout = 3000) => {
+    setTimeoutFade(timeout);
     setNotification({ message, status });
+  };
+
+  useEffect(() => {
+    if (!notification) return;
+
+    const timer = setTimeout(() => {
+      setNotification(null);
+    }, timeoutFade);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [notification, timeoutFade]);
 
   const contextValue = {
     notification,
-    addError: useCallback((message, status) => addError(message, status), []),
-    removeError: useCallback(() => removeError(), []),
+    createNotification: useCallback(
+      (message, status, timeout) => addMessage(message, status, timeout),
+      []
+    ),
+    removeNotification: useCallback(() => removeMessage(), []),
   };
 
   return (

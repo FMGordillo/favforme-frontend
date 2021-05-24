@@ -1,6 +1,7 @@
 import { Button, FormInput } from "@/components";
-import { FormikValues, useFormik } from "formik";
+import { useNotifications } from "@/hooks";
 import axios from "axios";
+import { FormikValues, useFormik } from "formik";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import * as yup from "yup";
@@ -34,15 +35,17 @@ const schema = yup.object({
 });
 
 export const DonationUnavailableModal: FunctionComponent = () => {
+  const { createNotification } = useNotifications();
+
   const onSubmit = async (e: FormikValues) => {
-    console.log(e);
     const { status } = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/marketing/donation-user`,
       e
     );
     if (status === 201) {
-      console.log("DONE");
+      createNotification("Recibido, ¡Muchas gracias!", "success");
     } else {
+      createNotification("Algo sucedió, por favor intentá más tarde", "error");
       console.log("OPA", status);
     }
   };
