@@ -7,16 +7,21 @@ export interface HeadProps {
   title?: string;
 }
 
-const HeadComponent: FunctionComponent<HeadProps> = ({ title = "Home" }) => {
+const HeadComponent: FunctionComponent<HeadProps> = ({ title }) => {
   const router = useRouter();
+
   return (
     <>
       <NextSeo
         title={title}
-        openGraph={{ url: `https://favforme.com${router?.asPath}` }}
+        titleTemplate="%s - Fundación FavForMe"
+        openGraph={{
+          title: "Fundación FavForMe",
+          locale: "es-ES",
+          url: `https://favforme.com${router?.asPath}`,
+        }}
       />
       <Head>
-        <title>{title && `${title} - `}Fundación FavForMe</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/fonts.css" rel="stylesheet" />
       </Head>

@@ -59,7 +59,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 }) => {
   const router = useRouter();
   const { isMobileSize } = useMobileSize("md");
-  console.log(isMobileSize);
   return (
     <>
       <NavBar />

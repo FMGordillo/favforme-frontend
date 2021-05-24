@@ -1,4 +1,4 @@
-import { useActions } from "@/hooks";
+import { useActions, useNotifications } from "@/hooks";
 import { NextPage } from "next";
 import { Divider, Layout } from "@/components";
 import {
@@ -15,10 +15,12 @@ export const IndexPage: NextPage = () => {
 
   return (
     <Layout
+      headProps={{
+        title: "Inicio",
+      }}
       header
       headerProps={{
         isIndex: true,
-        //title: "Estás en FavForMe",
       }}
     >
       <Divider />
