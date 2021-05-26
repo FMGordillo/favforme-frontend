@@ -4,6 +4,7 @@ import { ModalContext } from "@/lib/context";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FunctionComponent, useContext, useState } from "react";
+import { Logo } from "../assets";
 import { NavItem } from "./NavItem";
 import { MobileNavigator, Nav, Ul, User } from "./styles";
 
@@ -44,11 +45,7 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         <NavItem href="/nosotros">FavForMe</NavItem>
         <NavItem href="/acciones">Acciones</NavItem>
         <NavItem image href="/">
-          <Image
-            src="/images/favforme_logo_white.webp"
-            width={245}
-            height={192}
-          />
+          <Logo />
         </NavItem>
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem onClick={handleContactClick}>Contacto</NavItem>
