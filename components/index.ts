@@ -1,3 +1,5 @@
+export * from "./assets";
+
 export * from "./ActionCard";
 export * from "./Button";
 export * from "./FirebaseAuth";
