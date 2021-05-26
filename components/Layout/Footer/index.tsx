@@ -1,3 +1,4 @@
+import { Logo } from "@/components";
 import {
   faFacebook,
   faInstagram,
@@ -5,7 +6,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import NextLink from "next/link";
 import { FunctionComponent } from "react";
 import {
@@ -50,11 +50,7 @@ const Footer: FunctionComponent<FooterProps> = () => (
   <FooterContainer>
     <MapSection>
       <div>
-        <Image
-          src="/images/favforme_logo_white.webp"
-          width={245}
-          height={192}
-        />
+        <Logo />
       </div>
       <MapUl>
         <MapItem href="/">Home</MapItem>
