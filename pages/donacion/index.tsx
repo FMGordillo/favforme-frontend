@@ -1,5 +1,5 @@
 import { Layout, Title, Container } from "@/components";
-import { useAction, useUser } from "@/hooks";
+import { useAction } from "@/hooks";
 import { DonationContainer } from "@/containers";
 import { event } from "@/lib/gtag";
 import {
@@ -9,7 +9,6 @@ import {
 } from "next";
 import Image from "next/image";
 import { useEffect } from "react";
-import { withAuthUser } from "next-firebase-auth";
 
 interface GetServerSidePropsReturn {
   props: {
@@ -31,7 +30,6 @@ export async function getServerSideProps(
 const DonationPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
-  const { user } = useUser();
   const { data, isValidating } = useAction({ query });
 
   useEffect(() => {
@@ -70,7 +68,7 @@ const DonationPage: NextPage<
     </Layout>
   ) : (
     <DonationContainer
-      user={user}
+      user={undefined}
       query={query}
       action={action}
       loading={isValidating}
@@ -78,4 +76,4 @@ const DonationPage: NextPage<
   );
 };
 
-export default withAuthUser()(DonationPage);
+export default DonationPage;

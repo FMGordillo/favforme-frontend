@@ -3,7 +3,7 @@ import { event } from "@/lib/gtag";
 import { ActionI } from "@/lib/types";
 import axios from "axios";
 import { useFormik } from "formik";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { DonationForm } from "./Form";
 import { ActionContainer } from "./styles";
 
@@ -106,14 +106,6 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     validate,
     onSubmit: handleSubmit,
   });
-
-  useEffect(() => {
-    formik.setValues({
-      email: user?.email,
-      amount: formik.values.amount,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
 
   return (
     <Layout header title={`Donacion - ${action?.title}`}>
