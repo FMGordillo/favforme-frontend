@@ -2,7 +2,6 @@ export * from "./assets";
 
 export * from "./ActionCard";
 export * from "./Button";
-export * from "./FirebaseAuth";
 export * from "./Head";
 export * from "./Layout";
 export * from "./Loading";
