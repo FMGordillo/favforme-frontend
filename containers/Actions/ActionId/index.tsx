@@ -2,6 +2,7 @@ import { Button, Divider, Layout, Title } from "@/components";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import { toPascalCase } from "@/lib";
 import { ActionI } from "@/lib/types";
+import { isNotProd } from "@/utils";
 import { NextPage } from "next";
 import Image from "next/image";
 import { ActionCard } from "./components";
@@ -46,7 +47,7 @@ export const ActionPage: NextPage<ActionProps> = ({
           <LeftColumn>
             <div>
               <Image
-                src={"/images/accion_placeholder_1.jpg" || "/"}
+                src={action?.mainImage || "/images/accion_placeholder_1.jpg"}
                 alt="Resumen"
                 width={510}
                 height={350}
@@ -59,7 +60,12 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
-            <ActionCard action={action} queryId={query?.id} amounts={amounts} />
+            <ActionCard
+              action={action}
+              queryId={query?.id}
+              amounts={amounts}
+              canDonate={isNotProd}
+            />
             <h2>Datos de la ONG</h2>
             <Image
               src={action?.organization?.logo || "/"}

@@ -3,11 +3,8 @@ import { Modal } from "../";
 import React from "react";
 
 describe("Modal component", () => {
-  const onClose = jest.fn();
-
   it("renders", () => {
-    const open = false;
-    const component = render(<Modal open={open} onClose={onClose} />);
+    const component = render(<Modal />);
     expect(component).toMatchSnapshot();
   });
 

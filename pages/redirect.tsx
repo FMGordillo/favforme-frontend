@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Image from "next/image";
+import { Logo } from "@/components";
 import styled from "styled-components";
 
 const Layout = styled.div`
@@ -15,7 +15,7 @@ const Layout = styled.div`
 const RedirectPage: NextPage = () => {
   return (
     <Layout>
-      <Image width={245} height={192} src="/images/favforme_logo.png" />
+      <Logo />
       <p>Redireccionando...</p>
     </Layout>
   );

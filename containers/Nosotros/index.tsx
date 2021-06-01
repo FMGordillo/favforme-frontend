@@ -2,86 +2,160 @@ import { Container, Layout, Title } from "@/components";
 import { NextPage } from "next";
 import Image from "next/image";
 import { AlliancesSection } from "../Index/components";
-import { Section, TwoColumnSection } from "./styles";
+import {
+  HighlightSection,
+  ThreeColumns,
+  Section,
+  Subtitle,
+  TwoColumnSection,
+  Team,
+  Member,
+} from "./styles";
 
 export const AboutUsPage: NextPage = () => {
   return (
     <Layout header title="Somos FavForMe">
-      <Container>
-        <Section>
+      <Container spacing={2}>
+        <Section mainScreen>
           <p>
-            FavForMe es una plataforma de crowdfunding que ayuda a realizar
-            acciones de impacto social positivo. Conectando a las personas con
-            ONGs y empresas socialmente responsables.
-          </p>
-          <p>
-            Nuestra bitácora de navegación son los Objetivos de Desarrollo
-            Sostenibles (ODS) propuestos por la ONU.
+            La Fundación FavForMe impulsa el desarrollo de acciones de impacto
+            social positivo, ayudando a las ONGs a conseguir los recursos a
+            través de crowdfunding
           </p>
         </Section>
         <TwoColumnSection>
           <div className="content">
-            <Title>Misión</Title>
+            <Title>Misión FavForMe</Title>
             <p>
               Insertarnos como equipo de fundraising para ONGs, asegurando a los
               donantes que los recursos invertidos llegan a su destino. Nuestra
-              visión es revolucionar la forma de ayudar en la sociedad, queremos
-              que las personas también sean recompensadas por participar.
+              visión es revolucionar la forma de ayudar en la sociedad,{" "}
+              <b>
+                queremos que las personas también sean recompensadas por
+                participar.
+              </b>
             </p>
           </div>
           <div className="img">
             <Image
-              src="/asdasdas"
-              width={100}
-              height={100}
+              src="/images/mision_ffm.webp"
+              width={450}
+              height={350}
               alt="Personas con lapices"
             />
           </div>
         </TwoColumnSection>
-        <Section>
-          <Title>Nuestra historia</Title>
-          <p>
-            Hace 7 años Matías (CEO FOUNDER) hacía fletes. Un día un amigo le
-            pidió un favor, necesitaba un flete pero no tenía dinero, y Matías
-            con gusto accedió. En ese momento se dio cuenta de que le gustaba la
-            sensación que dejaba ayudar a otra persona. Un día viendo la
-            película, “Cadena de favores” tuvo una revelación, y sintió que
-            debía hacer algo más grande con la idea de ayudar.
-          </p>
-          <p>
-            Matías le presenta la idea a su amigo Ryan y comenzaron a construir
-            FAVFORME un proyecto creado para pedir y ofrecer favores entre
-            personas, como una cadena de favores. Hubo mucho trabajo y dinero
-            invertido, además de malas experiencias con empresas de desarrollo
-            tecnológico (dos en Argentina y una en India). En la última
-            experiencia, una empresa Argentina les aconseja ser un app mobile.
-            Lograron construir FAVFORME, pero nunca se pensó en cómo se iba a
-            conseguir revenue. En este punto se quedaron sin recursos y Ryan se
-            va del proyecto.
-          </p>
-          <p>
-            Matías analiza la situación y se da cuenta que su proyecto no
-            avanzaba porque no tenía la formación necesaria. Ya hace más de tres
-            años que estudia relaciones públicas, participando paralelamente en
-            capacitaciones, charlas y todo lo referido a emprendedurismo. Así
-            fue que conoció a más de 15 ONGs con las cuales conversó y mostraron
-            interés de participar en FavForMe. A su vez algunas organizaciones
-            lo pusieron en contacto con empresas que tenían la iniciativa de
-            crear algún programa de RSE con el proyecto, pero Matías estaba
-            solo.
-          </p>
-          <p>
-            En el 2019 buscando en internet “cómo encontrar un co-founder”,
-            descubre el programa del Founder Institute donde fue becado con la
-            mitad del curso. Mientras participaba del programa, Matías fue
-            armando un equipo, junto a un abogado, un contador, un diseñador
-            gráfico, y un desarrollador. Hoy en día, con una nueva mirada al
-            proyecto FAVFORME
-          </p>
-        </Section>
+        <HighlightSection>
+          <Title weight="500">Que venimos a resolver</Title>
+          <ThreeColumns>
+            <div>
+              <Subtitle as="h2">ONG&apos;s</Subtitle>
+              <p>
+                Sabemos que muchas organizaciones no gubernamentales, y sin
+                fines de lucro, suelen bajar los brazos frente a la
+                imposibilidad de entregar más de lo que tienen.{" "}
+                <b>
+                  En la mayoría de los casos terminan agotándose por no contar
+                  con los recursos suficientes para cumplir sus objetivos.
+                </b>
+              </p>
+            </div>
+            <div>
+              <Subtitle as="h2">Empresas</Subtitle>
+              <p>
+                También <b>existen muchas pequeñas y medianas empresas</b> que,
+                si bien no cuentan con un área específica dedicada a la
+                responsabilidad social,{" "}
+                <b>
+                  tienen interés de crear o participar de este tipo de programas
+                </b>{" "}
+                ofreciendo productos, servicios, horas de apoyo y hasta fondos.
+              </p>
+            </div>
+            <div>
+              <Subtitle as="h2">ODS</Subtitle>
+              <p>
+                El objetivo es permitir a las ONGs y, a las empresas que se
+                sumen, dar un primer paso en este camino y{" "}
+                <b>
+                  ofrecerles una oportunidad de alcanzar Objetivos de Desarrollo
+                  Sostenible
+                </b>{" "}
+                reafirmando su compromiso hacia la comunidad.
+              </p>
+            </div>
+          </ThreeColumns>
+        </HighlightSection>
         <Section>
           <Title>El equipo</Title>
-          TODO: TERMINAR ESTO
+          <Team>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/images/founders/matias_gonzalez.jpeg"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+            <Member>
+              <Image
+                src="/asdasd"
+                alt="Foto de Matias Gonzalez"
+                width={200}
+                height={200}
+              />
+              <span>Matias Gonzalez</span>
+              <br />
+              <span>Fundador</span>
+            </Member>
+          </Team>
         </Section>
         <Section>
           <AlliancesSection />

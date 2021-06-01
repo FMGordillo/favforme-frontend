@@ -6,12 +6,11 @@ import NextNprogress from "nextjs-progressbar";
 import { useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { SWRConfig } from "swr";
-import { ModalProvider } from "../lib/context";
+import { ModalProvider, NotificationProvider } from "../lib/context";
 import * as gtag from "../lib/gtag";
 import { fetcher } from "../lib/queries";
 import seoConfig from "../lib/seo.config";
-import initAuth from "../utils/initAuth";
-import { theme } from "../utils/styled";
+import { lightTheme } from "../utils/styled";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -27,12 +26,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-initAuth();
-
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
+  // TODO: Primero definir los colores, luego la metodología, y recién ahí habilitamos esto
+  // const darkMode = useDarkMode();
+  // const theme = darkMode.value ? darkTheme : lightTheme;
+  const theme = lightTheme;
 
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
@@ -63,9 +64,11 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
             height={3}
           />
           <DefaultSeo {...seoConfig} />
-          <ModalProvider>
-            <Component {...pageProps} />
-          </ModalProvider>
+          <NotificationProvider>
+            <ModalProvider>
+              <Component {...pageProps} />
+            </ModalProvider>
+          </NotificationProvider>
         </ThemeProvider>
       </SWRConfig>
     </>

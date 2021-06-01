@@ -81,7 +81,9 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <script src="noflash.js" />
           <Main />
+          <div id="modal" />
           <NextScript />
         </body>
       </Html>

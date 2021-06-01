@@ -12,6 +12,7 @@ interface MobileNavigatorProps {
 interface ItemProps {
   image?: boolean;
   current?: boolean;
+  isProfileButton?: boolean;
 }
 
 export const Nav = styled.nav<NavProps>`
@@ -24,7 +25,7 @@ export const Nav = styled.nav<NavProps>`
   transition: all 300ms;
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    /* TODO: Finish this */
+    color: red;
   }
 `;
 export const MobileNavigator = styled.div<MobileNavigatorProps>`
@@ -89,6 +90,12 @@ export const Item = styled.li<ItemProps>`
     color: ${({ current, theme }) =>
       current ? theme.palette.secondary.main : "white"};
   }
+
+  display: ${({ isProfileButton }) => (isProfileButton ? "none" : "block")};
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: block;
+  }
 `;
 export const Link = styled.a`
   font-weight: 500;
@@ -103,15 +110,25 @@ export const Link = styled.a`
   }
 `;
 
-export const SpanLink = styled.span`
-  font-weight: 500;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  transition: all 300ms;
-  &:hover {
-    font-weight: 700;
-    color: ${({ theme }) => theme.palette.secondary.main};
+export const User = styled.div`
+  position: absolute;
+  background: white;
+  margin: ${({ theme }) => theme.spacing(18)}px 0;
+  padding: ${({ theme }) => theme.spacing(3)}px;
+  padding-right: ${({ theme }) => theme.spacing(6)}px;
+  top: 0;
+  right: 0;
+  border-radius: 20px 0 0 20px;
+  p {
+    color: ${({ theme }) => theme.palette.primary.main};
+    font-weight: bolder;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: none;
+  }
+  :hover {
+    cursor: pointer;
   }
 `;

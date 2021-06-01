@@ -1,40 +1,14 @@
-import { createContext, FunctionComponent, ReactNode, useState } from "react";
+import { useModal, UseModalReturn } from "@/components/Modal/useModal";
+import { createContext, FunctionComponent } from "react";
 import { Modal } from "../../components";
-
-interface UseModalReturn {
-  modal: boolean;
-  modalTitle?: string;
-  modalContent: ReactNode;
-  handleModal: (content?: ReactNode) => void;
-}
 
 export const ModalContext = createContext<UseModalReturn>({} as UseModalReturn);
 
-const useModal = (): UseModalReturn => {
-  const [modal, setModal] = useState<boolean>(false);
-  const [modalContent, setModalContent] = useState<ReactNode>("");
-
-  const handleModal = (content: ReactNode = false) => {
-    setModal(!modal);
-    if (content) {
-      setModalContent(content);
-    }
-  };
-
-  return {
-    modal,
-    modalContent,
-    handleModal,
-  };
-};
-
 export const ModalProvider: FunctionComponent = ({ children }) => {
-  const data = useModal();
+  const { modal, handleModal, modalContent } = useModal();
   return (
-    <ModalContext.Provider value={data}>
-      <Modal open={data.modal} onClose={data.handleModal}>
-        {data.modalContent}
-      </Modal>
+    <ModalContext.Provider value={{ modal, handleModal, modalContent }}>
+      <Modal />
       {children}
     </ModalContext.Provider>
   );

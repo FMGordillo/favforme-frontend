@@ -2,6 +2,7 @@ import { useActions } from "@/hooks";
 import { NextPage } from "next";
 import { Divider, Layout } from "@/components";
 import {
+  RSE,
   ActionsComponent as Actions,
   AlliancesSection,
   ContactSection,
@@ -14,18 +15,22 @@ export const IndexPage: NextPage = () => {
 
   return (
     <Layout
+      headProps={{
+        title: "Inicio",
+      }}
       header
       headerProps={{
         isIndex: true,
-        title: "Estás en FavForMe",
-        subtitle: "No dejemos a nadie atrás",
       }}
     >
       <Divider />
       <IntroOne />
+      <Divider />
       <Actions actions={data?.actions} loading={isValidating} />
       <Divider />
       <CallToActionSection />
+      <Divider />
+      <RSE />
       <Divider />
       <AlliancesSection />
       <Divider />

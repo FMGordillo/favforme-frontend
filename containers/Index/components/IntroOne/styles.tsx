@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { Container, Text } from "@/components/styles";
+import { ButtonLink, Container } from "@/components";
 
-export const StyledText = styled(Text)`
-  color: #47b7e3;
+export const HighlightText = styled.p`
+  color: #027aa8;
+  font-size: 1.25em;
   font-weight: 700;
   text-align: center !important;
+  padding: 0 2em;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 2em 0 2.5em;
   }
@@ -16,7 +18,8 @@ export const Main = styled.section`
   grid-template-areas:
     "left-image text right-image"
     "ods ods ods"
-    "ods-container ods-container ods-container";
+    "ods-container ods-container ods-container"
+    ". button .";
 
   /* TODO: Queda asi porque se ve horrible en un tamaño intermedio. La contra del static */
 
@@ -24,7 +27,8 @@ export const Main = styled.section`
     grid-template-areas:
       "text text text"
       "ods ods ods"
-      "ods-container ods-container ods-container";
+      "ods-container ods-container ods-container"
+      ". button .";
     & > :first-child {
       display: none !important;
     }
@@ -46,9 +50,6 @@ export const TextContainer = styled.div`
   align-self: center;
   text-align: center;
   margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
-  & > p {
-    text-align: justify;
-  }
 
   ${({ theme }) => theme.breakpoints.up("xl")} {
     margin: 0 ${({ theme }) => theme.spacing(1)}em;
@@ -62,10 +63,12 @@ export const TextContainer = styled.div`
 `;
 
 export const ODSLogo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   grid-area: ods;
   justify-self: center;
-  margin: 0 ${({ theme }) => theme.spacing(0.25)}em;
-  margin-bottom: 1.25em;
+  margin: ${({ theme }) => theme.spacing(0.5)}em 0;
 `;
 
 export const ODSContainer = styled(Container)`
@@ -103,4 +106,11 @@ export const ODSContainer = styled(Container)`
     width: 125px;
     opacity: 0.85;
   }
+`;
+
+export const ODSButton = styled(ButtonLink)`
+  justify-self: center;
+  width: 300px;
+  margin-top: 2em;
+  grid-area: button;
 `;

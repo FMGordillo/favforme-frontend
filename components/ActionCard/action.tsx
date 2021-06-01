@@ -1,4 +1,15 @@
 import { SocialNetworks } from "@/components";
+import { ModalContext } from "@/lib/context";
+import { parseToCurrency } from "@/lib/data";
+import { getODSImage } from "@/lib/ods_image";
+import { ActionI } from "@/lib/types";
+import { isNotProd } from "@/utils";
+import { differenceInDays, formatDistance } from "date-fns";
+import esES from "date-fns/locale/es";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { FunctionComponent, useContext } from "react";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -8,26 +19,21 @@ import {
   DueDate,
   ImageContainer,
   MainContent,
+  ODS,
   Percentage,
   ProgressBar,
   Title,
-  TitleContainer,
-} from "@/components/ActionCard/styles";
-import { parseToCurrency } from "@/lib/data";
-import { ActionI } from "@/lib/types";
-import { formatDistance, differenceInDays } from "date-fns";
-import esES from "date-fns/locale/es";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FunctionComponent } from "react";
+} from "./styles";
+import { DonationUnavailableModal } from "@/components/Modal/components";
 
 interface ActionProps {
+  carousel?: boolean;
   data?: ActionI;
 }
 
-const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
+const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
+  const { handleModal } = useContext(ModalContext);
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
 
@@ -44,7 +50,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
           locale: esES,
         });
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueDate", error);
@@ -62,7 +68,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
       if (createdAt && endDate) {
         return differenceInDays(new Date(endDate), new Date(createdAt));
       } else {
-        throw "No endDate was provided, cannot calculate";
+        console.log("No endDate was provided, cannot calculate");
       }
     } catch (error) {
       console.error("calculateDueImportance", error);
@@ -74,36 +80,52 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
     data?.closedAt
   );
 
+  const urgency = daysUntilFinished
+    ? daysUntilFinished < 21 && daysUntilFinished > 14
+      ? "medium"
+      : daysUntilFinished <= 14
+      ? "high"
+      : "meh"
+    : "meh";
+
   return (
-    <Container>
-      {/* <Link href={`/acciones/${data?.id}`}> */}
+    <Container carousel={carousel}>
       <ImageContainer>
-        <DueDate
-          urgency={
-            daysUntilFinished && daysUntilFinished > 14
-              ? "high"
-              : daysUntilFinished && daysUntilFinished > 21
-              ? "medium"
-              : "meh"
-          }
-        >
+        <DueDate show={!!data?.closedAt} urgency={urgency}>
           {calculateDueDate(data?.createdAt, data?.closedAt)}
         </DueDate>
         <Image
           width={1400}
           height={1100}
-          layout="responsive"
+          layout="intrinsic"
           alt="Imagen representativa de la acción"
           src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
         />
+        <ODS>
+          <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
+          {data?.ods.map((odsImg) => {
+            const src = getODSImage(odsImg);
+            return <Image key={src} src={src} width={90} height={85} />;
+          })}
+        </ODS>
       </ImageContainer>
       {/* </Link> */}
       <MainContent>
-        <TitleContainer>
+        <div>
           <Link href={`/acciones/${data?.id}`}>
-            <Title>{data?.title.toUpperCase()}</Title>
+            <Title
+              color={
+                urgency === "high"
+                  ? "red"
+                  : urgency === "medium"
+                  ? "yellow"
+                  : "inherit"
+              }
+            >
+              {data?.title.toUpperCase()}
+            </Title>
           </Link>
-        </TitleContainer>
+        </div>
         <AmountCollected>
           ${parseToCurrency(currentAmount)}
           .-
@@ -130,18 +152,21 @@ const ActionCard: FunctionComponent<ActionProps> = ({ data }) => {
         <ButtonContainer>
           <Button
             onClick={() =>
-              router.push({
-                pathname: "/donacion",
-                query: {
-                  action: data?.id,
-                },
-              })
+              isNotProd
+                ? router.push({
+                    pathname: "/donacion",
+                    query: {
+                      action: data?.id,
+                    },
+                  })
+                : handleModal(<DonationUnavailableModal />)
             }
           >
             DONAR
           </Button>
           <Button
             color="gray"
+            textColor="black"
             hoverVariant="dark"
             onClick={() => router.push(`/acciones/${data?.id}`)}
           >

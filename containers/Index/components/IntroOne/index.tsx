@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Text, Title } from "@/components/styles";
+import { Container, Text, Title } from "@/components";
 import {
   LeftHandImage,
   Main,
   ODSContainer,
   ODSLogo,
   RightHandImage,
-  StyledText,
+  HighlightText,
   TextContainer,
+  ODSButton,
 } from "./styles";
 
 const sdg = [
@@ -45,6 +46,9 @@ const IntroOneSection: FunctionComponent = () => {
     return sdg[newPosition];
   };
 
+  const generateImageUrl = (index: string) =>
+    `/images/ods-images/ods-es-${index}.png`;
+
   useEffect(() => {
     const timer = setInterval(() => {
       setICurrent((prev) => (prev >= sdgLength - 1 ? 0 : prev + 1));
@@ -68,18 +72,13 @@ const IntroOneSection: FunctionComponent = () => {
       </LeftHandImage>
       <TextContainer>
         <Title>
-          REALIZÁ ACCIONES DE IMPACTO POSITIVO Y TRANSPARENTE CON TU EMPRESA
+          SOMOS LA PRIMERA PLATAFORMA DE CROWDFUNDING SOCIAL DE LATINOAMÉRICA
         </Title>
         <Text>
-          FavForMe es la plataforma tecnológica perfecta, para generar
-          Responsabilidad Social Empresarial con tu organización. Aportá a
-          diferentes ACCIONES de forma simple, clara y segura, logrando entre
-          todos alcanzar metas increíbles.
+          En FavForMe creamos un espacio que ayuda a las ONGs a conseguir los
+          recursos necesarios para realizar acciones de impacto social a través
+          de crowdfunding
         </Text>
-        <StyledText>
-          Sé parte de los OBJETIVOS DE DESARROLLO SOSTENIBLES 2015-2030
-          propuestos por la ONU
-        </StyledText>
       </TextContainer>
       <RightHandImage>
         <Image
@@ -91,66 +90,51 @@ const IntroOneSection: FunctionComponent = () => {
         />
       </RightHandImage>
       <ODSLogo>
-        <Image width={360} height={40} src="/images/ods.png" alt="ODS Logo" />
+        <Image width={360} height={40} src="/images/ods.webp" alt="ODS Logo" />
+        <Container>
+          <HighlightText>
+            El equipo de FavForMe se especializó en los Objetivos de Desarrollo
+            Sustentables (ODS) definidos por la Organización de las Naciones
+            Unidas y ha desarrollado mejores prácticas para lograr alcanzarlos
+          </HighlightText>
+        </Container>
       </ODSLogo>
       <ODSContainer>
         <div className="img smallest">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-3)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-3))} />
         </div>
         <div className="img smaller">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-2)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-2))} />
         </div>
         <div className="img small">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(-1)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(-1))} />
         </div>
         <div>
           <Image
             width={150}
             height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${sdg[iCurrent]}.png`}
+            src={generateImageUrl(sdg[iCurrent])}
           />
         </div>
         <div className="img small">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(1)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(1))} />
         </div>
         <div className="img smaller">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(2)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(2))} />
         </div>
         <div className="img smallest">
-          <Image
-            width={150}
-            height={150}
-            // TODO: Cambiar a "es"
-            src={`/images/ods-images/sdg-en-${getItem(3)}.png`}
-          />
+          <Image width={150} height={150} src={generateImageUrl(getItem(3))} />
         </div>
       </ODSContainer>
+      <ODSButton
+        color="#027aa8"
+        hoverColor="#003f57"
+        target="_blank"
+        rel="noreferrer noopener"
+        href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+      >
+        APRENDER SOBRE ODS
+      </ODSButton>
     </Main>
   );
 };
