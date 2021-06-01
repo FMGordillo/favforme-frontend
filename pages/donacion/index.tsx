@@ -34,7 +34,6 @@ const DonationPage: NextPage<
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
-      console.log("TRACKED");
       event({
         action: "unable_donation",
         category: "donation",

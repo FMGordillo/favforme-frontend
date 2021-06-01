@@ -1,18 +1,16 @@
 import { ContactModal } from "@/components/Modal/components";
 import { ModalContext } from "@/lib/context";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import React, { FunctionComponent, useContext, useState } from "react";
 import { Logo } from "../assets";
 import { NavItem } from "./NavItem";
-import { MobileNavigator, Nav, Ul, User } from "./styles";
+import { MobileNavigator, Nav, Ul } from "./styles";
 
 interface NavBarProps {
   isScrolled?: boolean;
 }
 
 const NavBar: FunctionComponent<NavBarProps> = () => {
-  const router = useRouter();
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
 
@@ -43,13 +41,13 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         </NavItem>
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem onClick={handleContactClick}>Contacto</NavItem>
-        <NavItem isProfileButton onClick={() => router.push("/perfil")}>
+        {/* <NavItem isProfileButton onClick={() => router.push("/perfil")}>
           {"TODO: CHANGE ME"}
         </NavItem>
         <User onClick={() => router.push("/perfil")}>
           <Image src="/images/icon_user.svg" width={75} height={75} />
-          <p>{"TODO: CHANGE ME"}</p>
-        </User>
+          <p>{"TODO: CHANGE ME"}</p> 
+        </User>*/}
       </Ul>
     </Nav>
   );
