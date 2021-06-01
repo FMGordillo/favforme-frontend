@@ -27,6 +27,9 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   action,
   loading,
 }) => {
+  const donationTitle = action?.title
+    ? `Donacion - ${action.title}`
+    : "Donacion";
   const [donationUrl, setDonationUrl] = useState("");
   const [submitLoading, setSubmitLoading] = useState(false);
 
@@ -108,7 +111,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   });
 
   return (
-    <Layout header title={`Donacion - ${action?.title}`}>
+    <Layout header title={donationTitle}>
       <Container>
         <ActionContainer>
           <p>
