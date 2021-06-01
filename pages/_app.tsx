@@ -10,7 +10,6 @@ import { ModalProvider, NotificationProvider } from "../lib/context";
 import * as gtag from "../lib/gtag";
 import { fetcher } from "../lib/queries";
 import seoConfig from "../lib/seo.config";
-import initAuth from "../utils/initAuth";
 import { lightTheme } from "../utils/styled";
 
 const GlobalStyle = createGlobalStyle`
@@ -26,8 +25,6 @@ const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
   }
 `;
-
-initAuth();
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
