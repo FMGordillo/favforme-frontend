@@ -1,4 +1,5 @@
 import { Container, Layout, Title } from "@/components";
+import { isNotProd } from "@/utils";
 import { NextPage } from "next";
 import Image from "next/image";
 import { AlliancesSection } from "../Index/components";
@@ -86,7 +87,7 @@ export const AboutUsPage: NextPage = () => {
             </div>
           </ThreeColumns>
         </HighlightSection>
-        <Section>
+        <Section style={{ display: isNotProd ? "block" : "none" }}>
           <Title>El equipo</Title>
           <Team>
             <Member>
