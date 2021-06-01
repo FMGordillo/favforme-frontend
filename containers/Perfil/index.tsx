@@ -1,13 +1,9 @@
 import { useFormik } from "formik";
 import { Button, Container, Layout } from "@/components";
-import { useUser } from "@/hooks";
 import { NextPage } from "next";
 import Image from "next/image";
-import { useEffect } from "react";
 
 export const ProfilePage: NextPage = () => {
-  const { user, firebaseUser } = useUser();
-
   const handleSubmit = () => {
     console.log("WIP");
   };
@@ -21,15 +17,6 @@ export const ProfilePage: NextPage = () => {
     onSubmit: handleSubmit,
   });
 
-  useEffect(() => {
-    formik.setValues({
-      email: user?.email,
-      name: user?.name,
-      surname: user?.surname,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.name, user?.email, user?.surname]);
-
   return (
     <Layout header title="Tu Perfil">
       <Container>
@@ -38,7 +25,7 @@ export const ProfilePage: NextPage = () => {
           <div className="img">
             {/* TODO: agregar algun placeholder para esto */}
             <Image
-              src={firebaseUser?.photoURL || "/"}
+              src={"/images/avatar_placeholder.gif"}
               alt="Avatar"
               height={100}
               width={100}
