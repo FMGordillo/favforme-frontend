@@ -1,5 +1,4 @@
 import { ContactModal } from "@/components/Modal/components";
-import { useUser } from "@/hooks";
 import { ModalContext } from "@/lib/context";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -14,13 +13,8 @@ interface NavBarProps {
 
 const NavBar: FunctionComponent<NavBarProps> = () => {
   const router = useRouter();
-  const { firebaseData } = useUser();
   const { handleModal } = useContext(ModalContext);
   const [open, setOpen] = useState(false);
-
-  const userButtonTxt = !firebaseData.email
-    ? "Ingresar"
-    : firebaseData.firebaseUser?.displayName?.split(" ")[0];
 
   const handleMobileOpen = () => {
     setOpen(!open);
@@ -50,11 +44,11 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem onClick={handleContactClick}>Contacto</NavItem>
         <NavItem isProfileButton onClick={() => router.push("/perfil")}>
-          {userButtonTxt}
+          {"TODO: CHANGE ME"}
         </NavItem>
         <User onClick={() => router.push("/perfil")}>
           <Image src="/images/icon_user.svg" width={75} height={75} />
-          <p>{userButtonTxt}</p>
+          <p>{"TODO: CHANGE ME"}</p>
         </User>
       </Ul>
     </Nav>
