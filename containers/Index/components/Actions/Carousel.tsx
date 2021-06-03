@@ -1,8 +1,6 @@
 import { LoadingAction } from "@/components";
-import { Container } from "@/components/styles";
-import { calculateBreakpoint } from "@/utils/styled";
+import { Container, Section } from "./styles";
 import { Children, FunctionComponent, useEffect, useState } from "react";
-import styled from "styled-components";
 
 interface CarouselProps {
   current?: number;
@@ -10,21 +8,6 @@ interface CarouselProps {
   handleBack: () => void;
   handleForward: () => void;
 }
-
-const StyledContainer = styled(Container)<{ hasData?: boolean }>`
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  ${({ hasData }) => hasData && `box-shadow: 1em 1em #4963d3;`}
-`;
-
-const Section = styled.div<{ active?: boolean }>`
-  display: ${({ active }) => (active ? "block" : "none")};
-  min-width: ${calculateBreakpoint("md")};
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    min-width: auto;
-  }
-`;
 
 // const Icon = styled(FontAwesomeIcon)`
 //   width: 2.5em !important;
@@ -50,7 +33,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   }, [current]);
 
   return (
-    <StyledContainer hasData={hasData || loading}>
+    <Container hasData={hasData || loading}>
       {/* <Icon icon={faArrowAltCircleLeft} onClick={handleBack} /> */}
       {hasData ? (
         !!childrenMap &&
@@ -67,7 +50,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({
         <span>Por favor, intentá en otro momento</span>
       )}
       {/* <Icon icon={faArrowAltCircleRight} onClick={handleForward} /> */}
-    </StyledContainer>
+    </Container>
   );
 };
 

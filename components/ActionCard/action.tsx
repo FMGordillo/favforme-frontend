@@ -34,8 +34,8 @@ interface ActionProps {
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
   const { handleModal } = useContext(ModalContext);
-  const currentAmount = data?.current;
-  const finalAmount = data?.objective;
+  const currentAmount = Number(data?.current);
+  const finalAmount = Number(data?.objective);
 
   /**
    * TODO: Unificar de alguna forma ambas funciones
@@ -131,7 +131,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           .-
         </AmountCollected>
         <AmountSubtitle>
-          aportando voluntariamente de ${parseToCurrency(finalAmount)}
+          recaudado de <b>${parseToCurrency(finalAmount)}</b>
         </AmountSubtitle>
         <ProgressBar>
           <progress
