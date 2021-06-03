@@ -7,6 +7,7 @@ export const HighlightText = styled.p`
   font-weight: 700;
   text-align: center !important;
   padding: 0 2em;
+  max-width: 1024px;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 2em 0 2.5em;
   }

@@ -81,6 +81,8 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
         textColor="#2142d2"
         onClick={() => router.push("/acciones")}
         style={{ marginTop: "2em", marginBottom: "2em" }}
+        hoverColor="primary"
+        hoverVariant="light"
       >
         Ver todas las acciones
       </Button>
