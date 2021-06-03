@@ -1,6 +1,6 @@
 import { SocialNetworks } from "@/components";
 import { ModalContext } from "@/lib/context";
-import { parseToCurrency } from "@/lib/data";
+import { parseToCurrency, getProgressValue } from "@/lib/data";
 import { getODSImage } from "@/lib/ods_image";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
@@ -34,8 +34,8 @@ interface ActionProps {
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
   const { handleModal } = useContext(ModalContext);
-  const currentAmount = Number(data?.current);
-  const finalAmount = Number(data?.objective);
+  const currentAmount = data?.current;
+  const finalAmount = data?.objective;
 
   /**
    * TODO: Unificar de alguna forma ambas funciones
@@ -136,18 +136,11 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <ProgressBar>
           <progress
             max="100"
-            value={(
-              ((currentAmount || 0) * 100) /
-              (finalAmount || currentAmount || 0)
-            ).toFixed()}
+            value={getProgressValue({ currentAmount, finalAmount })}
           ></progress>
         </ProgressBar>
         <Percentage>
-          {(
-            ((currentAmount || 0) * 100) /
-            (finalAmount || currentAmount || 0)
-          ).toFixed()}
-          %
+          {getProgressValue({ currentAmount, finalAmount })}%
         </Percentage>
         <ButtonContainer>
           <Button
