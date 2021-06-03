@@ -21,11 +21,11 @@ export const ContactModal: FunctionComponent = () => {
             <a
               target="_blank"
               rel="noreferrer noopener"
-              href={`https://wa.me/5491123993440?text=${encodeURIComponent(
-                "Vengo del Landing!"
+              href={`https://wa.me/541150592054?text=${encodeURIComponent(
+                "Vengo del sitio web!"
               )}`}
             >
-              +5491123993440
+              +54 11 5059 2054
             </a>
           </p>
           <p>
@@ -33,9 +33,9 @@ export const ContactModal: FunctionComponent = () => {
             <a
               rel="noreferrer noopener"
               target="_blank"
-              href="tel:+5491123993440"
+              href="tel:+541150592054"
             >
-              +5491123993440
+              +54 11 5059 2054
             </a>
           </p>
           <p>
