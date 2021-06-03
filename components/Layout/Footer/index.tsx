@@ -53,13 +53,11 @@ const Footer: FunctionComponent<FooterProps> = () => (
         <Logo />
       </div>
       <MapUl>
-        <MapItem href="/">Home</MapItem>
-        <MapItem href="/#call_to_actions">FavForMe</MapItem>
         <MapItem href="/#actions">Acciones</MapItem>
-        <MapItem href="/#brands">Alianzas</MapItem>
-        {/* <MapItem onClick={toggleModal}>Contacto</MapItem> */}
-        {/* <MapItem href="/privacy">Política de Privacidad</MapItem> */}
-        {/* <MapItem href="/terms_and_conditions">Términos y Condiciones</MapItem> */}
+        <MapItem href="/#call_to_actions">FavForMe</MapItem>
+        <MapItem href="/#brands">Empresas</MapItem>
+        <MapItem onClick={() => console.log("PENDING")}>Contacto</MapItem>
+        <MapItem href="/terms_and_conditions">Términos de uso</MapItem>
       </MapUl>
     </MapSection>
     <SocialNetworks>
