@@ -36,6 +36,13 @@ const AlliancesSection: FunctionComponent = () => (
       <a target="_blank" href="https://fi.co/" rel="noreferrer noopener">
         <Image src="/images/alianzas_06.png" width={122} height={122} />
       </a>
+      <a
+        target="_blank"
+        href="https://hospicemadreteresa.org.ar"
+        rel="noreferrer noopener"
+      >
+        <Image src="/images/alianzas_07.png" width={142} height={103} />
+      </a>
     </ImagesContainer>
   </Container>
 );

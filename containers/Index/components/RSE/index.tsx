@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import { ButtonLink, Title } from "@/components";
-import { ImageContainer, Container } from "./styles";
+import { Title } from "@/components";
+import { Button, ImageContainer, Container } from "./styles";
 
 const RSE: FunctionComponent = () => {
   return (
@@ -21,7 +21,7 @@ const RSE: FunctionComponent = () => {
           interés de crear o participar de este tipo de programas ofreciendo
           productos, servicios, horas de apoyo y hasta fondos
         </p>
-        <ButtonLink
+        <Button
           target="_blank"
           rel="noreferrer noopener"
           href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
@@ -29,7 +29,7 @@ const RSE: FunctionComponent = () => {
           )}`}
         >
           Sumá tu empresa
-        </ButtonLink>
+        </Button>
       </div>
     </Container>
   );

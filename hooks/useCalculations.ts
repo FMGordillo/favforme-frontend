@@ -1,4 +1,4 @@
-import { parseToCurrency } from "../lib/data";
+import { getProgressValue, parseToCurrency } from "../lib/data";
 import { ActionI } from "../lib/types";
 
 export interface UseCalculationsReturn {
@@ -16,12 +16,6 @@ export const useCalculations = (
   return {
     currentAmount: parseToCurrency(currentAmount),
     finalAmount: parseToCurrency(finalAmount),
-    completition:
-      currentAmount && finalAmount
-        ? (
-            ((currentAmount || 0) * 100) /
-            (finalAmount || currentAmount || 0)
-          ).toFixed()
-        : "0",
+    completition: getProgressValue({ currentAmount, finalAmount }),
   };
 };
