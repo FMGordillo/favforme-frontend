@@ -49,30 +49,34 @@ export const SocialNetworks = styled.div`
 `;
 
 export const MapSection = styled.div`
-  display: flex;
-  padding: ${({ theme }) => theme.spacing(1)}em
-    ${({ theme }) => theme.spacing(2)}em;
-  justify-content: space-around;
-  align-items: center;
-  & > * {
-    flex: 1;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  margin: 0 auto;
+  padding: ${({ theme }) => `${theme.spacing(0.5)}em ${theme.spacing(1)}em`};
+  max-width: 1024px;
   & > :first-child {
-    flex: 2;
-    text-align: center;
+    justify-self: center;
   }
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    flex-direction: column;
-    padding: ${({ theme }) => theme.spacing(1)}em;
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+
+    & > :last-child {
+      text-align: center;
+      justify-self: center;
+    }
   }
 `;
 
 export const MapUl = styled.ul`
-  display: flex;
-  flex-direction: column;
-  flex-flow: colum wrap;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   list-style: none;
+  padding: 0;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const MapLi = styled.li`

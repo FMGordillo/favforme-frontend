@@ -9,29 +9,55 @@ export const Container = styled.section`
 
 export const ImagesContainer = styled(BaseContainer)`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  & > * {
+  max-width: 1200px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 0 auto;
+
+  & > a {
+    display: block;
     margin: ${({ theme }) => theme.spacing(0.1)}em !important;
     max-width: 100%;
     align-self: center;
     text-align: center;
   }
 
-  /* All the left column */
-  a:nth-child(1) {
-    justify-self: right;
-  }
-  a:nth-child(4) {
-    justify-self: right;
+  /* First row */
+  & > a:nth-child(-n + 4) {
+    grid-column: span 3;
   }
 
-  /* All the right column */
-  a:nth-child(3) {
+  /* Second row */
+  & > a:nth-child(n + 5) {
+    grid-column: span 4;
+  }
+
+  /* Align 2nd row left and right correctly */
+  & > a:nth-child(5) {
+    justify-self: right;
+  }
+  & > a:nth-child(7) {
     justify-self: left;
   }
-  a:nth-child(6) {
-    justify-self: left;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr 1fr;
+    & > a:nth-child(-n + 4) {
+      grid-column: inherit;
+    }
+    & > a:nth-child(n + 5) {
+      grid-column: inherit;
+    }
+    & > a:nth-child(5) {
+      justify-self: inherit;
+    }
+    & > a:nth-child(7) {
+      justify-self: inherit;
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
   }
 `;
 

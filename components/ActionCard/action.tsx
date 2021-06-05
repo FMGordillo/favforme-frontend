@@ -1,6 +1,6 @@
 import { SocialNetworks } from "@/components";
 import { ModalContext } from "@/lib/context";
-import { parseToCurrency } from "@/lib/data";
+import { parseToCurrency, getProgressValue } from "@/lib/data";
 import { getODSImage } from "@/lib/ods_image";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
@@ -131,23 +131,16 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           .-
         </AmountCollected>
         <AmountSubtitle>
-          aportando voluntariamente de ${parseToCurrency(finalAmount)}
+          recaudado de <b>${parseToCurrency(finalAmount)}</b>
         </AmountSubtitle>
         <ProgressBar>
           <progress
             max="100"
-            value={(
-              ((currentAmount || 0) * 100) /
-              (finalAmount || currentAmount || 0)
-            ).toFixed()}
+            value={getProgressValue({ currentAmount, finalAmount })}
           ></progress>
         </ProgressBar>
         <Percentage>
-          {(
-            ((currentAmount || 0) * 100) /
-            (finalAmount || currentAmount || 0)
-          ).toFixed()}
-          %
+          {getProgressValue({ currentAmount, finalAmount })}%
         </Percentage>
         <ButtonContainer>
           <Button

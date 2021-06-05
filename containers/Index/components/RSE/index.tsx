@@ -1,7 +1,8 @@
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import { ButtonLink, Title } from "@/components";
-import { ImageContainer, Container } from "./styles";
+import { Title } from "@/components";
+import { Button, ImageContainer, Container } from "./styles";
+import { event } from "@/lib/gtag";
 
 const RSE: FunctionComponent = () => {
   return (
@@ -21,15 +22,22 @@ const RSE: FunctionComponent = () => {
           interés de crear o participar de este tipo de programas ofreciendo
           productos, servicios, horas de apoyo y hasta fondos
         </p>
-        <ButtonLink
+        <Button
           target="_blank"
           rel="noreferrer noopener"
           href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
             "Quiero sumar mi empresa"
           )}`}
+          onClick={() => {
+            event({
+              action: "boton_sumar_mi_empresa",
+              category: "empresas",
+              value: 1,
+            });
+          }}
         >
           Sumá tu empresa
-        </ButtonLink>
+        </Button>
       </div>
     </Container>
   );
