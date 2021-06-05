@@ -69,8 +69,8 @@ export const DonationUnavailableModal: FunctionComponent = () => {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
       event({
-        action: "unable_donation",
-        category: "donation",
+        action: "donacion_no_disponible",
+        category: "donacion",
         label: `environment:production`,
         value: 0,
       });
