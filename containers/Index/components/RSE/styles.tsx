@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { ButtonLink } from "@/components";
 
 export const Container = styled.section`
   display: grid;
   grid-gap: 4em;
   grid-template-columns: 1fr 1fr;
-  margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  padding: ${({ theme }) => Number(theme.spacing(2)) * 8}px 0;
+  background-color: ${({ theme }) => theme.palette.gray.light};
 
   p {
     line-height: 1.75em;
@@ -29,4 +31,9 @@ export const ImageContainer = styled.div`
   ${({ theme }) => theme.breakpoints.down("md")} {
     justify-self: center;
   }
+`;
+
+export const Button = styled(ButtonLink)`
+  display: block;
+  width: 170px;
 `;

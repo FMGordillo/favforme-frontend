@@ -4,12 +4,17 @@ import { Container, Text, Title } from "@/components/styles";
 export const StyledContainer = styled(Container)`
   display: grid;
   grid-gap: ${({ theme }) => theme.spacing(1)}em;
-  margin: 0 ${({ theme }) => theme.spacing(2)}em;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-content: stretch;
+  max-width: 1024px;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
-    margin: 0 ${({ theme }) => theme.spacing(2)}em;
+    margin: 0 ${({ theme }) => theme.spacing(1)}em;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 0 ${({ theme }) => theme.spacing(0.5)}em;
   }
 `;
 
@@ -27,5 +32,5 @@ export const StyledTitle = styled(Title)`
 export const Section = styled.section`
   text-align: center;
   display: grid;
-  justify-items: center;
+  grid-template-rows: 250px auto auto;
 `;
