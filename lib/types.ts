@@ -57,7 +57,6 @@ export interface ActionI {
   objective: string; // $$$
   organization: Organization;
   ods: ODS[];
-  organizationId: number;
   deleted: boolean;
   status: Status;
   closedAt?: string; // Date-ish format

@@ -7,7 +7,7 @@ export const pageview = (url: URL): void => {
   });
 };
 
-type Categories = "donacion" | "empresas";
+type Categories = "donacion" | "empresas" | "contacto" | "ods";
 
 type GTagEvent = {
   action: string;
