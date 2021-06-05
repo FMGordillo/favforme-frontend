@@ -2,17 +2,21 @@
  * @param value Default to 0
  */
 export const parseToCurrency = (value = "0"): string => {
-  if (Number.isNaN(value) || value === "0") return "0";
-  const numberedValue = Number(value);
-  const formatCurrency = Intl.NumberFormat("es-ES", {
-    style: "currency",
-    maximumFractionDigits: 0,
-    currency: "ARS",
-  }).resolvedOptions();
-  return numberedValue.toLocaleString("es-ES", {
-    ...formatCurrency,
-    style: "decimal",
-  });
+  try {
+    if (Number.isNaN(value) || value === "0") return "0";
+    const numberedValue = Number(value);
+    const formatCurrency = Intl.NumberFormat("es-ES", {
+      style: "currency",
+      maximumFractionDigits: 0,
+      currency: "ARS",
+    }).resolvedOptions();
+    return numberedValue.toLocaleString("es-ES", {
+      ...formatCurrency,
+      style: "decimal",
+    });
+  } catch (error) {
+    return "0";
+  }
 };
 
 interface GetProgresValueParams {
