@@ -7,10 +7,12 @@ export const pageview = (url: URL): void => {
   });
 };
 
+type Categories = "donacion" | "empresas";
+
 type GTagEvent = {
   action: string;
-  category: string;
-  label: string;
+  category: Categories;
+  label?: string;
   value: number;
 };
 
@@ -18,7 +20,7 @@ type GTagEvent = {
 export const event = ({ action, category, label, value }: GTagEvent): void => {
   window.gtag("event", action, {
     event_category: category,
-    event_label: label,
+    event_label: label ?? `environment:${process.env.ENVIRONMENT}`,
     value: value,
   });
 };

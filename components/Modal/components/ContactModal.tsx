@@ -1,7 +1,10 @@
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { DialogContainer, DialogTitle } from "../styles";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
+import { DialogContainer, DialogTitle } from "../styles";
 
 const ModalContent = styled.div`
   display: grid;
@@ -17,29 +20,29 @@ export const ContactModal: FunctionComponent = () => {
       <ModalContent>
         <div>
           <p>
-            WhatsApp:{" "}
+            <FontAwesomeIcon color="#13ab04" icon={faWhatsapp} /> WhatsApp:{" "}
             <a
               target="_blank"
               rel="noreferrer noopener"
-              href={`https://wa.me/5491123993440?text=${encodeURIComponent(
-                "Vengo del Landing!"
+              href={`https://wa.me/541150592054?text=${encodeURIComponent(
+                "Vengo del sitio web!"
               )}`}
             >
-              +5491123993440
+              +54 11 5059 2054
             </a>
           </p>
           <p>
-            Llamar:{" "}
+            <FontAwesomeIcon icon={faPhone} /> Llamar:{" "}
             <a
               rel="noreferrer noopener"
               target="_blank"
-              href="tel:+5491123993440"
+              href="tel:+541150592054"
             >
-              +5491123993440
+              +54 11 5059 2054
             </a>
           </p>
           <p>
-            Correo:{" "}
+            <FontAwesomeIcon icon={faEnvelope} /> Correo:{" "}
             <a
               rel="noreferrer noopener"
               target="_blank"
