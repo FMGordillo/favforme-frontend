@@ -1,14 +1,12 @@
-import { Layout, Title, Container } from "@/components";
-import { useAction } from "@/hooks";
+import { Container, Layout, Title } from "@/components";
 import { DonationContainer } from "@/containers";
-import { event } from "@/lib/gtag";
+import { useAction } from "@/hooks";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
 import Image from "next/image";
-import { useEffect } from "react";
 
 interface GetServerSidePropsReturn {
   props: {
@@ -31,17 +29,6 @@ const DonationPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ query }) => {
   const { data, isValidating } = useAction({ query });
-
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
-      event({
-        action: "unable_donation",
-        category: "donation",
-        label: `environment:production`,
-        value: 0,
-      });
-    }
-  }, []);
 
   const { action } = data ?? {};
 

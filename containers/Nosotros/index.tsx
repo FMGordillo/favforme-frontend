@@ -15,7 +15,7 @@ import {
 
 export const AboutUsPage: NextPage = () => {
   return (
-    <Layout header title="Somos FavForMe">
+    <Layout header title="Nosotros">
       <Container spacing={2}>
         <Section mainScreen>
           <p>
@@ -26,7 +26,7 @@ export const AboutUsPage: NextPage = () => {
         </Section>
         <TwoColumnSection>
           <div className="content">
-            <Title>Misión FavForMe</Title>
+            <Title>La Misión FavForMe</Title>
             <p>
               Insertarnos como equipo de fundraising para ONGs, asegurando a los
               donantes que los recursos invertidos llegan a su destino. Nuestra
@@ -40,7 +40,7 @@ export const AboutUsPage: NextPage = () => {
           <div className="img">
             <Image
               src="/images/mision_ffm.webp"
-              width={450}
+              width={550}
               height={350}
               alt="Personas con lapices"
             />
