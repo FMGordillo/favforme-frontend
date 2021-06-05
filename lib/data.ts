@@ -36,3 +36,21 @@ export const getProgressValue = ({
     (numberFinalAmount || numberCurrentAmount)
   ).toFixed();
 };
+
+interface GetProgresValueParams {
+  currentAmount?: string;
+  finalAmount?: string;
+}
+
+export const getProgressValue = ({
+  currentAmount = "0",
+  finalAmount,
+}: GetProgresValueParams): string => {
+  if (Number.isNaN(currentAmount) || Number.isNaN(finalAmount)) return "0";
+  const numberCurrentAmount = Number(currentAmount);
+  const numberFinalAmount = Number(finalAmount || 0);
+  return (
+    (numberCurrentAmount * 100) /
+    (numberFinalAmount || numberCurrentAmount)
+  ).toFixed();
+};
