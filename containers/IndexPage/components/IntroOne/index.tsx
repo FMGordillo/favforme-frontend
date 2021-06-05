@@ -11,6 +11,7 @@ import {
   TextContainer,
   ODSButton,
 } from "./styles";
+import { event } from "@/lib/gtag";
 
 const sdg = [
   "01",
@@ -132,6 +133,13 @@ const IntroOneSection: FunctionComponent = () => {
         target="_blank"
         rel="noreferrer noopener"
         href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+        onClick={() =>
+          event({
+            action: "click_aprender_sobre_ods",
+            category: "ods",
+            value: 1,
+          })
+        }
       >
         APRENDER SOBRE ODS
       </ODSButton>
