@@ -1,7 +1,7 @@
 import { Container as BaseContainer, Layout, Title } from "@/components";
-import styled from "styled-components";
 import { NextPage } from "next";
 import Image from "next/image";
+import styled from "styled-components";
 
 const Container = styled(BaseContainer)`
   padding: 1em 0;
