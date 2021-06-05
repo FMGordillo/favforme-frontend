@@ -1,5 +1,5 @@
 export default {
-  title: "Home",
+  title: "Inicio",
   titleTemplate: "%s - Fundación FavForMe",
   description:
     "Fundación FavForMe es una ONG que contacta gente que le gusta ayudar con ONGs y empresas con RSE",

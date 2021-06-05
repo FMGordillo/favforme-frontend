@@ -1,8 +1,9 @@
 import { Button, FormInput } from "@/components";
 import { useNotifications } from "@/hooks";
+import { event } from "@/lib/gtag";
 import axios from "axios";
 import { FormikValues, useFormik } from "formik";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import styled from "styled-components";
 import * as yup from "yup";
 import { DialogContainer, DialogTitle } from "../styles";
@@ -64,6 +65,17 @@ export const DonationUnavailableModal: FunctionComponent = () => {
     },
     onSubmit,
   });
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
+      event({
+        action: "unable_donation",
+        category: "donation",
+        label: `environment:production`,
+        value: 0,
+      });
+    }
+  }, []);
 
   return (
     <DialogContainer>

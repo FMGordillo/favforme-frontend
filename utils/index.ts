@@ -1,1 +1,1 @@
-export const isNotProd = true; // TODO: Change this
+export const isNotProd = process.env.ENVIRONMENT !== "production"; // TODO: Change this
