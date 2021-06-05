@@ -1,5 +1,6 @@
 import { Button, NavBar } from "@/components";
 import { useMobileSize } from "@/hooks/useMobileSize";
+import { event } from "@/lib/gtag";
 import { useRouter } from "next/router";
 import { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
@@ -59,6 +60,14 @@ const Header: FunctionComponent<HeaderProps> = ({
 }) => {
   const router = useRouter();
   const { isMobileSize } = useMobileSize("md");
+  const handleClick = () => {
+    event({
+      action: "click_dona_hoy",
+      category: "donacion",
+      value: 1,
+    });
+    router.push("/acciones");
+  };
   return (
     <>
       <NavBar />
@@ -84,7 +93,7 @@ const Header: FunctionComponent<HeaderProps> = ({
               style={{ width: "200px", margin: "1.5em 0" }}
               textColor="#111"
               color="secondary"
-              onClick={() => router.push("/acciones")}
+              onClick={handleClick}
             >
               DON&Aacute; HOY
             </Button>
