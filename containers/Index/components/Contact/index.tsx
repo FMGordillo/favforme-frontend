@@ -20,12 +20,18 @@ const ContactSection: FunctionComponent = () => (
           <a
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="hello@favforme.com"
             href="mailto:hello@favforme.com"
           >
             hello@favforme.com
           </a>
           <br />
-          <a href="tel:+541150592054" rel="noreferrer noopener" target="_blank">
+          <a
+            href="tel:+541150592054"
+            rel="noreferrer noopener"
+            target="_blank"
+            aria-label="+541150592054"
+          >
             +54 11 5059 2054
           </a>
         </HighlightedText>

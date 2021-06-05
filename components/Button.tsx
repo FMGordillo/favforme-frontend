@@ -9,8 +9,12 @@ const isOfTypeColor = (
 interface ButtonI {
   color?: Color | string;
   textColor?: Color | string;
-  hoverColor?: Color | string;
   variant?: Variant;
+
+  hoverTextColor?: Color | string;
+  hoverTextVariant?: Variant;
+
+  hoverColor?: Color | string;
   hoverVariant?: Variant;
 }
 
@@ -28,7 +32,8 @@ export const Button = styled.button<ButtonI>`
   padding: 0.5em 1.25em;
   border-radius: 3em;
   font-family: abel, sans-serif;
-  transition: background-color 300ms ease-out;
+
+  transition: background-color 300ms ease-out, color 300ms ease-out;
   background-color: ${({ theme, color, variant }) =>
     typeof color === "undefined" || isOfTypeColor(color)
       ? theme.palette[color || "primary"][variant || "main"]
@@ -39,6 +44,20 @@ export const Button = styled.button<ButtonI>`
   }
 
   :hover {
+    color: ${({ theme, color, hoverTextColor, hoverTextVariant }) =>
+      typeof color === "undefined" ||
+      isOfTypeColor(color) ||
+      typeof hoverTextColor === "undefined" ||
+      isOfTypeColor(hoverTextColor)
+        ? theme.palette[
+            hoverTextColor && isOfTypeColor(hoverTextColor)
+              ? hoverTextColor
+              : color && isOfTypeColor(color)
+              ? color
+              : "primary"
+          ][hoverTextVariant || "light"]
+        : hoverTextColor};
+
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
       typeof color === "undefined" ||
       isOfTypeColor(color) ||
