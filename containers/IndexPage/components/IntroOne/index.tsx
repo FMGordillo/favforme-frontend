@@ -1,17 +1,17 @@
+import { Container, Text, Title } from "@/components";
+import { event } from "@/lib/gtag";
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Container, Text, Title } from "@/components";
 import {
+  HighlightText,
   LeftHandImage,
   Main,
+  ODSButton,
   ODSContainer,
   ODSLogo,
   RightHandImage,
-  HighlightText,
   TextContainer,
-  ODSButton,
 } from "./styles";
-import { event } from "@/lib/gtag";
 
 const sdg = [
   "01",
