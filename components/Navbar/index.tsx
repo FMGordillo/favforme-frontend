@@ -1,5 +1,6 @@
 import { ContactModal } from "@/components/Modal/components";
 import { ModalContext } from "@/lib/context";
+import { event } from "@/lib/gtag";
 import Image from "next/image";
 import React, { FunctionComponent, useContext, useState } from "react";
 import { Logo } from "../assets";
@@ -19,6 +20,11 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
   };
 
   const handleContactClick = () => {
+    event({
+      action: "click_contacto_navbar",
+      category: "contacto",
+      value: 1,
+    });
     handleModal(ContactModal);
   };
 

@@ -1,15 +1,16 @@
+import { Container, Text, Title } from "@/components";
+import { event } from "@/lib/gtag";
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
-import { Container, Text, Title } from "@/components";
 import {
+  HighlightText,
   LeftHandImage,
   Main,
+  ODSButton,
   ODSContainer,
   ODSLogo,
   RightHandImage,
-  HighlightText,
   TextContainer,
-  ODSButton,
 } from "./styles";
 
 const sdg = [
@@ -132,6 +133,13 @@ const IntroOneSection: FunctionComponent = () => {
         target="_blank"
         rel="noreferrer noopener"
         href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+        onClick={() =>
+          event({
+            action: "click_aprender_sobre_ods",
+            category: "ods",
+            value: 1,
+          })
+        }
       >
         APRENDER SOBRE ODS
       </ODSButton>
