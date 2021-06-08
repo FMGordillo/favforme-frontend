@@ -1,11 +1,10 @@
 import { SocialNetworks } from "@/components";
+import { DonationUnavailableModal } from "@/components/Modal/components";
+import { useCalculations } from "@/hooks";
 import { ModalContext } from "@/lib/context";
-import { parseToCurrency, getProgressValue } from "@/lib/data";
 import { getODSImage } from "@/lib/ods_image";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
-import { differenceInDays, formatDistance } from "date-fns";
-import esES from "date-fns/locale/es";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -24,7 +23,6 @@ import {
   ProgressBar,
   Title,
 } from "./styles";
-import { DonationUnavailableModal } from "@/components/Modal/components";
 
 interface ActionProps {
   carousel?: boolean;
@@ -33,66 +31,16 @@ interface ActionProps {
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
-  const { handleModal } = useContext(ModalContext);
-  const currentAmount = data?.current;
-  const finalAmount = data?.objective;
-
-  /**
-   * TODO: Unificar de alguna forma ambas funciones
-   */
-  const calculateDueDate = (
-    createdAt?: string,
-    endDate?: string
-  ): string | undefined => {
-    try {
-      if (createdAt && endDate) {
-        return formatDistance(new Date(endDate), new Date(createdAt), {
-          locale: esES,
-        });
-      } else {
-        console.log("No endDate was provided, cannot calculate");
-      }
-    } catch (error) {
-      console.error("calculateDueDate", error);
-    }
-  };
-
-  /**
-   * TODO: Unificar de alguna forma ambas funciones
-   */
-  const calculateDueImportance = (
-    createdAt?: string,
-    endDate?: string
-  ): number | undefined => {
-    try {
-      if (createdAt && endDate) {
-        return differenceInDays(new Date(endDate), new Date(createdAt));
-      } else {
-        console.log("No endDate was provided, cannot calculate");
-      }
-    } catch (error) {
-      console.error("calculateDueImportance", error);
-    }
-  };
-
-  const daysUntilFinished = calculateDueImportance(
-    data?.createdAt,
-    data?.closedAt
+  const { completition, dueDate, currentAmount, finalAmount } = useCalculations(
+    data
   );
-
-  const urgency = daysUntilFinished
-    ? daysUntilFinished < 21 && daysUntilFinished > 14
-      ? "medium"
-      : daysUntilFinished <= 14
-      ? "high"
-      : "meh"
-    : "meh";
+  const { handleModal } = useContext(ModalContext);
 
   return (
     <Container carousel={carousel}>
       <ImageContainer>
-        <DueDate show={!!data?.closedAt} urgency={urgency}>
-          {calculateDueDate(data?.createdAt, data?.closedAt)}
+        <DueDate show={!!data?.closedAt} urgency={dueDate?.urgency}>
+          {dueDate?.date}
         </DueDate>
         <Image
           width={1400}
@@ -115,9 +63,9 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           <Link href={`/acciones/${data?.id}`}>
             <Title
               color={
-                urgency === "high"
+                dueDate?.urgency === "high"
                   ? "red"
-                  : urgency === "medium"
+                  : dueDate?.urgency === "medium"
                   ? "yellow"
                   : "inherit"
               }
@@ -127,21 +75,16 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           </Link>
         </div>
         <AmountCollected>
-          ${parseToCurrency(currentAmount)}
+          ${currentAmount}
           .-
         </AmountCollected>
         <AmountSubtitle>
-          recaudado de <b>${parseToCurrency(finalAmount)}</b>
+          recaudado de <b>${finalAmount}</b>
         </AmountSubtitle>
         <ProgressBar>
-          <progress
-            max="100"
-            value={getProgressValue({ currentAmount, finalAmount })}
-          ></progress>
+          <progress max="100" value={completition}></progress>
         </ProgressBar>
-        <Percentage>
-          {getProgressValue({ currentAmount, finalAmount })}%
-        </Percentage>
+        <Percentage>{completition}%</Percentage>
         <ButtonContainer>
           <Button
             onClick={() =>
