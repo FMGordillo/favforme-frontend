@@ -118,6 +118,9 @@ export const ImageContainer = styled.div`
     object-fit: cover;
     object-position: right;
   }
+  img.action:hover {
+    cursor: pointer;
+  }
 `;
 
 export const DueDate = styled.p<{
