@@ -48,9 +48,10 @@ export const ActionPage: NextPage<ActionProps> = ({
             <div>
               <Image
                 src={action?.mainImage || "/images/accion_placeholder_1.jpg"}
+                layout="intrinsic"
                 alt="Resumen"
-                width={510}
-                height={350}
+                width={600}
+                height={359}
               />
             </div>
             <p>{action?.description}</p>

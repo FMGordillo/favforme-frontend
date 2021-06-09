@@ -91,7 +91,18 @@ const IntroOneSection: FunctionComponent = () => {
         />
       </RightHandImage>
       <ODSLogo>
-        <Image width={360} height={40} src="/images/ods.webp" alt="ODS Logo" />
+        <a
+          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            width={360}
+            height={40}
+            src="/images/ods.webp"
+            alt="ODS Logo"
+          />
+        </a>
         <Container>
           <HighlightText>
             El equipo de FavForMe se especializó en los Objetivos de Desarrollo
