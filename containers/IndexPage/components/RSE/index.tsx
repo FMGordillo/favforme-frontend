@@ -24,6 +24,7 @@ const RSE: FunctionComponent = () => {
         </p>
         <Button
           target="_blank"
+          hoverTextColor="black"
           rel="noreferrer noopener"
           href={`mailto:hello@favforme.com?subject=${encodeURIComponent(
             "Quiero sumar mi empresa"
@@ -36,7 +37,7 @@ const RSE: FunctionComponent = () => {
             });
           }}
         >
-          Sumá tu empresa
+          Sum&aacute; tu empresa
         </Button>
       </div>
     </Container>

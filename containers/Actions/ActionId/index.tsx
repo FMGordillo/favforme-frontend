@@ -1,6 +1,7 @@
-import { Button, Divider, Layout, Title } from "@/components";
+import { ButtonLink, Divider, Layout, Title } from "@/components";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import { toPascalCase } from "@/lib";
+import { event } from "@/lib/gtag";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
 import { NextPage } from "next";
@@ -40,17 +41,16 @@ export const ActionPage: NextPage<ActionProps> = ({
       }}
     >
       <Container>
-        <Title>Donaciones recibidas</Title>
-        <DonatorsTable actionId={action?.id} />
         <ActionContent>
           <ActionTitle>{action?.title}</ActionTitle>
           <LeftColumn>
             <div>
               <Image
                 src={action?.mainImage || "/images/accion_placeholder_1.jpg"}
+                layout="intrinsic"
                 alt="Resumen"
-                width={510}
-                height={350}
+                width={600}
+                height={359}
               />
             </div>
             <p>{action?.description}</p>
@@ -60,6 +60,7 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
+            <h2>Total hoy</h2>
             <ActionCard
               action={action}
               queryId={query?.id}
@@ -76,6 +77,8 @@ export const ActionPage: NextPage<ActionProps> = ({
             <p>{action?.organization?.history}</p>
           </RightColumn>
         </ActionContent>
+        <Title>Donaciones recibidas</Title>
+        <DonatorsTable actionId={action?.id} />
         <JoinUsContainer>
           <Title color="secondary" weight="bold">
             ¿Tenés una ONG?
@@ -85,7 +88,18 @@ export const ActionPage: NextPage<ActionProps> = ({
             <br />
             Hagamos juntos un lugar mejor para vivir.
           </p>
-          <Button color="secondary">Sumar mi ONG</Button>
+          <ButtonLink
+            onClick={() =>
+              event({ action: "sumar_mi_ong", category: "ong", value: 1 })
+            }
+            href="https://forms.gle/JTa4Uf5EnRzY1NG4A"
+            target="_blank"
+            rel="noreferrer noopener"
+            color="secondary"
+            hoverTextColor="black"
+          >
+            Sumar mi ONG
+          </ButtonLink>
         </JoinUsContainer>
         <Divider />
       </Container>
