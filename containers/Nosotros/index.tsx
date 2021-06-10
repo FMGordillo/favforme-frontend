@@ -1,5 +1,4 @@
 import { Container, Layout, Title } from "@/components";
-import { isNotProd } from "@/utils";
 import { NextPage } from "next";
 import Image from "next/image";
 import { AlliancesSection } from "../IndexPage/components";
