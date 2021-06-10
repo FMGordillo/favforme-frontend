@@ -36,19 +36,25 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   );
   const { handleModal } = useContext(ModalContext);
 
+  const actionUrl = `/acciones/${data?.id}`;
+  const goToAction = () => router.push(actionUrl);
+
   return (
     <Container carousel={carousel}>
       <ImageContainer>
         <DueDate show={!!data?.closedAt} urgency={dueDate?.urgency}>
           {dueDate?.date}
         </DueDate>
-        <Image
-          width={1400}
-          height={1100}
-          layout="intrinsic"
-          alt="Imagen representativa de la acción"
-          src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
-        />
+        <Link href={actionUrl}>
+          <Image
+            className="action"
+            width={1400}
+            height={1100}
+            layout="intrinsic"
+            alt="Imagen representativa de la acción"
+            src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
+          />
+        </Link>
         <ODS>
           <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
           {data?.ods.map((odsImg) => {
@@ -60,7 +66,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       {/* </Link> */}
       <MainContent>
         <div>
-          <Link href={`/acciones/${data?.id}`}>
+          <Link href={actionUrl}>
             <Title
               color={
                 dueDate?.urgency === "high"
@@ -87,6 +93,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <Percentage>{completition}%</Percentage>
         <ButtonContainer>
           <Button
+            hoverTextColor="black"
             onClick={() =>
               isNotProd
                 ? router.push({
@@ -104,7 +111,8 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
             color="gray"
             textColor="black"
             hoverVariant="dark"
-            onClick={() => router.push(`/acciones/${data?.id}`)}
+            hoverTextColor="white"
+            onClick={goToAction}
           >
             DETALLES
           </Button>
