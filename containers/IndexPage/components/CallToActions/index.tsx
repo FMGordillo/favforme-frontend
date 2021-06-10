@@ -20,7 +20,7 @@ const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({}) =>
           />
           <Title>SOS PERSONA</Title>
           <StyledText>
-            Doná en las acciones para que muchos y muchas tengan la oportunidad
+            Doná en las acciones para que muchas personas tengan la oportunidad
             y logren alcanzar sus sueños. <br />
             ...<i>&quot;Hoy te convertís en héroe&quot;</i>...
           </StyledText>
