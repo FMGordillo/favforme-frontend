@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const Table = styled.table`
   width: 100%;
+  max-width: 1024px;
   margin-bottom: 1em;
   text-align: center;
   border-collapse: collapse;
+  border-bottom: 3px solid ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const THead = styled.thead`

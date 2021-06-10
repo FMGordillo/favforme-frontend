@@ -1,1 +1,1 @@
-export const isNotProd = true; // TODO: Change this
+export const isNotProd = process.env.NEXT_PUBLIC_ENVIRONMENT !== "production";

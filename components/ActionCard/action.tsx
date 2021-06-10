@@ -1,11 +1,12 @@
 import { SocialNetworks } from "@/components";
+import { DonationUnavailableModal } from "@/components/Modal/components";
+import { useCalculations } from "@/hooks";
 import { ModalContext } from "@/lib/context";
-import { parseToCurrency } from "@/lib/data";
 import { getODSImage } from "@/lib/ods_image";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
-import { differenceInDays, formatDistance } from "date-fns";
-import esES from "date-fns/locale/es";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -24,7 +25,6 @@ import {
   ProgressBar,
   Title,
 } from "./styles";
-import { DonationUnavailableModal } from "@/components/Modal/components";
 
 interface ActionProps {
   carousel?: boolean;
@@ -33,74 +33,30 @@ interface ActionProps {
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
-  const { handleModal } = useContext(ModalContext);
-  const currentAmount = data?.current;
-  const finalAmount = data?.objective;
-
-  /**
-   * TODO: Unificar de alguna forma ambas funciones
-   */
-  const calculateDueDate = (
-    createdAt?: string,
-    endDate?: string
-  ): string | undefined => {
-    try {
-      if (createdAt && endDate) {
-        return formatDistance(new Date(endDate), new Date(createdAt), {
-          locale: esES,
-        });
-      } else {
-        console.log("No endDate was provided, cannot calculate");
-      }
-    } catch (error) {
-      console.error("calculateDueDate", error);
-    }
-  };
-
-  /**
-   * TODO: Unificar de alguna forma ambas funciones
-   */
-  const calculateDueImportance = (
-    createdAt?: string,
-    endDate?: string
-  ): number | undefined => {
-    try {
-      if (createdAt && endDate) {
-        return differenceInDays(new Date(endDate), new Date(createdAt));
-      } else {
-        console.log("No endDate was provided, cannot calculate");
-      }
-    } catch (error) {
-      console.error("calculateDueImportance", error);
-    }
-  };
-
-  const daysUntilFinished = calculateDueImportance(
-    data?.createdAt,
-    data?.closedAt
+  const { completition, dueDate, currentAmount, finalAmount } = useCalculations(
+    data
   );
+  const { handleModal } = useContext(ModalContext);
 
-  const urgency = daysUntilFinished
-    ? daysUntilFinished < 21 && daysUntilFinished > 14
-      ? "medium"
-      : daysUntilFinished <= 14
-      ? "high"
-      : "meh"
-    : "meh";
+  const actionUrl = `/acciones/${data?.id}`;
+  const goToAction = () => router.push(actionUrl);
 
   return (
     <Container carousel={carousel}>
       <ImageContainer>
-        <DueDate show={!!data?.closedAt} urgency={urgency}>
-          {calculateDueDate(data?.createdAt, data?.closedAt)}
+        <DueDate show={!!data?.closedAt} urgency={dueDate?.urgency}>
+          {dueDate?.date}
         </DueDate>
-        <Image
-          width={1400}
-          height={1100}
-          layout="intrinsic"
-          alt="Imagen representativa de la acción"
-          src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
-        />
+        <Link href={actionUrl}>
+          <Image
+            className="action"
+            width={1400}
+            height={1100}
+            layout="intrinsic"
+            alt="Imagen representativa de la acción"
+            src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
+          />
+        </Link>
         <ODS>
           <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
           {data?.ods.map((odsImg) => {
@@ -112,12 +68,12 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       {/* </Link> */}
       <MainContent>
         <div>
-          <Link href={`/acciones/${data?.id}`}>
+          <Link href={actionUrl}>
             <Title
               color={
-                urgency === "high"
+                dueDate?.urgency === "high"
                   ? "red"
-                  : urgency === "medium"
+                  : dueDate?.urgency === "medium"
                   ? "yellow"
                   : "inherit"
               }
@@ -127,30 +83,19 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           </Link>
         </div>
         <AmountCollected>
-          ${parseToCurrency(currentAmount)}
+          ${currentAmount}
           .-
         </AmountCollected>
         <AmountSubtitle>
-          aportando voluntariamente de ${parseToCurrency(finalAmount)}
+          recaudado de <b>${finalAmount}</b>
         </AmountSubtitle>
         <ProgressBar>
-          <progress
-            max="100"
-            value={(
-              ((currentAmount || 0) * 100) /
-              (finalAmount || currentAmount || 0)
-            ).toFixed()}
-          ></progress>
+          <progress max="100" value={completition}></progress>
         </ProgressBar>
-        <Percentage>
-          {(
-            ((currentAmount || 0) * 100) /
-            (finalAmount || currentAmount || 0)
-          ).toFixed()}
-          %
-        </Percentage>
+        <Percentage>{completition}%</Percentage>
         <ButtonContainer>
           <Button
+            hoverTextColor="black"
             onClick={() =>
               isNotProd
                 ? router.push({
@@ -162,13 +107,14 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
                 : handleModal(<DonationUnavailableModal />)
             }
           >
-            DONAR
+            DONAR <FontAwesomeIcon icon={faHeart} />
           </Button>
           <Button
             color="gray"
             textColor="black"
             hoverVariant="dark"
-            onClick={() => router.push(`/acciones/${data?.id}`)}
+            hoverTextColor="white"
+            onClick={goToAction}
           >
             DETALLES
           </Button>

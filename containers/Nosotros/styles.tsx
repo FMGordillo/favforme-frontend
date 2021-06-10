@@ -4,13 +4,19 @@ import styled from "styled-components";
 export const Section = styled.section<{ mainScreen?: boolean }>`
   text-align: center;
 
-  ${({ mainScreen }) =>
+  ${({ mainScreen, theme }) =>
     mainScreen &&
     `
+      margin: 0 auto;
+      max-width: 960px;
     p {
-      padding: 0 4em;
       line-height: 2em;
       font-size: 1.5em;
+    }
+    ${theme.breakpoints.down("md")} {
+      p {
+        padding: 0;
+      }
     }
   `}
 `;
@@ -29,13 +35,22 @@ export const HighlightSection = styled(Section)`
   b {
     font-weight: 800;
   }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    padding: 0.5em 2em 1em;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 0 -36px !important;
+    padding: 0.5em 14px 1em;
+  }
 `;
 
 export const ThreeColumns = styled.div`
   display: grid;
-  padding: 0 4em;
-  grid-gap: 2em;
+  grid-gap: 3em;
   grid-template-columns: 1fr 1fr 1fr;
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Subtitle = styled(Title)`
@@ -47,6 +62,8 @@ export const TwoColumnSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
+  padding-top: 2em;
+  padding-bottom: 3em;
 
   .content {
     text-align: right;
@@ -71,7 +88,20 @@ export const TwoColumnSection = styled.section`
 `;
 
 export const Team = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1em;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin 0 -4em;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
-export const Member = styled.div``;
+export const Member = styled.div`
+  p {
+    margin-bottom: 0;
+  }
+`;
