@@ -93,6 +93,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <Percentage>{completition}%</Percentage>
         <ButtonContainer>
           <Button
+            hoverTextColor="black"
             onClick={() =>
               isNotProd
                 ? router.push({
@@ -110,6 +111,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
             color="gray"
             textColor="black"
             hoverVariant="dark"
+            hoverTextColor="white"
             onClick={goToAction}
           >
             DETALLES
