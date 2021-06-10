@@ -88,7 +88,20 @@ export const TwoColumnSection = styled.section`
 `;
 
 export const Team = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1em;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin 0 -4em;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
 `;
 
-export const Member = styled.div``;
+export const Member = styled.div`
+  p {
+    margin-bottom: 0;
+  }
+`;
