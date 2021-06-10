@@ -67,7 +67,7 @@ const IntroOneSection: FunctionComponent = () => {
           width={350}
           height={330}
           layout="fixed"
-          src="/images/mano-02.svg"
+          src="/images/mano-01.svg"
           alt="Mano izquierda"
         />
       </LeftHandImage>
@@ -86,7 +86,7 @@ const IntroOneSection: FunctionComponent = () => {
           width={340}
           layout="fixed"
           height={330}
-          src="/images/mano-01.svg"
+          src="/images/mano-02.svg"
           alt="Mano derecha"
         />
       </RightHandImage>

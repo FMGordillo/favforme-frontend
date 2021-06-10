@@ -41,8 +41,6 @@ export const ActionPage: NextPage<ActionProps> = ({
       }}
     >
       <Container>
-        <Title>Donaciones recibidas</Title>
-        <DonatorsTable actionId={action?.id} />
         <ActionContent>
           <ActionTitle>{action?.title}</ActionTitle>
           <LeftColumn>
@@ -62,6 +60,7 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
+            <h2>Total hoy</h2>
             <ActionCard
               action={action}
               queryId={query?.id}
@@ -78,6 +77,8 @@ export const ActionPage: NextPage<ActionProps> = ({
             <p>{action?.organization?.history}</p>
           </RightColumn>
         </ActionContent>
+        <Title>Donaciones recibidas</Title>
+        <DonatorsTable actionId={action?.id} />
         <JoinUsContainer>
           <Title color="secondary" weight="bold">
             ¿Tenés una ONG?

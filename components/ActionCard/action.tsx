@@ -5,6 +5,8 @@ import { ModalContext } from "@/lib/context";
 import { getODSImage } from "@/lib/ods_image";
 import { ActionI } from "@/lib/types";
 import { isNotProd } from "@/utils";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -105,7 +107,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
                 : handleModal(<DonationUnavailableModal />)
             }
           >
-            DONAR
+            DONAR <FontAwesomeIcon icon={faHeart} />
           </Button>
           <Button
             color="gray"
