@@ -41,6 +41,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
         </AmountSubtitle>
         <Percentage>{amounts.completition}% COMPLETADO</Percentage>
         <Button
+          hoverTextColor="black"
           onClick={() =>
             canDonate
               ? router.push({
@@ -52,7 +53,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
               : handleModal(<DonationUnavailableModal />)
           }
         >
-          Favorecer esta acción
+          Favorecer esta acci&oacute;n
         </Button>
         <SocialNetworks
           data={action?.organization?.socialNetworks}

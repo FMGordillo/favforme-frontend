@@ -1,7 +1,10 @@
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { DialogContainer, DialogTitle } from "../styles";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
+import { DialogContainer, DialogTitle } from "../styles";
 
 const ModalContent = styled.div`
   display: grid;
@@ -17,7 +20,7 @@ export const ContactModal: FunctionComponent = () => {
       <ModalContent>
         <div>
           <p>
-            WhatsApp:{" "}
+            <FontAwesomeIcon color="#13ab04" icon={faWhatsapp} /> WhatsApp:{" "}
             <a
               target="_blank"
               rel="noreferrer noopener"
@@ -29,7 +32,7 @@ export const ContactModal: FunctionComponent = () => {
             </a>
           </p>
           <p>
-            Llamar:{" "}
+            <FontAwesomeIcon icon={faPhone} /> Llamar:{" "}
             <a
               rel="noreferrer noopener"
               target="_blank"
@@ -39,7 +42,7 @@ export const ContactModal: FunctionComponent = () => {
             </a>
           </p>
           <p>
-            Correo:{" "}
+            <FontAwesomeIcon icon={faEnvelope} /> Correo:{" "}
             <a
               rel="noreferrer noopener"
               target="_blank"

@@ -34,19 +34,19 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   const [submitLoading, setSubmitLoading] = useState(false);
 
   const trackDonationLead = (
-    action: "new_draft_donation" | "donation",
+    action: "nueva_donacion_intencion" | "donacion",
     amount: number
   ) => {
     event({
       action,
-      category: "donation",
+      category: "donacion",
       label: `environment:${process.env.NEXT_PUBLIC_ENVIRONMENT}`,
       value: amount,
     });
   };
 
   const handleSubmit = async ({ amount, email }: FormValues) => {
-    trackDonationLead("new_draft_donation", amount);
+    trackDonationLead("nueva_donacion_intencion", amount);
     setSubmitLoading(true);
     try {
       if (!query.id || !amount || typeof amount !== "number" || !email)
@@ -142,7 +142,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
               rel="noreferrer noopener"
               href={donationUrl}
               onClick={() => {
-                trackDonationLead("donation", formik.values.amount);
+                trackDonationLead("donacion", formik.values.amount);
               }}
             >
               Done aqui{" "}

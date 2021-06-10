@@ -2,7 +2,7 @@ import { Container, Layout, Title } from "@/components";
 import { isNotProd } from "@/utils";
 import { NextPage } from "next";
 import Image from "next/image";
-import { AlliancesSection } from "../Index/components";
+import { AlliancesSection } from "../IndexPage/components";
 import {
   HighlightSection,
   ThreeColumns,
@@ -15,7 +15,7 @@ import {
 
 export const AboutUsPage: NextPage = () => {
   return (
-    <Layout header title="Somos FavForMe">
+    <Layout header title="Nosotros">
       <Container spacing={2}>
         <Section mainScreen>
           <p>
@@ -26,7 +26,7 @@ export const AboutUsPage: NextPage = () => {
         </Section>
         <TwoColumnSection>
           <div className="content">
-            <Title>Misión FavForMe</Title>
+            <Title>La Misión FavForMe</Title>
             <p>
               Insertarnos como equipo de fundraising para ONGs, asegurando a los
               donantes que los recursos invertidos llegan a su destino. Nuestra
@@ -40,7 +40,7 @@ export const AboutUsPage: NextPage = () => {
           <div className="img">
             <Image
               src="/images/mision_ffm.webp"
-              width={450}
+              width={550}
               height={350}
               alt="Personas con lapices"
             />
@@ -92,69 +92,93 @@ export const AboutUsPage: NextPage = () => {
           <Team>
             <Member>
               <Image
-                src="/asdasd"
+                src="/images/founders/team_01.png"
                 alt="Foto de Matias Gonzalez"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Matias Gonzalez</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CEO
+                <br />
+                Chief Executive Officer
+              </span>
             </Member>
             <Member>
               <Image
-                src="/images/founders/matias_gonzalez.jpeg"
-                alt="Foto de Matias Gonzalez"
+                src="/images/founders/team_02.png"
+                alt="Foto de Martin Zucci"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Martin Zucci</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CFO
+                <br />
+                Chief Finantial Officer
+              </span>
             </Member>
             <Member>
               <Image
-                src="/asdasd"
-                alt="Foto de Matias Gonzalez"
+                src="/images/founders/team_03.png"
+                alt="Foto de Agustin Rosso"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Agustin Rosso</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CDO
+                <br />
+                Chief Design Officer
+              </span>
             </Member>
             <Member>
               <Image
-                src="/asdasd"
-                alt="Foto de Matias Gonzalez"
+                src="/images/founders/team_04.png"
+                alt="Foto de Facundo Gordillo"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Facundo Gordillo</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CTO
+                <br />
+                Chief Technical Officer
+              </span>
             </Member>
             <Member>
               <Image
-                src="/asdasd"
-                alt="Foto de Matias Gonzalez"
+                src="/images/founders/team_05.png"
+                alt="Foto de Ezequiel Serra"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Ezequiel Serra</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CLO
+                <br />
+                Chief Learning Officer
+              </span>
             </Member>
             <Member>
               <Image
-                src="/asdasd"
-                alt="Foto de Matias Gonzalez"
+                src="/images/founders/team_06.png"
+                alt="Foto de Guillermo Cónema"
                 width={200}
                 height={200}
               />
-              <span>Matias Gonzalez</span>
+              <p>Guillermo C&oacute;nema</p>
               <br />
-              <span>Fundador</span>
+              <span>
+                CCO
+                <br />
+                Chief Creative Officer
+              </span>
             </Member>
           </Team>
         </Section>
