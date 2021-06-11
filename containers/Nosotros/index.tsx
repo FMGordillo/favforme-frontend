@@ -161,7 +161,7 @@ export const AboutUsPage: NextPage = () => {
               <span>
                 CLO
                 <br />
-                Chief Learning Officer
+                Chief Legal Officer
               </span>
             </Member>
             <Member>
