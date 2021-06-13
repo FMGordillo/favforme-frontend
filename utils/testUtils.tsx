@@ -6,8 +6,6 @@ import { fetcher } from "../lib/queries";
 import { lightTheme } from "./styled";
 
 const Providers = ({ children }: { children: ReactChild }) => {
-  // FIXME: Testing next-firebase-auth fail!
-  // initAuth();
   return (
     <SWRConfig
       value={{
