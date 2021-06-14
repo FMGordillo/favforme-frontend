@@ -3,9 +3,9 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { ActionI } from "@/lib/types";
 import { IndexPage as Index } from "@/containers";
 import { getActions } from "@/hooks";
-import { ActionI } from "@/lib/types";
 
 export const getServerSideProps: GetServerSideProps<{
   actions: ActionI[];
