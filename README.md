@@ -12,9 +12,8 @@ You should have installed:
 - (Optional) [direnv](https://direnv.net/)
 
 1. `asdf install`
-2. `git config --local core.hooksPath git-hooks`
-3. `npm install`
-4. Run your server, and then `npm run dev`
+2. `npm install`
+3. Run your server, and then `npm run dev`
 
 ## Credentials
 
