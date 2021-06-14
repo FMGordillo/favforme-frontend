@@ -4,10 +4,10 @@ import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
 
 interface ActionsPageProps {
-  actions: ActionI[];
+  data: ActionI[];
 }
 
-export const ActionsPage: NextPage<ActionsPageProps> = ({ actions }) => {
+export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {
   return (
     <Layout header title="Acciones">
       <Container>
@@ -22,8 +22,8 @@ export const ActionsPage: NextPage<ActionsPageProps> = ({ actions }) => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {actions && (actions.length || 0) > 0 ? (
-          actions.map((action) => (
+        {data && (data.length || 0) > 0 ? (
+          data?.map((action) => (
             <ActionContainer key={action.id}>
               <Action data={action} />
             </ActionContainer>

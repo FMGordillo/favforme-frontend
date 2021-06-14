@@ -1,5 +1,5 @@
 import { render } from "../../utils/testUtils";
-import AboutUsPage from "../../pages/index";
+import AboutUsPage from "../../pages/nosotros";
 
 describe("About us page", () => {
   it("renders", () => {
