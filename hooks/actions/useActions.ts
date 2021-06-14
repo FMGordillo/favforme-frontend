@@ -1,6 +1,7 @@
-import useSWR from "swr";
-import { createQuery, Params } from "../../lib/queries";
+import { Params, createQuery } from "../../lib/queries";
 import { ActionI } from "../../lib/types";
+import axios from "axios";
+import useSWR from "swr";
 
 const GET_ACTIONS = (params?: Params): string => createQuery`
   {
@@ -43,4 +44,18 @@ export const useActions = (params?: Params): UseActionsReturn => {
     error,
     isValidating,
   };
+};
+
+export const getActions = async (params?: Params): Promise<ActionI[]> => {
+  try {
+    const { data } = await axios.post<{ data: { actions: ActionI[] } }>(
+      "/graphql",
+      {
+        query: GET_ACTIONS(params),
+      }
+    );
+    return data.data.actions;
+  } catch (error) {
+    return [];
+  }
 };
