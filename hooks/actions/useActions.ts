@@ -1,5 +1,4 @@
-import useSWR from "swr";
-import { createQuery, Params } from "../../lib/queries";
+import { Params, createQuery, gqlRequest } from "../../lib/queries";
 import { ActionI } from "../../lib/types";
 
 const GET_ACTIONS = (params?: Params): string => createQuery`
@@ -23,24 +22,15 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
   }
 `;
 
-interface ActionsSWRData {
-  actions: ActionI[];
-}
-
-interface UseActionsReturn {
-  data: ActionsSWRData | undefined;
-  error: any;
-  isValidating: boolean;
-}
-
-export const useActions = (params?: Params): UseActionsReturn => {
-  const { data, error, isValidating } = useSWR<ActionsSWRData>(
-    GET_ACTIONS(params)
-  );
-
-  return {
-    data,
-    error,
-    isValidating,
-  };
+export const getActions = async (params?: Params): Promise<ActionI[]> => {
+  try {
+    const data = await gqlRequest<{ actions: ActionI[] }>(
+      GET_ACTIONS(params),
+      params
+    );
+    return data.actions;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
