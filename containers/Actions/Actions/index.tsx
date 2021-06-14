@@ -1,11 +1,13 @@
-import { Action, LoadingAction, Container, Layout, Title } from "@/components";
-import { useActions } from "@/hooks";
+import { Action, Container, Layout, Title } from "@/components";
 import { ActionContainer, JoinUsContainer, StyledTitle } from "./styles";
+import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
 
-export const ActionsPage: NextPage = () => {
-  const { data, isValidating } = useActions({ take: 5 });
+interface ActionsPageProps {
+  data: ActionI[];
+}
 
+export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {
   return (
     <Layout header title="Acciones">
       <Container>
@@ -20,21 +22,9 @@ export const ActionsPage: NextPage = () => {
             Hagamos juntos un lugar mejor para vivir.
           </p>
         </JoinUsContainer>
-        {isValidating ? (
-          <>
-            <ActionContainer>
-              <LoadingAction />
-            </ActionContainer>
-            <ActionContainer>
-              <LoadingAction />
-            </ActionContainer>
-            <ActionContainer>
-              <LoadingAction />
-            </ActionContainer>
-          </>
-        ) : data?.actions && (data?.actions.length || 0) > 0 ? (
-          data?.actions.map((action, i) => (
-            <ActionContainer key={i}>
+        {data && (data.length || 0) > 0 ? (
+          data.map((action) => (
+            <ActionContainer key={action.id}>
               <Action data={action} />
             </ActionContainer>
           ))
