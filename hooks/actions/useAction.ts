@@ -1,6 +1,7 @@
-import useSWR from "swr";
+import { UseCalculationsReturn, useCalculations } from "../useCalculations";
 import { ActionI } from "../../lib/types";
-import { useCalculations, UseCalculationsReturn } from "../useCalculations";
+import request from "graphql-request";
+import useSWR from "swr";
 
 const GET_ACTION = `
   query getAction($id: String) {
@@ -54,4 +55,13 @@ export const useAction = ({ query }: UseActionProps): UseActionReturn => {
     error,
     isValidating,
   };
+};
+
+export const getAction = async (query: any): Promise<ActionI[]> => {
+  try {
+    const data = await request("/graphql", GET_ACTION, query);
+    return data;
+  } catch (error) {
+    return [];
+  }
 };
