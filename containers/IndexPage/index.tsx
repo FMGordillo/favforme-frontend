@@ -1,18 +1,20 @@
-import { useActions } from "@/hooks";
-import { NextPage } from "next";
-import { Divider, Layout } from "@/components";
 import {
-  RSE,
   ActionsComponent as Actions,
   AlliancesSection,
-  ContactSection,
   CallToActionSection,
+  ContactSection,
   IntroOne,
+  RSE,
 } from "./components";
+import { Divider, Layout } from "@/components";
+import { ActionI } from "@/lib/types";
+import { NextPage } from "next";
 
-export const IndexPage: NextPage = () => {
-  const { data, isValidating } = useActions();
+interface IndexPageProps {
+  actions: ActionI[];
+}
 
+export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
   return (
     <Layout
       headProps={{
@@ -26,7 +28,7 @@ export const IndexPage: NextPage = () => {
       <Divider />
       <IntroOne />
       <Divider />
-      <Actions actions={data?.actions} loading={isValidating} />
+      <Actions actions={actions} loading={false} />
       <Divider />
       <CallToActionSection />
       <Divider />
