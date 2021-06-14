@@ -46,7 +46,8 @@
     // @see https://www.npmjs.com/package/eslint-plugin-react-hooks#custom-configuration
     "react-hooks/rules-of-hooks": "error",
     "@typescript-eslint/ban-ts-comment": "warn",
-    "@typescript-eslint/no-unused-vars": "error"
+    "@typescript-eslint/no-unused-vars": "error",
+    "sort-imports": "warn"
   },
   "globals": { "React": "writable" }
 }
