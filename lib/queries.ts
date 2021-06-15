@@ -1,3 +1,4 @@
+import { RequestDocument } from "graphql-request/dist/types";
 import request from "graphql-request";
 
 export interface Params {
@@ -35,3 +36,13 @@ export const fetcher = (
     params
   );
 };
+
+export const gqlRequest = <R>(
+  query: RequestDocument,
+  params?: Params
+): Promise<R> =>
+  request(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
+    query,
+    params
+  );
