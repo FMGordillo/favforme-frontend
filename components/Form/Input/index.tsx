@@ -1,5 +1,5 @@
-import { Input } from "./styles";
 import { ChangeEvent, FocusEvent, FunctionComponent } from "react";
+import { Input } from "./styles";
 
 type InputTypes = "email" | "number" | "password" | "file" | "tel" | "text";
 
