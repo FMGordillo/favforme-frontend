@@ -11,7 +11,17 @@ export const FormField: FunctionComponent<FormField> = ({ name, label }) => {
   return (
     <FormFieldContainer>
       <label htmlFor={name}>{label ?? name}</label>
-      <Field id={name} name={name} component={BaseField} />
+      <Field name={name}>
+        {/* @ts-ignore  */}
+        {({ field }) => (
+          <BaseField
+            id={name}
+            name={name}
+            {...field}
+            value={field.value || ""}
+          />
+        )}
+      </Field>
       <ErrorMessage name={name} component={BaseErrorMessage} />
     </FormFieldContainer>
   );
