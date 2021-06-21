@@ -2,7 +2,11 @@ import { NextPage } from "next";
 import { ONGRequestContainer } from "@/containers";
 
 const ONGRequest: NextPage = () => {
-  return <ONGRequestContainer />;
+  const onSubmit = () => {
+    console.log("TODO");
+  };
+
+  return <ONGRequestContainer onSubmit={onSubmit} />;
 };
 
 export default ONGRequest;
