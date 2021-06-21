@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Container = styled.div`
+  padding: 0 ${({ theme }) => theme.spacing(4)}em;
 `;
