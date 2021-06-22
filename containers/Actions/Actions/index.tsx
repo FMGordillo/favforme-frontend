@@ -1,5 +1,5 @@
-import { Action, Button, Container, Layout } from "@/components";
-import { ActionContainer, JoinUsContainer, StyledTitle } from "./styles";
+import { Action, Container, Layout, ProposeMyONG } from "@/components";
+import { ActionContainer, StyledTitle } from "./styles";
 import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
 
@@ -12,14 +12,7 @@ export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {
     <Layout header title="Acciones">
       <Container>
         <StyledTitle>Acciones Activas</StyledTitle>
-        <JoinUsContainer>
-          <p style={{ color: "#9f1b32" }}>
-            Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
-            <br />
-            Hagamos juntos un lugar mejor para vivir.
-          </p>
-          <Button>Sumar mi ONG</Button>
-        </JoinUsContainer>
+        <ProposeMyONG />
         {data && (data.length || 0) > 0 ? (
           data.map((action) => (
             <ActionContainer key={action.id}>
