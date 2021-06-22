@@ -2,11 +2,13 @@ import { ButtonLink, Title } from "@/components";
 import { FunctionComponent } from "react";
 import Link from "next/link";
 import { event } from "@/lib/gtag";
+import { isNotProd } from "@/utils";
 import styled from "styled-components";
 
 const JoinUsContainer = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.palette.secondary.main};
+  display: ${isNotProd ? "block" : "none"};
 `;
 
 export const ProposeMyONG: FunctionComponent = () => {
