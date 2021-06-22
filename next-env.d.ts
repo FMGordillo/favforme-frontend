@@ -21,6 +21,7 @@ declare module "styled-components" {
       white: IPalette;
       primary: IPalette;
       secondary: IPalette;
+      error: string;
     };
     spacing: (digit: Spacing) => string;
     breakpoints: {
