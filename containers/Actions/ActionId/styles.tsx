@@ -1,4 +1,4 @@
-import { Title, Container as BaseContainer } from "@/components";
+import { Container as BaseContainer, Title } from "@/components";
 import styled from "styled-components";
 
 export const Container = styled(BaseContainer)`
@@ -26,10 +26,6 @@ export const ActionTitle = styled(Title)`
   font-weight: bold;
 `;
 
-export const JoinUsContainer = styled.div`
-  text-align: center;
-  color: ${({ theme }) => theme.palette.secondary.main};
-`;
 export const LeftColumn = styled.div`
   grid-area: left-column;
   div:first-child {
