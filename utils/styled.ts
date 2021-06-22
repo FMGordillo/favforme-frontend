@@ -54,6 +54,7 @@ export const lightTheme: DefaultTheme = {
       main: "#FFF",
       dark: "#FFF",
     },
+    error: "#b50404",
   },
   ...defaultTheme,
 };
@@ -80,6 +81,7 @@ export const darkTheme: DefaultTheme = {
       main: "#000",
       dark: "#000",
     },
+    error: "#b50404",
   },
   ...defaultTheme,
 };
