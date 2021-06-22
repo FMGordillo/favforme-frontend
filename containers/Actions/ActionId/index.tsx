@@ -1,20 +1,18 @@
-import { ButtonLink, Divider, Layout, Title } from "@/components";
-import { DonatorsTable } from "@/components/DonatorsTable";
-import { toPascalCase } from "@/lib";
-import { event } from "@/lib/gtag";
-import { ActionI } from "@/lib/types";
-import { isNotProd } from "@/utils";
-import { NextPage } from "next";
-import Image from "next/image";
-import { ActionCard } from "./components";
 import {
   ActionContent,
   ActionTitle,
   Container,
-  JoinUsContainer,
   LeftColumn,
   RightColumn,
 } from "./styles";
+import { Divider, Layout, ProposeMyONG, Title } from "@/components";
+import { ActionCard } from "./components";
+import { ActionI } from "@/lib/types";
+import { DonatorsTable } from "@/components/DonatorsTable";
+import Image from "next/image";
+import { NextPage } from "next";
+import { isNotProd } from "@/utils";
+import { toPascalCase } from "@/lib";
 
 interface ActionProps {
   amounts: any;
@@ -79,28 +77,7 @@ export const ActionPage: NextPage<ActionProps> = ({
         </ActionContent>
         <Title>Donaciones recibidas</Title>
         <DonatorsTable actionId={action?.id} />
-        <JoinUsContainer>
-          <Title color="secondary" weight="bold">
-            ¿Tenés una ONG?
-          </Title>
-          <p>
-            Si sos una ONG es hora de potenciar tu esfuerzo con FavForMe.
-            <br />
-            Hagamos juntos un lugar mejor para vivir.
-          </p>
-          <ButtonLink
-            onClick={() =>
-              event({ action: "sumar_mi_ong", category: "ong", value: 1 })
-            }
-            href="https://forms.gle/JTa4Uf5EnRzY1NG4A"
-            target="_blank"
-            rel="noreferrer noopener"
-            color="secondary"
-            hoverTextColor="black"
-          >
-            Sumar mi ONG
-          </ButtonLink>
-        </JoinUsContainer>
+        <ProposeMyONG />
         <Divider />
       </Container>
     </Layout>
