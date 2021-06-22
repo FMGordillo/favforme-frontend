@@ -1,6 +1,6 @@
 import { Container as BaseContainer, Layout, Title } from "@/components";
-import { NextPage } from "next";
 import Image from "next/image";
+import { NextPage } from "next";
 import styled from "styled-components";
 
 const Container = styled(BaseContainer)`
