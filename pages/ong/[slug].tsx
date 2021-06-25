@@ -1,13 +1,10 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     redirect: {
-//       destination: "/404",
-//     },
-//     props: {},
-//   };
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    notFound: true,
+  };
+};
 
 // export const getStaticPaths: GetStaticPaths = async () => {
 //   return {
