@@ -1,9 +1,8 @@
-import { UseCalculationsReturn, useCalculations } from "../useCalculations";
 import { ActionI } from "../../lib/types";
-import request from "graphql-request";
-import useSWR from "swr";
+import { fetcher } from "@/lib/queries";
+import { gql } from "graphql-request";
 
-const GET_ACTION = `
+const GET_ACTION = gql`
   query getAction($id: String) {
     action(where: { id: $id }) {
       id
@@ -25,43 +24,13 @@ const GET_ACTION = `
   }
 `;
 
-interface ActionSWRData {
-  action: ActionI;
-}
-
-interface UseActionReturn {
-  error: any;
-  isValidating: boolean;
-  amounts: UseCalculationsReturn;
-  data: ActionSWRData | undefined;
-}
-
-interface UseActionProps {
-  query?: any;
-}
-
-/**
- * FIXME: Es necesario todo esto?
- */
-export const useAction = ({ query }: UseActionProps): UseActionReturn => {
-  const { data, error, isValidating } = useSWR<ActionSWRData>(() =>
-    query ? [GET_ACTION, query] : null
-  );
-  const amounts = useCalculations(data?.action);
-
-  return {
-    amounts,
-    data,
-    error,
-    isValidating,
-  };
-};
-
-export const getAction = async (query: any): Promise<ActionI[]> => {
+export const getAction = async (params: {
+  id: string;
+}): Promise<ActionI | null> => {
   try {
-    const data = await request("/graphql", GET_ACTION, query);
-    return data;
+    const data = await fetcher(GET_ACTION, params);
+    return data.action;
   } catch (error) {
-    return [];
+    return null;
   }
 };

@@ -1,19 +1,19 @@
-import { ActionI } from "@/lib/types";
-import { FunctionComponent, useContext } from "react";
-import { Button, SocialNetworks } from "@/components";
-import { Summary } from "./styles";
 import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
-import { useRouter } from "next/router";
-import { ModalContext } from "@/lib/context";
+import { Button, SocialNetworks } from "@/components";
+import { FunctionComponent, useContext } from "react";
+import { ActionI } from "@/lib/types";
 import { DonationUnavailableModal } from "@/components/Modal/components";
+import { ModalContext } from "@/lib/context";
+import { Summary } from "./styles";
 import { UseCalculationsReturn } from "@/hooks";
+import { useRouter } from "next/router";
 
 interface ActionCardProps {
-  amounts: UseCalculationsReturn;
+  amounts: UseCalculationsReturn | undefined;
   queryId: string;
   canDonate?: boolean;
   action: ActionI | undefined;
@@ -31,15 +31,15 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
     <>
       <Summary>
         <AmountCollected>
-          ${amounts.currentAmount}
+          ${amounts?.currentAmount}
           .-
         </AmountCollected>
         <AmountSubtitle>
           recaudado para esta acción
           <br />
-          de ${amounts.finalAmount}.-
+          de ${amounts?.finalAmount}.-
         </AmountSubtitle>
-        <Percentage>{amounts.completition}% COMPLETADO</Percentage>
+        <Percentage>{amounts?.completition}% COMPLETADO</Percentage>
         <Button
           hoverTextColor="black"
           onClick={() =>

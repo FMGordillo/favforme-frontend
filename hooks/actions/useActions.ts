@@ -17,7 +17,7 @@ const GET_ACTIONS = (params?: Params): string => createQuery`
           type
           link
         }
-      }
+      } 
     }
   }
 `;

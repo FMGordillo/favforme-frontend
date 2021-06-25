@@ -2,16 +2,16 @@ import { RequestDocument } from "graphql-request/dist/types";
 import request from "graphql-request";
 
 export interface Params {
-  where?: string; // TODO: Evitar que toma un String :c
-  take?: number;
-  skip?: number;
-  cursor?: string; // TODO: Evitar que toma un String :c
+  where: string; // TODO: Evitar que toma un String :c
+  take: number;
+  skip: number;
+  cursor: string; // TODO: Evitar que toma un String :c
   // orderBy?: any;
 }
 
 export const createQuery = (
   query: TemplateStringsArray,
-  params?: Params
+  params?: Partial<Params>
 ): string => {
   const part1 = query[0];
   const part2 = query[1];
