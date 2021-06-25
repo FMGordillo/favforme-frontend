@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { Layout } from "@/components";
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -19,9 +20,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Organization: NextPage = () => {
   return (
-    <div>
+    <Layout header title="Sumá tu acción">
       <p>Haber</p>
-    </div>
+    </Layout>
   );
 };
 
