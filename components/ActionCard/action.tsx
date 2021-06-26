@@ -1,16 +1,3 @@
-import { SocialNetworks } from "@/components";
-import { DonationUnavailableModal } from "@/components/Modal/components";
-import { useCalculations } from "@/hooks";
-import { ModalContext } from "@/lib/context";
-import { getODSImage } from "@/lib/ods_image";
-import { ActionI } from "@/lib/types";
-import { isNotProd } from "@/utils";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { FunctionComponent, useContext } from "react";
 import {
   AmountCollected,
   AmountSubtitle,
@@ -25,6 +12,19 @@ import {
   ProgressBar,
   Title,
 } from "./styles";
+import { FunctionComponent, useContext } from "react";
+import { ActionI } from "@/lib/types";
+import { DonationUnavailableModal } from "@/components/Modal/components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
+import { ModalContext } from "@/lib/context";
+import { SocialNetworks } from "@/components";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { getODSImage } from "@/lib/ods_image";
+import { isNotProd } from "@/utils";
+import { useCalculations } from "@/hooks";
+import { useRouter } from "next/router";
 
 interface ActionProps {
   carousel?: boolean;
@@ -47,16 +47,12 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <DueDate show={!!data?.closedAt} urgency={dueDate?.urgency}>
           {dueDate?.date}
         </DueDate>
-        <Link href={actionUrl}>
-          <Image
-            className="action"
-            width={1400}
-            height={1100}
-            layout="intrinsic"
-            alt="Imagen representativa de la acción"
-            src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
-          />
-        </Link>
+        <Image
+          layout="fill"
+          objectFit="contain"
+          alt="Imagen representativa de la acción"
+          src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
+        />
         <ODS>
           <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
           {data?.ods.map((odsImg) => {

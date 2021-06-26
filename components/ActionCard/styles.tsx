@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { Button as BaseButton } from "@/components/Button"; // FIXME: BuG!
 import { Title as BaseTitle } from "../styles";
+import styled from "styled-components";
 
 export const Container = styled.div<{ carousel?: boolean }>`
   display: grid;
@@ -11,6 +11,8 @@ export const Container = styled.div<{ carousel?: boolean }>`
   background: ${({ theme }) => theme.palette.gray.light};
   ${({ theme }) => theme.breakpoints.down("md")} {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-bottom: 1em;
   }
 `;
 
@@ -78,7 +80,8 @@ export const ProgressBar = styled.div`
     width: 350px;
     appearance: none;
     height: 12px;
-    border: 2px solid ${({ theme }) => theme.palette.gray.dark};
+
+    // border: 2px solid ${({ theme }) => theme.palette.gray.dark};
 
     ::-webkit-progress-bar {
       background-color: transparent;
@@ -113,11 +116,9 @@ export const ProgressBar = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  display: grid;
-  img {
-    object-fit: cover;
-    object-position: right;
-  }
+  position: relative;
+  width: 100%;
+  height: 100%;
   img.action:hover {
     cursor: pointer;
   }
@@ -129,6 +130,7 @@ export const DueDate = styled.p<{
 }>`
   display: ${({ show }) => (show ? "grid" : "none")};
   padding: 0.5em 1.25em;
+  border: 1px solid ${({ theme }) => theme.palette.gray.main};
   border-radius: 3em;
   background-color: white;
   font-weight: bold;
@@ -136,7 +138,7 @@ export const DueDate = styled.p<{
 
   z-index: 2;
   position: absolute;
-  justify-self: end;
+  right: 0;
   margin-right: 0.5em;
 
   color: ${({ theme, urgency = "meh" }) =>
@@ -145,7 +147,7 @@ export const DueDate = styled.p<{
 
 export const ODS = styled.div`
   position: absolute;
-  align-self: end;
+  bottom: 0;
   height: 85px; /* Igual a la imagen */
   z-index: 2;
   align-self: flex-end;
