@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Layout } from "@/components";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -7,16 +7,16 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   return {
-//     paths: [
-//       {
-//         params: { slug: "1" },
-//       },
-//     ],
-//     fallback: false,
-//   };
-// };
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: { slug: "1" },
+      },
+    ],
+    fallback: false,
+  };
+};
 
 const Organization: NextPage = () => {
   return (

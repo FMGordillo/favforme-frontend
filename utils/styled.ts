@@ -23,7 +23,7 @@ export const calculateBreakpoint = (key: Breakpoint): string => {
   }
 };
 
-const defaultTheme: Pick<DefaultTheme, "breakpoints" | "spacing"> = {
+const defaultTheme = {
   spacing: (digit: Spacing): string => `${digit * 4}`,
   breakpoints: {
     down: (key: Breakpoint): string =>

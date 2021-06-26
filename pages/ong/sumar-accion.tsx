@@ -19,8 +19,11 @@ export const getServerSideProps: GetServerSideProps<{
 const ActionRequest: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ ongId }) => {
-  console.log(ongId);
-  return <ActionRequestContainer />;
+  const onSubmit = async () => {
+    console.log(ongId);
+  };
+
+  return <ActionRequestContainer onSubmit={onSubmit} />;
 };
 
 export default ActionRequest;
