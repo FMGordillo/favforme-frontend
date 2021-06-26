@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { Button, Layout } from "@/components";
 import { Form, Formik } from "formik";
 import { Container } from "./styles";
-import { FormField } from "./components";
+import { FormField } from "@/components";
 import { NextPage } from "next";
 import { ONGRequestFormValues } from "@/pages/ong/sumar-ong";
 

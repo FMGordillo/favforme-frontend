@@ -1,13 +1,11 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
+import { Layout } from "@/components";
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     redirect: {
-//       destination: "/404",
-//     },
-//     props: {},
-//   };
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    notFound: true,
+  };
+};
 
 // export const getStaticPaths: GetStaticPaths = async () => {
 //   return {
@@ -22,9 +20,9 @@ import { NextPage } from "next";
 
 const Organization: NextPage = () => {
   return (
-    <div>
+    <Layout header title="Sumá tu acción">
       <p>Haber</p>
-    </div>
+    </Layout>
   );
 };
 
