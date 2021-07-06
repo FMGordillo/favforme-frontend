@@ -1,17 +1,16 @@
 import { Action, Button } from "@/components";
-import { ActionI } from "@/lib/types";
-import { useRouter } from "next/router";
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import styled from "styled-components";
 import { Container, Title } from "@/components/styles";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
+import { ActionI } from "@/lib/types";
 import { Carousel } from "./Carousel";
+import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const StyledContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: 0 ${({ theme }) => theme.spacing(2)}em !important;
   background: ${({ theme }) => theme.palette.primary.main};
 `;
 

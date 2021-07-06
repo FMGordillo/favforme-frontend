@@ -41,7 +41,8 @@ export const Title = styled(BaseTitle)`
   font-size: 2.25em;
   font-weight: bold;
   cursor: pointer;
-  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+  margin-bottom: 0;
   color: ${({ theme }) => theme.palette.primary.main};
   transition: all 300ms;
   :hover {
@@ -81,14 +82,13 @@ export const ProgressBar = styled.div`
     appearance: none;
     height: 12px;
 
-    // border: 2px solid ${({ theme }) => theme.palette.gray.dark};
+    border: 2px solid ${({ theme }) => theme.palette.gray.dark};
 
     ::-webkit-progress-bar {
       background-color: transparent;
       width: 350px;
       appearance: none;
-      height: 12px;
-      border: 2px solid ${({ theme }) => theme.palette.gray.dark};
+      height: 8px;
     }
 
     ::-webkit-progress-value {
