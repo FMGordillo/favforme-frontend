@@ -28,9 +28,9 @@ export const Button = styled.button<ButtonI>`
       ? theme.palette[textColor || "white"]["main"] ?? "#fff"
       : textColor};
   cursor: pointer;
-  font-size: 1.25em;
-  padding: 0.5em 1.25em;
-  border-radius: 3em;
+  font-size: 1.5rem;
+  padding: 12px 28px;
+  border-radius: 24px;
   font-family: abel, sans-serif;
 
   transition: background-color 300ms ease-out, color 300ms ease-out;
