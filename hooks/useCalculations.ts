@@ -45,11 +45,6 @@ export const useCalculations = (
         const urgency = calculateUrgency(
           differenceInDays(dateEndDate, dateCreatedAt)
         );
-        console.log(
-          differenceInDays(dateEndDate, dateCreatedAt),
-          dateEndDate,
-          dateCreatedAt
-        );
         if (differenceInDays(dateEndDate, dateCreatedAt) <= 0) return undefined;
         return {
           date,
