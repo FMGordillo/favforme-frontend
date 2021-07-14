@@ -87,7 +87,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           recaudado de <b>${finalAmount}</b>
         </AmountSubtitle>
         <ProgressBar>
-          <progress max="100" value={completition}></progress>
+          <progress max="100" value={10}></progress>
         </ProgressBar>
         <Percentage>{completition}%</Percentage>
         <ButtonContainer>
