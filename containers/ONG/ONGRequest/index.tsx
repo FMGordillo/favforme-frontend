@@ -1,6 +1,6 @@
 import * as Yup from "yup";
-import { Button, FormField, Layout } from "@/components";
-import { ButtonContainer, Container, Form, RadioGroup } from "./styles";
+import { Button, Form, FormField, Layout } from "@/components";
+import { ButtonContainer, Container, RadioGroup } from "../styles";
 import { ErrorMessage, Field, Formik } from "formik";
 import { BaseErrorMessage } from "@/components/Form/FormField/styles";
 import { NextPage } from "next";
@@ -125,7 +125,7 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
                 <Button color="secondary" textColor="black" type="reset">
                   Limpiar datos
                 </Button>
-                <Button type="submit">Enviar mi solicitud</Button>
+                <Button type="submit">Guardar</Button>
               </ButtonContainer>
             </Form>
           )}
