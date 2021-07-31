@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const FormFieldContainer = styled.div`
   display: grid;
   width: 100%;
-  padding-bottom: 1em;
 `;
 
 export const BaseField = styled.input`

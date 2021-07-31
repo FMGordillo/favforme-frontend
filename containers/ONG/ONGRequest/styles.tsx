@@ -1,16 +1,34 @@
 import styled from "styled-components";
+import { Form as BaseForm } from "formik";
 
 export const Container = styled.div`
   text-align: center;
-  margin: 4em 0;
-  padding: 0 ${({ theme }) => theme.spacing(4)}em;
+  margin: 64px;
+`;
 
-  ${({ theme }) => theme.breakpoints.down("md")} {
-    padding: 0 ${({ theme }) => theme.spacing(2)}em;
-  }
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    padding: 0 ${({ theme }) => theme.spacing(1)}em;
+export const RadioGroup = styled.div`
+  display: grid;
+`;
+
+export const Form = styled(BaseForm)`
+  & > * {
+    padding-bottom: 32px;
   }
 `;
 
-export const ButtonContainer = styled.div``;
+export const ButtonContainer = styled.div`
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr;
+
+  grid-gap: 28px;
+
+  button:first-child {
+    justify-self: right;
+  }
+  button:last-child {
+    justify-self: left;
+  }
+`;

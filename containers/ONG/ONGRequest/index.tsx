@@ -1,10 +1,18 @@
 import * as Yup from "yup";
-import { Button, Layout } from "@/components";
-import { Form, Formik } from "formik";
-import { Container } from "./styles";
-import { FormField } from "@/components";
+import { Button, FormField, Layout } from "@/components";
+import { ButtonContainer, Container, Form, RadioGroup } from "./styles";
+import { ErrorMessage, Field, Formik } from "formik";
+import { BaseErrorMessage } from "@/components/Form/FormField/styles";
 import { NextPage } from "next";
 import { ONGRequestFormValues } from "@/pages/ong/sumar-ong";
+
+export enum PaymentValues {
+  NULL = "",
+  AMBAS = "Ambas",
+  NO_TENGO = "NoTengo",
+  MERCADO_PAGO = "MercadoPago",
+  CUENTA_BANCARIA = "CuentaBancaria",
+}
 
 interface ONGRequestProps {
   onSubmit: (values: ONGRequestFormValues) => Promise<void>;
@@ -25,6 +33,10 @@ const ONGRequestSchema = Yup.object().shape({
     .required()
     .label("Tu email (representante)")
     .email(),
+  has_payment_accounts: Yup.mixed<PaymentValues>()
+    .required()
+    .label("¿Tenés MercadoPago y/o cuenta bancaria?")
+    .oneOf(Object.values(PaymentValues)),
 });
 
 export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
@@ -35,6 +47,7 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
     cuit: undefined,
     representative_name: "",
     representative_email: "",
+    has_payment_accounts: PaymentValues.NULL,
   };
   return (
     <Layout title="Sumar mi ONG" header>
@@ -50,8 +63,8 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
         >
           {() => (
             <Form>
-              <FormField name="name" label="Nombre de ONG" />
-              <FormField name="cuit" label="CUIT" />
+              <FormField name="name" label="Nombre (ONG)" />
+              <FormField name="cuit" label="CUIT (ONG)" />
               <FormField
                 name="representative_name"
                 label="Tu nombre (representante)"
@@ -60,10 +73,56 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
                 name="representative_email"
                 label="Tu email (reprensentante)"
               />
-              <Button type="submit">Enviar mi solicitud</Button>
-              <Button color="secondary" textColor="black" type="reset">
-                Limpiar datos
-              </Button>
+              {/* <FormField
+                name="has_payment_accounts"
+                label="¿Ten&eacute;s MercadoPago o cuenta bancaria?"
+              /> */}
+
+              <RadioGroup role="group" aria-labelledby="has_payment_accounts">
+                <label htmlFor="has_payment_accounts">
+                  <Field
+                    type="radio"
+                    name="has_payment_accounts"
+                    value={PaymentValues.MERCADO_PAGO}
+                  />
+                  Tengo MercadoPago
+                </label>
+                <label htmlFor="has_payment_accounts">
+                  <Field
+                    type="radio"
+                    name="has_payment_accounts"
+                    value={PaymentValues.CUENTA_BANCARIA}
+                  />
+                  Tengo cuenta bancaria
+                </label>
+                <label htmlFor="has_payment_accounts">
+                  <Field
+                    type="radio"
+                    name="has_payment_accounts"
+                    value={PaymentValues.AMBAS}
+                  />
+                  Tengo ambas
+                </label>
+                <label htmlFor="has_payment_accounts">
+                  <Field
+                    type="radio"
+                    name="has_payment_accounts"
+                    value={PaymentValues.NO_TENGO}
+                  />
+                  No tengo
+                </label>
+                <ErrorMessage
+                  name="has_payment_accounts"
+                  component={BaseErrorMessage}
+                />
+              </RadioGroup>
+
+              <ButtonContainer>
+                <Button color="secondary" textColor="black" type="reset">
+                  Limpiar datos
+                </Button>
+                <Button type="submit">Enviar mi solicitud</Button>
+              </ButtonContainer>
             </Form>
           )}
         </Formik>

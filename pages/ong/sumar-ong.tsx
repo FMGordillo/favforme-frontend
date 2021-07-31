@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { ONGRequestContainer } from "@/containers";
+import { ONGRequestContainer, PaymentValues } from "@/containers";
 import { Organization } from "@/lib/types";
 import { useRouter } from "next/router";
 
@@ -8,6 +8,7 @@ export interface ONGRequestFormValues {
   cuit: number | undefined;
   representative_name: string;
   representative_email: string;
+  has_payment_accounts: PaymentValues;
 }
 
 const ONGRequest: NextPage = () => {
@@ -17,7 +18,6 @@ const ONGRequest: NextPage = () => {
 
     // TODO: Submit to server the new organization
     // TODO: Get the ID from the organization
-
     const ong: Organization = {
       id: "TEST",
       name: "TEST ONG",
