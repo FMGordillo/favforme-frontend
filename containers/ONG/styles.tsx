@@ -1,19 +1,9 @@
+import { Container as BaseContainer } from "@/components";
 import styled from "styled-components";
-import { Form as BaseForm } from "formik";
 
-export const Container = styled.div`
+export const Container = styled(BaseContainer)`
   text-align: center;
   margin: 64px;
-`;
-
-export const RadioGroup = styled.div`
-  display: grid;
-`;
-
-export const Form = styled(BaseForm)`
-  & > * {
-    padding-bottom: 32px;
-  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -31,4 +21,8 @@ export const ButtonContainer = styled.div`
   button:last-child {
     justify-self: left;
   }
+`;
+
+export const RadioGroup = styled.div`
+  display: grid;
 `;
