@@ -79,32 +79,36 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
               /> */}
 
               <RadioGroup role="group" aria-labelledby="has_payment_accounts">
-                <label htmlFor="has_payment_accounts">
+                <label htmlFor="has_payment_accounts_1">
                   <Field
+                    id="has_payment_accounts_1"
                     type="radio"
                     name="has_payment_accounts"
                     value={PaymentValues.MERCADO_PAGO}
                   />
                   Tengo MercadoPago
                 </label>
-                <label htmlFor="has_payment_accounts">
+                <label htmlFor="has_payment_accounts_2">
                   <Field
+                    id="has_payment_accounts_2"
                     type="radio"
                     name="has_payment_accounts"
                     value={PaymentValues.CUENTA_BANCARIA}
                   />
                   Tengo cuenta bancaria
                 </label>
-                <label htmlFor="has_payment_accounts">
+                <label htmlFor="has_payment_accounts_3">
                   <Field
+                    id="has_payment_accounts_3"
                     type="radio"
                     name="has_payment_accounts"
                     value={PaymentValues.AMBAS}
                   />
                   Tengo ambas
                 </label>
-                <label htmlFor="has_payment_accounts">
+                <label htmlFor="has_payment_accounts_4">
                   <Field
+                    id="has_payment_accounts_4"
                     type="radio"
                     name="has_payment_accounts"
                     value={PaymentValues.NO_TENGO}
