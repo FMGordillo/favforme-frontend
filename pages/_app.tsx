@@ -31,7 +31,7 @@ setLocale({
   mixed: {
     default: "Valor inválido",
     // @ts-ignore
-    required: (val) => `El campo ${val.label} es requerido`,
+    required: () => `Este campo es requerido`,
   },
   string: {
     // @ts-ignore
