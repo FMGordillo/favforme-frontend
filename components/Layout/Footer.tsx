@@ -5,9 +5,9 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FunctionComponent } from "react";
 import Image from "next/image";
 import NextLink from "next/link";
-import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.section`
@@ -141,7 +141,11 @@ const Footer: FunctionComponent<FooterProps> = () => (
   <FooterContainer>
     <MapSection>
       <div>
-        <Image src="/images/favforme_logo_white.png" width={245} height={192} />
+        <Image
+          src="/images/favforme_logo_white.webp"
+          width={245}
+          height={192}
+        />
       </div>
       <MapUl>
         <MapItem href="/">Home</MapItem>
