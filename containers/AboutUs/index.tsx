@@ -4,12 +4,12 @@ import Image from "next/image";
 import { AlliancesSection } from "../IndexPage/components";
 import {
   HighlightSection,
-  ThreeColumns,
+  Member,
   Section,
   Subtitle,
-  TwoColumnSection,
   Team,
-  Member,
+  ThreeColumns,
+  TwoColumnSection,
 } from "./styles";
 
 export const AboutUsPage: NextPage = () => {

@@ -1,5 +1,4 @@
-import { Breakpoint } from "@/next-env";
-import { calculateBreakpoint } from "@/utils/styled";
+import { Breakpoint, calculateBreakpoint } from "@/utils/styled";
 import { useEffect, useState } from "react";
 
 interface UseMobileSizeReturn {
@@ -31,6 +30,7 @@ export const useMobileSize = (breakpoint?: Breakpoint): UseMobileSizeReturn => {
     return () => {
       window.removeEventListener("resize", updateWindowWidth);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobileSize]);
 
   return {

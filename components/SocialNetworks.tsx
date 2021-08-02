@@ -1,14 +1,14 @@
 import { SocialNetwork, SocialNetworkName } from "@/lib/types";
-import { Direction } from "@/utils/styled";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faFacebook,
   faInstagram,
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { Direction } from "@/utils/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import styled from "styled-components";
 
 interface SocialNetworksProps {
