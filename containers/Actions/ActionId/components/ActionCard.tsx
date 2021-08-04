@@ -5,7 +5,7 @@ import {
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { Button, SocialNetworks } from "@/components";
 import { FunctionComponent, useContext } from "react";
-import { ActionI } from "@/lib/types";
+import { Action } from "@/lib/types";
 import { DonationUnavailableModal } from "@/components/Modal/components";
 import { ModalContext } from "@/lib/context";
 import { Summary } from "./styles";
@@ -14,14 +14,14 @@ import { useRouter } from "next/router";
 
 interface ActionCardProps {
   amounts: UseCalculationsReturn;
-  queryId: string;
+  queryId: string | undefined;
   canDonate?: boolean;
-  action: ActionI | undefined;
+  action: Action | null;
 }
 export const ActionCard: FunctionComponent<ActionCardProps> = ({
   amounts,
   queryId,
-  action,
+  // action,
   canDonate,
 }) => {
   const { handleModal } = useContext(ModalContext);
@@ -56,7 +56,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
           Favorecer esta acci&oacute;n
         </Button>
         <SocialNetworks
-          data={action?.organization?.socialNetworks}
+          // data={action?.organization?.socialNetworks}
           justify="center"
         />
       </Summary>
