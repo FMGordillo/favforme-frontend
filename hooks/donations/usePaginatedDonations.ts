@@ -1,77 +1,27 @@
-import useSWR from "swr";
-import request from "graphql-request";
-import { createQuery, Params } from "@/lib/queries";
-import { DonationI } from "@/lib/types";
-import { useEffect, useState } from "react";
+import { Donation } from "@/lib/types";
+import prisma from "@/lib/prisma";
 
-const COUNT_DONATIONS = `
-{
-  aggregateDonation {
-    count {
-      id
-    }
-  }
-}
-`;
+type UsePaginatedDonationsProps = {
+  actionId: string;
+};
 
-const GET_DONATIONS = (params?: Params): string => createQuery`
-  {
-    donations${params} {
-      id
-      amount
-      user {
-        name
-        surname
-        userType
-      }
-      createdAt
-    }
-  }
-`;
+type UsePaginatedDonationsReturn = {
+  data: Donation[];
+};
 
-interface DonationsSWRData {
-  donations: DonationI[];
-}
-
-export type UseDonationsData = DonationsSWRData | undefined;
-
-interface UseDonationsReturn {
-  data: UseDonationsData;
-  count: number | undefined;
-  error: any;
-  isValidating: boolean;
-  refetch: (
-    data?: DonationsSWRData | Promise<DonationsSWRData> | undefined,
-    shouldRevalidate?: boolean | undefined
-  ) => Promise<UseDonationsData>;
-}
-
-export const usePaginatedDonations = (params?: Params): UseDonationsReturn => {
-  const [count, setCount] = useState<number | undefined>(undefined);
-  const { data, error, isValidating, mutate } = useSWR<DonationsSWRData>(
-    GET_DONATIONS(params)
-  );
-
-  useEffect(() => {
-    const getLength = async () => {
-      try {
-        const donationLength = await request(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
-          COUNT_DONATIONS
-        );
-        setCount(donationLength?.aggregateDonation?.count?.id);
-      } catch (error) {
-        setCount(0);
-      }
-    };
-    getLength();
-  }, []);
-
+export const usePaginatedDonations = async ({
+  actionId,
+}: UsePaginatedDonationsProps): Promise<UsePaginatedDonationsReturn> => {
+  const donations = await prisma?.donation.findMany({ where: { actionId } });
+  const cleanedDonations: Donation[] = donations
+    ? donations.map((donation) => ({
+        ...donation,
+        amount: donation.amount.toNumber(),
+        createdAt: donation.createdAt.toDateString(),
+        updatedAt: donation.updatedAt.toDateString(),
+      }))
+    : [];
   return {
-    data,
-    count,
-    refetch: mutate,
-    error,
-    isValidating,
+    data: cleanedDonations,
   };
 };
