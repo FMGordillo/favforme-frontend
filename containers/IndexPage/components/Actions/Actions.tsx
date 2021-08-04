@@ -1,7 +1,7 @@
-import { Action, Button } from "@/components";
+import { Action as ActionComponent, Button } from "@/components";
 import { Container, Title } from "@/components/styles";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import { ActionI } from "@/lib/types";
+import { ActionIndex } from "@/pages";
 import { Carousel } from "./Carousel";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ const StyledTitle = styled(Title)`
 
 interface ActionsProps {
   loading: boolean;
-  actions?: ActionI[];
+  actions?: ActionIndex[];
 }
 
 const ActionsComponent: FunctionComponent<ActionsProps> = ({
@@ -73,7 +73,9 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
       >
         {actions &&
           actions.length > 0 &&
-          actions.map((action, i) => <Action carousel key={i} data={action} />)}
+          actions.map((action, i) => (
+            <ActionComponent carousel key={i} data={action} />
+          ))}
       </Carousel>
       <Button
         color="white"

@@ -1,11 +1,11 @@
 import { Container, Layout } from "@/components";
-import { event } from "@/lib/gtag";
-import { ActionI } from "@/lib/types";
-import axios from "axios";
-import { useFormik } from "formik";
 import { FunctionComponent, useState } from "react";
-import { DonationForm } from "./Form";
 import { ActionContainer } from "./styles";
+import { ActionIndex } from "@/pages";
+import { DonationForm } from "./Form";
+import axios from "axios";
+import { event } from "@/lib/gtag";
+import { useFormik } from "formik";
 
 interface DonationProps {
   user: any;
@@ -13,7 +13,7 @@ interface DonationProps {
   query: {
     id?: string;
   };
-  action: ActionI | undefined;
+  action: ActionIndex | undefined;
 }
 
 export interface FormValues {

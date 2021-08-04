@@ -13,13 +13,13 @@ import {
   Title,
 } from "./styles";
 import { FunctionComponent, useContext } from "react";
-import { ActionI } from "@/lib/types";
+import { ActionIndex } from "@/pages";
 import { DonationUnavailableModal } from "@/components/Modal/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { ModalContext } from "@/lib/context";
-import { SocialNetworks } from "@/components";
+// import { SocialNetworks } from "@/components";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { getODSImage } from "@/lib/ods_image";
 import { isNotProd } from "@/utils";
@@ -28,7 +28,7 @@ import { useRouter } from "next/router";
 
 interface ActionProps {
   carousel?: boolean;
-  data?: ActionI;
+  data?: ActionIndex;
 }
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
@@ -116,7 +116,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
             DETALLES
           </Button>
         </ButtonContainer>
-        <SocialNetworks data={data?.organization?.socialNetworks} />
+        {/* <SocialNetworks data={data?.organization?.} /> */}
       </MainContent>
     </Container>
   );

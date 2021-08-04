@@ -1,9 +1,11 @@
+import { Prisma } from "@prisma/client";
+
 /**
  * @param value Default to 0
  */
-export const parseToCurrency = (value = "0"): string => {
+export const parseToCurrency = (value?: number): string => {
   try {
-    if (Number.isNaN(value) || value === "0") return "0";
+    if (!value) return "0";
     const numberedValue = Number(value);
     const formatCurrency = Intl.NumberFormat("es-ES", {
       style: "currency",
@@ -20,12 +22,12 @@ export const parseToCurrency = (value = "0"): string => {
 };
 
 interface GetProgresValueParams {
-  currentAmount?: string;
-  finalAmount?: string;
+  currentAmount?: Prisma.Decimal;
+  finalAmount?: Prisma.Decimal;
 }
 
 export const getProgressValue = ({
-  currentAmount = "0",
+  currentAmount,
   finalAmount,
 }: GetProgresValueParams): string => {
   if (Number.isNaN(currentAmount) || Number.isNaN(finalAmount)) return "0";

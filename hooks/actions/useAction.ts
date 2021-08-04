@@ -1,7 +1,7 @@
 import { UseCalculationsReturn, useCalculations } from "../useCalculations";
-import { ActionI } from "../../lib/types";
 import request from "graphql-request";
 import useSWR from "swr";
+import { ActionIndex } from "@/pages";
 
 const GET_ACTION = `
   query getAction($id: String) {
@@ -26,7 +26,7 @@ const GET_ACTION = `
 `;
 
 interface ActionSWRData {
-  action: ActionI;
+  action: ActionIndex;
 }
 
 interface UseActionReturn {
@@ -57,7 +57,7 @@ export const useAction = ({ query }: UseActionProps): UseActionReturn => {
   };
 };
 
-export const getAction = async (query: any): Promise<ActionI[]> => {
+export const getAction = async (query: any): Promise<ActionIndex[]> => {
   try {
     const data = await request("/graphql", GET_ACTION, query);
     return data;

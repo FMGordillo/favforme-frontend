@@ -7,11 +7,11 @@ import {
   RSE,
 } from "./components";
 import { Divider, Layout } from "@/components";
-import { ActionI } from "@/lib/types";
+import { ActionIndex } from "@/pages";
 import { NextPage } from "next";
 
 interface IndexPageProps {
-  actions: ActionI[];
+  actions: ActionIndex[];
 }
 
 export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {

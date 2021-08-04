@@ -1,6 +1,6 @@
 import { differenceInDays, formatDistance } from "date-fns";
 import { getProgressValue, parseToCurrency } from "../lib/data";
-import { ActionI } from "../lib/types";
+import { ActionIndex } from "@/pages";
 import esES from "date-fns/locale/es";
 
 type Urgency = "high" | "medium" | "meh";
@@ -20,7 +20,7 @@ export interface UseCalculationsReturn {
 }
 
 export const useCalculations = (
-  data: ActionI | undefined
+  data: ActionIndex | undefined
 ): UseCalculationsReturn => {
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
@@ -34,7 +34,10 @@ export const useCalculations = (
         : "meh"
       : "meh";
 
-  const calculateDueDate = (createdAt?: string, endDate?: string): DueDate => {
+  const calculateDueDate = (
+    createdAt?: Date,
+    endDate?: Date | null
+  ): DueDate => {
     try {
       if (createdAt && endDate) {
         const dateCreatedAt = new Date(createdAt);

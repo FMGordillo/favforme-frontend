@@ -7,27 +7,25 @@ import {
 } from "./styles";
 import { Divider, Layout, ProposeMyONG, Title } from "@/components";
 import { ActionCard } from "./components";
-import { ActionI } from "@/lib/types";
+import { ActionIdIndex } from "@/pages/acciones/[actionId]";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import Image from "next/image";
 import { NextPage } from "next";
 import { isNotProd } from "@/utils";
 import { toPascalCase } from "@/lib";
+import { useCalculations } from "@/hooks";
 
 interface ActionProps {
-  amounts: any;
-  loading: boolean;
-  action: ActionI | undefined;
+  action: ActionIdIndex;
   query: {
     id: string;
   };
 }
 
-export const ActionPage: NextPage<ActionProps> = ({
-  query,
-  action,
-  amounts,
-}) => {
+export const ActionPage: NextPage<ActionProps> = ({ query, action }) => {
+  // @ts-ignore
+  const amounts = useCalculations(action);
+
   return (
     <Layout
       header

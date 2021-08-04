@@ -1,10 +1,10 @@
 import { Action, Container, Layout, ProposeMyONG } from "@/components";
 import { ActionContainer, StyledTitle } from "./styles";
-import { ActionI } from "@/lib/types";
+import { ActionIndex } from "@/pages";
 import { NextPage } from "next";
 
 interface ActionsPageProps {
-  data: ActionI[];
+  data: ActionIndex[];
 }
 
 export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {

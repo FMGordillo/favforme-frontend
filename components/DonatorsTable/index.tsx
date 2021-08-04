@@ -1,10 +1,10 @@
+import { TBody, THead, Table, TableColumn, TableRow } from "./styles";
 import { Button } from "@/components";
-import { usePaginatedDonations } from "@/hooks";
-import { parseToCurrency } from "@/lib/data";
-import { format } from "date-fns";
-import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
-import { Table, TableColumn, TableRow, TBody, THead } from "./styles";
+import { format } from "date-fns";
+import { parseToCurrency } from "@/lib/data";
+import { usePaginatedDonations } from "@/hooks";
+import { useRouter } from "next/router";
 
 interface DonatorsTableProps {
   actionId?: string;
@@ -57,7 +57,9 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
                     ? `${donation.user.name} ${donation.user.surname}`
                     : "Anonimo/a"}
                 </TableColumn>
-                <TableColumn>${parseToCurrency(donation.amount)}</TableColumn>
+                <TableColumn>
+                  {/* TODO: FIXME */}${parseToCurrency(Number(donation.amount))}
+                </TableColumn>
               </TableRow>
             ))
           ) : (
