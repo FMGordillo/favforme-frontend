@@ -1,45 +1,37 @@
-import { Action, Organization } from "@prisma/client";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Action } from "@/lib/types";
 import { ActionPage as ActionContainer } from "@/containers";
-import prisma from "@/lib/prisma";
+import { getAction } from "@/hooks";
 
-export type ActionIdIndex =
-  | (Action & {
-      organization: Organization;
-    })
-  | null;
-interface GetServerSidePropsReturn {
+type GetServerSidePropsReturn = {
   props: {
-    query: { id: any };
-    action: ActionIdIndex;
+    query: {
+      id: string | undefined;
+    };
+    action: Action | null;
   };
-}
+};
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> => {
   const { actionId } = context.query;
   if (typeof actionId === "string") {
-    const action = await prisma.action.findFirst({
-      where: { id: actionId },
-      include: {
-        organization: true,
-      },
-    });
+    const { data } = await getAction({ actionId });
     return {
       props: {
         query: { id: actionId },
-        action,
+        action: data,
       }, // will be passed to the page component as props
     };
   } else {
     return {
       props: {
-        query: { id: actionId },
+        query: { id: undefined },
         action: null,
       },
     };

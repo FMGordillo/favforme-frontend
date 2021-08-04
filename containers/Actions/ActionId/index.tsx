@@ -6,8 +6,8 @@ import {
   RightColumn,
 } from "./styles";
 import { Divider, Layout, ProposeMyONG, Title } from "@/components";
+import { Action } from "@/lib/types";
 import { ActionCard } from "./components";
-import { ActionIdIndex } from "@/pages/acciones/[actionId]";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import Image from "next/image";
 import { NextPage } from "next";
@@ -16,14 +16,13 @@ import { toPascalCase } from "@/lib";
 import { useCalculations } from "@/hooks";
 
 interface ActionProps {
-  action: ActionIdIndex;
+  action: Action | null;
   query: {
-    id: string;
+    id: string | undefined;
   };
 }
 
 export const ActionPage: NextPage<ActionProps> = ({ query, action }) => {
-  // @ts-ignore
   const amounts = useCalculations(action);
 
   return (

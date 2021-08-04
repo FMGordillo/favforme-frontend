@@ -13,7 +13,7 @@ import {
   Title,
 } from "./styles";
 import { FunctionComponent, useContext } from "react";
-import { ActionIndex } from "@/pages";
+import { Action } from "@/lib/types";
 import { DonationUnavailableModal } from "@/components/Modal/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -28,7 +28,7 @@ import { useRouter } from "next/router";
 
 interface ActionProps {
   carousel?: boolean;
-  data?: ActionIndex;
+  data: Action | null;
 }
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {

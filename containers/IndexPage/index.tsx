@@ -1,5 +1,5 @@
 import {
-  ActionsComponent as Actions,
+  ActionsComponent,
   AlliancesSection,
   CallToActionSection,
   ContactSection,
@@ -7,11 +7,11 @@ import {
   RSE,
 } from "./components";
 import { Divider, Layout } from "@/components";
-import { ActionIndex } from "@/pages";
+import { Action } from "@/lib/types";
 import { NextPage } from "next";
 
 interface IndexPageProps {
-  actions: ActionIndex[];
+  actions: Action[];
 }
 
 export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
@@ -28,7 +28,7 @@ export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
       <Divider />
       <IntroOne />
       <Divider />
-      <Actions actions={actions} loading={false} />
+      <ActionsComponent actions={actions} loading={false} />
       <Divider />
       <CallToActionSection />
       <Divider />

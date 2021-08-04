@@ -5,7 +5,7 @@ import {
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { Button, SocialNetworks } from "@/components";
 import { FunctionComponent, useContext } from "react";
-import { ActionIdIndex } from "@/pages/acciones/[actionId]";
+import { Action } from "@/lib/types";
 import { DonationUnavailableModal } from "@/components/Modal/components";
 import { ModalContext } from "@/lib/context";
 import { Summary } from "./styles";
@@ -14,9 +14,9 @@ import { useRouter } from "next/router";
 
 interface ActionCardProps {
   amounts: UseCalculationsReturn;
-  queryId: string;
+  queryId: string | undefined;
   canDonate?: boolean;
-  action: ActionIdIndex;
+  action: Action | null;
 }
 export const ActionCard: FunctionComponent<ActionCardProps> = ({
   amounts,

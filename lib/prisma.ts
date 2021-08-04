@@ -6,17 +6,22 @@ import { PrismaClient } from "@prisma/client";
 // Learn more:
 // https://pris.ly/d/help/next-js-best-practices
 
-let prisma: PrismaClient;
+let prisma: PrismaClient | undefined;
 
-if (process.env.NODE_ENV === "production") {
-  prisma = new PrismaClient();
-} else {
-  // @ts-ignore
-  if (!global.prisma) {
+try {
+  if (process.env.NODE_ENV === "production") {
+    prisma = new PrismaClient();
+  } else {
     // @ts-ignore
-    global.prisma = new PrismaClient();
+    if (!global.prisma) {
+      // @ts-ignore
+      global.prisma = new PrismaClient();
+    }
+    // @ts-ignore
+    prisma = global.prisma;
   }
-  // @ts-ignore
-  prisma = global.prisma;
+} catch (error) {
+  console.log("HABER", error);
 }
+
 export default prisma;

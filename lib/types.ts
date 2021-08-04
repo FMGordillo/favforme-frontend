@@ -1,3 +1,9 @@
+import {
+  Action as BaseAction,
+  Donation as BaseDonation,
+  Organization as BaseOrganization,
+} from "@prisma/client";
+
 /**
  * Sacado del backend
  * @TODO Unificar backend y frontend types
@@ -36,17 +42,6 @@ export interface SocialNetwork {
   name?: string; // "others"
   link: string;
 }
-
-export interface Organization {
-  id: string;
-  name: string;
-  logo?: string;
-  history?: string;
-  homepage?: string;
-  actions: ActionI[];
-  socialNetworks: SocialNetwork[];
-}
-
 export interface ActionI {
   id: string;
   title: string;
@@ -91,3 +86,31 @@ export interface User {
 export interface GetActionsData {
   actions: ActionI[];
 }
+
+export type Modify<T, R> = Omit<T, keyof R> & R;
+
+export type Organization = Modify<
+  BaseOrganization,
+  { createdAt: string; updatedAt: string }
+>;
+
+export type Action = Modify<
+  BaseAction,
+  {
+    current: number;
+    objective: number;
+    closedAt: string | null;
+    createdAt: string;
+    updatedAt: string;
+    organization: Organization;
+  }
+>;
+
+export type Donation = Modify<
+  BaseDonation,
+  {
+    amount: number;
+    createdAt: string;
+    updatedAt: string;
+  }
+>;

@@ -1,7 +1,7 @@
 import { Action as ActionComponent, Button } from "@/components";
 import { Container, Title } from "@/components/styles";
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import { ActionIndex } from "@/pages";
+import { Action } from "@/lib/types";
 import { Carousel } from "./Carousel";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ const StyledTitle = styled(Title)`
 
 interface ActionsProps {
   loading: boolean;
-  actions?: ActionIndex[];
+  actions: Action[];
 }
 
 const ActionsComponent: FunctionComponent<ActionsProps> = ({

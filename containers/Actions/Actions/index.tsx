@@ -1,10 +1,15 @@
-import { Action, Container, Layout, ProposeMyONG } from "@/components";
+import {
+  Action as ActionComponent,
+  Container,
+  Layout,
+  ProposeMyONG,
+} from "@/components";
 import { ActionContainer, StyledTitle } from "./styles";
-import { ActionIndex } from "@/pages";
+import { Action } from "@/lib/types";
 import { NextPage } from "next";
 
 interface ActionsPageProps {
-  data: ActionIndex[];
+  data: Action[];
 }
 
 export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {
@@ -16,7 +21,7 @@ export const ActionsPage: NextPage<ActionsPageProps> = ({ data }) => {
         {data && (data.length || 0) > 0 ? (
           data.map((action) => (
             <ActionContainer key={action.id}>
-              <Action data={action} />
+              <ActionComponent data={action} />
             </ActionContainer>
           ))
         ) : (

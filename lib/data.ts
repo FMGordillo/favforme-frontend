@@ -1,5 +1,3 @@
-import { Prisma } from "@prisma/client";
-
 /**
  * @param value Default to 0
  */
@@ -22,8 +20,8 @@ export const parseToCurrency = (value?: number): string => {
 };
 
 interface GetProgresValueParams {
-  currentAmount?: Prisma.Decimal;
-  finalAmount?: Prisma.Decimal;
+  currentAmount?: number;
+  finalAmount?: number;
 }
 
 export const getProgressValue = ({

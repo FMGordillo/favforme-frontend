@@ -3,22 +3,17 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { ActionIndex } from "..";
+import { Action } from "@/lib/types";
 import { ActionsPage as Actions } from "@/containers/Actions";
-import prisma from "@/lib/prisma";
+import { getActions } from "@/hooks";
 
-// @ts-ignore
 export const getServerSideProps: GetServerSideProps<{
-  actions: ActionIndex[];
+  actions: Action[];
 }> = async () => {
-  // const actions = await getActions({ take: 5 });
-  const actions = await prisma.action.findMany({
-    take: 5,
-    include: { organization: true },
-  });
+  const { data } = await getActions({ take: 5 });
   return {
     props: {
-      actions,
+      actions: data,
     },
   };
 };
