@@ -6,17 +6,10 @@ const main = async () => {
   const serverCaFile = await fs.readFile(
     path.resolve("prisma", "server-ca.pem")
   );
-  const clientIdentityFile = await fs.readFile(
-    path.resolve("prisma", "client-identity.p12")
-  );
-
   const serverCa = Buffer.from(serverCaFile).toString("base64");
   console.log("SERVER CA");
   console.log(serverCa);
 
-  const clientIdentity = Buffer.from(clientIdentityFile).toString("base64");
-  console.log("CLIENT IDENTITY");
-  console.log(clientIdentity);
 };
 
 main();

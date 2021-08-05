@@ -87,8 +87,11 @@ export const Item = styled.li<ItemProps>`
     max-width: 150px;
   }
   a {
-    color: ${({ current, theme }) =>
-      current ? theme.palette.secondary.main : "white"};
+    ${({ current, theme }) => `
+      color: ${current ? theme.palette.secondary.main : "white"};
+      text-shadow: ${current ? "1px 1px 4px hsl(0, 75%, 0%)" : ""};
+      font-weight: ${current ? "700" : "inherit"};
+    `}
   }
 
   display: ${({ isProfileButton }) => (isProfileButton ? "none" : "block")};
@@ -106,6 +109,7 @@ export const Link = styled.a`
   transition: all 300ms;
   &:hover {
     font-weight: 700;
+    text-shadow: 1px 1px 4px hsl(0, 75%, 0%);
     color: ${({ theme }) => theme.palette.secondary.main};
   }
 `;

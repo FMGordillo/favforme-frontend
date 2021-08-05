@@ -11,13 +11,21 @@ import { getActions } from "@/hooks";
 export const getServerSideProps: GetServerSideProps<{
   actions: Action[];
 }> = async () => {
-  const { data } = await getActions();
+  try {
+    const { data } = await getActions();
 
-  return {
-    props: {
-      actions: data,
-    },
-  };
+    return {
+      props: {
+        actions: data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        actions: [],
+      },
+    };
+  }
 };
 
 const IndexPage: NextPage<
