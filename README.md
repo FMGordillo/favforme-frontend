@@ -16,6 +16,20 @@ You should have installed:
 3. `npm install`
 4. Run your server, and then `npm run dev`
 
+## How set SSL
+
+Thanks to [this issue from Prisma repository](https://github.com/prisma/prisma/issues/1673#issuecomment-647107891)
+
+Requisites:
+
+- `openssl`
+- PostgreSQL configured properly
+- PostgreSQL SSL credentials
+
+1. `openssl pkcs12 -export -out {FILE_TO_CONVERT}.p12 -inkey {CLIENT_KEY_FROM_GCP}.pem -in {CLIENT_CERT_FROM_GCP}.pem`
+2. Visit [`AES Encryptation and Decryptation Online` ](https://www.devglan.com/online-tools/aes-encryption-decryption) and follow [this steps](https://leerob.io/blog/vercel-env-variables-size-limit#encryption-example)
+3. Paster the result in `lib/prisma.ts` variable (you'll know).
+
 ## Credentials
 
 ```
