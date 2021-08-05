@@ -3,17 +3,19 @@ import {
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { ActionI } from "@/lib/types";
+import { Action } from "@/lib/types";
 import { IndexPage as Index } from "@/containers";
+
 import { getActions } from "@/hooks";
 
 export const getServerSideProps: GetServerSideProps<{
-  actions: ActionI[];
+  actions: Action[];
 }> = async () => {
-  const actions = await getActions();
+  const { data } = await getActions();
+
   return {
     props: {
-      actions,
+      actions: data,
     },
   };
 };

@@ -1,42 +1,47 @@
-import { useAction } from "@/hooks";
-import { ActionPage as ActionContainer } from "@/containers";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Action } from "@/lib/types";
+import { ActionPage as ActionContainer } from "@/containers";
+import { getAction } from "@/hooks";
 
-interface GetServerSidePropsReturn {
+type GetServerSidePropsReturn = {
   props: {
-    query: any;
+    query: {
+      id: string | undefined;
+    };
+    action: Action | null;
   };
-}
+};
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> => {
   const { actionId } = context.query;
-  return {
-    props: {
-      query: { id: actionId },
-    }, // will be passed to the page component as props
-  };
+  if (typeof actionId === "string") {
+    const { data } = await getAction({ actionId });
+    return {
+      props: {
+        query: { id: actionId },
+        action: data,
+      }, // will be passed to the page component as props
+    };
+  } else {
+    return {
+      props: {
+        query: { id: undefined },
+        action: null,
+      },
+    };
+  }
 };
 
 const ActionPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ query }) => {
-  const { data, amounts, isValidating } = useAction({ query });
-  const { action } = data || {};
-
-  return (
-    <ActionContainer
-      query={query}
-      action={action}
-      amounts={amounts}
-      loading={isValidating}
-    />
-  );
+> = ({ query, action }) => {
+  return <ActionContainer query={query} action={action} />;
 };
 
 export default ActionPage;
