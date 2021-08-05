@@ -46,6 +46,6 @@ export const Container = styled.section<{ center?: boolean; spacing?: number }>`
  */
 export const Divider = styled.hr`
   border: none;
-  padding-top: 4em;
-  padding-bottom: 2em;
+  padding-top: 32px;
+  padding-bottom: 32px;
 `;

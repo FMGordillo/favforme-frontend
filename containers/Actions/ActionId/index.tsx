@@ -6,28 +6,25 @@ import {
   RightColumn,
 } from "./styles";
 import { Divider, Layout, ProposeMyONG, Title } from "@/components";
+import { Action } from "@/lib/types";
 import { ActionCard } from "./components";
-import { ActionI } from "@/lib/types";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import Image from "next/image";
 import { NextPage } from "next";
 import { isNotProd } from "@/utils";
 import { toPascalCase } from "@/lib";
+import { useCalculations } from "@/hooks";
 
 interface ActionProps {
-  amounts: any;
-  loading: boolean;
-  action: ActionI | undefined;
+  action: Action | null;
   query: {
-    id: string;
+    id: string | undefined;
   };
 }
 
-export const ActionPage: NextPage<ActionProps> = ({
-  query,
-  action,
-  amounts,
-}) => {
+export const ActionPage: NextPage<ActionProps> = ({ query, action }) => {
+  const amounts = useCalculations(action);
+
   return (
     <Layout
       header

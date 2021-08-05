@@ -1,33 +1,16 @@
+import { TBody, THead, Table, TableColumn, TableRow } from "./styles";
 import { Button } from "@/components";
-import { usePaginatedDonations } from "@/hooks";
-import { parseToCurrency } from "@/lib/data";
-import { format } from "date-fns";
-import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
-import { Table, TableColumn, TableRow, TBody, THead } from "./styles";
+// import { format } from "date-fns";
+// import { parseToCurrency } from "@/lib/data";
+import { useRouter } from "next/router";
 
 interface DonatorsTableProps {
   actionId?: string;
 }
 
-export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
-  actionId,
-}) => {
+export const DonatorsTable: FunctionComponent<DonatorsTableProps> = () => {
   const router = useRouter();
-  const { data } = usePaginatedDonations(
-    Object.assign(
-      {},
-      {
-        take: 6,
-        where: `{ AND:{ actionId: {equals: "${actionId}"} ${
-          process.env.NEXT_PUBLIC_ENVIRONMENT === "production"
-            ? "paymentStatus:{equals: SUCCESS}"
-            : ""
-        }} }`,
-        orderBy: `{ createdAt: desc }`,
-      }
-    )
-  );
 
   return (
     <>
@@ -41,7 +24,7 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
           </TableRow>
         </THead>
         <TBody>
-          {data && data?.donations.length > 0 ? (
+          {/* {data && data?.donations.length > 0 ? (
             data.donations.map((donation) => (
               <TableRow key={donation.id}>
                 <TableColumn>
@@ -57,17 +40,19 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
                     ? `${donation.user.name} ${donation.user.surname}`
                     : "Anonimo/a"}
                 </TableColumn>
-                <TableColumn>${parseToCurrency(donation.amount)}</TableColumn>
+                <TableColumn>
+                  {parseToCurrency(Number(donation.amount))}
+                </TableColumn>
               </TableRow>
             ))
-          ) : (
-            <TableRow>
-              <TableColumn>Cargando</TableColumn>
-              <TableColumn>Cargando</TableColumn>
-              <TableColumn>Cargando</TableColumn>
-              <TableColumn>Cargando</TableColumn>
-            </TableRow>
-          )}
+          ) : ( */}
+          <TableRow>
+            <TableColumn>Cargando</TableColumn>
+            <TableColumn>Cargando</TableColumn>
+            <TableColumn>Cargando</TableColumn>
+            <TableColumn>Cargando</TableColumn>
+          </TableRow>
+          {/* )} */}
         </TBody>
       </Table>
       <Button

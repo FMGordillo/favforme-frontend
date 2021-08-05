@@ -1,15 +1,15 @@
-import styled from "styled-components";
 import { ButtonLink, Container } from "@/components";
+import styled from "styled-components";
 
 export const HighlightText = styled.p`
   color: #027aa8;
-  font-size: 1.25em;
+  font-size: 1.5rem;
   font-weight: 700;
   text-align: center !important;
-  padding: 0 2em;
+  padding: 0 32px;
   max-width: 1024px;
   ${({ theme }) => theme.breakpoints.down("sm")} {
-    padding: 2em 0 2.5em;
+    padding: 32px 0 0;
   }
 `;
 
@@ -84,7 +84,10 @@ export const ODSContainer = styled(Container)`
   }
 
   ${({ theme }) => theme.breakpoints.down("md")} {
-    margin: 4em 2em;
+    margin: 64px 32px;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin: 32px 8px;
   }
 
   .img.smallest {
@@ -112,6 +115,9 @@ export const ODSContainer = styled(Container)`
 export const ODSButton = styled(ButtonLink)`
   justify-self: center;
   width: 300px;
-  margin-top: 2em;
+  margin-top: 32px;
   grid-area: button;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    width: 100%;
+  }
 `;

@@ -25,7 +25,7 @@ export const TextContainer = styled.div<{ isIndex?: boolean }>`
     !isIndex ? "0" : `0 0 0 ${theme.spacing(2)}em`};
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 0;
-    padding-left: 2em;
+    padding-left: 24px;
   }
 `;
 export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
@@ -35,6 +35,10 @@ export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   overflow: hidden;
   width: ${({ isIndex }) => (isIndex ? "75vw" : "inherit")};
   text-align: ${({ isIndex }) => (isIndex ? "left" : "center")};
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    width: 100vw;
+  }}
 `;
 export const Subtitle = styled.h2`
   font-family: abel, sans-serif;
