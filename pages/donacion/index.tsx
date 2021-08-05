@@ -1,16 +1,18 @@
 import { Container, Layout, Title } from "@/components";
-import { DonationContainer } from "@/containers";
-import { useAction } from "@/hooks";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
+import { Action } from "@/lib/types";
+import { DonationContainer } from "@/containers";
 import Image from "next/image";
+import { getAction } from "@/hooks";
 
 interface GetServerSidePropsReturn {
   props: {
     query: { id?: string };
+    action: Action | null;
   };
 }
 
@@ -18,20 +20,29 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> {
   const { action } = context.query;
-  return {
-    props: {
-      query: { id: typeof action === "string" ? action : undefined },
-    },
-  };
+  if (typeof action === "string") {
+    const { data } = await getAction({ actionId: action });
+    return {
+      props: {
+        query: {
+          id: action,
+        },
+        action: data,
+      },
+    };
+  } else {
+    return {
+      props: {
+        query: { id: undefined },
+        action: null,
+      },
+    };
+  }
 }
 
 const DonationPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ query }) => {
-  const { data, isValidating } = useAction({ query });
-
-  const { action } = data ?? {};
-
+> = ({ query, action }) => {
   return process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? (
     <Layout header title="Donacion - No disponible">
       <Container center>
@@ -53,12 +64,7 @@ const DonationPage: NextPage<
       </Container>
     </Layout>
   ) : (
-    <DonationContainer
-      user={undefined}
-      query={query}
-      action={action}
-      loading={isValidating}
-    />
+    <DonationContainer user={undefined} query={query} action={action} />
   );
 };
 

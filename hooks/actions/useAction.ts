@@ -1,67 +1,50 @@
-import { UseCalculationsReturn, useCalculations } from "../useCalculations";
-import { ActionI } from "../../lib/types";
-import request from "graphql-request";
-import useSWR from "swr";
+import {
+  UseCalculationsReturn,
+  useCalculations as makeCalculations,
+} from "../useCalculations";
+import { Action } from "@/lib/types";
+import prisma from "@/lib/prisma";
 
-const GET_ACTION = `
-  query getAction($id: String) {
-    action(where: { id: $id }) {
-      id
-      title
-      ods
-      current
-      objective
-      description
-      mainImage
-      organization {
-        logo
-        history
-        socialNetworks {
-          type
-          link
-        }
-      }
-    }
-  }
-`;
+type UserActionProps = {
+  actionId: string;
+};
 
-interface ActionSWRData {
-  action: ActionI;
-}
-
-interface UseActionReturn {
-  error: any;
-  isValidating: boolean;
+interface UserActionReturn {
+  data: Action | null;
   amounts: UseCalculationsReturn;
-  data: ActionSWRData | undefined;
 }
 
-interface UseActionProps {
-  query?: any;
-}
+export const getAction = async ({
+  actionId,
+}: UserActionProps): Promise<UserActionReturn> => {
+  const action = await prisma?.action.findFirst({
+    where: { id: actionId },
+    include: {
+      organization: true,
+    },
+  });
+  const parsedAction: Action | null = action
+    ? {
+        ...action,
+        current: action?.current.toNumber(),
+        objective: action?.objective.toNumber(),
+        createdAt: action?.createdAt.toDateString(),
+        updatedAt: action.updatedAt.toDateString(),
+        closedAt: action.closedAt?.toDateString() || null,
+        organization: {
+          ...action.organization,
+          createdAt: action.organization.createdAt.toDateString(),
+          updatedAt: action.organization.updatedAt.toDateString(),
+        },
+      }
+    : null;
 
-/**
- * FIXME: Es necesario todo esto?
- */
-export const useAction = ({ query }: UseActionProps): UseActionReturn => {
-  const { data, error, isValidating } = useSWR<ActionSWRData>(() =>
-    query ? [GET_ACTION, query] : null
-  );
-  const amounts = useCalculations(data?.action);
+  // parse action data
+
+  const amounts = makeCalculations(parsedAction);
 
   return {
     amounts,
-    data,
-    error,
-    isValidating,
+    data: parsedAction,
   };
-};
-
-export const getAction = async (query: any): Promise<ActionI[]> => {
-  try {
-    const data = await request("/graphql", GET_ACTION, query);
-    return data;
-  } catch (error) {
-    return [];
-  }
 };
