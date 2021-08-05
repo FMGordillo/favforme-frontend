@@ -1,0 +1,241 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Coordenates {
+  id        Int        @id @default(autoincrement())
+  lat       String
+  long      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Location  Location[]
+}
+
+model Location {
+  id            Int          @id @default(autoincrement())
+  address       String
+  coordenatesId Int?
+  neighborhood  String?
+  city          String?
+  country       String
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  coordenates   Coordenates? @relation(fields: [coordenatesId], references: [id])
+  User          User[]
+}
+
+model User {
+  id                      String     @id @default(uuid())
+  userType                UserType   @default(USER)
+  username                String?    @unique
+  password                String?
+  salt                    String?
+  name                    String?
+  surname                 String?
+  birthDate               DateTime?
+  locationId              Int?
+  role                    UserRole   @default(USER)
+  email                   String     @unique
+  coins                   Int        @default(0)
+  deleted                 Boolean    @default(false)
+  isInNewsletters         Boolean?   @default(false)
+  createdAt               DateTime   @default(now())
+  updatedAt               DateTime   @updatedAt
+  location                Location?  @relation(fields: [locationId], references: [id])
+  comments                Comment[]
+  donations               Donation[]
+  favors                  Favor[]
+  likes                   Like[]
+  actionsContributed      Action[]
+  Favor_favorsContributed Favor[]    @relation("favorsContributed")
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  text      String
+  userId    String
+  favorId   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  favor     Favor?   @relation(fields: [favorId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  likes     Like[]
+}
+
+model Like {
+  id        String   @id @default(uuid())
+  userId    String?
+  favorId   String?
+  commentId String?
+  createdAt DateTime @default(now())
+  comment   Comment? @relation(fields: [commentId], references: [id])
+  favor     Favor?   @relation(fields: [favorId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model Favor {
+  id           String     @id @default(uuid())
+  title        String
+  description  String
+  mainImage    String? // Route to the image, from the code TODO: improve this
+  deleted      Boolean    @default(false)
+  status       Status     @default(DRAFT)
+  likes        Like[]
+  comments     Comment[]
+  donations    Donation[]
+  creator      User       @relation(fields: [creatorId], references: [id])
+  creatorId    String
+  contributors User[]     @relation("favorsContributed", references: [id])
+  category     Category   @relation(fields: [categoryId], references: [id])
+  categoryId   Int
+  closedAt     DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Action {
+  id               String       @id @default(uuid())
+  title            String
+  description      String
+  mainImage        String? // Route to the image, from the code TODO: improve this
+  gallery          String[] // Routes to the images, from the code TODO: improve this
+  ods              ODS[]
+  organizationId   String
+  peopleBeneficted Int?
+  deleted          Boolean      @default(false)
+  status           Status       @default(DRAFT)
+  userId           Int?
+  objective        Decimal      @db.Money
+  current          Decimal      @db.Money
+  closedAt         DateTime?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  organization     Organization @relation(fields: [organizationId], references: [id])
+  donations        Donation[]
+  contributors     User[]
+}
+
+model Organization {
+  id             String          @id @default(uuid())
+  name           String
+  history        String?
+  homepage       String?
+  logo           String? // Route to the image, from the code TODO: improve this
+  odsFocus       ODS[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  actions        Action[]
+  contact        Contact[]
+  socialNetworks SocialNetwork[]
+}
+
+model Contact {
+  id             String        @id @default(uuid())
+  type           ContactType
+  content        String
+  organizationId String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+}
+
+model SocialNetwork {
+  id             String            @id @default(uuid())
+  type           SocialNetworkName
+  name           String?
+  link           String
+  organizationId String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  organization   Organization?     @relation(fields: [organizationId], references: [id])
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  text      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  favors    Favor[]
+}
+
+model Donation {
+  id            String         @id @default(uuid())
+  amount        Decimal        @db.Decimal(18,8) 
+  currency      Currency       @default(ARS)
+  userId        String
+  favorId       String?
+  actionId      String?
+  paymentStatus PaymentStatus?
+  updatedAt     DateTime       @updatedAt
+  createdAt     DateTime       @default(now())
+  action        Action?        @relation(fields: [actionId], references: [id])
+  favors        Favor?         @relation(fields: [favorId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+}
+
+enum ODS {
+  NO_POVERTY
+  ZERO_HUNGER
+  GOOD_HEALTH
+  QUALITY_EDUCATION
+  GENDER_EQUITY
+  CLEAN_WATER
+  CLEAN_ENERGY
+  DECENT_WORK
+  INDUSTRY_INNOVATION_INFRASTRUCTURE
+  REDUCE_INEQUITIES
+  SUSTAINABLE_CITIES
+  RESPONSIBLE_CONSUMPTION_PRODUCTION
+  CLIMATE_ACTION
+  LIFE_BELOW_WATER
+  LIFE_ON_LAND
+  PEACE_JUSTICE_INSTITUTIONS
+  PARTNERSHIP_FOR_GOALS
+}
+
+enum Status {
+  DRAFT
+  INPROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum Currency {
+  USD
+  ARS
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+enum SocialNetworkName {
+  FACEBOOK
+  INSTAGRAM
+  LINKEDIN
+  TWITTER
+  OTHER
+}
+
+enum ContactType {
+  EMAIL
+  PHONE
+  SKYPE
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+}
+
+enum UserType {
+  USER
+  BUSINESS
+}
