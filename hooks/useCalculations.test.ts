@@ -1,22 +1,35 @@
-import { ActionI } from "@/lib/types";
+import { Action } from "@/lib/types";
+import { ODS } from "@prisma/client";
 import { useCalculations } from "./useCalculations";
 
-const noDueDateAction: ActionI = {
+const noDueDateAction: Action = {
   id: "1",
   title: "Test",
   description: "Test",
   organization: {
     id: "1",
     name: "Test org",
-    actions: [],
-    socialNetworks: [],
+    history: "ASDF",
+    homepage: "ASDF",
+    logo: "ASDF",
+    odsFocus: [ODS.CLEAN_ENERGY],
+    createdAt: Date.now().toString(),
+    updatedAt: Date.now().toString(),
+    // socialNetworks: [],
   },
-  current: "0",
-  objective: "252000",
-  ods: [],
+  current: 0,
+  objective: 252000,
+  mainImage: "ASDF",
+  gallery: ["ASDF"],
+  organizationId: "1",
+  peopleBeneficted: 1,
+  userId: 1,
+  ods: [ODS.CLEAN_ENERGY],
   status: "INPROGRESS",
   deleted: false,
   createdAt: new Date("1995/01/01").toString(),
+  updatedAt: new Date().toString(),
+  closedAt: null,
 };
 
 describe("useCalculations", () => {
