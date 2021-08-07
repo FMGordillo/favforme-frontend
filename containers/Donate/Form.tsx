@@ -1,10 +1,9 @@
-import { FormikErrors } from "formik";
 import { ChangeEvent, FormEvent } from "react";
-import { FormValues } from "./";
 import { DonateButton, ErrorText, MainContainer } from "./styles";
+import { FormValues } from "./";
+import { FormikErrors } from "formik";
 
 interface DonationFormProps {
-  loading: boolean;
   submitLoading: boolean;
   errors: FormikErrors<FormValues>;
   values: FormValues;
@@ -16,7 +15,6 @@ const DonationForm = ({
   handleSubmit,
   values,
   errors,
-  loading,
   handleChange,
   submitLoading,
 }: DonationFormProps): JSX.Element => {
@@ -55,7 +53,6 @@ const DonationForm = ({
         type="submit"
         disabled={
           submitLoading ||
-          loading ||
           Object.values(errors).find((er) => er !== "") !== undefined
         }
       >

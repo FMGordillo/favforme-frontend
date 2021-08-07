@@ -20,7 +20,7 @@ export interface UseCalculationsReturn {
 }
 
 export const useCalculations = (
-  data: ActionI | undefined
+  data: ActionI | null
 ): UseCalculationsReturn => {
   const currentAmount = data?.current;
   const finalAmount = data?.objective;

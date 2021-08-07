@@ -16,7 +16,7 @@ interface ActionCardProps {
   amounts: UseCalculationsReturn;
   queryId: string;
   canDonate?: boolean;
-  action: ActionI | undefined;
+  action: ActionI | null;
 }
 export const ActionCard: FunctionComponent<ActionCardProps> = ({
   amounts,

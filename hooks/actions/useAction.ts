@@ -1,7 +1,5 @@
-import { UseCalculationsReturn, useCalculations } from "../useCalculations";
 import { ActionI } from "../../lib/types";
 import request from "graphql-request";
-import useSWR from "swr";
 
 const GET_ACTION = `
   query getAction($id: String) {
@@ -25,43 +23,16 @@ const GET_ACTION = `
   }
 `;
 
-interface ActionSWRData {
-  action: ActionI;
-}
-
-interface UseActionReturn {
-  error: any;
-  isValidating: boolean;
-  amounts: UseCalculationsReturn;
-  data: ActionSWRData | undefined;
-}
-
-interface UseActionProps {
-  query?: any;
-}
-
-/**
- * FIXME: Es necesario todo esto?
- */
-export const useAction = ({ query }: UseActionProps): UseActionReturn => {
-  const { data, error, isValidating } = useSWR<ActionSWRData>(() =>
-    query ? [GET_ACTION, query] : null
-  );
-  const amounts = useCalculations(data?.action);
-
-  return {
-    amounts,
-    data,
-    error,
-    isValidating,
-  };
-};
-
-export const getAction = async (query: any): Promise<ActionI[]> => {
+export const getAction = async (query: any): Promise<ActionI | null> => {
   try {
-    const data = await request("/graphql", GET_ACTION, query);
-    return data;
+    const { action } = await request<{ action: ActionI }>(
+      process.env.NEXT_PUBLIC_BACKEND_URL || "",
+      GET_ACTION,
+      query
+    );
+    return action;
   } catch (error) {
-    return [];
+    console.log("WOT", error);
+    return null;
   }
 };

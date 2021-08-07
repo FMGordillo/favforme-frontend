@@ -3,10 +3,8 @@ import request from "graphql-request";
 
 export interface Params {
   where?: string; // TODO: Evitar que toma un String :c
-  take?: number;
-  skip?: number;
-  cursor?: string; // TODO: Evitar que toma un String :c
-  // orderBy?: any;
+  first?: number;
+  last?: number;
 }
 
 export const createQuery = (
@@ -30,19 +28,11 @@ export const fetcher = (
   query: string,
   params: unknown
 ): Promise<Record<string, any>> => {
-  return request(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
-    query,
-    params
-  );
+  return request(`${process.env.NEXT_PUBLIC_BACKEND_URL}` || "", query, params);
 };
 
 export const gqlRequest = <R>(
   query: RequestDocument,
   params?: Params
 ): Promise<R> =>
-  request(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",
-    query,
-    params
-  );
+  request(`${process.env.NEXT_PUBLIC_BACKEND_URL}` || "", query, params);
