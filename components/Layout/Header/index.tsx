@@ -1,9 +1,15 @@
-import { Button, NavBar } from "@/components";
-import { useMobileSize } from "@/hooks/useMobileSize";
-import { event } from "@/lib/gtag";
-import { useRouter } from "next/router";
+import {
+  Button,
+  HeaderContainer,
+  Subtitle,
+  TextContainer,
+  Title,
+} from "./styles";
 import { FunctionComponent, ReactNode } from "react";
-import { HeaderContainer, Subtitle, TextContainer, Title } from "./styles";
+import { NavBar } from "@/components";
+import { event } from "@/lib/gtag";
+import { useMobileSize } from "@/hooks/useMobileSize";
+import { useRouter } from "next/router";
 
 export interface HeaderProps {
   isIndex?: boolean;
@@ -37,7 +43,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                 <span>
                   Hay muchas personas
                   <br />
-                  necesitando de tu
+                  <mark>necesitando</mark> de tu
                   <br />
                   buena acción
                 </span>
@@ -47,12 +53,7 @@ const Header: FunctionComponent<HeaderProps> = ({
           </Title>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
           {isIndex && (
-            <Button
-              style={{ width: "200px", margin: "1.5em 0" }}
-              textColor="#111"
-              color="secondary"
-              onClick={handleClick}
-            >
+            <Button textColor="#111" color="secondary" onClick={handleClick}>
               DON&Aacute; HOY
             </Button>
           )}
