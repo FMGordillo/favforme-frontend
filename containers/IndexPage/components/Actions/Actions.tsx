@@ -56,7 +56,7 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
   useEffect(() => {
     const timer = setInterval(() => {
       changeCurrent(current + 1);
-    }, 5000);
+    }, 10000);
     return () => {
       clearInterval(timer);
     };

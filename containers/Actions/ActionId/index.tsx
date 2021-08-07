@@ -16,8 +16,7 @@ import { toPascalCase } from "@/lib";
 
 interface ActionProps {
   amounts: any;
-  loading: boolean;
-  action: ActionI | undefined;
+  action: ActionI | null;
   query: {
     id: string;
   };

@@ -28,7 +28,7 @@ import { useRouter } from "next/router";
 
 interface ActionProps {
   carousel?: boolean;
-  data?: ActionI;
+  data: ActionI | null;
 }
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
@@ -87,7 +87,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
           recaudado de <b>${finalAmount}</b>
         </AmountSubtitle>
         <ProgressBar>
-          <progress max="100" value={10}></progress>
+          <progress max="100" value={completition}></progress>
         </ProgressBar>
         <Percentage>{completition}%</Percentage>
         <ButtonContainer>

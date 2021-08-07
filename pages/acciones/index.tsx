@@ -10,7 +10,7 @@ import { getActions } from "@/hooks";
 export const getServerSideProps: GetServerSideProps<{
   actions: ActionI[];
 }> = async () => {
-  const actions = await getActions({ take: 5 });
+  const actions = await getActions({ first: 5 });
   return {
     props: {
       actions,
