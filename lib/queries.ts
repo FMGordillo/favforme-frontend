@@ -37,9 +37,9 @@ export const fetcher = (
   );
 };
 
-export const gqlRequest = <R>(
+export const gqlRequest = <R, P = unknown>(
   query: RequestDocument,
-  params?: Params
+  params?: Params | P
 ): Promise<R> =>
   request(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/graphql` || "",

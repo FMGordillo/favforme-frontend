@@ -1,12 +1,12 @@
+import * as yup from "yup";
 import { Button, FormInput } from "@/components";
-import { useNotifications } from "@/hooks";
-import { event } from "@/lib/gtag";
-import axios from "axios";
+import { DialogContainer, DialogTitle } from "../styles";
 import { FormikValues, useFormik } from "formik";
 import { FunctionComponent, useEffect } from "react";
+import axios from "axios";
+import { event } from "@/lib/gtag";
 import styled from "styled-components";
-import * as yup from "yup";
-import { DialogContainer, DialogTitle } from "../styles";
+import { useNotifications } from "@/service";
 
 const ModalContent = styled.div`
   text-align: center;

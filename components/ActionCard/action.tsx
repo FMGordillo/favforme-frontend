@@ -23,7 +23,7 @@ import { SocialNetworks } from "@/components";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { getODSImage } from "@/lib/ods_image";
 import { isNotProd } from "@/utils";
-import { useCalculations } from "@/hooks";
+import { makeCalculations } from "@/service";
 import { useRouter } from "next/router";
 
 interface ActionProps {
@@ -33,9 +33,12 @@ interface ActionProps {
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
-  const { completition, dueDate, currentAmount, finalAmount } = useCalculations(
-    data
-  );
+  const {
+    completition,
+    dueDate,
+    currentAmount,
+    finalAmount,
+  } = makeCalculations(data);
   const { handleModal } = useContext(ModalContext);
 
   const actionUrl = `/acciones/${data?.id}`;

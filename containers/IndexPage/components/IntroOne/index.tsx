@@ -1,6 +1,4 @@
-import { Container, Text, Title } from "@/components";
-import { event } from "@/lib/gtag";
-import Image from "next/image";
+import { Container, Text } from "@/components";
 import { FunctionComponent, useEffect, useState } from "react";
 import {
   HighlightText,
@@ -11,7 +9,10 @@ import {
   ODSLogo,
   RightHandImage,
   TextContainer,
+  Title,
 } from "./styles";
+import Image from "next/image";
+import { event } from "@/lib/gtag";
 
 const sdg = [
   "01",
@@ -34,7 +35,7 @@ const sdg = [
 ];
 
 const IntroOneSection: FunctionComponent = () => {
-  const sdgLength = sdg.length;
+  const { length: sdgLength } = sdg;
   const [iCurrent, setICurrent] = useState(0);
 
   const getItem = (position: number) => {
@@ -73,7 +74,10 @@ const IntroOneSection: FunctionComponent = () => {
       </LeftHandImage>
       <TextContainer>
         <Title>
-          SOMOS LA PRIMERA PLATAFORMA DE CROWDFUNDING SOCIAL DE LATINOAMÉRICA
+          <mark>
+            SOMOS LA <strong>PRIMERA</strong> PLATAFORMA DE{" "}
+            <strong>CROWDFUNDING SOCIAL</strong> DE LATINOAMÉRICA
+          </mark>
         </Title>
         <Text>
           En FavForMe creamos un espacio que ayuda a las ONGs a conseguir los
@@ -92,9 +96,9 @@ const IntroOneSection: FunctionComponent = () => {
       </RightHandImage>
       <ODSLogo>
         <a
-          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
           target="_blank"
           rel="noopener noreferrer"
+          href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
         >
           <Image
             width={360}
@@ -105,9 +109,16 @@ const IntroOneSection: FunctionComponent = () => {
         </a>
         <Container>
           <HighlightText>
-            El equipo de FavForMe se especializó en los Objetivos de Desarrollo
-            Sustentables (ODS) definidos por la Organización de las Naciones
-            Unidas y ha desarrollado mejores prácticas para lograr alcanzarlos
+            El equipo de FavForMe se especializó en los{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
+            >
+              Objetivos de Desarrollo Sustentables (ODS)
+            </a>{" "}
+            definidos por la Organización de las Naciones Unidas y ha
+            desarrollado mejores prácticas para lograr alcanzarlos
           </HighlightText>
         </Container>
       </ODSLogo>
