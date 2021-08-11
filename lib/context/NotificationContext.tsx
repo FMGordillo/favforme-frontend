@@ -1,11 +1,11 @@
-import { Notification as NotificationComponent } from "@/components/Notification";
 import {
-  createContext,
   FunctionComponent,
+  createContext,
   useCallback,
   useEffect,
   useState,
 } from "react";
+import { Notification as NotificationComponent } from "@/components/Notification";
 
 export type Status = "success" | "error" | "info";
 type Notification = { message: string; status: Status } | null;
