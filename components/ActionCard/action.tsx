@@ -28,7 +28,7 @@ import { useRouter } from "next/router";
 
 interface ActionProps {
   carousel?: boolean;
-  data?: ActionI;
+  data: ActionI | null;
 }
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {

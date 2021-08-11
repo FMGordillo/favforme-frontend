@@ -14,7 +14,7 @@ export interface UseCalculationsReturn {
   finalAmount: string;
   completition: string;
   currentAmount: string;
-  dueDate: DueDate;
+  dueDate: DueDate | null;
 }
 
 export const makeCalculations = (
@@ -32,7 +32,10 @@ export const makeCalculations = (
         : "meh"
       : "meh";
 
-  const calculateDueDate = (createdAt?: string, endDate?: string): DueDate => {
+  const calculateDueDate = (
+    createdAt?: string,
+    endDate?: string
+  ): DueDate | null => {
     try {
       if (createdAt && endDate) {
         const dateCreatedAt = new Date(createdAt);
@@ -51,6 +54,7 @@ export const makeCalculations = (
       } else return null;
     } catch (error) {
       console.error("calculateDueDate", error);
+      return null;
     }
   };
 

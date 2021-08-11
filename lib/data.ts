@@ -1,9 +1,10 @@
 /**
+ * TODO: Check if value is number type
  * @param value Default to 0
  */
-export const parseToCurrency = (value = 0): string => {
+export const parseToCurrency = (value = "0"): string => {
   try {
-    if (!value) return "0";
+    if (!Number(value) || Number(value) < 0) return "0";
     const numberedValue = Number(value);
     const formatCurrency = Intl.NumberFormat("es-ES", {
       style: "currency",
