@@ -8,7 +8,7 @@ import {
 import { FunctionComponent, ReactNode } from "react";
 import { NavBar } from "@/components";
 import { event } from "@/lib/gtag";
-import { useMobileSize } from "@/hooks/useMobileSize";
+import { useMobileSize } from "@/service/useMobileSize";
 import { useRouter } from "next/router";
 
 export interface HeaderProps {

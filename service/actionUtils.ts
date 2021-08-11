@@ -5,12 +5,10 @@ import esES from "date-fns/locale/es";
 
 type Urgency = "high" | "medium" | "meh";
 
-type DueDate =
-  | {
-      date: string;
-      urgency: Urgency;
-    }
-  | undefined;
+type DueDate = {
+  date: string;
+  urgency: Urgency;
+} | null;
 
 export interface UseCalculationsReturn {
   finalAmount: string;
@@ -19,8 +17,8 @@ export interface UseCalculationsReturn {
   dueDate: DueDate;
 }
 
-export const useCalculations = (
-  data: ActionI | undefined
+export const makeCalculations = (
+  data: ActionI | null
 ): UseCalculationsReturn => {
   const currentAmount = data?.current;
   const finalAmount = data?.objective;
@@ -45,12 +43,12 @@ export const useCalculations = (
         const urgency = calculateUrgency(
           differenceInDays(dateEndDate, dateCreatedAt)
         );
-        if (differenceInDays(dateEndDate, dateCreatedAt) <= 0) return undefined;
+        if (differenceInDays(dateEndDate, dateCreatedAt) <= 0) return null;
         return {
           date,
           urgency,
         };
-      } else return undefined;
+      } else return null;
     } catch (error) {
       console.error("calculateDueDate", error);
     }

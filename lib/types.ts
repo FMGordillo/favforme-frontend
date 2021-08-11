@@ -53,8 +53,8 @@ export interface ActionI {
   mainImage?: string;
   description: string;
   peopleBeneficted?: number;
-  current: string; // $$$
-  objective: string; // $$$
+  current: number; // $$$
+  objective: number; // $$$
   organization: Organization;
   ods: ODS[];
   deleted: boolean;

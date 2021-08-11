@@ -1,13 +1,13 @@
-import useSWR from "swr";
-import request from "graphql-request";
-import { createQuery, Params } from "@/lib/queries";
-import { DonationI } from "@/lib/types";
+import { Params, createQuery } from "@/lib/queries";
 import { useEffect, useState } from "react";
+import { DonationI } from "@/lib/types";
+import request from "graphql-request";
+import useSWR from "swr";
 
 const COUNT_DONATIONS = `
 {
   aggregateDonation {
-    count {
+    _count {
       id
     }
   }

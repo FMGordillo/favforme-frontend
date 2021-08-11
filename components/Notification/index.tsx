@@ -1,15 +1,15 @@
-import { useNotifications } from "@/hooks";
-import { Status } from "@/lib/context";
+import { Container, Message } from "./styles";
 import {
+  IconDefinition,
   faCheckCircle,
   faInfo,
   faTimes,
   faTimesCircle,
-  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
-import { Container, Message } from "./styles";
+import { Status } from "@/lib/context";
+import { useNotifications } from "@/service";
 
 const iconStatus: Record<Status, IconDefinition> = {
   info: faInfo,

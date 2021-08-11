@@ -5,7 +5,7 @@ import {
 } from "next";
 import { ActionI } from "@/lib/types";
 import { IndexPage as Index } from "@/containers";
-import { getActions } from "@/hooks";
+import { getActions } from "@/service";
 
 export const getServerSideProps: GetServerSideProps<{
   actions: ActionI[];
