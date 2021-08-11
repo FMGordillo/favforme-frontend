@@ -1,17 +1,18 @@
+import { Button as BaseButton } from "@/components";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.png");
-  height: ${({ isIndex }) => (isIndex ? "600px" : "400px")};
+  height: ${({ isIndex }) => (isIndex ? "660px" : "400px")};
   width: 100vw;
   overflow: hidden;
 
   /* Workaround? */
   display: table-cell;
   vertical-align: bottom;
-  padding-bottom: 2em;
+  padding-bottom: 48px;
 
   transition: height 300ms;
 
@@ -21,11 +22,11 @@ export const HeaderContainer = styled.header<{ isIndex?: boolean }>`
 `;
 export const TextContainer = styled.div<{ isIndex?: boolean }>`
   color: white;
-  padding: ${({ theme, isIndex }) =>
-    !isIndex ? "0" : `0 0 0 ${theme.spacing(2)}em`};
+  transform: translateY(-64px);
+  padding: ${({ isIndex }) => (!isIndex ? "0" : `0 0 0 160px`)};
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 0;
-    padding-left: 2em;
+    padding-left: 48px;
   }
 `;
 export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
@@ -35,9 +36,20 @@ export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   overflow: hidden;
   width: ${({ isIndex }) => (isIndex ? "75vw" : "inherit")};
   text-align: ${({ isIndex }) => (isIndex ? "left" : "center")};
+
+  mark {
+    color: white;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+  }
 `;
 export const Subtitle = styled.h2`
   font-family: abel, sans-serif;
   margin-top: 0;
   font-weight: 400;
+`;
+
+export const Button = styled(BaseButton)`
+  width: 200px;
+  margin: 24px 0;
+  font-weight: bold;
 `;

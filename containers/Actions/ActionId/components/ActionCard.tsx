@@ -9,14 +9,14 @@ import { ActionI } from "@/lib/types";
 import { DonationUnavailableModal } from "@/components/Modal/components";
 import { ModalContext } from "@/lib/context";
 import { Summary } from "./styles";
-import { UseCalculationsReturn } from "@/hooks";
+import { UseCalculationsReturn } from "@/service";
 import { useRouter } from "next/router";
 
 interface ActionCardProps {
-  amounts: UseCalculationsReturn;
+  amounts: UseCalculationsReturn | null;
   queryId: string;
   canDonate?: boolean;
-  action: ActionI | undefined;
+  action: ActionI | null;
 }
 export const ActionCard: FunctionComponent<ActionCardProps> = ({
   amounts,
@@ -31,15 +31,15 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
     <>
       <Summary>
         <AmountCollected>
-          ${amounts.currentAmount}
+          ${amounts?.currentAmount}
           .-
         </AmountCollected>
         <AmountSubtitle>
           recaudado para esta acción
           <br />
-          de ${amounts.finalAmount}.-
+          de ${amounts?.finalAmount}.-
         </AmountSubtitle>
-        <Percentage>{amounts.completition}% COMPLETADO</Percentage>
+        <Percentage>{amounts?.completition}% COMPLETADO</Percentage>
         <Button
           hoverTextColor="black"
           onClick={() =>
