@@ -1,5 +1,5 @@
+import { Title as BaseTitle, ButtonLink, Container } from "@/components";
 import styled from "styled-components";
-import { ButtonLink, Container } from "@/components";
 
 export const HighlightText = styled.p`
   color: #027aa8;
@@ -10,6 +10,13 @@ export const HighlightText = styled.p`
   max-width: 1024px;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 2em 0 2.5em;
+  }
+  a {
+    color: inherit;
+    transition: color 300ms;
+  }
+  a:hover {
+    color: ${({ theme }) => theme.palette.primary.main};
   }
 `;
 
@@ -114,4 +121,10 @@ export const ODSButton = styled(ButtonLink)`
   width: 300px;
   margin-top: 2em;
   grid-area: button;
+`;
+
+export const Title = styled(BaseTitle)`
+  mark {
+    background-color: ${({ theme }) => theme.palette.primary.light};
+  }
 `;

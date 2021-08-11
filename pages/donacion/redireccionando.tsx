@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
-import { NextPage } from "next";
-import { Layout } from "../../components";
 import { useEffect, useState } from "react";
+import { Layout } from "@/components";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
 
 const DonationRedirectionPage: NextPage = () => {
   const [seconds, setSeconds] = useState(5);

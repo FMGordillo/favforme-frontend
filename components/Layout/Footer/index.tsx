@@ -1,4 +1,12 @@
-import { Logo } from "@/components";
+import {
+  Copyright,
+  FooterContainer,
+  Link,
+  MapLi,
+  MapSection,
+  MapUl,
+  SocialNetworks,
+} from "./styles";
 import {
   faFacebook,
   faInstagram,
@@ -6,17 +14,9 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NextLink from "next/link";
 import { FunctionComponent } from "react";
-import {
-  MapUl,
-  MapLi,
-  MapSection,
-  Link,
-  Copyright,
-  FooterContainer,
-  SocialNetworks,
-} from "./styles";
+import { Logo } from "@/components";
+import NextLink from "next/link";
 
 interface FooterProps {
   toggleModal?: () => void;

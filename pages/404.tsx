@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import styled from "styled-components";
 
 const Container = styled(BaseContainer)`
-  padding: 1em 0;
+  padding: 14px 0;
 `;
 
 const Custom404Page: NextPage = () => {

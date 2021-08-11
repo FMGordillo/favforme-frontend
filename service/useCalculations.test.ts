@@ -1,5 +1,5 @@
 import { ActionI } from "@/lib/types";
-import { useCalculations } from "./useCalculations";
+import { makeCalculations } from "./actionUtils";
 
 const noDueDateAction: ActionI = {
   id: "1",
@@ -21,7 +21,7 @@ const noDueDateAction: ActionI = {
 
 describe("useCalculations", () => {
   it("Returns 0% when there's no due date", () => {
-    const { dueDate } = useCalculations(noDueDateAction);
+    const { dueDate } = makeCalculations(noDueDateAction);
     expect(dueDate?.date).toBeUndefined();
   });
 });

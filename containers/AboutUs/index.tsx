@@ -1,7 +1,4 @@
 import { Container, Layout, Title } from "@/components";
-import { NextPage } from "next";
-import Image from "next/image";
-import { AlliancesSection } from "../IndexPage/components";
 import {
   HighlightSection,
   Member,
@@ -11,6 +8,9 @@ import {
   ThreeColumns,
   TwoColumnSection,
 } from "./styles";
+import { AlliancesSection } from "../IndexPage/components";
+import Image from "next/image";
+import { NextPage } from "next";
 
 export const AboutUsPage: NextPage = () => {
   return (

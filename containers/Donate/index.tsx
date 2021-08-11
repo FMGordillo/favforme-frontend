@@ -1,19 +1,18 @@
 import { Container, Layout } from "@/components";
-import { event } from "@/lib/gtag";
-import { ActionI } from "@/lib/types";
-import axios from "axios";
-import { useFormik } from "formik";
 import { FunctionComponent, useState } from "react";
-import { DonationForm } from "./Form";
 import { ActionContainer } from "./styles";
+import { ActionI } from "@/lib/types";
+import { DonationForm } from "./Form";
+import axios from "axios";
+import { event } from "@/lib/gtag";
+import { useFormik } from "formik";
 
 interface DonationProps {
   user: any;
-  loading: boolean;
   query: {
     id?: string;
   };
-  action: ActionI | undefined;
+  action: ActionI | null;
 }
 
 export interface FormValues {
@@ -25,7 +24,6 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   user,
   query,
   action,
-  loading,
 }) => {
   const donationTitle = action?.title
     ? `Donacion - ${action.title}`
@@ -126,7 +124,6 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         </ActionContainer>
         <section>
           <DonationForm
-            loading={loading}
             errors={formik.errors}
             values={formik.values}
             submitLoading={submitLoading}

@@ -1,6 +1,6 @@
-import { useModal, UseModalReturn } from "@/components/Modal/useModal";
-import { createContext, FunctionComponent } from "react";
-import { Modal } from "../../components";
+import { FunctionComponent, createContext } from "react";
+import { UseModalReturn, useModal } from "@/components/Modal/useModal";
+import { Modal } from "@/components";
 
 export const ModalContext = createContext<UseModalReturn>({} as UseModalReturn);
 
