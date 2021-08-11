@@ -25,7 +25,6 @@ export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
         isIndex: true,
       }}
     >
-      <Divider />
       <IntroOne />
       <Divider />
       <Actions actions={actions} loading={false} />

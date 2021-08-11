@@ -11,13 +11,13 @@ import { ActionI } from "@/lib/types";
 import { DonatorsTable } from "@/components/DonatorsTable";
 import Image from "next/image";
 import { NextPage } from "next";
+import { UseCalculationsReturn } from "@/service";
 import { isNotProd } from "@/utils";
 import { toPascalCase } from "@/lib";
 
 interface ActionProps {
-  amounts: any;
-  loading: boolean;
-  action: ActionI | undefined;
+  amounts: UseCalculationsReturn | null;
+  action: ActionI | null;
   query: {
     id: string;
   };

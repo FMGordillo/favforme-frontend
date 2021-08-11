@@ -1,11 +1,11 @@
+import { FullPageLoading, Layout } from "@/components";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { FullPageLoading, Layout } from "../../components";
+import { useRouter } from "next/router";
 
 interface GetServerSidePropsReturn {
   props: {

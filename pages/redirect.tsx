@@ -1,5 +1,5 @@
-import { NextPage } from "next";
 import { Logo } from "@/components";
+import { NextPage } from "next";
 import styled from "styled-components";
 
 const Layout = styled.div`

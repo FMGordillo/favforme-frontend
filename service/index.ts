@@ -1,5 +1,5 @@
 export * from "./donations";
-export * from "./actions";
+export * from "./action";
 
-export * from "./useCalculations";
+export * from "./actionUtils";
 export * from "./useNotifications";
