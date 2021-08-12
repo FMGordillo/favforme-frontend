@@ -1,7 +1,7 @@
-import { event } from "@/lib/gtag";
-import Image from "next/image";
-import { FunctionComponent } from "react";
 import { Container, ImagesContainer, StyledTitle } from "./styles";
+import { FunctionComponent } from "react";
+import Image from "next/image";
+import { event } from "@/lib/gtag";
 
 const AlliancesSection: FunctionComponent = () => {
   const trackEvent = (businessName: string) => {
