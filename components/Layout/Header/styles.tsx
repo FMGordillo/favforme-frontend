@@ -41,6 +41,9 @@ export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
     color: white;
     background-color: ${({ theme }) => theme.palette.primary.main};
   }
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    width: ${({ isIndex }) => (isIndex ? "100%" : "inherit")};
+  }
 `;
 export const Subtitle = styled.h2`
   font-family: abel, sans-serif;
