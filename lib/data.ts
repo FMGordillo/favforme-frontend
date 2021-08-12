@@ -1,13 +1,14 @@
 /**
- * TODO: Check if value is number type
+ * TODO: Check if we lose data with this
  * @param value Default to 0
  */
 export const parseToCurrency = (value = "0"): string => {
   try {
-    if (!Number(value) || Number(value) < 0) return "0";
+    if (!BigInt(value) || BigInt(value) < 0) return "0";
     const numberedValue = Number(value);
     const formatCurrency = Intl.NumberFormat("es-ES", {
       style: "currency",
+      minimumFractionDigits: 0,
       maximumFractionDigits: 0,
       currency: "ARS",
     }).resolvedOptions();
