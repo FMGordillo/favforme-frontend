@@ -50,12 +50,14 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <DueDate show={!!dueDate} urgency={dueDate?.urgency}>
           {dueDate?.date}
         </DueDate>
-        <Image
-          layout="fill"
-          objectFit="contain"
-          alt="Imagen representativa de la acción"
-          src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
-        />
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+        <a href="#" onClick={goToAction}>
+          <Image
+            layout="fill"
+            alt="Imagen representativa de la acción"
+            src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
+          />
+        </a>
         <ODS>
           <Image src="/images/ODS_logo_full.webp" width={90} height={75} />
           {data?.ods.map((odsImg) => {

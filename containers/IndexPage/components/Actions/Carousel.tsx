@@ -1,6 +1,6 @@
-import { LoadingAction } from "@/components";
-import { Container, Section } from "./styles";
 import { Children, FunctionComponent, useEffect, useState } from "react";
+import { Container, Section } from "./styles";
+import { LoadingAction } from "@/components";
 
 interface CarouselProps {
   current?: number;
