@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { ModalContext } from "@/lib/context";
-import { SocialNetworks } from "@/components";
+// import { SocialNetworks } from "@/components";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { getODSImage } from "@/lib/ods_image";
 import { isNotProd } from "@/utils";
@@ -54,6 +54,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <a href="#" onClick={goToAction}>
           <Image
             layout="fill"
+            objectFit="contain"
             alt="Imagen representativa de la acción"
             src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
           />
@@ -121,7 +122,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
             DETALLES
           </Button>
         </ButtonContainer>
-        <SocialNetworks data={data?.organization?.socialNetworks} />
+        {/* <SocialNetworks data={data?.organization?.socialNetworks} /> */}
       </MainContent>
     </Container>
   );
