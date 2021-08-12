@@ -15,11 +15,18 @@ export const ImagesContainer = styled(BaseContainer)`
   margin: 0 auto;
 
   & > a {
+    position: relative;
     display: block;
     margin: ${({ theme }) => theme.spacing(0.1)}em !important;
     max-width: 100%;
     align-self: center;
     text-align: center;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
   }
 
   /* First row */

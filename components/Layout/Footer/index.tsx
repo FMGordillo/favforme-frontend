@@ -50,11 +50,16 @@ const Footer: FunctionComponent<FooterProps> = () => (
   <FooterContainer>
     <MapSection>
       <div>
-        <Logo />
+        <NextLink href="/">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+          <a href="#">
+            <Logo />
+          </a>
+        </NextLink>
       </div>
       <MapUl>
-        <MapItem href="/#actions">Acciones</MapItem>
-        <MapItem href="/#call_to_actions">FavForMe</MapItem>
+        <MapItem href="/acciones">Acciones</MapItem>
+        <MapItem href="/nosotros">FavForMe</MapItem>
         <MapItem href="/#brands">Empresas</MapItem>
         <MapItem onClick={() => console.log("PENDING")}>Contacto</MapItem>
         <MapItem href="/terms_and_conditions">Términos de uso</MapItem>
