@@ -61,6 +61,7 @@ export interface ActionI {
   status: Status;
   closedAt?: string; // Date-ish format
   createdAt: string; // Date-ish format
+  donations?: DonationI[];
 }
 
 export interface DonationI {
