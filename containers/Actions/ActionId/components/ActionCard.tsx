@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 
 interface ActionCardProps {
   amounts: UseCalculationsReturn | null;
-  queryId: string;
+  queryId: string | null;
   canDonate?: boolean;
   action: ActionI | null;
 }
