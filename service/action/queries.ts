@@ -18,6 +18,16 @@ export const GET_ACTION = `
           link
         }
       }
+      donations {
+        id
+        amount
+        createdAt
+        user {
+          name
+          surname
+          userType
+        }
+      }
     }
   }
 `;

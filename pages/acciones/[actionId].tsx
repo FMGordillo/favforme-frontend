@@ -9,7 +9,7 @@ import { ActionI } from "@/lib/types";
 
 interface GetServerSidePropsReturn {
   props: {
-    query: any;
+    query: { id: string };
     action: ActionI | null;
     amounts: UseCalculationsReturn | null;
   };
@@ -19,19 +19,22 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> => {
   const { actionId } = context.query;
-  if (typeof actionId === "string") {
+  if (typeof actionId === "string" && !!actionId) {
     const { action, amounts } = await getAction({ id: actionId });
     return {
       props: {
         query: { id: actionId },
         action,
         amounts,
-      }, // will be passed to the page component as props
+      },
     };
   } else {
+    const isIdArray = Array.isArray(actionId);
+    const isIdEmpty = !isIdArray && typeof actionId === "undefined";
+
     return {
       props: {
-        query: { id: actionId },
+        query: { id: isIdArray || isIdEmpty ? "" : actionId },
         action: null,
         amounts: null,
       },
