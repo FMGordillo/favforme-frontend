@@ -9,7 +9,7 @@ import { ActionI } from "@/lib/types";
 
 interface GetServerSidePropsReturn {
   props: {
-    query: { id: string };
+    query: { id: string | null };
     action: ActionI | null;
     amounts: UseCalculationsReturn | null;
   };
@@ -29,12 +29,9 @@ export const getServerSideProps = async (
       },
     };
   } else {
-    const isIdArray = Array.isArray(actionId);
-    const isIdEmpty = !isIdArray && typeof actionId === "undefined";
-
     return {
       props: {
-        query: { id: isIdArray || isIdEmpty ? "" : actionId },
+        query: { id: null },
         action: null,
         amounts: null,
       },

@@ -21,7 +21,7 @@ interface ActionProps {
   amounts: UseCalculationsReturn | null;
   action: ActionI | null;
   query: {
-    id: string;
+    id: string | null;
   };
 }
 
