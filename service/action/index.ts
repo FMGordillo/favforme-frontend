@@ -1,26 +1,29 @@
 import { GET_ACTION, GET_ACTIONS } from "./queries";
-import { Params, gqlRequest } from "@/lib/queries";
 import { UseCalculationsReturn, makeCalculations } from "../actionUtils";
 import { ActionI } from "@/lib/types";
+import request from "@/lib/apollo";
 
 type GetActionReturn = {
   action: ActionI | null;
   amounts: UseCalculationsReturn | null;
 };
 
-export const getAction = async (query: {
-  id: string;
-}): Promise<GetActionReturn> => {
+export const getAction = async (
+  variables: {
+    id: string;
+  },
+  query = GET_ACTION
+): Promise<GetActionReturn> => {
   try {
-    const { action } = await gqlRequest<
-      { action: ActionI | null },
-      { id: string }
-    >(GET_ACTION, query);
+    const { data } = await request.query<{ action: ActionI }>({
+      query,
+      variables,
+    });
 
-    const amounts = makeCalculations(action);
+    const amounts = makeCalculations(data.action);
 
     return {
-      action,
+      action: data.action,
       amounts,
     };
   } catch (error) {
@@ -31,12 +34,11 @@ export const getAction = async (query: {
   }
 };
 
-export const getActions = async (params?: Params): Promise<ActionI[]> => {
+export const getActions = async (query = GET_ACTIONS): Promise<ActionI[]> => {
   try {
-    const data = await gqlRequest<{ actions: ActionI[] }>(
-      GET_ACTIONS(params),
-      params
-    );
+    const { data } = await request.query<{ actions: ActionI[] }>({
+      query,
+    });
     return data.actions;
   } catch (error) {
     console.error(error);

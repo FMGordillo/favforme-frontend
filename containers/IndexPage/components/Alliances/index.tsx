@@ -21,7 +21,12 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("Trilogy Lab")}
         >
-          <Image src="/images/alianzas_01.png" width={122} height={122} />
+          <Image
+            alt="Trilogy Lab logo"
+            src="/images/alianzas_01.png"
+            width={122}
+            height={122}
+          />
         </a>
         <a
           target="_blank"
@@ -29,7 +34,12 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("Founder Institute")}
         >
-          <Image src="/images/alianzas_02.png" width={269} height={102} />
+          <Image
+            alt="Founder Institute logo"
+            src="/images/alianzas_02.png"
+            width={269}
+            height={102}
+          />
         </a>
         <a
           target="_blank"
@@ -37,7 +47,12 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("Blahbox")}
         >
-          <Image src="/images/alianzas_03.png" width={122} height={122} />
+          <Image
+            alt="Blahbox logo"
+            src="/images/alianzas_03.png"
+            width={122}
+            height={122}
+          />
         </a>
         <a
           target="_blank"
@@ -45,7 +60,12 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("Rather")}
         >
-          <Image src="/images/alianzas_04.png" width={270} height={102} />
+          <Image
+            alt="Rather logo"
+            src="/images/alianzas_04.png"
+            width={270}
+            height={102}
+          />
         </a>
         <a
           target="_blank"
@@ -53,15 +73,25 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("De La Nada Asociación Civil")}
         >
-          <Image src="/images/alianzas_05.png" width={122} height={122} />
+          <Image
+            alt="De La Nada Asociación Civil logo"
+            src="/images/alianzas_05.png"
+            width={122}
+            height={122}
+          />
         </a>
         <a
           target="_blank"
-          href="https://fi.co/"
+          href="https://merenderootromundo.wixsite.com/otromundodelviso"
           rel="noreferrer noopener"
-          onClick={() => trackEvent("Founder Institute")}
+          onClick={() => trackEvent("Otro Mundo Centro Comunitario")}
         >
-          <Image src="/images/alianzas_06.png" width={122} height={122} />
+          <Image
+            alt="Otro Mundo Centro Comunitario logo"
+            src="/images/alianzas_06.png"
+            width={122}
+            height={122}
+          />
         </a>
         <a
           target="_blank"
@@ -69,7 +99,12 @@ const AlliancesSection: FunctionComponent = () => {
           rel="noreferrer noopener"
           onClick={() => trackEvent("Hospice Madre Teresa")}
         >
-          <Image src="/images/alianzas_07.png" width={142} height={103} />
+          <Image
+            alt="Hospice Madre Teresa logo"
+            src="/images/alianzas_07.png"
+            width={142}
+            height={103}
+          />
         </a>
       </ImagesContainer>
     </Container>

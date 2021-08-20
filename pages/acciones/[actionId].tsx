@@ -1,37 +1,35 @@
-import {
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-  NextPage,
-} from "next";
-import { UseCalculationsReturn, getAction } from "@/service";
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { UseCalculationsReturn, getAction, getActions } from "@/service";
 import { ActionPage as ActionContainer } from "@/containers";
 import { ActionI } from "@/lib/types";
+import { GET_ID_ACTIONS } from "@/service/action/queries";
 
 interface GetServerSidePropsReturn {
   props: {
-    query: any;
+    query: { id: string | null };
     action: ActionI | null;
     amounts: UseCalculationsReturn | null;
   };
 }
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
+export const getStaticProps = async (
+  context: GetStaticProps
 ): Promise<GetServerSidePropsReturn> => {
-  const { actionId } = context.query;
-  if (typeof actionId === "string") {
+  // @ts-ignore
+  const { actionId } = context.params;
+  if (typeof actionId === "string" && !!actionId) {
     const { action, amounts } = await getAction({ id: actionId });
     return {
       props: {
         query: { id: actionId },
         action,
         amounts,
-      }, // will be passed to the page component as props
+      },
     };
   } else {
     return {
       props: {
-        query: { id: actionId },
+        query: { id: null },
         action: null,
         amounts: null,
       },
@@ -39,9 +37,19 @@ export const getServerSideProps = async (
   }
 };
 
-const ActionPage: NextPage<
-  InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ action, amounts, query }) => {
+export async function getStaticPaths() {
+  const actions = await getActions(GET_ID_ACTIONS);
+  return {
+    paths: actions.map((action) => ({ params: { actionId: action.id } })),
+    fallback: false,
+  };
+}
+
+const ActionPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  action,
+  amounts,
+  query,
+}) => {
   return <ActionContainer query={query} action={action} amounts={amounts} />;
 };
 
