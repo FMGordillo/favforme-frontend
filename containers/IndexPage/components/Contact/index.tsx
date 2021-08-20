@@ -1,13 +1,18 @@
-import { Container } from "@/components";
-import Image from "next/image";
-import { FunctionComponent } from "react";
 import { HighlightedText, Main, Text, Title } from "./styles";
+import { Container } from "@/components";
+import { FunctionComponent } from "react";
+import Image from "next/image";
 
 const ContactSection: FunctionComponent = () => (
   <Container>
     <Main>
       <div className="first-element">
-        <Image src="/images/contact.svg" width={500} height={400} />
+        <Image
+          alt="Personas en contacto"
+          src="/images/contact.svg"
+          width={500}
+          height={400}
+        />
       </div>
       <div className="second-element">
         <Title>Apoyá esta gran iniciativa</Title>
