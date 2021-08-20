@@ -18,7 +18,7 @@ export const GET_ACTION = `
           link
         }
       }
-      donations {
+      donations (where: { paymentStatus: { equals: SUCCESS } }) {
         id
         amount
         createdAt
