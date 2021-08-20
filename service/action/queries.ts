@@ -1,6 +1,14 @@
-import { Params, createQuery } from "@/lib/queries";
+import { gql } from "@apollo/client";
 
-export const GET_ACTION = `
+export const GET_ID_ACTIONS = gql`
+  {
+    actions {
+      id
+    }
+  }
+`;
+
+export const GET_ACTION = gql`
   query getAction($id: String) {
     action(where: { id: $id }) {
       id
@@ -18,13 +26,23 @@ export const GET_ACTION = `
           link
         }
       }
+      donations(where: { paymentStatus: { equals: SUCCESS } }) {
+        id
+        amount
+        createdAt
+        user {
+          name
+          surname
+          userType
+        }
+      }
     }
   }
 `;
 
-export const GET_ACTIONS = (params?: Params): string => createQuery`
+export const GET_ACTIONS = gql`
   {
-    actions${params} {
+    actions {
       id
       title
       ods

@@ -35,3 +35,13 @@ export const LeftColumn = styled.div`
 export const RightColumn = styled.div`
   grid-area: right-column;
 `;
+
+export const History = styled.div`
+  transition: margin-top 0.33s ease-in;
+  &.collapsed {
+    margin-top: -100%;
+  }
+  &.opened {
+    margin-top: 0%;
+  }
+`;

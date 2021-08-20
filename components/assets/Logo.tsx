@@ -14,9 +14,10 @@ export const Logo: FunctionComponent<LogoProps> = ({
 }) => {
   return (
     <Image
-      src={`/images/favforme_logo${type === "white" ? "_white" : ""}.webp`}
       width={width}
       height={height}
+      alt="FavForMe logo"
+      src={`/images/favforme_logo${type === "white" ? "_white" : ""}.webp`}
     />
   );
 };
