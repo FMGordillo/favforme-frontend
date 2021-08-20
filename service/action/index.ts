@@ -18,6 +18,7 @@ export const getAction = async (
     const { data } = await request.query<{ action: ActionI }>({
       query,
       variables,
+      fetchPolicy: "network-only",
     });
 
     const amounts = makeCalculations(data.action);
@@ -38,6 +39,7 @@ export const getActions = async (query = GET_ACTIONS): Promise<ActionI[]> => {
   try {
     const { data } = await request.query<{ actions: ActionI[] }>({
       query,
+      fetchPolicy: "network-only",
     });
     return data.actions;
   } catch (error) {
