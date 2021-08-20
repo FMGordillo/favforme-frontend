@@ -124,13 +124,28 @@ const IntroOneSection: FunctionComponent = () => {
       </ODSLogo>
       <ODSContainer>
         <div className="img smallest">
-          <Image width={150} height={150} src={generateImageUrl(getItem(-3))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(-3))}
+            alt="Carousel image (smallest on the left)"
+          />
         </div>
         <div className="img smaller">
-          <Image width={150} height={150} src={generateImageUrl(getItem(-2))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(-2))}
+            alt="Carousel image (smaller on the left)"
+          />
         </div>
         <div className="img small">
-          <Image width={150} height={150} src={generateImageUrl(getItem(-1))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(-1))}
+            alt="Carousel image (small on the left)"
+          />
         </div>
         <div>
           <Image
@@ -140,13 +155,28 @@ const IntroOneSection: FunctionComponent = () => {
           />
         </div>
         <div className="img small">
-          <Image width={150} height={150} src={generateImageUrl(getItem(1))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(1))}
+            alt="Carousel image (small on the right)"
+          />
         </div>
         <div className="img smaller">
-          <Image width={150} height={150} src={generateImageUrl(getItem(2))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(2))}
+            alt="Carousel image (smaller on the right)"
+          />
         </div>
         <div className="img smallest">
-          <Image width={150} height={150} src={generateImageUrl(getItem(3))} />
+          <Image
+            width={150}
+            height={150}
+            src={generateImageUrl(getItem(3))}
+            alt="Carousel image (smallest on the right)"
+          />
         </div>
       </ODSContainer>
       <ODSButton

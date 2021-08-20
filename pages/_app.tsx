@@ -4,9 +4,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import NextNprogress from "nextjs-progressbar";
-import { SWRConfig } from "swr";
 import axios from "axios";
-import { fetcher } from "../lib/queries";
 import { lightTheme } from "../utils/styled";
 import seoConfig from "../lib/seo.config";
 import { setLocale } from "yup";
@@ -62,31 +60,22 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <>
-      <SWRConfig
-        value={{
-          errorRetryCount: 3,
-          dedupingInterval: 15000,
-          focusThrottleInterval: 15000,
-          fetcher,
-        }}
-      >
-        <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <NextNprogress
-            // @ts-ignore
-            color={theme.palette.secondary.main}
-            startPosition={0.3}
-            stopDelayMs={200}
-            height={3}
-          />
-          <DefaultSeo {...seoConfig} />
-          <NotificationProvider>
-            <ModalProvider>
-              <Component {...pageProps} />
-            </ModalProvider>
-          </NotificationProvider>
-        </ThemeProvider>
-      </SWRConfig>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <NextNprogress
+          // @ts-ignore
+          color={theme.palette.secondary.main}
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+        />
+        <DefaultSeo {...seoConfig} />
+        <NotificationProvider>
+          <ModalProvider>
+            <Component {...pageProps} />
+          </ModalProvider>
+        </NotificationProvider>
+      </ThemeProvider>
     </>
   );
 }
