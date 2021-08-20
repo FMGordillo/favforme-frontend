@@ -8,15 +8,16 @@ type GetActionReturn = {
   amounts: UseCalculationsReturn | null;
 };
 
-export const getAction = async (query: {
-  id: string;
-}): Promise<GetActionReturn> => {
+export const getAction = async (
+  variables: {
+    id: string;
+  },
+  query = GET_ACTION
+): Promise<GetActionReturn> => {
   try {
     const { data } = await request.query<{ action: ActionI }>({
-      query: GET_ACTION,
-      variables: {
-        id: query.id,
-      },
+      query,
+      variables,
     });
 
     const amounts = makeCalculations(data.action);
@@ -33,11 +34,10 @@ export const getAction = async (query: {
   }
 };
 
-export const getActions = async (params?: any): Promise<ActionI[]> => {
+export const getActions = async (query = GET_ACTIONS): Promise<ActionI[]> => {
   try {
     const { data } = await request.query<{ actions: ActionI[] }>({
-      query: GET_ACTIONS,
-      variables: params,
+      query,
     });
     return data.actions;
   } catch (error) {

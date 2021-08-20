@@ -1,5 +1,13 @@
 import { gql } from "@apollo/client";
 
+export const GET_ID_ACTIONS = gql`
+  {
+    actions {
+      id
+    }
+  }
+`;
+
 export const GET_ACTION = gql`
   query getAction($id: String) {
     action(where: { id: $id }) {
