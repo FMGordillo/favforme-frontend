@@ -24,9 +24,10 @@ export const TextContainer = styled.div<{ isIndex?: boolean }>`
   color: white;
   transform: translateY(-64px);
   padding: ${({ isIndex }) => (!isIndex ? "0" : `0 0 0 160px`)};
+
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 0;
-    padding-left: 48px;
+    ${({ isIndex }) => (isIndex ? "padding-left: 48px;" : "")}
   }
 `;
 export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`

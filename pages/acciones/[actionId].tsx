@@ -1,8 +1,7 @@
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { UseCalculationsReturn, getAction, getActions } from "@/service";
+import { GetServerSideProps, InferGetStaticPropsType, NextPage } from "next";
+import { UseCalculationsReturn, getAction } from "@/service";
 import { ActionPage as ActionContainer } from "@/containers";
 import { ActionI } from "@/lib/types";
-import { GET_ID_ACTIONS } from "@/service/action/queries";
 
 interface GetServerSidePropsReturn {
   props: {
@@ -12,8 +11,8 @@ interface GetServerSidePropsReturn {
   };
 }
 
-export const getStaticProps = async (
-  context: GetStaticProps
+export const getServerSideProps = async (
+  context: GetServerSideProps
 ): Promise<GetServerSidePropsReturn> => {
   // @ts-ignore
   const { actionId } = context.params;
@@ -37,19 +36,9 @@ export const getStaticProps = async (
   }
 };
 
-export async function getStaticPaths() {
-  const actions = await getActions(GET_ID_ACTIONS);
-  return {
-    paths: actions.map((action) => ({ params: { actionId: action.id } })),
-    fallback: false,
-  };
-}
-
-const ActionPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  action,
-  amounts,
-  query,
-}) => {
+const ActionPage: NextPage<
+  InferGetStaticPropsType<typeof getServerSideProps>
+> = ({ action, amounts, query }) => {
   return <ActionContainer query={query} action={action} amounts={amounts} />;
 };
 

@@ -36,12 +36,11 @@ export const RightColumn = styled.div`
   grid-area: right-column;
 `;
 
-export const History = styled.div`
-  transition: margin-top 0.33s ease-in;
-  &.collapsed {
-    margin-top: -100%;
-  }
-  &.opened {
-    margin-top: 0%;
-  }
+export const Details = styled.details`
+  margin-top: 14px;
+`;
+
+export const Summary = styled.summary`
+  cursor: pointer;
+  user-select: none;
 `;
