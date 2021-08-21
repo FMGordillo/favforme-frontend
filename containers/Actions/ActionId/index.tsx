@@ -2,12 +2,12 @@ import {
   ActionContent,
   ActionTitle,
   Container,
-  History,
+  Details,
   LeftColumn,
   RightColumn,
+  Summary,
 } from "./styles";
-import { Button, Divider, Layout, ProposeMyONG, Title } from "@/components";
-import React, { useState } from "react";
+import { Divider, Layout, ProposeMyONG, Title } from "@/components";
 import { ActionCard } from "./components";
 import { ActionI } from "@/lib/types";
 import { DonatorsTable } from "@/components/DonatorsTable";
@@ -30,7 +30,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   action,
   amounts,
 }) => {
-  const [open, setOpen] = useState(false);
   return (
     <Layout
       header
@@ -68,33 +67,16 @@ export const ActionPage: NextPage<ActionProps> = ({
               amounts={amounts}
               canDonate={isNotProd}
             />
-            <h2>Datos de la ONG</h2>
-            <Image
-              src={action?.organization?.logo || "/"}
-              alt="Logo"
-              width={150}
-              height={150}
-            />
-            <Button
-              style={{ width: "100%" }}
-              onClick={() => setOpen((p) => !p)}
-            >
-              Historia de la ONG{" "}
-              {!open ? (
-                <span role="img" aria-label="Arrow pointing down">
-                  ⬇️
-                </span>
-              ) : (
-                <span role="img" aria-label="Arrow pointing up">
-                  ⬆️
-                </span>
-              )}
-            </Button>
-            <div style={{ overflow: "hidden" }}>
-              <History className={!open ? "collapsed" : "opened"}>
-                <p>{action?.organization?.history}</p>
-              </History>
-            </div>
+            <Details>
+              <Summary>Datos de la ONG</Summary>
+              <Image
+                src={action?.organization?.logo || "/"}
+                alt="Logo"
+                width={150}
+                height={150}
+              />
+              <p>{action?.organization?.history}</p>
+            </Details>
           </RightColumn>
         </ActionContent>
         <Title>Donaciones recibidas</Title>
