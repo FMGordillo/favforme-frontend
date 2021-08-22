@@ -4,10 +4,8 @@ import {
   Percentage,
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { Button, SocialNetworks } from "@/components";
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent } from "react";
 import { ActionI } from "@/lib/types";
-import { DonationUnavailableModal } from "@/components/Modal/components";
-import { ModalContext } from "@/lib/context";
 import { Summary } from "./styles";
 import { UseCalculationsReturn } from "@/service";
 import { useRouter } from "next/router";
@@ -22,9 +20,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
   amounts,
   queryId,
   action,
-  canDonate,
 }) => {
-  const { handleModal } = useContext(ModalContext);
   const router = useRouter();
 
   return (
@@ -43,14 +39,12 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
         <Button
           hoverTextColor="black"
           onClick={() =>
-            canDonate
-              ? router.push({
-                  pathname: "/donacion",
-                  query: {
-                    action: queryId,
-                  },
-                })
-              : handleModal(<DonationUnavailableModal />)
+            router.push({
+              pathname: "/donacion",
+              query: {
+                action: queryId,
+              },
+            })
           }
         >
           Favorecer esta acci&oacute;n
