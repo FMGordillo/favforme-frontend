@@ -7,8 +7,7 @@ import {
   RightColumn,
   Summary,
 } from "./styles";
-import { Button, Divider, Layout, ProposeMyONG, Title } from "@/components";
-import React, { useState } from "react";
+import { Divider, Layout, ProposeMyONG, Title } from "@/components";
 import { ActionCard } from "./components";
 import { ActionI } from "@/lib/types";
 import { DonatorsTable } from "@/components/DonatorsTable";
@@ -31,7 +30,6 @@ export const ActionPage: NextPage<ActionProps> = ({
   action,
   amounts,
 }) => {
-  const [open, setOpen] = useState(false);
   return (
     <Layout
       header

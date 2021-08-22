@@ -2,7 +2,6 @@ import { GetServerSideProps, InferGetStaticPropsType, NextPage } from "next";
 import { UseCalculationsReturn, getAction } from "@/service";
 import { ActionPage as ActionContainer } from "@/containers";
 import { ActionI } from "@/lib/types";
-import { GET_ID_ACTIONS } from "@/service/action/queries";
 
 interface GetServerSidePropsReturn {
   props: {
