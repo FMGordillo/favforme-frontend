@@ -57,6 +57,7 @@ export const MapSection = styled.div`
   max-width: 1024px;
   & > :first-child {
     justify-self: center;
+    align-self: center;
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
