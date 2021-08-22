@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
-import { Logo } from "@/components";
+import Image from "next/image";
 import NextLink from "next/link";
 
 interface FooterProps {
@@ -53,7 +53,12 @@ const Footer: FunctionComponent<FooterProps> = () => (
         <NextLink href="/">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
           <a href="#">
-            <Logo />
+            {/* <Logo /> */}
+            <Image
+              src="/images/favforme-logo-wide-white.webp"
+              width={300}
+              height={55}
+            />
           </a>
         </NextLink>
       </div>

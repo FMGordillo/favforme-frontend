@@ -27,8 +27,8 @@ const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({}) =>
         </Section>
         <Section>
           <Image
-            src="/images/image-2.svg"
-            alt="Persona en sofa"
+            src="/images/image-3.svg"
+            alt="Persona tomando un cafe"
             width={300}
             height={250}
           />
@@ -40,8 +40,8 @@ const CallToActionSection: FunctionComponent<CallToActionSectionProps> = ({}) =>
         </Section>
         <Section>
           <Image
-            src="/images/image-3.svg"
-            alt="Personas amigables"
+            src="/images/image-2.svg"
+            alt="Persona dando de comer a otra persona"
             width={300}
             height={250}
           />
