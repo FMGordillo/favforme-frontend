@@ -6,6 +6,7 @@ import {
 } from "next";
 import { ActionI } from "@/lib/types";
 import { DonationContainer } from "@/containers";
+import { isNotProd } from "@/utils";
 import Image from "next/image";
 import { getAction } from "@/service";
 
@@ -45,7 +46,7 @@ export async function getServerSideProps(
 const DonationPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ action, query }) => {
-  return process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ? (
+  return !isNotProd ? (
     <Layout header title="Donacion - No disponible">
       <Container center>
         <Title>Trabajo en proceso</Title>
