@@ -107,11 +107,11 @@ export const AboutUsPage: NextPage = () => {
             <Member>
               <Image
                 src="/images/founders/team_02.png"
-                alt="Foto de Martin Zucci"
+                alt="Foto de Martin Zucchi"
                 width={200}
                 height={200}
               />
-              <p>Martin Zucci</p>
+              <p>Martin Zucchi</p>
               <br />
               <span>
                 CFO
