@@ -1,15 +1,18 @@
-import { FullPageLoading, Layout } from "@/components";
 import {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   NextPage,
 } from "next";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { DonationI } from "@/lib/types";
+import { DonationSuccessContainer } from "@/containers";
+import { getDonation } from "@/service";
 import { useRouter } from "next/router";
 
 interface GetServerSidePropsReturn {
   props: {
     query: { id?: string };
+    donation: DonationI | null;
   };
 }
 
@@ -17,16 +20,28 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsReturn> {
   const { donationId } = context.query;
-  return {
-    props: {
-      query: { id: typeof donationId === "string" ? donationId : undefined },
-    },
-  };
+
+  if (typeof donationId === "string") {
+    const donation = await getDonation({ variables: { id: donationId } });
+    return {
+      props: {
+        query: { id: donationId },
+        donation,
+      },
+    };
+  } else {
+    return {
+      props: {
+        query: { id: typeof donationId === "string" ? donationId : undefined },
+        donation: null,
+      },
+    };
+  }
 }
 
 const DonationSuccessPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ query }) => {
+> = ({ donation, query }) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -39,16 +54,7 @@ const DonationSuccessPage: NextPage<
     }
   }, [query.id, router]);
 
-  return (
-    <Layout header title="Donacion exitosa">
-      {loading && <FullPageLoading />}
-      {!loading && (
-        <>
-          <p>Muchas gracias por tu donacion</p>
-        </>
-      )}
-    </Layout>
-  );
+  return <DonationSuccessContainer loading={loading} donation={donation} />;
 };
 
 export default DonationSuccessPage;
