@@ -8,9 +8,9 @@ import {
   ProgressBar,
   Title,
 } from "./styles";
+import { FunctionComponent } from "react";
 import Loadable from "react-loading-skeleton";
 import { SocialNetworks } from "@/components";
-import { FunctionComponent } from "react";
 
 const LoadingActionCard: FunctionComponent = () => {
   return (
