@@ -39,7 +39,7 @@ setLocale({
   },
 });
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
