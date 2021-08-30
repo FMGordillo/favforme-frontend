@@ -1,5 +1,5 @@
 import { Button, FullPageLoading, Layout, Title } from "@/components";
-import { Container } from "./styles";
+import { Container } from "../styles";
 import { DonationI } from "@/lib/types";
 import Image from "next/image";
 import { NextPage } from "next";
