@@ -35,9 +35,12 @@ const Header: FunctionComponent<HeaderProps> = ({
   return (
     <>
       <NavBar />
-      <HeaderContainer isIndex={isIndex}>
-        <TextContainer isIndex={isIndex}>
-          <Title receivedText={typeof title !== "undefined"} isIndex={isIndex}>
+      <HeaderContainer isIndex={!!isIndex}>
+        <TextContainer isIndex={!!isIndex}>
+          <Title
+            isIndex={!!isIndex}
+            receivedText={typeof title !== "undefined"}
+          >
             {title ||
               (!isMobileSize ? (
                 <span>

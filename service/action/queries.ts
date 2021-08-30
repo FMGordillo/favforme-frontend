@@ -10,7 +10,15 @@ export const GET_ID_ACTIONS = gql`
 
 export const GET_ACTION = gql`
   query getAction($id: String) {
-    action(where: { id: $id }) {
+    findFirstAction(
+      where: {
+        AND: {
+          id: { equals: $id }
+          status: { equals: INPROGRESS }
+          organization: { is: { status: { equals: APPROVED } } }
+        }
+      }
+    ) {
       id
       title
       ods
@@ -42,7 +50,14 @@ export const GET_ACTION = gql`
 
 export const GET_ACTIONS = gql`
   {
-    actions {
+    actions(
+      where: {
+        AND: {
+          status: { equals: INPROGRESS }
+          organization: { is: { status: { equals: APPROVED } } }
+        }
+      }
+    ) {
       id
       title
       ods
