@@ -24,6 +24,11 @@ export const TextContainer = styled.div<{ isIndex?: boolean }>`
   color: white;
   transform: translateY(-64px);
   padding: ${({ isIndex }) => (!isIndex ? "0" : `0 0 0 160px`)};
+  transition: transform 300ms;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    transform: translateY(0px);
+  }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
     padding: 0;
