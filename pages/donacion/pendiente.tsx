@@ -19,7 +19,7 @@ export async function getServerSideProps(
   const { donationId } = context.query;
   return {
     props: {
-      query: { id: typeof donationId === "string" ? donationId : undefined },
+      query: { id: typeof donationId === "string" ? donationId : "" },
     },
   };
 }

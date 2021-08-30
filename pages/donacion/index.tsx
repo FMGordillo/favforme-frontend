@@ -6,9 +6,9 @@ import {
 } from "next";
 import { ActionI } from "@/lib/types";
 import { DonationContainer } from "@/containers";
-import { isNotProd } from "@/utils";
 import Image from "next/image";
 import { getAction } from "@/service";
+import { isNotProd } from "@/utils";
 
 interface GetServerSidePropsReturn {
   props: {
@@ -35,7 +35,7 @@ export async function getServerSideProps(
     return {
       props: {
         query: {
-          id: undefined,
+          id: "",
         },
         action: null,
       },

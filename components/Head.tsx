@@ -1,10 +1,10 @@
-import { NextSeo } from "next-seo";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import { FunctionComponent } from "react";
+import Head from "next/head";
+import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 export interface HeadProps {
-  title?: string;
+  title: string;
 }
 
 const HeadComponent: FunctionComponent<HeadProps> = ({ title }) => {
