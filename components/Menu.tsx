@@ -32,7 +32,7 @@ export const Menu: FunctionComponent<MenuProps> = ({
   return (
     <StyledContainer>
       {toggleContainer}
-      <StyledMenu open={open}>{childrenMap?.map((c) => c)}</StyledMenu>
+      <StyledMenu open={!!open}>{childrenMap?.map((c) => c)}</StyledMenu>
     </StyledContainer>
   );
 };

@@ -18,7 +18,7 @@ const Container = styled.main`
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
-  title,
+  title = "Fundación FavForMe",
   footer = true,
   header,
   headProps,
