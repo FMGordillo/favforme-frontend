@@ -5,7 +5,7 @@ import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 interface LayoutProps {
-  title?: string;
+  title?: string | undefined;
   footer?: boolean;
   header?: boolean;
   headProps?: HeadProps;
@@ -18,7 +18,7 @@ const Container = styled.main`
 `;
 
 const Layout: FunctionComponent<LayoutProps> = ({
-  title = "Fundación FavForMe",
+  title,
   footer = true,
   header,
   headProps,
@@ -27,7 +27,7 @@ const Layout: FunctionComponent<LayoutProps> = ({
 }) => {
   return (
     <Container>
-      <HeadComponent title={title} {...headProps} />
+      <HeadComponent title={title || ""} {...headProps} />
       {header && <Header title={title} {...headerProps} />}
       {children}
       {footer && <Footer />}
