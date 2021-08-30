@@ -27,7 +27,12 @@ export const DonationSuccessContainer: NextPage<DonationSuccessContainerProps> =
             <br />
             En la acci&oacute;n <strong>{donation?.action?.title}</strong>
           </p>
-          <Image src="/images/high_five.svg" width={350} height={400} />
+          <Image
+            alt="Personas celebrando"
+            src="/images/high_five.svg"
+            width={350}
+            height={400}
+          />
           <p>
             Gracias a tu ayuda estamos un paso m&aacute;s cerca de alcanzar la
             <br />

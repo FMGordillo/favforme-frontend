@@ -9,7 +9,12 @@ export const DonationPendingContainer: NextPage = () => {
     <Layout header title="Donación pendiente">
       <Container>
         <Title>Donación pendiente</Title>
-        <Image src="/images/progress_indicator.svg" width={480} height={400} />
+        <Image
+          alt="Persona observando proceso de subida de archivos"
+          src="/images/progress_indicator.svg"
+          width={480}
+          height={400}
+        />
         <p>
           Tu operación está siendo procesada,
           <br />
