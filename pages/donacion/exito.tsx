@@ -32,7 +32,7 @@ export async function getServerSideProps(
   } else {
     return {
       props: {
-        query: { id: typeof donationId === "string" ? donationId : undefined },
+        query: { id: typeof donationId === "string" ? donationId : "" },
         donation: null,
       },
     };

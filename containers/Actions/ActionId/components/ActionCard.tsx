@@ -4,8 +4,8 @@ import {
   Percentage,
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { Button, SocialNetworks } from "@/components";
-import { FunctionComponent } from "react";
 import { ActionI } from "@/lib/types";
+import { FunctionComponent } from "react";
 import { Summary } from "./styles";
 import { UseCalculationsReturn } from "@/service";
 import { useRouter } from "next/router";
@@ -50,7 +50,7 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
           Favorecer esta acci&oacute;n
         </Button>
         <SocialNetworks
-          data={action?.organization?.socialNetworks}
+          data={action?.organization?.socialNetworks ?? []}
           justify="center"
         />
       </Summary>
