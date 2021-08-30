@@ -1,5 +1,5 @@
 import { Button, Layout, Title } from "@/components";
-import { Container } from "./styles";
+import { Container } from "../styles";
 import Image from "next/image";
 import { NextPage } from "next";
 import router from "next/router";
