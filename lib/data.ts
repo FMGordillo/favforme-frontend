@@ -22,8 +22,8 @@ export const parseToCurrency = (value = "0"): string => {
 };
 
 interface GetProgresValueParams {
-  currentAmount?: string;
-  finalAmount?: string;
+  currentAmount?: string | undefined;
+  finalAmount?: string | undefined;
 }
 
 export const getProgressValue = ({
