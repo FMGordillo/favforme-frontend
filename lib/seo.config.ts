@@ -2,7 +2,7 @@ export default {
   title: "Inicio",
   titleTemplate: "%s - Fundación FavForMe",
   description:
-    "Fundación FavForMe es una ONG que contacta gente que le gusta ayudar con ONGs y empresas con RSE",
+    "Fundación FavForMe es una ONG que contacta gente que le gusta ayudar con ONGs y empresas con Responsabilidad Social Empresarial",
   openGraph: {
     type: "website",
     locale: "es_ES",
