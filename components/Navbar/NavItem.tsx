@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
-import NextLink from "next/link";
-import { cloneElement, FunctionComponent } from "react";
+import { FunctionComponent, cloneElement } from "react";
 import { Item, Link } from "./styles";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 interface NavItemProps {
   href?: string;
@@ -25,7 +25,7 @@ export const NavItem: FunctionComponent<NavItemProps> = ({
   const isCurrent = router?.route === href;
   return (
     // TODO: Hacer que este "current" sea una clase, para el testing e2e
-    <Item current={isCurrent} image isProfileButton={isProfileButton}>
+    <Item current={isCurrent} image isProfileButton={!!isProfileButton}>
       {onClick ? (
         cloneElement(<Link />, { onClick, ...props, children })
       ) : (

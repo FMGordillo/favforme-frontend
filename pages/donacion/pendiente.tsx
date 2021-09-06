@@ -5,6 +5,7 @@ import {
   NextPage,
 } from "next";
 import { useEffect, useState } from "react";
+import { DonationPendingContainer } from "@/containers";
 import { useRouter } from "next/router";
 
 interface GetServerSidePropsReturn {
@@ -19,7 +20,7 @@ export async function getServerSideProps(
   const { donationId } = context.query;
   return {
     props: {
-      query: { id: typeof donationId === "string" ? donationId : undefined },
+      query: { id: typeof donationId === "string" ? donationId : "" },
     },
   };
 }
@@ -42,11 +43,7 @@ const PendingPage: NextPage<
   return (
     <Layout>
       {loading && <FullPageLoading />}
-      {!loading && (
-        <>
-          <p>Tu donacion esta pendiente</p>
-        </>
-      )}
+      {!loading && <DonationPendingContainer />}
     </Layout>
   );
 };

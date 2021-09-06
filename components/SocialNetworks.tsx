@@ -17,7 +17,7 @@ interface SocialNetworksProps {
 }
 
 export const SocialContainer = styled.div<{
-  justify?: Direction;
+  justify: Direction | undefined;
   itemsLenght?: number;
 }>`
   display: grid;
@@ -92,12 +92,12 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
   };
 
   return (
-    <SocialContainer justify={justify} itemsLenght={data?.length}>
-      {data?.length &&
-        data.length > 0 &&
+    <SocialContainer justify={justify} itemsLenght={data?.length ?? 0}>
+      {data &&
+        data?.length > 0 &&
         // TODO: Fix this
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        data.map(({ link, type }, i) => (
+        data?.map(({ link, type }, i) => (
           <a
             key={i}
             href={link || "#"}

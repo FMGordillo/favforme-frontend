@@ -2,7 +2,7 @@ import { Button as BaseButton } from "@/components/Button"; // FIXME: BuG!
 import { Title as BaseTitle } from "../styles";
 import styled from "styled-components";
 
-export const Container = styled.div<{ carousel?: boolean }>`
+export const Container = styled.div<{ carousel?: boolean | undefined }>`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

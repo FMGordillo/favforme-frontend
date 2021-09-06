@@ -15,16 +15,16 @@ export const getAction = async (
   query = GET_ACTION
 ): Promise<GetActionReturn> => {
   try {
-    const { data } = await request.query<{ action: ActionI }>({
+    const { data } = await request.query<{ findFirstAction: ActionI | null }>({
       query,
       variables,
       fetchPolicy: "no-cache",
     });
 
-    const amounts = makeCalculations(data.action);
+    const amounts = makeCalculations(data.findFirstAction);
 
     return {
-      action: data.action,
+      action: data.findFirstAction,
       amounts,
     };
   } catch (error) {
