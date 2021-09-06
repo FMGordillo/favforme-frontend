@@ -35,15 +35,15 @@ export const ImagesContainer = styled(BaseContainer)`
   }
 
   /* Second row */
-  & > a:nth-child(n + 5) {
-    grid-column: span 4;
+  & > a:nth-child(n + 4) {
+    grid-column: span 3;
   }
 
   /* Align 2nd row left and right correctly */
   & > a:nth-child(5) {
     justify-self: right;
   }
-  & > a:nth-child(7) {
+  & > a:nth-child(8) {
     justify-self: left;
   }
 

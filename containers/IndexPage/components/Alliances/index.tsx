@@ -106,6 +106,19 @@ const AlliancesSection: FunctionComponent = () => {
             height={103}
           />
         </a>
+        <a
+          target="_blank"
+          href="http://adelante.org.ar/"
+          rel="noreferrer noopener"
+          onClick={() => trackEvent("Asociación Civil Adelante")}
+        >
+          <Image
+            alt="Asociación Civil Adelante"
+            src="/images/alianzas_08.png"
+            width={122}
+            height={122}
+          />
+        </a>
       </ImagesContainer>
     </Container>
   );
