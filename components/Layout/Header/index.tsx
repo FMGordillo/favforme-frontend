@@ -6,8 +6,10 @@ import {
   Title,
 } from "./styles";
 import { FunctionComponent, ReactNode } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavBar } from "@/components";
 import { event } from "@/lib/gtag";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useMobileSize } from "@/service/useMobileSize";
 import { useRouter } from "next/router";
 
@@ -46,7 +48,7 @@ const Header: FunctionComponent<HeaderProps> = ({
                 <span>
                   Hay muchas personas
                   <br />
-                  <mark>necesitando</mark> de tu
+                  necesitando de tu
                   <br />
                   buena acción
                 </span>
@@ -57,7 +59,7 @@ const Header: FunctionComponent<HeaderProps> = ({
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
           {isIndex && (
             <Button textColor="#111" color="secondary" onClick={handleClick}>
-              DON&Aacute; HOY
+              <FontAwesomeIcon icon={faHeart} /> DON&Aacute; HOY
             </Button>
           )}
         </TextContainer>
