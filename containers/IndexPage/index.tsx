@@ -4,6 +4,7 @@ import {
   CallToActionSection,
   ContactSection,
   IntroOne,
+  ODSMain,
   RSE,
 } from "./components";
 import { Divider, Layout } from "@/components";
@@ -25,9 +26,12 @@ export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
         isIndex: true,
       }}
     >
+      <Divider />
       <IntroOne />
       <Divider />
       <Actions actions={actions} loading={false} />
+      <Divider />
+      <ODSMain />
       <Divider />
       <CallToActionSection />
       <Divider />
