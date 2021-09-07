@@ -29,6 +29,9 @@ export const Main = styled.div`
 
 export const Text = styled.p`
   line-height: 1.75em;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    text-align: center;
+  }
 `;
 
 export const HighlightedText = styled.p`

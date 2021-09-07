@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Table = styled.table`
+  box-sizing: border-box;
   width: 100%;
   max-width: 1024px;
   margin-bottom: 1em;
@@ -13,7 +14,7 @@ export const THead = styled.thead`
   color: white;
   background-color: ${({ theme }) => theme.palette.primary.main};
   tr > td {
-    padding: 0.25em;
+    padding: 8px;
   }
 `;
 
@@ -25,6 +26,11 @@ export const TableColumn = styled.td`
 
   :first-of-type {
     border-left-width: 6px;
+  }
+  :nth-child(2) {
+    ${({ theme }) => theme.breakpoints.down("sm")} {
+      display: none;
+    }
   }
   :last-of-type {
     border-right-width: 6px;
