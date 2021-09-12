@@ -5,6 +5,10 @@ export const Container = styled(BaseContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    margin: 0;
+  }
 `;
 export const ActionContent = styled(BaseContainer)`
   display: grid;

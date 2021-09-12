@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { ButtonLink } from "@/components";
+import styled from "styled-components";
 
 export const Container = styled.section`
   display: grid;
@@ -19,8 +19,9 @@ export const Container = styled.section`
     grid-gap: 0;
 
     .text {
+      display: grid;
       text-align: center;
-      justify-self: center;
+      justify-items: center;
     }
   }
 `;

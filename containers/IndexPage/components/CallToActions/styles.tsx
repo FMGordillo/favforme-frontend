@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { Container, Text, Title } from "@/components/styles";
+import styled from "styled-components";
 
 export const StyledContainer = styled(Container)`
   display: grid;
@@ -20,7 +20,7 @@ export const StyledContainer = styled(Container)`
 
 export const StyledText = styled(Text)`
   ${({ theme }) => theme.breakpoints.down("md")} {
-    text-align: justify;
+    text-align: center;
   }
 `;
 
