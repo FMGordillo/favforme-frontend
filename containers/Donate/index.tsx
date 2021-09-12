@@ -16,6 +16,8 @@ interface DonationProps {
 }
 
 export interface FormValues {
+  name: string;
+  surname: string;
   email: string;
   amount: number;
 }
@@ -43,7 +45,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     });
   };
 
-  const handleSubmit = async ({ amount, email }: FormValues) => {
+  const handleSubmit = async ({ amount, name, surname, email }: FormValues) => {
     trackDonationLead("nueva_donacion_intencion", amount);
     setSubmitLoading(true);
     try {
@@ -60,8 +62,8 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         actionId: query.id,
         userData: {
           email,
-          name: user?.name,
-          surname: user?.surname,
+          name: user?.name || name,
+          surname: user?.surname || surname,
         },
       });
 
@@ -102,6 +104,8 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   const formik = useFormik<FormValues>({
     initialValues: {
       email: "",
+      name: "",
+      surname: "",
       amount: 0,
     },
     validate,
