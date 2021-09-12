@@ -105,3 +105,11 @@ export const Member = styled.div`
     margin-bottom: 0;
   }
 `;
+
+export const Advisor = styled.div`
+  color: ${({ theme }) => theme.palette.gray.dark};
+  font-size: 0.85em;
+  .image {
+    border-radius: 100px;
+  }
+`;
