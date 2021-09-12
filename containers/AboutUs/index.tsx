@@ -1,5 +1,5 @@
-import { Container, Layout, Title } from "@/components";
 import {
+  Advisor,
   HighlightSection,
   Member,
   Section,
@@ -8,6 +8,7 @@ import {
   ThreeColumns,
   TwoColumnSection,
 } from "./styles";
+import { Container, Layout, Title } from "@/components";
 import { AlliancesSection } from "../IndexPage/components";
 import Image from "next/image";
 import { NextPage } from "next";
@@ -181,6 +182,57 @@ export const AboutUsPage: NextPage = () => {
             </Member>
           </Team>
         </Section>
+        <HighlightSection>
+          <Title>Los advisors</Title>
+          <ThreeColumns>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_01.webp"
+                alt="Foto de Horacio Cuervo"
+              />
+              <p>
+                Asesor en Estrategia e Innovación
+                <br />
+                Empresarial. Director del Founder Institute
+                <br />
+                Buenos Aires. Advisor y Asesor Ejecutivo.
+                <br />
+                Mentor. Director Independiente. #Ristretter
+              </p>
+            </Advisor>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_02.webp"
+                alt="Foto de Gustavo Cotarelo"
+              />
+              <p>
+                VP M&A, Financial Advising en VRG
+                <br />
+                Argentina - RBiasca y Asociados.
+              </p>
+            </Advisor>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_03.webp"
+                alt="Foto de Horacio Cuervo"
+              />
+              <p>
+                Vicepresidente de desarrollo
+                <br />
+                comercial en Freemoni.
+              </p>
+            </Advisor>
+          </ThreeColumns>
+        </HighlightSection>
         <Section>
           <AlliancesSection />
         </Section>
