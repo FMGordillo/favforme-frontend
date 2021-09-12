@@ -35,6 +35,31 @@ const DonationForm = ({
       {errors.amount && (
         <ErrorText aria-labelledby="amount">{errors.amount}</ErrorText>
       )}
+      <label htmlFor="name">Nombre (opcional)</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        disabled={submitLoading}
+        value={values.name}
+        onChange={handleChange}
+        placeholder="Luciana"
+      />
+      {errors.name && (
+        <ErrorText aria-labelledby="name">{errors.name}</ErrorText>
+      )}
+      <label htmlFor="surname">Apellido (opcional)</label>
+      <input
+        id="surname"
+        type="text"
+        name="surname"
+        disabled={submitLoading}
+        value={values.surname}
+        onChange={handleChange}
+      />
+      {errors.surname && (
+        <ErrorText aria-labelledby="surname">{errors.surname}</ErrorText>
+      )}
       <label htmlFor="email">Email</label>
       <input
         required
