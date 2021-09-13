@@ -18,7 +18,6 @@ const StyledTitle = styled(Title)`
   color: white;
   padding: 0 0.25em;
   margin: 2em 0 1em;
-  background-color: ${({ theme }) => theme.palette.primary.dark};
 `;
 
 interface ActionsProps {

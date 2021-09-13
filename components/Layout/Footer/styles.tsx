@@ -101,13 +101,14 @@ export const Copyright = styled.section`
   text-align: center;
   p {
     margin: 0;
-    padding: 2em 0;
+    padding: 28px 0 16px;
     color: white;
     text-transform: uppercase;
   }
   .credits {
+    font-size: 14px;
     text-transform: none;
-    padding: 0 0 2em;
+    padding: 0 0 24px;
     color: ${({ theme }) => theme.palette.primary.main};
   }
   a {

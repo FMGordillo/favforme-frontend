@@ -1,7 +1,7 @@
+import { Button, Container, ImageContainer } from "./styles";
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import { Title } from "@/components";
-import { Button, ImageContainer, Container } from "./styles";
 import { event } from "@/lib/gtag";
 
 const RSE: FunctionComponent = () => {
