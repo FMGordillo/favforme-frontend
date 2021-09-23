@@ -37,7 +37,7 @@ export const TextContainer = styled.div<{ isIndex?: boolean }>`
 `;
 export const Title = styled.h1<{ receivedText?: boolean; isIndex?: boolean }>`
   margin: 0;
-  font-size: 3.5em;
+  font-size: 50px;
   text-overflow: ellipsis;
   overflow: hidden;
   width: ${({ isIndex }) => (isIndex ? "75vw" : "inherit")};
