@@ -98,7 +98,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <Percentage>{completition}%</Percentage>
         <ButtonContainer>
           <Button
-            hoverTextColor="black"
+            color="secondary"
             onClick={() =>
               isNotProd
                 ? router.push({
@@ -110,15 +110,9 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
                 : handleModal(<DonationUnavailableModal />)
             }
           >
-            DONAR <FontAwesomeIcon icon={faHeart} />
+            DON&Aacute; HOY <FontAwesomeIcon icon={faHeart} />
           </Button>
-          <Button
-            color="gray"
-            textColor="black"
-            hoverVariant="dark"
-            hoverTextColor="white"
-            onClick={goToAction}
-          >
+          <Button color="gray" hoverColor="#cccccc" onClick={goToAction}>
             DETALLES
           </Button>
         </ButtonContainer>
