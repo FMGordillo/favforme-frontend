@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header<{ isIndex?: boolean }>`
   background-size: cover;
   background-position: center;
-  background-image: url("/images/plato_de_comida.png");
+  background-image: url("/images/plato_de_comida.webp");
   height: ${({ isIndex }) => (isIndex ? "660px" : "400px")};
   width: 100vw;
   overflow: hidden;
