@@ -95,8 +95,6 @@ const SocialNetworks: FunctionComponent<SocialNetworksProps> = ({
     <SocialContainer justify={justify} itemsLenght={data?.length ?? 0}>
       {data &&
         data?.length > 0 &&
-        // TODO: Fix this
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         data?.map(({ link, type }, i) => (
           <a
             key={i}

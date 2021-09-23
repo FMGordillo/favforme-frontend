@@ -55,11 +55,8 @@ export const Button = styled.button<ButtonI>`
               : "primary"
           ][hoverTextVariant || "light"]
         : hoverTextColor || textColor};
-
     background-color: ${({ theme, color, hoverColor, hoverVariant }) =>
-      typeof color === "undefined" ||
-      isOfTypeColor(color) ||
-      typeof hoverColor === "undefined" ||
+      (typeof hoverColor === "undefined" && isOfTypeColor(color)) ||
       isOfTypeColor(hoverColor)
         ? theme.palette[
             hoverColor && isOfTypeColor(hoverColor)
