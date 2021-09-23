@@ -52,10 +52,11 @@ const Footer: FunctionComponent<FooterProps> = () => (
       <div>
         <NextLink href="/">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-          <a href="#">
+          <a href="#" aria-label="Volver al inicio">
             {/* <Logo /> */}
             <Image
               src="/images/favforme-logo-wide-white.webp"
+              alt="Logo FavForMe"
               width={300}
               height={55}
             />
@@ -72,6 +73,7 @@ const Footer: FunctionComponent<FooterProps> = () => (
     </MapSection>
     <SocialNetworks>
       <a
+        aria-label="LinkedIn"
         target="_blank"
         href="https://www.linkedin.com/company/64580065"
         rel="noreferrer noopener"
@@ -79,6 +81,7 @@ const Footer: FunctionComponent<FooterProps> = () => (
         <FontAwesomeIcon icon={faLinkedinIn} />
       </a>
       <a
+        aria-label="Instagram"
         target="_blank"
         href="https://www.instagram.com/favforme"
         rel="noreferrer noopener"
@@ -86,6 +89,7 @@ const Footer: FunctionComponent<FooterProps> = () => (
         <FontAwesomeIcon icon={faInstagram} />
       </a>
       <a
+        aria-label="Facebook"
         target="_blank"
         href="https://www.facebook.com/FavForMe/"
         rel="noreferrer noopener"
@@ -93,6 +97,7 @@ const Footer: FunctionComponent<FooterProps> = () => (
         <FontAwesomeIcon icon={faFacebook} />
       </a>
       <a
+        aria-label="Twitter"
         target="_blank"
         href="https://twitter.com/FavForMe1"
         rel="noreferrer noopener"
