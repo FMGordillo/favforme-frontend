@@ -11,6 +11,7 @@ const RSE: FunctionComponent = () => {
         <Image
           width="300"
           height="300"
+          alt="Personas trabajando en una oficina"
           src="/images/Business analytics-bro.svg"
         />
       </ImageContainer>

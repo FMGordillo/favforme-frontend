@@ -1,5 +1,4 @@
 import {
-  ActionsComponent as Actions,
   AlliancesSection,
   CallToActionSection,
   ContactSection,
@@ -10,10 +9,16 @@ import {
 import { Divider, Layout } from "@/components";
 import { ActionI } from "@/lib/types";
 import { NextPage } from "next";
+import dynamic from "next/dynamic";
 
 interface IndexPageProps {
   actions: ActionI[];
 }
+
+// @ts-ignore
+const DynamicActions = dynamic(() =>
+  import("./components").then((mod) => mod.ActionsComponent)
+);
 
 export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
   return (
@@ -29,7 +34,7 @@ export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
       <Divider />
       <IntroOne />
       <Divider />
-      <Actions actions={actions} loading={false} />
+      <DynamicActions actions={actions} loading={false} />
       <Divider />
       <ODSMain />
       <Divider />
