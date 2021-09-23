@@ -116,6 +116,7 @@ export const ODSMain: FunctionComponent = () => {
           <Image
             width={150}
             height={150}
+            alt="Carousel image"
             src={generateImageUrl(sdg[iCurrent])}
           />
         </div>

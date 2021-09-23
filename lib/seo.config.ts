@@ -12,6 +12,6 @@ export default {
   twitter: {
     handle: "@favforme1",
     site: "@favforme1",
-    cardType: "/images/plato_de_comida.png",
+    cardType: "/images/plato_de_comida.webp",
   },
 };
