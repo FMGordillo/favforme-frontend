@@ -25,25 +25,8 @@ export const SocialNetworks = styled.div`
       width: 2em !important;
       height: 2em !important;
     }
-    :nth-child(1) {
-      :hover {
-        color: #0a66c2;
-      }
-    }
-    :nth-child(2) {
-      :hover {
-        color: #d92d83;
-      }
-    }
-    :nth-child(3) {
-      :hover {
-        color: #1877f2;
-      }
-    }
-    :nth-child(4) {
-      :hover {
-        color: #1da1f2;
-      }
+    &:hover {
+      color: ${({ theme }) => theme.palette.primary.dark};
     }
   }
 `;
