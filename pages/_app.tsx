@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import * as gtag from "../lib/gtag";
 import { ModalProvider, NotificationProvider } from "../lib/context";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
@@ -5,11 +6,14 @@ import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import NextNprogress from "nextjs-progressbar";
 import axios from "axios";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { lightTheme } from "../utils/styled";
 import seoConfig from "../lib/seo.config";
 import { setLocale } from "yup";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+
+config.autoAddCss = false;
 
 const GlobalStyle = createGlobalStyle`
   body {
