@@ -1,0 +1,11 @@
+{
+  "name": "FavForMe App",
+  "short_name": "FFM",
+  "theme_color": "#4f6be6",
+  "background_color": "#27358d",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "splash_pages": null
+}
