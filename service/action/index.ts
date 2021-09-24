@@ -1,5 +1,6 @@
 import { GET_ACTION, GET_ACTIONS } from "./queries";
 import { UseCalculationsReturn, makeCalculations } from "../actionUtils";
+import { useEffect, useState } from "react";
 import { ActionI } from "@/lib/types";
 import request from "@/lib/apollo";
 
@@ -46,4 +47,33 @@ export const getActions = async (query = GET_ACTIONS): Promise<ActionI[]> => {
     console.error(error);
     return [];
   }
+};
+
+type UseActionsReturn = {
+  data: ActionI[];
+  loading: boolean;
+};
+
+export const useActions = (): UseActionsReturn => {
+  const [loading, setLoading] = useState(true);
+  const [actions, setActions] = useState<ActionI[]>([]);
+
+  useEffect(() => {
+    const fn = async () => {
+      try {
+        const actions = await getActions();
+        setActions(actions);
+      } catch (error) {
+        console.log("Error while fetching actions", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fn();
+  }, []);
+
+  return {
+    loading,
+    data: actions,
+  };
 };
