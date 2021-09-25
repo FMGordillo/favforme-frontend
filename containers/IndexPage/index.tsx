@@ -13,6 +13,7 @@ import dynamic from "next/dynamic";
 
 interface IndexPageProps {
   actions: ActionI[];
+  loading: boolean;
 }
 
 // @ts-ignore
@@ -20,7 +21,7 @@ const DynamicActions = dynamic(() =>
   import("./components").then((mod) => mod.ActionsComponent)
 );
 
-export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
+export const IndexPage: NextPage<IndexPageProps> = ({ actions, loading }) => {
   return (
     <Layout
       headProps={{
@@ -34,7 +35,7 @@ export const IndexPage: NextPage<IndexPageProps> = ({ actions }) => {
       <Divider />
       <IntroOne />
       <Divider />
-      <DynamicActions actions={actions} loading={false} />
+      <DynamicActions actions={actions} loading={loading} />
       <Divider />
       <ODSMain />
       <Divider />
