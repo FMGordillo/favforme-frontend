@@ -1,6 +1,6 @@
+import { LogoJsonLd, NextSeo } from "next-seo";
 import { FunctionComponent } from "react";
 import Head from "next/head";
-import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 
 export interface HeadProps {
@@ -20,6 +20,10 @@ const HeadComponent: FunctionComponent<HeadProps> = ({ title }) => {
           locale: "es-ES",
           url: `https://favforme.com${router?.asPath}`,
         }}
+      />
+      <LogoJsonLd
+        url="https://favforme.com"
+        logo="/images/favforme_logo.webp"
       />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
