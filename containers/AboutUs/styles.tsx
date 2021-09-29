@@ -53,6 +53,18 @@ export const ThreeColumns = styled.div`
   }
 `;
 
+export const FourColumns = styled.div`
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr 1fr;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const Subtitle = styled(Title)`
   weight: 500;
   font-size: 1.5em;
@@ -103,5 +115,13 @@ export const Team = styled.div`
 export const Member = styled.div`
   p {
     margin-bottom: 0;
+  }
+`;
+
+export const Advisor = styled.div`
+  color: ${({ theme }) => theme.palette.gray.dark};
+  font-size: 0.85em;
+  .image {
+    border-radius: 100px;
   }
 `;
