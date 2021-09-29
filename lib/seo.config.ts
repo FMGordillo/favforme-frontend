@@ -10,7 +10,7 @@ export default {
     // site_name: "Fundación FavForMe: Crowdfunding Solidario",
     images: [
       {
-        url: "/images/favforme_logo_icon.webp",
+        url: "https://favforme.com/images/favforme_logo_icon.webp",
         width: 570,
         height: 480,
         alt: "Fundación FavForMe",
