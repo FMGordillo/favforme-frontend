@@ -4,15 +4,16 @@ export default {
   description:
     "Fundación FavForMe es una ONG que contacta gente que le gusta ayudar con ONGs y empresas con Responsabilidad Social Empresarial",
   openGraph: {
+    title: "Fundación FavForMe: Crowdfunding Solidario",
     type: "website",
     locale: "es_ES",
     url: "https://favforme.com/",
-    site_name: "Fundación FavForMe: Crowdfunding Solidario",
+    // site_name: "Fundación FavForMe: Crowdfunding Solidario",
     images: [
       {
         url: "/images/favforme_logo_icon.webp",
-        width: 800,
-        height: 450,
+        width: 570,
+        height: 480,
         alt: "Fundación FavForMe",
       },
     ],
