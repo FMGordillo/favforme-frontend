@@ -1,6 +1,7 @@
 import { LogoJsonLd, NextSeo } from "next-seo";
 import { FunctionComponent } from "react";
 import Head from "next/head";
+import seoConfig from "@/lib/seo.config";
 import { useRouter } from "next/router";
 
 export interface HeadProps {
@@ -15,6 +16,7 @@ const HeadComponent: FunctionComponent<HeadProps> = ({ title }) => {
       <NextSeo
         title={title}
         openGraph={{
+          ...seoConfig,
           url: `https://favforme.com${router?.asPath}`,
         }}
       />
