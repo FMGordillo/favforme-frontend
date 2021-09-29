@@ -12,7 +12,7 @@ export default {
       {
         url: "/images/favforme_logo_icon.webp",
         width: 800,
-        height: 600,
+        height: 450,
         alt: "Fundación FavForMe",
       },
     ],
