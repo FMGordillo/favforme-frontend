@@ -24,9 +24,6 @@ const DynamicActions = dynamic(() =>
 export const IndexPage: NextPage<IndexPageProps> = ({ actions, loading }) => {
   return (
     <Layout
-      headProps={{
-        title: "Inicio",
-      }}
       header
       headerProps={{
         isIndex: true,
