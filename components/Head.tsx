@@ -16,7 +16,7 @@ const HeadComponent: FunctionComponent<HeadProps> = ({ title }) => {
       <NextSeo
         title={title}
         openGraph={{
-          ...seoConfig,
+          ...seoConfig.openGraph,
           url: `https://favforme.com${router?.asPath}`,
         }}
       />
