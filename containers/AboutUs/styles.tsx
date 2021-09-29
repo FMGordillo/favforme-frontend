@@ -53,6 +53,18 @@ export const ThreeColumns = styled.div`
   }
 `;
 
+export const FourColumns = styled.div`
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr 1fr;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const Subtitle = styled(Title)`
   weight: 500;
   font-size: 1.5em;

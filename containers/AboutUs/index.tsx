@@ -1,5 +1,6 @@
 import {
   Advisor,
+  FourColumns,
   HighlightSection,
   Member,
   Section,
@@ -184,7 +185,7 @@ export const AboutUsPage: NextPage = () => {
         </Section>
         <HighlightSection>
           <Title>Los advisors</Title>
-          <ThreeColumns>
+          <FourColumns>
             <Advisor>
               <Image
                 className="image"
@@ -209,7 +210,7 @@ export const AboutUsPage: NextPage = () => {
                 width={200}
                 height={200}
                 src="/images/advisors/advisor_02.webp"
-                alt="Foto de Gustavo Cotarelo"
+                alt="Foto de Pablo Agustín Escontrela"
               />
               <p>
                 VP M&A, Financial Advising en VRG
@@ -223,7 +224,7 @@ export const AboutUsPage: NextPage = () => {
                 width={200}
                 height={200}
                 src="/images/advisors/advisor_03.webp"
-                alt="Foto de Horacio Cuervo"
+                alt="Foto de Gustavo Cotarelo"
               />
               <p>
                 Vicepresidente de desarrollo
@@ -231,7 +232,21 @@ export const AboutUsPage: NextPage = () => {
                 comercial en Freemoni.
               </p>
             </Advisor>
-          </ThreeColumns>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_04.webp"
+                alt="Foto de Gustavo Cotarelo"
+              />
+              <p>
+                VP M&A, Financial Advising en VRG
+                <br />
+                Argentina - RBiasca y Asociados.
+              </p>
+            </Advisor>
+          </FourColumns>
         </HighlightSection>
         <Section>
           <AlliancesSection />
