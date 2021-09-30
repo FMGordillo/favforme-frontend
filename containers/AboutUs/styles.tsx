@@ -121,7 +121,18 @@ export const Member = styled.div`
 export const Advisor = styled.div`
   color: ${({ theme }) => theme.palette.gray.dark};
   font-size: 0.85em;
+  transition: transform 0.3s ease;
   .image {
     border-radius: 100px;
   }
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+export const AdvisorName = styled(Title)`
+  color: #434142;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;

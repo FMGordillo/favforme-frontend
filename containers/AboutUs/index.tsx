@@ -1,6 +1,6 @@
 import {
   Advisor,
-  FourColumns,
+  AdvisorName,
   HighlightSection,
   Member,
   Section,
@@ -185,7 +185,7 @@ export const AboutUsPage: NextPage = () => {
         </Section>
         <HighlightSection>
           <Title>Los advisors</Title>
-          <FourColumns>
+          <ThreeColumns>
             <Advisor>
               <Image
                 className="image"
@@ -194,6 +194,7 @@ export const AboutUsPage: NextPage = () => {
                 src="/images/advisors/advisor_01.webp"
                 alt="Foto de Horacio Cuervo"
               />
+              <AdvisorName as="h2">Horacio Cuervo</AdvisorName>
               <p>
                 Asesor en Estrategia e Innovación
                 <br />
@@ -210,8 +211,9 @@ export const AboutUsPage: NextPage = () => {
                 width={200}
                 height={200}
                 src="/images/advisors/advisor_02.webp"
-                alt="Foto de Pablo Agustín Escontrela"
+                alt="Foto de Pablo Gustavo Cotarelo"
               />
+              <AdvisorName as="h2">Gustavo Cotarelo</AdvisorName>
               <p>
                 VP M&A, Financial Advising en VRG
                 <br />
@@ -224,29 +226,16 @@ export const AboutUsPage: NextPage = () => {
                 width={200}
                 height={200}
                 src="/images/advisors/advisor_03.webp"
-                alt="Foto de Gustavo Cotarelo"
+                alt="Foto de Pablo Agustín Escontrela"
               />
+              <AdvisorName as="h2">Pablo Agustín Escontrela</AdvisorName>
               <p>
                 Vicepresidente de desarrollo
                 <br />
                 comercial en Freemoni.
               </p>
             </Advisor>
-            <Advisor>
-              <Image
-                className="image"
-                width={200}
-                height={200}
-                src="/images/advisors/advisor_04.webp"
-                alt="Foto de Gustavo Cotarelo"
-              />
-              <p>
-                VP M&A, Financial Advising en VRG
-                <br />
-                Argentina - RBiasca y Asociados.
-              </p>
-            </Advisor>
-          </FourColumns>
+          </ThreeColumns>
         </HighlightSection>
         <Section>
           <AlliancesSection />
