@@ -1,5 +1,6 @@
-import { Container, Layout, Title } from "@/components";
 import {
+  Advisor,
+  AdvisorName,
   HighlightSection,
   Member,
   Section,
@@ -8,6 +9,7 @@ import {
   ThreeColumns,
   TwoColumnSection,
 } from "./styles";
+import { Container, Layout, Title } from "@/components";
 import { AlliancesSection } from "../IndexPage/components";
 import Image from "next/image";
 import { NextPage } from "next";
@@ -181,6 +183,60 @@ export const AboutUsPage: NextPage = () => {
             </Member>
           </Team>
         </Section>
+        <HighlightSection>
+          <Title>Los advisors</Title>
+          <ThreeColumns>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_01.webp"
+                alt="Foto de Horacio Cuervo"
+              />
+              <AdvisorName as="h2">Horacio Cuervo</AdvisorName>
+              <p>
+                Asesor en Estrategia e Innovación
+                <br />
+                Empresarial. Director del Founder Institute
+                <br />
+                Buenos Aires. Advisor y Asesor Ejecutivo.
+                <br />
+                Mentor. Director Independiente. #Ristretter
+              </p>
+            </Advisor>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_02.webp"
+                alt="Foto de Pablo Gustavo Cotarelo"
+              />
+              <AdvisorName as="h2">Gustavo Cotarelo</AdvisorName>
+              <p>
+                VP M&A, Financial Advising en VRG
+                <br />
+                Argentina - RBiasca y Asociados.
+              </p>
+            </Advisor>
+            <Advisor>
+              <Image
+                className="image"
+                width={200}
+                height={200}
+                src="/images/advisors/advisor_03.webp"
+                alt="Foto de Pablo Agustín Escontrela"
+              />
+              <AdvisorName as="h2">Pablo Agustín Escontrela</AdvisorName>
+              <p>
+                Vicepresidente de desarrollo
+                <br />
+                comercial en Freemoni.
+              </p>
+            </Advisor>
+          </ThreeColumns>
+        </HighlightSection>
         <Section>
           <AlliancesSection />
         </Section>
