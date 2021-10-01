@@ -1,9 +1,12 @@
-import { ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import { DonateButton, ErrorText, MainContainer } from "./styles";
 import { FormValues } from "./";
 import { FormikErrors } from "formik";
+import { Switch } from "@/components";
 
 interface DonationFormProps {
+  isAnon: boolean;
+  setIsAnon: Dispatch<SetStateAction<boolean>>;
   submitLoading: boolean;
   errors: FormikErrors<FormValues>;
   values: FormValues;
@@ -12,6 +15,8 @@ interface DonationFormProps {
 }
 
 const DonationForm = ({
+  isAnon,
+  setIsAnon,
   handleSubmit,
   values,
   errors,
@@ -35,30 +40,40 @@ const DonationForm = ({
       {errors.amount && (
         <ErrorText aria-labelledby="amount">{errors.amount}</ErrorText>
       )}
-      <label htmlFor="name">Nombre (opcional)</label>
-      <input
-        id="name"
-        type="text"
-        name="name"
-        disabled={submitLoading}
-        value={values.name}
-        onChange={handleChange}
-        placeholder="Luciana"
+      <Switch
+        checked={isAnon}
+        text="Donar como anónimo/a"
+        handleClick={() => setIsAnon((prev) => !prev)}
       />
-      {errors.name && (
-        <ErrorText aria-labelledby="name">{errors.name}</ErrorText>
-      )}
-      <label htmlFor="surname">Apellido (opcional)</label>
-      <input
-        id="surname"
-        type="text"
-        name="surname"
-        disabled={submitLoading}
-        value={values.surname}
-        onChange={handleChange}
-      />
-      {errors.surname && (
-        <ErrorText aria-labelledby="surname">{errors.surname}</ErrorText>
+      {!isAnon && (
+        <>
+          <label htmlFor="name">Nombre</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            disabled={submitLoading}
+            value={values.name}
+            onChange={handleChange}
+            placeholder="Luciana"
+          />
+          {errors.name && (
+            <ErrorText aria-labelledby="name">{errors.name}</ErrorText>
+          )}
+          <label htmlFor="surname">Apellido</label>
+          <input
+            id="surname"
+            type="text"
+            name="surname"
+            disabled={submitLoading}
+            value={values.surname}
+            onChange={handleChange}
+            placeholder="Gonzalez"
+          />
+          {errors.surname && (
+            <ErrorText aria-labelledby="surname">{errors.surname}</ErrorText>
+          )}
+        </>
       )}
       <label htmlFor="email">Email</label>
       <input
