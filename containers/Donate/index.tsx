@@ -16,6 +16,8 @@ interface DonationProps {
 }
 
 export interface FormValues {
+  name: string;
+  surname: string;
   email: string;
   amount: number;
 }
@@ -28,6 +30,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
   const donationTitle = action?.title
     ? `Donacion - ${action.title}`
     : "Donacion";
+  const [isAnon, setIsAnon] = useState(false);
   const [donationUrl, setDonationUrl] = useState("");
   const [submitLoading, setSubmitLoading] = useState(false);
 
@@ -43,13 +46,14 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     });
   };
 
-  const handleSubmit = async ({ amount, email }: FormValues) => {
+  const handleSubmit = async ({ amount, name, surname, email }: FormValues) => {
     trackDonationLead("nueva_donacion_intencion", amount);
     setSubmitLoading(true);
     try {
       if (!query.id || !amount || typeof amount !== "number" || !email)
         throw new Error("The required fields are missing");
 
+      console.log(user?.name || name);
       const response = await axios.post("/mp/generate", {
         amount,
         actionTitle: action?.title
@@ -60,8 +64,8 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         actionId: query.id,
         userData: {
           email,
-          name: user?.name,
-          surname: user?.surname,
+          name: user?.name || name,
+          surname: user?.surname || surname,
         },
       });
 
@@ -96,12 +100,19 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     if (values.email && !regexEmail.test(values.email)) {
       errors.email = "Ingrese un email valido";
     }
+
+    if (!isAnon && (!values.name || !values.surname)) {
+      !values.name && (errors.name = "Ingrese su nombre");
+      !values.surname && (errors.surname = "Ingrese su apellido");
+    }
     return errors;
   };
 
   const formik = useFormik<FormValues>({
     initialValues: {
       email: "",
+      name: "",
+      surname: "",
       amount: 0,
     },
     validate,
@@ -126,6 +137,8 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
           <DonationForm
             errors={formik.errors}
             values={formik.values}
+            isAnon={isAnon}
+            setIsAnon={setIsAnon}
             submitLoading={submitLoading}
             handleSubmit={formik.handleSubmit}
             handleChange={formik.handleChange}
