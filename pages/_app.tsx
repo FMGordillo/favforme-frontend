@@ -33,14 +33,12 @@ const GlobalStyle = createGlobalStyle`
 setLocale({
   mixed: {
     default: "Valor inválido",
-    // @ts-ignore
     required: () => `Este campo es requerido`,
   },
   string: {
-    // @ts-ignore
-    min: (val) => `${val.label} debe contener al menos ${val.min} caracteres`,
-    // @ts-ignore
-    email: (val) => `${val.label} debe ser un email válido`,
+    min: (val: { label: any; min: any }) =>
+      `${val.label} debe contener al menos ${val.min} caracteres`,
+    email: (val: { label: any }) => `${val.label} debe ser un email válido`,
   },
 });
 
@@ -86,7 +84,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <NextNprogress
-          // @ts-ignore
           color={theme.palette.secondary.main}
           startPosition={0.3}
           stopDelayMs={200}
