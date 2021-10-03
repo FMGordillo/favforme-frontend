@@ -1,5 +1,3 @@
-import { DefaultTheme } from "styled-components";
-
 export type Direction = "left" | "center" | "right";
 
 // TODO: Use this from styled.ts
@@ -34,7 +32,7 @@ const defaultTheme = {
   },
 };
 
-export const lightTheme: DefaultTheme = {
+export const lightTheme = {
   mode: "light",
   palette: {
     primary: { main: "#4f6be6", light: "#9BAAF6", dark: "#27358d" },
@@ -59,7 +57,7 @@ export const lightTheme: DefaultTheme = {
   ...defaultTheme,
 };
 
-export const darkTheme: DefaultTheme = {
+export const darkTheme = {
   mode: "dark",
   palette: {
     // primary: { main: "#5573f5", light: "#9BAAF6", dark: "#27358d" },

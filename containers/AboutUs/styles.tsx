@@ -53,6 +53,18 @@ export const ThreeColumns = styled.div`
   }
 `;
 
+export const FourColumns = styled.div`
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr 1fr;
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const Subtitle = styled(Title)`
   weight: 500;
   font-size: 1.5em;
@@ -104,4 +116,23 @@ export const Member = styled.div`
   p {
     margin-bottom: 0;
   }
+`;
+
+export const Advisor = styled.div`
+  color: ${({ theme }) => theme.palette.gray.dark};
+  font-size: 0.85em;
+  transition: transform 0.3s ease;
+  .image {
+    border-radius: 100px;
+  }
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+export const AdvisorName = styled(Title)`
+  color: #434142;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
