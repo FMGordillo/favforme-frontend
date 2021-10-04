@@ -1,6 +1,5 @@
-export * from "./assets";
-
 export * from "./ActionCard";
+export * from "./assets";
 export * from "./Button";
 export * from "./Form";
 export * from "./Head";
@@ -12,3 +11,4 @@ export * from "./Navbar";
 export * from "./ProposeMyONG";
 export * from "./SocialNetworks";
 export * from "./styles";
+export * from "./Switch";
