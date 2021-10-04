@@ -81,8 +81,8 @@ export interface DonationI {
 
 export interface User {
   id: string;
-  name: string;
-  surname: string;
+  name: string | null;
+  surname: string | null;
   email: string;
   userType: "USER" | "BUSINESS";
 }
