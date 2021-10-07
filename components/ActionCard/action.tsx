@@ -50,7 +50,6 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <DueDate show={!!dueDate} urgency={dueDate?.urgency}>
           {dueDate?.date}
         </DueDate>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a href="#" onClick={goToAction}>
           <Image
             layout="fill"
