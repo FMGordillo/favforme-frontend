@@ -12,4 +12,9 @@ node_modules
 
 .vscode
 
+# Jest
 coverage
+
+# PWA
+public/sw*
+public/workbox*
