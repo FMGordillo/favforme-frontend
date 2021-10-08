@@ -51,7 +51,6 @@ const Footer: FunctionComponent<FooterProps> = () => (
     <MapSection>
       <div>
         <NextLink href="/">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
           <a href="#" aria-label="Volver al inicio">
             {/* <Logo /> */}
             <Image
