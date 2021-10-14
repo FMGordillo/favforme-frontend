@@ -1,10 +1,10 @@
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { DialogContainer, DialogTitle } from "../styles";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { FunctionComponent } from "react";
+import Image from "next/image";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
-import { DialogContainer, DialogTitle } from "../styles";
 
 const ModalContent = styled.div`
   display: grid;

@@ -22,7 +22,7 @@ export const ProposeMyONG: FunctionComponent = () => {
         <br />
         Hagamos juntos un lugar mejor para vivir.
       </p>
-      <Link href="/ong/sumar-ong">
+      <Link href="/ong/sumar-ong" passHref>
         <ButtonLink
           onClick={() =>
             event({ action: "sumar_mi_ong", category: "ong", value: 1 })

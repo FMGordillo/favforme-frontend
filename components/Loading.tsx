@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { FunctionComponent } from "react";
+import styled from "styled-components";
 
 const LoaderComponent = styled.div`
   display: flex;

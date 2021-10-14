@@ -70,7 +70,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       {/* </Link> */}
       <MainContent>
         <div>
-          <Link href={actionUrl}>
+          <Link href={actionUrl} passHref>
             <Title
               color={
                 dueDate?.urgency === "high"

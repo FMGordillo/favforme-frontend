@@ -35,7 +35,7 @@ export const MobileNavigator = styled.div<MobileNavigatorProps>`
   z-index: 9;
   height: ${({ theme }) => theme.spacing(1)}em;
   width: 100vw;
-  padding: 1em;
+  padding: 14px;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     display: block;
   }
@@ -68,11 +68,11 @@ export const Ul = styled.ul<MobileNavigatorProps>`
     }
 
     & > * {
-      margin: 1em;
+      margin: 14px;
     }
 
     & > :last-child {
-      margin-bottom: 2em;
+      margin-bottom: 28px;
     }
   }
 `;
@@ -80,7 +80,7 @@ export const Item = styled.li<ItemProps>`
   flex: 1;
   font-family: dosis, sans-serif;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   ${({ image }) => image && "max-width: 200px;"} & > a > div {

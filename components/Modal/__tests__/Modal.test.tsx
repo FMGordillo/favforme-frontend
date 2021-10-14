@@ -1,6 +1,5 @@
-import { render } from "../../../utils/testUtils";
 import { Modal } from "../";
-import React from "react";
+import { render } from "../../../utils/testUtils";
 
 describe("Modal component", () => {
   it("renders", () => {

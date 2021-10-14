@@ -3,19 +3,25 @@ import { UseCalculationsReturn, getAction } from "@/service";
 import { ActionPage as ActionContainer } from "@/containers";
 import { ActionI } from "@/lib/types";
 
-interface GetServerSidePropsReturn {
-  props: {
-    query: { id: string | null };
-    action: ActionI | null;
-    amounts: UseCalculationsReturn | null;
-  };
-}
+type GetServerSidePropsQ = {
+  actionId: string;
+};
 
-export const getServerSideProps = async (
-  context: GetServerSideProps
-): Promise<GetServerSidePropsReturn> => {
-  // @ts-ignore
-  const { actionId } = context.params;
+type GetServerSidePropsData = {
+  query: { id: string | null };
+  action: ActionI | null;
+  amounts: UseCalculationsReturn | null;
+};
+
+type GetServerSidePropsReturn = {
+  props: GetServerSidePropsData;
+};
+
+export const getServerSideProps: GetServerSideProps<
+  GetServerSidePropsData,
+  GetServerSidePropsQ
+> = async (context): Promise<GetServerSidePropsReturn> => {
+  const { actionId } = context.params || {};
   if (typeof actionId === "string" && !!actionId) {
     const { action, amounts } = await getAction({ id: actionId });
     return {
