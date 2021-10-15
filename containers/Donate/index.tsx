@@ -1,11 +1,11 @@
 import { Container, Layout } from "@/components";
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { ActionContainer } from "./styles";
 import { ActionI } from "@/lib/types";
 import { DonationForm } from "./Form";
+import { Formik } from "formik";
 import axios from "axios";
 import { event } from "@/lib/gtag";
-import { useFormik } from "formik";
 
 interface DonationProps {
   user: any;
@@ -18,6 +18,8 @@ interface DonationProps {
 export interface FormValues {
   email: string;
   amount: number;
+  name: string;
+  surname: string;
 }
 
 export const DonationContainer: FunctionComponent<DonationProps> = ({
@@ -99,57 +101,48 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
     return errors;
   };
 
-  const formik = useFormik<FormValues>({
-    initialValues: {
-      email: "",
-      amount: 0,
-    },
-    validate,
-    onSubmit: handleSubmit,
-  });
-
   return (
     <Layout header title={donationTitle}>
-      <Container>
-        <ActionContainer>
-          <p>
-            {formik.values.email && formik.values.amount > 0
-              ? `${
-                  formik.values.email
-                } donará $${formik.values.amount.toLocaleString("es-ES", {
-                  currency: "ARS",
-                })}`
-              : ""}
-          </p>
-        </ActionContainer>
-        <section>
-          <DonationForm
-            errors={formik.errors}
-            values={formik.values}
-            submitLoading={submitLoading}
-            handleSubmit={formik.handleSubmit}
-            handleChange={formik.handleChange}
-          />
-        </section>
-        <section>
-          <h1>Link para donar</h1>
-          {donationUrl && !submitLoading && (
-            <a
-              style={{ textDecoration: "none" }}
-              rel="noreferrer noopener"
-              href={donationUrl}
-              onClick={() => {
-                trackDonationLead("donacion", formik.values.amount);
-              }}
-            >
-              Done aqui{" "}
-              <span role="img" aria-label="blue heart">
-                💙
-              </span>
-            </a>
-          )}
-        </section>
-      </Container>
+      <Formik
+        validate={validate}
+        onSubmit={handleSubmit}
+        initialValues={{ email: "", amount: 0, name: "", surname: "" }}
+      >
+        {(formik) => (
+          <Container>
+            <ActionContainer>
+              <p>
+                {formik.values.email && formik.values.amount > 0
+                  ? `${
+                      formik.values.email
+                    } donará $${formik.values.amount.toLocaleString("es-ES", {
+                      currency: "ARS",
+                    })}`
+                  : ""}
+              </p>
+            </ActionContainer>
+            <DonationForm />
+            <section>
+              <h1>Link para donar</h1>
+              {donationUrl && !submitLoading && (
+                <a
+                  style={{ textDecoration: "none" }}
+                  rel="noreferrer noopener"
+                  href={donationUrl}
+                  onClick={() => {
+                    trackDonationLead("donacion", formik.values.amount);
+                  }}
+                >
+                  Done aqui{" "}
+                  <span role="img" aria-label="blue heart">
+                    💙
+                  </span>
+                </a>
+              )}
+            </section>
+          </Container>
+        )}
+      </Formik>
     </Layout>
   );
 };

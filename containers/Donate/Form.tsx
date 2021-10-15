@@ -1,64 +1,24 @@
-import { ChangeEvent, FormEvent } from "react";
-import { DonateButton, ErrorText, MainContainer } from "./styles";
-import { FormValues } from "./";
-import { FormikErrors } from "formik";
+import { DonateButton, FormContainer } from "./styles";
+import React, { FunctionComponent } from "react";
+import { Input } from "./Input";
+import { useFormikContext } from "formik";
 
-interface DonationFormProps {
-  submitLoading: boolean;
-  errors: FormikErrors<FormValues>;
-  values: FormValues;
-  handleChange: (e: ChangeEvent<any>) => void;
-  handleSubmit: (e?: FormEvent<HTMLFormElement> | undefined) => void;
-}
+const DonationForm: FunctionComponent = () => {
+  const formik = useFormikContext();
+  const isDisabled =
+    Object.values(formik.errors).find((err) => err !== "") !== undefined;
 
-const DonationForm = ({
-  handleSubmit,
-  values,
-  errors,
-  handleChange,
-  submitLoading,
-}: DonationFormProps): JSX.Element => {
   return (
-    <MainContainer onSubmit={handleSubmit}>
-      <h1>Formulario</h1>
-      <label htmlFor="amount">Monto a donar (en pesos)</label>
-      <input
-        required
-        id="amount"
-        type="number"
-        name="amount"
-        disabled={submitLoading}
-        placeholder="100"
-        value={values.amount}
-        onChange={handleChange}
-      />
-      {errors.amount && (
-        <ErrorText aria-labelledby="amount">{errors.amount}</ErrorText>
-      )}
-      <label htmlFor="email">Email</label>
-      <input
-        required
-        id="email"
-        type="text"
-        name="email"
-        disabled={submitLoading}
-        value={values.email}
-        onChange={handleChange}
-        placeholder="juanperez@gmail.com"
-      />
-      {errors.email && (
-        <ErrorText aria-labelledby="email">{errors.email}</ErrorText>
-      )}
-      <DonateButton
-        type="submit"
-        disabled={
-          submitLoading ||
-          Object.values(errors).find((er) => er !== "") !== undefined
-        }
-      >
-        {submitLoading ? "Generando..." : "Generar link a MercadoPago"}
+    // TODO: Why is this needed?
+    <FormContainer onSubmit={formik.handleSubmit}>
+      <Input name="amount" label="Monto a donar (en pesos)" />
+      <Input name="email" label="Email" placeholder="juanperez@gmail.com" />
+      <Input name="name" label="Nombre" placeholder="Juan" />
+      <Input name="surname" label="Apellido" placeholder="Perez" />
+      <DonateButton disabled={formik.isSubmitting || isDisabled}>
+        {formik.isSubmitting ? "Generando..." : "Generar link a MercadoPago"}
       </DonateButton>
-    </MainContainer>
+    </FormContainer>
   );
 };
 
