@@ -1,30 +1,41 @@
+import { BaseInput, StyledInput } from "./styles";
 import { FormValues } from "./";
 import { FunctionComponent } from "react";
-import { InputContainer } from "./styles";
 import { useFormikContext } from "formik";
 
 type InputProps = {
-  name: keyof FormValues;
   label: string;
   placeholder?: string;
+  name: keyof FormValues;
+  container?: FunctionComponent;
 };
 
-const Input: FunctionComponent<InputProps> = ({ name, label, placeholder }) => {
+/**
+ * NOTE: This component takes Formik context
+ */
+const Input: FunctionComponent<InputProps> = ({
+  name,
+  label,
+  container: Component,
+  placeholder,
+}) => {
   const formik = useFormikContext<FormValues>();
+  const Container = Component || BaseInput;
 
   // TODO: Missing `type` handler
   return (
-    <InputContainer>
+    <Container>
       <label htmlFor={name}>{label}</label>
-      <input
+      <StyledInput
         id={name}
         placeholder={placeholder || ""}
         value={formik.values[name]}
         onBlur={formik.handleBlur}
         onReset={formik.handleReset}
         onChange={formik.handleChange}
+        hasError={!!formik.errors[name]}
       />
-    </InputContainer>
+    </Container>
   );
 };
 

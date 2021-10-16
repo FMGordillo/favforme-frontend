@@ -1,9 +1,9 @@
-import { Container, Layout } from "@/components";
 import React, { FunctionComponent, useState } from "react";
-import { ActionContainer } from "./styles";
 import { ActionI } from "@/lib/types";
+import { Container } from "./styles";
 import { DonationForm } from "./Form";
 import { Formik } from "formik";
+import { Layout } from "@/components";
 import axios from "axios";
 import { event } from "@/lib/gtag";
 
@@ -21,6 +21,13 @@ export interface FormValues {
   name: string;
   surname: string;
 }
+
+export const FormLabels: Record<keyof FormValues, string> = {
+  email: "Email",
+  amount: "Monto a donar",
+  name: "Nombre",
+  surname: "Apellido",
+};
 
 export const DonationContainer: FunctionComponent<DonationProps> = ({
   user,
@@ -108,19 +115,8 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
         onSubmit={handleSubmit}
         initialValues={{ email: "", amount: 0, name: "", surname: "" }}
       >
-        {(formik) => (
+        {(formikProps) => (
           <Container>
-            <ActionContainer>
-              <p>
-                {formik.values.email && formik.values.amount > 0
-                  ? `${
-                      formik.values.email
-                    } donará $${formik.values.amount.toLocaleString("es-ES", {
-                      currency: "ARS",
-                    })}`
-                  : ""}
-              </p>
-            </ActionContainer>
             <DonationForm />
             <section>
               <h1>Link para donar</h1>
@@ -130,7 +126,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
                   rel="noreferrer noopener"
                   href={donationUrl}
                   onClick={() => {
-                    trackDonationLead("donacion", formik.values.amount);
+                    trackDonationLead("donacion", formikProps.values.amount);
                   }}
                 >
                   Done aqui{" "}
