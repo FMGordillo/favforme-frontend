@@ -18,7 +18,7 @@
     "rootDir": ".",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5",
+    "target": "es6",
     "paths": {
       "@/*": ["./*"]
     },
