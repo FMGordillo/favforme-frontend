@@ -21,9 +21,8 @@ export const FormContainer = styled(Form)`
     "button button";
 `;
 
-export const ErrorText = styled.span`
+export const RequiredField = styled.span`
   color: red;
-  font-size: 0.75em;
 `;
 
 export const DonateButton = styled(Button)``;
@@ -58,6 +57,7 @@ export const BaseInput = styled.div`
 export const Amount = styled(BaseInput)`
   input {
     font-size: 28px;
+    font-family: Dosis;
   }
   grid-area: amount;
 `;

@@ -24,6 +24,7 @@ const DonationForm: FunctionComponent = () => {
     // TODO: Why is this needed?
     <FormContainer onSubmit={formik.handleSubmit}>
       <Input
+        required
         name="amount"
         label="Monto a donar (en pesos)"
         placeholder="500"
@@ -31,6 +32,7 @@ const DonationForm: FunctionComponent = () => {
       />
       <span style={{ gridArea: "logo" }}>TODO: Agregar logo de ONG</span>
       <Input
+        required
         name="email"
         label="Email"
         placeholder="juanperez@gmail.com"

@@ -1,6 +1,6 @@
+import { Container, RequiredField } from "./styles";
 import React, { FunctionComponent, useState } from "react";
 import { ActionI } from "@/lib/types";
-import { Container } from "./styles";
 import { DonationForm } from "./Form";
 import { Formik } from "formik";
 import { Layout } from "@/components";
@@ -117,6 +117,9 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
       >
         {(formikProps) => (
           <Container>
+            <span>
+              <RequiredField>*</RequiredField> campos obligatorios
+            </span>
             <DonationForm />
             <section>
               <h1>Link para donar</h1>

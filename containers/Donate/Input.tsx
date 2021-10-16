@@ -1,10 +1,11 @@
-import { BaseInput, StyledInput } from "./styles";
+import { BaseInput, RequiredField, StyledInput } from "./styles";
 import { FormValues } from "./";
 import { FunctionComponent } from "react";
 import { useFormikContext } from "formik";
 
 type InputProps = {
   label: string;
+  required?: boolean;
   placeholder?: string;
   name: keyof FormValues;
   container?: FunctionComponent;
@@ -16,6 +17,7 @@ type InputProps = {
 const Input: FunctionComponent<InputProps> = ({
   name,
   label,
+  required,
   container: Component,
   placeholder,
 }) => {
@@ -25,7 +27,9 @@ const Input: FunctionComponent<InputProps> = ({
   // TODO: Missing `type` handler
   return (
     <Container>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name}>
+        {label} {required && <RequiredField>*</RequiredField>}
+      </label>
       <StyledInput
         id={name}
         placeholder={placeholder || ""}
