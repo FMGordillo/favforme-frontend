@@ -120,7 +120,7 @@ export const DonationContainer: FunctionComponent<DonationProps> = ({
             <span>
               <RequiredField>*</RequiredField> campos obligatorios
             </span>
-            <DonationForm />
+            <DonationForm orgLogo={action?.organization.logo || null} />
             <section>
               <h1>Link para donar</h1>
               {donationUrl && !submitLoading && (

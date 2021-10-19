@@ -9,6 +9,7 @@ export const Container = styled(BaseContainer)`
 export const FormContainer = styled(Form)`
   display: grid;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
   grid-gap: 14px;
   max-width: 420px;
@@ -62,8 +63,14 @@ export const Amount = styled(BaseInput)`
   grid-area: amount;
 `;
 
+export const LogoContainer = styled.div`
+  grid-area: logo;
+  justify-self: center;
+`;
+
 export const Email = styled(BaseInput)`
   grid-area: email;
+  width: 100%;
 `;
 
 export const Name = styled(BaseInput)`

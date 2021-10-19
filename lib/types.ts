@@ -40,7 +40,7 @@ export interface SocialNetwork {
 export interface Organization {
   id: string;
   name: string;
-  logo?: string;
+  logo?: string | null;
   history?: string;
   homepage?: string;
   actions: ActionI[];

@@ -3,18 +3,24 @@ import {
   DonateButton,
   Email,
   FormContainer,
+  LogoContainer,
   Name,
   Surname,
 } from "./styles";
 import React, { FunctionComponent } from "react";
 import { Error } from "./Error";
+import Image from "next/image";
 import { Input } from "./Input";
 import { useFormikContext } from "formik";
+
+type DonationFormProps = {
+  orgLogo: string | null;
+};
 
 /**
  * NOTE: This component takes Formik context
  */
-const DonationForm: FunctionComponent = () => {
+const DonationForm: FunctionComponent<DonationFormProps> = ({ orgLogo }) => {
   const formik = useFormikContext();
   const isDisabled =
     formik.isSubmitting ||
@@ -30,7 +36,9 @@ const DonationForm: FunctionComponent = () => {
         placeholder="500"
         container={Amount}
       />
-      <span style={{ gridArea: "logo" }}>TODO: Agregar logo de ONG</span>
+      <LogoContainer>
+        <Image src={orgLogo || ""} alt="Logo de ONG" width={130} height={130} />
+      </LogoContainer>
       <Input
         required
         name="email"
