@@ -83,7 +83,7 @@ const Carousel: FunctionComponent<CarouselProps> = ({ embla, images }) => {
       <EmblaContainer>
         {images.map((image) => (
           <EmblaSlide key={image}>
-            <Image src={image} width={500} height={300} />
+            <Image src={image} priority width={500} height={300} />
           </EmblaSlide>
         ))}
       </EmblaContainer>
