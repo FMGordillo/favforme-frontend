@@ -26,6 +26,7 @@ export const GET_ACTION = gql`
       objective
       description
       mainImage
+      gallery
       organization {
         logo
         history

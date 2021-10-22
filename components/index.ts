@@ -12,3 +12,5 @@ export * from "./Navbar";
 export * from "./ProposeMyONG";
 export * from "./SocialNetworks";
 export * from "./styles";
+
+export * from "./Carousel";
