@@ -7,7 +7,7 @@ import {
   RightColumn,
   Summary,
 } from "./styles";
-import { Divider, Layout, ProposeMyONG, Title } from "@/components";
+import { Carousel, Divider, Layout, ProposeMyONG, Title } from "@/components";
 import { ActionCard } from "./components";
 import { ActionI } from "@/lib/types";
 import { DonatorsTable } from "@/components/DonatorsTable";
@@ -16,6 +16,7 @@ import { NextPage } from "next";
 import { UseCalculationsReturn } from "@/service";
 import { isNotProd } from "@/utils";
 import { toPascalCase } from "@/lib";
+import useEmblaCarousel from "embla-carousel-react";
 
 interface ActionProps {
   amounts: UseCalculationsReturn | null;
@@ -30,6 +31,8 @@ export const ActionPage: NextPage<ActionProps> = ({
   action,
   amounts,
 }) => {
+  const embla = useEmblaCarousel();
+
   return (
     <Layout
       header
@@ -44,15 +47,10 @@ export const ActionPage: NextPage<ActionProps> = ({
         <ActionContent>
           <ActionTitle>{action?.title}</ActionTitle>
           <LeftColumn>
-            <div>
-              <Image
-                src={action?.mainImage || "/images/accion_placeholder_1.jpg"}
-                layout="intrinsic"
-                alt="Resumen"
-                width={600}
-                height={359}
-              />
-            </div>
+            <Carousel
+              embla={embla}
+              images={[action?.mainImage ?? "", ...(action?.gallery || [])]}
+            />
             <p>{action?.description}</p>
             <p>
               {action?.peopleBeneficted &&

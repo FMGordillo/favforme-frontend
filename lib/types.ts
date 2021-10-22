@@ -50,6 +50,7 @@ export interface Organization {
 export interface ActionI {
   id: string;
   title: string;
+  gallery?: string[];
   mainImage?: string;
   description: string;
   peopleBeneficted?: number;
