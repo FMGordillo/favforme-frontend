@@ -1,9 +1,9 @@
-import { Action, Button } from "@/components";
+import { Action, Button, Carousel } from "@/components";
 import { Container, Title } from "@/components/styles";
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { ActionI } from "@/lib/types";
-import { Carousel } from "./Carousel";
+import { FunctionComponent } from "react";
 import styled from "styled-components";
+import useEmblaCarousel from "embla-carousel-react";
 import { useRouter } from "next/router";
 
 const StyledContainer = styled(Container)`
@@ -29,51 +29,24 @@ const ActionsComponent: FunctionComponent<ActionsProps> = ({
   actions,
   loading,
 }) => {
+  const embla = useEmblaCarousel();
   const router = useRouter();
-  const [current, setCurrent] = useState(0);
-
-  // TODO: Improve this
-  const changeCurrent = useCallback(
-    (newVal: number) => {
-      if (!actions) return;
-
-      if (newVal !== actions.length - 1 && current === actions.length - 1) {
-        setCurrent(0);
-      } else if (newVal < 0) {
-        setCurrent(Math.abs(newVal));
-      } else {
-        setCurrent(newVal);
-      }
-    },
-    [actions, current]
-  );
-
-  const handleClickNavigation = (to: "back" | "forward") => {
-    changeCurrent(to === "back" ? current - 1 : current + 1);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      changeCurrent(current + 1);
-    }, 5000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, [current, changeCurrent]);
 
   return (
     <StyledContainer id="actions">
       <StyledTitle>Acciones destacadas</StyledTitle>
+      <span>{loading}</span>
       <Carousel
-        loading={loading}
-        current={current}
-        handleBack={() => handleClickNavigation("back")}
-        handleForward={() => handleClickNavigation("forward")}
-      >
-        {actions &&
-          actions.length > 0 &&
-          actions.map((action, i) => <Action carousel key={i} data={action} />)}
-      </Carousel>
+        embla={embla}
+        elements={
+          actions && actions.length > 0
+            ? actions.map((action, i) => ({
+                key: i,
+                component: <Action carousel data={action} />,
+              }))
+            : []
+        }
+      />
       <Button
         color="white"
         textColor="#2142d2"

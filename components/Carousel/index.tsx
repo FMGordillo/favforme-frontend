@@ -17,7 +17,7 @@ import {
 import { UseEmblaCarouselType } from "embla-carousel-react";
 
 type CarouselEl = {
-  key: string;
+  key: string | number;
   component: ReactNode;
 };
 
@@ -61,6 +61,9 @@ const NextButton: FunctionComponent<NavigationButtonProps> = ({
   );
 };
 
+/**
+ * TODO: Improve styling, make it SOLID
+ */
 const Carousel: FunctionComponent<CarouselProps> = ({ embla, elements }) => {
   const [ref, instance] = embla;
   const [buttonEnbled, setButtonEnabled] = useState({
