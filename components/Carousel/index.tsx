@@ -7,13 +7,23 @@ import {
   EmblaContainer,
   EmblaSlide,
 } from "./styles";
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { UseEmblaCarouselType } from "embla-carousel-react";
+
+type CarouselEl = {
+  key: string;
+  component: ReactNode;
+};
 
 type CarouselProps = {
   embla: UseEmblaCarouselType;
-  images: string[];
+  elements: CarouselEl[];
 };
 
 type NavigationButtonProps = {
@@ -51,7 +61,7 @@ const NextButton: FunctionComponent<NavigationButtonProps> = ({
   );
 };
 
-const Carousel: FunctionComponent<CarouselProps> = ({ embla, images }) => {
+const Carousel: FunctionComponent<CarouselProps> = ({ embla, elements }) => {
   const [ref, instance] = embla;
   const [buttonEnbled, setButtonEnabled] = useState({
     prev: false,
@@ -81,16 +91,8 @@ const Carousel: FunctionComponent<CarouselProps> = ({ embla, images }) => {
   return (
     <Embla ref={ref}>
       <EmblaContainer>
-        {images.map((image) => (
-          <EmblaSlide key={image}>
-            <Image
-              alt="Imagen dentro de carrusel"
-              src={image}
-              priority
-              layout="fill"
-              objectFit="contain"
-            />
-          </EmblaSlide>
+        {elements.map(({ key, component }) => (
+          <EmblaSlide key={key}>{component}</EmblaSlide>
         ))}
       </EmblaContainer>
       <PrevButton handleClick={scrollPrev} enabled={buttonEnbled.prev} />

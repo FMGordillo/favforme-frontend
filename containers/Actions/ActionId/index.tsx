@@ -49,7 +49,21 @@ export const ActionPage: NextPage<ActionProps> = ({
           <LeftColumn>
             <Carousel
               embla={embla}
-              images={[action?.mainImage ?? "", ...(action?.gallery || [])]}
+              elements={[
+                action?.mainImage ?? "",
+                ...(action?.gallery || []),
+              ].map((imageSrc) => ({
+                key: imageSrc,
+                component: (
+                  <Image
+                    alt="Imagen dentro de carrusel"
+                    src={imageSrc}
+                    priority
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                ),
+              }))}
             />
             <p>{action?.description}</p>
             <p>
