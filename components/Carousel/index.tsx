@@ -14,15 +14,21 @@ import {
   useEffect,
   useState,
 } from "react";
+import { StyledComponent } from "styled-components";
 import { UseEmblaCarouselType } from "embla-carousel-react";
 
 type CarouselEl = {
-  key: string;
+  key: string | number;
   component: ReactNode;
 };
 
 type CarouselProps = {
   embla: UseEmblaCarouselType;
+  overrides?: {
+    Main?: StyledComponent<"div", any>; // default <Embla />
+    Container?: StyledComponent<"div", any>; // default <EmblaContainer />
+    Slide?: StyledComponent<"div", any>; // default <EmblaSlide />
+  };
   elements: CarouselEl[];
 };
 
@@ -61,7 +67,14 @@ const NextButton: FunctionComponent<NavigationButtonProps> = ({
   );
 };
 
-const Carousel: FunctionComponent<CarouselProps> = ({ embla, elements }) => {
+/**
+ * TODO: Improve styling, make it SOLID
+ */
+const Carousel: FunctionComponent<CarouselProps> = ({
+  embla,
+  elements,
+  overrides,
+}) => {
   const [ref, instance] = embla;
   const [buttonEnbled, setButtonEnabled] = useState({
     prev: false,
@@ -73,6 +86,11 @@ const Carousel: FunctionComponent<CarouselProps> = ({ embla, elements }) => {
   const scrollNext = useCallback(() => instance && instance.scrollNext(), [
     instance,
   ]);
+
+  // Components to render. TODO: Improve code somehow?
+  const Main = overrides?.Main || Embla;
+  const Container = overrides?.Container || EmblaContainer;
+  const Slide = overrides?.Slide || EmblaSlide;
 
   const onSelect = useCallback(() => {
     if (!instance) return;
@@ -89,16 +107,21 @@ const Carousel: FunctionComponent<CarouselProps> = ({ embla, elements }) => {
   }, [instance, onSelect]);
 
   return (
-    <Embla ref={ref}>
-      <EmblaContainer>
+    <Main ref={ref}>
+      <Container>
         {elements.map(({ key, component }) => (
-          <EmblaSlide key={key}>{component}</EmblaSlide>
+          <Slide key={key}>{component}</Slide>
         ))}
-      </EmblaContainer>
+      </Container>
       <PrevButton handleClick={scrollPrev} enabled={buttonEnbled.prev} />
       <NextButton handleClick={scrollNext} enabled={buttonEnbled.next} />
-    </Embla>
+    </Main>
   );
 };
 
-export { Carousel };
+export {
+  Carousel,
+  Embla as BaseMainEmbla,
+  EmblaContainer as BaseEmblaContainer,
+  EmblaSlide as BaseEmblaSlide,
+};
