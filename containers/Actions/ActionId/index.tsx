@@ -58,7 +58,6 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
-            <h2>Total hoy</h2>
             <ActionCard
               action={action}
               queryId={query?.id}

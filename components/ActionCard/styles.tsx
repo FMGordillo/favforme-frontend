@@ -54,19 +54,19 @@ export const Title = styled(BaseTitle)`
  * @description Styled from h2
  */
 export const AmountCollected = styled.h2`
-  font-weight: normal;
-  color: ${({ theme }) => theme.palette.gray.dark};
+  font-weight: bold;
+  color: ${({ theme }) => theme.palette.black.main};
   font-size: 2.25em;
   margin: 0;
 `;
 
 export const AmountSubtitle = styled.p`
-  color: ${({ theme }) => theme.palette.gray.dark};
+  color: ${({ theme }) => theme.palette.white.main};
   margin-top: 0;
 `;
 
 export const Percentage = styled.p`
-  color: green;
+  color: ${({ theme }) => theme.palette.black.main};
   margin: 0;
   font-size: 1.25em;
   font-weight: bold;

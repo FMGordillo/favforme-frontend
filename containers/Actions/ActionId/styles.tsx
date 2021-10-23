@@ -38,6 +38,8 @@ export const LeftColumn = styled.div`
 `;
 export const RightColumn = styled.div`
   grid-area: right-column;
+  background: ${({ theme }) => theme.palette.primary.main}};
+  padding: 12px 28px;
 `;
 
 export const Details = styled.details`

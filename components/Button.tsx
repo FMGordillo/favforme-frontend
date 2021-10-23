@@ -24,7 +24,7 @@ interface ButtonI {
 export const Button = styled.button<ButtonI>`
   border: none;
   color: ${({ theme, textColor }) =>
-    typeof textColor !== "string"
+    isOfTypeColor(textColor)
       ? theme.palette[textColor || "white"]["main"] ?? "#fff"
       : textColor};
   cursor: pointer;

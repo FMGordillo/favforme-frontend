@@ -4,10 +4,12 @@ import {
   Percentage,
 } from "@/components/ActionCard/styles"; // TODO: Mejorar esto
 import { Button, SocialNetworks } from "@/components";
+import { Summary, WrapperSocialNetworks } from "./styles";
 import { ActionI } from "@/lib/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
-import { Summary } from "./styles";
 import { UseCalculationsReturn } from "@/service";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { useRouter } from "next/router";
 
 interface ActionCardProps {
@@ -26,18 +28,20 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
   return (
     <>
       <Summary>
+        <h2>Total hoy</h2>
         <AmountCollected>
           ${amounts?.currentAmount}
           .-
         </AmountCollected>
         <AmountSubtitle>
-          recaudado para esta acción
+          Recaudado para esta acción
           <br />
-          de ${amounts?.finalAmount}.-
+          de <b>${amounts?.finalAmount}.-</b>
         </AmountSubtitle>
         <Percentage>{amounts?.completition}% COMPLETADO</Percentage>
         <Button
-          hoverTextColor="black"
+          color="white"
+          textColor="primary"
           onClick={() =>
             router.push({
               pathname: "/donacion",
@@ -47,12 +51,14 @@ export const ActionCard: FunctionComponent<ActionCardProps> = ({
             })
           }
         >
-          Favorecer esta acci&oacute;n
+          <FontAwesomeIcon icon={faHeart} /> Donar
         </Button>
-        <SocialNetworks
-          data={action?.organization?.socialNetworks ?? []}
-          justify="center"
-        />
+        <WrapperSocialNetworks>
+          <SocialNetworks
+            data={action?.organization?.socialNetworks ?? []}
+            justify="center"
+          />
+        </WrapperSocialNetworks>
       </Summary>
     </>
   );
