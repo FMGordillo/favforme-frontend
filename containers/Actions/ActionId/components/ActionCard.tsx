@@ -2,9 +2,10 @@ import {
   AmountCollected,
   AmountSubtitle,
   Percentage,
-} from "@/components/ActionCard/styles"; // TODO: Mejorar esto
+  Summary,
+  WrapperSocialNetworks,
+} from "./styles";
 import { Button, SocialNetworks } from "@/components";
-import { Summary, WrapperSocialNetworks } from "./styles";
 import { ActionI } from "@/lib/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FunctionComponent } from "react";
