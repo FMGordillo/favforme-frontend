@@ -2,7 +2,6 @@ import { Button, Layout, Title } from "@/components";
 import { Container } from "../styles";
 import Image from "next/image";
 import { NextPage } from "next";
-import React from "react";
 import router from "next/router";
 
 export const DonationErrorContainer: NextPage = () => {

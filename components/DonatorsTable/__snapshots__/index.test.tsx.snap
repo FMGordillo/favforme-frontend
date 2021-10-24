@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Container] About us renders correctly 1`] = `
+<DocumentFragment>
+  <table
+    class="sc-bdfBwQ dKQIDw"
+  >
+    <thead
+      class="sc-gsTCUz huambz"
+    >
+      <tr
+        class="sc-eCssSg"
+      >
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Fecha
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Empresa / particular
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Contribuidor
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Total (pesos argentinos)
+        </td>
+      </tr>
+    </thead>
+    <tbody
+      class="sc-dlfnbm"
+    >
+      <tr
+        class="sc-eCssSg"
+      >
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          2021/10/24
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Donante particular
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          Anonimo/a
+        </td>
+        <td
+          class="sc-hKgILt eOWAaf"
+        >
+          $100
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    class="sc-jSgupP ggDNIx"
+    style="display: none;"
+  >
+    Cargar mas
+  </button>
+</DocumentFragment>
+`;

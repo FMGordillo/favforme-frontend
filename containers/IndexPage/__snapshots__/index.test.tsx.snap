@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Container] About us renders correctly 1`] = `
+exports[`[Container] Index renders correctly 1`] = `
 <DocumentFragment>
   <main
     class="sc-citwmv jLekLX"
