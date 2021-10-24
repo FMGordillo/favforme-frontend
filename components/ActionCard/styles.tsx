@@ -54,8 +54,7 @@ export const Title = styled(BaseTitle)`
  * @description Styled from h2
  */
 export const AmountCollected = styled.h2`
-  font-weight: normal;
-  color: ${({ theme }) => theme.palette.gray.dark};
+  font-weight: 500;
   font-size: 2.25em;
   margin: 0;
 `;

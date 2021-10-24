@@ -13,4 +13,6 @@ export * from "./ProposeMyONG";
 export * from "./SocialNetworks";
 export * from "./styles";
 
+export * from "./DonatorsTable";
+
 export * from "./Carousel";

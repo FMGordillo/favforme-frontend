@@ -7,10 +7,16 @@ import {
   RightColumn,
   Summary,
 } from "./styles";
-import { Carousel, Divider, Layout, ProposeMyONG, Title } from "@/components";
+import {
+  Carousel,
+  Divider,
+  DonatorsTable,
+  Layout,
+  ProposeMyONG,
+  Title,
+} from "@/components";
 import { ActionCard } from "./components";
 import { ActionI } from "@/lib/types";
-import { DonatorsTable } from "@/components/DonatorsTable";
 import Image from "next/image";
 import { NextPage } from "next";
 import { UseCalculationsReturn } from "@/service";
@@ -33,6 +39,23 @@ export const ActionPage: NextPage<ActionProps> = ({
 }) => {
   const embla = useEmblaCarousel();
 
+  // TODO: Improve this somehow?
+  const carouselElements = [
+    action?.mainImage ?? "",
+    ...(action?.gallery || []),
+  ].map((imageSrc) => ({
+    key: imageSrc,
+    component: (
+      <Image
+        alt="Imagen dentro de carrusel"
+        src={imageSrc}
+        priority
+        layout="fill"
+        objectFit="contain"
+      />
+    ),
+  }));
+
   return (
     <Layout
       header
@@ -47,10 +70,7 @@ export const ActionPage: NextPage<ActionProps> = ({
         <ActionContent>
           <ActionTitle>{action?.title}</ActionTitle>
           <LeftColumn>
-            <Carousel
-              embla={embla}
-              images={[action?.mainImage ?? "", ...(action?.gallery || [])]}
-            />
+            <Carousel embla={embla} elements={carouselElements} />
             <p>{action?.description}</p>
             <p>
               {action?.peopleBeneficted &&
@@ -58,7 +78,6 @@ export const ActionPage: NextPage<ActionProps> = ({
             </p>
           </LeftColumn>
           <RightColumn>
-            <h2>Total hoy</h2>
             <ActionCard
               action={action}
               queryId={query?.id}

@@ -6,5 +6,5 @@ export const StyledTitle = styled(Title)`
 `;
 export const ActionContainer = styled.div`
   max-width: 960px;
-  margin: 4em auto;
+  margin: 64px auto;
 `;
