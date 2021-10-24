@@ -1,2 +1,4 @@
-// In your own jest-setup.js (or any other name)
 import "@testing-library/jest-dom";
+import fetchMock from "jest-fetch-mock";
+
+fetchMock.enableMocks();

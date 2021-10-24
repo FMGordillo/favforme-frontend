@@ -24,6 +24,7 @@ module.exports = {
     },
   },
   roots: [SRC_PATH],
+  testEnvironment: "jsdom",
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"],
   moduleNameMapper: makeModuleNameMapper(SRC_PATH, TS_CONFIG_PATH),

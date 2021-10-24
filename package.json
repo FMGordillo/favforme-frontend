@@ -79,6 +79,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "27.2.4",
     "jest-cli": "27.3.1",
+    "jest-fetch-mock": "3.0.3",
     "jest-watch-typeahead": "0.6.1",
     "lint-staged": "11.0.0",
     "prettier": "2.2.1",
@@ -102,7 +103,8 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --fix",
-      "prettier -w"
+      "prettier -w",
+      "npm run test:ci"
     ]
   }
 }
