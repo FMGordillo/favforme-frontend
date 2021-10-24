@@ -7,6 +7,7 @@ export const Embla = styled.div`
   min-width: 670px;
   margin-left: auto;
   margin-right: auto;
+  user-select: none;
   ${({ theme }) => theme.breakpoints.down("sm")} {
     min-width: 100%;
   }
@@ -20,6 +21,7 @@ export const EmblaSlide = styled.div`
   position: relative;
   flex: 0 0 100%;
   cursor: grab;
+  height: 450px;
 
   &:active {
     cursor: grabbing;
@@ -31,11 +33,11 @@ export enum BUTTON_TYPE {
   NEXT,
 }
 export const EmblaButton = styled.button<{ action: BUTTON_TYPE }>`
+  position: absolute;
   outline: 0;
   cursor: pointer;
   background-color: transparent;
   touch-action: manipulation;
-  position: absolute;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
