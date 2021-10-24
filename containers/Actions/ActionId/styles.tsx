@@ -24,6 +24,11 @@ export const ActionContent = styled(BaseContainer)`
       "right-column";
     grid-template-columns: 1fr;
   }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    & > h1 {
+      margin-bottom: 0;
+    }
+  }
 `;
 export const ActionTitle = styled(Title)`
   grid-area: title;

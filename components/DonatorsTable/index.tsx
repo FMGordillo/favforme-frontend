@@ -40,7 +40,9 @@ export const DonatorsTable: FunctionComponent<DonatorsTableProps> = ({
                 </TableColumn>
                 <TableColumn>
                   {donation.user.name
-                    ? `${donation.user.name} ${donation.user.surname}`
+                    ? `${donation.user?.name || ""} ${
+                        donation.user?.surname || ""
+                      }`
                     : "Anonimo/a"}
                 </TableColumn>
                 <TableColumn>${parseToCurrency(donation.amount)}</TableColumn>
