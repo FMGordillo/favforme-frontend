@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Container] About us renders correctly 1`] = `
-<div>
+<DocumentFragment>
   <main
     class="sc-citwmv jLekLX"
   >
@@ -130,8 +130,7 @@ exports[`[Container] About us renders correctly 1`] = `
             La Misión FavForMe
           </h1>
           <p>
-            Insertarnos como equipo de fundraising para ONGs, asegurando a los donantes que los recursos invertidos llegan a su destino. Nuestra visión es revolucionar la forma de ayudar en la sociedad,
-             
+            Insertarnos como equipo de fundraising para ONGs, asegurando a los donantes que los recursos invertidos llegan a su destino. Nuestra visión es revolucionar la forma de ayudar en la sociedad, 
             <b>
               queremos que las personas también sean recompensadas por participar.
             </b>
@@ -182,8 +181,7 @@ exports[`[Container] About us renders correctly 1`] = `
               ONG's
             </h2>
             <p>
-              Sabemos que muchas organizaciones no gubernamentales, y sin fines de lucro, suelen bajar los brazos frente a la imposibilidad de entregar más de lo que tienen.
-               
+              Sabemos que muchas organizaciones no gubernamentales, y sin fines de lucro, suelen bajar los brazos frente a la imposibilidad de entregar más de lo que tienen. 
               <b>
                 En la mayoría de los casos terminan agotándose por no contar con los recursos suficientes para cumplir sus objetivos.
               </b>
@@ -200,13 +198,11 @@ exports[`[Container] About us renders correctly 1`] = `
               <b>
                 existen muchas pequeñas y medianas empresas
               </b>
-               que, si bien no cuentan con un área específica dedicada a la responsabilidad social,
-               
+               que, si bien no cuentan con un área específica dedicada a la responsabilidad social, 
               <b>
                 tienen interés de crear o participar de este tipo de programas
               </b>
-               
-              ofreciendo productos, servicios, horas de apoyo y hasta fondos.
+               ofreciendo productos, servicios, horas de apoyo y hasta fondos.
             </p>
           </div>
           <div>
@@ -216,13 +212,11 @@ exports[`[Container] About us renders correctly 1`] = `
               ODS
             </h2>
             <p>
-              El objetivo es permitir a las ONGs y, a las empresas que se sumen, dar un primer paso en este camino y
-               
+              El objetivo es permitir a las ONGs y, a las empresas que se sumen, dar un primer paso en este camino y 
               <b>
                 ofrecerles una oportunidad de alcanzar Objetivos de Desarrollo Sostenible
               </b>
-               
-              reafirmando su compromiso hacia la comunidad.
+               reafirmando su compromiso hacia la comunidad.
             </p>
           </div>
         </div>
@@ -1006,15 +1000,12 @@ exports[`[Container] About us renders correctly 1`] = `
         class="sc-cBNfnY bhtpkD"
       >
         <p>
-          FavForMe 
-          2021
-           - All rights reserved
+          FavForMe 2021 - All rights reserved
         </p>
         <p
           class="credits"
         >
-          Illustrations by
-           
+          Illustrations by 
           <a
             href="https://storyset.com/people"
             rel="noreferrer noopener"
@@ -1026,5 +1017,5 @@ exports[`[Container] About us renders correctly 1`] = `
       </section>
     </section>
   </main>
-</div>
+</DocumentFragment>
 `;

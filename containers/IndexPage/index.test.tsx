@@ -1,9 +1,9 @@
-import { AboutUsPage } from "./";
+import { IndexPage } from "./";
 import { render } from "@/utils/testUtils";
 
 describe("[Container] About us", () => {
   it("renders correctly", async () => {
-    const { asFragment } = render(<AboutUsPage />);
+    const { asFragment } = render(<IndexPage actions={[]} loading={false} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
