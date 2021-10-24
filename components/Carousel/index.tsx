@@ -94,6 +94,11 @@ const Carousel: FunctionComponent<CarouselProps> = ({
   const Container = overrides?.Container || EmblaContainer;
   const Slide = overrides?.Slide || EmblaSlide;
 
+  // Components to render. TODO: Improve code somehow?
+  const Main = overrides?.Main || Embla;
+  const Container = overrides?.Container || EmblaContainer;
+  const Slide = overrides?.Slide || EmblaSlide;
+
   const onSelect = useCallback(() => {
     if (!instance) return;
     setButtonEnabled({
