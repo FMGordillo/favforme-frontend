@@ -2,14 +2,418 @@
 
 exports[`[Container] Donation success renders correctly 1`] = `
 <DocumentFragment>
-  <main
-    class="sc-citwmv jLekLX"
+  .c13 {
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 12px 28px;
+  border-radius: 64px;
+  font-family: abel,sans-serif;
+  -webkit-transition: background-color 300ms ease-out,color 300ms ease-out;
+  transition: background-color 300ms ease-out,color 300ms ease-out;
+  background-color: #4f6be6;
+}
+
+.c13 > a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13:disabled {
+  cursor: not-allowed;
+  background-color: #9BAAF6;
+}
+
+.c12 {
+  font-size: 2em;
+  font-weight: 400;
+  color: #4f6be6;
+}
+
+.c10 {
+  margin: 4em 0;
+  margin: 0 4em;
+}
+
+.c14 {
+  background-color: #4f6be6;
+}
+
+.c19 {
+  display: grid;
+  max-width: 400px;
+  padding: 1em;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.c19 > * {
+  color: white;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c19 > *:hover {
+  cursor: pointer;
+}
+
+.c19 > * > * {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.c19 > *:hover {
+  color: #27358d;
+}
+
+.c15 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 1em;
+  margin: 0 auto;
+  padding: 2em 4em;
+  max-width: 1024px;
+}
+
+.c15 > :first-child {
+  justify-self: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c16 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  list-style: none;
+  padding: 0;
+}
+
+.c17 {
+  line-height: 2.5;
+}
+
+.c18 {
+  color: white;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+.c18:hover {
+  border-color: white;
+}
+
+.c20 {
+  background-color: #27358d;
+  text-align: center;
+}
+
+.c20 p {
+  margin: 0;
+  padding: 28px 0 16px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.c20 .credits {
+  font-size: 14px;
+  text-transform: none;
+  padding: 0 0 24px;
+  color: #4f6be6;
+}
+
+.c20 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #9BAAF6;
+}
+
+.c0 {
+  background-color: #FFF;
+}
+
+.c7 {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/plato_de_comida.webp");
+  height: 400px;
+  width: 100vw;
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-bottom: 48px;
+  -webkit-transition: height 300ms;
+  transition: height 300ms;
+}
+
+.c8 {
+  color: white;
+  -webkit-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+  transform: translateY(-64px);
+  padding: 0;
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+}
+
+.c9 {
+  margin: 0;
+  font-size: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: inherit;
+  text-align: center;
+}
+
+.c9 mark {
+  color: white;
+  background-color: #4f6be6;
+}
+
+.c1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  max-height: 250px;
+  border-radius: 0 0 100% 100%/0 0 25% 25%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  height: 4em;
+  width: 100vw;
+  padding: 1em;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c4 > a > div {
+  max-width: 150px;
+}
+
+.c4 a {
+  color: white;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c6 > a > div {
+  max-width: 150px;
+}
+
+.c6 a {
+  color: #f38d9f;
+}
+
+.c5 {
+  font-weight: 500;
+  color: white;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c5:hover {
+  font-weight: 700;
+  color: #f38d9f;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.c11 p {
+  text-align: center;
+}
+
+@media (max-width:600px) {
+  .c10 {
+    margin: 0 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 {
+    grid-template-columns: 1fr;
+  }
+
+  .c15 > :last-child {
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c16 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:960px) {
+  .c7 {
+    height: 300px;
+  }
+}
+
+@media (max-width:960px) {
+  .c8 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width:600px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media (max-width:960px) {
+  .c9 {
+    width: inherit;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    color: red;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    background: #27358d;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0;
+    -webkit-transition: -webkit-transform 250ms ease-in;
+    -webkit-transition: transform 250ms ease-in;
+    transition: transform 250ms ease-in;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .c3 > :nth-child(3) {
+    display: none;
+  }
+
+  .c3 > :nth-child(3) {
+    display: none;
+  }
+
+  .c3 > * {
+    margin: 1em;
+  }
+
+  .c3 > :last-child {
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c6 {
+    display: block;
+  }
+}
+
+<main
+    class="c0"
   >
     <nav
-      class="sc-bBrOnJ bLppLl"
+      class="c1"
     >
       <div
-        class="sc-cOajty erMAcW"
+        class="c2"
       >
         <div
           style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 60px; height: 60px;"
@@ -24,31 +428,31 @@ exports[`[Container] Donation success renders correctly 1`] = `
         </div>
       </div>
       <ul
-        class="sc-AzgDb fCsvVA"
+        class="c3"
       >
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             FavForMe
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Acciones
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             <div
               style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -75,19 +479,19 @@ exports[`[Container] Donation success renders correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Empresas
           </a>
         </li>
         <li
-          class="sc-khAkjo kWodKt"
+          class="c6"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Contacto
           </a>
@@ -95,23 +499,23 @@ exports[`[Container] Donation success renders correctly 1`] = `
       </ul>
     </nav>
     <header
-      class="sc-jcVebW koocCq"
+      class="c7"
     >
       <div
-        class="sc-bZSQDF jfVIWm"
+        class="c8"
       >
         <h1
-          class="sc-iUuytg ivwwmh"
+          class="c9"
         >
           Donación exitosa
         </h1>
       </div>
     </header>
     <section
-      class="sc-eCssSg sc-fWSCIC kXjVfy gHDbSO"
+      class="c10 c11"
     >
       <h1
-        class="sc-dlfnbm jBfMGx"
+        class="c12"
       >
         ¡Felicitaciones!
       </h1>
@@ -155,21 +559,21 @@ exports[`[Container] Donation success renders correctly 1`] = `
         </strong>
       </p>
       <h1
-        class="sc-dlfnbm jBfMGx"
+        class="c12"
       >
         ¡Muchas gracias!
       </h1>
       <button
-        class="sc-bdfBwQ dGdFTm"
+        class="c13"
       >
         Volver
       </button>
     </section>
     <section
-      class="sc-bYEvPH hywvIm"
+      class="c14"
     >
       <div
-        class="sc-iktFzd gFpbuk"
+        class="c15"
       >
         <div>
           <a
@@ -201,52 +605,52 @@ exports[`[Container] Donation success renders correctly 1`] = `
           </a>
         </div>
         <ul
-          class="sc-jJEJSO gwTRFR"
+          class="c16"
         >
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c17"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c18"
               href="/acciones"
             >
               Acciones
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c17"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c18"
               href="/nosotros"
             >
               FavForMe
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c17"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c18"
               href="/#brands"
             >
               Empresas
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c17"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c18"
             >
               Contacto
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c17"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c18"
               href="/terms_and_conditions"
             >
               Términos de uso
@@ -255,7 +659,7 @@ exports[`[Container] Donation success renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="sc-kLgntA buEto"
+        class="c19"
       >
         <a
           aria-label="LinkedIn"
@@ -347,7 +751,7 @@ exports[`[Container] Donation success renders correctly 1`] = `
         </a>
       </div>
       <section
-        class="sc-cBNfnY bhtpkD"
+        class="c20"
       >
         <p>
           FavForMe 2021 - All rights reserved

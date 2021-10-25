@@ -2,14 +2,872 @@
 
 exports[`[Container] Index renders correctly 1`] = `
 <DocumentFragment>
-  <main
-    class="sc-citwmv jLekLX"
+  .c10 {
+  border: none;
+  color: #111;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 12px 28px;
+  border-radius: 64px;
+  font-family: abel,sans-serif;
+  -webkit-transition: background-color 300ms ease-out,color 300ms ease-out;
+  transition: background-color 300ms ease-out,color 300ms ease-out;
+  background-color: #f38d9f;
+}
+
+.c10 > a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c10:hover {
+  color: #111;
+  background-color: #FFBCC4;
+}
+
+.c10:disabled {
+  cursor: not-allowed;
+  background-color: #FFBCC4;
+}
+
+.c24 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 1.25em;
+  padding: 0.5em 1.25em;
+  border-radius: 3em;
+  font-family: abel,sans-serif;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  background-color: #027aa8;
+}
+
+.c24:hover {
+  background-color: #003f57;
+}
+
+.c24:disabled {
+  background-color: #003f57;
+}
+
+.c31 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 1.25em;
+  padding: 0.5em 1.25em;
+  border-radius: 3em;
+  font-family: abel,sans-serif;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  background-color: #4f6be6;
+}
+
+.c31:hover {
+  color: #000;
+  background-color: #9BAAF6;
+}
+
+.c31:disabled {
+  background-color: #9BAAF6;
+}
+
+.c16 {
+  font-size: 2em;
+  font-weight: 400;
+  color: #4f6be6;
+}
+
+.c18 {
+  line-height: 1.75em;
+  text-align: center;
+}
+
+.c21 {
+  margin: 4em 0;
+  margin: 0 4em;
+}
+
+.c12 {
+  border: none;
+  padding-top: 48px;
+  padding-bottom: 28px;
+}
+
+.c40 {
+  background-color: #4f6be6;
+}
+
+.c45 {
+  display: grid;
+  max-width: 400px;
+  padding: 1em;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.c45 > * {
+  color: white;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c45 > *:hover {
+  cursor: pointer;
+}
+
+.c45 > * > * {
+  width: 2em !important;
+  height: 2em !important;
+}
+
+.c45 > *:hover {
+  color: #27358d;
+}
+
+.c41 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 1em;
+  margin: 0 auto;
+  padding: 2em 4em;
+  max-width: 1024px;
+}
+
+.c41 > :first-child {
+  justify-self: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c42 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  list-style: none;
+  padding: 0;
+}
+
+.c43 {
+  line-height: 2.5;
+}
+
+.c44 {
+  color: white;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+.c44:hover {
+  border-color: white;
+}
+
+.c46 {
+  background-color: #27358d;
+  text-align: center;
+}
+
+.c46 p {
+  margin: 0;
+  padding: 28px 0 16px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.c46 .credits {
+  font-size: 14px;
+  text-transform: none;
+  padding: 0 0 24px;
+  color: #4f6be6;
+}
+
+.c46 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #9BAAF6;
+}
+
+.c0 {
+  background-color: #FFF;
+}
+
+.c7 {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/plato_de_comida.webp");
+  height: 660px;
+  width: 100vw;
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-bottom: 48px;
+  -webkit-transition: height 300ms;
+  transition: height 300ms;
+}
+
+.c8 {
+  color: white;
+  -webkit-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+  transform: translateY(-64px);
+  padding: 0 0 0 160px;
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+}
+
+.c9 {
+  margin: 0;
+  font-size: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 75vw;
+  text-align: left;
+}
+
+.c9 mark {
+  color: white;
+  background-color: #4f6be6;
+}
+
+.c11 {
+  width: 200px;
+  margin: 24px 0;
+  font-weight: bold;
+}
+
+.c1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  max-height: 250px;
+  border-radius: 0 0 100% 100%/0 0 25% 25%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  height: 4em;
+  width: 100vw;
+  padding: 1em;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c4 > a > div {
+  max-width: 150px;
+}
+
+.c4 a {
+  color: white;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c6 > a > div {
+  max-width: 150px;
+}
+
+.c6 a {
+  color: #f38d9f;
+}
+
+.c5 {
+  font-weight: 500;
+  color: white;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c5:hover {
+  font-weight: 700;
+  color: #f38d9f;
+}
+
+.c35 {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(2,1fr);
+  margin: 0 auto;
+}
+
+.c35 > a {
+  position: relative;
+  display: block;
+  margin: 0.4em !important;
+  max-width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.15);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.c35 > a:hover {
+  -webkit-transform: scale(1.1,1.1);
+  -ms-transform: scale(1.1,1.1);
+  transform: scale(1.1,1.1);
+}
+
+.c35 > a:nth-child(-n + 4) {
+  grid-column: span 3;
+}
+
+.c35 > a:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.c35 > a:nth-child(5) {
+  justify-self: right;
+}
+
+.c35 > a:nth-child(8) {
+  justify-self: left;
+}
+
+.c34 {
+  text-align: center;
+}
+
+.c26 {
+  display: grid;
+  grid-gap: 4em;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  max-width: 1024px;
+}
+
+.c27 {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 250px auto auto;
+}
+
+.c37 {
+  text-align: left;
+}
+
+.c36 {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  max-width: 960px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c36 .first-element {
+  text-align: right;
+}
+
+.c38 {
+  line-height: 1.75em;
+}
+
+.c39 {
+  margin-top: 0;
+  font-family: dosis;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #4f6be6;
+}
+
+.c39 a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c39 a:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c13 {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: "left-image text right-image" "ods ods ods" "ods-container ods-container ods-container" ". button .";
+}
+
+.c14 {
+  grid-area: left-image;
+}
+
+.c19 {
+  grid-area: right-image;
+}
+
+.c15 {
+  grid-area: text;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+  margin: 0 2em;
+}
+
+.c17 mark {
+  background-color: #9BAAF6;
+}
+
+.c22 {
+  color: #027aa8;
+  font-size: 1.25em;
+  font-weight: 700;
+  text-align: center !important;
+  padding: 0 2em;
+  max-width: 1024px;
+}
+
+.c22 a {
+  color: inherit;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+}
+
+.c22 a:hover {
+  color: #4f6be6;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-area: ods;
+  justify-self: center;
+  margin: 2em 0;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-area: ods-container;
+}
+
+.c23 > * {
+  margin: 0 0.5em;
+  -webkit-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+.c23 .img.smallest {
+  width: 75px;
+  opacity: 0.15;
+}
+
+.c23 .img.smaller {
+  width: 100px;
+  opacity: 0.5;
+}
+
+.c23 .img.small {
+  width: 125px;
+  opacity: 0.85;
+}
+
+.c25 {
+  justify-self: center;
+  width: 300px;
+  margin-top: 2em;
+  grid-area: button;
+}
+
+.c29 {
+  display: grid;
+  grid-gap: 4em;
+  grid-template-columns: 1fr 1fr;
+  padding: 64px 0;
+  background-color: #f6f6f6;
+}
+
+.c29 p {
+  line-height: 1.75em;
+  max-width: 400px;
+}
+
+.c30 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: right;
+}
+
+.c32 {
+  display: block;
+  width: 170px;
+}
+
+@media (max-width:600px) {
+  .c21 {
+    margin: 0 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c41 {
+    grid-template-columns: 1fr;
+  }
+
+  .c41 > :last-child {
+    text-align: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c42 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:960px) {
+  .c7 {
+    height: 400px;
+  }
+}
+
+@media (max-width:960px) {
+  .c8 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width:600px) {
+  .c8 {
+    padding: 0;
+    padding-left: 48px;
+  }
+}
+
+@media (max-width:960px) {
+  .c9 {
+    width: 100%;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    color: red;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    background: #27358d;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0;
+    -webkit-transition: -webkit-transform 250ms ease-in;
+    -webkit-transition: transform 250ms ease-in;
+    transition: transform 250ms ease-in;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .c3 > :nth-child(3) {
+    display: none;
+  }
+
+  .c3 > :nth-child(3) {
+    display: none;
+  }
+
+  .c3 > * {
+    margin: 1em;
+  }
+
+  .c3 > :last-child {
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c6 {
+    display: block;
+  }
+}
+
+@media (max-width:960px) {
+  .c33 {
+    margin: 0 2em;
+  }
+}
+
+@media (max-width:960px) {
+  .c35 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .c35 > a:nth-child(-n + 4) {
+    grid-column: inherit;
+  }
+
+  .c35 > a:nth-child(n + 5) {
+    grid-column: inherit;
+  }
+
+  .c35 > a:nth-child(5) {
+    justify-self: inherit;
+  }
+
+  .c35 > a:nth-child(7) {
+    justify-self: inherit;
+  }
+}
+
+@media (max-width:600px) {
+  .c35 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:960px) {
+  .c26 {
+    grid-template-columns: 1fr;
+    margin: 0 4em;
+  }
+}
+
+@media (max-width:600px) {
+  .c26 {
+    margin: 0 2em;
+  }
+}
+
+@media (max-width:960px) {
+  .c28 {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c37 {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c36 {
+    grid-template-columns: 1fr;
+  }
+
+  .c36 .first-element {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c38 {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c39 {
+    text-align: center;
+  }
+}
+
+@media (max-width:1070px) {
+  .c13 {
+    grid-template-areas: "text text text" "ods ods ods" "ods-container ods-container ods-container" ". button .";
+  }
+
+  .c13 > :first-child {
+    display: none !important;
+  }
+
+  .c13 > :nth-child(3) {
+    display: none !important;
+  }
+}
+
+@media (min-width:1920px) {
+  .c15 {
+    margin: 0 4em;
+  }
+}
+
+@media (max-width:960px) {
+  .c15 {
+    margin: 0 4em;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 {
+    margin: 0 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c22 {
+    padding: 2em 0 2.5em;
+  }
+}
+
+@media (max-width:960px) {
+  .c23 {
+    margin: 4em 2em;
+  }
+}
+
+@media (max-width:960px) {
+  .c23 .img.smallest {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c23 .img.smaller {
+    display: none;
+  }
+}
+
+@media (max-width:960px) {
+  .c29 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0;
+  }
+
+  .c29 .text {
+    display: grid;
+    text-align: center;
+    justify-items: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c30 {
+    justify-self: center;
+  }
+}
+
+<main
+    class="c0"
   >
     <nav
-      class="sc-bBrOnJ bLppLl"
+      class="c1"
     >
       <div
-        class="sc-cOajty erMAcW"
+        class="c2"
       >
         <div
           style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 60px; height: 60px;"
@@ -24,31 +882,31 @@ exports[`[Container] Index renders correctly 1`] = `
         </div>
       </div>
       <ul
-        class="sc-AzgDb fCsvVA"
+        class="c3"
       >
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             FavForMe
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Acciones
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             <div
               style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -75,19 +933,19 @@ exports[`[Container] Index renders correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-khAkjo egoJKH"
+          class="c4"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Empresas
           </a>
         </li>
         <li
-          class="sc-khAkjo kWodKt"
+          class="c6"
         >
           <a
-            class="sc-hTZhsR eNEuyY"
+            class="c5"
           >
             Contacto
           </a>
@@ -95,13 +953,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </ul>
     </nav>
     <header
-      class="sc-jcVebW NJmOJ"
+      class="c7"
     >
       <div
-        class="sc-bZSQDF iCHgkP"
+        class="c8"
       >
         <h1
-          class="sc-iUuytg klNUpe"
+          class="c9"
         >
           <span>
             Hay muchas personas
@@ -112,7 +970,7 @@ exports[`[Container] Index renders correctly 1`] = `
           </span>
         </h1>
         <button
-          class="sc-bdfBwQ sc-eggNIi kFGRAZ kAOcIR"
+          class="c10 c11"
           color="secondary"
         >
           <svg
@@ -135,13 +993,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </header>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-fvhGYg Jiavg"
+      class="c13"
     >
       <div
-        class="sc-fbNXWD fpMkkL"
+        class="c14"
       >
         <div
           style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 350px; height: 330px;"
@@ -157,10 +1015,10 @@ exports[`[Container] Index renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-gsxnyZ ftcjBH"
+        class="c15"
       >
         <h1
-          class="sc-dlfnbm sc-bXDlPE jBfMGx ekSYIw"
+          class="c16 c17"
         >
           SOMOS LA 
           <strong>
@@ -173,13 +1031,13 @@ exports[`[Container] Index renders correctly 1`] = `
            DE LATINOAMÉRICA
         </h1>
         <p
-          class="sc-hKgILt caOkXQ"
+          class="c18"
         >
           En FavForMe creamos un espacio que ayuda a las ONGs a conseguir los recursos necesarios para realizar acciones de impacto social a través de crowdfunding
         </p>
       </div>
       <div
-        class="sc-GTWni ccfKWu"
+        class="c19"
       >
         <div
           style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 340px; height: 330px;"
@@ -196,16 +1054,16 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <div
       style="display: flex; flex-direction: column; align-items: center;"
     >
       <div
-        class="sc-gInsOo eMrWyx"
+        class="c20"
       >
         <a
           href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
@@ -236,10 +1094,10 @@ exports[`[Container] Index renders correctly 1`] = `
           </div>
         </a>
         <section
-          class="sc-eCssSg kXjVfy"
+          class="c21"
         >
           <p
-            class="sc-bsipQr hWIUsA"
+            class="c22"
           >
             El equipo de FavForMe se especializó en los 
             <a
@@ -254,7 +1112,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </section>
       </div>
       <section
-        class="sc-eCssSg sc-euMpXR kXjVfy eYCDJZ"
+        class="c21 c23"
       >
         <div
           class="img smallest"
@@ -438,7 +1296,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </div>
       </section>
       <a
-        class="sc-gsTCUz sc-fHuLdG eETkYw dfhvgx"
+        class="c24 c25"
         color="#027aa8"
         href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
         rel="noreferrer noopener"
@@ -448,14 +1306,14 @@ exports[`[Container] Index renders correctly 1`] = `
       </a>
     </div>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-eCssSg sc-eLgOdN kXjVfy kzDJEG"
+      class="c21 c26"
       id="call_to_actions"
     >
       <section
-        class="sc-hOqqkJ GwlqZ"
+        class="c27"
       >
         <div
           style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -480,12 +1338,12 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </div>
         <h1
-          class="sc-dlfnbm jBfMGx"
+          class="c16"
         >
           SOS PERSONA
         </h1>
         <p
-          class="sc-hKgILt sc-bTvRPi caOkXQ bCVcki"
+          class="c18 c28"
         >
           Doná en las acciones para que muchas personas tengan la oportunidad y logren alcanzar sus sueños. 
           <br />
@@ -497,7 +1355,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </p>
       </section>
       <section
-        class="sc-hOqqkJ GwlqZ"
+        class="c27"
       >
         <div
           style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -522,18 +1380,18 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </div>
         <h1
-          class="sc-dlfnbm jBfMGx"
+          class="c16"
         >
           SOS EMPRESA
         </h1>
         <p
-          class="sc-hKgILt sc-bTvRPi caOkXQ bCVcki"
+          class="c18 c28"
         >
           Generá Responsabilidad Social Empresarial y fomentá las acciones de impacto social positivo con tus stakeholders
         </p>
       </section>
       <section
-        class="sc-hOqqkJ GwlqZ"
+        class="c27"
       >
         <div
           style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -558,26 +1416,26 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </div>
         <h1
-          class="sc-dlfnbm jBfMGx"
+          class="c16"
         >
           SOS ONG
         </h1>
         <p
-          class="sc-hKgILt sc-bTvRPi caOkXQ bCVcki"
+          class="c18 c28"
         >
           Conseguí fondos para cumplir con tus objetivos, logrando que más personas apoyen a la causa. Contanos tu historia
         </p>
       </section>
     </section>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-tYoTV jYhcse"
+      class="c29"
       id="rse"
     >
       <div
-        class="sc-biBrSq hBdNKi"
+        class="c30"
       >
         <div
           style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -606,7 +1464,7 @@ exports[`[Container] Index renders correctly 1`] = `
         class="text"
       >
         <h1
-          class="sc-dlfnbm jBfMGx"
+          class="c16"
         >
           Tu empresa con R.S.E.
         </h1>
@@ -614,7 +1472,7 @@ exports[`[Container] Index renders correctly 1`] = `
           Existen muchas pequeñas y medianas empresas que, si bien no cuentan con un área específica dedicada a la responsabilidad social; tienen interés de crear o participar de este tipo de programas ofreciendo productos, servicios, horas de apoyo y hasta fondos
         </p>
         <a
-          class="sc-gsTCUz sc-eHfQar hVsIcT hGEBxA"
+          class="c31 c32"
           href="mailto:hello@favforme.com?subject=Quiero%20sumar%20mi%20empresa"
           rel="noreferrer noopener"
           target="_blank"
@@ -624,19 +1482,19 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-aemoO dayALZ"
+      class="c33"
       id="brands"
     >
       <h1
-        class="sc-dlfnbm sc-hlTvYk jBfMGx hJrFZX"
+        class="c16 c34"
       >
         Nuestros aliados
       </h1>
       <section
-        class="sc-eCssSg sc-jONnTn kXjVfy zDhMf"
+        class="c21 c35"
       >
         <a
           href="https://trilogylab.com/"
@@ -865,13 +1723,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </section>
     </section>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-eCssSg kXjVfy"
+      class="c21"
     >
       <div
-        class="sc-dacFzL kcwIgu"
+        class="c36"
       >
         <div
           class="first-element"
@@ -903,17 +1761,17 @@ exports[`[Container] Index renders correctly 1`] = `
           class="second-element"
         >
           <h1
-            class="sc-dlfnbm sc-dtwoBo jBfMGx fIylgr"
+            class="c16 c37"
           >
             Apoyá esta gran iniciativa
           </h1>
           <p
-            class="sc-jUEnpm eYlhSq"
+            class="c38"
           >
             Si formás parte de una ONG o una empresa, sumate a esta plataforma; contactate directamente para recibir con más detalle todo lo que podés hacer junto a FavForMe.
           </p>
           <p
-            class="sc-jQbIHB hmAeqE"
+            class="c39"
           >
             <a
               aria-label="hello@favforme.com"
@@ -937,13 +1795,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <hr
-      class="sc-jSgupP UFvXm"
+      class="c12"
     />
     <section
-      class="sc-bYEvPH hywvIm"
+      class="c40"
     >
       <div
-        class="sc-iktFzd gFpbuk"
+        class="c41"
       >
         <div>
           <a
@@ -975,52 +1833,52 @@ exports[`[Container] Index renders correctly 1`] = `
           </a>
         </div>
         <ul
-          class="sc-jJEJSO gwTRFR"
+          class="c42"
         >
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c43"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c44"
               href="/acciones"
             >
               Acciones
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c43"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c44"
               href="/nosotros"
             >
               FavForMe
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c43"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c44"
               href="/#brands"
             >
               Empresas
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c43"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c44"
             >
               Contacto
             </a>
           </li>
           <li
-            class="sc-hiSbYr doSEsP"
+            class="c43"
           >
             <a
-              class="sc-gWHgXt kRbVLY"
+              class="c44"
               href="/terms_and_conditions"
             >
               Términos de uso
@@ -1029,7 +1887,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="sc-kLgntA buEto"
+        class="c45"
       >
         <a
           aria-label="LinkedIn"
@@ -1121,7 +1979,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </a>
       </div>
       <section
-        class="sc-cBNfnY bhtpkD"
+        class="c46"
       >
         <p>
           FavForMe 2021 - All rights reserved
