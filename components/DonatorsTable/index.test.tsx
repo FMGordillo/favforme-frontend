@@ -34,8 +34,8 @@ const data: DonationI[] = [
     userId: "2",
     amount: "100",
     paymentStatus: "SUCCESS",
-    createdAt: new Date().toString(),
-    updatedAt: new Date().toString(),
+    createdAt: new Date("2012/12/12").toString(),
+    updatedAt: new Date("2012/12/12").toString(),
   },
 ];
 
