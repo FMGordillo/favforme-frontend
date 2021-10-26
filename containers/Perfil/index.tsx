@@ -1,7 +1,7 @@
-import { useFormik } from "formik";
 import { Button, Container, Layout } from "@/components";
-import { NextPage } from "next";
 import Image from "next/image";
+import { NextPage } from "next";
+import { useFormik } from "formik";
 
 export const ProfilePage: NextPage = () => {
   const handleSubmit = () => {

@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Componentes] Header renders correctly 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  max-height: 250px;
+  border-radius: 0 0 100% 100%/0 0 25% 25%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  height: 4em;
+  width: 100vw;
+  padding: 1em;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c3 > a > div {
+  max-width: 150px;
+}
+
+.c3 a {
+  color: white;
+}
+
+.c5 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: dosis,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 200px;
+  display: block;
+}
+
+.c5 > a > div {
+  max-width: 150px;
+}
+
+.c5 a {
+  color: #f38d9f;
+}
+
+.c4 {
+  font-weight: 500;
+  color: white;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.c4:hover {
+  font-weight: 700;
+  color: #f38d9f;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    color: red;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    background: #27358d;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0;
+    -webkit-transition: -webkit-transform 250ms ease-in;
+    -webkit-transition: transform 250ms ease-in;
+    transition: transform 250ms ease-in;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .c2 > :nth-child(3) {
+    display: none;
+  }
+
+  .c2 > :nth-child(3) {
+    display: none;
+  }
+
+  .c2 > * {
+    margin: 1em;
+  }
+
+  .c2 > :last-child {
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 {
+    display: block;
+  }
+}
+
+@media (max-width:960px) {
+
+}
+
+@media (max-width:960px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:960px) {
+
+}
+
+<nav
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 60px; height: 60px;"
+      >
+        <img
+          data-nimg="fixed"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+        <noscript />
+      </div>
+    </div>
+    <ul
+      class="c2"
+    >
+      <li
+        class="c3"
+      >
+        <a
+          class="c4"
+        >
+          FavForMe
+        </a>
+      </li>
+      <li
+        class="c3"
+      >
+        <a
+          class="c4"
+        >
+          Acciones
+        </a>
+      </li>
+      <li
+        class="c3"
+      >
+        <a
+          class="c4"
+        >
+          <div
+            style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="box-sizing: border-box; display: block; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjcwIiBoZWlnaHQ9IjIxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+              />
+            </div>
+            <img
+              alt="FavForMe logo"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </div>
+        </a>
+      </li>
+      <li
+        class="c3"
+      >
+        <a
+          class="c4"
+        >
+          Empresas
+        </a>
+      </li>
+      <li
+        class="c5"
+      >
+        <a
+          class="c4"
+        >
+          Contacto
+        </a>
+      </li>
+    </ul>
+  </nav>
+  .c0 {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/plato_de_comida.webp");
+  height: 400px;
+  width: 100vw;
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-bottom: 48px;
+  -webkit-transition: height 300ms;
+  transition: height 300ms;
+}
+
+.c1 {
+  color: white;
+  -webkit-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+  transform: translateY(-64px);
+  padding: 0;
+  -webkit-transition: -webkit-transform 300ms;
+  -webkit-transition: transform 300ms;
+  transition: transform 300ms;
+}
+
+.c2 {
+  margin: 0;
+  font-size: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: inherit;
+  text-align: center;
+}
+
+.c2 mark {
+  color: white;
+  background-color: #4f6be6;
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:960px) {
+  .c0 {
+    height: 300px;
+  }
+}
+
+@media (max-width:960px) {
+  .c1 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media (max-width:960px) {
+  .c2 {
+    width: inherit;
+  }
+}
+
+<header
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <h1
+        class="c2"
+      >
+        <span>
+          Hay muchas personas
+          <br />
+          necesitando de tu
+          <br />
+          buena acción
+        </span>
+      </h1>
+    </div>
+  </header>
+</DocumentFragment>
+`;

@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, ReactNode } from "react";
+import { Children, FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
 
 interface MenuProps {

@@ -1,5 +1,6 @@
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "react-notion-x/src/styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import * as gtag from "../lib/gtag";
 import { ModalProvider, NotificationProvider } from "../lib/context";
 import { ThemeProvider, createGlobalStyle } from "styled-components";

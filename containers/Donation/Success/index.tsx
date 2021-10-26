@@ -3,7 +3,6 @@ import { Container } from "../styles";
 import { DonationI } from "@/lib/types";
 import Image from "next/image";
 import { NextPage } from "next";
-import React from "react";
 import router from "next/router";
 
 type DonationSuccessContainerProps = {
