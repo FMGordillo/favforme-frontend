@@ -1,11 +1,11 @@
-import { ContactModal } from "@/components/Modal/components";
-import { ModalContext } from "@/lib/context";
-import { event } from "@/lib/gtag";
-import Image from "next/image";
-import React, { FunctionComponent, useContext, useState } from "react";
-import { Logo } from "../assets";
-import { NavItem } from "./NavItem";
+import { FunctionComponent, useContext, useState } from "react";
 import { MobileNavigator, Nav, Ul } from "./styles";
+import { ContactModal } from "@/components/Modal/components";
+import Image from "next/image";
+import { Logo } from "../assets";
+import { ModalContext } from "@/lib/context";
+import { NavItem } from "./NavItem";
+import { event } from "@/lib/gtag";
 
 interface NavBarProps {
   isScrolled?: boolean;
