@@ -1,8 +1,8 @@
 # FavForMe Landing
 
-Develop: [![Build Status](https://favforme.semaphoreci.com/badges/landing/branches/develop.svg?key=81cd66f4-0449-4645-bcfd-731657d92a7d)](https://favforme.semaphoreci.com/projects/landing)
-Main: [![Build Status](https://favforme.semaphoreci.com/badges/landing/branches/main.svg?key=81cd66f4-0449-4645-bcfd-731657d92a7d)](https://favforme.semaphoreci.com/projects/landing)
+Develop:[![Build Status](https://favforme.semaphoreci.com/badges/favforme-web/branches/develop.svg?key=81cd66f4-0449-4645-bcfd-731657d92a7d)](https://favforme.semaphoreci.com/projects/favforme-web)
 
+Main: [![Build Status](https://favforme.semaphoreci.com/badges/favforme-web/branches/main.svg?key=81cd66f4-0449-4645-bcfd-731657d92a7d)](https://favforme.semaphoreci.com/projects/favforme-web)
 ## Getting started
 
 You should have installed:
