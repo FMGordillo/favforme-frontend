@@ -53,9 +53,8 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
         <a href="#" onClick={goToAction}>
           <Image
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             alt="Imagen representativa de la acción"
-            objectPosition="100% 50%"
             src={data?.mainImage ?? "/images/accion_placeholder_1.jpg"}
           />
         </a>
