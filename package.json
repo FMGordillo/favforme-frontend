@@ -25,7 +25,7 @@
   "author": "Facundo Martin Gordillo",
   "license": "ISC",
   "dependencies": {
-    "@apollo/client": "3.4.8",
+    "@apollo/client": "3.4.16",
     "@fortawesome/fontawesome-svg-core": "1.2.32",
     "@fortawesome/free-brands-svg-icons": "5.15.1",
     "@fortawesome/free-regular-svg-icons": "5.15.3",
@@ -43,10 +43,9 @@
     "notion-client": "4.9.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-loading-skeleton": "2.2.0",
-    "react-notion-x": "4.9.8",
-    "styled-components": "5.2.1",
-    "use-dark-mode": "2.3.1",
+    "react-loading-skeleton": "3.0.1",
+    "react-notion-x": "4.11.0",
+    "styled-components": "5.3.3",
     "yup": "0.32.9"
   },
   "devDependencies": {
@@ -66,7 +65,7 @@
     "@types/yup": "0.29.11",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.9.0",
-    "babel-jest": "26.6.3",
+    "babel-jest": "27.3.1",
     "babel-plugin-styled-components": "1.12.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "dotenv": "8.2.0",
