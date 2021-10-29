@@ -29,7 +29,8 @@
       ]
     },
     "strictNullChecks": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
