@@ -43,3 +43,9 @@ blocks:
             - checkout
             - cache restore
             - "npm run test:ci --if-present"
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
