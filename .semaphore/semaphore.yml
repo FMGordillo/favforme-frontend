@@ -1,5 +1,10 @@
 version: v1.0
 name: Landing
+global_job_config:
+  epilogue:
+    always:
+      commands:
+        - "[[ -f junit.xml ]] && test-results publish report.xml"
 agent:
   machine:
     type: e1-standard-2
@@ -37,4 +42,18 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - 'npm run test:ci --if-present'
+            - "npm run test:ci --if-present"
+  - name: Generate report
+    task:
+      jobs:
+        - name: Generate
+          commands:
+            - checkout
+            - cache restore
+            - "npm run coverage"
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
