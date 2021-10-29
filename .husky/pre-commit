@@ -1,4 +1,28 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+audit_result="npm audit --audit-level=moderate"
+audit_result_exit_code=$?
+
+# test_result="npm test"
+# test_result_exit_code=$?
+
+if [ "$audit_result_exit_code" -ne "0" ] ; then
+  echo "npm audit failed"
+  echo "npm audit output:"
+  echo "$audit_result"
+  exit 1
+else
+  echo "✅ npm audit passed"
+fi
+
+# if [ "$test_result_exit_code" -ne "0" ] ; then
+#   echo "npm test failed"
+#   echo "npm test output:"
+#   echo "$test_result"
+#   exit 1
+# else
+#   echo "✅ npm test passed"
+# fi
+
+npx lint-staged --concurrent true
