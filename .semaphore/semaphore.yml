@@ -44,6 +44,8 @@ blocks:
             - cache restore
             - "npm run test:ci --if-present"
   - name: Generate report
+    task:
+      jobs:
         - name: Generate
           commands:
             - checkout
