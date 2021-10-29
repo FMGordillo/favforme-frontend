@@ -43,6 +43,12 @@ blocks:
             - checkout
             - cache restore
             - "npm run test:ci --if-present"
+  - name: Generate report
+        - name: Generate
+          commands:
+            - checkout
+            - cache restore
+            - "npm run coverage"
 after_pipeline:
   task:
     jobs:
