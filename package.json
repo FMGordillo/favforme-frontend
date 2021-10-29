@@ -13,7 +13,7 @@
     "start": "next start -p $PORT",
     "lint": "eslint pages/**/*.tsx components/**/*.tsx",
     "format": "prettier --write **/*.ts public/**/*.html",
-    "test": "jest --watch",
+    "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
