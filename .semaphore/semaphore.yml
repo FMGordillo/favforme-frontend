@@ -1,40 +1,35 @@
 version: v1.0
-name: Landing
+name: First pipeline
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+    os_image: ubuntu2004
 blocks:
-  - name: Builds correctly
+  - name: Lint
     task:
+      prologue:
+        commands:
+          - checkout
       jobs:
-        - name: Build
+        - name: make lint
           commands:
-            - checkout
-            - sem-version node 14.15.4
-            - cache restore
-            - cache restore nextjs_build
-            - npm install
-            - cache store
-            - cache store nextjs_build .next/cache
-            - npm run build --if-present
-      secrets:
-        - name: Frontend secrets
-  - name: Checks
+            - echo "lint your code"
+      epilogue:
+        always:
+          commands:
+            - '[[ -f report.xml ]] && test-results publish report.xml'
+  - name: Unit tests
     task:
+      prologue:
+        commands:
+          - checkout
       jobs:
-        - name: Typescript
+        - name: Unit tests 1/3
           commands:
-            - checkout
-            - cache restore
-            - npm run check-type --if-present
-        - name: ESLint
+            - echo "run 1/3"
+        - name: Unit tests 2/3
           commands:
-            - checkout
-            - cache restore
-            - npm run lint --if-present
-        - name: Tests
+            - echo "run 2/3"
+        - name: Unit tests 3/3
           commands:
-            - checkout
-            - cache restore
-            - 'npm run test:ci --if-present'
+            - echo "run 3/3"
