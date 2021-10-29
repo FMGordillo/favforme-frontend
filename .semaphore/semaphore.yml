@@ -15,9 +15,9 @@ after_pipeline:
           - test-results gen-pipeline-report
 auto_cancel:
   running:
-    when: branch != "main"
+    when: "branch != 'main'"
   queued:
-    when: branch = "main"
+    when: "branch = 'main'"
 global_job_config:
   prologue:
     commands:
