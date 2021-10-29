@@ -48,10 +48,18 @@ export const RightColumn = styled.div`
 `;
 
 export const Details = styled.details`
+  color: hsl(0, 0%, 95%);
   margin-top: 14px;
+  & > div {
+    margin-top: 14px !important;
+  }
+  .ong-logo {
+    border-radius: 100px;
+  }
 `;
 
 export const Summary = styled.summary`
   cursor: pointer;
   user-select: none;
+  padding-top: 14px;
 `;
