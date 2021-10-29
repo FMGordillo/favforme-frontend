@@ -104,7 +104,7 @@
     "*.{ts,tsx}": [
       "eslint --cache --fix",
       "prettier -w",
-      "npm run test:ci -- --bail --findRelatedTests --passWithNoTests"
+      "npm run test:ci -- --bail --findRelatedTests --passWithNoTests --watchAll"
     ]
   }
 }
