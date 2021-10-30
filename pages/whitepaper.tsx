@@ -1,8 +1,15 @@
-import { Container, Layout } from "@/components";
+import { Container as BaseContainer, Layout } from "@/components";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { ExtendedRecordMap } from "notion-types";
 import { NotionRenderer } from "react-notion-x";
 import { getPage } from "@/lib/notion";
+import styled from "styled-components";
+
+const Container = styled(BaseContainer)`
+  .notion-viewport {
+    position: relative;
+  }
+`;
 
 type GetStaticPropsData = {
   site: unknown;

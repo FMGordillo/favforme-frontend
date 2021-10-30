@@ -27,6 +27,11 @@ export const Main = styled.section`
   }
 `;
 
+export const WhitepaperContainer = styled.section`
+  display: flex;
+  justify-content: center;
+`;
+
 export const LeftHandImage = styled.div`
   grid-area: left-image;
 `;
