@@ -126,7 +126,6 @@ export const User = styled.div`
     text-transform: uppercase;
   }
   & > :first-child {
-    background: red;
     border-radius: 40px;
   }
   ${({ theme }) => theme.breakpoints.down("sm")} {
