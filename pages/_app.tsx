@@ -11,6 +11,7 @@ import Script from "next/script";
 import axios from "axios";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { lightTheme } from "../utils/styled";
+import { SessionProvider } from "next-auth/react";
 import seoConfig from "../lib/seo.config";
 import { setLocale } from "yup";
 import { useEffect } from "react";
@@ -46,7 +47,10 @@ setLocale({
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL || "";
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps): JSX.Element {
   const router = useRouter();
   // TODO: Primero definir los colores, luego la metodología, y recién ahí habilitamos esto
   // const darkMode = useDarkMode();
@@ -94,7 +98,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         <DefaultSeo {...seoConfig} />
         <NotificationProvider>
           <ModalProvider>
-            <Component {...pageProps} />
+            <SessionProvider session={session}>
+              <Component {...pageProps} />
+            </SessionProvider>
           </ModalProvider>
         </NotificationProvider>
       </ThemeProvider>

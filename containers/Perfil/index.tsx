@@ -1,17 +1,20 @@
 import { Button, Container, Layout } from "@/components";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { NextPage } from "next";
 import { useFormik } from "formik";
 
 export const ProfilePage: NextPage = () => {
+  const { data: session } = useSession();
+
   const handleSubmit = () => {
     console.log("WIP");
   };
 
   const formik = useFormik({
     initialValues: {
-      name: "",
-      email: "",
+      name: session?.user?.name || "", // TODO: Como hacemos aca?
+      email: session?.user?.email || "",
       surname: "",
     },
     onSubmit: handleSubmit,
@@ -20,12 +23,15 @@ export const ProfilePage: NextPage = () => {
   return (
     <Layout header title="Tu Perfil">
       <Container>
+        <Button onClick={() => signOut({ callbackUrl: "/" })}>
+          Cerrar sesi&oacute;n
+        </Button>
         <section>
           <h1>Datos personales</h1>
           <div className="img">
             {/* TODO: agregar algun placeholder para esto */}
             <Image
-              src={"/images/avatar_placeholder.gif"}
+              src={session?.user?.image ?? "/images/avatar_placeholder.gif"}
               alt="Avatar"
               height={100}
               width={100}

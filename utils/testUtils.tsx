@@ -1,5 +1,6 @@
 import { MockedProvider } from "@apollo/client/testing";
 import { ReactChild } from "react";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./styled";
 import { render } from "@testing-library/react";
@@ -7,7 +8,9 @@ import { render } from "@testing-library/react";
 const Providers = ({ children }: { children: ReactChild }) => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <MockedProvider>{children}</MockedProvider>
+      <SessionProvider session={null}>
+        <MockedProvider>{children}</MockedProvider>
+      </SessionProvider>
     </ThemeProvider>
   );
 };
