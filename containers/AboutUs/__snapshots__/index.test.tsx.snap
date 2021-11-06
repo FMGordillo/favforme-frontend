@@ -2,33 +2,33 @@
 
 exports[`[Container] About us renders correctly 1`] = `
 <DocumentFragment>
-  .c13 {
+  .c14 {
   font-size: 2em;
   font-weight: 400;
   color: #4f6be6;
 }
 
-.c16 {
+.c17 {
   font-size: 2em;
   font-weight: 500;
   color: #4f6be6;
 }
 
-.c10 {
+.c11 {
   margin: 4em 0;
   margin: 0 8em;
 }
 
-.c25 {
+.c26 {
   margin: 4em 0;
   margin: 0 4em;
 }
 
-.c27 {
+.c28 {
   background-color: #4f6be6;
 }
 
-.c32 {
+.c33 {
   display: grid;
   max-width: 400px;
   padding: 1em;
@@ -42,26 +42,26 @@ exports[`[Container] About us renders correctly 1`] = `
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.c32 > * {
+.c33 > * {
   color: white;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-.c32 > *:hover {
+.c33 > *:hover {
   cursor: pointer;
 }
 
-.c32 > * > * {
+.c33 > * > * {
   width: 2em !important;
   height: 2em !important;
 }
 
-.c32 > *:hover {
+.c33 > *:hover {
   color: #27358d;
 }
 
-.c28 {
+.c29 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-gap: 1em;
@@ -70,25 +70,25 @@ exports[`[Container] About us renders correctly 1`] = `
   max-width: 1024px;
 }
 
-.c28 > :first-child {
+.c29 > :first-child {
   justify-self: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.c29 {
+.c30 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   list-style: none;
   padding: 0;
 }
 
-.c30 {
+.c31 {
   line-height: 2.5;
 }
 
-.c31 {
+.c32 {
   color: white;
   cursor: pointer;
   -webkit-text-decoration: none;
@@ -99,30 +99,30 @@ exports[`[Container] About us renders correctly 1`] = `
   transition: all ease-in-out 300ms;
 }
 
-.c31:hover {
+.c32:hover {
   border-color: white;
 }
 
-.c33 {
+.c34 {
   background-color: #27358d;
   text-align: center;
 }
 
-.c33 p {
+.c34 p {
   margin: 0;
   padding: 28px 0 16px;
   color: white;
   text-transform: uppercase;
 }
 
-.c33 .credits {
+.c34 .credits {
   font-size: 14px;
   text-transform: none;
   padding: 0 0 24px;
   color: #4f6be6;
 }
 
-.c33 a {
+.c34 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #9BAAF6;
@@ -132,7 +132,7 @@ exports[`[Container] About us renders correctly 1`] = `
   background-color: #FFF;
 }
 
-.c7 {
+.c8 {
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.webp");
@@ -146,7 +146,7 @@ exports[`[Container] About us renders correctly 1`] = `
   transition: height 300ms;
 }
 
-.c8 {
+.c9 {
   color: white;
   -webkit-transform: translateY(-64px);
   -ms-transform: translateY(-64px);
@@ -157,7 +157,7 @@ exports[`[Container] About us renders correctly 1`] = `
   transition: transform 300ms;
 }
 
-.c9 {
+.c10 {
   margin: 0;
   font-size: 50px;
   text-overflow: ellipsis;
@@ -166,7 +166,7 @@ exports[`[Container] About us renders correctly 1`] = `
   text-align: center;
 }
 
-.c9 mark {
+.c10 mark {
   color: white;
   background-color: #4f6be6;
 }
@@ -263,52 +263,78 @@ exports[`[Container] About us renders correctly 1`] = `
   color: #f38d9f;
 }
 
-.c11 {
+.c7 {
+  position: absolute;
+  background: white;
+  margin: 72px 0;
+  padding: 12px;
+  padding-right: 24px;
+  top: 0;
+  right: 0;
+  border-radius: 20px 0 0 20px;
+}
+
+.c7 p {
+  color: #4f6be6;
+  font-weight: bolder;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.c7 > :first-child {
+  border-radius: 40px;
+}
+
+.c7:hover {
+  cursor: pointer;
+}
+
+.c12 {
   text-align: center;
   margin: 0 auto;
   max-width: 960px;
 }
 
-.c11 p {
+.c12 p {
   line-height: 2em;
   font-size: 1.5em;
 }
 
-.c14 {
+.c15 {
   text-align: center;
 }
 
-.c15 {
+.c16 {
   background-color: #f2f2f2;
   padding: 0.5em 8em 1em;
   margin: 0 -8em !important;
 }
 
-.c15 h1 {
+.c16 h1 {
   font-weight: 600;
 }
 
-.c15 p {
+.c16 p {
   font-size: 1.15em;
   line-height: 1.5em;
 }
 
-.c15 b {
+.c16 b {
   font-weight: 800;
 }
 
-.c17 {
+.c18 {
   display: grid;
   grid-gap: 3em;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.c18 {
+.c19 {
   weight: 500;
   font-size: 1.5em;
 }
 
-.c12 {
+.c13 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
@@ -316,41 +342,41 @@ exports[`[Container] About us renders correctly 1`] = `
   padding-bottom: 3em;
 }
 
-.c12 .content {
+.c13 .content {
   text-align: right;
 }
 
-.c12 h1 {
+.c13 h1 {
   margin: 0;
 }
 
-.c12 p {
+.c13 p {
   line-height: 1.5em;
   font-size: 1.25em;
   margin: 1em 0 0 0;
 }
 
-.c12 b {
+.c13 b {
   font-weight: 800;
 }
 
-.c12 .img {
+.c13 .img {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.c19 {
+.c20 {
   display: grid;
   grid-template-columns: repeat(6,1fr);
   grid-gap: 1em;
 }
 
-.c20 p {
+.c21 p {
   margin-bottom: 0;
 }
 
-.c21 {
+.c22 {
   color: #797979;
   font-size: 0.85em;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -358,24 +384,24 @@ exports[`[Container] About us renders correctly 1`] = `
   transition: transform 0.3s ease;
 }
 
-.c21 .image {
+.c22 .image {
   border-radius: 100px;
 }
 
-.c21:hover {
+.c22:hover {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
 
-.c22 {
+.c23 {
   color: #434142;
   margin-bottom: 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.c26 {
+.c27 {
   display: grid;
   max-width: 1200px;
   grid-template-columns: repeat(12,1fr);
@@ -383,7 +409,7 @@ exports[`[Container] About us renders correctly 1`] = `
   margin: 0 auto;
 }
 
-.c26 > a {
+.c27 > a {
   position: relative;
   display: block;
   margin: 0.4em !important;
@@ -398,69 +424,69 @@ exports[`[Container] About us renders correctly 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c26 > a:hover {
+.c27 > a:hover {
   -webkit-transform: scale(1.1,1.1);
   -ms-transform: scale(1.1,1.1);
   transform: scale(1.1,1.1);
 }
 
-.c26 > a:nth-child(-n + 4) {
+.c27 > a:nth-child(-n + 4) {
   grid-column: span 3;
 }
 
-.c26 > a:nth-child(n + 4) {
+.c27 > a:nth-child(n + 4) {
   grid-column: span 3;
 }
 
-.c26 > a:nth-child(5) {
+.c27 > a:nth-child(5) {
   justify-self: right;
 }
 
-.c26 > a:nth-child(8) {
+.c27 > a:nth-child(8) {
   justify-self: left;
 }
 
-.c24 {
+.c25 {
   text-align: center;
 }
 
 @media (max-width:600px) {
-  .c10 {
+  .c11 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:600px) {
-  .c25 {
+  .c26 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:600px) {
-  .c28 {
+  .c29 {
     grid-template-columns: 1fr;
   }
 
-  .c28 > :last-child {
+  .c29 > :last-child {
     text-align: center;
     justify-self: center;
   }
 }
 
 @media (max-width:960px) {
-  .c29 {
+  .c30 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c7 {
+  .c8 {
     height: 300px;
   }
 }
 
 @media (max-width:960px) {
-  .c8 {
+  .c9 {
     -webkit-transform: translateY(0px);
     -ms-transform: translateY(0px);
     transform: translateY(0px);
@@ -468,13 +494,13 @@ exports[`[Container] About us renders correctly 1`] = `
 }
 
 @media (max-width:600px) {
-  .c8 {
+  .c9 {
     padding: 0;
   }
 }
 
 @media (max-width:960px) {
-  .c9 {
+  .c10 {
     width: inherit;
   }
 }
@@ -542,74 +568,80 @@ exports[`[Container] About us renders correctly 1`] = `
   }
 }
 
+@media (max-width:600px) {
+  .c7 {
+    display: none;
+  }
+}
+
 @media (max-width:960px) {
-  .c11 p {
+  .c12 p {
     padding: 0;
   }
 }
 
 @media (max-width:960px) {
-  .c15 {
+  .c16 {
     padding: 0.5em 2em 1em;
   }
 }
 
 @media (max-width:600px) {
-  .c15 {
+  .c16 {
     margin: 0 -36px !important;
     padding: 0.5em 14px 1em;
   }
 }
 
 @media (max-width:600px) {
-  .c17 {
+  .c18 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c19 {
+  .c20 {
     margin: 0 -4em;
     grid-template-columns: repeat(4,1fr);
   }
 }
 
 @media (max-width:600px) {
-  .c19 {
+  .c20 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c23 {
+  .c24 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:960px) {
-  .c26 {
+  .c27 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .c26 > a:nth-child(-n + 4) {
+  .c27 > a:nth-child(-n + 4) {
     grid-column: inherit;
   }
 
-  .c26 > a:nth-child(n + 5) {
+  .c27 > a:nth-child(n + 5) {
     grid-column: inherit;
   }
 
-  .c26 > a:nth-child(5) {
+  .c27 > a:nth-child(5) {
     justify-self: inherit;
   }
 
-  .c26 > a:nth-child(7) {
+  .c27 > a:nth-child(7) {
     justify-self: inherit;
   }
 }
 
 @media (max-width:600px) {
-  .c26 {
+  .c27 {
     grid-template-columns: 1fr;
   }
 }
@@ -704,40 +736,68 @@ exports[`[Container] About us renders correctly 1`] = `
             Contacto
           </a>
         </li>
+        <div
+          class="c7"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iNzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+          <p>
+            Iniciar sesión
+          </p>
+        </div>
       </ul>
     </nav>
     <header
-      class="c7"
+      class="c8"
     >
       <div
-        class="c8"
+        class="c9"
       >
         <h1
-          class="c9"
+          class="c10"
         >
           Nosotros
         </h1>
       </div>
     </header>
     <section
-      class="c10"
+      class="c11"
       spacing="2"
     >
       <section
-        class="c11"
+        class="c12"
       >
         <p>
           La Fundación FavForMe impulsa el desarrollo de acciones de impacto social positivo, ayudando a las ONGs a conseguir los recursos a través de crowdfunding
         </p>
       </section>
       <section
-        class="c12"
+        class="c13"
       >
         <div
           class="content"
         >
           <h1
-            class="c13"
+            class="c14"
           >
             La Misión FavForMe
           </h1>
@@ -776,19 +836,19 @@ exports[`[Container] About us renders correctly 1`] = `
         </div>
       </section>
       <section
-        class="c14 c15"
+        class="c15 c16"
       >
         <h1
-          class="c16"
+          class="c17"
         >
           Que venimos a resolver
         </h1>
         <div
-          class="c17"
+          class="c18"
         >
           <div>
             <h2
-              class="c13 c18"
+              class="c14 c19"
             >
               ONG's
             </h2>
@@ -801,7 +861,7 @@ exports[`[Container] About us renders correctly 1`] = `
           </div>
           <div>
             <h2
-              class="c13 c18"
+              class="c14 c19"
             >
               Empresas
             </h2>
@@ -819,7 +879,7 @@ exports[`[Container] About us renders correctly 1`] = `
           </div>
           <div>
             <h2
-              class="c13 c18"
+              class="c14 c19"
             >
               ODS
             </h2>
@@ -834,18 +894,18 @@ exports[`[Container] About us renders correctly 1`] = `
         </div>
       </section>
       <section
-        class="c14"
+        class="c15"
       >
         <h1
-          class="c13"
+          class="c14"
         >
           El equipo
         </h1>
         <div
-          class="c19"
+          class="c20"
         >
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -880,7 +940,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </span>
           </div>
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -915,7 +975,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </span>
           </div>
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -950,7 +1010,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </span>
           </div>
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -985,7 +1045,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </span>
           </div>
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1020,7 +1080,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </span>
           </div>
           <div
-            class="c20"
+            class="c21"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1057,18 +1117,18 @@ exports[`[Container] About us renders correctly 1`] = `
         </div>
       </section>
       <section
-        class="c14 c15"
+        class="c15 c16"
       >
         <h1
-          class="c13"
+          class="c14"
         >
           Los advisors
         </h1>
         <div
-          class="c17"
+          class="c18"
         >
           <div
-            class="c21"
+            class="c22"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1094,7 +1154,7 @@ exports[`[Container] About us renders correctly 1`] = `
               <noscript />
             </span>
             <h2
-              class="c13 c22"
+              class="c14 c23"
             >
               Horacio Cuervo
             </h2>
@@ -1109,7 +1169,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c21"
+            class="c22"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1135,7 +1195,7 @@ exports[`[Container] About us renders correctly 1`] = `
               <noscript />
             </span>
             <h2
-              class="c13 c22"
+              class="c14 c23"
             >
               Gustavo Cotarelo
             </h2>
@@ -1146,7 +1206,7 @@ exports[`[Container] About us renders correctly 1`] = `
             </p>
           </div>
           <div
-            class="c21"
+            class="c22"
           >
             <span
               style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1172,7 +1232,7 @@ exports[`[Container] About us renders correctly 1`] = `
               <noscript />
             </span>
             <h2
-              class="c13 c22"
+              class="c14 c23"
             >
               Pablo Agustín Escontrela
             </h2>
@@ -1185,19 +1245,19 @@ exports[`[Container] About us renders correctly 1`] = `
         </div>
       </section>
       <section
-        class="c14"
+        class="c15"
       >
         <section
-          class="c23"
+          class="c24"
           id="brands"
         >
           <h1
-            class="c13 c24"
+            class="c14 c25"
           >
             Nuestros aliados
           </h1>
           <section
-            class="c25 c26"
+            class="c26 c27"
           >
             <a
               href="https://trilogylab.com/"
@@ -1428,10 +1488,10 @@ exports[`[Container] About us renders correctly 1`] = `
       </section>
     </section>
     <section
-      class="c27"
+      class="c28"
     >
       <div
-        class="c28"
+        class="c29"
       >
         <div>
           <a
@@ -1463,52 +1523,52 @@ exports[`[Container] About us renders correctly 1`] = `
           </a>
         </div>
         <ul
-          class="c29"
+          class="c30"
         >
           <li
-            class="c30"
+            class="c31"
           >
             <a
-              class="c31"
+              class="c32"
               href="/acciones"
             >
               Acciones
             </a>
           </li>
           <li
-            class="c30"
+            class="c31"
           >
             <a
-              class="c31"
+              class="c32"
               href="/nosotros"
             >
               FavForMe
             </a>
           </li>
           <li
-            class="c30"
+            class="c31"
           >
             <a
-              class="c31"
+              class="c32"
               href="/#brands"
             >
               Empresas
             </a>
           </li>
           <li
-            class="c30"
+            class="c31"
           >
             <a
-              class="c31"
+              class="c32"
             >
               Contacto
             </a>
           </li>
           <li
-            class="c30"
+            class="c31"
           >
             <a
-              class="c31"
+              class="c32"
               href="/terms_and_conditions"
             >
               Términos de uso
@@ -1517,7 +1577,7 @@ exports[`[Container] About us renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="c32"
+        class="c33"
       >
         <a
           aria-label="LinkedIn"
@@ -1609,7 +1669,7 @@ exports[`[Container] About us renders correctly 1`] = `
         </a>
       </div>
       <section
-        class="c33"
+        class="c34"
       >
         <p>
           FavForMe 2021 - All rights reserved

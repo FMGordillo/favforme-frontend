@@ -18,3 +18,5 @@ coverage
 # PWA
 public/sw*
 public/workbox*
+# Sentry
+.sentryclirc

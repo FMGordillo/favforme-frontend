@@ -12,15 +12,19 @@ import {
   ProgressBar,
   Title,
 } from "./styles";
+import {
+  DonationUnavailableModal,
+  ShareActionModal,
+} from "@/components/Modal/components";
 import { FunctionComponent, useContext } from "react";
+import { faHeart, faShareSquare } from "@fortawesome/free-regular-svg-icons";
 import { ActionI } from "@/lib/types";
-import { DonationUnavailableModal } from "@/components/Modal/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { ModalContext } from "@/lib/context";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 // import { SocialNetworks } from "@/components";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { getODSImage } from "@/lib/ods_image";
 import { isNotProd } from "@/utils";
 import { makeCalculations } from "@/service";
@@ -71,7 +75,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
       {/* </Link> */}
       <MainContent>
         <div>
-          <Link href={actionUrl}>
+          <Link passHref href={actionUrl}>
             <Title
               color={
                 dueDate?.urgency === "high"
@@ -110,10 +114,23 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
                 : handleModal(<DonationUnavailableModal />)
             }
           >
-            DON&Aacute; HOY <FontAwesomeIcon icon={faHeart} />
+            DON&Aacute; <FontAwesomeIcon icon={faHeart} />
           </Button>
           <Button color="gray" hoverColor="#cccccc" onClick={goToAction}>
-            DETALLES
+            <FontAwesomeIcon icon={faInfoCircle} />
+          </Button>
+          <Button
+            hoverColor="primary"
+            onClick={() =>
+              handleModal(
+                <ShareActionModal
+                  text="TEXT"
+                  url={`${router.basePath}${actionUrl}`}
+                />
+              )
+            }
+          >
+            <FontAwesomeIcon icon={faShareSquare} />
           </Button>
         </ButtonContainer>
         {/* <SocialNetworks data={data?.organization?.socialNetworks} /> */}
