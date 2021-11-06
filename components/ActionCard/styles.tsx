@@ -22,8 +22,8 @@ export const Button = styled(BaseButton)`
 
 export const ButtonContainer = styled.div`
   display: grid;
-  grid-gap: 1em;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr auto auto;
 `;
 
 export const MainContent = styled.div`

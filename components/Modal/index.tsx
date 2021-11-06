@@ -1,4 +1,4 @@
-import { ModalContext } from "@/lib/context";
+import { Background, ModalContainer } from "./styles";
 import {
   FunctionComponent,
   MouseEvent,
@@ -6,8 +6,8 @@ import {
   useEffect,
   useRef,
 } from "react";
+import { ModalContext } from "@/lib/context";
 import { createPortal } from "react-dom";
-import { Background, ModalContainer } from "./styles";
 
 const ModalComponent: FunctionComponent = () => {
   const { handleModal, modalContent, modal } = useContext(ModalContext);

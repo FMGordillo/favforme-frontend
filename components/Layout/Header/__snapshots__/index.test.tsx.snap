@@ -113,7 +113,6 @@ exports[`[Componentes] Header renders correctly 1`] = `
 }
 
 .c6 > :first-child {
-  background: red;
   border-radius: 40px;
 }
 
