@@ -11,19 +11,18 @@ import { createPortal } from "react-dom";
 
 const ModalComponent: FunctionComponent = () => {
   const { handleModal, modalContent, modal } = useContext(ModalContext);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   const handleClick = (e: MouseEvent<HTMLDivElement | MouseEvent>) => {
-    e.preventDefault();
     // @ts-ignore
     if (e.target.id === "background") {
+      e.preventDefault();
       handleModal();
     }
-    // setFadeType("out");
   };
 
   useEffect(() => {
-    ref.current = document.querySelector("#modal");
+    modalRef.current = document.querySelector("#modal");
   }, []);
 
   if (modal) {
@@ -32,7 +31,7 @@ const ModalComponent: FunctionComponent = () => {
         <ModalContainer id="modal">{modalContent}</ModalContainer>
       </Background>,
       //@ts-ignore
-      ref.current
+      modalRef.current
     );
   } else return null;
 };
