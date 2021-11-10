@@ -1,8 +1,8 @@
 import { DialogContainer, DialogTitle } from "../styles";
 import {
   faFacebook,
-  faLinkedin,
-  faPinterest,
+  // faLinkedin,
+  // faPinterest,
   faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
@@ -37,10 +37,12 @@ type ShareActionModalProps = {
 };
 
 export const ShareActionModal: FunctionComponent<ShareActionModalProps> = ({
-  url = "https://favforme.com",
+  url,
   text,
 }) => {
-  const whatsappText = `${text} (${url})`;
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
+  const urlFormed = encodeURIComponent(`${BASE_URL}${url}`);
+  const whatsappText = encodeURIComponent(`${BASE_URL}/${text} (${url})`);
 
   return (
     <DialogContainer>
@@ -48,28 +50,28 @@ export const ShareActionModal: FunctionComponent<ShareActionModalProps> = ({
       <ModalContent>
         <SocialNetworks>
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${urlFormed}`}
             target="_blank"
             rel="noreferrer noopener"
           >
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a
-            href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}`}
+          {/* <a
+            href={`https://www.linkedin.com/shareArticle?mini=true&url=${urlFormed}`}
             target="_blank"
             rel="nofollow noopener"
           >
             <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a
-            href={`https://pinterest.com/pin/create/button/?url=${url}&media=&description=${text}`}
+          </a> */}
+          {/* <a
+            href={`https://pinterest.com/pin/create/button/?url=${urlFormed}&media=&description=${text}`}
             target="_blank"
             rel="nofollow noopener"
           >
             <FontAwesomeIcon icon={faPinterest} />
-          </a>
+          </a> */}
           <a
-            href={`https://twitter.com/intent/tweet?url=${url}&text=${text}`}
+            href={`https://twitter.com/intent/tweet?url=${urlFormed}&text=${text}`}
             target="_blank"
             rel="nofollow noopener"
           >

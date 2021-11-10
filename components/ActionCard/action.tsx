@@ -29,6 +29,7 @@ import { getODSImage } from "@/lib/ods_image";
 import { isNotProd } from "@/utils";
 import { makeCalculations } from "@/service";
 import { useRouter } from "next/router";
+import { toPascalCase } from "@/lib";
 
 interface ActionProps {
   carousel?: boolean;
@@ -37,12 +38,8 @@ interface ActionProps {
 
 const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
   const router = useRouter();
-  const {
-    completition,
-    dueDate,
-    currentAmount,
-    finalAmount,
-  } = makeCalculations(data);
+  const { completition, dueDate, currentAmount, finalAmount } =
+    makeCalculations(data);
   const { handleModal } = useContext(ModalContext);
 
   const actionUrl = `/acciones/${data?.id}`;
@@ -123,7 +120,9 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
             onClick={() =>
               handleModal(
                 <ShareActionModal
-                  text="TEXT"
+                  text={`¡${toPascalCase(
+                    data?.organization.name
+                  )} te necesita con ${toPascalCase(data?.title)}! 👉`}
                   url={`${router.basePath}${actionUrl}`}
                 />
               )
