@@ -1,0 +1,298 @@
+// THIS IS A COPY FROM BACKEND, PLEASE DON'T CHANGE IT
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../node_modules/.prisma/client"
+  previewFeatures = ["referentialActions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Coordenates {
+  id        Int        @id @default(autoincrement())
+  lat       String
+  long      String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Location  Location[]
+}
+
+model Location {
+  id            Int          @id @default(autoincrement())
+  address       String
+  coordenatesId Int?
+  neighborhood  String?
+  city          String?
+  country       String
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  coordenates   Coordenates? @relation(fields: [coordenatesId], references: [id])
+  User          User[]
+}
+
+model User {
+  id                 String         @id @default(uuid())
+  userType           UserType       @default(USER)
+  username           String?        @unique
+  name               String?
+  surname            String?
+  birthDate          DateTime?
+  image              String?
+  locationId         Int?
+  role               UserRole       @default(USER)
+  email              String         @unique
+  emailVerified      DateTime?
+  coins              Int            @default(0)
+  deleted            Boolean        @default(false)
+  isInNewsletters    Boolean?       @default(false)
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+  location           Location?      @relation(fields: [locationId], references: [id])
+  comments           Comment[]
+  donations          Donation[]
+  likes              Like[]
+  organizations      Organization[]
+  actionsContributed Action[]
+  // next-auth
+  accounts           Account[]
+  sessions           Session[]
+  // favors                  Favor[]
+  // Favor_favorsContributed Favor[]        @relation("favorsContributed")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  text      String
+  userId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  likes     Like[]
+  // favor     Favor?   @relation(fields: [favorId], references: [id])
+  // favorId   String?
+}
+
+model Like {
+  id        String   @id @default(uuid())
+  userId    String?
+  commentId String?
+  createdAt DateTime @default(now())
+  comment   Comment? @relation(fields: [commentId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+  // favor     Favor?   @relation(fields: [favorId], references: [id])
+  // favorId   String?
+}
+
+// model Favor {
+//   id           String     @id @default(uuid())
+//   title        String
+//   description  String
+//   mainImage    String? // Route to the image, from the code TODO: improve this
+//   deleted      Boolean    @default(false)
+//   status       Status     @default(DRAFT)
+//   likes        Like[]
+//   comments     Comment[]
+//   donations    Donation[]
+//   creator      User       @relation(fields: [creatorId], references: [id])
+//   creatorId    String
+//   contributors User[]     @relation("favorsContributed", references: [id])
+//   category     Category   @relation(fields: [categoryId], references: [id])
+//   categoryId   Int
+//   closedAt     DateTime?
+//   createdAt    DateTime   @default(now())
+//   updatedAt    DateTime   @updatedAt
+// }
+
+model Action {
+  id               String       @id @default(uuid())
+  title            String
+  description      String
+  mainImage        String? // Route to the image, from the code TODO: improve this
+  gallery          String[] // Routes to the images, from the code TODO: improve this
+  ods              ODS[]
+  organizationId   String
+  peopleBeneficted Int?
+  deleted          Boolean      @default(false)
+  status           Status       @default(DRAFT)
+  userId           Int?
+  objective        BigInt       @db.BigInt
+  current          BigInt       @default(0) @db.BigInt
+  closedAt         DateTime?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  organization     Organization @relation(fields: [organizationId], references: [id])
+  donations        Donation[]
+  contributors     User[]
+  categories       Category[]
+}
+
+model Organization {
+  id               String             @id @default(uuid())
+  cuit             Int
+  name             String
+  history          String?
+  homepage         String?
+  logo             String? // Route to the image, from the code TODO: improve this
+  status           OrganizationStatus @default(PENDING)
+  odsFocus         ODS[]
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  actions          Action[]
+  contact          Contact[]
+  socialNetworks   SocialNetwork[]
+  owner            User?              @relation(fields: [ownerId], references: [id])
+  ownerId          String?
+  mercadoPagoToken String?
+}
+
+model Contact {
+  id             String        @id @default(uuid())
+  type           ContactType
+  content        String
+  organizationId String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+}
+
+model SocialNetwork {
+  id             String            @id @default(uuid())
+  type           SocialNetworkName
+  name           String?
+  link           String
+  organizationId String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  organization   Organization?     @relation(fields: [organizationId], references: [id])
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  text      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // favors    Favor[]
+  actions   Action[]
+}
+
+model Donation {
+  id            String        @id @default(uuid())
+  amount        BigInt        @db.BigInt
+  currency      Currency      @default(ARS)
+  userId        String
+  favorId       String?
+  actionId      String?
+  paymentStatus PaymentStatus @default(PENDING)
+  updatedAt     DateTime      @updatedAt
+  createdAt     DateTime      @default(now())
+  user          User          @relation(fields: [userId], references: [id])
+  action        Action?       @relation(fields: [actionId], references: [id])
+  // favors        Favor?        @relation(fields: [favorId], references: [id])
+}
+
+enum ODS {
+  NO_POVERTY
+  ZERO_HUNGER
+  GOOD_HEALTH
+  QUALITY_EDUCATION
+  GENDER_EQUITY
+  CLEAN_WATER
+  CLEAN_ENERGY
+  DECENT_WORK
+  INDUSTRY_INNOVATION_INFRASTRUCTURE
+  REDUCE_INEQUITIES
+  SUSTAINABLE_CITIES
+  RESPONSIBLE_CONSUMPTION_PRODUCTION
+  CLIMATE_ACTION
+  LIFE_BELOW_WATER
+  LIFE_ON_LAND
+  PEACE_JUSTICE_INSTITUTIONS
+  PARTNERSHIP_FOR_GOALS
+}
+
+enum Status {
+  DRAFT
+  INPROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum OrganizationStatus {
+  PENDING
+  IN_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum Currency {
+  USD
+  ARS
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+enum SocialNetworkName {
+  FACEBOOK
+  INSTAGRAM
+  LINKEDIN
+  TWITTER
+  OTHER
+}
+
+enum ContactType {
+  EMAIL
+  PHONE
+  SKYPE
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+}
+
+enum UserType {
+  USER
+  BUSINESS
+}

@@ -68,6 +68,7 @@ export const GET_ACTIONS = gql`
       createdAt
       mainImage
       organization {
+        name
         socialNetworks {
           type
           link

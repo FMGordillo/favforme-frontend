@@ -4,7 +4,6 @@ import { ButtonContainer, Container, RadioGroup } from "../styles";
 import { ErrorMessage, Field, Formik } from "formik";
 import { BaseErrorMessage } from "@/components/Form/FormField/styles";
 import { NextPage } from "next";
-import { ONGRequestFormValues } from "@/pages/ong/sumar-ong";
 
 export enum PaymentValues {
   NULL = "",
@@ -13,6 +12,13 @@ export enum PaymentValues {
   MERCADO_PAGO = "MercadoPago",
   CUENTA_BANCARIA = "CuentaBancaria",
 }
+type ONGRequestFormValues = {
+  name: string;
+  cuit: string;
+  representative_name: string;
+  representative_email: string;
+  has_payment_accounts: PaymentValues;
+};
 
 interface ONGRequestProps {
   onSubmit: (values: ONGRequestFormValues) => Promise<void>;
@@ -44,7 +50,7 @@ export const ONGRequestContainer: NextPage<ONGRequestProps> = ({
 }) => {
   const initialValues: ONGRequestFormValues = {
     name: "",
-    cuit: undefined,
+    cuit: "",
     representative_name: "",
     representative_email: "",
     has_payment_accounts: PaymentValues.NULL,

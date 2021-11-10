@@ -91,6 +91,7 @@ export const ActionPage: NextPage<ActionProps> = ({
                 alt="Logo"
                 width={150}
                 height={150}
+                className="ong-logo"
               />
               <p>{action?.organization?.history}</p>
             </Details>
