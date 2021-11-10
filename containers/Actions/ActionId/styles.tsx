@@ -54,7 +54,7 @@ export const Details = styled.details`
     margin-top: 14px !important;
   }
   .ong-logo {
-    border-radius: 100px;
+    border-radius: 50%;
   }
 `;
 
