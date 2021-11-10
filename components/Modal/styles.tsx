@@ -12,10 +12,11 @@ export const ModalContainer = styled.div`
 `;
 
 export const DialogContainer = styled.div`
+  z-index: 1050;
+  width: 100%;
+  background: white;
+  border-radius: 40px;
   ${({ theme }) => `
-      z-index: 1050;
-      width: 100%;
-      background: white;
       padding: ${theme.spacing(1)}em;
   `}
 `;
