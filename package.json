@@ -94,7 +94,7 @@
     "jsonpointer": "5.0.0"
   },
   "engines": {
-    "node": "14.15.0"
+    "node": "14"
   },
   "directories": {
     "lib": "lib"
