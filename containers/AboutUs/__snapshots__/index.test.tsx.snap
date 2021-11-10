@@ -282,7 +282,6 @@ exports[`[Container] About us renders correctly 1`] = `
 }
 
 .c7 > :first-child {
-  background: red;
   border-radius: 40px;
 }
 
