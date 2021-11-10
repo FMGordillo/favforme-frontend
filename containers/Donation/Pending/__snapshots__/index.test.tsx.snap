@@ -2,7 +2,7 @@
 
 exports[`[Container] Donation pending renders correctly 1`] = `
 <DocumentFragment>
-  .c14 {
+  .c13 {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
@@ -14,33 +14,33 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   background-color: #4f6be6;
 }
 
-.c14 > a {
+.c13 > a {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c14:disabled {
+.c13:disabled {
   cursor: not-allowed;
   background-color: #9BAAF6;
 }
 
-.c13 {
+.c12 {
   font-size: 2em;
   font-weight: 400;
   color: #4f6be6;
 }
 
-.c11 {
+.c10 {
   margin: 4em 0;
   margin: 0 4em;
 }
 
-.c15 {
+.c14 {
   background-color: #4f6be6;
 }
 
-.c20 {
+.c19 {
   display: grid;
   max-width: 400px;
   padding: 1em;
@@ -54,26 +54,26 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.c20 > * {
+.c19 > * {
   color: white;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-.c20 > *:hover {
+.c19 > *:hover {
   cursor: pointer;
 }
 
-.c20 > * > * {
+.c19 > * > * {
   width: 2em !important;
   height: 2em !important;
 }
 
-.c20 > *:hover {
+.c19 > *:hover {
   color: #27358d;
 }
 
-.c16 {
+.c15 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-gap: 1em;
@@ -82,25 +82,25 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   max-width: 1024px;
 }
 
-.c16 > :first-child {
+.c15 > :first-child {
   justify-self: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.c17 {
+.c16 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   list-style: none;
   padding: 0;
 }
 
-.c18 {
+.c17 {
   line-height: 2.5;
 }
 
-.c19 {
+.c18 {
   color: white;
   cursor: pointer;
   -webkit-text-decoration: none;
@@ -111,30 +111,30 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   transition: all ease-in-out 300ms;
 }
 
-.c19:hover {
+.c18:hover {
   border-color: white;
 }
 
-.c21 {
+.c20 {
   background-color: #27358d;
   text-align: center;
 }
 
-.c21 p {
+.c20 p {
   margin: 0;
   padding: 28px 0 16px;
   color: white;
   text-transform: uppercase;
 }
 
-.c21 .credits {
+.c20 .credits {
   font-size: 14px;
   text-transform: none;
   padding: 0 0 24px;
   color: #4f6be6;
 }
 
-.c21 a {
+.c20 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #9BAAF6;
@@ -144,7 +144,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   background-color: #FFF;
 }
 
-.c8 {
+.c7 {
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.webp");
@@ -158,7 +158,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   transition: height 300ms;
 }
 
-.c9 {
+.c8 {
   color: white;
   -webkit-transform: translateY(-64px);
   -ms-transform: translateY(-64px);
@@ -169,7 +169,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   transition: transform 300ms;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   font-size: 50px;
   text-overflow: ellipsis;
@@ -178,7 +178,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   text-align: center;
 }
 
-.c10 mark {
+.c9 mark {
   color: white;
   background-color: #4f6be6;
 }
@@ -275,33 +275,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   color: #f38d9f;
 }
 
-.c7 {
-  position: absolute;
-  background: white;
-  margin: 72px 0;
-  padding: 12px;
-  padding-right: 24px;
-  top: 0;
-  right: 0;
-  border-radius: 20px 0 0 20px;
-}
-
-.c7 p {
-  color: #4f6be6;
-  font-weight: bolder;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.c7 > :first-child {
-  border-radius: 40px;
-}
-
-.c7:hover {
-  cursor: pointer;
-}
-
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -316,41 +290,41 @@ exports[`[Container] Donation pending renders correctly 1`] = `
   margin-bottom: 32px;
 }
 
-.c12 p {
+.c11 p {
   text-align: center;
 }
 
 @media (max-width:600px) {
-  .c11 {
+  .c10 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:600px) {
-  .c16 {
+  .c15 {
     grid-template-columns: 1fr;
   }
 
-  .c16 > :last-child {
+  .c15 > :last-child {
     text-align: center;
     justify-self: center;
   }
 }
 
 @media (max-width:960px) {
-  .c17 {
+  .c16 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c8 {
+  .c7 {
     height: 300px;
   }
 }
 
 @media (max-width:960px) {
-  .c9 {
+  .c8 {
     -webkit-transform: translateY(0px);
     -ms-transform: translateY(0px);
     transform: translateY(0px);
@@ -358,13 +332,13 @@ exports[`[Container] Donation pending renders correctly 1`] = `
 }
 
 @media (max-width:600px) {
-  .c9 {
+  .c8 {
     padding: 0;
   }
 }
 
 @media (max-width:960px) {
-  .c10 {
+  .c9 {
     width: inherit;
   }
 }
@@ -429,12 +403,6 @@ exports[`[Container] Donation pending renders correctly 1`] = `
 @media (max-width:600px) {
   .c6 {
     display: block;
-  }
-}
-
-@media (max-width:600px) {
-  .c7 {
-    display: none;
   }
 }
 
@@ -528,54 +496,26 @@ exports[`[Container] Donation pending renders correctly 1`] = `
             Contacto
           </a>
         </li>
-        <div
-          class="c7"
-        >
-          <span
-            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-          >
-            <span
-              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iNzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-              />
-            </span>
-            <img
-              data-nimg="intrinsic"
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-            />
-            <noscript />
-          </span>
-          <p>
-            Iniciar sesión
-          </p>
-        </div>
       </ul>
     </nav>
     <header
-      class="c8"
+      class="c7"
     >
       <div
-        class="c9"
+        class="c8"
       >
         <h1
-          class="c10"
+          class="c9"
         >
           Donación pendiente
         </h1>
       </div>
     </header>
     <section
-      class="c11 c12"
+      class="c10 c11"
     >
       <h1
-        class="c13"
+        class="c12"
       >
         Donación pendiente
       </h1>
@@ -607,16 +547,16 @@ exports[`[Container] Donation pending renders correctly 1`] = `
         te vamos a mantener informado del estado
       </p>
       <button
-        class="c14"
+        class="c13"
       >
         Volver
       </button>
     </section>
     <section
-      class="c15"
+      class="c14"
     >
       <div
-        class="c16"
+        class="c15"
       >
         <div>
           <a
@@ -648,52 +588,52 @@ exports[`[Container] Donation pending renders correctly 1`] = `
           </a>
         </div>
         <ul
-          class="c17"
+          class="c16"
         >
           <li
-            class="c18"
+            class="c17"
           >
             <a
-              class="c19"
+              class="c18"
               href="/acciones"
             >
               Acciones
             </a>
           </li>
           <li
-            class="c18"
+            class="c17"
           >
             <a
-              class="c19"
+              class="c18"
               href="/nosotros"
             >
               FavForMe
             </a>
           </li>
           <li
-            class="c18"
+            class="c17"
           >
             <a
-              class="c19"
+              class="c18"
               href="/#brands"
             >
               Empresas
             </a>
           </li>
           <li
-            class="c18"
+            class="c17"
           >
             <a
-              class="c19"
+              class="c18"
             >
               Contacto
             </a>
           </li>
           <li
-            class="c18"
+            class="c17"
           >
             <a
-              class="c19"
+              class="c18"
               href="/terms_and_conditions"
             >
               Términos de uso
@@ -702,7 +642,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="c20"
+        class="c19"
       >
         <a
           aria-label="LinkedIn"
@@ -794,7 +734,7 @@ exports[`[Container] Donation pending renders correctly 1`] = `
         </a>
       </div>
       <section
-        class="c21"
+        class="c20"
       >
         <p>
           FavForMe 2021 - All rights reserved

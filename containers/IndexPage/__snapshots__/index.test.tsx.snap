@@ -2,7 +2,7 @@
 
 exports[`[Container] Index renders correctly 1`] = `
 <DocumentFragment>
-  .c11 {
+  .c10 {
   border: none;
   color: #111;
   cursor: pointer;
@@ -15,23 +15,23 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #f38d9f;
 }
 
-.c11 > a {
+.c10 > a {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c11:hover {
+.c10:hover {
   color: #111;
   background-color: #FFBCC4;
 }
 
-.c11:disabled {
+.c10:disabled {
   cursor: not-allowed;
   background-color: #FFBCC4;
 }
 
-.c22 {
+.c21 {
   border: none;
   color: #FFF;
   cursor: pointer;
@@ -44,22 +44,22 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #4f6be6;
 }
 
-.c22 > a {
+.c21 > a {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c22:hover {
+.c21:hover {
   color: #FFF;
 }
 
-.c22:disabled {
+.c21:disabled {
   cursor: not-allowed;
   background-color: #9BAAF6;
 }
 
-.c27 {
+.c26 {
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
@@ -75,15 +75,15 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #027aa8;
 }
 
-.c27:hover {
+.c26:hover {
   background-color: #003f57;
 }
 
-.c27:disabled {
+.c26:disabled {
   background-color: #003f57;
 }
 
-.c34 {
+.c33 {
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
@@ -99,42 +99,42 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #4f6be6;
 }
 
-.c34:hover {
+.c33:hover {
   color: #000;
   background-color: #9BAAF6;
 }
 
-.c34:disabled {
+.c33:disabled {
   background-color: #9BAAF6;
 }
 
-.c17 {
+.c16 {
   font-size: 2em;
   font-weight: 400;
   color: #4f6be6;
 }
 
-.c19 {
+.c18 {
   line-height: 1.75em;
   text-align: center;
 }
 
-.c24 {
+.c23 {
   margin: 4em 0;
   margin: 0 4em;
 }
 
-.c13 {
+.c12 {
   border: none;
   padding-top: 48px;
   padding-bottom: 28px;
 }
 
-.c43 {
+.c42 {
   background-color: #4f6be6;
 }
 
-.c48 {
+.c47 {
   display: grid;
   max-width: 400px;
   padding: 1em;
@@ -148,26 +148,26 @@ exports[`[Container] Index renders correctly 1`] = `
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.c48 > * {
+.c47 > * {
   color: white;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
 
-.c48 > *:hover {
+.c47 > *:hover {
   cursor: pointer;
 }
 
-.c48 > * > * {
+.c47 > * > * {
   width: 2em !important;
   height: 2em !important;
 }
 
-.c48 > *:hover {
+.c47 > *:hover {
   color: #27358d;
 }
 
-.c44 {
+.c43 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-gap: 1em;
@@ -176,25 +176,25 @@ exports[`[Container] Index renders correctly 1`] = `
   max-width: 1024px;
 }
 
-.c44 > :first-child {
+.c43 > :first-child {
   justify-self: center;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
 }
 
-.c45 {
+.c44 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   list-style: none;
   padding: 0;
 }
 
-.c46 {
+.c45 {
   line-height: 2.5;
 }
 
-.c47 {
+.c46 {
   color: white;
   cursor: pointer;
   -webkit-text-decoration: none;
@@ -205,30 +205,30 @@ exports[`[Container] Index renders correctly 1`] = `
   transition: all ease-in-out 300ms;
 }
 
-.c47:hover {
+.c46:hover {
   border-color: white;
 }
 
-.c49 {
+.c48 {
   background-color: #27358d;
   text-align: center;
 }
 
-.c49 p {
+.c48 p {
   margin: 0;
   padding: 28px 0 16px;
   color: white;
   text-transform: uppercase;
 }
 
-.c49 .credits {
+.c48 .credits {
   font-size: 14px;
   text-transform: none;
   padding: 0 0 24px;
   color: #4f6be6;
 }
 
-.c49 a {
+.c48 a {
   -webkit-text-decoration: none;
   text-decoration: none;
   color: #9BAAF6;
@@ -238,7 +238,7 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #FFF;
 }
 
-.c8 {
+.c7 {
   background-size: cover;
   background-position: center;
   background-image: url("/images/plato_de_comida.webp");
@@ -252,7 +252,7 @@ exports[`[Container] Index renders correctly 1`] = `
   transition: height 300ms;
 }
 
-.c9 {
+.c8 {
   color: white;
   -webkit-transform: translateY(-64px);
   -ms-transform: translateY(-64px);
@@ -263,7 +263,7 @@ exports[`[Container] Index renders correctly 1`] = `
   transition: transform 300ms;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   font-size: 50px;
   text-overflow: ellipsis;
@@ -272,12 +272,12 @@ exports[`[Container] Index renders correctly 1`] = `
   text-align: left;
 }
 
-.c10 mark {
+.c9 mark {
   color: white;
   background-color: #4f6be6;
 }
 
-.c12 {
+.c11 {
   width: 200px;
   margin: 24px 0;
   font-weight: bold;
@@ -375,33 +375,7 @@ exports[`[Container] Index renders correctly 1`] = `
   color: #f38d9f;
 }
 
-.c7 {
-  position: absolute;
-  background: white;
-  margin: 72px 0;
-  padding: 12px;
-  padding-right: 24px;
-  top: 0;
-  right: 0;
-  border-radius: 20px 0 0 20px;
-}
-
-.c7 p {
-  color: #4f6be6;
-  font-weight: bolder;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.c7 > :first-child {
-  border-radius: 40px;
-}
-
-.c7:hover {
-  cursor: pointer;
-}
-
-.c38 {
+.c37 {
   display: grid;
   max-width: 1200px;
   grid-template-columns: repeat(12,1fr);
@@ -409,7 +383,7 @@ exports[`[Container] Index renders correctly 1`] = `
   margin: 0 auto;
 }
 
-.c38 > a {
+.c37 > a {
   position: relative;
   display: block;
   margin: 0.4em !important;
@@ -424,33 +398,33 @@ exports[`[Container] Index renders correctly 1`] = `
   transition: transform 0.3s ease-in-out;
 }
 
-.c38 > a:hover {
+.c37 > a:hover {
   -webkit-transform: scale(1.1,1.1);
   -ms-transform: scale(1.1,1.1);
   transform: scale(1.1,1.1);
 }
 
-.c38 > a:nth-child(-n + 4) {
+.c37 > a:nth-child(-n + 4) {
   grid-column: span 3;
 }
 
-.c38 > a:nth-child(n + 4) {
+.c37 > a:nth-child(n + 4) {
   grid-column: span 3;
 }
 
-.c38 > a:nth-child(5) {
+.c37 > a:nth-child(5) {
   justify-self: right;
 }
 
-.c38 > a:nth-child(8) {
+.c37 > a:nth-child(8) {
   justify-self: left;
 }
 
-.c37 {
+.c36 {
   text-align: center;
 }
 
-.c29 {
+.c28 {
   display: grid;
   grid-gap: 4em;
   margin: 0 auto;
@@ -462,17 +436,17 @@ exports[`[Container] Index renders correctly 1`] = `
   max-width: 1024px;
 }
 
-.c30 {
+.c29 {
   text-align: center;
   display: grid;
   grid-template-rows: 250px auto auto;
 }
 
-.c40 {
+.c39 {
   text-align: left;
 }
 
-.c39 {
+.c38 {
   display: grid;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr;
@@ -484,15 +458,15 @@ exports[`[Container] Index renders correctly 1`] = `
   align-items: center;
 }
 
-.c39 .first-element {
+.c38 .first-element {
   text-align: right;
 }
 
-.c41 {
+.c40 {
   line-height: 1.75em;
 }
 
-.c42 {
+.c41 {
   margin-top: 0;
   font-family: dosis;
   font-size: 2em;
@@ -501,24 +475,24 @@ exports[`[Container] Index renders correctly 1`] = `
   color: #4f6be6;
 }
 
-.c42 a {
+.c41 a {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c42 a:hover {
+.c41 a:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c14 {
+.c13 {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-areas: "left-image text right-image" "ods ods ods" "ods-container ods-container ods-container" ". button .";
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -529,15 +503,15 @@ exports[`[Container] Index renders correctly 1`] = `
   justify-content: center;
 }
 
-.c15 {
+.c14 {
   grid-area: left-image;
 }
 
-.c20 {
+.c19 {
   grid-area: right-image;
 }
 
-.c16 {
+.c15 {
   grid-area: text;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
@@ -546,11 +520,11 @@ exports[`[Container] Index renders correctly 1`] = `
   margin: 0 2em;
 }
 
-.c18 mark {
+.c17 mark {
   background-color: #9BAAF6;
 }
 
-.c25 {
+.c24 {
   color: #027aa8;
   font-size: 1.25em;
   font-weight: 700;
@@ -559,17 +533,17 @@ exports[`[Container] Index renders correctly 1`] = `
   max-width: 1024px;
 }
 
-.c25 a {
+.c24 a {
   color: inherit;
   -webkit-transition: color 300ms;
   transition: color 300ms;
 }
 
-.c25 a:hover {
+.c24 a:hover {
   color: #4f6be6;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -586,7 +560,7 @@ exports[`[Container] Index renders correctly 1`] = `
   margin: 2em 0;
 }
 
-.c26 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -602,35 +576,35 @@ exports[`[Container] Index renders correctly 1`] = `
   grid-area: ods-container;
 }
 
-.c26 > * {
+.c25 > * {
   margin: 0 0.5em;
   -webkit-transition: all 500ms ease-in;
   transition: all 500ms ease-in;
 }
 
-.c26 .img.smallest {
+.c25 .img.smallest {
   width: 75px;
   opacity: 0.15;
 }
 
-.c26 .img.smaller {
+.c25 .img.smaller {
   width: 100px;
   opacity: 0.5;
 }
 
-.c26 .img.small {
+.c25 .img.small {
   width: 125px;
   opacity: 0.85;
 }
 
-.c28 {
+.c27 {
   justify-self: center;
   width: 300px;
   margin-top: 2em;
   grid-area: button;
 }
 
-.c32 {
+.c31 {
   display: grid;
   grid-gap: 4em;
   grid-template-columns: 1fr 1fr;
@@ -638,54 +612,54 @@ exports[`[Container] Index renders correctly 1`] = `
   background-color: #f6f6f6;
 }
 
-.c32 p {
+.c31 p {
   line-height: 1.75em;
   max-width: 400px;
 }
 
-.c33 {
+.c32 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   justify-self: right;
 }
 
-.c35 {
+.c34 {
   display: block;
   width: 170px;
 }
 
 @media (max-width:600px) {
-  .c24 {
+  .c23 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:600px) {
-  .c44 {
+  .c43 {
     grid-template-columns: 1fr;
   }
 
-  .c44 > :last-child {
+  .c43 > :last-child {
     text-align: center;
     justify-self: center;
   }
 }
 
 @media (max-width:960px) {
-  .c45 {
+  .c44 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c8 {
+  .c7 {
     height: 400px;
   }
 }
 
 @media (max-width:960px) {
-  .c9 {
+  .c8 {
     -webkit-transform: translateY(0px);
     -ms-transform: translateY(0px);
     transform: translateY(0px);
@@ -693,14 +667,14 @@ exports[`[Container] Index renders correctly 1`] = `
 }
 
 @media (max-width:600px) {
-  .c9 {
+  .c8 {
     padding: 0;
     padding-left: 48px;
   }
 }
 
 @media (max-width:960px) {
-  .c10 {
+  .c9 {
     width: 100%;
   }
 }
@@ -768,61 +742,71 @@ exports[`[Container] Index renders correctly 1`] = `
   }
 }
 
-@media (max-width:600px) {
-  .c7 {
-    display: none;
-  }
-}
-
 @media (max-width:960px) {
-  .c36 {
+  .c35 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:960px) {
-  .c38 {
+  .c37 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .c38 > a:nth-child(-n + 4) {
+  .c37 > a:nth-child(-n + 4) {
     grid-column: inherit;
   }
 
-  .c38 > a:nth-child(n + 5) {
+  .c37 > a:nth-child(n + 5) {
     grid-column: inherit;
   }
 
-  .c38 > a:nth-child(5) {
+  .c37 > a:nth-child(5) {
     justify-self: inherit;
   }
 
-  .c38 > a:nth-child(7) {
+  .c37 > a:nth-child(7) {
     justify-self: inherit;
   }
 }
 
 @media (max-width:600px) {
-  .c38 {
+  .c37 {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width:960px) {
-  .c29 {
+  .c28 {
     grid-template-columns: 1fr;
     margin: 0 4em;
   }
 }
 
 @media (max-width:600px) {
-  .c29 {
+  .c28 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:960px) {
-  .c31 {
+  .c30 {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c39 {
+    text-align: center;
+  }
+}
+
+@media (max-width:960px) {
+  .c38 {
+    grid-template-columns: 1fr;
+  }
+
+  .c38 .first-element {
     text-align: center;
   }
 }
@@ -834,91 +818,75 @@ exports[`[Container] Index renders correctly 1`] = `
 }
 
 @media (max-width:960px) {
-  .c39 {
-    grid-template-columns: 1fr;
-  }
-
-  .c39 .first-element {
-    text-align: center;
-  }
-}
-
-@media (max-width:960px) {
   .c41 {
     text-align: center;
   }
 }
 
-@media (max-width:960px) {
-  .c42 {
-    text-align: center;
-  }
-}
-
 @media (max-width:1070px) {
-  .c14 {
+  .c13 {
     grid-template-areas: "text text text" "ods ods ods" "ods-container ods-container ods-container" ". button .";
   }
 
-  .c14 > :first-child {
+  .c13 > :first-child {
     display: none !important;
   }
 
-  .c14 > :nth-child(3) {
+  .c13 > :nth-child(3) {
     display: none !important;
   }
 }
 
 @media (min-width:1920px) {
-  .c16 {
+  .c15 {
     margin: 0 4em;
   }
 }
 
 @media (max-width:960px) {
-  .c16 {
+  .c15 {
     margin: 0 4em;
   }
 }
 
 @media (max-width:600px) {
-  .c16 {
+  .c15 {
     margin: 0 2em;
   }
 }
 
 @media (max-width:600px) {
-  .c25 {
+  .c24 {
     padding: 2em 0 2.5em;
   }
 }
 
 @media (max-width:960px) {
-  .c26 {
+  .c25 {
     margin: 4em 2em;
   }
 }
 
 @media (max-width:960px) {
-  .c26 .img.smallest {
+  .c25 .img.smallest {
     display: none;
   }
 }
 
 @media (max-width:600px) {
-  .c26 .img.smaller {
+  .c25 .img.smaller {
     display: none;
   }
 }
 
 @media (max-width:960px) {
-  .c32 {
+  .c31 {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 0;
   }
 
-  .c32 .text {
+  .c31 .text {
     display: grid;
     text-align: center;
     justify-items: center;
@@ -926,7 +894,7 @@ exports[`[Container] Index renders correctly 1`] = `
 }
 
 @media (max-width:960px) {
-  .c33 {
+  .c32 {
     justify-self: center;
   }
 }
@@ -1021,44 +989,16 @@ exports[`[Container] Index renders correctly 1`] = `
             Contacto
           </a>
         </li>
-        <div
-          class="c7"
-        >
-          <span
-            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
-          >
-            <span
-              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUiIGhlaWdodD0iNzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-              />
-            </span>
-            <img
-              data-nimg="intrinsic"
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-            />
-            <noscript />
-          </span>
-          <p>
-            Iniciar sesión
-          </p>
-        </div>
       </ul>
     </nav>
     <header
-      class="c8"
+      class="c7"
     >
       <div
-        class="c9"
+        class="c8"
       >
         <h1
-          class="c10"
+          class="c9"
         >
           <span>
             Hay muchas personas
@@ -1069,7 +1009,7 @@ exports[`[Container] Index renders correctly 1`] = `
           </span>
         </h1>
         <button
-          class="c11 c12"
+          class="c10 c11"
           color="secondary"
         >
           <svg
@@ -1092,13 +1032,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </header>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c14"
+      class="c13"
     >
       <div
-        class="c15"
+        class="c14"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 350px; height: 330px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
@@ -1114,10 +1054,10 @@ exports[`[Container] Index renders correctly 1`] = `
         </span>
       </div>
       <div
-        class="c16"
+        class="c15"
       >
         <h1
-          class="c17 c18"
+          class="c16 c17"
         >
           SOMOS LA 
           <strong>
@@ -1130,13 +1070,13 @@ exports[`[Container] Index renders correctly 1`] = `
            DE LATINOAMÉRICA
         </h1>
         <p
-          class="c19"
+          class="c18"
         >
           En FavForMe creamos un espacio que ayuda a las ONGs a conseguir los recursos necesarios para realizar acciones de impacto social a través de crowdfunding
         </p>
       </div>
       <div
-        class="c20"
+        class="c19"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; width: 340px; height: 330px; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
@@ -1153,29 +1093,29 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <section
-      class="c21"
+      class="c20"
     >
       <a
         href="/whitepaper"
       >
         <button
-          class="c22"
+          class="c21"
         >
           Ver Whitepaper
         </button>
       </a>
     </section>
     <hr
-      class="c13"
+      class="c12"
     />
     <hr
-      class="c13"
+      class="c12"
     />
     <div
       style="display: flex; flex-direction: column; align-items: center;"
     >
       <div
-        class="c23"
+        class="c22"
       >
         <a
           href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
@@ -1206,10 +1146,10 @@ exports[`[Container] Index renders correctly 1`] = `
           </span>
         </a>
         <section
-          class="c24"
+          class="c23"
         >
           <p
-            class="c25"
+            class="c24"
           >
             El equipo de FavForMe se especializó en los 
             <a
@@ -1224,7 +1164,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </section>
       </div>
       <section
-        class="c24 c26"
+        class="c23 c25"
       >
         <div
           class="img smallest"
@@ -1408,7 +1348,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </div>
       </section>
       <a
-        class="c27 c28"
+        class="c26 c27"
         color="#027aa8"
         href="https://www1.undp.org/content/undp/es/home/sustainable-development-goals.html"
         rel="noreferrer noopener"
@@ -1418,14 +1358,14 @@ exports[`[Container] Index renders correctly 1`] = `
       </a>
     </div>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c24 c29"
+      class="c23 c28"
       id="call_to_actions"
     >
       <section
-        class="c30"
+        class="c29"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1450,12 +1390,12 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </span>
         <h1
-          class="c17"
+          class="c16"
         >
           SOS PERSONA
         </h1>
         <p
-          class="c19 c31"
+          class="c18 c30"
         >
           Doná en las acciones para que muchas personas tengan la oportunidad y logren alcanzar sus sueños. 
           <br />
@@ -1467,7 +1407,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </p>
       </section>
       <section
-        class="c30"
+        class="c29"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1492,18 +1432,18 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </span>
         <h1
-          class="c17"
+          class="c16"
         >
           SOS EMPRESA
         </h1>
         <p
-          class="c19 c31"
+          class="c18 c30"
         >
           Generá Responsabilidad Social Empresarial y fomentá las acciones de impacto social positivo con tus stakeholders
         </p>
       </section>
       <section
-        class="c30"
+        class="c29"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1528,26 +1468,26 @@ exports[`[Container] Index renders correctly 1`] = `
           <noscript />
         </span>
         <h1
-          class="c17"
+          class="c16"
         >
           SOS ONG
         </h1>
         <p
-          class="c19 c31"
+          class="c18 c30"
         >
           Conseguí fondos para cumplir con tus objetivos, logrando que más personas apoyen a la causa. Contanos tu historia
         </p>
       </section>
     </section>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c32"
+      class="c31"
       id="rse"
     >
       <div
-        class="c33"
+        class="c32"
       >
         <span
           style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
@@ -1576,7 +1516,7 @@ exports[`[Container] Index renders correctly 1`] = `
         class="text"
       >
         <h1
-          class="c17"
+          class="c16"
         >
           Tu empresa con R.S.E.
         </h1>
@@ -1584,7 +1524,7 @@ exports[`[Container] Index renders correctly 1`] = `
           Existen muchas pequeñas y medianas empresas que, si bien no cuentan con un área específica dedicada a la responsabilidad social; tienen interés de crear o participar de este tipo de programas ofreciendo productos, servicios, horas de apoyo y hasta fondos
         </p>
         <a
-          class="c34 c35"
+          class="c33 c34"
           href="mailto:hello@favforme.com?subject=Quiero%20sumar%20mi%20empresa"
           rel="noreferrer noopener"
           target="_blank"
@@ -1594,19 +1534,19 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c36"
+      class="c35"
       id="brands"
     >
       <h1
-        class="c17 c37"
+        class="c16 c36"
       >
         Nuestros aliados
       </h1>
       <section
-        class="c24 c38"
+        class="c23 c37"
       >
         <a
           href="https://trilogylab.com/"
@@ -1835,13 +1775,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </section>
     </section>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c24"
+      class="c23"
     >
       <div
-        class="c39"
+        class="c38"
       >
         <div
           class="first-element"
@@ -1873,17 +1813,17 @@ exports[`[Container] Index renders correctly 1`] = `
           class="second-element"
         >
           <h1
-            class="c17 c40"
+            class="c16 c39"
           >
             Apoyá esta gran iniciativa
           </h1>
           <p
-            class="c41"
+            class="c40"
           >
             Si formás parte de una ONG o una empresa, sumate a esta plataforma; contactate directamente para recibir con más detalle todo lo que podés hacer junto a FavForMe.
           </p>
           <p
-            class="c42"
+            class="c41"
           >
             <a
               aria-label="hello@favforme.com"
@@ -1907,13 +1847,13 @@ exports[`[Container] Index renders correctly 1`] = `
       </div>
     </section>
     <hr
-      class="c13"
+      class="c12"
     />
     <section
-      class="c43"
+      class="c42"
     >
       <div
-        class="c44"
+        class="c43"
       >
         <div>
           <a
@@ -1945,52 +1885,52 @@ exports[`[Container] Index renders correctly 1`] = `
           </a>
         </div>
         <ul
-          class="c45"
+          class="c44"
         >
           <li
-            class="c46"
+            class="c45"
           >
             <a
-              class="c47"
+              class="c46"
               href="/acciones"
             >
               Acciones
             </a>
           </li>
           <li
-            class="c46"
+            class="c45"
           >
             <a
-              class="c47"
+              class="c46"
               href="/nosotros"
             >
               FavForMe
             </a>
           </li>
           <li
-            class="c46"
+            class="c45"
           >
             <a
-              class="c47"
+              class="c46"
               href="/#brands"
             >
               Empresas
             </a>
           </li>
           <li
-            class="c46"
+            class="c45"
           >
             <a
-              class="c47"
+              class="c46"
             >
               Contacto
             </a>
           </li>
           <li
-            class="c46"
+            class="c45"
           >
             <a
-              class="c47"
+              class="c46"
               href="/terms_and_conditions"
             >
               Términos de uso
@@ -1999,7 +1939,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </ul>
       </div>
       <div
-        class="c48"
+        class="c47"
       >
         <a
           aria-label="LinkedIn"
@@ -2091,7 +2031,7 @@ exports[`[Container] Index renders correctly 1`] = `
         </a>
       </div>
       <section
-        class="c49"
+        class="c48"
       >
         <p>
           FavForMe 2021 - All rights reserved
