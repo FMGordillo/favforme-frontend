@@ -41,7 +41,7 @@
     "graphql": "15.4.0",
     "next": "12.0.1",
     "next-auth": "4.0.0-beta.6",
-    "next-pwa": "5.3.1",
+    "next-pwa": "5.4.0",
     "next-seo": "4.17.0",
     "nextjs-progressbar": "0.0.11",
     "notion-client": "4.9.7",
@@ -65,7 +65,6 @@
     "@types/react-dom": "17.0.3",
     "@types/styled-components": "5.1.4",
     "@types/testing-library__jest-dom": "5.9.5",
-    "@types/testing-library__react": "10.2.0",
     "@types/yup": "0.29.11",
     "@typescript-eslint/eslint-plugin": "4.26.0",
     "@typescript-eslint/parser": "4.9.0",
@@ -90,6 +89,9 @@
     "prisma": "3.4.0",
     "ts-jest": "27.0.7",
     "typescript": "4.4.2"
+  },
+  "resolutions": {
+    "jsonpointer": "5.0.0"
   },
   "engines": {
     "node": "14.15.0"
