@@ -54,6 +54,8 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "7.16.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@next/eslint-plugin-next": "12.0.3",
     "@testing-library/dom": "7.29.4",
     "@testing-library/jest-dom": "5.11.9",
@@ -112,6 +114,11 @@
     "*.{ts,tsx}": [
       "prettier -w",
       "npm run test:ci -- --bail --findRelatedTests --passWithNoTests"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
