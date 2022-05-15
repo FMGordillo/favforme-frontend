@@ -108,7 +108,7 @@ const ActionCard: FunctionComponent<ActionProps> = ({ carousel, data }) => {
                       action: data?.id,
                     },
                   })
-                : handleModal(<DonationUnavailableModal />)
+                : handleModal(DonationUnavailableModal)
             }
           >
             DON&Aacute; <FontAwesomeIcon icon={faHeart} />

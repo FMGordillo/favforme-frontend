@@ -8,9 +8,9 @@ export interface UseModalReturn {
 
 export const useModal = (): UseModalReturn => {
   const [modal, setModal] = useState(false);
-  const [modalContent, setModalContent] = useState<ReactNode>(null);
+  const [modalContent, setModalContent] = useState<ReactNode>(undefined);
 
-  const handleModal = (content: ReactNode = false) => {
+  const handleModal = (content: ReactNode) => {
     setModal(!modal);
     if (content) {
       setModalContent(content);

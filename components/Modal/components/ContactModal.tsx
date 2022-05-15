@@ -1,10 +1,10 @@
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { DialogContainer, DialogTitle } from "../styles";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { FunctionComponent } from "react";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
-import { DialogContainer, DialogTitle } from "../styles";
 
 const ModalContent = styled.div`
   display: grid;
@@ -13,7 +13,7 @@ const ModalContent = styled.div`
   justify-items: center;
 `;
 
-export const ContactModal: FunctionComponent = () => {
+export const ContactModal: FC = () => {
   return (
     <DialogContainer>
       <DialogTitle>Contacto</DialogTitle>

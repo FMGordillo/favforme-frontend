@@ -3,7 +3,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:@next/next/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
@@ -15,11 +14,9 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
-    "jest": true
+    "es6": true
   },
   "plugins": [
-    "prettier",
     "@typescript-eslint"
   ],
   "parserOptions": {
