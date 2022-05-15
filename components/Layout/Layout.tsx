@@ -1,7 +1,7 @@
+import { FunctionComponent, ReactNode } from "react";
 import { HeadComponent, HeadProps } from "../Head";
 import { Header, HeaderProps } from "../../components";
 import { Footer } from "./Footer";
-import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 interface LayoutProps {
@@ -11,6 +11,7 @@ interface LayoutProps {
   headProps?: HeadProps;
   headerProps?: HeaderProps;
   toggleModal?: () => void;
+  children?: ReactNode;
 }
 
 const Container = styled.main`

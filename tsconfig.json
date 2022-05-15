@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "rootDir": ".",
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "target": "es5",
     "paths": {
       "@/*": [

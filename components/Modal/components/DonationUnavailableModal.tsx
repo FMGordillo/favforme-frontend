@@ -1,8 +1,8 @@
 import * as yup from "yup";
 import { Button, FormInput } from "@/components";
 import { DialogContainer, DialogTitle } from "../styles";
+import { FC, ReactNode, useEffect } from "react";
 import { FormikValues, useFormik } from "formik";
-import { FunctionComponent, useEffect } from "react";
 import axios from "axios";
 import { event } from "@/lib/gtag";
 import styled from "styled-components";
@@ -35,7 +35,7 @@ const schema = yup.object({
   firstName: yup.string().optional(),
 });
 
-export const DonationUnavailableModal: FunctionComponent = () => {
+export const DonationUnavailableModal = () => {
   const { createNotification } = useNotifications();
 
   const onSubmit = async (e: FormikValues) => {
@@ -51,20 +51,15 @@ export const DonationUnavailableModal: FunctionComponent = () => {
     }
   };
 
-  const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    isValid,
-    submitForm,
-  } = useFormik({
-    validationSchema: schema,
-    initialValues: {
-      email: "",
-      firstName: "",
-    },
-    onSubmit,
-  });
+  const { handleBlur, handleChange, handleSubmit, isValid, submitForm } =
+    useFormik({
+      validationSchema: schema,
+      initialValues: {
+        email: "",
+        firstName: "",
+      },
+      onSubmit,
+    });
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {

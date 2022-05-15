@@ -6,8 +6,8 @@ import {
   faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent } from "react";
 import styled from "styled-components";
 
 const ModalContent = styled.div`
@@ -36,10 +36,7 @@ type ShareActionModalProps = {
   text: string;
 };
 
-export const ShareActionModal: FunctionComponent<ShareActionModalProps> = ({
-  url,
-  text,
-}) => {
+export const ShareActionModal: FC<ShareActionModalProps> = ({ url, text }) => {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
   const urlFormed = encodeURIComponent(`${BASE_URL}${url}`);
   const whatsappText = encodeURIComponent(`${BASE_URL}/${text} (${url})`);

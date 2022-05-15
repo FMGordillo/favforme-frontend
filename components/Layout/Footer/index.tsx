@@ -7,6 +7,7 @@ import {
   MapUl,
   SocialNetworks,
 } from "./styles";
+import { FunctionComponent, ReactNode } from "react";
 import {
   faFacebook,
   faInstagram,
@@ -14,7 +15,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FunctionComponent } from "react";
 import Image from "next/image";
 import NextLink from "next/link";
 
@@ -22,7 +22,13 @@ interface FooterProps {
   toggleModal?: () => void;
 }
 
-const MapItem: FunctionComponent<{ href?: string; onClick?: () => void }> = ({
+type MapItemProps = {
+  href?: string;
+  onClick?: () => void;
+  children?: ReactNode;
+};
+
+const MapItem: FunctionComponent<MapItemProps> = ({
   children,
   onClick,
   href,

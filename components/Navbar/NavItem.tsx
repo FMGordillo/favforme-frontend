@@ -1,4 +1,4 @@
-import { FunctionComponent, cloneElement } from "react";
+import { FunctionComponent, ReactNode, cloneElement } from "react";
 import { Item, Link } from "./styles";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 interface NavItemProps {
   href?: string;
   image?: boolean;
+  children?: ReactNode;
   onClick?: () => void;
   isProfileButton?: boolean;
 }

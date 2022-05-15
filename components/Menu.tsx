@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface MenuProps {
   open?: boolean;
+  children?: ReactNode;
   toggleContainer?: ReactNode;
 }
 

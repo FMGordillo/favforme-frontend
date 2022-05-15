@@ -21,7 +21,7 @@ export const Notification: FunctionComponent = () => {
   const { notification, removeNotification: removeError } = useNotifications();
   return (
     <Container
-      className={!!notification ? "show" : "hide"}
+      className={notification ? "show" : "hide"}
       show={!!notification}
       status={notification?.status}
     >
