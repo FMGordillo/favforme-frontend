@@ -1,8 +1,11 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
+    "eslint:recommended",
     "plugin:@next/next/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "settings": {
     "react": {
@@ -15,7 +18,10 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
   "parserOptions": {
     "ecmaFunction": {
       "jsx": true
@@ -24,8 +30,10 @@
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": "error",
-    "sort-imports": "warn"
+    "sort-imports": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn"
   },
-  "globals": { "React": "writable" }
+  "globals": {
+    "React": "writable"
+  }
 }

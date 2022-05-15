@@ -80,12 +80,14 @@ const Carousel: FunctionComponent<CarouselProps> = ({
     prev: false,
     next: true,
   });
-  const scrollPrev = useCallback(() => instance && instance.scrollPrev(), [
-    instance,
-  ]);
-  const scrollNext = useCallback(() => instance && instance.scrollNext(), [
-    instance,
-  ]);
+  const scrollPrev = useCallback(
+    () => instance && instance.scrollPrev(),
+    [instance]
+  );
+  const scrollNext = useCallback(
+    () => instance && instance.scrollNext(),
+    [instance]
+  );
 
   // Components to render. TODO: Improve code somehow?
   const Main = overrides?.Main || Embla;
