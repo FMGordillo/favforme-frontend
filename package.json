@@ -15,7 +15,6 @@
     "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "coverage": "jest --coverage",
-    "test:update": "jest --updateSnapshot",
     "prepare": "husky install"
   },
   "keywords": [],
