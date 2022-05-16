@@ -11,7 +11,6 @@ interface NavItemProps {
 }
 
 export const NavItem: FunctionComponent<NavItemProps> = ({
-  isProfileButton,
   children,
   onClick,
   href,
@@ -25,7 +24,7 @@ export const NavItem: FunctionComponent<NavItemProps> = ({
   const isCurrent = router?.route === href;
   return (
     // TODO: Hacer que este "current" sea una clase, para el testing e2e
-    <Item current={isCurrent} image isProfileButton={!!isProfileButton}>
+    <Item current={isCurrent} image>
       {onClick ? (
         cloneElement(<Link />, { onClick, ...props, children })
       ) : (
