@@ -6,14 +6,12 @@ import { Logo } from "../assets";
 import { ModalContext } from "@/lib/context";
 import { NavItem } from "./NavItem";
 import { event } from "@/lib/gtag";
-import { useRouter } from "next/router";
 
 interface NavBarProps {
   isScrolled?: boolean;
 }
 
 const NavBar: FunctionComponent<NavBarProps> = () => {
-  const router = useRouter();
   // const { data: session } = useSession();
   const [user, setUser] = useState("");
   const { handleModal } = useContext(ModalContext);
@@ -61,7 +59,9 @@ const NavBar: FunctionComponent<NavBarProps> = () => {
         </NavItem>
         <NavItem href="/#brands">Empresas</NavItem>
         <NavItem onClick={handleContactClick}>Contacto</NavItem>
-        <NavItem isProfileButton onClick={() => router.push("/perfil")} />
+        <NavItem onClick={handleUserClick}>
+          {user ? `¡Hola, ${user}!` : "Iniciar sesion"}
+        </NavItem>
         <User onClick={handleUserClick}>
           <div>
             <Image src={"/images/icon_user.svg"} width={75} height={75} />

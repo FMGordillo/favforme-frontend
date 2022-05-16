@@ -12,7 +12,6 @@ interface MobileNavigatorProps {
 interface ItemProps {
   image?: boolean;
   current?: boolean;
-  isProfileButton?: boolean;
 }
 
 export const Nav = styled.nav<NavProps>`
@@ -90,8 +89,6 @@ export const Item = styled.li<ItemProps>`
     color: ${({ current, theme }) =>
       current ? theme.palette.secondary.main : "white"};
   }
-
-  display: ${({ isProfileButton }) => (isProfileButton ? "none" : "block")};
 
   ${({ theme }) => theme.breakpoints.down("sm")} {
     display: block;
