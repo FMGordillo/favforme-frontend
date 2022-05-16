@@ -20,7 +20,7 @@ blocks:
             - yarn
             - cache store
             - cache store nextjs_build .next/cache
-            - yarn build --if-present
+            - yarn build
       secrets:
         - name: Frontend secrets
   - name: Checks
@@ -29,8 +29,8 @@ blocks:
         - name: ESLint
           commands:
             - cache restore
-            - yarn lint --if-present
+            - yarn lint
         - name: Tests
           commands:
             - cache restore
-            - "yarn test:ci --if-present"
+            - "yarn test:ci"
