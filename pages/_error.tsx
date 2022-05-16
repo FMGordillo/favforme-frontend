@@ -45,7 +45,6 @@ export const getInitialProps: GetServerSideProps = async () => {
   // return errorInitialProps;
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const MyErrorPage = ({
   // @ts-ignore
   statusCode,

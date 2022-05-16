@@ -119,6 +119,9 @@ export const User = styled.div`
   top: 0;
   right: 0;
   border-radius: 20px 0 0 20px;
+  transform: translateX(50%);
+  transition: all 200ms;
+  user-select: none;
   p {
     color: ${({ theme }) => theme.palette.primary.main};
     font-weight: bolder;
@@ -126,12 +129,16 @@ export const User = styled.div`
     text-transform: uppercase;
   }
   & > :first-child {
-    border-radius: 40px;
-  }
-  ${({ theme }) => theme.breakpoints.down("sm")} {
-    display: none;
+    transform: translateX(0%);
   }
   :hover {
     cursor: pointer;
+    transform: translateX(0%);
+    & > :first-child {
+      transform: translateX(25%);
+    }
+  }
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    display: none;
   }
 `;
