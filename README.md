@@ -25,7 +25,6 @@ GA_PRODUCTION=G-G2F19FBMTQ
 GA_TESTING=G-N1SWDDR210
 ```
 
-## TO DO:
+## How to contribute
 
-- [ ] Tener ingles/español
-- [ ] ... tareas de Trello
+Commits are based on the library [\`commitlint\`](https://commitlint.js.org/) using [Conventional Commits](https://www.conventionalcommits.org/)
