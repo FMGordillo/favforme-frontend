@@ -36,10 +36,9 @@ export const getServerSideProps = async (
   }
 };
 
-const ActionPage: NextPage<
-  InferGetStaticPropsType<typeof getServerSideProps>
-> = ({ action, amounts, query }) => {
-  return <ActionContainer query={query} action={action} amounts={amounts} />;
-};
+const ActionPage: NextPage<InferGetStaticPropsType<typeof getServerSideProps>> =
+  ({ action, amounts, query }) => {
+    return <ActionContainer query={query} action={action} amounts={amounts} />;
+  };
 
 export default ActionPage;

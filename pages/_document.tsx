@@ -8,9 +8,7 @@ import Document, {
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<{
+  static async getInitialProps(ctx: DocumentContext): Promise<{
     styles: JSX.Element;
     html: string;
   }> {

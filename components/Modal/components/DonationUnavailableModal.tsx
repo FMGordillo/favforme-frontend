@@ -51,20 +51,15 @@ export const DonationUnavailableModal: FunctionComponent = () => {
     }
   };
 
-  const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    isValid,
-    submitForm,
-  } = useFormik({
-    validationSchema: schema,
-    initialValues: {
-      email: "",
-      firstName: "",
-    },
-    onSubmit,
-  });
+  const { handleBlur, handleChange, handleSubmit, isValid, submitForm } =
+    useFormik({
+      validationSchema: schema,
+      initialValues: {
+        email: "",
+        firstName: "",
+      },
+      onSubmit,
+    });
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
