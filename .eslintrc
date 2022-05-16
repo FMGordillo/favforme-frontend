@@ -1,8 +1,8 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:@next/next/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:prettier/recommended"
   ],
   "settings": {
     "react": {
@@ -15,7 +15,9 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFunction": {
       "jsx": true
@@ -27,5 +29,7 @@
     "prettier/prettier": "error",
     "sort-imports": "warn"
   },
-  "globals": { "React": "writable" }
+  "globals": {
+    "React": "writable"
+  }
 }

@@ -12,13 +12,10 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint pages/**/*.tsx components/**/*.tsx",
-    "format": "prettier --write **/*.ts public/**/*.html",
     "test": "jest --watchAll",
     "test:ci": "jest --ci",
     "coverage": "jest --coverage",
     "test:update": "jest --updateSnapshot",
-    "check-type": "tsc",
-    "check-format": "prettier --check **/*.ts public/**/*.html",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -54,6 +51,8 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "7.16.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@next/eslint-plugin-next": "12.0.3",
     "@testing-library/dom": "7.29.4",
     "@testing-library/jest-dom": "5.11.9",
@@ -67,12 +66,13 @@
     "@types/testing-library__jest-dom": "5.9.5",
     "@types/yup": "0.29.11",
     "@typescript-eslint/eslint-plugin": "4.26.0",
-    "@typescript-eslint/parser": "4.9.0",
+    "@typescript-eslint/parser": "5.23.0",
     "babel-jest": "27.3.1",
     "babel-plugin-styled-components": "1.12.0",
     "babel-plugin-transform-remove-console": "6.9.4",
+    "commitlint-config-gitmoji": "2.2.5",
     "dotenv": "10.0.0",
-    "eslint": "8.2.0",
+    "eslint": "<8.0.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "6.15.0",
     "eslint-loader": "4.0.2",
@@ -95,7 +95,7 @@
     "jsonpointer": "5.0.0"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "directories": {
     "lib": "lib"
@@ -110,8 +110,13 @@
   "homepage": "https://github.com/FavForMe/landing#readme",
   "lint-staged": {
     "*.{ts,tsx}": [
-      "prettier -w",
+      "eslint --fix",
       "npm run test:ci -- --bail --findRelatedTests --passWithNoTests"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "gitmoji"
     ]
   }
 }

@@ -29,16 +29,15 @@ export const getStaticProps: GetStaticProps<GetStaticPropsData> = async () => {
   };
 };
 
-const WhitepaperPage: NextPage<
-  InferGetStaticPropsType<typeof getStaticProps>
-> = (props) => {
-  return (
-    <Layout header title="Whitepaper">
-      <Container>
-        <NotionRenderer {...props} />
-      </Container>
-    </Layout>
-  );
-};
+const WhitepaperPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> =
+  (props) => {
+    return (
+      <Layout header title="Whitepaper">
+        <Container>
+          <NotionRenderer {...props} />
+        </Container>
+      </Layout>
+    );
+  };
 
 export default WhitepaperPage;
