@@ -14,27 +14,23 @@ blocks:
       jobs:
         - name: Build
           commands:
-            - sem-version node 14.15.4
+            - sem-version node 16.14.0
             - cache restore
             - cache restore nextjs_build
-            - npm install
+            - yarn
             - cache store
             - cache store nextjs_build .next/cache
-            - npm run build --if-present
+            - yarn build
       secrets:
         - name: Frontend secrets
   - name: Checks
     task:
       jobs:
-        - name: Typescript
-          commands:
-            - cache restore
-            - npm run check-type --if-present
         - name: ESLint
           commands:
             - cache restore
-            - npm run lint --if-present
+            - yarn lint
         - name: Tests
           commands:
             - cache restore
-            - 'npm run test:ci --if-present'
+            - "yarn test:ci"
