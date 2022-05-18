@@ -61,6 +61,9 @@ export const ImagesContainer = styled(BaseContainer)`
     & > a:nth-child(7) {
       justify-self: inherit;
     }
+    & > a:nth-child(8) {
+      justify-self: inherit;
+    }
   }
 
   ${({ theme }) => theme.breakpoints.down("sm")} {

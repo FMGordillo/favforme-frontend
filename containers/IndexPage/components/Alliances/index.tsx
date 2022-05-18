@@ -56,15 +56,15 @@ const AlliancesSection: FunctionComponent = () => {
         </a>
         <a
           target="_blank"
-          href="https://gorather.com/"
+          href="https://ratherlabs.com/"
           rel="noreferrer noopener"
-          onClick={() => trackEvent("Rather")}
+          onClick={() => trackEvent("RatherLabs")}
         >
           <Image
-            alt="Rather logo"
-            src="/images/alianzas_04.png"
-            width={270}
-            height={102}
+            alt="Ratherlabs logo"
+            src="/images/alianzas_04.jpeg"
+            width={100}
+            height={100}
           />
         </a>
         <a
