@@ -1,15 +1,13 @@
-import { Button, Text } from "@/components";
 import {
   LeftHandImage,
   Main,
   RightHandImage,
   TextContainer,
   Title,
-  WhitepaperContainer,
 } from "./styles";
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Text } from "@/components";
 
 const IntroOneSection: FunctionComponent = () => {
   return (
@@ -45,13 +43,13 @@ const IntroOneSection: FunctionComponent = () => {
           />
         </RightHandImage>
       </Main>
-      <WhitepaperContainer>
+      {/* <WhitepaperContainer>
         <Link passHref href="/whitepaper">
           <a>
             <Button textColor="white">Ver Whitepaper</Button>
           </a>
         </Link>
-      </WhitepaperContainer>
+      </WhitepaperContainer> */}
     </>
   );
 };
