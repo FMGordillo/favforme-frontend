@@ -5744,9 +5744,9 @@ jest@27.2.4:
     jest-cli "^27.2.4"
 
 jose@^4.1.0, jose@^4.1.2:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-4.2.1.tgz#da1b896e59533e4bd217626553f373d88d92b2f6"
-  integrity sha512-sbJeRX8Os2BLOQHr4kwPqPU18BdLyZjdkqWx69JCtkyVs8OTCDgGZjKssa6g+oOLlej371HsCWLVClPAmVV8+Q==
+  version "4.9.3"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-4.9.3.tgz#890abd3f26725fe0f2aa720bc2f7835702b624db"
+  integrity sha512-f8E/z+T3Q0kA9txzH2DKvH/ds2uggcw0m3vVPSB9HrSkrQ7mojjifvS7aR8cw+lQl2Fcmx9npwaHpM/M3GD8UQ==
 
 js-cookie@^2.2.1:
   version "2.2.1"
