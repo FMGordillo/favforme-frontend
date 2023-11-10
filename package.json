@@ -30,7 +30,7 @@
     "@next-auth/prisma-adapter": "0.5.2-next.19",
     "@prisma/client": "3.4.0",
     "@sentry/nextjs": "6.14.1",
-    "axios": "0.24.0",
+    "axios": "1.6.0",
     "date-fns": "2.19.0",
     "embla-carousel-react": "5.0.1",
     "formik": "2.2.8",
